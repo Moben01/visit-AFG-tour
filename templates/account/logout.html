@@ -1,0 +1,82 @@
+{% load i18n %}
+{% load static %}
+{% load account %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body class="bg-light-200">
+<div class="main-wrapper authentication-wrapper">
+
+    <!-- 🔵 Top Right Navigation -->
+    {% if user.is_authenticated %}
+    <div class="text-end p-3">
+        <div class="d-inline-flex gap-3">
+            <a href="{% url 'account_email' %}" class="text-decoration-none fw-medium text-primary">
+                {% trans "Change Email" %}
+            </a>
+            <a href="{% url 'account_change_password' %}" class="text-decoration-none fw-medium text-primary">
+                {% trans "Change Password" %}
+            </a>
+            <a href="{% url 'account_logout' %}" class="text-decoration-none fw-medium text-danger">
+                {% trans "Sign Out" %}
+            </a>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="container-fuild">
+        <div class="w-100 overflow-hidden position-relative flex-wrap d-block vh-100">
+            <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
+                <div class="col-xxl-4 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="p-4 text-center">
+                        <img src="{% static 'img/logo-dark.svg' %}" alt="logo" class="img-fluid">
+                    </div>
+                    <div class="card authentication-card">
+                        <div class="card-header">
+                            <div class="text-center">
+                                <h5 class="mb-1">{% trans "Sign Out" %}</h5>
+                                <p>{% trans "Are you sure you want to sign out?" %}</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="{% url 'account_logout' %}">
+                                {% csrf_token %}
+                                {{ redirect_field }}
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-xl btn-danger d-flex align-items-center justify-content-center w-100">
+                                        {% trans "Sign Out" %}
+                                    </button>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <p class="fs-14">
+                                        <a href="{% url 'account_login' %}" class="link-primary fw-medium">{% trans "Cancel and go back to login" %}</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coprright-footer">
+        <p class="fs-14">Copyright &copy; 2025. All Rights Reserved,
+            <a href="javascript:void(0);" class="text-primary fw-medium">DreamsTour</a>
+        </p>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="xb-cursor tx-js-cursor">
+    <div class="xb-cursor-wrapper">
+        <div class="xb-cursor--follower xb-js-follower"></div>
+    </div>
+</div>
+
+<!-- Scripts -->
+{% include 'scripts.html' %}
+</body>
+</html>

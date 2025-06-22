@@ -1,0 +1,78 @@
+{% load i18n %}
+{% load static %}
+{% load account %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body class="bg-light-200">
+<div class="main-wrapper authentication-wrapper">
+    <div class="container-fuild">
+        <div class="w-100 overflow-hidden position-relative flex-wrap d-block vh-100">
+            <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
+                <div class="col-xxl-4 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="p-4 text-center">
+                        <img src="{% static 'img/logo-dark.svg' %}" alt="logo" class="img-fluid">
+                    </div>
+                    <div class="card authentication-card">
+                        <div class="card-header">
+                            <div class="text-center">
+                                <h5 class="mb-1">{% trans "Confirm Email Address" %}</h5>
+                                <p>{% trans "Please confirm your email address to activate your account." %}</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {% if confirmation %}
+                                {% user_display confirmation.email_address.user as user_display %}
+                                {% if can_confirm %}
+                                    <p>
+                                        {% blocktrans with confirmation.email_address.email as email %}
+                                        Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an email address for user {{ user_display }}.
+                                        {% endblocktrans %}
+                                    </p>
+                                    <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                                        {% csrf_token %}
+                                        {{ redirect_field }}
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            {% trans "Confirm" %}
+                                        </button>
+                                    </form>
+                                {% else %}
+                                    <p class="text-warning">
+                                        {% blocktrans %}
+                                        Unable to confirm this email because it is already confirmed by a different account.
+                                        {% endblocktrans %}
+                                    </p>
+                                {% endif %}
+                            {% else %}
+                                <p class="text-danger">
+                                        {% trans "This email confirmation link expired or is invalid. Please" %}
+                                        <a href="{% url 'account_email' %}">{% trans "request a new email confirmation" %}</a>.
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="coprright-footer">
+        <p class="fs-14">Copyright &copy; 2025. All Rights Reserved,
+            <a href="javascript:void(0);" class="text-primary fw-medium">DreamsTour</a>
+        </p>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="xb-cursor tx-js-cursor">
+    <div class="xb-cursor-wrapper">
+        <div class="xb-cursor--follower xb-js-follower"></div>
+    </div>
+</div>
+
+<!-- Scripts -->
+{% include 'scripts.html' %}
+</body>
+</html>

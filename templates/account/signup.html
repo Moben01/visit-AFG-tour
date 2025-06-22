@@ -1,0 +1,130 @@
+{% load i18n %}
+{% load static %}
+{% load account %}
+
+<!DOCTYPE html>
+<html lang="en">
+{% include 'head.html' %}
+
+<body class="bg-light-200">
+<!-- Main Wrapper -->
+<div class="main-wrapper authentication-wrapper">
+    <div class="container-fuild">
+
+        <!-- Register -->
+        <div class="w-100 overflow-hidden position-relative flex-wrap d-block vh-100">
+            <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
+                <div class="col-xxl-4 col-lg-6 col-md-6 col-11 mx-auto">
+                    <div class="p-4 text-center">
+                        <img src="{% static 'img/logo-dark.svg' %}" alt="logo" class="img-fluid">
+                    </div>
+                    <div class="card authentication-card">
+                        <div class="card-header">
+                            <div class="text-center">
+                                <h5 class="mb-1">{% trans "Sign Up" %}</h5>
+                                <p>{% trans "Create your DreamsTour Account" %}</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                            {% if form.errors %}
+                                <div class="text-danger mb-3">
+                                    {{ form.non_field_errors }}
+                                    {% for field in form %}
+                                        {% for error in field.errors %}
+                                            <p>{{ error }}</p>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+
+                            <form method="POST" action="{% url 'account_signup' %}">
+                                {% csrf_token %}
+                                {{ redirect_field }}
+
+                                <div class="mb-3">
+                                    <label class="form-label">{% trans "Username" %}</label>
+                                    <div class="input-icon">
+                                        <span class="input-icon-addon"><i class="isax isax-user"></i></span>
+                                        <input type="text" name="{{ form.username.name }}" value="{{ form.username.value|stringformat:'s' }}" class="form-control form-control-lg" placeholder="{% trans 'Enter Username' %}">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">{% trans "Email" %}</label>
+                                    <div class="input-icon">
+                                        <span class="input-icon-addon"><i class="isax isax-message"></i></span>
+                                        <input type="email" name="{{ form.email.name }}" value="{{ form.email.value|stringformat:'s' }}" class="form-control form-control-lg" placeholder="{% trans 'Enter Email' %}">
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">{% trans "Password" %}</label>
+                                    <div class="input-icon">
+                                        <span class="input-icon-addon"><i class="isax isax-lock"></i></span>
+                                        <input type="password" name="{{ form.password1.name }}" class="form-control form-control-lg pass-input" placeholder="{% trans 'Enter Password' %}">
+                                        <span class="input-icon-addon toggle-password"><i class="isax isax-eye-slash"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">{% trans "Confirm Password" %}</label>
+                                    <div class="input-icon">
+                                        <span class="input-icon-addon"><i class="isax isax-lock"></i></span>
+                                        <input type="password" name="{{ form.password2.name }}" class="form-control form-control-lg pass-input" placeholder="{% trans 'Enter Password Again' %}">
+                                        <span class="input-icon-addon toggle-password"><i class="isax isax-eye-slash"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="mt-3 mb-3">
+                                    <div class="d-flex">
+                                        <div class="form-check d-flex align-items-center mb-2">
+                                            <input class="form-check-input mt-0" type="checkbox" required>
+                                            <label class="form-check-label ms-2 text-gray-9 fs-14">
+                                                {% trans "I agree with the" %} <a href="/terms-conditions/" class="link-primary fw-medium">{% trans "Terms Of Service" %}</a>.
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <button type="submit" class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100">
+                                        {% trans "Register" %} <i class="isax isax-arrow-right-3 ms-2"></i>
+                                    </button>
+                                </div>
+
+                                {% if SOCIALACCOUNT_ENABLED %}
+                                    <div class="login-or mb-3"><span class="span-or">{% trans "Or" %}</span></div>
+                                    {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+                                {% endif %}
+
+                                <div class="d-flex justify-content-center">
+                                    <p class="fs-14">
+                                        {% trans "Already have an account?" %}
+                                        <a href="{% url 'account_login' %}" class="link-primary fw-medium">{% trans "Sign In" %}</a>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Register -->
+
+        <div class="coprright-footer">
+            <p class="fs-14">&copy; 2025 DreamsTour. {% trans "All Rights Reserved" %}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Cursor -->
+<div class="xb-cursor tx-js-cursor">
+    <div class="xb-cursor-wrapper">
+        <div class="xb-cursor--follower xb-js-follower"></div>
+    </div>
+</div>
+
+{% include 'scripts.html' %}
+</body>
+</html>

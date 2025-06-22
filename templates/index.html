@@ -1,0 +1,2524 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-section-four">
+        <div class="container">
+            <div class="hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-10 col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="banner-content text-center mx-auto">
+                            <h1 class="text-white display-4 mb-2">Discover the World, One <span class="flight-icon"><img src="{% static 'img/icons/flight-icon.svg' %}" alt="icon"></span> Flight at a Time with DreamsTour!</h1>
+                            <p class="text-white mx-auto">Your ultimate destination for all things help you celebrate & remember tour experience.</p>
+                            <a class="video-btn video-effect" data-fancybox="" href="https://youtu.be/NSAOrGb9orM"><i class="isax isax-play5"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- Banner Search -->
+    <section class="banner-search-four">
+        <div class="container">
+            <div class="banner-form card mb-0">
+                <div class="card-header">
+                    <ul class="nav">
+                        <li>
+                            <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab" data-bs-target="#flight">
+                                <i class="isax isax-airplane5 me-2"></i>Flights
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Hotels">
+                                <i class="isax isax-buildings5 me-2"></i>Hotels
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Cars">
+                                <i class="isax isax-car5 me-2"></i>Cars
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Cruise">
+                                <i class="isax isax-ship5 me-2"></i>Cruise
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Tour">
+                                <i class="isax isax-camera5 me-2"></i>Tour
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="flight">
+                                <form action="https://dreamstour.dreamstechnologies.com/html/flight-grid.html">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
+                                        <div class="d-flex align-items-center">
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="Radio" id="oneway" value="oneway" checked>
+                                                <label class="form-check-label fs-14 ms-2" for="oneway">
+                                                    Oneway
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="Radio" id="roundtrip" value="roundtrip">
+                                                <label class="form-check-label fs-14 ms-2" for="roundtrip">
+                                                    Round Trip
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="Radio" id="multiway" value="multiway">
+                                                <label class="form-check-label fs-14 ms-2" for="multiway">
+                                                    Multi Trip
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-medium fs-16 mb-2">Millions of cheap flights. One simple search</h6>
+                                    </div>
+                                    <div class="normal-trip">
+                                        <div class="d-lg-flex">
+                                            <div class="d-flex  form-info">
+                                                <div class="form-item dropdown">
+                                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                        <label class="form-label fs-14 text-default mb-1">From</label>
+                                                        <input type="text" class="form-control" value="Newyork">
+                                                        <p class="fs-12 mb-0">Ken International Airport</p>
+                                                    </div>
+                                                    <div class="dropdown-menu dropdown-md p-0">
+                                                        <div class="input-search p-3 border-bottom">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" placeholder="Search Location">
+                                                                <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Newyork</h6>
+                                                                    <p>Ken International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Boston</h6>
+                                                                    <p>Boston Logan International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Northern Virginia</h6>
+                                                                    <p>Dulles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Los Angeles</h6>
+                                                                    <p>Los Angeles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Orlando</h6>
+                                                                    <p>Orlando International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="form-item dropdown ps-2 ps-sm-3">
+                                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                        <label class="form-label fs-14 text-default mb-1">To</label>
+                                                        <h5>Las Vegas</h5>
+                                                        <p class="fs-12 mb-0">Martini International Airport</p>
+                                                        <span class="way-icon badge badge-primary rounded-pill translate-middle">
+                                                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="dropdown-menu dropdown-md p-0">
+                                                        <div class="input-search p-3 border-bottom">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" placeholder="Search Location">
+                                                                <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Newyork</h6>
+                                                                    <p>Ken International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Boston</h6>
+                                                                    <p>Boston Logan International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Northern Virginia</h6>
+                                                                    <p>Dulles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Los Angeles</h6>
+                                                                    <p>Los Angeles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Orlando</h6>
+                                                                    <p>Orlando International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="form-item">
+                                                    <label class="form-label fs-14 text-default mb-1">Departure</label>
+                                                    <input type="text" class="form-control datetimepicker" value="21-10-2024">
+                                                    <p class="fs-12 mb-0">Monday</p>
+                                                </div>
+                                                <div class="form-item round-drip">
+                                                    <label class="form-label fs-14 text-default mb-1">Return</label>
+                                                    <input type="text" class="form-control datetimepicker" value="23-10-2024">
+                                                    <p class="fs-12 mb-0">Wednesday</p>
+                                                </div>
+                                                <div class="form-item dropdown">
+                                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                        <label class="form-label fs-14 text-default mb-1">Travellers and cabin class</label>
+                                                        <h5>4 <span class="fw-normal fs-14">Persons</span></h5>
+                                                        <p class="fs-12 mb-0">1 Adult, Economy</p>
+                                                    </div>
+                                                    <div class="dropdown-menu dropdown-menu-end dropdown-xl">
+                                                        <h5 class="mb-3">Select Travelers &  Class</h5>
+                                                        <div class="mb-3 border br-10 info-item pb-1">
+                                                            <h6 class="fs-16 fw-medium mb-2">Travellers</h6>
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label text-gray-9 mb-2">Adults <span class="text-default fw-normal">( 12+ Yrs )</span></label>
+                                                                        <div class="custom-increment">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-btn float-start">
+                                                                                    <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                    <span><i class="isax isax-minus"></i></span>
+                                                                                </button>
+                                                                                </span>
+                                                                                <input type="text" name="quantity" class=" input-number" value="01">
+                                                                                <span class="input-group-btn float-end">
+                                                                                    <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                        <span><i class="isax isax-add"></i></span>
+                                                                                </button>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label text-gray-9 mb-2">Childrens <span class="text-default fw-normal">( 2-12 Yrs )</span></label>
+                                                                        <div class="custom-increment">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-btn float-start">
+                                                                                    <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                    <span><i class="isax isax-minus"></i></span>
+                                                                                </button>
+                                                                                </span>
+                                                                                <input type="text" name="quantity" class=" input-number" value="01">
+                                                                                <span class="input-group-btn float-end">
+                                                                                    <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                        <span><i class="isax isax-add"></i></span>
+                                                                                </button>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="mb-3">
+                                                                        <label class="form-label text-gray-9 mb-2">Infants<span class="text-default fw-normal">( 0-12 Yrs )</span></label>
+                                                                        <div class="custom-increment">
+                                                                            <div class="input-group">
+                                                                                <span class="input-group-btn float-start">
+                                                                                    <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                    <span><i class="isax isax-minus"></i></span>
+                                                                                </button>
+                                                                                </span>
+                                                                                <input type="text" name="quantity" class=" input-number" value="01">
+                                                                                <span class="input-group-btn float-end">
+                                                                                    <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                        <span><i class="isax isax-add"></i></span>
+                                                                                </button>
+                                                                                </span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mb-3 border br-10 info-item pb-1">
+                                                            <h6 class="fs-16 fw-medium mb-2">Travellers</h6>
+                                                            <div class="d-flex align-items-center flex-wrap">
+                                                                <div class="form-check me-3 mb-3">
+                                                                    <input class="form-check-input" type="radio" value="Economy" name="cabin-class" id="economy" checked>
+                                                                    <label class="form-check-label" for="economy">
+                                                                        Economy
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check me-3 mb-3">
+                                                                    <input class="form-check-input" type="radio" value="Economy" name="cabin-class" id="premium-economy">
+                                                                    <label class="form-check-label" for="premium-economy">
+                                                                        Premium Economy
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check me-3 mb-3">
+                                                                    <input class="form-check-input" type="radio" value="Business" name="cabin-class" id="business">
+                                                                    <label class="form-check-label" for="business">
+                                                                        Business
+                                                                    </label>
+                                                                </div>
+                                                                <div class="form-check mb-3">
+                                                                    <input class="form-check-input" type="radio" value="First Class" name="cabin-class" id="first-class">
+                                                                    <label class="form-check-label" for="first-class">
+                                                                        First Class
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex justify-content-end">
+                                                            <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Cancel</a>
+                                                            <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary search-btn rounded">Search</button>
+                                        </div>
+                                    </div>
+                                    <div class="multi-trip">
+                                        <div class="d-lg-flex">
+                                            <div class="d-flex  form-info">
+                                                <div class="form-item dropdown">
+                                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                        <label class="form-label fs-14 text-default mb-1">From</label>
+                                                        <input type="text" class="form-control" value="Newyork">
+                                                        <p class="fs-12 mb-0">Ken International Airport</p>
+                                                    </div>
+                                                    <div class="dropdown-menu dropdown-md p-0">
+                                                        <div class="input-search p-3 border-bottom">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" placeholder="Search Location">
+                                                                <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Newyork</h6>
+                                                                    <p>Ken International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Boston</h6>
+                                                                    <p>Boston Logan International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Northern Virginia</h6>
+                                                                    <p>Dulles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Los Angeles</h6>
+                                                                    <p>Los Angeles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Orlando</h6>
+                                                                    <p>Orlando International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="form-item dropdown ps-2 ps-sm-3">
+                                                    <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                        <label class="form-label fs-14 text-default mb-1">To</label>
+                                                        <h5>Las Vegas</h5>
+                                                        <p class="fs-12 mb-0">Martini International Airport</p>
+                                                        <span class="way-icon badge badge-primary rounded-pill translate-middle">
+                                                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="dropdown-menu dropdown-md p-0">
+                                                        <div class="input-search p-3 border-bottom">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" placeholder="Search Location">
+                                                                <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                            </div>
+                                                        </div>
+                                                        <ul>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Newyork</h6>
+                                                                    <p>Ken International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Boston</h6>
+                                                                    <p>Boston Logan International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Northern Virginia</h6>
+                                                                    <p>Dulles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li class="border-bottom">
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Los Angeles</h6>
+                                                                    <p>Los Angeles International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                            <li>
+                                                                <a class="dropdown-item" href="javascript:void(0);">
+                                                                    <h6 class="fs-16 fw-medium">Orlando</h6>
+                                                                    <p>Orlando International Airport</p>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="form-item">
+                                                    <label class="form-label fs-14 text-default mb-1">Departure</label>
+                                                    <input type="text" class="form-control datetimepicker" value="21-10-2024">
+                                                    <p class="fs-12 mb-0">Monday</p>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary search-btn rounded">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="Hotels">
+                                <form action="https://dreamstour.dreamstechnologies.com/html/hotel-grid.html">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
+                                        <h6 class="fw-medium fs-16 mb-2">Book Hotel - Villas, Apartments & more.</h6>
+                                    </div>
+                                    <div class="d-lg-flex">
+                                        <div class="d-flex  form-info">
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">City, Property name or Location</label>
+                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <p class="fs-12 mb-0">USA</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <div class="input-search p-3 border-bottom">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search for City, Property name or Location">
+                                                            <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">USA</h6>
+                                                                <p>2000 Properties</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Japan</h6>
+                                                                <p>3000 Properties</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Singapore</h6>
+                                                                <p>8000 Properties</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Russia</h6>
+                                                                <p>8000 Properties</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Germany</h6>
+                                                                <p>2000 Properties</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Check In</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2025">
+                                                <p class="fs-12 mb-0">Monday</p>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Check Out</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2025">
+                                                <p class="fs-12 mb-0">Monday</p>
+                                            </div>
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">Guests</label>
+                                                    <h5>4 <span class="fw-normal fs-14">Persons</span></h5>
+                                                    <p class="fs-12 mb-0">4 Adult, 2 Rooms</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-xl">
+                                                    <h5 class="mb-3">Select Travelers &  Class</h5>
+                                                    <div class="mb-3 border br-10 info-item pb-1">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Rooms</label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Adults</label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Children <span class="text-default fw-normal">( 2-12 Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Infants <span class="text-default fw-normal">( 0-12 Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 border br-10 info-item pb-1">
+                                                        <h6 class="fs-16 fw-medium mb-2">Travellers</h6>
+                                                        <div class="d-flex align-items-center flex-wrap">
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="room" id="room1" checked>
+                                                                <label class="form-check-label" for="room1">
+                                                                    Single
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="room" id="room2">
+                                                                <label class="form-check-label" for="room2">
+                                                                    Double
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="room" id="room3">
+                                                                <label class="form-check-label" for="room3">
+                                                                    Delux
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check mb-3">
+                                                                <input class="form-check-input" type="radio" name="room" id="room4">
+                                                                <label class="form-check-label" for="room4">
+                                                                    Suite
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 border br-10 info-item pb-1">
+                                                        <h6 class="fs-16 fw-medium mb-2">Property Type</h6>
+                                                        <div class="d-flex align-items-center flex-wrap">
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="property" id="property1" checked>
+                                                                <label class="form-check-label" for="property1">
+                                                                    Villa
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="property" id="property2">
+                                                                <label class="form-check-label" for="property2">
+                                                                    Condo
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="property" id="property3">
+                                                                <label class="form-check-label" for="property3">
+                                                                    Cabin
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check mb-3">
+                                                                <input class="form-check-input" type="radio" name="property" id="property4">
+                                                                <label class="form-check-label" for="property4">
+                                                                    Apartments
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-end">
+                                                        <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Cancel</a>
+                                                        <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">Price per Night</label>
+                                                    <input type="text" class="form-control" value="$1000 - $15000">
+                                                    <p class="fs-12 mb-0">20 Offers Available</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">$500 - $2000</h6>
+                                                                <p>Upto 65% offers</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Upto 65% offers</h6>
+                                                                <p>Upto 40% offers</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">$5000 - $8000</h6>
+                                                                <p>Upto 35% offers</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">$9000 - $11000</h6>
+                                                                <p>Upto 20% offers</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">$11000 - $15000</h6>
+                                                                <p>Upto 10% offers</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary search-btn rounded">Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="Cars">
+                                <form action="https://dreamstour.dreamstechnologies.com/html/car-grid.html">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
+                                        <div class="d-flex align-items-center flex-wrap">
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="drop" id="same-drop" value="same-drop" checked>
+                                                <label class="form-check-label fs-14 ms-2" for="same-drop">
+                                                    Same drop-off
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="drop" id="different-drop" value="different-drop">
+                                                <label class="form-check-label fs-14 ms-2" for="different-drop">
+                                                    Different Drop off
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="drop" id="airport" value="airport">
+                                                <label class="form-check-label fs-14 ms-2" for="airport">
+                                                    Airport
+                                                </label>
+                                            </div>
+                                            <div class="form-check d-flex align-items-center me-3 mb-2">
+                                                <input class="form-check-input mt-0" type="radio" name="drop" id="hourly-drop" value="hourly-drop">
+                                                <label class="form-check-label fs-14 ms-2" for="hourly-drop">
+                                                    Hourly Package
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <h6 class="fw-medium fs-16 mb-2">Book Car for rental</h6>
+                                    </div>
+                                    <div class="d-lg-flex">
+                                        <div class="d-flex  form-info">
+                                            <div class="form-item dropdown from-location">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">From</label>
+                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <p class="fs-12 mb-0">USA</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <div class="input-search p-3 border-bottom">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search for Cars">
+                                                            <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">USA</h6>
+                                                                <p>2000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Japan</h6>
+                                                                <p>3000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Singapore</h6>
+                                                                <p>8000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Russia</h6>
+                                                                <p>8000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Germany</h6>
+                                                                <p>6000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-item dropdown pickup-airport">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">From</label>
+                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <p class="fs-12 mb-0">Ken International Airport</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <div class="input-search p-3 border-bottom">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search for Airport">
+                                                            <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Hartsfield-Jackson Atlanta International</h6>
+                                                                <p>USA</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Dallas/Fort Worth International</h6>
+                                                                <p>USA</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">London Heathrow</h6>
+                                                                <p>UK</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Seoul Incheon</h6>
+                                                                <p>South Korea</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Singapore Changi International</h6>
+                                                                <p>Singapore</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-item dropdown to-location ps-2 ps-sm-3">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">To</label>
+                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <p class="fs-12 mb-0">USA</p>
+                                                    <span class="way-icon badge badge-primary rounded-pill translate-middle">
+                                                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                                    </span>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <div class="input-search p-3 border-bottom">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search for Cars">
+                                                            <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">USA</h6>
+                                                                <p>2000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Japan</h6>
+                                                                <p>3000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Singapore</h6>
+                                                                <p>8000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Russia</h6>
+                                                                <p>8000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Germany</h6>
+                                                                <p>6000 Cars</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Departure</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2024">
+                                                <p class="fs-12 mb-0">Monday</p>
+                                            </div>
+                                            <div class="form-item return-drop">
+                                                <label class="form-label fs-14 text-default mb-1">Return</label>
+                                                <input type="text" class="form-control datetimepicker" value="23-10-2024">
+                                                <p class="fs-12 mb-0">Wednesday</p>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Pickup Time</label>
+                                                <input type="text" class="form-control timepicker" value="11:45 PM">
+                                            </div>
+                                            <div class="form-item dropoff-time">
+                                                <label class="form-label fs-14 text-default mb-1">Dropoff Time</label>
+                                                <input type="text" class="form-control timepicker" value="11:45 PM">
+                                            </div>
+                                            <div class="form-item hourly-time">
+                                                <label class="form-label fs-14 text-default mb-1">Hours</label>
+                                                <h5>02 Hrs 10 Kms</h5>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary search-btn rounded">Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="Cruise">
+                                <form action="https://dreamstour.dreamstechnologies.com/html/cruise-grid.html">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
+                                        <h6 class="fw-medium fs-16 mb-2">Search For Cruise</h6>
+                                    </div>
+                                    <div class="d-lg-flex">
+                                        <div class="d-flex  form-info">
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">Destination</label>
+                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <p class="fs-12 mb-0">USA</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <div class="input-search p-3 border-bottom">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search Location">
+                                                            <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Newyork</h6>
+                                                                <p>Ken International Airport</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Boston</h6>
+                                                                <p>Boston Logan International Airport</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Northern Virginia</h6>
+                                                                <p>Dulles International Airport</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Los Angeles</h6>
+                                                                <p>Los Angeles International Airport</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Orlando</h6>
+                                                                <p>Orlando International Airport</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Start Date</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2025">
+                                                <p class="fs-12 mb-0">Monday</p>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">End Date</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2025">
+                                                <p class="fs-12 mb-0">Monday</p>
+                                            </div>
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">Travellers & Cabin </label>
+                                                    <h5>4 <span class="fw-normal fs-14">Persons</span></h5>
+                                                    <p class="fs-12 mb-0">4 Adult, 2 Rooms</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-xl">
+                                                    <h5 class="mb-3">Select Travelers &  Class</h5>
+                                                    <div class="mb-3 border br-10 info-item pb-1">
+                                                        <h6 class="fs-16 fw-medium mb-2">Travellers</h6>
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label text-gray-9 mb-2">Adults <span class="text-default fw-normal">( 12+ Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label text-gray-9 mb-2">Childrens <span class="text-default fw-normal">( 2-12 Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="mb-3">
+                                                                    <label class="form-label text-gray-9 mb-2">Infants <span class="text-default fw-normal">( 0-12 Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="mb-3 border br-10 info-item pb-1">
+                                                        <h6 class="fs-16 fw-medium mb-2">Select Cabin</h6>
+                                                        <div class="d-flex align-items-center flex-wrap">
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="cabin" id="cabin1" checked>
+                                                                <label class="form-check-label" for="cabin1">
+                                                                    Solo cabins
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" name="cabin" id="cabin2">
+                                                                <label class="form-check-label" for="cabin2">
+                                                                    Balcony
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check me-3 mb-3">
+                                                                <input class="form-check-input" type="radio" value="Business" name="cabin" id="cabin3">
+                                                                <label class="form-check-label" for="cabin3">
+                                                                    Oceanview
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check mb-3">
+                                                                <input class="form-check-input" type="radio" name="cabin" id="cabin4">
+                                                                <label class="form-check-label" for="cabin4">
+                                                                    Balcony rooms
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-end">
+                                                        <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Cancel</a>
+                                                        <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary search-btn rounded">Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="Tour">
+                                <form action="https://dreamstour.dreamstechnologies.com/html/tour-grid.html">
+                                    <div class="d-flex align-items-center justify-content-between flex-wrap mb-2">
+                                        <h6 class="fw-medium fs-16 mb-2">Search holiday packages & trips</h6>
+                                    </div>
+                                    <div class="d-lg-flex">
+                                        <div class="d-flex  form-info">
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">Where would like to go?</label>
+                                                    <input type="text" class="form-control" value="Newyork">
+                                                    <p class="fs-12 mb-0">USA</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-md p-0">
+                                                    <div class="input-search p-3 border-bottom">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" placeholder="Search for City, Property name or Location">
+                                                            <span class="input-group-text px-2 border-start-0"><i class="isax isax-search-normal"></i></span>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">USA</h6>
+                                                                <p>200 Places</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Japan</h6>
+                                                                <p>300 Places</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Singapore</h6>
+                                                                <p>80 Places</p>
+                                                            </a>
+                                                        </li>
+                                                        <li class="border-bottom">
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Russia</h6>
+                                                                <p>500 Places</p>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="dropdown-item" href="javascript:void(0);">
+                                                                <h6 class="fs-16 fw-medium">Germany</h6>
+                                                                <p>150 Places</p>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Dates</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2025">
+                                                <p class="fs-12 mb-0">Monday</p>
+                                            </div>
+                                            <div class="form-item">
+                                                <label class="form-label fs-14 text-default mb-1">Check Out</label>
+                                                <input type="text" class="form-control datetimepicker" value="21-10-2025">
+                                                <p class="fs-12 mb-0">Wednesday</p>
+                                            </div>
+                                            <div class="form-item dropdown">
+                                                <div data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" role="menu">
+                                                    <label class="form-label fs-14 text-default mb-1">Travellers</label>
+                                                    <h5>4 <span class="fw-normal fs-14">Persons</span></h5>
+                                                    <p class="fs-12 mb-0">2 Adult</p>
+                                                </div>
+                                                <div class="dropdown-menu dropdown-menu-end dropdown-xl">
+                                                    <h5 class="mb-3">Select Travelers</h5>
+                                                    <div class="mb-3 border br-10 info-item pb-1">
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Adult</label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Childrens <span class="text-default fw-normal">( 12+ Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="mb-3 d-flex align-items-center justify-content-between">
+                                                                    <label class="form-label text-gray-9 mb-2">Infants <span class="text-default fw-normal">( 12+ Yrs )</span></label>
+                                                                    <div class="custom-increment">
+                                                                        <div class="input-group">
+                                                                            <span class="input-group-btn float-start">
+                                                                                <button type="button" class="quantity-left-minus btn btn-light btn-number"  data-type="minus" data-field="">
+                                                                                <span><i class="isax isax-minus"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                            <input type="text" name="quantity" class=" input-number" value="01">
+                                                                            <span class="input-group-btn float-end">
+                                                                                <button type="button" class="quantity-right-plus btn btn-light btn-number" data-type="plus" data-field="">
+                                                                                    <span><i class="isax isax-add"></i></span>
+                                                                            </button>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex justify-content-end">
+                                                        <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Cancel</a>
+                                                        <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary search-btn rounded">Search</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Banner Search -->
+
+    <!-- Destination Section -->
+    <section class="section destination-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four text-center">
+                        <h2 class="mb-2"><span>Popular</span> Locations</h2>
+                        <p class="sub-title">Connecting Needs with Offers for the Professional Flight Services, Book your next flight appointment with ease.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-4">
+
+                <!-- Destination Item-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-15.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">Denmark</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+                <!-- Destination Item-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-16.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">Belgium</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+                <!-- Destination Item-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-17.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">Barcelona</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+                <!-- Destination Item-->
+                <div class="col-lg-3 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-18.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">Mexico</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+                <!-- Destination Item-->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-19.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">Indonesia</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+                <!-- Destination Item-->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-20.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">Romania</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+                <!-- Destination Item-->
+                <div class="col-lg-4 col-sm-6">
+                    <div class="location-wrap wow fadeInDown">
+                        <img src="{% static 'img/destination/destination-21.jpg' %}" alt="img">
+                        <span class="loc-name bg-white">India</span>
+                        <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
+                    </div>
+                </div>
+                <!-- /Destination Item-->
+
+            </div>
+        </div>
+    </section>
+    <!-- /Destination Section -->
+
+    <!-- Client Section -->
+    <section class="section client-section-four wow zoomIn" data-wow-delay="0.2s">
+        <div class="container">
+            <div class="client-sec">
+                <div class="section-header text-center  wow fadeInDown">
+                    <h6 class="text-white">We are working with 50+ Clients</h6>
+                </div>
+                <div class="owl-carousel client-slider">
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-08.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-09.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-10.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-11.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-12.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-13.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-14.svg' %}" alt="img">
+                    </div>
+                    <div class="client-img">
+                        <img src="{% static 'img/clients/client-10.svg' %}" alt="img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Client Section -->
+
+    <!-- Place Section -->
+    <section class="section place-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four mb-4 text-center">
+                        <h2 class="mb-2"><span>Focusing</span> on Unique Experiences.</h2>
+                        <p class="sub-title">Connecting Needs with Offers for the Professional Flight Services, Book your next flight appointment with ease.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel place-slider nav-center">
+
+                <!-- Flight Item-->
+                <div class="place-item mb-4">
+                    <div class="place-img">
+                        <a href="flight-details.html">
+                            <img src="{% static 'img/flight/flight-01.jpg' %}" class="img-fluid" alt="img">
+                        </a>
+                        <div class="fav-item">
+                            <div class="d-flex align-items-center">
+                                <a href="javascript:void(0);" class="fav-icon me-2">
+                                    <i class="isax isax-heart5"></i>
+                                </a>
+                                <span class="badge bg-indigo">Cheapest</span>
+                            </div>
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium rounded">4.3</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <div class="flight-loc d-flex align-items-center justify-content-between mb-2">
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-45 me-2"></i>Toronto</span>
+                            <span class="arrow-icon"><i class="isax isax-arrow-2"></i></span>
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-135 me-2"></i>Bangkok</span>
+                        </div>
+                        <h5 class="text-truncate mb-1"><a href="flight-details.html">AstraFlight 215</a></h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="avatar avatar-sm me-2">
+								<img src="{% static 'img/icons/airindia.svg' %}" class="rounded-circle" alt="icon">
+							</span>
+                            <p class="fs-14 mb-0">Indigo</p>
+                            <p class="fs-14 d-inline-flex align-items-center mb-0"><i class="fa-solid fa-circle fs-6 text-primary mx-2"></i>1-stop at Frankfurt</p>
+                        </div>
+                        <div class="date-info p-2 mb-3">
+                            <p class="d-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>Sep 04, 2024 - Sep 07, 2024</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                            <h6 class="text-primary"><span class="fs-14 fw-normal text-default">From </span>$300</h6>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-outline-success fs-10 fw-medium me-2">22 Seats Left</span>
+                                <a href="javascript:void(0);" class="avatar avatar-sm">
+                                    <img src="{% static 'img/users/user-11.jpg' %}" class="rounded-circle" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Flight Item-->
+
+                <!-- Flight Item-->
+                <div class="place-item mb-4">
+                    <div class="place-img">
+                        <div class="img-slider image-slide owl-carousel nav-center">
+                            <div class="slide-images">
+                                <a href="flight-details.html">
+                                    <img src="{% static 'img/flight/flight-02.jpg' %}" class="img-fluid" alt="img">
+                                </a>
+                            </div>
+                            <div class="slide-images">
+                                <a href="flight-details.html">
+                                    <img src="{% static 'img/flight/flight-06.jpg' %}" class="img-fluid" alt="img">
+                                </a>
+                            </div>
+                            <div class="slide-images">
+                                <a href="flight-details.html">
+                                    <img src="{% static 'img/flight/flight-07.jpg' %}" class="img-fluid" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="fav-item">
+                            <div class="d-flex align-items-center">
+                                <a href="javascript:void(0);" class="fav-icon me-2">
+                                    <i class="isax isax-heart5"></i>
+                                </a>
+                                <span class="badge bg-indigo">Cheapest</span>
+                            </div>
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium rounded">4.7</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <div class="flight-loc d-flex align-items-center justify-content-between mb-2">
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-45 me-2"></i>Chicago</span>
+                            <span class="arrow-icon"><i class="isax isax-arrow-2"></i></span>
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-135 me-2"></i>Melbourne</span>
+                        </div>
+                        <h5 class="text-truncate mb-1"><a href="flight-details.html">Cloudrider 789</a></h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="avatar avatar-sm me-2">
+								<img src="{% static 'img/icons/airindia.svg' %}" class="rounded-circle" alt="icon">
+							</span>
+                            <p class="fs-14 mb-0">Indigo</p>
+                            <p class="fs-14 d-inline-flex align-items-center mb-0"><i class="fa-solid fa-circle fs-6 text-primary mx-2"></i>1-stop at Dallas</p>
+                        </div>
+                        <div class="date-info p-2 mb-3">
+                            <p class="d-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>Sep 11, 2024 - Sep 13, 2024</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                            <h6 class="text-primary"><span class="fs-14 fw-normal text-default">From </span>$550</h6>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-outline-success fs-10 fw-medium me-2">14 Seats Left</span>
+                                <a href="javascript:void(0);" class="avatar avatar-sm">
+                                    <img src="{% static 'img/users/user-12.jpg' %}" class="rounded-circle" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Flight Item-->
+
+                <!-- Flight Item-->
+                <div class="place-item mb-4">
+                    <div class="place-img">
+                        <a href="flight-details.html">
+                            <img src="{% static 'img/flight/flight-03.jpg' %}" class="img-fluid" alt="img">
+                        </a>
+                        <div class="fav-item">
+                            <div class="d-flex align-items-center">
+                                <a href="javascript:void(0);" class="fav-icon me-2">
+                                    <i class="isax isax-heart5"></i>
+                                </a>
+                                <span class="badge bg-indigo">Cheapest</span>
+                            </div>
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium rounded">4.5</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <div class="flight-loc d-flex align-items-center justify-content-between mb-2">
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-45 me-2"></i>Miami</span>
+                            <span class="arrow-icon"><i class="isax isax-arrow-2"></i></span>
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-135 me-2"></i>Tokyo</span>
+                        </div>
+                        <h5 class="text-truncate mb-1"><a href="flight-details.html">Aether Express 901</a></h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="avatar avatar-sm me-2">
+								<img src="{% static 'img/icons/airindia.svg' %}" class="rounded-circle" alt="icon">
+							</span>
+                            <p class="fs-14 mb-0">Indigo</p>
+                            <p class="fs-14 d-inline-flex align-items-center mb-0"><i class="fa-solid fa-circle fs-6 text-primary mx-2"></i>1-stop at Seoul</p>
+                        </div>
+                        <div class="date-info p-2 mb-3">
+                            <p class="d-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>Sep 22, 2024 - Sep 24, 2024</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                            <h6 class="text-primary"><span class="fs-14 fw-normal text-default">From </span>$450</h6>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-outline-success fs-10 fw-medium me-2">12 Seats Left</span>
+                                <a href="javascript:void(0);" class="avatar avatar-sm">
+                                    <img src="{% static 'img/users/user-13.jpg' %}" class="rounded-circle" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Flight Item-->
+
+                <!-- Flight Item-->
+                <div class="place-item mb-4">
+                    <div class="place-img">
+                        <div class="img-slider image-slide owl-carousel nav-center">
+                            <div class="slide-images">
+                                <a href="flight-details.html">
+                                    <img src="{% static 'img/flight/flight-04.jpg' %}" class="img-fluid" alt="img">
+                                </a>
+                            </div>
+                            <div class="slide-images">
+                                <a href="flight-details.html">
+                                    <img src="{% static 'img/flight/flight-08.jpg' %}" class="img-fluid" alt="img">
+                                </a>
+                            </div>
+                            <div class="slide-images">
+                                <a href="flight-details.html">
+                                    <img src="{% static 'img/flight/flight-10.jpg' %}" class="img-fluid" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="fav-item">
+                            <div class="d-flex align-items-center">
+                                <a href="javascript:void(0);" class="fav-icon selected me-2">
+                                    <i class="isax isax-heart5"></i>
+                                </a>
+                                <span class="badge bg-indigo">Cheapest</span>
+                            </div>
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium rounded">4.3</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <div class="flight-loc d-flex align-items-center justify-content-between mb-2">
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-45 me-2"></i>Boston</span>
+                            <span class="arrow-icon"><i class="isax isax-arrow-2"></i></span>
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-135 me-2"></i>Singapore</span>
+                        </div>
+                        <h5 class="text-truncate mb-1"><a href="flight-details.html">Silverwing 505</a></h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="avatar avatar-sm me-2">
+								<img src="{% static 'img/icons/airindia.svg' %}" class="rounded-circle" alt="icon">
+							</span>
+                            <p class="fs-14 mb-0">Indigo</p>
+                            <p class="fs-14 d-inline-flex align-items-center mb-0"><i class="fa-solid fa-circle fs-6 text-primary mx-2"></i>1-stop at London</p>
+                        </div>
+                        <div class="date-info p-2 mb-3">
+                            <p class="d-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>Oct 17, 2024 - Oct 19, 2024</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                            <h6 class="text-primary"><span class="fs-14 fw-normal text-default">From </span>$700</h6>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-outline-success fs-10 fw-medium me-2">18 Seats Left</span>
+                                <a href="javascript:void(0);" class="avatar avatar-sm">
+                                    <img src="{% static 'img/users/user-15.jpg' %}" class="rounded-circle" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Flight Item-->
+
+                <!-- Flight Item-->
+                <div class="place-item mb-4">
+                    <div class="place-img">
+                        <a href="flight-details.html">
+                            <img src="{% static 'img/flight/flight-10.jpg' %}" class="img-fluid" alt="img">
+                        </a>
+                        <div class="fav-item">
+                            <div class="d-flex align-items-center">
+                                <a href="javascript:void(0);" class="fav-icon me-2">
+                                    <i class="isax isax-heart5"></i>
+                                </a>
+                                <span class="badge bg-indigo">Cheapest</span>
+                            </div>
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium rounded">4.6</span>
+                        </div>
+                    </div>
+                    <div class="place-content">
+                        <div class="flight-loc d-flex align-items-center justify-content-between mb-2">
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-45 me-2"></i>Paris</span>
+                            <span class="arrow-icon"><i class="isax isax-arrow-2"></i></span>
+                            <span class="loc-name d-inline-flex align-items-center"><i class="isax isax-airplane rotate-135 me-2"></i>Cape Town</span>
+                        </div>
+                        <h5 class="text-truncate mb-1"><a href="flight-details.html">Nimbus 345</a></h5>
+                        <div class="d-flex align-items-center mb-2">
+                            <span class="avatar avatar-sm me-2">
+								<img src="{% static 'img/icons/airindia.svg' %}" class="rounded-circle" alt="icon">
+							</span>
+                            <p class="fs-14 mb-0">Indigo</p>
+                            <p class="fs-14 d-inline-flex align-items-center mb-0"><i class="fa-solid fa-circle fs-6 text-primary mx-2"></i>1-stop at Doha</p>
+                        </div>
+                        <div class="date-info p-2 mb-3">
+                            <p class="d-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>Aug 26, 2024 - Aug 27, 2024</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                            <h6 class="text-primary"><span class="fs-14 fw-normal text-default">From </span>$300</h6>
+                            <div class="d-flex align-items-center">
+                                <span class="badge bg-outline-success fs-10 fw-medium me-2">27 Seats Left</span>
+                                <a href="javascript:void(0);" class="avatar avatar-sm">
+                                    <img src="{% static 'img/users/user-10.jpg' %}" class="rounded-circle" alt="img">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Flight Item-->
+
+            </div>
+            <div class="text-center view-all wow fadeInUp">
+                <a href="flight-grid.html" class="btn btn-dark">View All Flights<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- /Place Section -->
+
+    <!-- Provider Section -->
+    <section class="section experts-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four text-center">
+                        <h2 class="mb-2"><span>Top</span> Rated Providers</h2>
+                        <p class="sub-title">Connecting Needs with Offers for the Professional Services.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel experts-slider nav-center">
+
+                <!-- Expert Item-->
+                <div class="flight-expert mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <img src="{% static 'img/provider/provider-01.svg' %}" alt="img">
+                    </a>
+                    <a href="javascript:void(0);" class="fav-icon selected">
+                        <i class="isax isax-heart5"></i>
+                    </a>
+                    <div class="expert-content text-center">
+                        <h5 class="mb-1"><a href="flight-details.html">Delta Air Lines</a></h5>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.5</span>
+                            <p>2000 Reviews</p>
+                        </div>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">12+</h6>
+                                <p class="fs-13">Flights</p>
+                            </div>
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">05+</h6>
+                                <p class="fs-13">Locations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="flight-expert mb-4">
+                    <a href="flight-details.html" class="expert-img">
+                        <img src="{% static 'img/provider/provider-02.svg' %}" alt="img">
+                    </a>
+                    <a href="javascript:void(0);" class="fav-icon">
+                        <i class="isax isax-heart5"></i>
+                    </a>
+                    <div class="expert-content text-center">
+                        <h5 class="mb-1"><a href="flight-details.html">Lufthansa</a></h5>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.7</span>
+                            <p>1500 Reviews</p>
+                        </div>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">15+</h6>
+                                <p class="fs-13">Flights</p>
+                            </div>
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">25+</h6>
+                                <p class="fs-13">Locations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="flight-expert mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <img src="{% static 'img/provider/provider-03.svg' %}" alt="img">
+                    </a>
+                    <a href="javascript:void(0);" class="fav-icon">
+                        <i class="isax isax-heart5"></i>
+                    </a>
+                    <div class="expert-content text-center">
+                        <h5 class="mb-1"><a href="flight-details.html">Etihad Airways</a></h5>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.5</span>
+                            <p>1000 Reviews</p>
+                        </div>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">12+</h6>
+                                <p class="fs-13">Flights</p>
+                            </div>
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">10+</h6>
+                                <p class="fs-13">Locations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="flight-expert mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <img src="{% static 'img/provider/provider-01.svg' %}" alt="img">
+                    </a>
+                    <a href="javascript:void(0);" class="fav-icon selected">
+                        <i class="isax isax-heart5"></i>
+                    </a>
+                    <div class="expert-content text-center">
+                        <h5 class="mb-1"><a href="flight-details.html">Kuwait Airways</a></h5>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.5</span>
+                            <p>1500 Reviews</p>
+                        </div>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">05+</h6>
+                                <p class="fs-13">Flights</p>
+                            </div>
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">50+</h6>
+                                <p class="fs-13">Locations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="flight-expert mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <img src="{% static 'img/provider/provider-01.svg' %}" alt="img">
+                    </a>
+                    <a href="javascript:void(0);" class="fav-icon selected">
+                        <i class="isax isax-heart5"></i>
+                    </a>
+                    <div class="expert-content text-center">
+                        <h5 class="mb-1"><a href="flight-details.html">Delta Air Lines</a></h5>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.5</span>
+                            <p>2000 Reviews</p>
+                        </div>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">12+</h6>
+                                <p class="fs-13">Flights</p>
+                            </div>
+                            <div class="flex-fill text-center">
+                                <h6 class="fw-medium">05+</h6>
+                                <p class="fs-13">Locations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+            </div>
+            <div class="package-sec">
+                <div class="row justify-content-center g-4">
+                    <div class="col-lg-4 col-md-6 d-flex wow fadeInDown" data-wow-delay="0.1s">
+                        <div class="card border-secondary shadow-none bg-secondary-transparent flex-fill mb-0">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-secondary rounded-circle flex-shrink-0">
+									<i class="isax isax-lock-1 text-gray-9 fs-20"></i>
+								</span>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">VIP Packages</h5>
+                                    <p>Include premium seating, meet-and-greet experiences, backstage tours.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex wow fadeInDown" data-wow-delay="0.2s">
+                        <div class="card border-purple shadow-none bg-purple-transparent flex-fill mb-0">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-purple rounded-circle flex-shrink-0">
+									<i class="isax isax-receipt-add fs-20"></i>
+								</span>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Travel Packages</h5>
+                                    <p>Bundles that include concert tickets, accommodations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 d-flex wow fadeInDown" data-wow-delay="0.3s">
+                        <div class="card border-teal shadow-none bg-teal-transparent flex-fill mb-0">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-teal rounded-circle flex-shrink-0">
+									<i class="isax isax-location-tick fs-20"></i>
+								</span>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">Best Price Guarantee</h5>
+                                    <p>Such as private rehearsals, soundcheck access.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Provider Section -->
+
+    <!-- About Section -->
+    <section class="section about-section-four bg-light-200">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 wow fadeInDown" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four mb-4">
+                        <h2 class="mb-2"><span>Where comfort</span> meets elegance and every guest is treated like family.</h2>
+                        <p class="sub-title">Our mission is to create memorable experiences for our guests. We believe that every stay should feel special, whether you’re here for business, leisure, or a special occasion.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <h6 class="display-6"><span class="counter">57</span>+</h6>
+                                <p>Destinations Worldwide</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <h6 class="display-6"><span class="counter">121</span>+</h6>
+                                <p>Providers Registered</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <h6 class="display-6"><span class="counter">7098</span>+</h6>
+                                <p>Booking Completed</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="mb-3">
+                                <h6 class="display-6"><span class="counter">67</span>+</h6>
+                                <p>Client Globally</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center flex-wrap gap-3 mb-0 mb-md-4 mb-lg-0">
+                        <a href="add-flight.html" class="btn btn-dark d-inline-flex align-items-center"><i class="isax isax-add-circle5 me-2"></i>Add Flights</a>
+                        <a href="flight-grid.html" class="btn btn-primary d-inline-flex align-items-center"><i class="isax isax-calendar-2 me-2"></i>Book a Flight</a>
+                        <div class="card border-0 mb-0">
+                            <div class="card-body d-flex align-items-center">
+                                <div class="avatar-list-stacked avatar-group-md me-2">
+                                    <span class="avatar avatar-rounded">
+										<img class="border border-white" src="{% static 'img/users/user-01.jpg' %}" alt="img">
+									</span>
+                                    <span class="avatar avatar-rounded">
+										<img class="border border-white" src="{% static 'img/users/user-04.jpg' %}" alt="img">
+									</span>
+                                    <span class="avatar avatar-rounded">
+										<img class="border border-white" src="{% static 'img/users/user-06.jpg' %}" alt="img">
+									</span>
+                                </div>
+                                <div>
+                                    <div class="d-flex align-items-center fs-12">
+                                        <i class="ti ti-star-filled text-warning"></i>
+                                        <i class="ti ti-star-filled text-warning"></i>
+                                        <i class="ti ti-star-filled text-warning"></i>
+                                        <i class="ti ti-star-filled text-warning"></i>
+                                        <i class="ti ti-star-filled text-warning me-1"></i>
+                                        <p class="fs-14 text-gray-9">5.0</p>
+                                    </div>
+                                    <p class="fs-14">2K+ Reviews</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 d-flex ps-lg-0 wow zoomIn" data-wow-delay="0.2s">
+                    <div class="flight-about d-lg-flex align-items-center flex-fill">
+                        <img src="{% static 'img/flight/about.svg' %}" alt="img">
+                        <div class="flight-bg">
+                            <img src="{% static 'img/bg/flight-bg.png' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flight-bg">
+            <img src="{% static 'img/bg/flight-bg-01.png' %}" alt="img" class="flight-bg-01">
+            <img src="{% static 'img/bg/flight-bg-02.png' %}" alt="img" class="flight-bg-02">
+        </div>
+    </section>
+    <!-- /About Section -->
+
+    <!-- Support Section -->
+    <section class="support-section bg-dark support-section-five wow fadeInDown" data-wow-delay="0.2s">
+        <div class="horizontal-slide d-flex" data-direction="left" data-speed="slow">
+            <div class="slide-list d-flex">
+                <div class="support-item">
+                    <h5>Personalized Itineraries</h5>
+                </div>
+                <div class="support-item">
+                    <h5>Comprehensive Planning</h5>
+                </div>
+                <div class="support-item">
+                    <h5>Expert Guidance</h5>
+                </div>
+                <div class="support-item">
+                    <h5>Local Experience</h5>
+                </div>
+                <div class="support-item">
+                    <h5>Customer Support</h5>
+                </div>
+                <div class="support-item">
+                    <h5>Sustainability Efforts</h5>
+                </div>
+                <div class="support-item">
+                    <h5>Multiple Regions</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Support Section -->
+
+    <!-- Testimonial Section -->
+    <section class="section testimonial-section z-1 bg-light-200">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 wow fadeInDown" data-wow-delay="0.2s">
+                    <div class="flex-fill position-relative">
+                        <div class="success-icon">
+                            <img src="{% static 'img/icons/icon-arrow.svg' %}" alt="img">
+                        </div>
+                        <div class="mb-4 mb-lg-0 success-wrap">
+                            <div class="section-header section-header-four">
+                                <h2 class="mb-2"><span>Success</span> stories in their own words</h2>
+                                <p class="sub-title">Read what our satisfied clients have to say about their experiences with our platform.</p>
+                            </div>
+                            <h6 class="fw-medium mb-1">Trusted by 40K+ customers</h6>
+                            <div class="d-flex align-items-center fs-14">
+                                <i class="ti ti-star-filled text-primary me-1"></i>
+                                <i class="ti ti-star-filled text-primary me-1"></i>
+                                <i class="ti ti-star-filled text-primary me-1"></i>
+                                <i class="ti ti-star-filled text-primary me-1"></i>
+                                <i class="ti ti-star-filled text-primary me-2"></i>
+                                <p class="fs-14"><span class="text-gray-9">4.4/5.0</span> (From 3580 Reviews)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="testimonial-success">
+                        <div class="row g-4">
+                            <div class="col-md-6 d-flex">
+                                <div class="card flex-fill mb-0 wow fadeInDown" data-wow-delay="0.1s">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <a href="javascript:void(0);" class="avatar avatar-lg flex-shrink-0">
+                                                <img src="{% static 'img/users/user-28.jpg' %}" class="rounded-circle" alt="img">
+                                            </a>
+                                            <div class="ms-2">
+                                                <h6 class="fs-16 fw-medium"><a href="javascript:void(0);">Rachel Mariscal</a></h6>
+                                                <p>United States</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-2">Smooth Booking Experience!</h6>
+                                        <p class="mb-2">I had an I recently booked a flight through [Booking Website/App], and I couldn’t be happier with the experience.</p>
+                                        <div class="d-flex align-items-center">
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <p>5.0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <div class="card flex-fill mb-0 wow fadeInDown" data-wow-delay="0.2s">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <a href="javascript:void(0);" class="avatar avatar-lg flex-shrink-0">
+                                                <img src="{% static 'img/users/user-22.jpg' %}" class="rounded-circle" alt="img">
+                                            </a>
+                                            <div class="ms-2">
+                                                <h6 class="fs-16 fw-medium"><a href="javascript:void(0);">Stephen Brekke</a></h6>
+                                                <p>Germany</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-2">Customer Service</h6>
+                                        <p class="mb-2">I did have a quick question about my itinerry, and customer service was incredibly helpful and responsive</p>
+                                        <div class="d-flex align-items-center">
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <p>5.0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <div class="card flex-fill mb-0 wow fadeInDown" data-wow-delay="0.1s">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <a href="javascript:void(0);" class="avatar avatar-lg flex-shrink-0">
+                                                <img src="{% static 'img/users/user-07.jpg' %}" class="rounded-circle" alt="img">
+                                            </a>
+                                            <div class="ms-2">
+                                                <h6 class="fs-16 fw-medium"><a href="javascript:void(0);">Harriet Collins</a></h6>
+                                                <p>France</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-2">Overall Experience</h6>
+                                        <p class="mb-2">After finally selecting a flight, I was hit with unexpected fees during checkout that weren’t clearly stated upfront.</p>
+                                        <div class="d-flex align-items-center">
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <p>5.0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 d-flex">
+                                <div class="card flex-fill mb-0 wow fadeInDown" data-wow-delay="0.2s">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <a href="javascript:void(0);" class="avatar avatar-lg flex-shrink-0">
+                                                <img src="{% static 'img/users/user-27.jpg' %}" class="rounded-circle" alt="img">
+                                            </a>
+                                            <div class="ms-2">
+                                                <h6 class="fs-16 fw-medium"><a href="javascript:void(0);">Charles Earnhardt</a></h6>
+                                                <p>Italy</p>
+                                            </div>
+                                        </div>
+                                        <h6 class="mb-2">Confirmation Process</h6>
+                                        <p class="mb-2">I received my confirmation email almost immediately, and all the details were accurate.</p>
+                                        <div class="d-flex align-items-center">
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <i class="ti ti-star-filled text-primary me-1"></i>
+                                            <p>5.0</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonials-bg">
+                            <img src="{% static 'img/bg/testimonial-bg-01.png' %}" alt="img" class="testimonial-bg-03">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="testimonials-bg">
+            <img src="{% static 'img/bg/testimonial-bg-01.png' %}" alt="img" class="testimonial-bg-01">
+            <img src="{% static 'img/bg/testimonial-bg-02.png' %}" alt="img" class="testimonial-bg-02">
+        </div>
+    </section>
+    <!-- /Testimonial Section -->
+
+    <!-- FAQ Section -->
+    <section class="faq-section-four section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four text-center">
+                        <h2 class="mb-2"><span>Frequently</span> Asked Questions</h2>
+                        <p class="sub-title">Connecting Needs with Offers for the Professional Fligt Services, </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion accordion-flush faq-four" id="accordionFaq">
+                        <div class="accordion-item show mb-2 wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header">
+								<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseOne" aria-expanded="false" aria-controls="faq-collapseOne">
+									What types of tours do you offer?
+								</button>
+							</h2>
+                            <div id="faq-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p class="mb-0">We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>
+                                    <p>Popular destinations include Europe, Africa (e.g., Morocco), </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 wow fadeInUp" data-wow-delay="0.4s">
+                            <h2 class="accordion-header">
+								 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsetwo" aria-expanded="false" aria-controls="faq-collapsetwo">
+									Are the tours customizable?
+							  </button>
+							</h2>
+                            <div id="faq-collapsetwo" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 wow fadeInUp" data-wow-delay="0.6s">
+                            <h2 class="accordion-header">
+								  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsthree" aria-expanded="false" aria-controls="faq-collapsthree">
+									What safety measures do you follow?
+								  </button>
+							</h2>
+                            <div id="faq-collapsthree" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mb-2 wow fadeInUp" data-wow-delay="0.8s">
+                            <h2 class="accordion-header">
+								  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsefour" aria-expanded="false" aria-controls="faq-collapsefour">
+									How far in advance should I book?
+								  </button>
+							</h2>
+                            <div id="faq-collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.0s">
+                            <h2 class="accordion-header">
+								  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsefive" aria-expanded="false" aria-controls="faq-collapsefive">
+									What is your cancellation policy?
+								  </button>
+							</h2>
+                            <div id="faq-collapsefive" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business-->
+            <div class="business-wrap bg-dark wow zoomIn">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="business-info">
+                            <h2 class="display-6 text-white mb-3">Discover the easiest way to automate scheduling and grow your business</h2>
+                            <p class="text-light mb-4">Our comprehensive solution facilitates your salon operations, so you can focus on what truly matters.</p>
+                            <a href="add-flight.html" class="btn btn-dark d-inline-flex align-items-center"><i class="isax isax-add-circle me-2"></i>Add Flights</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="business-img">
+                            <img src="{% static 'img/flight/business.svg' %}" alt="img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /Business -->
+
+        </div>
+    </section>
+    <!-- /FAQ Section -->
+
+    <!-- Blog Section -->
+    <section class="section blog-section blog-section-four pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four  text-center">
+                        <h2 class="mb-2"><span>Latest</span> News & Article</h2>
+                        <p class="sub-title">Connecting Needs with Offers for the Professional Flight Services, </p>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-slider owl-carousel nav-center">
+
+                <!-- Blog Item-->
+                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-11.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>10<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Bookings</span>
+                        <h5><a href="blog-details.html">Understanding Airline Baggage Policies: What You Need to Know</a></h5>
+                    </div>
+                </div>
+                <!-- /Blog Item-->
+
+                <!-- Blog Item-->
+                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Tickets</span>
+                        <h5><a href="blog-details.html">The Best Flight Booking Apps for Travelers</a></h5>
+                    </div>
+                </div>
+                <!-- /Blog Item-->
+
+                <!-- Blog Item-->
+                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Times & Tips</span>
+                        <h5><a href="blog-details.html">Navigating the World of Airline Loyalty Programs</a></h5>
+                    </div>
+                </div>
+                <!-- /Blog Item-->
+
+                <!-- Blog Item-->
+                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-14.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>10<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Times & Tips</span>
+                        <h5><a href="blog-details.html">Top Tips for Finding the Best Flight Deals All Year Round</a></h5>
+                    </div>
+                </div>
+                <!-- /Blog Item-->
+
+            </div>
+            <div class="text-center view-all wow fadeInUp">
+                <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <!-- /Blog Section -->
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="login-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center justify-content-end pb-0 border-0">
+                    <a href="javascript:void(0);" data-bs-dismiss="modal" aria-label="Close"><i
+							class="ti ti-x fs-20"></i></a>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <form action="https://dreamstour.dreamstechnologies.com/html/index.html">
+                        <div class="text-center mb-3">
+                            <h5 class="mb-1">Sign In</h5>
+                            <p>Sign in to Start Manage your DreamsTour Account</p>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-message"></i>
+                                </span>
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Password</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-lock"></i>
+                                </span>
+                                <input type="password" class="form-control form-control-lg pass-input" placeholder="Enter Password">
+                                <span class="input-icon-addon toggle-password">
+									<i class="isax isax-eye-slash"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2">
+                                <div class="form-check d-flex align-items-center mb-2">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="remembers_me">
+                                    <label class="form-check-label ms-2 text-gray-9 fs-14" for="remembers_me">
+                                        Remember Me
+                                    </label>
+                                </div>
+                                <a href="javascript:void(0);" class="link-primary fw-medium fs-14 mb-2" data-bs-toggle="modal" data-bs-target="#forgot-modal">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100">Login<i class="isax isax-arrow-right-3 ms-2"></i></button>
+                        </div>
+                        <div class="login-or mb-3">
+                            <span class="span-or">Or</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <a href="javascript:void(0);" class="btn btn-light flex-fill d-flex align-items-center justify-content-center me-2">
+                                <img src="{% static 'img/icons/google-icon.svg' %}" class="me-2" alt="Img">Google
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-light flex-fill d-flex align-items-center justify-content-center">
+                                <img src="{% static 'img/icons/fb-icon.svg' %}" class="me-2" alt="Img">Facebook
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p class="fs-14">Don't you have an account? <a href="javascript:void(0);" class="link-primary fw-medium" data-bs-toggle="modal" data-bs-target="#register-modal">Sign Up</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Login Modal -->
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="register-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center justify-content-end pb-0 border-0">
+                    <a href="javascript:void(0);" data-bs-dismiss="modal" aria-label="Close"><i
+							class="ti ti-x fs-20"></i></a>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <form action="https://dreamstour.dreamstechnologies.com/html/index.html">
+                        <div class="text-center border-bottom mb-3">
+                            <h5 class="mb-1">Sign Up</h5>
+                            <p class="mb-3">Create your DreamsTour Account</p>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Name</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-user"></i>
+                                </span>
+                                <input type="text" class="form-control form-control-lg" placeholder="Enter Full Name">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-message"></i>
+                                </span>
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Password</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-lock"></i>
+                                </span>
+                                <input type="password" class="form-control form-control-lg pass-input" placeholder="Enter Password">
+                                <span class="input-icon-addon toggle-password">
+									<i class="isax isax-eye-slash"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Confirm Password</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-lock"></i>
+                                </span>
+                                <input type="password" class="form-control form-control-lg pass-input" placeholder="Enter Password">
+                                <span class="input-icon-addon toggle-password">
+									<i class="isax isax-eye-slash"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <div class="d-flex">
+                                <div class="form-check d-flex align-items-center mb-2">
+                                    <input class="form-check-input mt-0" type="checkbox" value="" id="agree">
+                                    <label class="form-check-label ms-2 text-gray-9 fs-14" for="agree">
+                                        I agree with the <a href="javascript:void(0);" class="link-primary fw-medium">Terms Of Service.</a>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100">Register<i class="isax isax-arrow-right-3 ms-2"></i></button>
+                        </div>
+                        <div class="login-or mb-3">
+                            <span class="span-or">Or</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <a href="javascript:void(0);" class="btn btn-light flex-fill d-flex align-items-center justify-content-center me-2">
+                                <img src="{% static 'img/icons/google-icon.svg' %}" class="me-2" alt="Img">Google
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-light flex-fill d-flex align-items-center justify-content-center">
+                                <img src="{% static 'img/icons/fb-icon.svg' %}" class="me-2" alt="Img">Facebook
+                            </a>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p class="fs-14">Already have an account? <a href="javascript:void(0);" class="link-primary fw-medium" data-bs-toggle="modal" data-bs-target="#login-modal">Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Register Modal -->
+
+    <!-- Change Password -->
+    <div class="modal fade" id="change-password">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center justify-content-end pb-0 border-0">
+                    <a href="javascript:void(0);" data-bs-dismiss="modal" aria-label="Close"><i
+							class="ti ti-x fs-20"></i></a>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <form action="#">
+                        <div class="text-center border-bottom mb-3">
+                            <h5 class="mb-1">Change Password</h5>
+                            <p class="mb-3">Enter Details to Change Password</p>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label">Password</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-lock"></i>
+                                </span>
+                                <input type="password" class="form-control form-control-lg pass-input" placeholder="Enter Password">
+                                <span class="input-icon-addon toggle-password">
+									<i class="isax isax-eye-slash"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Confirm Password</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-lock"></i>
+                                </span>
+                                <input type="password" class="form-control form-control-lg pass-input" placeholder="Enter Password">
+                                <span class="input-icon-addon toggle-password">
+									<i class="isax isax-eye-slash"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-0">
+                            <button type="button" class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#login-password">Change Password<i class="isax isax-arrow-right-3 ms-2"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Change Password -->
+
+    <!-- Forgot Password -->
+    <div class="modal fade" id="forgot-modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-flex align-items-center justify-content-end pb-0 border-0">
+                    <a href="javascript:void(0);" data-bs-dismiss="modal" aria-label="Close"><i
+							class="ti ti-x fs-20"></i></a>
+                </div>
+                <div class="modal-body p-4 pt-0">
+                    <form action="#">
+                        <div class="text-center border-bottom mb-3">
+                            <h5 class="mb-1">Forgot Password</h5>
+                            <p>Reset Your DreamsTour Password</p>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Email</label>
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+									<i class="isax isax-message"></i>
+                                </span>
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter Email">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-xl btn-primary d-flex align-items-center justify-content-center w-100" data-bs-toggle="modal" data-bs-target="#change-password">Reset Password<i class="isax isax-arrow-right-3 ms-2"></i></button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p class="fs-14">Remember Password ? <a href="javascript:void(0);" class="link-primary fw-medium" data-bs-toggle="modal" data-bs-target="#login-modal">Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Forgot Password -->
+
+    <!-- Cursor -->
+    <div class="xb-cursor tx-js-cursor">
+        <div class="xb-cursor-wrapper">
+            <div class="xb-cursor--follower xb-js-follower"></div>
+        </div>
+    </div>
+    <!-- /Cursor -->
+
+{% endblock %}
