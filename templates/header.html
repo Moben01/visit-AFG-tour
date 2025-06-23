@@ -257,18 +257,33 @@
                                                     <div id="accordion-east" class="accordion-collapse collapse show">
                                                         <div class="accordion-body">
                                                             <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Nangarhar</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Kunar</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Laghman</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Nuristan</label>
-                                                                </div>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Nangarhar-link" class="form-check-label ms-2" style="cursor: pointer;">Nangarhar</label></div>
+                                                                <script>
+                                                                    document.getElementById('Nangarhar-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Nangarhar' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                  <div class="d-flex align-items-center ps-0 mb-2"><label id="Kunar-link" class="form-check-label ms-2" style="cursor: pointer;">Kunar</label></div>
+                                                                  <script>
+                                                                      document.getElementById('Kunar-link').addEventListener('click', function () {
+                                                                        window.location.href = '{% url 'states:Kunar' %}';  // change this to your actual URL
+                                                                      });
+                                                                    </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2"><label id="Laghman-link" class="form-check-label ms-2" style="cursor: pointer;">Laghman</label></div>
+                                                                    <script>
+                                                                        document.getElementById('Laghman-link').addEventListener('click', function () {
+                                                                          window.location.href = '{% url 'states:Laghman' %}';  // change this to your actual URL
+                                                                        });
+                                                                      </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2"><label id="Nuristan-link" class="form-check-label ms-2" style="cursor: pointer;">Nuristan</label></div>
+                                                                    <script>
+                                                                        document.getElementById('Nuristan-link').addEventListener('click', function () {
+                                                                          window.location.href = '{% url 'states:Nuristan' %}';  // change this to your actual URL
+                                                                        });
+                                                                      </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2">
+                                                                        <label class="form-check-label ms-2"></label>
+                                                                    </div>
                                                             </div>
                                                         </div>
                                                     </div>
