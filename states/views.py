@@ -10,3 +10,6 @@ def parwan(request):
 
 def maidan_wardak(request):
     return render(request, 'states/maidan_wardak.html')
+
+def Kandahar(request):
+    return render(request, 'states/Kandahar.html')
