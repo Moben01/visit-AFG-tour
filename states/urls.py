@@ -12,4 +12,5 @@ urlpatterns = [
     path('Laghman', views.Laghman, name='Laghman'),
     path('Nuristan', views.Nuristan, name='Nuristan'),
 
+    path('Kandahar', views.Kandahar, name='Kandahar'),
 ]

@@ -52,3 +52,5 @@ def Nuristan(request):
 
 
 
+def Kandahar(request):
+    return render(request, 'states/Kandahar.html')
