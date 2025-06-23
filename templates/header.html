@@ -221,9 +221,12 @@
                                                     <div id="accordion-south" class="accordion-collapse collapse show">
                                                         <div class="accordion-body">
                                                             <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Kandahar</label>
-                                                                </div>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Kandahar-link" class="form-check-label ms-2" style="cursor: pointer;">Kandahar </label></div>
+                                                                <script>
+                                                                    document.getElementById('Kandahar-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Kandahar' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
                                                                 <div class="d-flex align-items-center ps-0 mb-2">
                                                                     <label class="form-check-label ms-2">Helmand</label>
                                                                 </div>
