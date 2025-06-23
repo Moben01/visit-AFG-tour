@@ -15,4 +15,10 @@ urlpatterns = [
     path('ghazni', views.ghazni, name='ghazni'),
     path('paktika', views.paktika, name='paktika'),
     path('khost', views.khost, name='khost'),
+    path('Nangarhar', views.Nangarhar, name='Nangarhar'),
+    path('Kunar', views.Kunar, name='Kunar'),
+    path('Laghman', views.Laghman, name='Laghman'),
+    path('Nuristan', views.Nuristan, name='Nuristan'),
+
+    path('Kandahar', views.Kandahar, name='Kandahar'),
 ]

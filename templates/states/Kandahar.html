@@ -1,0 +1,791 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Kandahar Tourism</span> </h1>
+                        <p class="text-light mt-3">
+                            Kandahar is Afghanistan's second largest city and the cultural heart of the Pashtun people. 
+                            Known for its rich history, pomegranate orchards, and traditional bazaars, Kandahar offers 
+                            visitors a glimpse into authentic Afghan culture and heritage.
+                        </p>
+
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Cards -->
+                        <div class="row justify-content-center mb-4">
+                            <!-- Festival 1: Nowruz -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.1s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Nowruz Festival</h5>
+                                            <p>Kandahar celebrates Nowruz with special gatherings in parks and homes, featuring traditional foods and family visits.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Festival 2: Pomegranate Festival -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.2s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Pomegranate Festival</h5>
+                                            <p>Kandahar is famous for its sweet pomegranates. The harvest season brings colorful markets and celebrations.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Festival 3: Handicrafts -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.3s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Traditional Handicrafts</h5>
+                                            <p>Explore Kandahar's famous embroidery, leatherwork, and copper crafts in the old bazaars.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row text-center justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Kandahar Tourism</h4>
+        <p class="mb-1">Kandahar is a city of profound historical significance and cultural richness, known as the traditional heartland of the Pashtun people. From the ancient bazaars to the surrounding orchards, Kandahar offers visitors an authentic Afghan experience.</p>
+
+<h4 class="mb-3 mt-3">Architectural Splendour: Mosques, Mausoleums & Historic Sites</h4>
+<p class="mb-1">
+Kandahar is home to several important Islamic architectural sites. The Shrine of the Cloak houses a relic believed to be the cloak of Prophet Muhammad. The Friday Mosque (Masjid Jame) showcases traditional Islamic architecture, while the Mausoleum of Ahmad Shah Durrani honors Afghanistan's founding father. The old city features traditional mud-brick homes and narrow alleyways that have stood for centuries.
+</p>
+
+<h4 class="mb-3 mt-3">A Rich Pashtun Cultural Heritage</h4>
+<p class="mb-1">
+Kandahar is the cultural center of Pashtun traditions. The city celebrates Nowruz with family gatherings and visits to local shrines. Traditional Pashtun hospitality is legendary, with guests treated to elaborate meals featuring Kandahari naan, roast lamb, and fresh pomegranates. The city is also known for its distinctive embroidery and handicrafts.
+</p>
+
+<h4 class="mb-3 mt-3">Explore Arghandab Valley and Surrounding Orchards</h4>
+<p class="mb-1">
+The lush Arghandab Valley surrounding Kandahar is famous for its pomegranate and grape orchards. Visitors can enjoy walks through the fruit gardens, especially beautiful during harvest season. The valley also offers scenic views of the Hindu Kush mountains and opportunities for picnics along the Arghandab River.
+</p>
+
+<h4 class="mb-3 mt-3">Shop for Traditional Handicrafts and Fresh Fruits</h4>
+<p class="mb-1">
+Kandahar's bazaars are famous for high-quality pomegranates, grapes, and melons. The city is also known for its traditional handicrafts including intricate embroidery (khamak), leather goods, and copperware. The Shah Bazaar and Herat Bazaar are excellent places to find authentic Kandahari products.
+</p>
+
+<h4 class="mb-3 mt-3">From Kandahari Naan to Roast Lamb: Enjoy Local Cuisine</h4>
+<p class="mb-1">
+Kandahar's cuisine is renowned throughout Afghanistan. Kandahari naan (large, oblong bread) is a specialty, as is roast lamb (shinwari) and various rice dishes. The city is particularly famous for its pomegranates which are used in both sweet and savory dishes. Meals are often accompanied by green tea and fresh yogurt.
+</p>
+
+<h4 class="mb-3 mt-3">Traditional Hospitality in Local Guesthouses</h4>
+<p class="mb-1">
+While Kandahar doesn't have luxury resorts, visitors can experience authentic Pashtun hospitality in local guesthouses. These accommodations offer simple but comfortable rooms, home-cooked meals, and the chance to experience traditional Kandahari lifestyle firsthand.
+</p>
+
+<h4 class="mb-3 mt-3">Explore the Historic Sites of Kandahar</h4>
+<p class="mb-1">
+Kandahar offers visitors the chance to explore important historical sites including the Shrine of the Cloak, the Mausoleum of Ahmad Shah Durrani, and the ancient Chilzina rock chambers. The city's old quarter features traditional architecture and bustling bazaars that have changed little over the centuries.
+</p>
+
+<h4 class="mb-3 mt-3">Spiritual Sites and Historic Mosques</h4>
+<p class="mb-1">
+Kandahar is home to several important Islamic sites that attract pilgrims from across Afghanistan. The Friday Mosque is particularly beautiful, while the Shrine of the Cloak is one of Afghanistan's most sacred sites. Religious festivals are celebrated with great devotion in Kandahar.
+</p>
+
+<h4 class="mb-3 mt-3">Top 10 Places to Visit in Kandahar</h4>
+<div class="mb-4">
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Shrine of the Cloak</strong> — Houses a relic believed to be the cloak of Prophet Muhammad.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Mausoleum of Ahmad Shah Durrani</strong> — Tomb of Afghanistan's founding father.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Chilzina</strong> — Ancient rock chambers with inscriptions from the Mughal era.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Arghandab Valley</strong> — Lush orchards and scenic landscapes.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Friday Mosque (Masjid Jame)</strong> — Kandahar's most important mosque.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Shah Bazaar</strong> — Traditional market selling fruits, spices and handicrafts.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Herat Bazaar</strong> — Famous for Kandahari embroidery and textiles.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Baba Wali Shrine</strong> — Popular pilgrimage site in Arghandab Valley.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kandahar Museum</strong> — Showcases artifacts from the region's rich history.</p>
+    <p><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Pomegranate Orchards</strong> — Visit during harvest season (September-October).</p>
+</div>
+
+<h4 class="mb-3 mt-3">Best Time for Visiting Kandahar</h4>
+<p class="mb-1">
+The best time to visit Kandahar is from October to April when temperatures are milder. Spring (March-April) is particularly beautiful when the orchards are in bloom. Summers can be extremely hot, with temperatures often exceeding 40°C (104°F).
+</p>
+
+<h4 class="mb-3 mt-3">A Quick Information About Kandahar</h4>
+<div style="overflow-x:auto;">
+    <table class="table table-bordered" style="min-width: 700px;">
+        <tbody>
+            <tr>
+                <th>Region</th>
+                <td>Southern Afghanistan</td>
+            </tr>
+            <tr>
+                <th>Capital of Province</th>
+                <td>Kandahar City</td>
+            </tr>
+            <tr>
+                <th>Coordinates</th>
+                <td>31.6288° N, 65.7372° E</td>
+            </tr>
+            <tr>
+                <th>Estimated Population</th>
+                <td>Approximately 1.2 million (2021 estimate)</td>
+            </tr>
+            <tr>
+                <th>Geographical Area</th>
+                <td>About 54,022 square kilometers</td>
+            </tr>
+            <tr>
+                <th>Districts in Kandahar Province</th>
+                <td>16 districts</td>
+            </tr>
+            <tr>
+                <th>Major Religions</th>
+                <td>Islam (primarily Sunni)</td>
+            </tr>
+            <tr>
+                <th>Ethnic Groups</th>
+                <td>Predominantly Pashtun, with Tajik and Hazara minorities</td>
+            </tr>
+            <tr>
+                <th>Languages Spoken</th>
+                <td>Pashto (primary), Dari</td>
+            </tr>
+            <tr>
+                <th>Province Animal Symbol</th>
+                <td>Afghan Hound</td>
+            </tr>
+            <tr>
+                <th>Province Flower</th>
+                <td>Pomegranate Blossom</td>
+            </tr>
+            <tr>
+                <th>Province Bird</th>
+                <td>Falcon</td>
+            </tr>
+            <tr>
+                <th>Province Tree</th>
+                <td>Pomegranate</td>
+            </tr>
+            <tr>
+                <th>Traditional Dance</th>
+                <td>Attan (Pashtun folk dance)</td>
+            </tr>
+            <tr>
+                <th>Popular Sports</th>
+                <td>Buzkashi, Cricket</td>
+            </tr>
+            <tr>
+                <th>Major Tourist Areas</th>
+                <td>Shrine of the Cloak, Arghandab Valley, Chilzina, local bazaars</td>
+            </tr>
+            <tr>
+                <th>Major Attractions</th>
+                <td>Historic sites, pomegranate orchards, traditional bazaars, Islamic architecture</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="mb-4 mt-4">Best Selling Kandahar Tour Packages</h4>
+<style>
+    .truncate-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<div class="travelers-slider owl-carousel owl-loaded owl-drag">
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top" alt="Explore Kandahar's Heritage"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Explore Kandahar's Heritage">
+                        Explore Kandahar's Heritage
+                    </a>
+                </h6>
+                <p>7 Nights - 8 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top" alt="Cultural Tour in Kandahar"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Cultural Tour in Kandahar">
+                        Cultural Tour in Kandahar
+                    </a>
+                </h6>
+                <p>5 Nights - 6 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top" alt="Pomegranate Harvest Experience"></a>
+            <span class="overlay-icon"><i class="isax isax-building"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Pomegranate Harvest Experience">
+                        Pomegranate Harvest Experience
+                    </a>
+                </h6>
+                <p>4 Nights - 5 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top" alt="Historic Kandahar Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Historic Kandahar Tour">
+                        Historic Kandahar Tour
+                    </a>
+                </h6>
+                <p>3 Nights - 4 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top" alt="Kandahar Highlights"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Kandahar Highlights">
+                        Kandahar Highlights
+                    </a>
+                </h6>
+                <p>2 Nights - 3 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Best Time to Visit Kandahar</h4>
+        <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+    </div>
+
+    <div class="row g-3">
+        <!-- Spring -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Spring Season in Kandahar</h5>
+                    <p class="mb-2"><strong>Months:</strong> March to May</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 15°C to 30°C</p>
+                    <p class="card-text">Spring brings pleasant weather and blooming orchards, making it ideal for visiting historical sites and enjoying outdoor activities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autumn -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Autumn Season in Kandahar</h5>
+                    <p class="mb-2"><strong>Months:</strong> October to November</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 18°C to 32°C</p>
+                    <p class="card-text">Autumn offers comfortable temperatures and the pomegranate harvest season, with colorful markets and cultural events.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Winter -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Winter Season in Kandahar</h5>
+                    <p class="mb-2"><strong>Months:</strong> December to February</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 5°C to 18°C</p>
+                    <p class="card-text">Winters are mild with cool evenings, perfect for exploring the city's indoor attractions and historical sites.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">Best Places to Visit in Kandahar</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Shrine of the Cloak</h5>
+                <p>(Sacred Islamic Site)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Islamic Heritage</h6>
+                <p class="fs-14">Houses a relic of Prophet Muhammad</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Arghandab Valley</h5>
+                <p>(Pomegranate Orchards)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Natural Beauty</h6>
+                <p class="fs-14">Lush valley famous for fruit production</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chilzina</h5>
+                <p>(Ancient Rock Chambers)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Historical Site</h6>
+                <p class="fs-14">Mughal-era inscriptions and panoramic views</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Shah Bazaar</h5>
+                <p>(Traditional Market)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Shopping</h6>
+                <p class="fs-14">Famous for fruits, spices and handicrafts</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Friday Mosque</h5>
+                <p>(Masjid Jame)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Islamic Architecture</h6>
+                <p class="fs-14">Kandahar's most important mosque</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Baba Wali Shrine</h5>
+                <p>(Pilgrimage Site)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Spiritual Site</h6>
+                <p class="fs-14">Popular shrine in Arghandab Valley</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+
+        
+        </div>
+        
+    </div>
+
+</div>
+
+<h4 class="mb-4 mt-4">How to Reach Kandahar?</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Air</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Kandahar International Airport connects the city with domestic flights to Kabul and some international destinations in the region.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Road</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Kandahar is connected to other major cities via the Ring Road. The journey from Kabul takes about 8-10 hours depending on security conditions.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Train -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Train</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-train fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Kandahar currently has no train services; air and road travel are the main options for reaching the city.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Train -->
+
+    </div>
+</div>
+
+<h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    When is the best time to visit Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The best time to visit Kandahar is from October to April when temperatures are milder. Spring (March-April) is particularly pleasant.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                    aria-controls="faq2">
+                                    How can I reach Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>You can reach Kandahar by air through Kandahar International Airport or by road via the Ring Road from Kabul or other major cities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                    aria-controls="faq3">
+                                    What are some famous tourist attractions in Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Popular sites include the Shrine of the Cloak, Mausoleum of Ahmad Shah Durrani, Chilzina rock chambers, and the Arghandab Valley.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                    aria-controls="faq4">
+                                    Is Kandahar safe for tourists?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Security conditions in Kandahar can vary. It's essential to check current travel advisories and consult with local authorities before visiting.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                    aria-controls="faq5">
+                                    What is the local currency used in Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The local currency in Kandahar is the Afghan Afghani (AFN).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                    aria-controls="faq6">
+                                    Do I need a visa to visit Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Yes, most foreign nationals require a visa to enter Afghanistan. Check with the Afghan embassy or consulate in your country for requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                    aria-controls="faq7">
+                                    What language is spoken in Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The main language spoken in Kandahar is Pashto, though many people also understand Dari. English is not widely spoken.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                    aria-controls="faq8">
+                                    What kind of clothes should I wear in Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Kandahar is conservative. Men should wear long pants and shirts, while women should wear loose clothing that covers arms and legs, plus a headscarf.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                    aria-controls="faq9">
+                                    What is the local cuisine like in Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Kandahar is famous for its Kandahari naan (large flatbread), roast lamb (shinwari), and fresh pomegranates. Traditional meals often include rice dishes and kebabs.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                    aria-controls="faq10">
+                                    Can I use credit cards in Kandahar?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Credit cards are rarely accepted. It's recommended to carry cash in Afghan Afghani for all transactions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kandahar Map Section -->
+<div class="container mt-5">
+    <h4 class="mb-4">Map of Kandahar</h4>
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221997.7784079602!2d65.583333!3d31.616667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4235e7a1bf7e4f%3A0x3f3f3f3f3f3f3f3f!2sKandahar%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719252086420!5m2!1sen!2s"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+        <div class="que-sec text-center">
+            <h4 class="mb-3">Have Any Other Questions?</h4>
+            <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact us. We will answer you shortly!</p>
+            <div class="d-flex justify-content-center">
+                <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                    Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

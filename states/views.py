@@ -34,3 +34,46 @@ def paktika(request):
 
 def khost(request):
     return render(request, 'states/khost.html')
+
+
+
+
+
+
+
+
+
+
+
+# all the East  province 
+
+
+def Nangarhar(request):
+    return render(request, 'states/Nangarhar.html')
+
+
+
+
+
+def Kunar(request):
+    return render(request, 'states/Kunar.html')
+
+
+
+
+
+def Laghman(request):
+    return render(request, 'states/Laghman.html')
+
+
+
+
+
+def Nuristan(request):
+    return render(request, 'states/Nuristan.html')
+
+
+
+
+def Kandahar(request):
+    return render(request, 'states/Kandahar.html')
