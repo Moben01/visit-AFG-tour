@@ -174,14 +174,54 @@
                                                                       window.location.href = '{% url 'states:maidan_wardak' %}';  // change this to your actual URL
                                                                     });
                                                                   </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Bamyan</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Logar</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Kapisa</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Panjshir</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Daikundi</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Ghazni</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Paktia</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Khost</label></div>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="bamyan-link" class="form-check-label ms-2" style="cursor: pointer;">Bamyan</label></div>
+                                                                <script>
+                                                                    document.getElementById('bamyan-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:bamyan' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="logar-link" class="form-check-label ms-2" style="cursor: pointer;">Logar</label></div>
+                                                                <script>
+                                                                    document.getElementById('logar-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:logar' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="kapisa-link" class="form-check-label ms-2" style="cursor: pointer;">Kapisa</label></div>
+                                                                <script>
+                                                                    document.getElementById('kapisa-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:kapisa' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="panjshir-link" class="form-check-label ms-2" style="cursor: pointer;">Panjshir</label></div>
+                                                                <script>
+                                                                    document.getElementById('panjshir-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:panjshir' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>                         
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="daikundi-link" class="form-check-label ms-2" style="cursor: pointer;">Daikundi</label></div>
+                                                                <script>
+                                                                    document.getElementById('daikundi-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:daikundi' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>         
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="ghazni-link" class="form-check-label ms-2" style="cursor: pointer;">Ghazni</label></div>
+                                                                <script>
+                                                                    document.getElementById('ghazni-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:ghazni' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>  
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="paktika-link" class="form-check-label ms-2" style="cursor: pointer;">Paktia</label></div>
+                                                                <script>
+                                                                    document.getElementById('paktika-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:paktika' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>  
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="khost-link" class="form-check-label ms-2" style="cursor:pointer;">Khost</label></div>
+                                                                <script>
+                                                                    document.getElementById('khost-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:khost' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
                                                             </div>
                                                             <a href="javascript:void(0);" class="more-view fw-medium fs-14">Show More</a>
                                                         </div>
@@ -260,18 +300,33 @@
                                                     <div id="accordion-east" class="accordion-collapse collapse show">
                                                         <div class="accordion-body">
                                                             <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Nangarhar</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Kunar</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Laghman</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Nuristan</label>
-                                                                </div>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Nangarhar-link" class="form-check-label ms-2" style="cursor: pointer;">Nangarhar</label></div>
+                                                                <script>
+                                                                    document.getElementById('Nangarhar-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Nangarhar' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                  <div class="d-flex align-items-center ps-0 mb-2"><label id="Kunar-link" class="form-check-label ms-2" style="cursor: pointer;">Kunar</label></div>
+                                                                  <script>
+                                                                      document.getElementById('Kunar-link').addEventListener('click', function () {
+                                                                        window.location.href = '{% url 'states:Kunar' %}';  // change this to your actual URL
+                                                                      });
+                                                                    </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2"><label id="Laghman-link" class="form-check-label ms-2" style="cursor: pointer;">Laghman</label></div>
+                                                                    <script>
+                                                                        document.getElementById('Laghman-link').addEventListener('click', function () {
+                                                                          window.location.href = '{% url 'states:Laghman' %}';  // change this to your actual URL
+                                                                        });
+                                                                      </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2"><label id="Nuristan-link" class="form-check-label ms-2" style="cursor: pointer;">Nuristan</label></div>
+                                                                    <script>
+                                                                        document.getElementById('Nuristan-link').addEventListener('click', function () {
+                                                                          window.location.href = '{% url 'states:Nuristan' %}';  // change this to your actual URL
+                                                                        });
+                                                                      </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2">
+                                                                        <label class="form-check-label ms-2"></label>
+                                                                    </div>
                                                             </div>
                                                         </div>
                                                     </div>
