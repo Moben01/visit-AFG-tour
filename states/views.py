@@ -13,3 +13,9 @@ def maidan_wardak(request):
 
 def Kandahar(request):
     return render(request, 'states/Kandahar.html')
+
+def Helmand(request):
+    return render(request, 'states/Helmand.html')
+
+def Zabul(request):
+    return render(request, 'states/Zabul.html')
