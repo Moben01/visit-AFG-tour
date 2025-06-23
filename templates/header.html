@@ -162,8 +162,18 @@
                                                                       window.location.href = '{% url 'states:kabul' %}';  // change this to your actual URL
                                                                     });
                                                                   </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Parwan</label></div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Maidan Wardak</label></div>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="parwan-link" class="form-check-label ms-2" style="cursor: pointer;">Parwan</label></div>
+                                                                <script>
+                                                                    document.getElementById('parwan-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:parwan' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="maidan-wardak-link" class="form-check-label ms-2" style="cursor: pointer;">Maidan Wardak</label></div>
+                                                                <script>
+                                                                    document.getElementById('maidan-wardak-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:maidan_wardak' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
                                                                 <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Bamyan</label></div>
                                                                 <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Logar</label></div>
                                                                 <div class="d-flex align-items-center ps-0 mb-2"><label class="form-check-label ms-2">Kapisa</label></div>
