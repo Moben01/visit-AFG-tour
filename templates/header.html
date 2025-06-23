@@ -286,17 +286,35 @@
                                                     <div id="accordion-west" class="accordion-collapse collapse show">
                                                         <div class="accordion-body">
                                                             <div class="more-content">
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Herat-link" class="form-check-label ms-2">Herat</label></div>
+                                                                <script>
+                                                                    document.getElementById('Herat-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Herat' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                    <div class="d-flex align-items-center ps-0 mb-2"><label id="Farah-link" class="form-check-label ms-2">Farah</label></div>
+                                                                    <script>
+                                                                        document.getElementById('Farah-link').addEventListener('click', function () {
+                                                                          window.location.href = '{% url 'states:Farah' %}';  // change this to your actual URL
+                                                                        });
+                                                                      </script>
+                                                                      <div class="d-flex align-items-center ps-0 mb-2"><label id="Badghis-link" class="form-check-label ms-2">Badghis</label></div>
+                                                                      <script>
+                                                                          document.getElementById('Badghis-link').addEventListener('click', function () {
+                                                                            window.location.href = '{% url 'states:Badghis' %}';  // change this to your actual URL
+                                                                          });
+                                                                        </script>
+                                                                           <div class="d-flex align-items-center ps-0 mb-2"><label id="Ghor-link" class="form-check-label ms-2">Ghor</label></div>
+                                                                           <script>
+                                                                               document.getElementById('Ghor-link').addEventListener('click', function () {
+                                                                                 window.location.href = '{% url 'states:Ghor' %}';  // change this to your actual URL
+                                                                               });
+                                                                             </script>
+
+                                                               
+                                                                
                                                                 <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Herat</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Farah</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Badghis</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Ghor</label>
+                                                                    <label class="form-check-label ms-2"></label>
                                                                 </div>
                                                             </div>
                                                         </div>

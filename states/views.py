@@ -13,3 +13,26 @@ def maidan_wardak(request):
 
 def Kandahar(request):
     return render(request, 'states/Kandahar.html')
+
+
+
+
+
+# states for west
+
+
+def Herat(request):
+    return render(request, 'states/Herat.html')
+
+
+
+def Farah(request):
+    return render(request, 'states/Farah.html')
+
+def Badghis(request):
+    return render(request, 'states/Badghis.html')
+
+def Ghor(request):
+    return render(request, 'states/Ghor.html')
+
+
