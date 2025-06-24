@@ -1,0 +1,1254 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Jawzjan Tourism</span> </h1>
+                        <h6 class="text-light mx-auto">
+                            A Land of Historical Marvels, Cultural Diversity, Timeless
+                            Traditions, and Genuine Hospitality
+                        </h6>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Card centered -->
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-6">
+                                <div class="card banner-form mb-0">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent mb-0 wow fadeInDown"
+                                        data-wow-delay="0.1s"
+                                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Festivals</h5>
+                                            <p>Get to know the rich culture, fairs, and festivals of Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row">
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Condos</a></h6>
+                                        <p class="fs-14">216 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-02.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Apartments</a></h6>
+                                        <p class="fs-14">569 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-03.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Villas</a></h6>
+                                        <p class="fs-14">129 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-04.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">5 Star Hotels</a></h6>
+                                        <p class="fs-14">600 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">3 Star Hotels</a></h6>
+                                        <p class="fs-14">200 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-06.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">2 Star Hotels</a></h6>
+                                        <p class="fs-14">180 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Jawzjan Tourism</h4>
+        <p class="mb-1">
+            Jawzjan, a province in northern Afghanistan, is a land of rich history and cultural vibrancy. Known for its
+            unique mix of Turkmen and Uzbek traditions, the province offers an authentic Afghan experience through its
+            historic sites, traditional lifestyles, and warm hospitality. Jawzjan’s sweeping plains, riverbanks, and
+            charming rural villages provide a peaceful yet engaging environment for travelers interested in history,
+            nature, and culture.
+        </p>
+
+        <h4 class="mb-3 mt-3">Newly Developed Tourist Attractions in Jawzjan!</h4>
+        <p class="mb-1">
+            Jawzjan is making strides in developing its tourism sector with new attractions that complement its
+            historical legacy. One such development is the revitalization of Sheberghan’s ancient market area, where
+            traditional textiles, carpets, and handicrafts are now on display for tourists. Restoration efforts also
+            include the old Qala-e-Kohna (Old Fort), a site that reflects the region's strategic and architectural
+            significance.
+
+            A new cultural exhibition center has opened in Sheberghan city, celebrating the music, art, and folklore of
+            the local Turkmen and Uzbek communities. The center includes performance spaces and workshops for local
+            artisans. Surrounding areas feature newly landscaped parks and family-friendly picnic spots.
+
+            Additionally, Jawzjan’s riverside areas near the Sari Pul River are being developed into eco-tourism zones,
+            where visitors can enjoy birdwatching, fishing, and guided nature walks.
+        </p>
+
+        <h4 class="mb-3 mt-3">Historical and Spiritual Sites in Jawzjan</h4>
+        <p class="mb-1">
+            Jawzjan is home to several important historical and spiritual landmarks. The Shrine of Khwaja Du Koh and
+            various village mosques reflect the deep Islamic traditions of the region. Oral histories and local legends
+            add a spiritual depth to these sites, attracting both pilgrims and tourists.
+
+            Plans are underway to link key cultural and religious sites with a tourism trail that will help preserve and
+            promote Jawzjan’s spiritual heritage. These efforts aim to create a meaningful experience for visitors
+            interested in faith, culture, and Afghan traditions.
+        </p>
+
+        <h4 class="mb-3 mt-3">Ancient Heritage and Archaeological Treasures</h4>
+        <p class="mb-1">
+            Although less explored than some other provinces, Jawzjan possesses hidden archaeological gems. Ancient
+            caravan routes passed through this region, and remnants of caravanserais and old settlements are still
+            visible. Excavations near Sheberghan have uncovered pottery, tools, and structural remains that hint at the
+            region’s importance on ancient trade paths.
+
+            Future archaeological initiatives are expected to further reveal Jawzjan’s significance in Central Asian
+            history. These heritage sites will be integrated into educational tourism circuits, offering insights into
+            the area's multicultural past.
+        </p>
+
+        <h4 class="mb-3 mt-3">Natural Beauty and Wildlife of Jawzjan</h4>
+        <p class="mb-1">
+            The natural landscapes of Jawzjan are characterized by rolling plains, rivers, and semi-arid grasslands.
+            These environments support diverse wildlife, including desert foxes, wild hares, and migratory birds.
+
+            The recently announced Jawzjan Nature Reserve aims to protect these ecosystems and raise awareness about
+            environmental conservation. Visitors can enjoy scenic walks, photography, and interaction with local herders
+            and farmers, learning about traditional ways of living in harmony with nature.
+        </p>
+
+        <h4 class="mb-3 mt-3">Peaceful and Spiritual Retreats</h4>
+        <p class="mb-1">
+            For those seeking quiet reflection, Jawzjan offers peaceful rural settings, sacred spaces, and natural
+            retreats. Shrines such as Khwaja Du Koh and the countryside surrounding Sheberghan provide an atmosphere of
+            calm and spirituality.
+
+            Tourists can engage in meditative walks, visit sacred springs, or participate in local Sufi-inspired music
+            gatherings. Spring and early autumn are the ideal seasons to experience these spiritual retreats in their
+            full beauty.
+        </p>
+
+        <h4 class="mb-3 mt-3">Birdwatching Hotspots in Jawzjan</h4>
+        <p class="mb-1">
+            Jawzjan’s wetlands and rivers offer excellent opportunities for birdwatching. These areas are key resting
+            spots for migratory birds traveling across Central Asia.
+
+            Recommended birdwatching locations include:
+            - The banks of the Sari Pul River near Sheberghan
+            - Seasonal wetlands around Qarqin District
+            - Open steppe lands where falcons and hawks can often be spotted
+
+            Though formal bird sanctuaries are in development, these natural habitats already attract birding
+            enthusiasts and eco-tourists.
+        </p>
+
+        <h4 class="mb-3 mt-3">Outdoor Activities and Leisure</h4>
+        <p class="mb-1">
+            Jawzjan provides a growing number of outdoor experiences for adventurous travelers. Visitors can enjoy:
+            - Horseback riding and Buzkashi matches in the plains
+            - Hiking and exploring rural areas and traditional villages
+            - Experiencing local music and dance at cultural events
+
+            The province hosts seasonal festivals where local communities gather for performances, food, and traditional
+            games. Infrastructure projects are in progress to expand leisure facilities across Jawzjan.
+        </p>
+
+        <h4 class="mb-3 mt-3">Wellness and Traditional Healing in Jawzjan</h4>
+        <p class="mb-1">
+            Traditional healing practices thrive in Jawzjan, with herbal remedies and wellness traditions passed through
+            generations. Visitors seeking wellness experiences can explore:
+            - Herbal medicine shops in Sheberghan bazaars
+            - Hot spring visits in surrounding areas known for therapeutic benefits
+            - Tranquil gardens and countryside spots perfect for rest and relaxation
+
+            The local government and private partners are exploring the development of wellness lodges and eco-friendly
+            guesthouses to blend health, heritage, and hospitality.
+        </p>
+
+
+        <h4 class="mb-3 mt-3">Top 10 Tourist Destinations of Jawzjan Province</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Sheberghan City</strong> — The provincial capital known for its lively bazaars, historical
+                landmarks, and hospitality.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Bibi Mariam Shrine</strong> — A revered spiritual site attracting pilgrims from across northern
+                Afghanistan.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Sardara Canal</strong> — A popular spot for family picnics and local gatherings, offering scenic
+                water views.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Jowzjan Cultural Center</strong> — A hub for cultural exhibitions, traditional crafts, and
+                regional history.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Qush Tepa Plains</strong> — Vast, open landscapes ideal for eco-tourism, camping, and observing
+                migratory birds.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Yangi Qala Fortress Ruins</strong> — Remnants of an ancient fort that highlight the strategic
+                past of the region.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Karvansarai Remains</strong> — Historical rest stops for Silk Road travelers, reflecting
+                Jawzjan’s trading history.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Jawzjan Handicrafts Market</strong> — A local market where visitors can purchase traditional
+                woolen products and embroidery.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Ruins of Aqcha Castle</strong> — A historical castle site near Aqcha district, rich in medieval
+                heritage.
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i>
+                <strong>Annual Jawzjan Folk Festival Grounds</strong> — A festive venue celebrating the music, dance,
+                and cuisine of the Turkmen and Uzbek communities.
+            </p>
+        </div>
+
+
+        <h4 class="mb-3 mt-3">Best Time for Visiting Jawzjan for Holidays</h4>
+        <p class="mb-1">
+            Jawzjan experiences cold winters and hot summers, so the ideal time to visit is during the spring and autumn
+            months,
+            from April to June and September to October. During these periods, the weather is mild and pleasant, perfect
+            for exploring historical sites and enjoying nature.
+        </p>
+
+        <h4 class="mb-3 mt-3">Quick Information About Jawzjan Province</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>North-Western Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Sheberghan</td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>36.6678° N, 65.7544° E</td>
+                    </tr>
+                    <tr>
+                        <th>Total Population</th>
+                        <td>Approximately 550,000 (estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 9,300 sq km<br>Districts: 11</td>
+                    </tr>
+                    <tr>
+                        <th>Districts</th>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (primarily Sunni), small Shia minority</td>
+                    </tr>
+                    <tr>
+                        <th>Major Ethnic Groups</th>
+                        <td>Uzbeks, Turkmens, Tajiks, Pashtuns</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Uzbek, Dari, Turkmen, Pashto</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Animal</th>
+                        <td>Goitered Gazelle (native to the plains of Jawzjan)</td>
+                    </tr>
+                    <tr>
+                        <th>City Flower</th>
+                        <td>Wild Tulip</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Bird</th>
+                        <td>Golden Eagle</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Tree</th>
+                        <td>Poplar Tree</td>
+                    </tr>
+                    <tr>
+                        <th>Major Cities and Towns</th>
+                        <td>Sheberghan, Aqcha, Mingajik, Darzab, Faizabad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+
+        <h4 class="mb-4 mt-4">Best Selling Jawzjan Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Top Jawzjan Travel Packages for You"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Top Jawzjan Travel Packages for You">
+                                Top Jawzjan Travel Packages for You
+                            </a>
+                        </h6>
+                        <p>17 Nights - 18 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Explore the Beauty of Jawzjan – Popular Tour Deals"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Explore the Beauty of Jawzjan – Popular Tour Deals">
+                                Explore the Beauty of Jawzjan – Popular Tour Deals
+                            </a>
+                        </h6>
+                        <p>8 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Most Loved Tour Packages in Jawzjan"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Most Loved Tour Packages in Jawzjan">
+                                Most Loved Tour Packages in Jawzjan
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Discover Jawzjan: Top Travel Experiences"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Jawzjan: Top Travel Experiences">
+                                Discover Jawzjan: Top Travel Experiences
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Jawzjan’s Best Tour Packages – Book Now!"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Jawzjan’s Best Tour Packages – Book Now!">
+                                Jawzjan’s Best Tour Packages – Book Now!
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Jawzjan Escapes – Bestselling Holiday Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Jawzjan Escapes – Bestselling Holiday Tour">
+                                Classic Jawzjan Escapes – Bestselling Holiday Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Jawzjan</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+
+            <div class="row g-3">
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Summer Season in Jawzjan</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 30°C to 42°C</p>
+                            <p class="card-text">Summers in Jawzjan are hot and dry, lasting from June to August, with
+                                temperatures often reaching above 40°C.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monsoon / Rainy -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Rainy Season in Jawzjan</h5>
+                            <p class="mb-2"><strong>Months:</strong> March to May</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 15°C to 30°C</p>
+                            <p class="card-text">Jawzjan receives light spring rains between March and May, providing a
+                                refreshing climate for outdoor activities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Winter -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Winter Season in Jawzjan</h5>
+                            <p class="mb-2"><strong>Months:</strong> December to February</p>
+                            <p class="mb-2"><strong>Temperature:</strong> -5°C to 10°C</p>
+                            <p class="card-text">Winters are cold and dry, with temperatures often dropping below
+                                freezing at night, but days are usually clear and sunny.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">Best Places to Visit in Jawzjan</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Andkhoy Fort</h5>
+                        <p>(Ancient Fortress)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">28 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Shibirghan Mosque</h5>
+                        <p>(Historic Religious Site)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">60 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Kunduz Bridge</h5>
+                        <p>(Scenic Historic Bridge)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">50 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan Valley</h5>
+                        <p>(Natural Scenery)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">67 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Shibirghan Market</h5>
+                        <p>(Local Shopping Area)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">45 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan Museum</h5>
+                        <p>(Historical Artifacts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">12 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h4 class="mb-4 mt-4">Popular Tourist Attractions in Jawzjan</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-40.jpg' %}" alt="Sheberghan Citadel">
+                    <div class="location-name">
+                        <h5 class="mb-1">Sheberghan Citadel</h5>
+                        <p>(Historic Fortress and Ruins)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-41.jpg' %}" alt="Jawzjan City">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan City</h5>
+                        <p>(Provincial Capital and Market)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">35 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-42.jpg' %}" alt="Balkh Archaeological Site">
+                    <div class="location-name">
+                        <h5 class="mb-1">Balkh Archaeological Site</h5>
+                        <p>(Ancient Ruins and Inscriptions)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$240</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-43.jpg' %}" alt="Hazrat Sultan Shrine">
+                    <div class="location-name">
+                        <h5 class="mb-1">Hazrat Sultan Shrine</h5>
+                        <p>(Religious Site)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-44.jpg' %}" alt="Jawzjan River">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan River</h5>
+                        <p>(Natural Scenic Spot)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-45.jpg' %}" alt="Jawzjan Museum">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan Museum</h5>
+                        <p>(Historical Artifacts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mb-4 mt-4">Top Things to Do in Jawzjan</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-40.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan City</h5>
+                        <p>(Capital of Jawzjan Province)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-41.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Sheberghan Citadel</h5>
+                        <p>(Historic Fortress Complex)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">35 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-42.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan Museum</h5>
+                        <p>(Local History & Artifacts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-43.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan Hills</h5>
+                        <p>(Natural Scenic Area)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-44.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Hazrat Sultan Shrine</h5>
+                        <p>(Spiritual Site for Visitors)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-45.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jawzjan River</h5>
+                        <p>(Riverfront Activities)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">How to Reach Jawzjan?</h4>
+
+        <div class="reach-method">
+            <div class="row justify-content-center g-4">
+
+                <!-- By Air -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Air</h5>
+                                <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-airplane fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Jawzjan is served by Sheberghan Airport, but it has limited or no commercial flights.
+                                Most travelers use the airport in Mazar-i-Sharif and continue by road.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Air -->
+
+                <!-- By Road -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Road</h5>
+                                <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-car fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Jawzjan is well connected by road, especially through highways linking Sheberghan with
+                                Mazar-i-Sharif and other northern cities.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Road -->
+
+                <!-- By Train -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Train</h5>
+                                <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-train fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Jawzjan is home to part of Afghanistan’s limited railway system, connecting to the
+                                Hairatan border. However, passenger service is minimal or unavailable.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Train -->
+
+            </div>
+        </div>
+
+        <h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+        <div class="container">
+            <!-- FAQ Section -->
+            <div class="faq">
+                <div class="faq-sec p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="accordion" id="accordionFaq">
+
+                                <!-- Q1 -->
+                                <div class="accordion-item mb-3 pb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                            When is the best time to visit Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The best time to visit Jawzjan is during spring (March to May) and autumn
+                                                (September to November), when temperatures are comfortable and
+                                                landscapes are vibrant.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q2 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                            aria-controls="faq2">
+                                            How can I reach Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Jawzjan can be reached mainly by road from neighboring provinces like
+                                                Balkh (Mazar-i-Sharif) and Faryab. Air travel to Mazar-i-Sharif followed
+                                                by road is a common route.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q3 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                            aria-controls="faq3">
+                                            What are some famous tourist attractions in Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Notable attractions include the ruins of the medieval city of Balkh
+                                                nearby, the mausoleum of Sheikh al-Mashayekh, and the scenic landscapes
+                                                around Sheberghan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q4 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                            aria-controls="faq4">
+                                            Is Jawzjan safe for tourists?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Security conditions can change. Travelers should consult current travel
+                                                advisories and speak with local contacts or embassies before visiting.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q5 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                            aria-controls="faq5">
+                                            What is the local currency used in Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The Afghan Afghani (AFN) is the official currency used throughout Jawzjan
+                                                and Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q6 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                            aria-controls="faq6">
+                                            Do I need a visa to visit Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Yes, a visa is required for most foreign visitors to Afghanistan. Contact
+                                                the Afghan embassy or consulate in your country for more information.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q7 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                            aria-controls="faq7">
+                                            What language is spoken in Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Turkmen and Uzbek are widely spoken in Jawzjan, along with Dari. Many
+                                                residents are bilingual or trilingual.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q8 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                            aria-controls="faq8">
+                                            What kind of clothes should I wear in Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Dress modestly and respectfully. Men should wear long trousers and
+                                                shirts; women should cover their hair and wear loose-fitting clothing.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q9 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                            aria-controls="faq9">
+                                            What is the local cuisine like in Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Jawzjan cuisine includes traditional Afghan dishes like kabuli pulao,
+                                                qorma, ashak (dumplings), and hearty soups, with influences from Turkmen
+                                                and Uzbek food traditions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q10 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                            aria-controls="faq10">
+                                            Can I use credit cards in Jawzjan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Credit cards are not commonly used in Jawzjan. Carrying cash in Afghan
+                                                Afghani is recommended for local purchases and transactions.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /FAQ Section -->
+        </div>
+
+
+
+        <!-- Essential Information Section -->
+        <div class="container mt-5">
+            <h3 class="mb-4">Jawzjan Essential Information</h3>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="mb-3">Where to Stay in Jawzjan?</h5>
+                    <p>
+                        Jawzjan offers modest accommodations, especially in Sheberghan, the provincial capital. While
+                        luxury options are limited, visitors can find basic hotels, guesthouses, and local inns that
+                        provide comfort and hospitality.
+                    </p>
+                    <p>
+                        Staying in Sheberghan is convenient for exploring nearby cultural sites and accessing local
+                        markets. It's advisable to choose well-reviewed and secure lodging, especially for international
+                        travelers.
+                    </p>
+                    <p>
+                        Booking through local tour providers or contacting hotels in advance is recommended. Local
+                        hospitality is known to be warm, and residents often assist travelers in finding safe and
+                        comfortable places to stay.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Major Activities for Tourists in Jawzjan -->
+        <div class="container mt-5">
+            <h5 class="mb-4">Major Activities for Tourists in Jawzjan</h5>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Jawzjan is known for its rich cultural heritage and scenic plains. Tourists can visit
+                        Sheberghan’s historic sites, local bazaars, and shrines such as the Mausoleum of Khwaja Abu Nasr
+                        Parsa.
+                    </p>
+                    <p>
+                        Visitors can explore traditional weaving workshops, famous for producing Afghan carpets and
+                        kilims, and purchase authentic handicrafts from local artisans.
+                    </p>
+                    <p>
+                        The surrounding countryside is ideal for short nature walks and experiencing rural Afghan life.
+                        Seasonal festivals and cultural events also provide a unique insight into local traditions.
+                    </p>
+                    <p>
+                        Culinary experiences include regional specialties such as rice dishes, grilled meats, and local
+                        breads served with green tea. Engaging with the culture, history, and people of Jawzjan makes
+                        for a memorable and enriching visit.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Tips Before Visiting Samangan -->
+        <div class="container mt-5">
+            <h5 class="mb-4">A Few Tips Before Visiting Jawzjan</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Jawzjan has a blend of traditional and semi-urban culture — dress modestly
+                    and respectfully, particularly when visiting religious or rural areas.</li>
+                <li class="list-group-item">Having a local guide or someone familiar with Sheberghan and surrounding
+                    areas is advisable for a smoother travel experience.</li>
+                <li class="list-group-item">Always carry valid identification, and keep both digital and printed copies
+                    of essential documents.</li>
+                <li class="list-group-item">Avoid remote travel after dark and stay updated on local news and safety
+                    advisories.</li>
+                <li class="list-group-item">Haggling in local bazaars is common — don’t hesitate to negotiate prices
+                    when shopping.</li>
+                <li class="list-group-item">Stay well-hydrated, especially in summer months, and drink only clean or
+                    bottled water.</li>
+                <li class="list-group-item">Prefer registered taxis or transportation recommended by locals or your
+                    host.</li>
+                <li class="list-group-item">Learning a few basic Dari or Uzbek phrases can enhance your interactions and
+                    show respect to the local community.</li>
+            </ul>
+        </div>
+
+
+        <!-- Jawzjan Map Section -->
+        <div class="container mt-5">
+            <h4 class="mb-4">Map of Jawzjan</h4>
+            <div class="ratio ratio-16x9">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33654.479195169285!2d65.73759226035157!3d36.65771959984609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38c7b2fc4f2f6cf1%3A0xf729ef7e52c8ec6!2sSheberghan%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719249905678!5m2!1sen!2s"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+                <div class="que-sec text-center">
+                    <h4 class="mb-3">Have Any Other Questions?</h4>
+                    <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact
+                        us. We will answer you shortly!</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="contact-us.html"
+                            class="btn btn-primary d-flex align-items-center justify-content-center">
+                            Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}

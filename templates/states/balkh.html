@@ -1,0 +1,1307 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Balkh Tourism</span> </h1>
+                        <h6 class="text-light mx-auto">A Land of Ancient Heritage, Cultural Richness, Vibrant Traditions, and Warm Hospitality
+                        </h6>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Card centered -->
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-6">
+                                <div class="card banner-form mb-0">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent mb-0 wow fadeInDown"
+                                        data-wow-delay="0.1s"
+                                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Festivals</h5>
+                                            <p>Get to know the rich culture, fairs, and festivals of Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row">
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Condos</a></h6>
+                                        <p class="fs-14">216 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-02.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Apartments</a></h6>
+                                        <p class="fs-14">569 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-03.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Villas</a></h6>
+                                        <p class="fs-14">129 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-04.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">5 Star Hotels</a></h6>
+                                        <p class="fs-14">600 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">3 Star Hotels</a></h6>
+                                        <p class="fs-14">200 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-06.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">2 Star Hotels</a></h6>
+                                        <p class="fs-14">180 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Balkh Tourism</h4>
+        <p class="mb-1">Balkh, one of the oldest cities in the world, is a treasure trove of history, spirituality, and
+            cultural heritage. Known as the “Mother of Cities,” it boasts ancient ruins, sacred shrines, traditional
+            crafts, and warm, welcoming locals. Balkh offers a unique journey for those interested in historical
+            exploration, Sufi mysticism, natural beauty, and the authentic charm of Northern Afghanistan. Situated near
+            the Amu Darya River and surrounded by fertile plains, it’s an ideal destination for cultural travelers,
+            historians, and spiritual seekers.
+        </p>
+        <h4 class="mb-3 mt-3">Newly Launched Tourist Attractions in Balkh !
+        </h4>
+        <p class="mb-1">Adding to Balkh’s already rich heritage of ancient monuments and sacred sites are newly
+            developed tourist attractions that enhance the experience of visitors. One such highlight is the Balkh
+            Heritage Park, a beautifully landscaped area featuring traditional Afghan architecture, a cultural
+            exhibition center, and serene gardens inspired by Persian design. It also includes a Carpet & Handicrafts
+            Pavilion, where visitors can watch local artisans at work and purchase handcrafted goods.
+
+            Another exciting addition is the Northern Wildlife Reserve, located just outside the city of Mazar-i-Sharif.
+            Known locally as “The Green Zone,” this open-concept park is home to a variety of native Afghan animals and
+            birds. The reserve is designed to blend natural beauty with educational experiences. A special highlight is
+            the Bird Sanctuary, which features more than 400 birds from 25 species, divided into two sections: native
+            Afghan birds and regional migratory species.
+
+            The sanctuary also includes over 20 types of native plants and grasses to create a natural habitat and
+            provide food for the birds. Educational orientations are offered for both children and adults to encourage
+            awareness of biodiversity and conservation. These new attractions are shaping Balkh into a must-visit
+            destination for nature lovers, cultural explorers, and families.</p>
+
+        <h4 class="mb-3 mt-3">Places Associated with Mawlana Jalaluddin Balkhi (Rumi)!
+        </h4>
+        <p class="mb-1">
+
+            Balkh is the birthplace of Mawlana Jalaluddin Balkhi, more widely known as Rumi, the world-renowned Sufi
+            poet and philosopher. The province holds deep spiritual and cultural importance due to its connection with
+            this iconic figure. Several historical and spiritual sites in Balkh allow visitors to walk in the footsteps
+            of Rumi and experience the essence of his teachings.
+
+            Key sites include the Ruins of Old Balkh, where Rumi spent his early years, and Rumi's Birthplace Complex,
+            which is being preserved as a cultural heritage site. Another highlight is the Shrine of Ali in nearby
+            Mazar-i-Sharif, where many pilgrims and spiritual seekers gather—echoing the themes of love, unity, and
+            divine connection found in Rumi's works.
+
+            There are plans to develop a "Rumi Spiritual Trail" that will guide visitors through key locations
+            associated with his life and early influences. This trail will include local mosques, madrasas, Sufi
+            centers, and storytelling spaces that reflect the spiritual legacy of Balkh.</p>
+
+        <h4 class="mb-3 mt-3">Ancient History and Rich Heritage !
+        </h4>
+        <p class="mb-1">Heritage enthusiasts will find Balkh to be a truly awe-inspiring destination. Known as one of
+            the oldest cities in the world, Balkh is often referred to as the “Mother of Cities” due to its deep
+            historical roots that span millennia. The province is home to numerous archaeological sites, ancient ruins,
+            religious landmarks, and cultural relics that reflect its diverse past—from Zoroastrianism and Buddhism to
+            Islam and Sufism.
+
+            Visitors can explore the Ruins of Ancient Balkh, including remains of ancient walls, Buddhist stupas, and
+            old fortresses. The Green Mosque (Masjid-i-Sabz) and No Gumbad Mosque (Nine Domes Mosque) are remarkable
+            Islamic structures reflecting the region’s architectural elegance.
+
+            One of the most spiritually significant sites is the Shrine of Rabia Balkhi, the first known female poet of
+            the Persian language, whose story is deeply rooted in the region’s history. Balkh was also a major center of
+            learning and spirituality, drawing scholars and poets from across the Islamic world.
+
+            Balkh is a paradise for lovers of history and archaeology. Excavations in the region have uncovered
+            artifacts that date back over 3,000 years, including items from the Greco-Bactrian, Kushan, and Islamic
+            periods. These discoveries reveal a rich blend of cultures that once thrived in this land, connecting Balkh
+            to the ancient Silk Road and making it a center of trade, religion, and knowledge.
+
+            Planned heritage walks and guided tours through old city routes are in development, allowing visitors to
+            immerse themselves in the timeless atmosphere of Balkh’s ancient streets.
+
+        </p>
+        <h4 class="mb-3 mt-3">Rich Wildlife: And the Spirit of the North !
+        </h4>
+        <p class="mb-1">One of the hidden treasures of Balkh is its rich and diverse natural landscape, home to a
+            variety of native Afghan wildlife. The scenic beauty of Balkh province ranges from lush plains and river
+            valleys to semi-arid highlands, offering habitats for many species of birds, mammals, and plant life. This
+            unique environment attracts both nature lovers and eco-tourists looking to explore Afghanistan’s
+            lesser-known natural wonders.
+
+            While Balkh may not be home to lions like Gir in Gujarat, it boasts majestic creatures like markhors, ibex,
+            wolves, foxes, and gazelles that roam its open landscapes and foothills. The region is also known for its
+            impressive bird population, including hawks, partridges, cranes, and seasonal migratory birds that pass
+            through the Amu Darya region.
+
+            Plans are underway to develop protected zones such as the Balkh Wildlife Reserve, aimed at conserving
+            endangered species and offering eco-tourism experiences. Visitors can enjoy nature walks, birdwatching, and
+            learn about traditional conservation practices that local communities have followed for generations.
+
+            With its blend of dry woodlands, fertile plains, and river-fed ecosystems, Balkh offers a peaceful retreat
+            into nature—where wildlife thrives, and the connection between people and the land runs deep.
+
+        </p>
+        <h4 class="mb-3 mt-3">Peaceful, Spiritual Escapes !
+        </h4>
+        <p class="mb-1">
+            While Balkh is far from the sea, it offers a different kind of tranquility—peaceful landscapes, quiet
+            gardens, riverbanks, and sacred sites that radiate calm and spiritual energy. These serene settings provide
+            visitors with the same sense of stillness and reflection that many seek on beach vacations.
+
+            Among these peaceful destinations is the Amu Darya River, whose banks offer relaxing views and quiet spaces
+            for picnics, meditation, and nature walks. Not far from Mazar-i-Sharif, you’ll find lush green areas and
+            rural retreats where time seems to slow down, and the hospitality of local villagers makes the experience
+            unforgettable.
+
+            Many of these natural spots are located near sacred shrines and mosques, such as the world-famous Blue
+            Mosque (Shrine of Hazrat Ali) and the Khaja Abu Nasr Parsa Mosque, where visitors can feel both spiritual
+            connection and historical awe.
+
+            Balkh also offers unique ecological gems like salt flats, desert-like plains, and fruit orchards, especially
+            near the spring-fed oases. These locations are perfect for quiet getaways, spiritual retreats, and cultural
+            immersion.
+
+            The best time to visit these peaceful corners of Balkh is from March to May and September to November, when
+            the weather is mild, and the natural surroundings are at their most vibrant.
+        </p>
+        <h4 class="mb-3 mt-3">Bird Watching Sanctuaries !
+        </h4>
+        <p class="mb-1">
+            Birdwatching is a rewarding activity for nature lovers visiting Balkh. The province’s varied
+            landscapes—ranging from river wetlands along the Amu Darya to open plains and orchards—create excellent
+            habitats for many bird species, making Balkh a great spot for birding enthusiasts.
+
+            Some popular birdwatching locations in Balkh include:
+
+            Amu Darya Wetlands: A vital stopover for migratory birds with species such as cranes, herons, and storks.
+
+            Kholm Valley: Known for its rich bird diversity and peaceful natural setting.
+
+            Dehdadi Orchards and Fields: Ideal for spotting songbirds, partridges, and various raptors.
+
+            Sholgara Plains: Wide open spaces attracting flocks of native and migratory birds.
+
+            Though formal bird sanctuaries are still in development, Balkh offers abundant natural bird habitats that
+            are accessible to visitors, making it an emerging destination for eco-tourism and birdwatching in
+            Afghanistan.
+        </p>
+        <h4 class="mb-3 mt-3">Enjoy Leisure and Outdoor Sports !
+        </h4>
+        <p class="mb-1">
+            While Balkh is not yet widely known for golf, the region is developing new opportunities for outdoor leisure
+            and sports enthusiasts. Plans for establishing golf courses and sports clubs are underway to provide locals
+            and tourists with relaxing and recreational experiences amidst Balkh’s beautiful landscapes.
+
+            In the meantime, visitors can enjoy activities such as:
+
+            Traditional Afghan horseback riding through the countryside and foothills
+
+            Hiking and nature walks in scenic areas around Balkh city and the Amu Darya riverbanks
+
+            Local sports events and cultural festivals that showcase Afghan games and traditions
+
+            As tourism infrastructure grows, Balkh aims to welcome more modern leisure facilities, including golf and
+            other sports venues, offering a unique blend of natural beauty and recreational activities.
+
+
+        </p>
+        <h4 class="mb-3 mt-3">Wellness Tourism in Balkh !
+        </h4>
+        <p class="mb-1">
+            Balkh is emerging as a peaceful destination for wellness and rejuvenation. With its serene landscapes,
+            spiritual heritage, and traditional healing practices, it offers an ideal escape from modern-day stress.
+
+            Visitors seeking wellness in Balkh can explore:
+
+            Traditional Afghan healing practices, such as herbal medicine and natural remedies
+
+            Relaxing hammams (public baths), offering a cultural and therapeutic experience
+
+            Spiritual retreats in and around ancient shrines and Sufi lodges
+
+            Quiet countryside getaways for meditation, yoga, and personal reflection
+
+            As wellness tourism grows, Balkh plans to develop more eco-lodges, wellness centers, and holistic retreats,
+            offering visitors a unique combination of Afghan culture and natural healing.
+
+
+        </p>
+        <h4 class="mb-3 mt-3"> Top 10 Tourist Destinations of Balkh Province</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Green Mosque (Masjid
+                    Sabz)</strong> — A 15th-century Timurid marvel with stunning turquoise tiles and tomb of Khwaja Abu
+                Nasr Parsa
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>No Gombad Mosque (Haji Piyada /
+                    Nine-Domes Mosque)
+
+                </strong> — One of Afghanistan’s earliest Islamic structures (8th–9th century), notable for its nine
+                domes
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Bala Hisar Fortress (Citadel of
+                    Balkh)</strong>
+                — Ancient fortifications with views over the ruins; dates back to Alexander the Great’s era .
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Takht-e Rustam (Throne of
+                    Rostam)</strong> — A Hellenistic–Buddhist stupa carved into a hillside, symbolizing Balkh’s
+                multi-faith heritage
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>
+                    Ruins of Ancient Balkh</strong> — Remnants of Bactrian walls, Zoroastrian fire temples, Buddhist
+                monastery sites—echoes of millennia-old civilizations
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong> Tomb of Rabia Balkhi</strong> —
+                Mausoleum of Persia’s first-known female poet, set in peaceful gardens
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong> Shrine of Hazrat Ali (“Blue
+                    Mosque”)</strong> — Pilgrimage site with magnificent blue-tiled dome, central to Nawroz celebrations
+                in Mazar-i-Sharif
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Zadian Minaret</strong> —
+                An isolated 12th-century (or older) Seljuk-era minaret in Dawlatabad District
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Naw Bahar (Nava Vihara
+                    Monastery)</strong> —
+                Site of ancient Buddhist viharas dating from 2nd century CE, a key Silk Road religious center
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Balkh Museum</strong> —
+                Features artifacts spanning Achaemenid, Buddhist, Islamic eras; hosts rotating archaeological exhibits
+            </p>
+        </div>
+        <h4 class="mb-3 mt-3">Best Time for Visiting Balkh for Holidays
+        </h4>
+        <p class="mb-1">
+            Balkh experiences hot summers, so the ideal time to visit is during the cooler months from October to March.
+            During this period, the weather is pleasant and comfortable, making it perfect for sightseeing and enjoying
+            outdoor activities.
+        </p>
+
+        <h4 class="mb-3 mt-3">Quick Information About Balkh Province</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>Central Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Mazar-i-Sharif
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>36.7550° N, 67.8959° E</td>
+                    </tr>
+                    <tr>
+                        <th>Total Population</th>
+                        <td>Approximately 1,250,000 (estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 17,800 sq km
+
+                            Districts: 15</td>
+                    </tr>
+                    <tr>
+                        <th>Districts</th>
+                        <td> 15</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (primarily Sunni), small Shia minority</td>
+                    </tr>
+                    <tr>
+                        <th> Major Ethnic Groups</th>
+                        <td>Tajiks, Uzbeks, Hazaras, Pashtuns, Turkmens</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Dari, Pashto, Uzbek, Turkmen, Hazaragi Urdu, English</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Animal</th>
+                        <td>Markhor (wild goat native to the region)</td>
+                    </tr>
+                    <tr>
+                        <th>City Flower</th>
+                        <td>Wild Tulip</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Bird</th>
+                        <td>Golden Eagle</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Tree</th>
+                        <td>Pistachio Tree</td>
+                    </tr>
+                    <tr>
+                        <th>Major Cities and Towns</th>
+                        <td> Mazar-i-Sharif, Aqcha, Sholgara, Balkh City, Dawlatabad</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+
+<h4 class="mb-4 mt-4">Best Selling Balkh Tour Packages</h4>
+<style>
+    .truncate-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<div class="travelers-slider owl-carousel owl-loaded owl-drag">
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                    alt="Top Balkh Travel Packages for You"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Top Balkh Travel Packages for You">
+                        Top Balkh Travel Packages for You
+                    </a>
+                </h6>
+                <p>17 Nights - 18 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                    alt="Explore the Beauty of Balkh – Popular Tour Deals"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title"
+                        title="Explore the Beauty of Balkh – Popular Tour Deals">
+                        Explore the Beauty of Balkh – Popular Tour Deals
+                    </a>
+                </h6>
+                <p>8 Nights - 7 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                    alt="Most Loved Tour Packages in Balkh"></a>
+            <span class="overlay-icon"><i class="isax isax-building"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Most Loved Tour Packages in Balkh">
+                        Most Loved Tour Packages in Balkh
+                    </a>
+                </h6>
+                <p>6 Nights - 7 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                    alt="Discover Balkh: Top Travel Experiences"></a>
+            <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title"
+                        title="Discover Balkh: Top Travel Experiences">
+                        Discover Balkh: Top Travel Experiences
+                    </a>
+                </h6>
+                <p>5 Nights - 6 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                    alt="Balkh’s Best Tour Packages – Book Now!"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title"
+                        title="Balkh’s Best Tour Packages – Book Now!">
+                        Balkh’s Best Tour Packages – Book Now!
+                    </a>
+                </h6>
+                <p>4 Nights - 5 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                    alt="Classic Balkh Escapes – Bestselling Holiday Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title"
+                        title="Classic Balkh Escapes – Bestselling Holiday Tour">
+                        Classic Balkh Escapes – Bestselling Holiday Tour
+                    </a>
+                </h6>
+                <p>3 Nights - 4 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+</div>
+
+
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Kabul</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+
+            <div class="row g-3">
+                <!-- Spring -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Summer Season in Balkh</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 30°C to 40°C, </p>
+                            <p class="card-text">Summers in Balkh last from June to August. Temperatures typically range
+                                between 30°C to 40°C, with hot and dry weather conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Monsoon Season in Balkh</h5>
+                            <p class="mb-2"><strong>Months:</strong> July to September</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 25°C to 35°C</p>
+                            <p class="card-text">Balkh experiences a very mild monsoon, mainly from July to September,
+                                with occasional rainfall. Temperatures during this time range from 25°C to 35°C.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Autumn -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Winter Season in Balkh</h5>
+                            <p class="mb-2"><strong>Months:</strong> December to February</p>
+                            <p class="mb-2"><strong>Temperature:</strong> -2°C</p>
+                            <p class="card-text">
+                                Winters in Balkh last from December to February. Temperatures can drop to as low as -2°C
+                                during nights and rise up to 15°C during the day. The weather is cold but clear, making
+                                it a good time for sightseeing.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+      <h4 class="mb-4 mt-4">Best Places to Visit in Balkh</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Mazar-e-Sharif</h5>
+                <p>(Shrine of Hazrat Ali)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Balkh Archaeological Site</h5>
+                <p>(Ancient City Ruins)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Blue Mosque</h5>
+                <p>(Shrine of Hazrat Ali)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Ancient Balkh City Walls</h5>
+                <p>(Historical Remains)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Aina-e-Badakhshan</h5>
+                <p>(Scenic Gardens)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Balkh National Museum</h5>
+                <p>(Historical Artifacts)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+      <h4 class="mb-4 mt-4">Popular Tourist Attractions in Balkh</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Mazar-e-Sharif</h5>
+                <p>(Shrine of Hazrat Ali)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Balkh Archaeological Site</h5>
+                <p>(Ancient City Ruins)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Blue Mosque</h5>
+                <p>(Shrine of Hazrat Ali)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Ancient Balkh City Walls</h5>
+                <p>(Historical Remains)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Aina-e-Badakhshan</h5>
+                <p>(Scenic Gardens)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Balkh National Museum</h5>
+                <p>(Historical Artifacts)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+
+       <h4 class="mb-4 mt-4">Top Things to Do in Balkh</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Mazar-e-Sharif</h5>
+                <p>(Shrine of Hazrat Ali)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Balkh Archaeological Site</h5>
+                <p>(Ancient City Ruins)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Blue Mosque</h5>
+                <p>(Shrine of Hazrat Ali)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Ancient Balkh City Walls</h5>
+                <p>(Historical Remains)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Aina-e-Badakhshan</h5>
+                <p>(Scenic Gardens)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Balkh National Museum</h5>
+                <p>(Historical Artifacts)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+
+       <h4 class="mb-4 mt-4">How to Reach Balkh?</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Air</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Mazar-i-Sharif Airport serves Balkh province with domestic and some international flights, connecting it to major cities.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Road</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Balkh is accessible by highways from other major cities in Afghanistan, with travel times varying based on road conditions.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Train -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Train</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-train fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Currently, Balkh does not have train services; air and road transport remain the primary travel options.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Train -->
+    
+            </div>
+        </div>
+
+     <h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    When is the best time to visit Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The best time to visit Balkh is during spring (March to May) and autumn (September to November), when the weather is mild and pleasant.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                    aria-controls="faq2">
+                                    How can I reach Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>You can reach Balkh via Mazar-i-Sharif Airport which connects to several domestic and some international flights. Road travel is also common, with highways linking Balkh to other major cities.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                    aria-controls="faq3">
+                                    What are some famous tourist attractions in Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Notable sites include the ancient city of Balkh, Shrine of Hazrat Ali, Blue Mosque, and nearby archaeological sites that showcase Afghanistan's rich history.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                    aria-controls="faq4">
+                                    Is Balkh safe for tourists?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Security conditions can vary. It is recommended to check updated travel advisories and consult local authorities or embassies before traveling to Balkh.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                    aria-controls="faq5">
+                                    What is the local currency used in Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The local currency in Balkh, as throughout Afghanistan, is the Afghan Afghani (AFN).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                    aria-controls="faq6">
+                                    Do I need a visa to visit Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Yes, most foreign nationals require a visa to enter Afghanistan. Check with the Afghan embassy or consulate in your country for visa requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                    aria-controls="faq7">
+                                    What language is spoken in Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Dari and Pashto are the main languages spoken in Balkh. Many locals also understand some English, especially in urban areas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                    aria-controls="faq8">
+                                    What kind of clothes should I wear in Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Visitors should dress conservatively. Men are advised to wear long pants and shirts, and women should cover their hair and dress modestly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                    aria-controls="faq9">
+                                    What is the local cuisine like in Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Balkh cuisine features dishes similar to other Afghan regions, such as kabuli pulao, kebabs, mantu (dumplings), and hearty bread, often served with green tea.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                    aria-controls="faq10">
+                                    Can I use credit cards in Balkh?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Credit cards are not widely accepted in Balkh. It is best to carry cash in local currency for most purchases.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /FAQ Section -->
+</div>
+
+
+        <!-- Essential Information Section -->
+<div class="container mt-5">
+    <h3 class="mb-4">Balkh Essential Information</h3>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="mb-3">Where to Stay in Balkh?</h5>
+            <p>
+                Balkh offers a variety of accommodations to suit different budgets and preferences. Whether
+                you're a budget traveler or seeking a luxury experience, you'll find suitable lodging across
+                the province. From standard hotels to guesthouses and modest inns, Balkh has options for every traveler.
+            </p>
+            <p>
+                Major areas like Mazar-e-Sharif city center and surrounding neighborhoods host many of the province's
+                accommodations. Security is an important consideration when choosing where to stay, and many
+                reputable hotels offer guarded premises and transportation services.
+            </p>
+            <p>
+                For bookings, it is advised to use trusted local travel services or contact hotels directly
+                to inquire about the latest availability and prices. Personal recommendations and local
+                agencies can also help ensure a comfortable and safe stay in Balkh.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Major Activities for Tourists in Balkh -->
+<div class="container mt-5">
+    <h5 class="mb-4">Major Activities for Tourists in Balkh</h5>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                Balkh offers a unique cultural and historical experience for travelers. Tourists can explore
+                ancient landmarks such as the famous Blue Mosque in Mazar-e-Sharif, the ancient ruins of Balkh city,
+                and the Shrine of Hazrat Ali.
+            </p>
+            <p>
+                Visitors can stroll through bustling bazaars, shop for local handicrafts, carpets, and traditional souvenirs.
+                Food lovers can indulge in authentic Afghan cuisine like Kabuli Pulao, kebabs, and other regional specialties.
+            </p>
+            <p>
+                Nature enthusiasts can enjoy walks around the nearby lakes and parks, or explore the hills and valleys surrounding the province.
+                The unique Islamic architecture and cultural heritage sites make Balkh a fascinating destination.
+            </p>
+            <p>
+                For a deeper cultural experience, travelers can attend local festivals, traditional music performances,
+                or engage with artisans crafting regional arts and crafts. Photography, historical exploration,
+                and cultural interaction remain some of the most fulfilling activities in Balkh.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Tips Before Visiting Balkh -->
+<div class="container mt-5">
+    <h5 class="mb-4">A Few Tips Before Visiting Balkh</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Balkh has a mix of urban and traditional culture — dress modestly and
+            respectfully, especially when visiting local areas or religious sites.</li>
+        <li class="list-group-item">It’s best to travel with a local guide or someone familiar with the area
+            for a smoother experience.</li>
+        <li class="list-group-item">Carry valid identification and keep digital and physical copies of your
+            documents.</li>
+        <li class="list-group-item">Avoid isolated areas after dark and stay updated with local news or
+            government advisories.</li>
+        <li class="list-group-item">Bargaining is common in local markets — don’t hesitate to negotiate when
+            shopping.</li>
+        <li class="list-group-item">Stay hydrated, especially during dry summer months, and be cautious
+            about drinking untreated water.</li>
+        <li class="list-group-item">Use registered taxis or trusted transportation apps whenever possible.
+        </li>
+        <li class="list-group-item">Learn a few basic Dari or Pashto phrases — locals appreciate it and it
+            builds trust quickly.</li>
+    </ul>  
+</div>
+
+
+            <!-- Balkh Map Section -->
+    <div class="container mt-5">
+        <h4 class="mb-4">Map of Balkh</h4>
+        <div class="ratio ratio-16x9">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24371.68799606977!2d67.10821817641802!3d36.709198660957836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a41e0c9af50821%3A0xc7084e320d4908b0!2sMazar-e-Sharif%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719248624659!5m2!1sen!2s"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-6">
+            <div class="que-sec text-center">
+                <h4 class="mb-3">Have Any Other Questions?</h4>
+                <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact
+                    us. We will answer you shortly!</p>
+                <div class="d-flex justify-content-center">
+                    <a href="contact-us.html"
+                        class="btn btn-primary d-flex align-items-center justify-content-center">
+                        Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
