@@ -279,20 +279,33 @@
                                                                       window.location.href = '{% url 'states:Zabul' %}';  // change this to your actual URL
                                                                     });
                                                                   </script>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Uruzgan-link" class="form-check-label ms-2" style="cursor: pointer;">Uruzgan </label></div>
+                                                                <script>
+                                                                    document.getElementById('Uruzgan-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Uruzgan' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Nimroz-link" class="form-check-label ms-2" style="cursor: pointer;">Nimroz </label></div>
+                                                                <script>
+                                                                    document.getElementById('Nimroz-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Nimroz' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
+                                                                <!-- <div class="d-flex align-items-center ps-0 mb-2"><label id="Ghazni-link" class="form-check-label ms-2" style="cursor: pointer;">Ghazni </label></div> -->
+                                                                <!-- <script>
+                                                                    document.getElementById('Ghazni-link').addEventListener('click', function () {
+                                                                     
+                                                                    });
+                                                                  </script> -->
+                                                                <div class="d-flex align-items-center ps-0 mb-2"><label id="Paktika-link" class="form-check-label ms-2" style="cursor: pointer;">Paktika </label></div>
+                                                                <script>
+                                                                    document.getElementById('Paktika-link').addEventListener('click', function () {
+                                                                      window.location.href = '{% url 'states:Paktika' %}';  // change this to your actual URL
+                                                                    });
+                                                                  </script>
                                                                
+                                                              
                                                                 
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Uruzgan</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Nimroz</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Ghazni</label>
-                                                                </div>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2">Paktika</label>
-                                                                </div>
                                                             </div>
                                                             <a href="javascript:void(0);" class="more-view fw-medium fs-14">Show More</a>
                                                         </div>

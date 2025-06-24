@@ -1,0 +1,946 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Uruzgan Tourism</span> </h1>
+                        <p class="text-light mt-3">
+                            Uruzgan is a rugged, mountainous province in central Afghanistan, known for its dramatic landscapes,
+                            traditional Pashtun culture, and historical significance. The province offers a glimpse into
+                            Afghanistan's tribal heritage and untouched natural beauty.
+                        </p>
+
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Cards -->
+                        <div class="row justify-content-center mb-4">
+                            <!-- Festival 1: Nowruz -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.1s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Nowruz Festival</h5>
+                                            <p>Celebrated by local communities with traditional meals and family gatherings, marking the Afghan New Year.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Festival 2: Harvest Season -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.2s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Harvest Season</h5>
+                                            <p>Local farmers celebrate the almond and apricot harvests with community feasts and small markets.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Festival 3: Tribal Gatherings -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.3s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Tribal Gatherings</h5>
+                                            <p>Traditional jirgas (tribal councils) and community events showcase Uruzgan's rich Pashtun heritage.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row text-center justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Uruzgan Tourism</h4>
+        <p class="mb-1">Uruzgan is a province of rugged mountains and deep valleys in central Afghanistan, known for its traditional Pashtun culture and untouched landscapes. From the towering peaks of the Hindu Kush to the traditional mud-brick villages, Uruzgan offers a glimpse into Afghanistan's tribal heartland.</p>
+
+<h4 class="mb-3 mt-3">Traditional Architecture: Forts, Mosques & Tribal Compounds</h4>
+<p class="mb-1">
+Uruzgan's architecture reflects its tribal heritage, with ancient mud-brick forts and traditional compounds dotting the landscape. The provincial capital, Tarin Kot, features simple mosques and traditional bazaars. The region is known for its qala (fortified compounds) that have stood for centuries, showcasing local building techniques adapted to the harsh climate.
+</p>
+
+<h4 class="mb-3 mt-3">A Rich Tribal Culture with Deep Roots</h4>
+<p class="mb-1">
+Uruzgan's culture is deeply rooted in Pashtun traditions, with strong tribal affiliations shaping daily life. The province maintains traditional customs including hospitality, tribal councils (jirgas), and community-based decision making. While music and dance are limited due to cultural norms, storytelling and poetry remain important cultural expressions.
+</p>
+
+<h4 class="mb-3 mt-3">Explore Dramatic Mountain Landscapes</h4>
+<p class="mb-1">
+Uruzgan offers breathtaking mountain scenery, with rugged peaks, deep valleys, and seasonal rivers. The terrain is challenging but rewards visitors with spectacular views and a sense of untouched wilderness. The province connects to the larger Hindu Kush mountain range, offering opportunities for experienced trekkers.
+</p>
+
+<h4 class="mb-3 mt-3">Traditional Crafts and Local Products</h4>
+<p class="mb-1">
+Uruzgan's markets offer handmade woolen blankets, traditional embroidery, and leather goods crafted by local artisans. The province is also known for its dried fruits, especially almonds and apricots, which are harvested in the summer months and sold in local bazaars.
+</p>
+
+<h4 class="mb-3 mt-3">Simple, Hearty Mountain Cuisine</h4>
+<p class="mb-1">
+Uruzgan's cuisine reflects its pastoral traditions, with dishes centered around lamb, dairy products, and local grains. Try the hearty shorwa (meat stew), freshly baked naan, and local varieties of pilaf. Meals are often accompanied by yogurt, green tea, and seasonal fruits.
+</p>
+
+<h4 class="mb-3 mt-3">Basic Accommodation in Traditional Style</h4>
+<p class="mb-1">
+Uruzgan offers simple guesthouses and traditional village stays rather than luxury hotels. Accommodations are basic but provide an authentic experience of rural Afghan hospitality. Visitors typically stay in family compounds or small local inns in Tarin Kot.
+</p>
+
+<h4 class="mb-3 mt-3">Adventure in Rugged Terrain</h4>
+<p class="mb-1">
+Uruzgan's challenging landscape offers opportunities for trekking and exploration for experienced adventurers. The mountain valleys provide stunning vistas and a chance to experience Afghanistan's untouched wilderness. Due to security considerations, travel should be carefully planned with local guides.
+</p>
+
+<h4 class="mb-3 mt-3">Spiritual Sites and Local Shrines</h4>
+<p class="mb-1">
+Uruzgan features simple mosques and local shrines that are important community gathering places. These religious sites, often located in scenic mountain settings, reflect the deep Islamic faith of the local population. Religious events follow the Islamic calendar with community prayers and feasts.
+</p>
+
+<h4 class="mb-3 mt-3">Top 10 Places to Visit in Uruzgan</h4>
+<div class="mb-4">
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Tarin Kot</strong> — The provincial capital with local markets and government buildings.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Deh Rawud Valley</strong> — A scenic valley with traditional villages and farmland.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Chora District</strong> — Known for its dramatic mountain landscapes.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Shahidi Bazaar</strong> — Traditional market in Tarin Kot for local crafts.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Gizab District</strong> — Remote area with stunning natural beauty.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Khas Uruzgan</strong> — Historic area with ancient irrigation systems.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Chenartu Valley</strong> — Picturesque valley with seasonal streams.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Traditional Qalas</strong> — Visit ancient mud-brick forts in the countryside.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Local Mosques</strong> — Simple but beautiful places of worship.</p>
+    <p><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Mountain Viewpoints</strong> — Stunning vistas throughout the province.</p>
+</div>
+
+<h4 class="mb-3 mt-3">Best Time for Visiting Uruzgan</h4>
+<p class="mb-1">
+The best time to visit Uruzgan is between April and June when temperatures are mild and the mountain valleys are green. September to October also offers pleasant weather after the summer heat. Winters can be harsh with snow blocking mountain passes.
+</p>
+
+<h4 class="mb-3 mt-3">A Quick Information About Uruzgan</h4>
+<div style="overflow-x:auto;">
+    <table class="table table-bordered" style="min-width: 700px;">
+        <tbody>
+            <tr>
+                <th>Region</th>
+                <td>Central Afghanistan</td>
+            </tr>
+            <tr>
+                <th>Capital of Province</th>
+                <td>Tarin Kot</td>
+            </tr>
+            <tr>
+                <th>Coordinates</th>
+                <td>32.8000° N, 66.0000° E</td>
+            </tr>
+            <tr>
+                <th>Estimated Population</th>
+                <td>Approximately 436,000 (2021 estimate)</td>
+            </tr>
+            <tr>
+                <th>Geographical Area</th>
+                <td>About 12,640 square kilometers</td>
+            </tr>
+            <tr>
+                <th>Districts in Uruzgan Province</th>
+                <td>6 districts</td>
+            </tr>
+            <tr>
+                <th>Major Religions</th>
+                <td>Islam (primarily Sunni)</td>
+            </tr>
+            <tr>
+                <th>Ethnic Groups</th>
+                <td>Pashtun (majority), Hazara, others</td>
+            </tr>
+            <tr>
+                <th>Languages Spoken</th>
+                <td>Pashto (primary), Dari</td>
+            </tr>
+            <tr>
+                <th>Province Animal Symbol</th>
+                <td>Markhor (wild goat)</td>
+            </tr>
+            <tr>
+                <th>Province Flower</th>
+                <td>Wild Tulip</td>
+            </tr>
+            <tr>
+                <th>Traditional Dance</th>
+                <td>Attan (performed at special occasions)</td>
+            </tr>
+            <tr>
+                <th>Popular Sports</th>
+                <td>Buzkashi, wrestling</td>
+            </tr>
+            <tr>
+                <th>Major Tourist Areas</th>
+                <td>Tarin Kot, Deh Rawud Valley, mountain areas</td>
+            </tr>
+            <tr>
+                <th>Major Attractions</th>
+                <td>Mountain landscapes, traditional villages, local bazaars</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="mb-4 mt-4">Best Selling Uruzgan Tour Packages</h4>
+<style>
+    .truncate-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<div class="travelers-slider owl-carousel owl-loaded owl-drag">
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top" alt="Explore Uruzgan's Mountains"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Explore Uruzgan's Mountains">
+                        Mountain Explorer
+                    </a>
+                </h6>
+                <p>7 Nights - 8 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top" alt="Cultural Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Cultural Tour">
+                        Tribal Culture Experience
+                    </a>
+                </h6>
+                <p>5 Nights - 6 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top" alt="Village Life"></a>
+            <span class="overlay-icon"><i class="isax isax-building"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Village Life">
+                        Village Life Discovery
+                    </a>
+                </h6>
+                <p>4 Nights - 5 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top" alt="Nature Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Nature Tour">
+                        Valley Explorer
+                    </a>
+                </h6>
+                <p>3 Nights - 4 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Best Time to Visit Uruzgan</h4>
+        <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+    </div>
+
+    <div class="row g-3">
+        <!-- Spring -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Spring Season in Uruzgan</h5>
+                    <p class="mb-2"><strong>Months:</strong> April to June</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 12°C to 28°C</p>
+                    <p class="card-text">Spring brings mild weather and green valleys, making it ideal for travel before the summer heat.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summer -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-danger">Summer Season in Uruzgan</h5>
+                    <p class="mb-2"><strong>Months:</strong> July to August</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 25°C to 38°C</p>
+                    <p class="card-text">Hot and dry, with harvest activities in the valleys. Early mornings are best for exploration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autumn -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Autumn Season in Uruzgan</h5>
+                    <p class="mb-2"><strong>Months:</strong> September to October</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 15°C to 30°C</p>
+                    <p class="card-text">Pleasant temperatures and clear skies make autumn another good time to visit.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">Best Places to Visit in Uruzgan</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Tarin Kot</h5>
+                <p>(Provincial Capital)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Local Markets</h6>
+                <p class="fs-14">Explore traditional bazaars</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Deh Rawud Valley</h5>
+                <p>(Scenic Valley)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Agriculture</h6>
+                <p class="fs-14">Fertile valley with farms</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chora District</h5>
+                <p>(Mountain Area)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Dramatic Landscapes</h6>
+                <p class="fs-14">Stunning mountain views</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Traditional Qalas</h5>
+                <p>(Ancient Forts)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Historical Sites</h6>
+                <p class="fs-14">Centuries-old structures</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Mountain Viewpoints</h5>
+                <p>(Scenic Spots)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Panoramic Views</h6>
+                <p class="fs-14">Hindu Kush vistas</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+<h4 class="mb-4 mt-4">Popular Tourist Attractions in Uruzgan</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Khas Uruzgan</h5>
+                <p>(Mountain Region)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">18 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Tirin Kot City</h5>
+                <p>(Uruzgan Capital)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">32 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$260</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Gizab River</h5>
+                <p>(Natural Scenery)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">22 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chora Valley</h5>
+                <p>(Agricultural Zone)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">30 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$240</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Historic Forts</h5>
+                <p>(Uruzgan Province)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">15 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Shahidi Baba Shrine</h5>
+                <p>(Cultural Site)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">10 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<h4 class="mb-4 mt-4">Top Things to Do in Uruzgan</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Mountain Trekking</h5>
+                <p>(Outdoor Adventure)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Experienced Guides</h6>
+                <p class="fs-14">Explore rugged terrain</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Village Visits</h5>
+                <p>(Cultural Experience)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Traditional Life</h6>
+                <p class="fs-14">Meet local communities</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Bazaar Shopping</h5>
+                <p>(Local Crafts)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Handmade Goods</h6>
+                <p class="fs-14">Wool and leather items</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Photography Tours</h5>
+                <p>(Scenic Landscapes)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Stunning Views</h6>
+                <p class="fs-14">Capture mountain beauty</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">How to Reach Uruzgan?</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Air</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Uruzgan has limited air service. The nearest major airport is in Kandahar, with connecting flights from Kabul.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Road</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Road access is via Highway 1 from Kandahar or through provincial roads from neighboring provinces. Travel requires local knowledge.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Train -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Train</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-train fs-24"></i>
+                        </span>
+                    </div>
+                    <p>No train service available to Uruzgan. Air and road are the only options.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Train -->
+
+    </div>
+</div>
+
+<h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    When is the best time to visit Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The best time to visit Uruzgan is during spring (April to June) when temperatures are mild and the landscape is green.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                    aria-controls="faq2">
+                                    How can I reach Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Uruzgan is accessible by road from Kandahar or neighboring provinces. Air travel options are very limited.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                    aria-controls="faq3">
+                                    What are some famous places in Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Tarin Kot (provincial capital), Deh Rawud Valley, and the mountain areas of Chora district are notable locations.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                    aria-controls="faq4">
+                                    Is Uruzgan safe for tourists?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Security conditions vary. Consult current travel advisories and work with local guides familiar with the area.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                    aria-controls="faq5">
+                                    What is the local currency used in Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The Afghan Afghani (AFN) is used throughout Uruzgan.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                    aria-controls="faq6">
+                                    Do I need a visa to visit Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Yes, you need an Afghan visa to visit Uruzgan. Check with Afghan embassies for current requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                    aria-controls="faq7">
+                                    What language is spoken in Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Pashto is the primary language, with some Dari speakers in urban areas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                    aria-controls="faq8">
+                                    What kind of clothes should I wear in Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Conservative dress is required. Men should wear long pants and shirts, women should cover their hair and wear loose clothing.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                    aria-controls="faq9">
+                                    What is the local cuisine like in Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Simple, hearty meals featuring lamb, bread, rice, and dairy products. Fresh and dried fruits are common.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                    aria-controls="faq10">
+                                    Can I use credit cards in Uruzgan?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>No, Uruzgan operates on a cash economy. Bring sufficient Afghan currency.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Uruzgan Map Section -->
+<div class="container mt-5">
+    <h4 class="mb-4">Map of Uruzgan</h4>
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27794.00808326713!2d66.0021379699728!3d32.800000000000026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4a9d8a9b0b0b0b%3A0x9b0b0b0b0b0b0b0b!2sUruzgan%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719252086420!5m2!1sen!2s"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+
+        
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6">
+                    <div class="que-sec text-center">
+                        <h4 class="mb-3">Have Any Other Questions?</h4>
+                        <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact us. We will answer you shortly!</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                                Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+<!-- /Hero Section -->
+{% endblock %}
