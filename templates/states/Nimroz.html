@@ -1,0 +1,1009 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Nimroz Tourism</span> </h1>
+                        <p class="text-light mt-3">
+                            Nimroz is a unique province in southwestern Afghanistan, known for its desert landscapes, 
+                            border with Iran, and the historic city of Zaranj. It offers a distinct cultural experience 
+                            with Baloch traditions, ancient trade routes, and warm desert hospitality.
+                        </p>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Cards -->
+                        <div class="row justify-content-center mb-4">
+                            <!-- Festival 1: Nowruz -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.1s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Nowruz Festival</h5>
+                                            <p>Nowruz marks the Afghan New Year. Families in Nimroz celebrate with traditional meals and community gatherings.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Festival 2: Baloch Cultural Festival -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.2s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Baloch Cultural Festival</h5>
+                                            <p>Nimroz is home to Baloch traditions featuring unique music, handicrafts, and traditional clothing.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Festival 3: Handmade Goods -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.3s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Handmade Goods</h5>
+                                            <p>Explore local handmade carpets, embroidery, and traditional Baloch jewelry made by artisans in Nimroz.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row text-center justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Nimroz Tourism</h4>
+        <p class="mb-1">Nimroz is a province of stark desert beauty and cultural richness, known for its unique Baloch traditions, historic trade routes, and welcoming communities. From the vast deserts to the border city of Zaranj, Nimroz offers visitors a glimpse into a distinct way of life in Afghanistan's southwest region.</p>
+
+<h4 class="mb-3 mt-3">Architectural Splendour: Desert Forts and Traditional Baloch Homes</h4>
+<p class="mb-1">
+Nimroz features traditional Baloch architecture with mud-brick homes designed to stay cool in the desert heat. The provincial capital Zaranj shows influences from both Afghan and Persian architectural styles. Ancient caravanserais along historic trade routes can still be found in the desert, telling stories of Nimroz's commercial past.
+</p>
+
+<h4 class="mb-3 mt-3">A Rich Blend of Baloch Culture, Local Festivals, and Traditions</h4>
+<p class="mb-1">
+In Nimroz, the predominant Baloch culture shines through unique traditions, handicrafts, and community celebrations. The province celebrates Nowruz with local variations and maintains distinct Baloch musical traditions. Storytelling and poetry are particularly valued in Nimroz's cultural life, preserving the region's history and values.
+</p>
+
+<h4 class="mb-3 mt-3">Explore Deserts, Oases, and Unique Landscapes</h4>
+<p class="mb-1">
+Nimroz offers breathtaking desert landscapes, with rolling sand dunes and occasional oases providing striking contrasts. The Helmand River delta area creates wetlands that attract migratory birds. The province's stark beauty is particularly dramatic at sunrise and sunset when the desert colors come alive.
+</p>
+
+<h4 class="mb-3 mt-3">Shop for Baloch Handicrafts and Local Products</h4>
+<p class="mb-1">
+Nimroz's markets offer exquisite Baloch embroidery, handmade carpets with distinctive patterns, and traditional jewelry. Visitors can also find dates and other desert-grown produce. These crafts and products reflect the local talent and adaptation to the desert environment.
+</p>
+
+<h4 class="mb-3 mt-3">From Balochi Sajji to Date-based Sweets: Enjoy Local Cuisine</h4>
+<p class="mb-1">
+Nimroz's cuisine features Baloch specialties like Sajji (whole roasted lamb) and Kaak bread cooked in traditional ovens. Dates feature prominently in both savory dishes and sweets. The province is also known for its strong, cardamom-infused tea served in small glasses.
+</p>
+
+<h4 class="mb-3 mt-3">Desert Hospitality and Simple Accommodations</h4>
+<p class="mb-1">
+While Nimroz doesn't have luxury resorts, travelers can experience genuine desert hospitality in local guesthouses. These stays offer warm welcomes, traditional meals, and a chance to experience the quiet beauty of desert nights. It's an ideal place for those seeking authentic cultural experiences.
+</p>
+
+<h4 class="mb-3 mt-3">Adventure in the Deserts of Nimroz</h4>
+<p class="mb-1">
+Nimroz offers unique desert experiences including camel rides, desert camping, and visits to oases. The shifting sand dunes create dramatic landscapes perfect for photography. The province's border location also gives it a distinct cultural flavor worth exploring.
+</p>
+
+<h4 class="mb-3 mt-3">Spiritual Sites and Peaceful Retreats</h4>
+<p class="mb-1">
+Nimroz features simple mosques and shrines that serve as community gathering points. These places of worship reflect the province's deep Islamic faith adapted to desert conditions. Religious festivals are celebrated with particular devotion in Nimroz's communities.
+</p>
+
+<h4 class="mb-3 mt-3">Top 10 Places to Visit in Nimroz</h4>
+<div class="mb-4">
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Zaranj City</strong> — The capital of Nimroz with bustling border markets.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Helmand River Delta</strong> — A unique wetland area in the desert.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Chahar Burjak</strong> — A district known for its desert landscapes.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kang District</strong> — Features traditional Baloch settlements.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Desert Caravanserais</strong> — Historic trade route stops in the desert.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Baloch Villages</strong> — Experience traditional Baloch hospitality.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Sand Dunes</strong> — Dramatic desert landscapes perfect for photography.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Local Bazaars</strong> — Find unique Baloch handicrafts and jewelry.</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Border Areas</strong> — Experience the cultural mix at the Iran border.</p>
+    <p><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Desert Oases</strong> — Small green havens in the vast desert.</p>
+</div>
+
+<h4 class="mb-3 mt-3">Best Time for Visiting Nimroz</h4>
+<p class="mb-1">
+The best time to visit Nimroz is between October and April, when desert temperatures are more moderate. Winters are mild during the day but can be cold at night. Spring brings occasional wildflowers after rains, creating beautiful contrasts in the desert landscape.
+</p>
+
+<h4 class="mb-3 mt-3">A Quick Information About Nimroz</h4>
+<div style="overflow-x:auto;">
+    <table class="table table-bordered" style="min-width: 700px;">
+        <tbody>
+            <tr>
+                <th>Region</th>
+                <td>Southwestern Afghanistan</td>
+            </tr>
+            <tr>
+                <th>Capital of Province</th>
+                <td>Zaranj</td>
+            </tr>
+            <tr>
+                <th>Coordinates</th>
+                <td>31.1120° N, 62.3190° E</td>
+            </tr>
+            <tr>
+                <th>Estimated Population</th>
+                <td>Approximately 180,000 (2021 estimate)</td>
+            </tr>
+            <tr>
+                <th>Geographical Area</th>
+                <td>About 41,000 square kilometers</td>
+            </tr>
+            <tr>
+                <th>Districts in Nimroz Province</th>
+                <td>5 districts</td>
+            </tr>
+            <tr>
+                <th>Major Religions</th>
+                <td>Islam (primarily Sunni)</td>
+            </tr>
+            <tr>
+                <th>Ethnic Groups</th>
+                <td>Baloch, Pashtun, Tajik</td>
+            </tr>
+            <tr>
+                <th>Languages Spoken</th>
+                <td>Balochi, Dari, Pashto</td>
+            </tr>
+            <tr>
+                <th>Province Animal Symbol</th>
+                <td>Camel (symbolic of desert life)</td>
+            </tr>
+            <tr>
+                <th>Province Flower</th>
+                <td>Desert Rose</td>
+            </tr>
+            <tr>
+                <th>Province Bird</th>
+                <td>Desert Eagle Owl</td>
+            </tr>
+            <tr>
+                <th>Province Tree</th>
+                <td>Date Palm</td>
+            </tr>
+            <tr>
+                <th>Traditional Dance</th>
+                <td>Balochi folk dances</td>
+            </tr>
+            <tr>
+                <th>Popular Sports</th>
+                <td>Camel racing, Wrestling</td>
+            </tr>
+            <tr>
+                <th>Major Tourist Areas</th>
+                <td>Zaranj, Chahar Burjak, Helmand River Delta</td>
+            </tr>
+            <tr>
+                <th>Major Attractions</th>
+                <td>Desert landscapes, Baloch culture, border markets, historic trade routes</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h4 class="mb-4 mt-4">Best Selling Nimroz Tour Packages</h4>
+<style>
+    .truncate-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<div class="travelers-slider owl-carousel owl-loaded owl-drag">
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top" alt="Explore Nimroz's Desert Beauty"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Explore Nimroz's Desert Beauty">
+                        Explore Nimroz's Desert Beauty
+                    </a>
+                </h6>
+                <p>7 Nights - 8 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top" alt="Baloch Cultural Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Baloch Cultural Tour">
+                        Baloch Cultural Tour
+                    </a>
+                </h6>
+                <p>5 Nights - 6 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top" alt="Desert Adventure Experience"></a>
+            <span class="overlay-icon"><i class="isax isax-building"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Desert Adventure Experience">
+                        Desert Adventure Experience
+                    </a>
+                </h6>
+                <p>4 Nights - 5 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top" alt="Border Markets Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Border Markets Tour">
+                        Border Markets Tour
+                    </a>
+                </h6>
+                <p>3 Nights - 4 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top" alt="Nimroz Highlights"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Nimroz Highlights">
+                        Nimroz Highlights
+                    </a>
+                </h6>
+                <p>2 Nights - 3 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">Best Time to Visit Nimroz</h4>
+        <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+    </div>
+
+    <div class="row g-3">
+        <!-- Winter -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-info">Winter Season in Nimroz</h5>
+                    <p class="mb-2"><strong>Months:</strong> November to February</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 5°C to 20°C</p>
+                    <p class="card-text">Winter brings pleasant daytime temperatures perfect for desert exploration, though nights can be chilly. This is the ideal time for cultural visits and outdoor activities.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spring -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Spring Season in Nimroz</h5>
+                    <p class="mb-2"><strong>Months:</strong> March to April</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 15°C to 30°C</p>
+                    <p class="card-text">Spring offers mild weather and occasional wildflowers after rains. Nowruz celebrations in March add cultural interest to visits during this season.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autumn -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">Autumn Season in Nimroz</h5>
+                    <p class="mb-2"><strong>Months:</strong> October to November</p>
+                    <p class="mb-2"><strong>Temperature:</strong> 18°C to 32°C</p>
+                    <p class="card-text">Autumn sees temperatures cooling from summer highs, making it another good time for desert exploration and cultural visits before winter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">Best Places to Visit in Nimroz</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Zaranj City</h5>
+                <p>(Nimroz Capital)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Border Markets</h6>
+                <p class="fs-14">Explore bustling border bazaars</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Helmand River Delta</h5>
+                <p>(Wetland Area)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Bird Watching</h6>
+                <p class="fs-14">Unique wetland in the desert</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chahar Burjak</h5>
+                <p>(Desert District)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Desert Landscapes</h6>
+                <p class="fs-14">Stunning sand dunes and vistas</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Kang District</h5>
+                <p>(Traditional Villages)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Baloch Culture</h6>
+                <p class="fs-14">Experience traditional Baloch life</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Historic Caravanserais</h5>
+                <p>(Trade Route Stops)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Ancient Commerce</h6>
+                <p class="fs-14">Visit historic desert trade posts</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Desert Oases</h5>
+                <p>(Green Havens)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">Natural Beauty</h6>
+                <p class="fs-14">Discover green spots in the desert</p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">Popular Tourist Attractions in Nimroz</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Zaranj Border Market</h5>
+                <p>(Trade Hub)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Helmand River Delta</h5>
+                <p>(Wetland Area)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chahar Burjak Desert</h5>
+                <p>(Sand Dunes)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Kang Villages</h5>
+                <p>(Traditional Settlements)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Ancient Caravanserais</h5>
+                <p>(Historic Trade Stops)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Desert Oases</h5>
+                <p>(Green Spots)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">Top Things to Do in Nimroz</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Desert Camel Ride</h5>
+                <p>(Traditional Transport)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Border Market Shopping</h5>
+                <p>(Cultural Experience)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Baloch Village Visit</h5>
+                <p>(Cultural Immersion)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Desert Camping</h5>
+                <p>(Overnight Experience)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Traditional Baloch Meal</h5>
+                <p>(Cultural Dining)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Oasis Visit</h5>
+                <p>(Natural Wonder)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">How to Reach Nimroz?</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Air</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Nimroz has a small airport in Zaranj with limited domestic flights. Most international visitors fly to Kabul or Herat first.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Road</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Nimroz is connected to other provinces via highways, though road conditions vary. The trip from Herat takes about 8-10 hours.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Border Crossing -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>From Iran</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-global fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Zaranj has a major border crossing with Iran, making it accessible from Iranian cities like Mashhad.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Border Crossing -->
+
+    </div>
+</div>
+
+<h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    When is the best time to visit Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The best time to visit Nimroz is between October and April when desert temperatures are more moderate. Summers can be extremely hot.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                    aria-controls="faq2">
+                                    How can I reach Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>You can reach Nimroz by limited domestic flights to Zaranj, by road from Herat or Kandahar, or via the Iran border crossing at Zaranj.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                    aria-controls="faq3">
+                                    What are some famous tourist attractions in Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Popular sites include Zaranj's border markets, the Helmand River delta wetlands, Chahar Burjak desert landscapes, and traditional Baloch villages.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                    aria-controls="faq4">
+                                    Is Nimroz safe for tourists?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Safety conditions can vary. It's advised to check current travel advisories and consult with local authorities before visiting Nimroz.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                    aria-controls="faq5">
+                                    What is the local currency used in Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The local currency is the Afghan Afghani (AFN), though Iranian Rials are also commonly used in border areas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                    aria-controls="faq6">
+                                    Do I need a visa to visit Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Yes, most foreign nationals require a visa to enter Afghanistan. Check with the Afghan embassy or consulate in your country for requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                    aria-controls="faq7">
+                                    What language is spoken in Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The main languages spoken in Nimroz are Balochi and Dari. Some people also speak Pashto, especially near the border areas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                    aria-controls="faq8">
+                                    What kind of clothes should I wear in Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Visitors should dress conservatively. Light, loose clothing is recommended for the heat, but women should cover their hair and both genders should dress modestly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                    aria-controls="faq9">
+                                    What is the local cuisine like in Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Nimroz cuisine features Baloch specialties like Sajji (roasted lamb), Kaak bread, and date-based dishes. Meals are often accompanied by strong, sweet tea.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                    aria-controls="faq10">
+                                    Can I use credit cards in Nimroz?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Credit cards are not widely accepted. It is recommended to carry cash in local currency for most transactions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Nimroz Map Section -->
+<div class="container mt-5">
+    <h4 class="mb-4">Map of Nimroz</h4>
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228154.68462161578!2d61.86149845000001!3d31.045234499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fdc9857c5d5e8a9%3A0x8a1a9b1c1b1b1b1b!2sNimroz%20Province%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719252086420!5m2!1sen!2s"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+        
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6">
+                    <div class="que-sec text-center">
+                        <h4 class="mb-3">Have Any Other Questions?</h4>
+                        <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact us. We will answer you shortly!</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                                Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Hero Section -->
+{% endblock %}

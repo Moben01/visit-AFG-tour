@@ -110,7 +110,7 @@ def Nuristan(request):
 
 
 
-
+  # South Provinces 
 def Kandahar(request):
     return render(request, 'states/Kandahar.html')
 
@@ -119,6 +119,18 @@ def Helmand(request):
 
 def Zabul(request):
     return render(request, 'states/Zabul.html')
+
+def Uruzgan(request):
+    return render(request, 'states/Uruzgan.html')
+
+def Nimroz(request):
+    return render(request, 'states/Nimroz.html')
+
+# def Ghazni(request):
+#     return render(request, 'states/Ghaznie.html')
+
+def Paktika(request):
+    return render(request, 'states/Paktieka.html')
 
 
 

@@ -30,10 +30,17 @@ urlpatterns = [
     path('Laghman', views.Laghman, name='Laghman'),
     path('Nuristan', views.Nuristan, name='Nuristan'),
 
+    # South Provinces 
     path('Kandahar', views.Kandahar, name='Kandahar'),
-
     path('Helmand', views.Helmand, name='Helmand'),
     path('Zabul', views.Zabul, name='Zabul'),
+    path('Uruzgan', views.Uruzgan, name='Uruzgan'),   
+    path('Nimroz', views.Nimroz, name='Nimroz'),
+    # path('Ghazni', views.Ghazni, name='Ghazni'),
+    path('Paktika', views.Paktika, name='Paktika'),
+    
+    
+    
     
     
     path('Herat', views.Herat, name='Herat'),
