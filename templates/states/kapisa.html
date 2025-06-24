@@ -1,0 +1,1132 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Kapisa Tourism</span></h1>
+                        <h6 class="text-light mx-auto">
+                            Discover the Natural Beauty of Kapisa — Mountain Valleys, Historical Sites, and Genuine Afghan Hospitality
+                        </h6>                        
+
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festival: Winter Ski Festival -->
+                        <div class="row justify-content-center mb-4">
+                            <!-- Festival 1: Kohistan Spring Festival -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.1s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Kohistan Spring Festival</h5>
+                                            <p>Held in the scenic valleys of Kohistan, this spring event features traditional dancing, local music, and the sharing of seasonal dishes among families and villagers.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Festival 2: Grape Harvest Celebration -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.2s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Grape Harvest Celebration</h5>
+                                            <p>Kapisa, known for its vineyards, celebrates grape harvest season with open-air feasts, fresh juice tastings, and gatherings in the orchards.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <!-- Festival 3: Traditional Arts & Music Day -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card banner-form mb-3">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                        data-wow-delay="0.3s">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Traditional Arts & Music Day</h5>
+                                            <p>This local event highlights Kapisa’s heritage with live rubab performances, folk storytelling, and displays of embroidery and pottery crafted by regional artisans.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row text-center justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Kapisa Tourism</h4>
+        <p class="mb-1">
+            Kapisa is a small but diverse province located northeast of Kabul. It offers a captivating mix of natural beauty, historical sites, and vibrant local culture. With its fertile valleys, flowing rivers, and mountainous terrain, Kapisa is a peaceful and scenic destination for nature lovers and cultural explorers.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Historical and Cultural Heritage</h4>
+        <p class="mb-1">
+            Kapisa has historical roots dating back to ancient times, once serving as part of the ancient Hindu Kush civilizations. The region includes Buddhist archaeological remains, old fortresses, and historic mosques. Its rich cultural heritage reflects both pre-Islamic and Islamic influences.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Nature and Rural Life</h4>
+        <p class="mb-1">
+            Known for its green valleys such as Kohistan and Tagab, Kapisa is filled with natural charm—apple orchards, rivers, and traditional farms. Life in the villages is peaceful and offers insight into the rhythms of rural Afghan culture and agriculture.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Local Handicrafts and Markets</h4>
+        <p class="mb-1">
+            Kapisa is known for handwoven rugs, embroidered clothing, and pottery. Local markets and weekly bazaars, especially in Mahmood Raqi and nearby districts, offer a chance to experience authentic Afghan goods and interact with friendly local communities.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Adventure and Day Trips</h4>
+        <p class="mb-1">
+            While not yet a major tourist hub, Kapisa offers excellent hiking, river picnics, and trips to historic sites and orchards. Day visitors from Kabul often explore the hills, valleys, and cultural landmarks within easy driving distance.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Local Cuisine and Handicrafts</h4>
+        <p class="mb-1">
+            The cuisine in Kapisa includes Afghan staples like mantu, ashak, kabuli pulao, fresh fruits, and tandoori bread. The province is also home to artisans who create colorful textiles, wool garments, and wooden crafts—especially in the rural highland areas.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Accommodation and Travel Tips</h4>
+        <p class="mb-1">
+            Kapisa has limited formal accommodation options, but visitors may find basic guesthouses in Mahmood Raqi. It's advised to travel with a local guide, dress modestly, and respect cultural norms. Travel during the day and check security conditions in advance.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Top 13 Most Visited Destinations in Kapisa</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Tagab Valley</strong> — Known for its lush green fields, traditional villages, and vibrant orchards.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kohistan District</strong> — A scenic region with mountainous terrain and culturally rich communities.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Alasay Valley</strong> — A peaceful and remote area ideal for trekking and photography.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kapisa River</strong> — Flowing through fertile valleys, perfect for picnics and nature walks.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Nijrab Town</strong> — A central town offering access to rural highlands and cultural heritage.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Badrab Castle Ruins</strong> — Remnants of historical fortifications overlooking the valleys.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Mahmood Raqi Bazaar</strong> — The bustling provincial capital market known for fresh produce and handmade goods.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Landai Valley</strong> — A quiet natural escape featuring seasonal wildflowers and hills.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Afshar Waterfall</strong> — A hidden gem near Kohistan, especially beautiful in spring and early summer.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Traditional Villages</strong> — Visit stone-built homes, historic mosques, and hospitable rural communities.
+            </p>
+            <!-- Added places -->
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Gul Dara</strong> — A picturesque valley ideal for day trips and countryside photography.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Zohak Ridge</strong> — A high point offering panoramic views of the Kapisa countryside.
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Ancient Trade Trails</strong> — Follow old caravan paths connecting Kapisa with Parwan and Kabul, rich in history.
+            </p>
+        </div>
+        
+
+        <h4 class="mb-3 mt-3">Best Time for Visiting Kapisa</h4>
+        <p class="mb-1">
+            The best time to visit Kapisa is from late spring to early autumn (April to October), when the weather is mild and perfect for outdoor exploration. Spring brings blooming orchards and green hills, while summer is ideal for hiking and cultural visits. Winters can be cold in the mountainous areas but remain accessible in lower valleys.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Quick Information About Kapisa</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>Central-Eastern Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Mahmud Raqi</td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>35.0333° N, 69.3333° E</td>
+                    </tr>
+                    <tr>
+                        <th>Estimated Population</th>
+                        <td>Approximately 450,000 (2021 estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 1,842 square kilometers</td>
+                    </tr>
+                    <tr>
+                        <th>Districts</th>
+                        <td>6 districts</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (primarily Sunni, with some Shia)</td>
+                    </tr>
+                    <tr>
+                        <th>Ethnic Groups</th>
+                        <td>Tajik, Pashtun, Nuristani, and Pashai</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Dari, Pashto</td>
+                    </tr>
+                    <tr>
+                        <th>Province Animal Symbol</th>
+                        <td>Markhor (wild goat)</td>
+                    </tr>
+                    <tr>
+                        <th>Province Flower</th>
+                        <td>Almond Blossom</td>
+                    </tr>
+                    <tr>
+                        <th>Province Bird</th>
+                        <td>Golden Eagle</td>
+                    </tr>
+                    <tr>
+                        <th>Province Tree</th>
+                        <td>Mulberry Tree</td>
+                    </tr>
+                    <tr>
+                        <th>Traditional Dance</th>
+                        <td>Kapisa Attan</td>
+                    </tr>
+                    <tr>
+                        <th>Popular Sports</th>
+                        <td>Buzkashi, Football, Volleyball</td>
+                    </tr>
+                    <tr>
+                        <th>Major Tourist Areas</th>
+                        <td>Tagab Valley, Kohistan, Alasay, Kapisa River</td>
+                    </tr>
+                    <tr>
+                        <th>Major Attractions</th>
+                        <td>Mountain landscapes, Rivers, Traditional villages, Ancient ruins</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h4 class="mb-4 mt-4">Best Selling Kapisa Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Discover Kapisa’s Hidden Valleys and Cultural Gems"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Kapisa’s Hidden Valleys and Cultural Gems">
+                                Discover Kapisa’s Hidden Valleys and Cultural Gems
+                            </a>
+                        </h6>
+                        <p>10 Nights - 11 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Kapisa Heritage and Nature Exploration Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Kapisa Heritage and Nature Exploration Tour">
+                                Kapisa Heritage and Nature Exploration Tour
+                            </a>
+                        </h6>
+                        <p>7 Nights - 8 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Trekking and Culture Adventure in Kapisa Hills"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Trekking and Culture Adventure in Kapisa Hills">
+                                Trekking and Culture Adventure in Kapisa Hills
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Kapisa Local Traditions and Festival Discovery"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Kapisa Local Traditions and Festival Discovery">
+                                Kapisa Local Traditions and Festival Discovery
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Kapisa Highlights – Valleys, Forts & Rivers"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Kapisa Highlights – Valleys, Forts & Rivers">
+                                Kapisa Highlights – Valleys, Forts & Rivers
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Kapisa Getaway – Short Historical Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Kapisa Getaway – Short Historical Tour">
+                                Classic Kapisa Getaway – Short Historical Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Kapisa</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+        
+            <div class="row g-3">
+                <!-- Spring -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Spring Season in Kapisa</h5>
+                            <p class="mb-2"><strong>Months:</strong> March to May</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 10°C to 22°C</p>
+                            <p class="card-text">Spring brings vibrant greenery and blooming orchards across Kapisa’s valleys,
+                                ideal for scenic drives and village visits.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Summer Season in Kapisa</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 20°C to 34°C</p>
+                            <p class="card-text">Summer in Kapisa is warm and dry, perfect for visiting historical ruins
+                                and enjoying local produce and fresh fruits.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Autumn -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Autumn Season in Kapisa</h5>
+                            <p class="mb-2"><strong>Months:</strong> September to November</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 12°C to 24°C</p>
+                            <p class="card-text">Autumn is harvest time in Kapisa. The landscapes turn golden, making it
+                                great for sightseeing, grape picking, and outdoor tours.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <h4 class="mb-4 mt-4">Best Places to Visit in Kapisa</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Nijrab Valley</h5>
+                        <p>(Mountain Views & Fruit Orchards)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Tagab District</h5>
+                        <p>(Riverside Walks & Farmlands)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Alasay Region</h5>
+                        <p>(Mountain Trails & Historic Spots)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Kapisa Villages</h5>
+                        <p>(Crafts, Culture & Traditional Life)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">18 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$170</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Panjshir Gateway</h5>
+                        <p>(Scenic Drives & Picnic Areas)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">10 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Mahmud Raqi Bazaar</h5>
+                        <p>(Local Market & Handmade Goods)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <h4 class="mb-4 mt-4">Popular Tourist Attractions in Kapisa</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Nijrab Valley</h5>
+                        <p>(Mountain Views & Fruit Orchards)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Tagab Mountains</h5>
+                        <p>(Stunning Natural Views & Wildlife)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$280</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Alasay Hills</h5>
+                        <p>(Hiking and Trekking)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Kapisa Villages</h5>
+                        <p>(Traditional Culture & Handicrafts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Koh Band Valley</h5>
+                        <p>(River Pass with Scenic Views)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$160</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Mahmud Raqi Market</h5>
+                        <p>(Local Market & Handicrafts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">28 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <h4 class="mb-4 mt-4">Top Things to Do in Kapisa</h4>
+        
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Tour Nijrab Valley</h5>
+                        <p>(Explore Mountain Trails & Orchards)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Picnic in Tagab Valley</h5>
+                        <p>(Enjoy Peaceful River Views)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$280</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Hike the Alasay Trails</h5>
+                        <p>(Adventure and Nature Walks)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Explore Kapisa Villages</h5>
+                        <p>(Culture and Craftsmanship)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Shop Mahmud Raqi Market</h5>
+                        <p>(Local Goods and Souvenirs)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$160</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Visit Kohistan District</h5>
+                        <p>(Explore Countryside and Farms)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">28 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+        <h4 class="mb-4 mt-4">How to Reach Kapisa?</h4>
+
+        <div class="reach-method">
+            <div class="row justify-content-center g-4">
+        
+                <!-- By Air -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Air</h5>
+                                <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-airplane fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Kapisa does not have a commercial airport. The nearest airport is Kabul International Airport, about 70 km away, followed by a drive to Kapisa.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Air -->
+        
+                <!-- By Road -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Road</h5>
+                                <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-car fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Kapisa is well connected by road from Kabul, taking approximately 1.5 to 2 hours. It’s a popular route for travelers and cargo transport.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Road -->
+        
+                <!-- By Train -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Train</h5>
+                                <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-train fs-24"></i>
+                                </span>
+                            </div>
+                            <p>There are no train services to Kapisa. The province is primarily accessed via road, with the closest rail options located in northern Afghanistan.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Train -->
+        
+            </div>
+        </div>
+        
+
+        <h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+        <div class="container">
+            <!-- FAQ Section -->
+            <div class="faq">
+                <div class="faq-sec p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="accordion" id="accordionFaq">
+        
+                                <!-- Q1 -->
+                                <div class="accordion-item mb-3 pb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                            When is the best time to visit Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The best time to visit Kapisa is during spring (April to June) and autumn
+                                                (September to October), when the weather is mild and suitable for
+                                                outdoor exploration.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q2 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                            aria-controls="faq2">
+                                            How can I reach Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Kapisa is easily accessible by road from Kabul, with a drive of about 1.5 to 2
+                                                hours. The nearest major airport is Kabul International Airport.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q3 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                            aria-controls="faq3">
+                                            What are the top attractions in Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Top attractions include historical sites, natural landscapes like the Nijrab
+                                                valley, and cultural villages. Kapisa offers beautiful rural scenery and
+                                                rich cultural heritage.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q4 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                            aria-controls="faq4">
+                                            Is Kapisa safe for tourists?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Kapisa has experienced security challenges in the past. It’s important to
+                                                check current travel advisories, consult local authorities, and travel with a
+                                                guide if needed.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q5 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                            aria-controls="faq5">
+                                            Do I need a visa to visit Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Yes, a visa is required to enter Afghanistan. Please check with your nearest
+                                                Afghan embassy for the latest requirements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q6 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                            aria-controls="faq6">
+                                            What language is spoken in Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Dari and Pashto are the main languages spoken in Kapisa. English is not widely
+                                                spoken, so knowing some local phrases is helpful.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q7 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                            aria-controls="faq7">
+                                            What kind of clothes should I wear in Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Wear modest clothing. Men should wear long pants and shirts; women should
+                                                wear long dresses and cover their hair with a scarf, especially in public or
+                                                rural areas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q8 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                            aria-controls="faq8">
+                                            What is the local cuisine like in Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Kapisa’s cuisine features Afghan classics like kabuli pulao, kebabs, mantu,
+                                                ashak, and fresh local bread. Meals are often enjoyed with tea and dairy
+                                                products.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <!-- Q9 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                            aria-controls="faq9">
+                                            Are credit cards accepted in Kapisa?
+                                        </button>
+                                    </h2>
+                                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>No, credit cards are generally not accepted. Travelers should carry enough
+                                                Afghanis (AFN) in cash for all purchases.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Essential Information Section -->
+                <div class="container mt-5">
+                    <h3 class="mb-4">Kapisa Essential Information</h3>
+        
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h5 class="mb-3">Where to Stay in Kapisa?</h5>
+                            <p>
+                                Accommodation in Kapisa is limited, mainly consisting of guesthouses or local inns. Many travelers stay in Kabul and make day trips due to the short distance.
+                            </p>
+                            <p>
+                                If staying in Kapisa, confirm lodging arrangements in advance and prioritize locations recommended by local contacts for safety and comfort.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Major Activities for Tourists in Kapisa -->
+                <div class="container mt-5">
+                    <h5 class="mb-4">Major Activities for Tourists in Kapisa</h5>
+        
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>
+                                Explore Kapisa’s scenic valleys and hills, visit traditional villages, and enjoy outdoor activities such as hiking and cultural tours.
+                            </p>
+                            <p>
+                                Engage with local communities to experience the rich cultural heritage and hospitality of the region.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tips Before Visiting Kapisa -->
+                <div class="container mt-5">
+                    <h5 class="mb-4">A Few Tips Before Visiting Kapisa</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Dress conservatively and respectfully in public areas.</li>
+                        <li class="list-group-item">Hire a local guide if you’re unfamiliar with the area.</li>
+                        <li class="list-group-item">Keep personal ID and contact info with you.</li>
+                        <li class="list-group-item">Avoid unnecessary travel after dark.</li>
+                        <li class="list-group-item">Carry enough cash, as ATMs may be limited or unavailable.</li>
+                        <li class="list-group-item">Drink only bottled or treated water.</li>
+                        <li class="list-group-item">Stick to main roads and recognized paths.</li>
+                        <li class="list-group-item">Knowing basic phrases in Dari or Pashto is helpful.</li>
+                    </ul>
+                </div>
+        
+                <!-- Kapisa Map Section -->
+                <div class="container mt-5">
+                    <h4 class="mb-4">Map of Kapisa</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d414921.52328813954!2d69.57813217666168!3d34.993214072480244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dca99565a2b207%3A0x9f6b5d7286e66163!2sKapisa%2C%20Afghanistan!5e0!3m2!1sen!2saf!4v1719254500000!5m2!1sen!2saf"
+                            width="100%"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+        
+                <!-- Contact Section -->
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-6">
+                        <div class="que-sec text-center">
+                            <h4 class="mb-3">Have Any Other Questions?</h4>
+                            <p class="mb-3">If you cannot find an answer in our FAQ, you can always contact us. We will
+                                respond shortly!</p>
+                            <div class="d-flex justify-content-center">
+                                <a href="contact-us.html"
+                                    class="btn btn-primary d-flex align-items-center justify-content-center">
+                                    Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        </div>
+        
+
+
+
+    </div>
+</section>
+<!-- /Hero Section -->
+{% endblock %}
