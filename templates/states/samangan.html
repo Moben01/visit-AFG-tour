@@ -1,0 +1,1292 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Samangan Tourism</span> </h1>
+                        <h6 class="text-light mx-auto">A Land of Historical Marvels, Cultural Diversity, Timeless
+                            Traditions, and Genuine Hospitality
+                        </h6>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Card centered -->
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-6">
+                                <div class="card banner-form mb-0">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent mb-0 wow fadeInDown"
+                                        data-wow-delay="0.1s"
+                                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Festivals</h5>
+                                            <p>Get to know the rich culture, fairs, and festivals of Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row">
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Condos</a></h6>
+                                        <p class="fs-14">216 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-02.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Apartments</a></h6>
+                                        <p class="fs-14">569 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-03.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Villas</a></h6>
+                                        <p class="fs-14">129 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-04.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">5 Star Hotels</a></h6>
+                                        <p class="fs-14">600 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">3 Star Hotels</a></h6>
+                                        <p class="fs-14">200 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-06.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">2 Star Hotels</a></h6>
+                                        <p class="fs-14">180 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Samangan Tourism</h4>
+        <p class="mb-1">
+            Samangan, a province rich in history and natural beauty, is home to remarkable archaeological sites and
+            cultural heritage that reflect Afghanistan’s diverse past. Known for its peaceful landscapes and historic
+            monuments, Samangan offers travelers a unique glimpse into ancient civilizations, Islamic culture, and
+            traditional Afghan life. With its scenic valleys, mountains, and warm-hearted locals, Samangan is an ideal
+            destination for cultural explorers, historians, and nature lovers seeking an authentic Afghan experience.
+        </p>
+
+        <h4 class="mb-3 mt-3">Newly Developed Tourist Attractions in Samangan!</h4>
+        <p class="mb-1">
+            Samangan is increasingly attracting visitors with its newly developed tourism sites that complement its
+            ancient heritage. One notable attraction is the Takht-e-Rustam complex, an ancient Buddhist archaeological
+            site with unique rock-cut stupas and monasteries dating back over 1,500 years. Restoration and preservation
+            efforts have made this site more accessible and educational for visitors.
+
+            Another highlight is the Samangan Cultural Center, which showcases local crafts, music, and traditional
+            Afghan art, providing a platform for artisans and cultural performances. Surrounding the center are lush
+            gardens and picnic areas ideal for families and tourists.
+
+            Nature enthusiasts will enjoy the newly designated Samangan Wildlife Park, home to native species such as
+            ibex, foxes, and various birds. The park offers guided tours and birdwatching opportunities, promoting
+            eco-tourism and environmental awareness.
+        </p>
+
+        <h4 class="mb-3 mt-3">Historical and Spiritual Sites in Samangan</h4>
+        <p class="mb-1">
+            Samangan holds a special place in Afghan history and spirituality. The Takht-e-Rustam site, with its
+            Buddhist heritage, is a testament to the region’s ancient religious diversity. The province also has several
+            mosques and shrines important to local spiritual life, such as the Shrine of Hazrat Sultan Mahmud and other
+            revered figures.
+
+            These sites offer visitors a chance to connect with Afghanistan’s rich spiritual traditions, blending
+            Islamic
+            culture with traces of earlier beliefs. Pilgrims and tourists alike find serenity in Samangan’s sacred
+            spaces, often accompanied by local stories and legends that enrich the experience.
+
+            Plans for a cultural trail are underway, which will link these spiritual and historical landmarks,
+            highlighting Samangan’s legacy as a crossroads of faith and culture.
+        </p>
+
+        <h4 class="mb-3 mt-3">Ancient Heritage and Archaeological Treasures</h4>
+        <p class="mb-1">
+            Samangan is known for its archaeological importance, with sites that date back thousands of years. The
+            Takht-e-Rustam complex is the crown jewel, featuring Buddhist stupas carved into natural rock formations,
+            ancient monasteries, and caves that reveal a glimpse into the past civilizations of the region.
+
+            Archaeologists continue to uncover artifacts representing a fusion of Hellenistic, Buddhist, and Islamic
+            influences, showcasing Samangan’s role as a cultural crossroads along ancient trade routes.
+
+            Visitors can explore these ruins with guided tours that offer historical context and insights into the
+            people who once inhabited this land. Upcoming heritage projects aim to create immersive experiences, such as
+            reenactments and cultural festivals that celebrate Samangan’s rich past.
+        </p>
+
+        <h4 class="mb-3 mt-3">Natural Beauty and Wildlife of Samangan</h4>
+        <p class="mb-1">
+            The landscapes of Samangan are varied and captivating, ranging from mountainous terrains to fertile valleys
+            and riverbanks. This natural diversity supports a variety of wildlife, making it a great destination for
+            nature lovers.
+
+            The Samangan Wildlife Park protects native species like ibex, jackals, foxes, and numerous bird species,
+            including migratory birds that stop over during seasonal journeys.
+
+            Visitors can enjoy hiking, birdwatching, and exploring quiet natural spots that showcase Afghanistan’s
+            often overlooked ecological treasures. Conservation efforts are growing, supported by local communities who
+            value the natural heritage of their homeland.
+        </p>
+
+        <h4 class="mb-3 mt-3">Peaceful and Spiritual Retreats</h4>
+        <p class="mb-1">
+            Samangan offers tranquil retreats for visitors seeking peace and spiritual reflection. The province’s
+            quiet countryside, sacred shrines, and natural springs provide perfect settings for meditation and
+            relaxation.
+
+            Among these is the famous Shrine of Hazrat Sultan Mahmud, a spiritual center where visitors experience the
+            rich religious traditions of the area.
+
+            The province’s calm environment, away from the hustle of big cities, invites tourists to connect deeply
+            with nature and heritage, making it an ideal destination for wellness tourism and cultural immersion.
+
+            The best visiting times are spring and autumn, when the weather is mild, and the natural surroundings
+            are at their most vibrant.
+        </p>
+
+        <h4 class="mb-3 mt-3">Birdwatching Hotspots in Samangan</h4>
+        <p class="mb-1">
+            Birdwatchers will find Samangan to be a rewarding destination due to its diverse habitats. The river
+            valleys,
+            orchards, and mountainous regions provide shelter to a wide variety of bird species.
+
+            Popular spots include:
+
+            - The Surkhab River banks, known for migratory and native birds.
+            - The Samangan Wildlife Park, a sanctuary for birds of prey and songbirds.
+            - Mountain foothills, ideal for spotting raptors and other wild birds.
+
+            Although formal bird sanctuaries are still being developed, the natural environment offers abundant
+            opportunities for birdwatching and eco-tourism enthusiasts.
+        </p>
+
+        <h4 class="mb-3 mt-3">Outdoor Activities and Leisure</h4>
+        <p class="mb-1">
+            While Samangan is developing its tourism infrastructure, visitors can enjoy traditional outdoor activities
+            such as:
+
+            - Hiking and trekking through scenic mountain trails
+            - Horseback riding in rural areas
+            - Exploring local villages and experiencing Afghan hospitality firsthand
+
+            Cultural festivals and community events showcase traditional games and music, providing immersive leisure
+            experiences.
+
+            Future plans include expanding recreational facilities to accommodate a growing number of tourists.
+        </p>
+
+        <h4 class="mb-3 mt-3">Wellness and Traditional Healing in Samangan</h4>
+        <p class="mb-1">
+            Samangan offers opportunities for wellness tourism grounded in traditional Afghan healing practices and
+            natural serenity.
+
+            Visitors can experience:
+
+            - Herbal remedies and traditional medicine passed down through generations
+            - Relaxing visits to natural springs and peaceful gardens
+            - Spiritual retreats at local shrines and meditation spots
+
+            Efforts to promote eco-lodges and holistic wellness centers are underway, aiming to blend cultural heritage
+            with modern relaxation techniques.
+        </p>
+
+        <h4 class="mb-3 mt-3">Top 10 Tourist Destinations of Samangan Province</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Aybak Ancient Citadel</strong> —
+                The historic citadel ruins located in Aybak, the provincial capital, showcasing medieval Islamic
+                architecture.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Takht-e Rostam Monastery</strong>
+                — A remarkable Buddhist stupa and monastery complex carved into a hillside, dating back to the Kushan
+                era.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Khulm River Valley</strong> — A
+                scenic river valley offering lush landscapes, perfect for nature walks and cultural exploration.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Samangan Archaeological
+                    Museum</strong> — Displays artifacts from the Buddhist and Islamic periods found in the province.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Hazrat Shah Agha Shrine</strong> —
+                A spiritually significant shrine attracting pilgrims and visitors seeking peace and reflection.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Blue Dome Mosque of
+                    Samangan</strong> — An iconic mosque known for its striking blue dome and intricate tile work.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Koh-e Baba Mountain Range</strong>
+                — Surrounding mountains offering hiking opportunities and breathtaking views of the province.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Seyyed Qasem Tomb</strong> — A
+                historic tomb known for its beautiful architecture and local cultural significance.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Samangan Handicrafts
+                    Market</strong> — A vibrant market where visitors can find traditional Afghan carpets, pottery, and
+                textiles crafted by local artisans.
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Samangan Cultural Festival
+                    Grounds</strong> — Venue for annual festivals celebrating local music, dance, and traditions.
+            </p>
+        </div>
+
+        <h4 class="mb-3 mt-3">Best Time for Visiting Samangan for Holidays</h4>
+        <p class="mb-1">
+            Samangan experiences cold winters and warm summers, so the ideal time to visit is during the spring and
+            autumn months,
+            from April to June and September to October. During these periods, the weather is mild and pleasant, perfect
+            for exploring
+            historical sites and enjoying nature.
+        </p>
+
+
+        <h4 class="mb-3 mt-3">Quick Information About Samangan Province</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>North-Central Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Aybak</td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>36.2656° N, 68.0156° E</td>
+                    </tr>
+                    <tr>
+                        <th>Total Population</th>
+                        <td>Approximately 440,000 (estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 11,500 sq km<br>Districts: 7</td>
+                    </tr>
+                    <tr>
+                        <th>Districts</th>
+                        <td>7</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (primarily Sunni), small Shia minority</td>
+                    </tr>
+                    <tr>
+                        <th>Major Ethnic Groups</th>
+                        <td>Uzbeks, Tajiks, Hazaras, Pashtuns</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Dari, Uzbek, Pashto</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Animal</th>
+                        <td>Markhor (wild goat native to the region)</td>
+                    </tr>
+                    <tr>
+                        <th>City Flower</th>
+                        <td>Wild Rose</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Bird</th>
+                        <td>Chukar Partridge</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Tree</th>
+                        <td>Pistachio Tree</td>
+                    </tr>
+                    <tr>
+                        <th>Major Cities and Towns</th>
+                        <td>Aybak, Dara-i-Suf, Khuram Wa Sarbagh, Feroz Nakhchir</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">Best Selling Samangan Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Top Samangan Travel Packages for You"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Top Samangan Travel Packages for You">
+                                Top Samangan Travel Packages for You
+                            </a>
+                        </h6>
+                        <p>17 Nights - 18 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Explore the Beauty of Samangan – Popular Tour Deals"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Explore the Beauty of Samangan – Popular Tour Deals">
+                                Explore the Beauty of Samangan – Popular Tour Deals
+                            </a>
+                        </h6>
+                        <p>8 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Most Loved Tour Packages in Samangan"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Most Loved Tour Packages in Samangan">
+                                Most Loved Tour Packages in Samangan
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Discover Samangan: Top Travel Experiences"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Samangan: Top Travel Experiences">
+                                Discover Samangan: Top Travel Experiences
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Samangan’s Best Tour Packages – Book Now!"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Samangan’s Best Tour Packages – Book Now!">
+                                Samangan’s Best Tour Packages – Book Now!
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Samangan Escapes – Bestselling Holiday Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Samangan Escapes – Bestselling Holiday Tour">
+                                Classic Samangan Escapes – Bestselling Holiday Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Samangan</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+
+            <div class="row g-3">
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Summer Season in Samangan</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 30°C to 40°C</p>
+                            <p class="card-text">Summers in Samangan last from June to August. Temperatures typically
+                                range
+                                between 30°C to 40°C, with hot and dry weather conditions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monsoon -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Monsoon Season in Samangan</h5>
+                            <p class="mb-2"><strong>Months:</strong> July to September</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 25°C to 35°C</p>
+                            <p class="card-text">Samangan experiences a very mild monsoon, mainly from July to
+                                September,
+                                with occasional rainfall. Temperatures during this time range from 25°C to 35°C.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Winter -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Winter Season in Samangan</h5>
+                            <p class="mb-2"><strong>Months:</strong> December to February</p>
+                            <p class="mb-2"><strong>Temperature:</strong> -2°C</p>
+                            <p class="card-text">
+                                Winters in Samangan last from December to February. Temperatures can drop to as low as
+                                -2°C
+                                during nights and rise up to 15°C during the day. The weather is cold but clear, making
+                                it a good time for sightseeing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">Best Places to Visit in Samangan</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Takht-e-Rustam</h5>
+                        <p>(Ancient Buddhist Monastery)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">28 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Samangan Archaeological Site</h5>
+                        <p>(Ancient City Ruins)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">60 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Hazrat Ali Shrine</h5>
+                        <p>(Religious Site)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">50 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Samangan Valley</h5>
+                        <p>(Natural Scenery)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">67 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Kholm Market</h5>
+                        <p>(Local Shopping Area)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">45 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Samangan Museum</h5>
+                        <p>(Historical Artifacts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">12 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h4 class="mb-4 mt-4">Popular Tourist Attractions in Samangan</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-40.jpg' %}" alt="Takht-e-Rustam">
+                    <div class="location-name">
+                        <h5 class="mb-1">Takht-e-Rustam</h5>
+                        <p>(Ancient Buddhist Monastery)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-41.jpg' %}" alt="Aybak City">
+                    <div class="location-name">
+                        <h5 class="mb-1">Aybak City</h5>
+                        <p>(Provincial Capital and Market)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">35 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-42.jpg' %}" alt="Robatak Archaeological Site">
+                    <div class="location-name">
+                        <h5 class="mb-1">Robatak Archaeological Site</h5>
+                        <p>(Ancient Ruins and Inscriptions)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$240</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-43.jpg' %}" alt="Mazar-e-Sharif Shrine">
+                    <div class="location-name">
+                        <h5 class="mb-1">Hazrat Sultan Shrine</h5>
+                        <p>(Religious Site)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-44.jpg' %}" alt="Sari Pul River">
+                    <div class="location-name">
+                        <h5 class="mb-1">Sari Pul River</h5>
+                        <p>(Natural Scenic Spot)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-45.jpg' %}" alt="Samangan Museum">
+                    <div class="location-name">
+                        <h5 class="mb-1">Samangan Museum</h5>
+                        <p>(Historical Artifacts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">Top Things to Do in Samangan</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-40.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Aybak City</h5>
+                        <p>(Capital of Samangan Province)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-41.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Takht-e-Rustam</h5>
+                        <p>(Ancient Buddhist Monastery Complex)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">35 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-42.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Samangan Museum</h5>
+                        <p>(Local History & Artifacts)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-43.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Jowzjan Hills</h5>
+                        <p>(Natural Scenic Area)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-44.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Band-e-Amir Springs</h5>
+                        <p>(Natural Mineral Springs)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">22 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$170</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-45.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Shorabak Village</h5>
+                        <p>(Traditional Village Experience)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">10 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$160</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">How to Reach Samangan?</h4>
+
+        <div class="reach-method">
+            <div class="row justify-content-center g-4">
+
+                <!-- By Air -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Air</h5>
+                                <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-airplane fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Samangan does not currently have a commercial airport. The nearest airport is in
+                                Mazar-i-Sharif or Kabul, from where travelers can continue by road.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Air -->
+
+                <!-- By Road -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Road</h5>
+                                <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-car fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Samangan is accessible via highways connecting it to major cities like Mazar-i-Sharif and
+                                Kabul. Road travel is the primary way to reach the province.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Road -->
+
+                <!-- By Train -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Train</h5>
+                                <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-train fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Currently, there are no train services to Samangan. Travelers rely on air travel to
+                                nearby cities and road transport to reach the province.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Train -->
+
+            </div>
+        </div>
+
+        <h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+        <div class="container">
+            <!-- FAQ Section -->
+            <div class="faq">
+                <div class="faq-sec p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="accordion" id="accordionFaq">
+
+                                <!-- Q1 -->
+                                <div class="accordion-item mb-3 pb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                            When is the best time to visit Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The best time to visit Samangan is during spring (March to May) and
+                                                autumn
+                                                (September to November), when the weather is mild and pleasant.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q2 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                            aria-controls="faq2">
+                                            How can I reach Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Samangan does not have a commercial airport. The nearest airports are in
+                                                Mazar-i-Sharif or Kabul, from where travelers can continue their journey
+                                                by road.
+                                                Road travel is the main way to reach Samangan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q3 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                            aria-controls="faq3">
+                                            What are some famous tourist attractions in Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Popular sites include the Takht-e Rostam Buddhist complex, ancient caves,
+                                                and natural landscapes that reflect the rich cultural heritage of
+                                                Samangan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q4 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                            aria-controls="faq4">
+                                            Is Samangan safe for tourists?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Security conditions can vary. It is recommended to check updated travel
+                                                advisories and consult local authorities or embassies before traveling
+                                                to Samangan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q5 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                            aria-controls="faq5">
+                                            What is the local currency used in Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The local currency in Samangan, as throughout Afghanistan, is the Afghan
+                                                Afghani (AFN).</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q6 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                            aria-controls="faq6">
+                                            Do I need a visa to visit Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Yes, most foreign nationals require a visa to enter Afghanistan. Check
+                                                with the Afghan embassy or consulate in your country for visa
+                                                requirements.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q7 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                            aria-controls="faq7">
+                                            What language is spoken in Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Dari and Pashto are the main languages spoken in Samangan. Many locals
+                                                also
+                                                understand some English, especially in urban areas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q8 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                            aria-controls="faq8">
+                                            What kind of clothes should I wear in Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Visitors should dress conservatively. Men are advised to wear long pants
+                                                and shirts, and women should cover their hair and dress modestly.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q9 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                            aria-controls="faq9">
+                                            What is the local cuisine like in Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Samangan cuisine features traditional Afghan dishes like kabuli pulao,
+                                                kebabs, mantu (dumplings), and local breads, often accompanied by green
+                                                tea.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q10 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                            aria-controls="faq10">
+                                            Can I use credit cards in Samangan?
+                                        </button>
+                                    </h2>
+                                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Credit cards are not widely accepted in Samangan. It is best to carry
+                                                cash
+                                                in local currency for most purchases.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /FAQ Section -->
+        </div>
+
+
+
+        <!-- Essential Information Section -->
+        <div class="container mt-5">
+            <h3 class="mb-4">Samangan Essential Information</h3>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="mb-3">Where to Stay in Samangan?</h5>
+                    <p>
+                        Samangan offers a range of accommodations for various budgets and preferences. While the
+                        province
+                        is less commercialized than major cities, visitors can find guesthouses, small hotels, and local
+                        inns,
+                        mainly concentrated in Aybak, the provincial capital.
+                    </p>
+                    <p>
+                        Staying in Aybak provides convenient access to the main historical sites and local markets.
+                        As safety is important, it is advisable to choose accommodations known for their hospitality and
+                        secure environments.
+                    </p>
+                    <p>
+                        Booking through trusted local travel agencies or directly contacting lodging facilities is
+                        recommended. Local recommendations can enhance your stay and help you discover authentic
+                        experiences in Samangan.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Major Activities for Tourists in Samangan -->
+        <div class="container mt-5">
+            <h5 class="mb-4">Major Activities for Tourists in Samangan</h5>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Samangan is rich in historical and archaeological significance, offering travelers a unique
+                        glimpse
+                        into ancient Afghanistan. Visitors can explore the famous Takht-i-Rustam, an ancient Buddhist
+                        complex
+                        carved into cliffs, and other historical ruins scattered across the province.
+                    </p>
+                    <p>
+                        Tourists can also visit traditional bazaars, interact with local artisans, and purchase handmade
+                        crafts and carpets.
+                        Samangan’s natural scenery includes nearby hills and valleys perfect for light trekking and
+                        nature walks.
+                    </p>
+                    <p>
+                        Food enthusiasts can enjoy regional Afghan dishes, including kabuli pulao, mantu (dumplings),
+                        and fresh
+                        local breads, often accompanied by green tea.
+                    </p>
+                    <p>
+                        Engaging with the local culture through festivals, music, and traditional crafts offers an
+                        enriching
+                        experience unique to Samangan. Photography, historical exploration, and cultural immersion
+                        remain
+                        popular activities here.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Before Visiting Samangan -->
+        <div class="container mt-5">
+            <h5 class="mb-4">A Few Tips Before Visiting Samangan</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Samangan has a mix of rural and urban culture — dress modestly and
+                    respectfully,
+                    especially when visiting religious sites and local communities.</li>
+                <li class="list-group-item">Traveling with a local guide or someone familiar with the area is
+                    recommended
+                    for a smoother and safer experience.</li>
+                <li class="list-group-item">Carry valid identification and keep both digital and physical copies of your
+                    important documents.</li>
+                <li class="list-group-item">Avoid traveling to isolated areas after dark and stay informed with local
+                    news
+                    and government advisories.</li>
+                <li class="list-group-item">Bargaining is common in markets — feel free to negotiate prices for
+                    souvenirs
+                    and goods.</li>
+                <li class="list-group-item">Stay hydrated, especially during hot seasons, and be cautious about drinking
+                    untreated water.</li>
+                <li class="list-group-item">Use registered taxis or trusted transportation options whenever possible.
+                </li>
+                <li class="list-group-item">Learning a few basic Dari phrases can help build trust and ease
+                    communication
+                    with locals.</li>
+            </ul>
+        </div>
+
+        <!-- Samangan Map Section -->
+        <div class="container mt-5">
+            <h4 class="mb-4">Map of Samangan</h4>
+            <div class="ratio ratio-16x9">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33714.19939244189!2d68.00218984002043!3d36.26587173379359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38a37e3e0a9a383d%3A0x2a9e494195a00b0a!2sAybak%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719249501234!5m2!1sen!2s"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+                <div class="que-sec text-center">
+                    <h4 class="mb-3">Have Any Other Questions?</h4>
+                    <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact
+                        us. We will answer you shortly!</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="contact-us.html"
+                            class="btn btn-primary d-flex align-items-center justify-content-center">
+                            Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}
