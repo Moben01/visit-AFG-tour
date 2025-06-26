@@ -1,0 +1,179 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="breadcrumb-title mb-2">Kabul Map</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="/"><i class="isax isax-home5"></i></a></li>
+                            <li class="breadcrumb-item">Back</li>
+                            <li class="breadcrumb-item active" aria-current="page">Kabul Map</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Breadcrumb -->
+
+<!-- Leaflet CSS and JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<style>
+    #map {
+        height: 500px;
+        width: 100%;
+    }
+    .place-list {
+        list-style: none;
+        padding: 0;
+    }
+    .place-list li {
+        cursor: pointer;
+        padding: 8px 12px;
+        border-bottom: 1px solid #ddd;
+    }
+    .place-list li:hover {
+        background: #f8f9fa;
+    }
+    #placeInfo {
+        display: none;
+    }
+
+    #placeImage {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        max-height: 200px; /* Limit image height */
+    }
+
+    .card #placeDescription {
+        margin-top: 10px;
+    }
+
+</style>
+
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Place List -->
+            <div class="col-md-3">
+                <h5 class="mb-3">📍 Places in Kabul</h5>
+                <ul class="place-list">
+                    <li onclick="moveToPlace('Babur Gardens')">Babur Gardens</li>
+                    <li onclick="moveToPlace('Darul Aman Palace')">Darul Aman Palace</li>
+                    <li onclick="moveToPlace('Chicken Street')">Chicken Street</li>
+                    <li onclick="moveToPlace('Paghman Gardens')">Paghman Gardens</li>
+                    <li onclick="moveToPlace('Shah-Do Shamshira')">Shah-Do Shamshira</li>
+                    <li onclick="moveToPlace('Kabul Zoo')">Kabul Zoo</li>
+                    <li onclick="moveToPlace('Pul-e Khishti Mosque')">Pul-e Khishti Mosque</li>
+                    <li onclick="moveToPlace('Id Gah Mosque')">Id Gah Mosque</li>
+                    <li onclick="moveToPlace('National Museum')">National Museum</li>
+                    <li onclick="moveToPlace('Bala Hissar Fort')">Bala Hissar Fort</li>
+                </ul>
+            </div>
+
+            <!-- Map and Info -->
+            <div class="col-md-9">
+                <div class="card mb-0">
+                    <div class="card-body">
+                        <div id="map"></div>
+                        <div id="placeInfo" class="mt-4" style="display:none;">
+                            <div class="card">
+                                <img id="placeImage" class="card-img-top" src="" alt="Place Image">
+                                <div class="card-body">
+                                    <h5 class="card-title" id="placeTitle"></h5>
+                                    <p class="card-text" id="placeDescription"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const places = {
+        "Babur Gardens": {
+            coords: [34.5036, 69.1662],
+            desc: "Historic gardens founded by the Mughal emperor Babur.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Babur_Gardens.jpg"
+        },
+        "Darul Aman Palace": {
+            coords: [34.4695, 69.1194],
+            desc: "Iconic neoclassical palace symbolizing royal history.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Darul_Aman_Palace.jpg"
+        },
+        "Chicken Street": {
+            coords: [34.5190, 69.1777],
+            desc: "Famous market for Afghan crafts, carpets, and souvenirs.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Chicken_Street_Kabul.jpg"
+        },
+        "Paghman Gardens": {
+            coords: [34.5871, 68.8834],
+            desc: "Scenic gardens popular for relaxation and weekend visits.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/8/89/Paghman_Afghanistan.jpg"
+        },
+        "Shah-Do Shamshira": {
+            coords: [34.5196, 69.1783],
+            desc: "Unique mosque with Baroque-inspired architecture.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/4/4d/Shah-Do_Shamshira_Mosque.jpg"
+        },
+        "Kabul Zoo": {
+            coords: [34.5011, 69.1407],
+            desc: "Family-friendly place featuring native Afghan wildlife.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/3/38/Kabul_Zoo.jpg"
+        },
+        "Pul-e Khishti Mosque": {
+            coords: [34.5181, 69.1765],
+            desc: "One of Kabul’s oldest mosques with impressive architecture.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Pul-e-Khishti_Mosque.jpg"
+        },
+        "Id Gah Mosque": {
+            coords: [34.5199, 69.1912],
+            desc: "One of Kabul’s largest mosques hosting Eid prayers.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/3/37/Id_Gah_Mosque_Kabul.jpg"
+        },
+        "National Museum": {
+            coords: [34.4684, 69.1332],
+            desc: "Showcasing rich cultural heritage.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/National_Museum_of_Afghanistan.jpg"
+        },
+        "Bala Hissar Fort": {
+            coords: [34.5039, 69.1805],
+            desc: "The historic fortress overlooking Kabul.",
+            img: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Bala_Hissar_Fort.jpg"
+        }
+    };
+
+    const map = L.map('map').setView([34.5281, 69.1723], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    let marker = L.marker([0, 0]).addTo(map);
+
+    function moveToPlace(name) {
+        const place = places[name];
+        map.setView(place.coords, 15);
+        marker.setLatLng(place.coords).bindPopup(`<strong>${name}</strong><br>${place.desc}`).openPopup();
+
+        // Show image/info
+        document.getElementById('placeTitle').innerText = name;
+        document.getElementById('placeDescription').innerText = place.desc;
+        document.getElementById('placeImage').src = place.img;
+        document.getElementById('placeInfo').style.display = 'block';
+    }
+</script>
+
+
+{% endblock %}

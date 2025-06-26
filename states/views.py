@@ -5,6 +5,9 @@ from django.shortcuts import render
 def kabul(request):
     return render(request, 'states/kabul.html')
 
+def kabul_maping(request):
+    return render(request, 'states/kabul-map.html')
+
 
 def balkh(request):
     return render(request, 'states/balkh.html')
