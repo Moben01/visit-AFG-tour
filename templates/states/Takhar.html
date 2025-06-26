@@ -1,0 +1,1103 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Takhar Tourism</span> </h1>
+                        <h6 class="text-light mx-auto">A Land of Majestic Mountains, Ancient Heritage, Colorful
+                            Traditions, and Unmatched Hospitality
+                        </h6>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Card centered -->
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-6">
+                                <div class="card banner-form mb-0">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent mb-0 wow fadeInDown"
+                                        data-wow-delay="0.1s"
+                                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Festivals</h5>
+                                            <p>Get to know the rich culture, fairs, and festivals of Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row">
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Condos</a></h6>
+                                        <p class="fs-14">216 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-02.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Apartments</a></h6>
+                                        <p class="fs-14">569 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-03.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Villas</a></h6>
+                                        <p class="fs-14">129 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-04.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">5 Star Hotels</a></h6>
+                                        <p class="fs-14">600 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">3 Star Hotels</a></h6>
+                                        <p class="fs-14">200 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-06.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">2 Star Hotels</a></h6>
+                                        <p class="fs-14">180 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Takhar Tourism</h4>
+        <p class="mb-1">Takhar is a province of natural beauty and cultural heritage, featuring lush valleys, ancient sites, traditional music, vibrant local crafts, and warm, welcoming communities. It offers travelers a unique experience combining history, culture, and scenic nature. Nestled in northeastern Afghanistan, Takhar is ideal for nature lovers, history enthusiasts, and those seeking an authentic rural Afghan atmosphere.</p>
+        
+        <h4 class="mb-3 mt-3">Architectural Splendour: Ancient Forts, Mosques & Traditional Houses!</h4>
+        <p class="mb-1">Key attractions in Takhar include historic sites like the Farkhar Mosque, remnants of ancient fortifications, and traditional houses that showcase the area's rich cultural fabric. Though less urbanized than major cities, Takhar’s architectural heritage reflects centuries-old Afghan traditions. Visitors can explore beautiful mosques and shrines that serve as spiritual and community centers throughout the province.</p>
+        
+        <h4 class="mb-3 mt-3">A Rich Blend of Traditional Dances, Melodious Songs, Horse Rides & Vibrant Colors!</h4>
+        <p class="mb-1">Takhar hosts vibrant local festivals where visitors can experience Afghan cultural traditions such as the Attan dance, traditional music performances, and colorful celebrations. Rural fairs and horse riding events showcase the province’s deep connection to its nomadic and agrarian roots. The warm hospitality of local communities enriches the cultural experience for travelers.</p>
+        
+        <h4 class="mb-3 mt-3">Explore Takhar’s Stunning Nature and Diverse Wildlife.</h4>
+        <p class="mb-1">Takhar province boasts beautiful mountainous landscapes, fertile valleys, and rivers that support diverse wildlife. The region is home to various native species including birds, ibex, and wild goats. Nature lovers can enjoy hiking, bird watching, and exploring pristine natural reserves, discovering Afghanistan’s rich biodiversity away from urban centers.</p>
+        
+        <h4 class="mb-3 mt-3">Go Shopping: From Jewelry to Traditional Handicrafts!</h4>
+        <p class="mb-1">Takhar offers unique handicrafts reflecting local artistry, such as handwoven carpets, embroidered textiles, and traditional jewelry featuring regional gemstones. Markets across the province provide opportunities to purchase authentic Afghan crafts including pottery, leather goods, and musical instruments that tell stories of local culture and heritage.</p>
+        
+        <h4 class="mb-3 mt-3">From Pilaf to Local Delicacies: Savor the Rich Cuisine of Takhar!</h4>
+        <p class="mb-1">
+            Takhar’s cuisine features delicious Afghan staples enriched with local flavors. Traditional dishes like pilaf with lamb and raisins, mantu (steamed dumplings), and hearty kebabs are widely enjoyed. Locally baked breads such as naan and bolani accompany rich stews and fresh herbs. Sweet treats like baklava and firni provide a delightful finish to meals. Guests often enjoy their food with green tea, reflecting Afghan hospitality.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Warm Hospitality and Comfortable Stays in Takhar!</h4>
+        <p class="mb-1">
+            Though more rural, Takhar offers comfortable guesthouses and small hotels that combine traditional Afghan hospitality with modern conveniences. Visitors experience welcoming communities and can find accommodations ranging from modest lodgings to homestays. Staying in Takhar provides an immersive cultural experience in a peaceful setting.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Adventure and Exploration Await in Takhar’s Mountains and Valleys!</h4>
+        <p class="mb-1">
+            Takhar’s diverse terrain offers excellent opportunities for hiking, trekking, horseback riding, and exploring nature trails. The province’s scenic rivers and valleys invite outdoor enthusiasts to enjoy fishing and picnicking. Though adventure tourism is still developing, Takhar’s landscapes provide a perfect backdrop for memorable excursions and peaceful retreats.
+        </p>
+        
+        <h4 class="mb-3 mt-3">Spiritual Heritage in Takhar’s Heartland</h4>
+        <p class="mb-1">
+            Takhar is home to many important mosques, shrines, and religious sites that reflect the province’s spiritual life. Places like the historic Farkhar Mosque attract visitors and pilgrims alike. The local religious architecture showcases intricate Islamic art and calligraphy, while festivals such as Eid are celebrated with great devotion and community spirit. Visitors often find peace and inspiration in Takhar’s spiritual centers.
+        </p>
+
+        <h4 class="mb-3 mt-3">Top 10 Most Visited Destinations in Takhar</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Farkhar Mosque</strong> — Historic mosque known for its beautiful Islamic architecture.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Rustaq Archaeological Site</strong> — Ancient ruins offering insight into Takhar’s rich history.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Takhar Provincial Museum</strong> — Showcasing local cultural heritage and artifacts.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Takhar Bazaar</strong> — Bustling local market with crafts, textiles, and traditional goods.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Band-e Amir (nearby)</strong> — Stunning natural lakes and national park area known for breathtaking landscapes.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Qala-e Zal</strong> — Ancient fortress ruins offering panoramic views of the region.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Chapa Dara Valley</strong> — Scenic valley popular for hiking and nature walks.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Takhar Provincial Park</strong> — Area with diverse wildlife and opportunities for outdoor adventure.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Takhar Cultural Center</strong> — Venue for local music, dance, and traditional arts.
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Local Handicraft Workshops</strong> — Experience traditional carpet weaving and pottery making.
+            </p>
+        </div>
+        
+        <h4 class="mb-3 mt-3">Best Time for Visiting Takhar for Holidays</h4>
+        <p class="mb-1">
+            The best time to visit Takhar is from April to June and September to November, when the weather is pleasant and ideal for exploring the natural beauty and cultural sites. These months offer comfortable temperatures for outdoor activities like hiking and sightseeing without extreme heat or cold.
+        </p>
+        
+        <h4 class="mb-3 mt-3">A Quick Information About Takhar</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>Northeastern Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Taloqan</td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>36.7367° N, 69.5387° E</td>
+                    </tr>
+                    <tr>
+                        <th>Estimated Population</th>
+                        <td>Approximately 1.1 million (2021 estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 12,333 square kilometers (Takhar Province)</td>
+                    </tr>
+                    <tr>
+                        <th>Districts in Takhar</th>
+                        <td>18 districts</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (primarily Sunni), small Shia communities</td>
+                    </tr>
+                    <tr>
+                        <th>Ethnic Groups</th>
+                        <td>Tajik, Uzbek, Pashtun, Hazara, and others</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Dari (Persian), Pashto, Uzbek</td>
+                    </tr>
+                    <tr>
+                        <th>Province Animal Symbol</th>
+                        <td>Snow Leopard (symbolic of the surrounding mountains)</td>
+                    </tr>
+                    <tr>
+                        <th>Province Flower</th>
+                        <td>Wild Tulip (found in the valleys)</td>
+                    </tr>
+                    <tr>
+                        <th>Province Bird</th>
+                        <td>Golden Eagle (native to Takhar’s mountainous areas)</td>
+                    </tr>
+                    <tr>
+                        <th>Province Tree</th>
+                        <td>Pine and Walnut trees (common in forested zones)</td>
+                    </tr>
+                    <tr>
+                        <th>Traditional Dance</th>
+                        <td>Attan (popular regional folk dance)</td>
+                    </tr>
+                    <tr>
+                        <th>Popular Sports</th>
+                        <td>Football, Buzkashi (traditional horse game)</td>
+                    </tr>
+                    <tr>
+                        <th>Major Tourist Areas</th>
+                        <td>Farkhar Mosque, Rustaq Archaeological Site, Band-e Amir Lakes, Takhar Bazaar</td>
+                    </tr>
+                    <tr>
+                        <th>Major Attractions</th>
+                        <td>Historic sites, Natural parks, Cultural centers, Traditional markets, Mountain hiking</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <h4 class="mb-4 mt-4">Best Selling Takhar Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Top Takhar Travel Packages for You"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Top Takhar Travel Packages for You">
+                                Top Takhar Travel Packages for You
+                            </a>
+                        </h6>
+                        <p>17 Nights - 18 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Explore the Beauty of Takhar – Popular Tour Deals"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Explore the Beauty of Takhar – Popular Tour Deals">
+                                Explore the Beauty of Takhar – Popular Tour Deals
+                            </a>
+                        </h6>
+                        <p>8 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Most Loved Tour Packages in Takhar"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Most Loved Tour Packages in Takhar">
+                                Most Loved Tour Packages in Takhar
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Discover Takhar: Top Travel Experiences"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Takhar: Top Travel Experiences">
+                                Discover Takhar: Top Travel Experiences
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Takhar’s Best Tour Packages – Book Now!"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Takhar’s Best Tour Packages – Book Now!">
+                                Takhar’s Best Tour Packages – Book Now!
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Takhar Escapes – Bestselling Holiday Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Takhar Escapes – Bestselling Holiday Tour">
+                                Classic Takhar Escapes – Bestselling Holiday Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Takhar</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+        
+            <div class="row g-3">
+                <!-- Spring -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Spring Season in Takhar</h5>
+                            <p class="mb-2"><strong>Months:</strong> March to May</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 10°C to 22°C</p>
+                            <p class="card-text">Spring is one of the best times to visit Takhar. The landscape bursts with fresh
+                                greenery, making it ideal for sightseeing and outdoor activities.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Summer Season in Takhar</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 20°C to 34°C</p>
+                            <p class="card-text">Summers in Takhar can be warm but are generally dry. Morning and evening are
+                                best for exploring nature and historical sites.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Autumn -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Autumn Season in Takhar</h5>
+                            <p class="mb-2"><strong>Months:</strong> September to November</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 9°C to 21°C</p>
+                            <p class="card-text">Autumn brings pleasant weather and beautiful fall colors, perfect for trekking
+                                and cultural tours in Takhar.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <h4 class="mb-4 mt-4">Best Places to Visit in Takhar</h4>
+        
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Farkhar Mosque</h5>
+                        <p>(Historic Mosque)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">28 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Takhar Provincial Museum</h5>
+                        <p>(Cultural Museum)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">60 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Rustaq Archaeological Site</h5>
+                        <p>(Ancient Ruins)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">50 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Band-e Amir Lakes</h5>
+                        <p>(Natural Park)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">67 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$350</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Chapa Dara Valley</h5>
+                        <p>(Scenic Valley)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">45 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Takhar Provincial Park</h5>
+                        <p>(Wildlife & Nature)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">12 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <h4 class="mb-4 mt-4">Popular Tourist Attractions in Takhar</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Farkhar Mosque</h5>
+                <p>(Historic Mosque)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Takhar Provincial Museum</h5>
+                <p>(Cultural Museum)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Rustaq Archaeological Site</h5>
+                <p>(Ancient Ruins)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Band-e Amir Lakes</h5>
+                <p>(Natural Park)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$350</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chapa Dara Valley</h5>
+                <p>(Scenic Valley)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Takhar Provincial Park</h5>
+                <p>(Wildlife & Nature)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">Top Things to Do in Takhar</h4>
+
+<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+    <!-- Place 1 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Farkhar Mosque</h5>
+                <p>(Historic Mosque)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">28 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 2 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Takhar Provincial Museum</h5>
+                <p>(Cultural Museum)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">60 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 3 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Rustaq Archaeological Site</h5>
+                <p>(Ancient Ruins)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">50 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 4 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Band-e Amir Lakes</h5>
+                <p>(Natural Park)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">67 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$350</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 5 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Chapa Dara Valley</h5>
+                <p>(Scenic Valley)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">45 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Place 6 -->
+    <div class="location-item">
+        <a href="car-grid.html" class="location-img">
+            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+            <div class="location-name">
+                <h5 class="mb-1">Takhar Provincial Park</h5>
+                <p>(Wildlife & Nature)</p>
+            </div>
+        </a>
+        <div class="location-info d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="fw-medium mb-1">12 Cars</h6>
+                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+            </div>
+            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">How to Reach Takhar?</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Air</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Takhar Airport connects the province with domestic destinations, with flights available to Kabul and other major cities.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Road</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Takhar is connected by highways to neighboring provinces. Road travel times vary based on weather and road conditions.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Train -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>By Train</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-train fs-24"></i>
+                        </span>
+                    </div>
+                    <p>Currently, there are no train services to Takhar. Air and road remain the primary transport options.</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Train -->
+
+    </div>
+</div>
+
+<h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    When is the best time to visit Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The best time to visit Takhar is during spring (March to May) and autumn (September to November), when the weather is mild and pleasant.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                    How can I reach Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>You can reach Takhar by air through Takhar Airport, which connects to Kabul and other domestic cities. Road access is also available, though travel times depend on current conditions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                    What are some famous tourist attractions in Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Popular sites include Farkhar Mosque, Rustaq Archaeological Site, Band-e Amir Lakes, and the Takhar Provincial Museum.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                    Is Takhar safe for tourists?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Safety conditions can vary. It is recommended to check with your local embassy and monitor travel advisories before visiting Takhar.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                    What is the local currency used in Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>The local currency in Takhar, as throughout Afghanistan, is the Afghan Afghani (AFN).</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                    Do I need a visa to visit Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Yes, most foreign nationals require a visa to enter Afghanistan. Please check with the Afghan embassy or consulate in your country for the latest requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                    What language is spoken in Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Dari and Pashto are the main languages spoken in Takhar. Many locals also understand basic English in urban areas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                    What kind of clothes should I wear in Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Visitors are advised to dress conservatively. Men should wear long pants and shirts, while women should cover their hair and dress modestly.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                                    What is the local cuisine like in Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Takhar cuisine features traditional Afghan dishes such as kabuli pulao, kebabs, mantu, and various breads, often served with green tea.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                                    Can I use credit cards in Takhar?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Credit cards are not widely accepted. It is advisable to carry cash in Afghan Afghani (AFN) for most transactions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /FAQ Section -->
+
+<!-- Essential Information Section -->
+<div class="container mt-5">
+    <h3 class="mb-4">Takhar Essential Information</h3>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="mb-3">Where to Stay in Takhar?</h5>
+            <p>
+                Takhar province offers a range of accommodation options, from simple guesthouses to mid-range hotels. The capital city, Taloqan, has the most choices for visitors, including family-run inns and a few hotels with modern amenities.
+            </p>
+            <p>
+                Security remains a key consideration, so it is recommended to stay in well-known establishments and arrange transportation through trusted local contacts or agencies.
+            </p>
+            <p>
+                Booking in advance is advised, especially during travel seasons. Local travel agents can assist with recommendations and help ensure a safe and comfortable stay in Takhar.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Major Activities for Tourists in Takhar -->
+<div class="container mt-5">
+    <h5 class="mb-4">Major Activities for Tourists in Takhar</h5>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                Takhar is known for its beautiful natural landscapes, including mountains, valleys, and rivers. Visitors can explore the historic city of Taloqan and nearby archaeological sites such as the ancient Buddhist stupa at Aybak.
+            </p>
+            <p>
+                The province offers opportunities for hiking and trekking in the surrounding hills and forests. Local markets feature traditional Afghan crafts, carpets, and fresh produce.
+            </p>
+            <p>
+                Visitors often enjoy cultural experiences by visiting local villages to learn about traditional life and handicrafts. Seasonal festivals and traditional music performances offer insight into the local culture.
+            </p>
+            <p>
+                Exploring the Kokcha River area and enjoying the serene rural environment is another popular activity for tourists in Takhar.
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Tips Before Visiting Takhar -->
+<div class="container mt-5">
+    <h5 class="mb-4">A Few Tips Before Visiting Takhar</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Dress modestly and respectfully, especially when visiting rural villages and religious sites.</li>
+        <li class="list-group-item">Travel with a local guide or someone familiar with the area for safety and smoother navigation.</li>
+        <li class="list-group-item">Carry valid identification and keep copies of your documents both physically and digitally.</li>
+        <li class="list-group-item">Avoid traveling at night and stay updated on local security conditions and advisories.</li>
+        <li class="list-group-item">Bargaining is common in local markets — negotiate politely for a better price.</li>
+        <li class="list-group-item">Drink bottled or boiled water to avoid illness, especially in rural areas.</li>
+        <li class="list-group-item">Use trusted transportation arranged by your accommodation or known contacts.</li>
+        <li class="list-group-item">Learning a few phrases in Dari or Pashto helps build goodwill with locals.</li>
+    </ul>
+</div>
+
+<!-- Takhar Map Section -->
+<div class="container mt-5">
+    <h4 class="mb-4">Map of Takhar</h4>
+    <div class="ratio ratio-16x9">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14068044.840812185!2d67.3750547133902!3d36.90024514078476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfd2c4e7b0b3e3%3A0xc3b89ab8c3efce!2sTakhar%20Province%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719251800000!5m2!1sen!2s" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+        <div class="que-sec text-center">
+            <h4 class="mb-3">Have Any Other Questions?</h4>
+            <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact us. We will answer you shortly!</p>
+            <div class="d-flex justify-content-center">
+                <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                    Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+<!-- /Hero Section -->
+{% endblock %}

@@ -1,0 +1,1126 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Kunar Tourism</span> </h1>
+                        <h6 class="text-light mx-auto">A Land of Majestic Mountains, Ancient Heritage, Colorful
+                            Traditions, and Unmatched Hospitality
+                        </h6>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Card centered -->
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-6">
+                                <div class="card banner-form mb-0">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent mb-0 wow fadeInDown"
+                                        data-wow-delay="0.1s"
+                                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Festivals</h5>
+                                            <p>Get to know the rich culture, fairs, and festivals of Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row text-center justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">Kunar Tourism</h4>
+        <p class="mb-1">
+            Kunar is a province known for its breathtaking mountainous landscapes, lush valleys, and rich cultural heritage. Nestled along the Kunar River, it features dense forests, traditional Pashtun villages, and a strong sense of hospitality. The province offers a unique experience for travelers interested in nature, history, tribal culture, and adventure. With iconic places like Asadabad city and scenic river spots, Kunar is ideal for nature lovers, cultural explorers, and those seeking tranquility away from urban bustle.
+        </p>
+        <h4 class="mb-3 mt-3">Architectural Splendour: Ancient Forts, Mosques & Traditional Houses!</h4>
+        <p class="mb-1">
+            Kunar is home to ancient forts, traditional Pashtun houses, and significant mosques. Key attractions include the historic Asadabad Fort and forts located in districts like Narang and Chapa Dara. The province’s mosques, such as the historic Asadabad Grand Mosque, exhibit traditional Islamic architecture. Mud and wood-built homes reflect the resilience and simplicity of local life. The area’s bazaars bustle with traditional crafts, while serene gardens and sacred shrines highlight the spiritual depth of the region.
+        </p>
+        <h4 class="mb-3 mt-3">A Rich Blend of Traditional Dances, Melodious Songs, Horse Rides & Vibrant Colors!</h4>
+        <p class="mb-1">
+            Kunar’s vibrant Pashtun culture is expressed through traditional dances like Attan, folk music, and lively celebrations during festivals such as Eid and Nowruz. Local horse riding events and tribal gatherings showcase the deep-rooted customs of the people. Markets in Asadabad and surrounding towns offer colorful textiles, handcrafted jewelry, and traditional Pashtun attire. The warm hospitality and cultural festivities create an inviting atmosphere for visitors.
+        </p>
+        <h4 class="mb-3 mt-3">Explore Afghanistan’s Majestic Mountains and Unique Wildlife.</h4>
+        <p class="mb-1">
+            Kunar’s mountainous terrain is among Afghanistan’s most scenic, with rugged peaks, dense forests, and the flowing Kunar River. Nature lovers can enjoy hiking trails in districts such as Watapur and Marawara. The province is home to diverse wildlife including snow leopards, markhors, ibex, and various bird species. Birdwatchers will appreciate the rich variety of native and migratory birds along the riverbanks and mountain slopes. With its fresh climate and pristine environment, Kunar is a hidden paradise for eco-tourism and outdoor adventures.
+        </p>
+        <h4 class="mb-3 mt-3">Go Shopping: From Jewelry to Traditional Handicrafts!</h4>
+        <p class="mb-1">
+            Shopping in Kunar connects visitors with authentic Pashtun craftsmanship. The province is known for intricately embroidered clothing, handwoven rugs, and traditional jewelry featuring local stones. Markets in Asadabad feature wooden carvings, leather goods, traditional pakol hats, and musical instruments like the rubab. Whether browsing local bazaars or street stalls, tourists can find a wide range of handmade Afghan souvenirs full of cultural richness and artistry.
+        </p>
+        <h4 class="mb-3 mt-3">From Grilled Meat to Traditional Breads: Savor the Rich Cuisine of Kunar!</h4>
+        <p class="mb-1">
+            Kunar’s cuisine reflects its Pashtun heritage and mountainous environment. Popular dishes include grilled meats and kebabs, often accompanied by fresh naan and chutneys. Other staples are bolani (stuffed flatbread), shorwa (hearty meat and vegetable stew), and rice dishes flavored with local herbs and spices. Street vendors offer samosas, mantu (steamed dumplings), and sweet treats like firni and dry fruit mixes. The food here is a flavorful journey into Afghan traditions.
+        </p>
+        <h4 class="mb-3 mt-3">Luxury Holidays and Timeless Afghan Hospitality!</h4>
+        <p class="mb-1">
+            Kunar offers a selection of guesthouses and hotels in Asadabad that combine modern comforts with traditional Afghan hospitality. Though the province lacks grand resorts, many accommodations feature handwoven carpets, classic décor, and peaceful courtyards. Guests can enjoy warm welcomes, authentic cuisine, and the genuine friendliness of the local people. Kunar’s lodging options provide a cozy base for exploring the province’s natural and cultural treasures.
+        </p>
+        <h4 class="mb-3 mt-3">From Mountain Trekking to River Adventures, Experience Kunar’s Outdoors!</h4>
+        <p class="mb-1">
+            Adventure seekers will find plenty to do in Kunar’s rugged landscapes. Trekking routes traverse scenic valleys and forested mountains. The Kunar River offers opportunities for fishing and river-based activities. Visitors can enjoy horseback riding and exploring remote tribal villages for a deep cultural immersion. Kunar’s pristine environment makes it ideal for peaceful nature walks or adrenaline-pumping outdoor sports.
+        </p>
+        <h4 class="mb-3 mt-3">Spirituality Abounds in the Heart of Kunar</h4>
+        <p class="mb-1">
+            Kunar has a rich spiritual heritage with numerous mosques, shrines, and religious sites important to the local population. The Asadabad Grand Mosque and smaller neighborhood mosques showcase traditional Islamic architecture. Pilgrimage sites like the Shrine of Baba Barmal attract visitors seeking spiritual reflection. The province’s madrasas and peaceful gardens offer tranquil spaces for prayer and contemplation. Religious festivals like Eid are celebrated with great devotion, welcoming visitors to partake in the vibrant spiritual life of Kunar.
+        </p>
+        <h4 class="mb-3 mt-3">Top 10 Most Visited Destinations in Kunar</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Asadabad Fort</strong> — Historic fort offering panoramic views of the city and river.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kunar River Valley</strong> — Scenic valley ideal for hiking, fishing, and picnics.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Watapur Forest</strong> — Dense woodland with diverse flora and fauna.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Marawara Hills</strong> — Mountainous region offering trekking and stunning vistas.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Sayed Khel Shrine</strong> — Important spiritual site for locals and visitors.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Asadabad Grand Mosque</strong> — Iconic mosque with intricate design and community significance.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Chapa Dara Villages</strong> — Traditional villages showcasing Pashtun culture and crafts.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Peche River Area</strong> — Beautiful river landscape perfect for nature walks and fishing.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kunar Museum</strong> — Exhibits on the history and culture of the province.
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Shinwar Market</strong> — Bustling market offering traditional goods and local crafts.
+            </p>
+        </div>
+        <h4 class="mb-3 mt-3">Best Time for Visiting Kunar for Holidays</h4>
+        <p class="mb-1">
+            The best time to visit Kunar is from late spring (April to June) and early autumn (September to October), when the weather is moderate and pleasant. These months offer the most comfortable conditions for exploring the mountainous terrain, enjoying outdoor activities, and attending cultural festivals.
+        </p>
+        <h4 class="mb-3 mt-3">A Quick Information About Kunar</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>Eastern Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Asadabad</td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>34.8750° N, 71.1490° E</td>
+                    </tr>
+                    <tr>
+                        <th>Estimated Population</th>
+                        <td>Approximately 508,000 (2021 estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 4,339 square kilometers</td>
+                    </tr>
+                    <tr>
+                        <th>Districts</th>
+                        <td>15 districts</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (primarily Sunni), small Shia minority</td>
+                    </tr>
+                    <tr>
+                        <th>Ethnic Groups</th>
+                        <td>Pashtun (majority), small Nuristani and Gujjar populations</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Pashto, Dari (Persian), Urdu, some Nuristani dialects</td>
+                    </tr>
+                    <tr>
+                        <th>Province Animal Symbol</th>
+                        <td>Snow Leopard and Markhor</td>
+                    </tr>
+                    <tr>
+                        <th>Province Flower</th>
+                        <td>Wild Iris and Tulip</td>
+                    </tr>
+                    <tr>
+                        <th>Province Bird</th>
+                        <td>Golden Eagle</td>
+                    </tr>
+                    <tr>
+                        <th>Province Tree</th>
+                        <td>Deodar Cedar and Wild Pistachio</td>
+                    </tr>
+                    <tr>
+                        <th>Traditional Dance</th>
+                        <td>Attan (Pashtun folk dance)</td>
+                    </tr>
+                    <tr>
+                        <th>Popular Sports</th>
+                        <td>Buzkashi, Football, Volleyball</td>
+                    </tr>
+                    <tr>
+                        <th>Major Tourist Areas</th>
+                        <td>Asadabad Fort, Kunar River Valley, Watapur Forest, Marawara Hills, Asadabad Grand Mosque</td>
+                    </tr>
+                    <tr>
+                        <th>Major Attractions</th>
+                        <td>Historic sites, Natural forests, Religious shrines, Local bazaars, Traditional crafts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+  
+    
+        
+
+        <h4 class="mb-4 mt-4">Best Selling Kunar Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Top Kunar Travel Packages for You"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Top Kunar Travel Packages for You">
+                                Top Kunar Travel Packages for You
+                            </a>
+                        </h6>
+                        <p>17 Nights - 18 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Explore the Beauty of Kunar – Popular Tour Deals"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Explore the Beauty of Kunar – Popular Tour Deals">
+                                Explore the Beauty of Kunar – Popular Tour Deals
+                            </a>
+                        </h6>
+                        <p>8 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Most Loved Tour Packages in Kunar"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Most Loved Tour Packages in Kunar">
+                                Most Loved Tour Packages in Kunar
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Discover Kunar: Top Travel Experiences"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Kunar: Top Travel Experiences">
+                                Discover Kunar: Top Travel Experiences
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Kunar’s Best Tour Packages – Book Now!"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Kunar’s Best Tour Packages – Book Now!">
+                                Kunar’s Best Tour Packages – Book Now!
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Kunar Escapes – Bestselling Holiday Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Kunar Escapes – Bestselling Holiday Tour">
+                                Classic Kunar Escapes – Bestselling Holiday Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <!-- Additional 3 cards -->
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Adventure Tour in Kunar"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-5"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Adventure Tour in Kunar">
+                                Adventure Tour in Kunar
+                            </a>
+                        </h6>
+                        <p>10 Nights - 11 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Cultural Exploration in Kunar"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-6"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Cultural Exploration in Kunar">
+                                Cultural Exploration in Kunar
+                            </a>
+                        </h6>
+                        <p>7 Nights - 8 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Family Holiday Package Kunar"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-7"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Family Holiday Package Kunar">
+                                Family Holiday Package Kunar
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+        
+    
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Kunar</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+            
+        
+            <div class="row g-3">
+                <!-- Spring -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Spring Season in Kunar</h5>
+                            <p class="mb-2"><strong>Months:</strong> March to May</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 15°C to 30°C</p>
+                            <p class="card-text">Spring in Kunar brings pleasant weather and blooming landscapes. It’s an ideal time for outdoor activities, exploring cultural sites, and enjoying nature.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Summer Season in Kunar</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 25°C to 40°C</p>
+                            <p class="card-text">Summers in Kunar can be quite hot and dry. Morning and evening hours are best for sightseeing and outdoor adventures, while midday is better for indoor activities or rest.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Autumn -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Autumn Season in Kunar</h5>
+                            <p class="mb-2"><strong>Months:</strong> September to November</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 15°C to 28°C</p>
+                            <p class="card-text">Autumn offers cooler temperatures and beautiful scenery as the region prepares for winter. This season is great for hiking, cultural tours, and attending local festivals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="mb-4 mt-4">Best Places to Visit in Kunar</h4>
+        
+            <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+                <!-- Place 1 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Asadabad Gardens</h5>
+                            <p>(Bāgh-e Asadabad)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">28 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Place 2 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Kunar Museum</h5>
+                            <p>(Cultural Heritage of Kunar)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">60 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Place 3 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Chapa Dara Valley</h5>
+                            <p>(Natural Mountain Valley)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">50 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Place 4 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Surtak Mountain Range</h5>
+                            <p>(Mountain Range in Kunar)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">67 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Place 5 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Kunar River Plains</h5>
+                            <p>(Agricultural Landscape)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">45 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+        
+                <!-- Place 6 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Asad Qadir Mosque</h5>
+                            <p>(Landmark Mosque in Asadabad)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">12 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div>
+      
+  
+        
+            <h4 class="mb-4 mt-4">Popular Tourist Attractions in Kunar</h4>
+
+            <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+                <!-- Place 1 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Asadabad Botanical Gardens</h5>
+                            <p>(Bāgh-e Kunar)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">28 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 2 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Kunar Cultural Museum</h5>
+                            <p>(Preserving Eastern Heritage)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">60 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 3 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Torkham Gateway</h5>
+                            <p>(Historic Trade Route)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">50 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 4 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Darunta Lake</h5>
+                            <p>(Scenic Water Retreat)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">67 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 5 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Spin Ghar Foothills</h5>
+                            <p>(Eastern White Mountains)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">45 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 6 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Abdul Haq Square</h5>
+                            <p>(Historic Landmark of Asadabad)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">12 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <h4 class="mb-4 mt-4">Top Things to Do in Kunar</h4>
+
+            <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+                <!-- Place 1 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Asadabad Botanical Garden</h5>
+                            <p>(Bāgh-e Kunar)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">28 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 2 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Kunar Cultural Museum</h5>
+                            <p>(Eastern Heritage Center)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">60 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 3 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Torkham Border Viewpoint</h5>
+                            <p>(Historic Gate & Scenic Point)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">50 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 4 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Darunta Lake</h5>
+                            <p>(Nature & Picnic Spot)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">67 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 5 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Spin Ghar Foothills</h5>
+                            <p>(Mountain Views & Hiking)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">45 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+
+                <!-- Place 6 -->
+                <div class="location-item">
+                    <a href="car-grid.html" class="location-img">
+                        <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                        <div class="location-name">
+                            <h5 class="mb-1">Abdul Haq Monument</h5>
+                            <p>(Heroic Memorial Site)</p>
+                        </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-medium mb-1">12 Cars</h6>
+                            <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                        </div>
+                        <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div>
+            <h4 class="mb-4 mt-4">How to Reach Kunar?</h4>
+
+            <div class="reach-method">
+                <div class="row justify-content-center g-4">
+
+                    <!-- By Air -->
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h5>By Air</h5>
+                                    <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                                        <i class="isax isax-airplane fs-24"></i>
+                                    </span>
+                                </div>
+                                <p>The nearest airport to Kunar is Asadabad Airport, which handles limited domestic flights. Most travelers arrive via Kabul International Airport, then continue the journey by road.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /By Air -->
+
+                    <!-- By Road -->
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h5>By Road</h5>
+                                    <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                                        <i class="isax isax-car fs-24"></i>
+                                    </span>
+                                </div>
+                                <p>Kunar is well-connected by road, especially from Kabul. The Kabul–Asadabad highway is a common route, offering scenic views through mountain passes. Travel time is around 3–4 hours, depending on traffic and road conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /By Road -->
+
+                    <!-- By Train -->
+                    <div class="col-lg-4 col-md-6 d-flex">
+                        <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h5>By Train</h5>
+                                    <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                                        <i class="isax isax-train fs-24"></i>
+                                    </span>
+                                </div>
+                                <p>There are currently no direct train services to Kunar. Travelers usually rely on air and road transport.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /By Train -->
+
+                </div>
+            </div>
+
+            <h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+            <div class="container">
+                <div class="faq">
+                    <div class="faq-sec p-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="accordion" id="accordionFaq">
+
+                                    <!-- Q1 -->
+                                    <div class="accordion-item mb-3 pb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                                When is the best time to visit Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Spring (March to May) and autumn (September to November) are the best times to visit Kunar due to pleasant temperatures and lush scenery.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q2 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                                How can I reach Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Kunar can be reached by road from Kabul via the Kabul–Asadabad highway. There is also a small airport in Asadabad, mainly for domestic flights.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q3 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                                What are some famous tourist attractions in Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Famous attractions include Narang Valley, Korangal Valley, Kunar River, and the historic districts of Asadabad.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q4 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                                Is Kunar safe for tourists?
+                                            </button>
+                                        </h2>
+                                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Safety varies by district and situation. Travelers should consult local authorities and monitor current travel advisories before visiting.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q5 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                                What is the local currency used in Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>The Afghan Afghani (AFN) is the official currency used throughout Kunar Province.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q6 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                                Do I need a visa to visit Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Yes, a valid Afghan visa is required for most foreign travelers. Contact your local Afghan embassy for specific requirements.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q7 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                                What language is spoken in Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Pashto is the dominant language in Kunar, though many people also speak Dari. English is limited to urban areas.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q8 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                                What kind of clothes should I wear in Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>It’s recommended to dress modestly. Men should wear long pants and sleeves; women should cover their hair and wear loose-fitting clothing.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q9 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                                                What is the local cuisine like in Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Kunar is known for fresh fruits, kebabs, traditional rice dishes, and Afghan bread. Asadabad also offers popular street food and green tea.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Q10 -->
+                                    <div class="accordion-item mb-3">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                                                Can I use credit cards in Kunar?
+                                            </button>
+                                        </h2>
+                                        <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                            <div class="accordion-body">
+                                                <p>Credit card usage is very limited. It is recommended to carry cash in Afghan Afghani for most purchases and services.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div> <!-- /accordion -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <!-- /FAQ Section -->
+
+                <!-- Essential Information Section -->
+                <!-<!-- Essential Information Section -->
+            <div class="container mt-5">
+                <h3 class="mb-4">Kunar Essential Information</h3>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h5 class="mb-3">Where to Stay in Kunar?</h5>
+                        <p>
+                            Kunar, particularly the city of Asadabad, offers several accommodations for travelers ranging from basic lodges to comfortable guesthouses. While luxury hotels are limited, clean and secure mid-range options are available.
+                        </p>
+                        <p>
+                            Most hotels are located in the central areas of Asadabad city such as the main bazaar and nearby roads. These areas are easily accessible and provide basic facilities, Wi-Fi, and local dining options.
+                        </p>
+                        <p>
+                            It is recommended to book accommodations through trusted local travel agents or directly by phone. Always confirm safety measures and facilities in advance before finalizing a stay.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Major Activities for Tourists in Kunar -->
+            <div class="container mt-5">
+                <h5 class="mb-4">Major Activities for Tourists in Kunar</h5>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>
+                            Kunar offers a blend of natural beauty and traditional Afghan culture. Visitors can explore scenic sites such as the Narang Valley, Korangal Valley, and stroll along the Kunar River.
+                        </p>
+                        <p>
+                            Asadabad is famous for its vibrant local markets, street food, and traditional crafts. The area also provides opportunities for hiking and exploring rural villages rich in Pashtun traditions.
+                        </p>
+                        <p>
+                            Tourists can also enjoy cultural landmarks, mosques with unique eastern architecture, and local parks. A visit to remote villages offers insight into local hospitality.
+                        </p>
+                        <p>
+                            Interaction with locals, traditional cuisine, and photographing natural scenery are among the most rewarding experiences in Kunar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Tips Before Visiting Kunar -->
+            <div class="container mt-5">
+                <h5 class="mb-4">A Few Tips Before Visiting Kunar</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Kunar has a strong Pashtun cultural influence — modest dress and respectful behavior are essential, especially in rural areas.</li>
+                    <li class="list-group-item">Having a local guide or someone familiar with the province greatly enhances safety and travel ease.</li>
+                    <li class="list-group-item">Carry valid ID and store digital/physical copies of your documents securely.</li>
+                    <li class="list-group-item">Avoid traveling at night, especially on less-frequented roads. Stay updated with local security reports.</li>
+                    <li class="list-group-item">Negotiating prices is part of the culture — especially in local shops and markets.</li>
+                    <li class="list-group-item">Drink bottled or purified water and avoid tap water to prevent illness.</li>
+                    <li class="list-group-item">For transport, try to use known drivers or recommended taxi services within Asadabad.</li>
+                    <li class="list-group-item">Learning a few words in Pashto will help build rapport and show respect to locals.</li>
+                </ul>
+            </div>
+
+                <!-- Kunar Map Section -->
+            <div class="container mt-5">
+                <h4 class="mb-4">Map of Kunar</h4>
+                <div class="ratio ratio-16x9">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.7653202233677!2d71.14729387581146!3d34.87271807961378!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d9edb6b3e5bc03%3A0x8c37a6b39d5fcd6f!2sAsadabad%2C%20Kunar%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719249999999!5m2!1sen!2s" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-6">
+                    <div class="que-sec text-center">
+                        <h4 class="mb-3">Have Any Other Questions?</h4>
+                        <p class="mb-3">If you cannot find an answer to your question in our FAQ, you can always contact us. We will answer you shortly!</p>
+                        <div class="d-flex justify-content-center">
+                            <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                                Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- /Hero Section -->
+{% endblock %}

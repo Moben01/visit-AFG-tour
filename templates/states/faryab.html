@@ -1,0 +1,1258 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Img">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Img">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2"><span>Faryab Tourism</span> </h1>
+                        <h6 class="text-light mx-auto">A Land of Historical Marvels, Cultural Diversity, Timeless
+                            Traditions, and Genuine Hospitality
+                        </h6>
+                    </div>
+                    <div class="container my-5">
+
+                        <!-- Festivals Card centered -->
+                        <div class="row justify-content-center mb-4">
+                            <div class="col-lg-6">
+                                <div class="card banner-form mb-0">
+                                    <div class="card border-secondary shadow-none bg-secondary-transparent mb-0 wow fadeInDown"
+                                        data-wow-delay="0.1s"
+                                        style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInDown;">
+                                        <div class="card-body text-center">
+                                            <h5 class="mb-1">Festivals</h5>
+                                            <p>Get to know the rich culture, fairs, and festivals of Afghanistan.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hotel Types Grid -->
+                        <div class="row">
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Condos</a></h6>
+                                        <p class="fs-14">216 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-02.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Apartments</a></h6>
+                                        <p class="fs-14">569 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-03.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Villas</a></h6>
+                                        <p class="fs-14">129 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-04.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">5 Star Hotels</a></h6>
+                                        <p class="fs-14">600 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">3 Star Hotels</a></h6>
+                                        <p class="fs-14">200 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
+                                <div class="d-flex align-items-center hotel-type-item">
+                                    <a href="hotel-grid.html" class="avatar avatar-lg">
+                                        <img src="{% static 'img/hotels/hotel-model-06.jpg' %}" class="rounded-circle"
+                                            alt="img">
+                                    </a>
+                                    <div class="ms-2">
+                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">2 Star Hotels</a></h6>
+                                        <p class="fs-14">180 Hotels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">About Faryab Tourism</h4>
+        <p class="mb-1">
+            Faryab, a province rich in history and natural beauty, is home to remarkable archaeological sites and
+            cultural heritage that reflect Afghanistan’s diverse past. Known for its peaceful landscapes and historic
+            monuments, Faryab offers travelers a unique glimpse into ancient civilizations, Islamic culture, and
+            traditional Afghan life. With its scenic valleys, mountains, and warm-hearted locals, Faryab is an ideal
+            destination for cultural explorers, historians, and nature lovers seeking an authentic Afghan experience.
+        </p>
+
+        <h4 class="mb-3 mt-3">Newly Developed Tourist Attractions in Faryab!</h4>
+        <p class="mb-1">
+            Faryab is increasingly attracting visitors with its newly developed tourism sites that complement its
+            ancient heritage. One notable attraction is the Qala-e-Bost fortress ruins in Andkhoy, an ancient site with
+            rich historical significance. Restoration and preservation efforts have made this site more accessible and
+            educational for visitors.
+            Another highlight is the Faryab Cultural Center, which showcases local crafts, music, and traditional
+            Afghan art, providing a platform for artisans and cultural performances. Surrounding the center are lush
+            gardens and picnic areas ideal for families and tourists.
+            Nature enthusiasts will enjoy the newly designated Faryab Wildlife Park, home to native species such as
+            gazelles, foxes, and various birds. The park offers guided tours and birdwatching opportunities, promoting
+            eco-tourism and environmental awareness.
+        </p>
+
+        <h4 class="mb-3 mt-3">Historical and Spiritual Sites in Faryab</h4>
+        <p class="mb-1">
+            Faryab holds a special place in Afghan history and spirituality. The ruins of old fortresses and
+            caravanserais,
+            especially in Maimana and Andkhoy, are a testament to the region’s role on ancient trade routes. The
+            province
+            also has several mosques and shrines important to local spiritual life, such as the Shrine of Hazrat Mir
+            Abdul Malik and other revered figures.
+            These sites offer visitors a chance to connect with Afghanistan’s rich spiritual traditions, blending
+            Islamic
+            culture with traces of earlier beliefs. Pilgrims and tourists alike find serenity in Faryab’s sacred
+            spaces, often accompanied by local stories and legends that enrich the experience.
+            Plans for a cultural trail are underway, which will link these spiritual and historical landmarks,
+            highlighting Faryab’s legacy as a crossroads of faith and culture.
+        </p>
+
+        <h4 class="mb-3 mt-3">Ancient Heritage and Archaeological Treasures</h4>
+        <p class="mb-1">
+            Faryab is known for its archaeological importance, with sites that date back thousands of years. The
+            ancient city ruins in Dawlatabad and Ghormach showcase the architectural legacy of past civilizations.
+            Archaeologists continue to uncover artifacts representing a fusion of Central Asian, Islamic, and
+            pre-Islamic
+            influences, showcasing Faryab’s role as a cultural crossroads along ancient trade routes.
+            Visitors can explore these ruins with guided tours that offer historical context and insights into the
+            people who once inhabited this land. Upcoming heritage projects aim to create immersive experiences, such as
+            reenactments and cultural festivals that celebrate Faryab’s rich past.
+        </p>
+
+        <h4 class="mb-3 mt-3">Natural Beauty and Wildlife of Faryab</h4>
+        <p class="mb-1">
+            The landscapes of Faryab are varied and captivating, ranging from mountainous terrains to fertile valleys
+            and steppe regions. This natural diversity supports a variety of wildlife, making it a great destination for
+            nature lovers.
+            The Faryab Wildlife Park protects native species like gazelles, jackals, foxes, and numerous bird species,
+            including migratory birds that stop over during seasonal journeys.
+            Visitors can enjoy hiking, birdwatching, and exploring quiet natural spots that showcase Afghanistan’s
+            often overlooked ecological treasures. Conservation efforts are growing, supported by local communities who
+            value the natural heritage of their homeland.
+        </p>
+
+        <h4 class="mb-3 mt-3">Peaceful and Spiritual Retreats</h4>
+        <p class="mb-1">
+            Faryab offers tranquil retreats for visitors seeking peace and spiritual reflection. The province’s
+            quiet countryside, sacred shrines, and natural springs provide perfect settings for meditation and
+            relaxation.
+            Among these is the famous Shrine of Hazrat Mir Abdul Malik, a spiritual center where visitors experience the
+            rich religious traditions of the area.
+            The province’s calm environment, away from the hustle of big cities, invites tourists to connect deeply
+            with nature and heritage, making it an ideal destination for wellness tourism and cultural immersion.
+            The best visiting times are spring and autumn, when the weather is mild, and the natural surroundings
+            are at their most vibrant.
+        </p>
+
+        <h4 class="mb-3 mt-3">Birdwatching Hotspots in Faryab</h4>
+        <p class="mb-1">
+            Birdwatchers will find Faryab to be a rewarding destination due to its diverse habitats. The river
+            valleys,
+            orchards, and rolling hills provide shelter to a wide variety of bird species.
+            Popular spots include:
+            - The banks of the Shirin Tagab River, known for migratory and native birds.
+            - The Faryab Wildlife Park, a sanctuary for birds of prey and songbirds.
+            - The hills of Ghormach, ideal for spotting raptors and other wild birds.
+            Although formal bird sanctuaries are still being developed, the natural environment offers abundant
+            opportunities for birdwatching and eco-tourism enthusiasts.
+        </p>
+
+        <h4 class="mb-3 mt-3">Outdoor Activities and Leisure</h4>
+        <p class="mb-1">
+            While Faryab is developing its tourism infrastructure, visitors can enjoy traditional outdoor activities
+            such as:
+            - Hiking and trekking through scenic hills and valleys
+            - Horseback riding in rural areas
+            - Exploring local villages and experiencing Afghan hospitality firsthand
+            Cultural festivals and community events showcase traditional games and music, providing immersive leisure
+            experiences.
+            Future plans include expanding recreational facilities to accommodate a growing number of tourists.
+        </p>
+
+        <h4 class="mb-3 mt-3">Wellness and Traditional Healing in Faryab</h4>
+        <p class="mb-1">
+            Faryab offers opportunities for wellness tourism grounded in traditional Afghan healing practices and
+            natural serenity.
+            Visitors can experience:
+            - Herbal remedies and traditional medicine passed down through generations
+            - Relaxing visits to natural springs and peaceful gardens
+            - Spiritual retreats at local shrines and meditation spots
+            Efforts to promote eco-lodges and holistic wellness centers are underway, aiming to blend cultural heritage
+            with modern relaxation techniques.
+        </p>
+
+        <h4 class="mb-3 mt-3">Top 10 Tourist Destinations of Faryab Province</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Maimana Ancient Fortress</strong>
+                —
+                The historic citadel ruins located in Maimana, the provincial capital, showcasing medieval Islamic
+                architecture.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Qala-e-Bost Ruins</strong>
+                — A remarkable archaeological complex in Andkhoy district reflecting pre-Islamic and Islamic influences.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Shirin Tagab River Valley</strong>
+                — A
+                scenic river valley offering lush landscapes, perfect for nature walks and birdwatching.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Faryab Archaeological
+                    Museum</strong> —
+                Displays artifacts from Buddhist, Islamic, and nomadic cultures found in the province.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Hazrat Mir Abdul Malik
+                    Shrine</strong> —
+                A spiritually significant shrine attracting pilgrims and visitors seeking peace and reflection.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Blue Tile Mosque of
+                    Maimana</strong> —
+                An iconic mosque known for its striking blue tiles and elegant domes.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Almar Hills</strong>
+                — Surrounding hills offering hiking opportunities and breathtaking views of the province.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Tomb of Seyyed Latif</strong> —
+                A historic tomb known for its beautiful architecture and local cultural significance.
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Faryab Handicrafts Market</strong>
+                —
+                A vibrant market where visitors can find traditional Afghan carpets, embroidery, and leather goods
+                crafted by local artisans.
+            </p>
+            <p>
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Faryab Cultural Festival
+                    Grounds</strong>
+                — Venue for annual festivals celebrating local music, dance, and cultural performances.
+            </p>
+        </div>
+
+        <h4 class="mb-3 mt-3">Best Time for Visiting Faryab for Holidays</h4>
+        <p class="mb-1">
+            Faryab experiences hot summers and cold winters, so the best time to visit is during the spring and autumn
+            months,
+            from April to June and September to October. During these months, the weather is more comfortable for
+            sightseeing,
+            hiking, and exploring the region’s cultural and natural attractions.
+        </p>
+
+        <h4 class="mb-3 mt-3">Quick Information About Faryab Province</h4>
+        <div style="overflow-x:auto;">
+            <table class="table table-bordered" style="min-width: 700px;">
+                <tbody>
+                    <tr>
+                        <th>Region</th>
+                        <td>Northwestern Afghanistan</td>
+                    </tr>
+                    <tr>
+                        <th>Capital of Province</th>
+                        <td>Maymana</td>
+                    </tr>
+                    <tr>
+                        <th>Coordinates</th>
+                        <td>35.9333° N, 64.7833° E</td>
+                    </tr>
+                    <tr>
+                        <th>Total Population</th>
+                        <td>Approximately 1,000,000 (estimate)</td>
+                    </tr>
+                    <tr>
+                        <th>Geographical Area</th>
+                        <td>About 20,293 sq km<br>Districts: 14</td>
+                    </tr>
+                    <tr>
+                        <th>Districts</th>
+                        <td>14</td>
+                    </tr>
+                    <tr>
+                        <th>Major Religions</th>
+                        <td>Islam (Sunni majority, small Shia population)</td>
+                    </tr>
+                    <tr>
+                        <th>Major Ethnic Groups</th>
+                        <td>Uzbeks, Turkmens, Tajiks, Pashtuns</td>
+                    </tr>
+                    <tr>
+                        <th>Languages Spoken</th>
+                        <td>Dari, Uzbek, Turkmen, Pashto</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Animal</th>
+                        <td>Steppe Eagle</td>
+                    </tr>
+                    <tr>
+                        <th>City Flower</th>
+                        <td>Tulip</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Bird</th>
+                        <td>Houbara Bustard</td>
+                    </tr>
+                    <tr>
+                        <th>Provincial Tree</th>
+                        <td>Poplar Tree</td>
+                    </tr>
+                    <tr>
+                        <th>Major Cities and Towns</th>
+                        <td>Maymana, Andkhoy, Almar, Dawlat Abad, Khwaja Sabz Posh</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">Best Selling Faryab Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Top Faryab Travel Packages for You"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Top Faryab Travel Packages for You">
+                                Top Faryab Travel Packages for You
+                            </a>
+                        </h6>
+                        <p>17 Nights - 18 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Repeat with new content for Faryab -->
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Explore the Charm of Faryab – Popular Tour Deals"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Explore the Charm of Faryab – Popular Tour Deals">
+                                Explore the Charm of Faryab – Popular Tour Deals
+                            </a>
+                        </h6>
+                        <p>8 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Most Loved Tour Packages in Faryab"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Most Loved Tour Packages in Faryab">
+                                Most Loved Tour Packages in Faryab
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Discover Faryab: Top Travel Experiences"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Faryab: Top Travel Experiences">
+                                Discover Faryab: Top Travel Experiences
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Faryab’s Best Tour Packages – Book Now!"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Faryab’s Best Tour Packages – Book Now!">
+                                Faryab’s Best Tour Packages – Book Now!
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Faryab Escapes – Bestselling Holiday Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Faryab Escapes – Bestselling Holiday Tour">
+                                Classic Faryab Escapes – Bestselling Holiday Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">Best Time to Visit Faryab</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+            </div>
+
+            <div class="row g-3">
+                <!-- Spring -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">Spring Season in Faryab</h5>
+                            <p class="mb-2"><strong>Months:</strong> March to May</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 15°C to 28°C</p>
+                            <p class="card-text">Spring is considered the best time to visit Faryab, with pleasant
+                                weather,
+                                blooming landscapes, and ideal temperatures for sightseeing and outdoor activities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">Summer Season in Faryab</h5>
+                            <p class="mb-2"><strong>Months:</strong> June to August</p>
+                            <p class="mb-2"><strong>Temperature:</strong> 30°C to 40°C</p>
+                            <p class="card-text">Summers in Faryab can be hot and dry, ideal for travelers who enjoy a
+                                warm
+                                climate and fewer crowds. Early mornings and evenings are more comfortable for
+                                exploring.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Winter -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">Winter Season in Faryab</h5>
+                            <p class="mb-2"><strong>Months:</strong> December to February</p>
+                            <p class="mb-2"><strong>Temperature:</strong> -5°C to 10°C</p>
+                            <p class="card-text">Winters are cold in Faryab, especially at night. However, it’s a great
+                                time to
+                                explore cultural heritage sites with clear skies and a peaceful atmosphere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h4 class="mb-4 mt-4">Best Places to Visit in Faryab</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Qala-e-Naw Fortress</h5>
+                        <p>(Historic Military Structure)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">28 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Maymana City Center</h5>
+                        <p>(Cultural & Local Markets)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">60 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Imam Sahib Shrine</h5>
+                        <p>(Spiritual & Religious Site)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">50 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Faryab Mountains</h5>
+                        <p>(Hiking & Natural Views)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">67 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Almar Bazaar</h5>
+                        <p>(Traditional Shopping Spot)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">45 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Faryab Museum</h5>
+                        <p>(Artifacts & Heritage)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">12 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">Popular Tourist Attractions in Faryab</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-40.jpg' %}" alt="Qala-e-Bost Fortress">
+                    <div class="location-name">
+                        <h5 class="mb-1">Qala-e-Bost Fortress</h5>
+                        <p>(Historic Military Fort)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-41.jpg' %}" alt="Maimana City">
+                    <div class="location-name">
+                        <h5 class="mb-1">Maimana City</h5>
+                        <p>(Provincial Capital and Historic Center)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">35 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-42.jpg' %}" alt="Shirin Tagab Valley">
+                    <div class="location-name">
+                        <h5 class="mb-1">Shirin Tagab Valley</h5>
+                        <p>(Natural Beauty and Farmland)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$240</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-43.jpg' %}" alt="Almar Historical Mosque">
+                    <div class="location-name">
+                        <h5 class="mb-1">Almar Historical Mosque</h5>
+                        <p>(Cultural and Religious Heritage)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">25 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-44.jpg' %}" alt="Koh-e-Zendan">
+                    <div class="location-name">
+                        <h5 class="mb-1">Koh-e-Zendan</h5>
+                        <p>(Mountain Hiking Spot)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">30 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-45.jpg' %}" alt="Faryab Cultural Museum">
+                    <div class="location-name">
+                        <h5 class="mb-1">Faryab Cultural Museum</h5>
+                        <p>(Traditional Artifacts & History)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="mb-4 mt-4">Top Things to Do in Faryab</h4>
+
+        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
+            <!-- Place 1 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-40.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Maimana Bazaar</h5>
+                        <p>(Explore Local Markets)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">20 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 2 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-41.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Visit Qaysar District</h5>
+                        <p>(Agricultural and River Landscapes)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">35 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$220</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 3 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-42.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Explore Faryab Museum</h5>
+                        <p>(Discover Local History)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">15 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 4 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-43.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Hike Koh-e-Mirwais</h5>
+                        <p>(Stunning Nature and Trails)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">40 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 5 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-44.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Relax at Almar River</h5>
+                        <p>(Picnic & Fishing Spot)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">22 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$170</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <!-- Place 6 -->
+            <div class="location-item">
+                <a href="car-grid.html" class="location-img">
+                    <img src="{% static 'img/destination/destination-45.jpg' %}" alt="img">
+                    <div class="location-name">
+                        <h5 class="mb-1">Tour Khwaja Sabz Posh</h5>
+                        <p>(Experience Rural Life)</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">10 Cars</h6>
+                        <p class="fs-14">Starts From <span class="text-primary">$160</span></p>
+                    </div>
+                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-4">How to Reach Faryab?</h4>
+
+        <div class="reach-method">
+            <div class="row justify-content-center g-4">
+
+                <!-- By Air -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Air</h5>
+                                <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-airplane fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Faryab province does not have a commercial airport. The nearest airports are in
+                                Mazar-i-Sharif or Herat, from where travelers can continue by road.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Air -->
+
+                <!-- By Road -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Road</h5>
+                                <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-car fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Faryab is accessible via road networks connecting it to major cities like Mazar-i-Sharif
+                                and Herat. Road travel is the main way to reach the province.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Road -->
+
+                <!-- By Train -->
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <h5>By Train</h5>
+                                <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                                    <i class="isax isax-train fs-24"></i>
+                                </span>
+                            </div>
+                            <p>Currently, there are no train services to Faryab. Travelers rely on air travel to nearby
+                                cities and road transport to reach the province.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /By Train -->
+
+            </div>
+        </div>
+
+
+        <h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
+
+        <div class="container">
+            <!-- FAQ Section -->
+            <div class="faq">
+                <div class="faq-sec p-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="accordion" id="accordionFaq">
+
+                                <!-- Q1 -->
+                                <div class="accordion-item mb-3 pb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                            When is the best time to visit Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The best time to visit Faryab is during spring (March to May) and autumn
+                                                (September to November), when the temperatures are moderate and ideal
+                                                for travel.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q2 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                            aria-controls="faq2">
+                                            How can I reach Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Faryab does not have a commercial airport. The nearest airports are in
+                                                Mazar-i-Sharif or Herat. From there, travelers continue to Faryab by
+                                                road, which is the main way to access the province.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q3 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                            aria-controls="faq3">
+                                            What are some famous tourist attractions in Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Famous sites include the historic city of Maymana, ancient fortresses,
+                                                and scenic valleys that reflect the region's cultural and natural
+                                                beauty.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q4 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                            aria-controls="faq4">
+                                            Is Faryab safe for tourists?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Security conditions can change. It is advised to check current travel
+                                                advisories and consult with local authorities or embassies before
+                                                planning a trip to Faryab.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q5 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                            aria-controls="faq5">
+                                            What is the local currency used in Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The local currency in Faryab, like the rest of Afghanistan, is the Afghan
+                                                Afghani (AFN).</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q6 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                            aria-controls="faq6">
+                                            Do I need a visa to visit Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Yes, a visa is required for most foreign nationals to enter Afghanistan.
+                                                Be sure to check the visa policy at the Afghan embassy or consulate in
+                                                your country.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q7 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                            aria-controls="faq7">
+                                            What language is spoken in Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>The main languages spoken in Faryab are Dari, Pashto, and Uzbek. Some
+                                                locals may also understand English in larger towns.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q8 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                            aria-controls="faq8">
+                                            What kind of clothes should I wear in Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>It’s recommended to dress conservatively. Men should wear long trousers
+                                                and shirts, while women should cover their heads and wear modest
+                                                clothing that covers arms and legs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q9 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                            aria-controls="faq9">
+                                            What is the local cuisine like in Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Faryab cuisine includes traditional Afghan foods such as kabuli pulao,
+                                                lamb kebabs, mantu, and a variety of local breads, often served with
+                                                yogurt or tea.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Q10 -->
+                                <div class="accordion-item mb-3">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                            aria-controls="faq10">
+                                            Can I use credit cards in Faryab?
+                                        </button>
+                                    </h2>
+                                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                        <div class="accordion-body">
+                                            <p>Credit card usage is limited in Faryab. Travelers should carry sufficient
+                                                cash in Afghanis for all local transactions and expenses.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /FAQ Section -->
+        </div>
+
+
+
+        <!-- Essential Information Section -->
+        <div class="container mt-5">
+            <h3 class="mb-4">Faryab Essential Information</h3>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="mb-3">Where to Stay in Faryab?</h5>
+                    <p>
+                        Faryab offers modest accommodation options suited to travelers seeking cultural exploration. In
+                        the provincial capital, Maymana, visitors can find basic hotels, guesthouses, and locally run
+                        inns.
+                    </p>
+                    <p>
+                        Staying in Maymana ensures access to essential services and proximity to cultural and historical
+                        landmarks. It is recommended to choose accommodations with good local reviews and a reputation
+                        for safety.
+                    </p>
+                    <p>
+                        Booking through trusted local contacts or travel services is advisable. Engaging with locals can
+                        also lead to authentic homestay experiences that reflect the warm hospitality of Faryab.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Major Activities for Tourists in Faryab -->
+        <div class="container mt-5">
+            <h5 class="mb-4">Major Activities for Tourists in Faryab</h5>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Faryab boasts a rich cultural and historical background. Tourists can explore ancient ruins,
+                        traditional architecture, and historical mosques that highlight the province’s heritage.
+                    </p>
+                    <p>
+                        Local bazaars in Maymana are perfect for experiencing everyday Afghan life. Visitors can shop
+                        for handmade carpets, pottery, jewelry, and textiles produced by local artisans.
+                    </p>
+                    <p>
+                        The natural surroundings of Faryab, including green valleys and rolling hills, are ideal for
+                        scenic walks, picnics, and cultural photography.
+                    </p>
+                    <p>
+                        Culinary experiences include enjoying local Afghan dishes such as qabeli, ashak, and a variety
+                        of kebabs, usually accompanied by freshly baked bread and green tea.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Before Visiting Faryab -->
+        <div class="container mt-5">
+            <h5 class="mb-4">A Few Tips Before Visiting Faryab</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Faryab reflects a blend of Uzbek, Turkmen, and Afghan cultures — dress
+                    modestly and respect local customs, especially in rural areas.</li>
+                <li class="list-group-item">Hiring a local guide or traveling with someone familiar with the region
+                    enhances safety and provides cultural insight.</li>
+                <li class="list-group-item">Always carry your identification documents, and store digital backups for
+                    safety.</li>
+                <li class="list-group-item">Stay updated on travel conditions through local sources and avoid traveling
+                    at night in remote areas.</li>
+                <li class="list-group-item">Negotiating prices is common in Faryab markets — polite bargaining is
+                    expected.</li>
+                <li class="list-group-item">Bring bottled water, especially in warmer months, and avoid untreated water
+                    sources.</li>
+                <li class="list-group-item">Use reliable transportation services — avoid unofficial vehicles when
+                    possible.</li>
+                <li class="list-group-item">Learning basic Dari or Uzbek greetings can create a more welcoming
+                    interaction with locals.</li>
+            </ul>
+        </div>
+
+
+        <!-- Faryab Map Section -->
+        <div class="container mt-5">
+            <h4 class="mb-4">Map of Faryab</h4>
+            <div class="ratio ratio-16x9">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d33859.51201377889!2d64.75704808420128!3d35.9302222712347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f0156e6e2e89b2b%3A0x7b6b4a33b44d5e41!2sMaymana%2C%20Faryab%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719250730000!5m2!1sen!2s"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+                <div class="que-sec text-center">
+                    <h4 class="mb-3">Have Any Other Questions?</h4>
+                    <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact
+                        us. We will answer you shortly!</p>
+                    <div class="d-flex justify-content-center">
+                        <a href="contact-us.html"
+                            class="btn btn-primary d-flex align-items-center justify-content-center">
+                            Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% endblock %}
