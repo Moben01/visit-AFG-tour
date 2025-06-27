@@ -72,10 +72,10 @@
                     <div class="offcanvas-detail">
                         <div class="offcanvas-head">
                             <div class="d-flex justify-content-between align-items-center mb-3">
-                                <a href="index.html" class="black-logo-responsive">
+                                <a href="/" class="black-logo-responsive">
                                     <img src="{% static 'img/logo-dark.svg' %}" alt="logo-img">
                                 </a>
-                                <a href="index.html" class="white-logo-responsive">
+                                <a href="/" class="white-logo-responsive">
                                     <img src="{% static 'img/logo.svg' %}" alt="logo-img">
                                 </a>
                                 <div class="offcanvas-close">
@@ -142,10 +142,10 @@
             <div class="header-nav">
                 <div class="main-menu-wrapper">
                     <div class="navbar-logo">
-                        <a class="logo-white header-logo" href="index.html">
+                        <a class="logo-white header-logo" href="/">
                             <img src="{% static 'img/logo-dark.svg' %}" class="logo" alt="Logo">
                         </a>
-                        <a class="logo-dark header-logo" href="index.html">
+                        <a class="logo-dark header-logo" href="/">
                             <img src="{% static 'img/logo.svg' %}" class="logo" alt="Logo">
                         </a>
                     </div>
@@ -534,26 +534,28 @@
                                 </ul>
                             </li>
                             <li class="has-submenu mega-innermenu">
-                                <a href="javascript:void(0);">Car<i class="fa-solid fa-angle-down"></i></a>
+                                <a href="javascript:void(0);">Plan Your Trip<i class="fa-solid fa-angle-down"></i></a>
                                 <ul class="submenu mega-submenu">
                                     <li>
                                         <div class="megamenu-wrapper">
                                             <div class="row">
                                                 <div class="col-lg-6">
-                                                    <h6>Car Bookings</h6>
                                                     <ul>
-                                                        <li><a href="car-grid.html">Car Grid</a></li>
-                                                        <li><a href="car-list.html">Car List</a></li>
-                                                        <li><a href="car-map.html">Car Map</a></li>
-                                                        <li><a href="car-details.html">Car Details</a></li>
-                                                        <li><a href="car-booking-confirmation.html">Car Booking</a></li>
-                                                        <li><a href="add-car.html">Add Car</a></li>
+                                                        <li><a href="{% url 'plan_your_trip:visa_guide' %}"><h6>Visa guide</h6></a></li>
+                                                        <li><a href="car-list.html"><h6>Essentials</h6></a></li>
+                                                        <li><a href="car-map.html"><h6>Flights</h6></a></li>
+                                                        <li><a href="car-details.html"><h6>Accommodation</h6></a></li>
+                                                        <li><a href="car-booking-confirmation.html"><h6>Getting to & around Dubai                                                        </h6></a></li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <div class="menu-img">
-                                                        <img src="{% static 'img/menu/car.jpg' %}" alt="img" class="img-fluid">
-                                                    </div>
+                                                    <ul>
+                                                        <li><a href="car-grid.html"><h6>Safety </h6></a></li>
+                                                        <li><a href="car-list.html"><h6>Weather</h6></a></li>
+                                                        <li><a href="car-map.html"><h6>Currency                                                         </h6></a></li>
+                                                        <li><a href="car-details.html"><h6>Accessibility                                                        </h6></a></li>
+                                                        <li><a href="car-booking-confirmation.html"><h6>Dubai attractions passes                                                        </h6></a></li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
