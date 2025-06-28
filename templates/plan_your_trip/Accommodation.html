@@ -1,0 +1,220 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section-four">
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-lg-10 col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content text-center mx-auto">
+                        <h1 class="text-white display-4 mb-2">Accommodation </h1>
+                        <p class="text-white mx-auto">Five-star resort or chic boutique hotel? Pick from an incredible
+                            range of options.</p>
+                        <a class="video-btn video-effect" data-fancybox="" href="https://youtu.be/NSAOrGb9orM"><i
+                                class="isax isax-play5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Hero Section -->
+<section class="section destination-section">
+    <div class="container">
+        <h4 class="mb-2">Afghanistan Hotels</h4>
+        <p class="mb-1">
+            Afghanistan offers a unique blend of history, culture, and natural beauty. From the bustling bazaars of
+            Kabul to the serene landscapes of Bamyan and the historical treasures of Herat, travelers can enjoy
+            authentic Afghan hospitality across the country. Whether you're a history enthusiast, cultural explorer,
+            adventure seeker, or planning a family vacation, Afghanistan provides a diverse range of hotel experiences
+            to suit your journey.
+
+
+        </p>
+
+        <button type="button" class="btn btn-secondary my-3">
+            New hotels in Afghanistan
+        </button>
+        <h4 class="mb-2 my-3">Budget Hotels</h4>
+        <p class="mb-1">
+            Your stay in Afghanistan doesn't have to break the bank. Whether you're exploring the historic streets of
+            Kabul, the scenic valleys of Bamyan, or the ancient sites of Herat, there are budget-friendly hotels and
+            guesthouses to suit every traveler. Local options and modest chains offer clean rooms, friendly service, and
+            convenient locations—perfect for backpackers, students, and families looking to experience Afghan
+            hospitality without spending too much.
+        </p>
+
+        <button type="button" class="btn btn-secondary my-3">
+            Guide to budget hotels in Afghanistan
+        </button>
+
+
+        <h4 class="mb-2 my-3">Hotel Apartments</h4>
+<p class="mb-1">
+    Staying a little longer or prefer the comfort of a home-style setup? Afghanistan offers a growing number of hotel apartments, ideal for extended stays, business travelers, or families. These accommodations often include kitchen facilities, laundry access, workspace, and more—providing the perfect mix of comfort and convenience. Whether you're in Kabul, Mazar-i-Sharif, or Herat, hotel apartments offer a practical option with the added benefit of room service and dining options.
+</p>
+
+<button type="button" class="btn btn-secondary my-3">
+    Plan a budget trip to Afghanistan
+</button>
+
+<h4 class="mb-2 my-3">Home and Apartment Rentals</h4>
+<p class="mb-1">
+    Afghanistan is increasingly offering home and apartment rental options for travelers seeking a more private and personalized stay. From cozy apartments in Kabul to traditional homes in scenic provinces like Bamyan and Panjshir, you can find unique accommodations through platforms like Airbnb and local rental services. These rentals provide the comforts of home—privacy, kitchen facilities, and flexible space—while immersing you in authentic Afghan neighborhoods and culture.
+</p>
+
+<button type="button" class="btn btn-secondary my-3">
+    Discover Afghanistan's neighborhoods
+</button>
+
+<div class="row bg-white border rounded shadow p-4 my-5">
+    <!-- Left image -->
+    <div class="col-md-4">
+      <img src="https://kamairmedia.s3.ap-south-1.amazonaws.com/airline_37388ec6bd.webp" alt="Fly Afghanistan" class="img-fluid rounded">
+    </div>
+
+    <!-- Right form -->
+    <div class="col-md-8">
+      <h4 class="mb-4">Fly with Afghanistan</h4>
+      <!-- <form> -->
+        <div class="row mb-3">
+          <!-- Departure -->
+          <div class="col-md-6">
+            <label class="form-label">Departure airport</label>
+            <select class="form-select">
+              <option selected>Select airport</option>
+              <option>Kabul (KBL)</option>
+              <option>Kandahar (KDH)</option>
+              <option>Herat (HEA)</option>
+              <option>Mazar-i-Sharif (MZR)</option>
+            </select>
+          </div>
+          <!-- Arrival -->
+          <div class="col-md-6">
+            <label class="form-label">Arrival airport</label>
+            <div class="input-group">
+              <input type="text" class="form-control" value="Afghanistan (DXB)" readonly>
+              <span class="input-group-text bg-light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                  <path d="M8 1a3 3 0 0 0-3 3v3H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V4a3 3 0 0 0-3-3zm-2 6V4a2 2 0 1 1 4 0v3H6z"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <!-- Date -->
+          <div class="col-md-6">
+            <label class="form-label">Select date</label>
+            <input type="date" class="form-control" value="2025-06-28">
+          </div>
+          <!-- Passengers -->
+                       <!-- Container for Passenger Selection -->
+                       <div class="mb-4 position-relative col-md-6">
+                          <label class="form-label d-block">Passenger(s)</label>
+      
+                          <!-- Trigger Input -->
+                          <input type="text" id="passengerSummary" class="form-control" value="3 Passenger(s)" readonly
+                              onclick="togglePassengerBox()">
+      
+                          <!-- Passenger Dropdown Box -->
+                          <div id="passengerBox" class="card shadow p-3 position-absolute bg-white"
+                              style="z-index: 1000; display: none; width: 100%; max-width: 300px;">
+                              <!-- Adults -->
+                              <div class="d-flex justify-content-between align-items-center mb-2">
+                                  <div>
+                                      <strong>Adults</strong><br><small>Ages 12+</small>
+                                  </div>
+                                  <div class="d-flex align-items-center">
+                                      <button type="submit" class="btn btn-light" onclick="updateCount('adult', -1)">−</button>
+                                      <span id="adultCount" class="mx-2">1</span>
+                                      <button type="submit" class="btn btn-light" onclick="updateCount('adult', 1)">+</button>
+                                  </div>
+                              </div>
+      
+                              <!-- Children -->
+                              <div class="d-flex justify-content-between align-items-center mb-2">
+                                  <div>
+                                      <strong>Children</strong><br><small>Ages 2–11</small>
+                                  </div>
+                                  <div class="d-flex align-items-center">
+                                      <button type="submit" class="btn btn-light" onclick="updateCount('child', -1)">−</button>
+                                      <span id="childCount" class="mx-2">1</span>
+                                      <button type="submit" class="btn btn-light" onclick="updateCount('child', 1)">+</button>
+                                  </div>
+                              </div>
+      
+                              <!-- Infants -->
+                              <div class="d-flex justify-content-between align-items-center">
+                                  <div>
+                                      <strong>Infants</strong><br><small>Age under 2 on lap</small>
+                                  </div>
+                                  <div class="d-flex align-items-center">
+                                      <button type="submit" class="btn btn-light" onclick="updateCount('infant', -1)">−</button>
+                                      <span id="infantCount" class="mx-2">1</span>
+                                      <button type="submit" class="btn btn-light" onclick="updateCount('infant', 1)">+</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+      
+                      <script>
+                          let counts = {
+                              adult: 1,
+                              child: 1,
+                              infant: 1
+                          };
+      
+                          function updateCount(type, change) {
+                              if (counts[type] + change >= 0) {
+                                  counts[type] += change;
+                                  document.getElementById(type + 'Count').innerText = counts[type];
+                                  updateSummary();
+                              }
+                          }
+      
+                          function updateSummary() {
+                              const total = counts.adult + counts.child + counts.infant;
+                              document.getElementById('passengerSummary').value = total + ' Passenger(s)';
+                          }
+      
+                          function togglePassengerBox() {
+                              const box = document.getElementById('passengerBox');
+                              box.style.display = box.style.display === 'none' ? 'block' : 'none';
+                          }
+      
+                          // Optional: Hide when clicking outside
+                          document.addEventListener('click', function (event) {
+                              const box = document.getElementById('passengerBox');
+                              const input = document.getElementById('passengerSummary');
+                              if (!box.contains(event.target) && event.target !== input) {
+                                  box.style.display = 'none';
+                              }
+                          });
+                      </script>
+        </div>
+
+        <div class="row mb-4">
+          <!-- Class -->
+          <div class="col-md-6">
+            <label class="form-label">Class</label>
+            <select class="form-select">
+              <option selected>Economy Class</option>
+              <option>Business Class</option>
+              <option>First Class</option>
+            </select>
+          </div>
+          <!-- Button -->
+          <div class="col-md-6 d-flex align-items-end">
+            <button type="button" class="btn btn-secondary w-100" disabled>Search flights</button>
+          </div>
+        </div>
+      <!-- </form> -->
+    </div>
+  </div>
+    </div>
+</section>
+{% endblock %}

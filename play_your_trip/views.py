@@ -7,3 +7,12 @@ def visa_guide(request):
 
 def essentials(request):
     return render(request, 'plan_your_trip/essentials.html')
+
+def flight(request):
+    return render(request, 'plan_your_trip/flight.html')
+
+def Accommodation(request):
+    return render(request, 'plan_your_trip/Accommodation.html')
+
+def Getting_to_around_afg(request):
+    return render(request, 'plan_your_trip/Getting_to_around_afg.html')
