@@ -537,6 +537,36 @@
         </div>
     </section>
 
+
+
+
+
+
+<section class="my-5">
+        <div class="container">
+          <div class="card">
+            <div class="card-header text-center">
+              <h4>Live Weather in Afghan Provinces</h4>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                {% for city, data in weather_data.items %}
+                <div class="col-md-3 col-sm-6 text-center mb-4">
+                  <h5>{{ city }}</h5>
+                  {% if data.icon %}
+                    <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="{{ data.description }}">
+                  {% endif %}
+                  <p><strong>{{ data.temp }} °C</strong></p>
+                  <p>{{ data.description }}</p>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
   
       
 <!-- Existing content -->
