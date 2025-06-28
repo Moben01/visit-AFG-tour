@@ -19,6 +19,7 @@ urlpatterns += i18n_patterns(
     path('', include('home.urls', namespace='home')),
     path('states/', include('states.urls', namespace='states')),
     path('play_your_trip/', include('play_your_trip.urls', namespace='play_your_trip')),
+    path('things_to_do/', include('things_to_do.urls', namespace='things_to_do')),
 )
 
 # Include Rosetta only if DEBUG = True (recommended)
