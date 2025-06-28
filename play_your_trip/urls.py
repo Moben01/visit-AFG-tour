@@ -10,4 +10,6 @@ urlpatterns = [
     path('flight', views.flight, name="flight"),
     path('Accommodation', views.Accommodation, name="Accommodation"),
     path('Getting_to_around_afg', views.Getting_to_around_afg, name="Getting_to_around_afg"),
+    path('safety', views.safety, name="safety"),
+    path('weather', views.weather, name="weather"),
 ]
