@@ -1,0 +1,419 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container my-5">
+    <!-- Breadcrumb -->
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Visit Afghanistan</a></li>
+        <li class="breadcrumb-item"><a href="#">Plan your trip</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Flights to Afghanistan</li>
+      </ol>
+    </nav>
+  
+    <!-- Page Title -->
+    <h1 class="mb-3">Book your flight to Afghanistan</h1>
+    <p class="text-muted mb-4">
+      Find flight tickets to Afghanistan and start planning your trip to the city.
+      Whether you are travelling for leisure, or business, or both, use our tool
+      to find the best flight deals on Afghanistan online now.
+    </p>
+  
+    <!-- Booking Card -->
+    <div class="row bg-white border rounded shadow p-4">
+      <!-- Left image -->
+      <div class="col-md-4">
+        <img src="https://kamairmedia.s3.ap-south-1.amazonaws.com/airline_37388ec6bd.webp" alt="Fly Afghanistan" class="img-fluid rounded">
+      </div>
+  
+      <!-- Right form -->
+      <div class="col-md-8">
+        <h4 class="mb-4">Fly with Afghanistan</h4>
+        <!-- <form> -->
+          <div class="row mb-3">
+            <!-- Departure -->
+            <div class="col-md-6">
+              <label class="form-label">Departure airport</label>
+              <select class="form-select">
+                <option selected>Select airport</option>
+                <option>Kabul (KBL)</option>
+                <option>Kandahar (KDH)</option>
+                <option>Herat (HEA)</option>
+                <option>Mazar-i-Sharif (MZR)</option>
+              </select>
+            </div>
+            <!-- Arrival -->
+            <div class="col-md-6">
+              <label class="form-label">Arrival airport</label>
+              <div class="input-group">
+                <input type="text" class="form-control" value="Afghanistan (DXB)" readonly>
+                <span class="input-group-text bg-light">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                    <path d="M8 1a3 3 0 0 0-3 3v3H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V4a3 3 0 0 0-3-3zm-2 6V4a2 2 0 1 1 4 0v3H6z"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row mb-3">
+            <!-- Date -->
+            <div class="col-md-6">
+              <label class="form-label">Select date</label>
+              <input type="date" class="form-control" value="2025-06-28">
+            </div>
+            <!-- Passengers -->
+                         <!-- Container for Passenger Selection -->
+                         <div class="mb-4 position-relative col-md-6">
+                            <label class="form-label d-block">Passenger(s)</label>
+        
+                            <!-- Trigger Input -->
+                            <input type="text" id="passengerSummary" class="form-control" value="3 Passenger(s)" readonly
+                                onclick="togglePassengerBox()">
+        
+                            <!-- Passenger Dropdown Box -->
+                            <div id="passengerBox" class="card shadow p-3 position-absolute bg-white"
+                                style="z-index: 1000; display: none; width: 100%; max-width: 300px;">
+                                <!-- Adults -->
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div>
+                                        <strong>Adults</strong><br><small>Ages 12+</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button type="submit" class="btn btn-light" onclick="updateCount('adult', -1)">−</button>
+                                        <span id="adultCount" class="mx-2">1</span>
+                                        <button type="submit" class="btn btn-light" onclick="updateCount('adult', 1)">+</button>
+                                    </div>
+                                </div>
+        
+                                <!-- Children -->
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <div>
+                                        <strong>Children</strong><br><small>Ages 2–11</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button type="submit" class="btn btn-light" onclick="updateCount('child', -1)">−</button>
+                                        <span id="childCount" class="mx-2">1</span>
+                                        <button type="submit" class="btn btn-light" onclick="updateCount('child', 1)">+</button>
+                                    </div>
+                                </div>
+        
+                                <!-- Infants -->
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <strong>Infants</strong><br><small>Age under 2 on lap</small>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button type="submit" class="btn btn-light" onclick="updateCount('infant', -1)">−</button>
+                                        <span id="infantCount" class="mx-2">1</span>
+                                        <button type="submit" class="btn btn-light" onclick="updateCount('infant', 1)">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <script>
+                            let counts = {
+                                adult: 1,
+                                child: 1,
+                                infant: 1
+                            };
+        
+                            function updateCount(type, change) {
+                                if (counts[type] + change >= 0) {
+                                    counts[type] += change;
+                                    document.getElementById(type + 'Count').innerText = counts[type];
+                                    updateSummary();
+                                }
+                            }
+        
+                            function updateSummary() {
+                                const total = counts.adult + counts.child + counts.infant;
+                                document.getElementById('passengerSummary').value = total + ' Passenger(s)';
+                            }
+        
+                            function togglePassengerBox() {
+                                const box = document.getElementById('passengerBox');
+                                box.style.display = box.style.display === 'none' ? 'block' : 'none';
+                            }
+        
+                            // Optional: Hide when clicking outside
+                            document.addEventListener('click', function (event) {
+                                const box = document.getElementById('passengerBox');
+                                const input = document.getElementById('passengerSummary');
+                                if (!box.contains(event.target) && event.target !== input) {
+                                    box.style.display = 'none';
+                                }
+                            });
+                        </script>
+          </div>
+  
+          <div class="row mb-4">
+            <!-- Class -->
+            <div class="col-md-6">
+              <label class="form-label">Class</label>
+              <select class="form-select">
+                <option selected>Economy Class</option>
+                <option>Business Class</option>
+                <option>First Class</option>
+              </select>
+            </div>
+            <!-- Button -->
+            <div class="col-md-6 d-flex align-items-end">
+              <button type="button" class="btn btn-secondary w-100" disabled>Search flights</button>
+            </div>
+          </div>
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+
+
+  <section class="section blog-sec-two pt-0">
+    <div class="container">
+        <div class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
+            <div>
+                <h2>Hotels and accommodation ideas
+
+                    <span class="text-primary">.</span></h2>
+            </div>
+            <div>
+                <a href="blog-grid.html" class="btn btn-primary">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+        <div class="blog-slider owl-carousel owl-loaded owl-drag">
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1760px, 0px, 0px); transition: 2s; width: 4400px;"><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>14<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Merkel James</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>15<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Beth Williams</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>14<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Merkel James</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>15<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Beth Williams</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>14<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Merkel James</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div></div>
+        </div>
+    <div class="owl-dots disabled"></div></div>
+    </div>
+</section>
+{% endblock %}
