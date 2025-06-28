@@ -154,6 +154,98 @@
 </button>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Afghanistan's Regions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 500px;
+      width: 100%;
+      margin-bottom: 1.5rem;
+    }
+    .location-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .location-item {
+      display: flex;
+      align-items: center;
+    }
+    .marker-icon {
+      height: 20px;
+      width: 20px;
+      background-color: #0d6efd;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body class="p-4">
+
+  <div class="container">
+    <h2 class="fw-bold">Explore Afghanistan's Regions</h2>
+    <p class="text-muted">Discover the country's unique cities and provinces.</p>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- List -->
+    <div class="location-list">
+      <div class="location-item"><span class="marker-icon"></span> Kabul</div>
+      <div class="location-item"><span class="marker-icon"></span> Herat</div>
+      <div class="location-item"><span class="marker-icon"></span> Kandahar</div>
+      <div class="location-item"><span class="marker-icon"></span> Mazar-i-Sharif</div>
+      <div class="location-item"><span class="marker-icon"></span> Bamyan</div>
+      <div class="location-item"><span class="marker-icon"></span> Jalalabad</div>
+      <div class="location-item"><span class="marker-icon"></span> Ghazni</div>
+      <div class="location-item"><span class="marker-icon"></span> Kunduz</div>
+      <div class="location-item"><span class="marker-icon"></span> Faizabad</div>
+      <div class="location-item"><span class="marker-icon"></span> Lashkar Gah</div>
+      <div class="location-item"><span class="marker-icon"></span> Charikar</div>
+      <div class="location-item"><span class="marker-icon"></span> Taloqan</div>
+    </div>
+  </div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([33.9391, 67.7100], 6); // Afghanistan center
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    const locations = [
+      { name: "Kabul", lat: 34.5553, lng: 69.2075 },
+      { name: "Herat", lat: 34.3529, lng: 62.2040 },
+      { name: "Kandahar", lat: 31.6289, lng: 65.7372 },
+      { name: "Mazar-i-Sharif", lat: 36.7090, lng: 67.1109 },
+      { name: "Bamyan", lat: 34.8216, lng: 67.8273 },
+      { name: "Jalalabad", lat: 34.4340, lng: 70.4477 },
+      { name: "Ghazni", lat: 33.5539, lng: 68.4200 },
+      { name: "Kunduz", lat: 36.7280, lng: 68.8570 },
+      { name: "Faizabad", lat: 37.1190, lng: 70.5792 },
+      { name: "Lashkar Gah", lat: 31.5938, lng: 64.3716 },
+      { name: "Charikar", lat: 35.0136, lng: 69.1714 },
+      { name: "Taloqan", lat: 36.7361, lng: 69.5345 }
+    ];
+
+    locations.forEach(loc => {
+      L.marker([loc.lat, loc.lng])
+        .addTo(map)
+        .bindPopup(`<strong>${loc.name}</strong>`);
+    });
+  </script>
+</body>
+</html>
+
 </div>
 <!-- /Hero Section -->
 
