@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def visa_guide(request):
     return render(request, 'plan_your_trip/visa_guide.html')
+
+def essentials(request):
+    return render(request, 'plan_your_trip/essentials.html')
