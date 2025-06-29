@@ -540,31 +540,36 @@
 
 
 
-
-
-<section class="my-5">
+    <section class="my-5">
         <div class="container">
-          <div class="card">
-            <div class="card-header text-center">
+          <div class="card shadow">
+            <div class="card-header text-center bg-primary text-white">
               <h4>Live Weather in Afghan Provinces</h4>
             </div>
             <div class="card-body">
-              <div class="row">
-                {% for city, data in weather_data.items %}
-                <div class="col-md-3 col-sm-6 text-center mb-4">
-                  <h5>{{ city }}</h5>
-                  {% if data.icon %}
-                    <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="{{ data.description }}">
-                  {% endif %}
-                  <p><strong>{{ data.temp }} °C</strong></p>
-                  <p>{{ data.description }}</p>
+              {% if weather_data %}
+                <div class="row">
+                  {% for city, data in weather_data.items %}
+                    <div class="col-md-3 col-sm-6 text-center mb-4">
+                      <h5 class="fw-bold">{{ city }}</h5>
+                      {% if data.icon %}
+                        <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="{{ data.description }}">
+                      {% else %}
+                        <img src="https://via.placeholder.com/80?text=N/A" alt="No data">
+                      {% endif %}
+                      <p class="mb-0"><strong>{{ data.temp }} °C</strong></p>
+                      <small class="text-muted">{{ data.description }}</small>
+                    </div>
+                  {% endfor %}
                 </div>
-                {% endfor %}
-              </div>
+              {% else %}
+                <p class="text-center text-danger">Weather data is currently unavailable.</p>
+              {% endif %}
             </div>
           </div>
         </div>
       </section>
+      
       
 
   
