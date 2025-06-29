@@ -2,23 +2,66 @@
 {% block content %}
 {% load static %}
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-bar breadcrumb-bg-05 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-12">
-                    <h2 class="breadcrumb-title mb-2">Uncover Afghanistan wellness scene</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item active" aria-current="page">Find some vacation inspiration our curated holiday itineraries
-                            </li>
-                        </ol>
-                    </nav>
-                </div>
-            </div>
-        </div>
+<section class="hero-section sights-hero">
+  <div class="banner-slider banner-sec owl-carousel">
+    <div class="slider-img">
+      <img src="{% static 'img/banner/banner-01.jpg' %}" alt="City Tours">
     </div>
-    <!-- /Breadcrumb -->
+    <div class="slider-img">
+      <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Cultural Routes">
+    </div>
+    <div class="slider-img">
+      <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Nature Trails">
+    </div>
+    <div class="slider-img">
+      <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Heritage Walks">
+    </div>
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="row align-items-center">
+        <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+          <div class="banner-content mx-auto text-center">
+            <h1 class="text-white display-4 mb-3"><span>Itineraries</span></h1>
+            <h4 class="text-light mx-auto mb-4">
+              Discover carefully crafted travel routes through Afghanistan’s rich landscapes, cultural hotspots, and historical landmarks.
+            </h4>
+          </div>
+
+          <div class="container my-4">
+            <!-- Overview Card -->
+            <div class="row justify-content-center mb-5">
+              <div class="col-lg-8">
+                <div class="card sights-card border-0 shadow-lg wow fadeIn" data-wow-delay="0.2s">
+                  <div class="card-body p-4 text-center">
+                    <div class="sights-icon mb-3">
+                      <i class="fas fa-route fa-3x text-info"></i>
+                    </div>
+                    <h3 class="mb-3">Explore Afghan Journeys</h3>
+                    <p class="mb-0">
+                      Experience authentic travel itineraries that highlight the beauty, culture, and history of Afghanistan’s diverse regions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+         
+
+            <!-- View More Button -->
+            <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
+              <a href="itineraries-listings.html" class="btn btn-info btn-lg px-4">
+                <i class="fas fa-route me-2"></i> Discover More Itineraries
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <!-- Trending Now Section -->
 <section class="banner-search-four my-5">
