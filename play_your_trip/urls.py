@@ -12,4 +12,5 @@ urlpatterns = [
     path('Getting_to_around_afg', views.Getting_to_around_afg, name="Getting_to_around_afg"),
     path('safety', views.safety, name="safety"),
     path('weather', views.weather, name="weather"),
+    path('currency', views.currency, name="currency"),
 ]
