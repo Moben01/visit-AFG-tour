@@ -2,23 +2,259 @@
 {% block content %}
 {% load static %}
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-bar breadcrumb-bg-05 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-12">
-                    <h2 class="breadcrumb-title mb-2">What's Trending in Afghanistan</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item active" aria-current="page">Discover the latest trends, viral spots, and must-see destinations across Afghanistan. From emerging cultural hotspots to new travel experiences, stay updated on what's capturing the nation's attention.
-                            </li>
-                        </ol>
-                    </nav>
+<!-- Trending in Afghanistan Section -->
+<section class="hero-section trending-hero">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Trending in Afghanistan">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Viral Experiences">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Popular Destinations">
+        </div>
+        <div class="slider-img">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Emerging Hotspots">
+        </div>
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="banner-content mx-auto text-center">
+                        <h1 class="text-white display-4 mb-3"><span>What's Trending in Afghanistan</span></h1>
+                        <h4 class="text-light mx-auto mb-4">Discover the most talked-about destinations, experiences, and cultural phenomena capturing Afghanistan's attention right now</h4>
+                    </div>
+                    
+                    <div class="container my-4">
+                        <!-- Trending Overview Card -->
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-8">
+                                <div class="card trending-card border-0 shadow-lg wow fadeIn" data-wow-delay="0.2s">
+                                    <div class="card-body p-4 text-center">
+                                        <div class="trending-icon mb-3">
+                                            <i class="fas fa-fire fa-3x text-primary"></i>
+                                        </div>
+                                        <h3 class="mb-3">Afghanistan's Viral Trends</h3>
+                                        <p class="mb-0">From social media sensations to emerging travel destinations - explore what's making waves across Afghanistan this season</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Trending Highlights Grid -->
+                        <div class="row g-4 justify-content-center">
+                            <!-- Digital Nomad Visas -->
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <div class="trending-card card h-100 border-0 shadow-sm wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="trending-img-container">
+                                        <img src="{% static 'img/banner/banner-01.jpg' %}" class="card-img-top" alt="Digital Nomads">
+                                        <div class="trending-badge">New Program</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-2">Digital Nomad Visas</h5>
+                                        <p class="card-text fs-14">Afghanistan's new remote work program attracting global professionals</p>
+                                        <a href="trending-details.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bamiyan Night Market -->
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <div class="trending-card card h-100 border-0 shadow-sm wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="trending-img-container">
+                                        <img src="{% static 'img/banner/banner-02.jpg' %}" class="card-img-top" alt="Night Market">
+                                        <div class="trending-badge">Hotspot</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-2">Bamiyan Night Market</h5>
+                                        <p class="card-text fs-14">The new evening market with crafts and street food under the stars</p>
+                                        <a href="trending-details.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Heritage Walks -->
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <div class="trending-card card h-100 border-0 shadow-sm wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="trending-img-container">
+                                        <img src="{% static 'img/banner/banner-03.jpg' %}" class="card-img-top" alt="Heritage Walks">
+                                        <div class="trending-badge">Cultural</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-2">Kabul Heritage Walks</h5>
+                                        <p class="card-text fs-14">Guided tours through historic neighborhoods revealing hidden gems</p>
+                                        <a href="trending-details.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Eco-Tourism -->
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <div class="trending-card card h-100 border-0 shadow-sm wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="trending-img-container">
+                                        <img src="{% static 'img/banner/banner-04.jpg' %}" class="card-img-top" alt="Eco-Tourism">
+                                        <div class="trending-badge">Sustainable</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-2">Wakhan Eco-Tourism</h5>
+                                        <p class="card-text fs-14">Community-led sustainable treks through breathtaking landscapes</p>
+                                        <a href="trending-details.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Artisan Workshops -->
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <div class="trending-card card h-100 border-0 shadow-sm wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="trending-img-container">
+                                        <img src="{% static 'img/banner/banner-01.jpg' %}" class="card-img-top" alt="Artisan Workshops">
+                                        <div class="trending-badge">Hands-On</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-2">Artisan Workshops</h5>
+                                        <p class="card-text fs-14">Interactive craft experiences with weavers and potters going viral</p>
+                                        <a href="trending-details.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Female-Guided Tours -->
+                            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                                <div class="trending-card card h-100 border-0 shadow-sm wow fadeInUp" data-wow-delay="0.6s">
+                                    <div class="trending-img-container">
+                                        <img src="{% static 'img/banner/banner-02.jpg' %}" class="card-img-top" alt="Female Guides">
+                                        <div class="trending-badge">Innovative</div>
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title mb-2">Female-Guided Tours</h5>
+                                        <p class="card-text fs-14">Groundbreaking tours led by Afghanistan's first female guides</p>
+                                        <a href="trending-details.html" class="btn btn-sm btn-outline-primary mt-2">Explore</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- View More Button -->
+                        <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
+                            <a href="trending-listings.html" class="btn btn-primary btn-lg px-4">
+                                <i class="fas fa-fire me-2"></i> See More Trending Now
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- /Breadcrumb -->
+</section>
+
+<style>
+    /* Trending Hero Section Styling */
+    .trending-hero {
+        position: relative;
+        padding: 100px 0;
+    }
+    
+    .trending-hero .banner-content h1 {
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+    
+    .trending-hero .banner-content h4 {
+        max-width: 800px;
+        font-weight: 300;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
+    
+    /* Trending Overview Card */
+    .trending-card {
+        background: rgba(255,255,255,0.9);
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+    }
+    
+    .trending-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .trending-card .trending-icon {
+        color: #e74c3c;
+    }
+    
+    /* Trending Cards */
+    .trending-card {
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .trending-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    
+    .trending-img-container {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+    }
+    
+    .trending-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .trending-card:hover .trending-img-container img {
+        transform: scale(1.1);
+    }
+    
+    .trending-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    
+    .trending-card .card-body {
+        padding: 1.25rem;
+    }
+    
+    .trending-card .card-title {
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .trending-card .card-text {
+        color: #666;
+        font-size: 0.85rem;
+    }
+    
+    @media (max-width: 768px) {
+        .trending-hero {
+            padding: 60px 0;
+        }
+        
+        .trending-hero .banner-content h1 {
+            font-size: 2.2rem;
+        }
+        
+        .trending-hero .banner-content h4 {
+            font-size: 1.1rem;
+        }
+        
+        .trending-img-container {
+            height: 120px;
+        }
+    }
+</style>
 
 <!-- Trending Now Section -->
 <section class="banner-search-four my-5">
