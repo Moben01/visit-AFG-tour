@@ -17,69 +17,31 @@
     <div class="row bg-white border rounded shadow p-4">
       <!-- Left image -->
       <div class="col-md-4">
-        <img src="https://kamairmedia.s3.ap-south-1.amazonaws.com/airline_37388ec6bd.webp" alt="Fly Afghanistan" class="img-fluid rounded">
+        <img src="https://ukhsa.blog.gov.uk/wp-content/uploads/sites/33/2023/06/rainbow-4047523_1920.jpg" alt="Fly Afghanistan" class="img-fluid rounded">
       </div>
   
       <!-- Right form -->
       <div class="col-md-8">
+        <h4 class="mb-4">Live Weather in Afghanistan Provinces</h4>
         <!-- <form> -->
-            <div class="container my-5">
-                <div class="card shadow p-4">
-                  <h4 class="mb-3">Afghanistan Weather</h4>
-              
-                  <div class="row">
-        
-                    <div class="col-md-6 d-flex align-items-end">
-                      <div id="weatherInfo" class="mt-3">
-                        <p><strong>Kabul</strong></p>
-                        <p>🌤 Temp: 28°C</p>
-                        <p>💧 Humidity: 40%</p>
-                        <p>🌬 Wind: 4.2 m/s</p>
+            <section class="my-5">
+                <div class="container"> 
+                    <div class="card-body">
+                      <div class="row">
+                        {% for city, data in weather_data.items %}
+                        <div class="col-md-3 col-sm-6 text-center mb-4">
+                          <h5>{{ city }}</h5>
+                          {% if data.icon %}
+                            <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="{{ data.description }}">
+                          {% endif %}
+                          <p><strong>{{ data.temp }} °C</strong></p>
+                          <p>{{ data.description }}</p>
+                        </div>
+                        {% endfor %}
                       </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              
-              <script>
-                const fakeWeatherData = {
-                  "Kabul": {
-                    temp: "28°C",
-                    humidity: "40%",
-                    wind: "4.2 m/s",
-                    icon: "🌤"
-                  },
-                  "Herat": {
-                    temp: "32°C",
-                    humidity: "30%",
-                    wind: "3.5 m/s",
-                    icon: "☀️"
-                  },
-                  "Kandahar": {
-                    temp: "35°C",
-                    humidity: "20%",
-                    wind: "5.0 m/s",
-                    icon: "🔥"
-                  },
-                  "Mazar-i-Sharif": {
-                    temp: "30°C",
-                    humidity: "35%",
-                    wind: "3.8 m/s",
-                    icon: "🌤"
-                  }
-                };
-              
-                function updateWeather(city) {
-                  const data = fakeWeatherData[city];
-                  document.getElementById("weatherInfo").innerHTML = `
-                    <p><strong>${city}</strong></p>
-                    <p>${data.icon} Temp: ${data.temp}</p>
-                    <p>💧 Humidity: ${data.humidity}</p>
-                    <p>🌬 Wind: ${data.wind}</p>
-                  `;
-                }
-              </script>
-              
+              </section>
         <!-- </form> -->
       </div>
     </div>
@@ -88,247 +50,290 @@
 
   <section class="section blog-sec-two pt-0">
     <div class="container">
-        <div class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-            <div>
-                <h2>Hotels and accommodation ideas
-
-                    <span class="text-primary">.</span></h2>
+        <section class="container my-5">
+            <div class="text-center mb-5">
+              <h2>❄️ Winter in Kabul</h2>
+              <p class="lead">
+                From November to March, Kabul transforms into a peaceful winter destination filled with snowy charm,
+                mountain scenery, and cozy Afghan experiences.
+              </p>
             </div>
-            <div>
-                <a href="blog-grid.html" class="btn btn-primary">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
+          
+            <div class="row g-4">
+              <!-- Mountain Vistas -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">🏔 Mountain Vistas</h5>
+                    <p class="card-text">
+                      Watch the snow fall on Koh-e-Asamai or Paghman Mountains. Perfect for scenic views and peaceful walks.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Explore mountain views</a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Cultural Heritage -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">🕌 Cultural Heritage</h5>
+                    <p class="card-text">
+                      Visit the historic Gardens of Babur and Shah-e-Doh Shamshira Mosque — even more beautiful under snowfall.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Explore Kabul's culture</a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Tea House Vibes -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">🍵 Tea House Vibes</h5>
+                    <p class="card-text">
+                      Warm up at cozy chaikhanas with green tea and Afghan bread near Pul-e-Surkh or Chicken Street.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Discover local chaikhanas</a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Winter Bazaars -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">🛍 Winter Bazaars</h5>
+                    <p class="card-text">
+                      Visit Chicken Street or Mandawi Bazaar for handmade goods, warm shawls, and local crafts.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Explore local markets</a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Winter Sports -->
+              <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    <h5 class="card-title">⛷ Winter Sports Nearby</h5>
+                    <p class="card-text">
+                      Travel to Bamyan or Salang Pass for skiing, snowboarding, and epic winter photography.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary btn-sm">Explore winter sports</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="blog-slider owl-carousel owl-loaded owl-drag">
-
-            <!-- Blog Item-->
-            
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-            
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-            
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-            
-            <!-- /Blog Item-->
-
-        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1760px, 0px, 0px); transition: 2s; width: 4400px;"><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>14<span class="d-block">Jul</span></h6>
-                    </div>
+          </section>
+          <section class="container my-5">
+            <div class="card shadow-sm p-4">
+              <h3 class="mb-4">How to Make the Most of Your Winter in Afghanistan</h3>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  ❄️ Temperatures can get quite cold in winter, especially in central and northern provinces. Wear layers, including a warm jacket, hat, gloves, and boots.
+                </li>
+                <li class="list-group-item">
+                  🧴 Even in cold weather, the sun can be strong at high altitudes. Use sunscreen and sunglasses during daytime outings.
+                </li>
+                <li class="list-group-item">
+                  🥤 Drink plenty of water — the dry winter air and high altitude can lead to dehydration even if you don’t feel hot.
+                </li>
+                <li class="list-group-item">
+                  🌃 Evenings can be very cold from December to February, especially if you're staying in less urban areas — pack extra sweaters or a thermal layer.
+                </li>
+                <li class="list-group-item">
+                  🏕 If you're planning a trip to mountainous areas like Salang Pass or Bamyan, bring proper winter gear. Temperatures can fall well below zero at night.
+                </li>
+              </ul>
+            </div>
+          </section>
+          <div class="container py-5">
+            <h1 class="mb-4 text-center">Summer in Afghanistan</h1>
+            <p class="lead text-center">Afghanistan offers breathtaking natural beauty, unique cultural experiences, and exciting adventures even in the summer months. From mountain escapes to historic bazaars, there's something for everyone.</p>
+          
+            <div class="row text-center mt-5">
+              <!-- Adventure in Nature -->
+              <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Adventure in Nature</h5>
+                    <p class="card-text">Escape the summer heat by visiting Afghanistan's stunning mountains, lakes, and valleys. Enjoy trekking in Bamyan or relax by the crystal-clear waters of Band-e Amir.</p>
+                    <a href="#" class="btn btn-outline-primary">Explore Outdoor Adventures</a>
+                  </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Merkel James</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
+              </div>
+          
+              <!-- Culinary Experience -->
+              <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Taste Afghan Cuisine</h5>
+                    <p class="card-text">Savor rich and diverse Afghan food, from street kebabs to traditional dishes like Kabuli Pulao. Discover cafes and restaurants in Kabul, Herat, and beyond.</p>
+                    <a href="#" class="btn btn-outline-primary">Explore the Food Scene</a>
+                  </div>
                 </div>
-            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>18<span class="d-block">Jul</span></h6>
-                    </div>
+              </div>
+          
+              <!-- Shopping -->
+              <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Shop Local Markets</h5>
+                    <p class="card-text">Summer is perfect for exploring local bazaars. Find handmade carpets, jewelry, pottery, and more at unbeatable prices in cities like Kabul and Mazar-i-Sharif.</p>
+                    <a href="#" class="btn btn-outline-primary">Visit Afghan Bazaars</a>
+                  </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Tom Andrews</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
+              </div>
+          
+              <!-- Cultural Experiences -->
+              <div class="col-md-6 mb-4">
+                <div class="card h-100 shadow">
+                  <div class="card-body">
+                    <h5 class="card-title">Cultural Heritage</h5>
+                    <p class="card-text">From ancient Buddhist sites in Bamyan to Islamic architecture in Herat, immerse yourself in Afghanistan’s rich history and heritage through museums and landmarks.</p>
+                    <a href="#" class="btn btn-outline-primary">Explore Afghan Culture</a>
+                  </div>
                 </div>
-            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>18<span class="d-block">Jul</span></h6>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <section class="container py-5">
+            <h2 class="mb-4 text-center fs-2">How to Stay Cool in Summer – Afghanistan</h2>
+            <style>
+                .cool-tips-list {
+                  font-size: 1.5rem;
+                  padding-left: 0;
+                  list-style: none;
+                }
+              
+                .cool-tips-list li {
+                  background-color: #f8f9fa;
+                  border: 1px solid #dee2e6;
+                  padding: 1rem;
+                  margin-bottom: 0.5rem;
+                  border-radius: 0.5rem;
+                }
+              </style>
+              
+              <ul class="cool-tips-list">
+                <li>
+                  <strong>Protect yourself from the sun:</strong> Apply sunscreen, wear a wide-brimmed hat, and use sunglasses to avoid sunburn.
+                </li>
+                <li>
+                  <strong>Wear breathable traditional or light clothing:</strong> Opt for cotton or linen clothes. Loose-fitting traditional outfits like <em>perahan tunban</em> are great choices.
+                </li>
+                <li>
+                  <strong>Stay hydrated:</strong> Always carry water and drink often, especially if you're in dry or high-temperature areas like Kandahar or Herat.
+                </li>
+                <li>
+                  <strong>Plan activities wisely:</strong> Try to go outside early morning or after sunset to avoid peak heat.
+                </li>
+              </ul>
+              
+          </section>
+                   
+          
+          <div class="container py-5">
+            <h2 class="mb-4 text-center">Things to do in Afghanistan each month</h2>
+            <div class="row">
+              <!-- Left side: Month Tabs -->
+              <div class="col-md-3 mb-3">
+                <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <button class="nav-link active" id="jan-tab" data-bs-toggle="pill" data-bs-target="#jan" type="button" role="tab" aria-controls="jan" aria-selected="true">January</button>
+                  <button class="nav-link" id="feb-tab" data-bs-toggle="pill" data-bs-target="#feb" type="button" role="tab" aria-controls="feb" aria-selected="false">February</button>
+                  <button class="nav-link" id="mar-tab" data-bs-toggle="pill" data-bs-target="#mar" type="button" role="tab" aria-controls="mar" aria-selected="false">March</button>
+                  <button class="nav-link" id="apr-tab" data-bs-toggle="pill" data-bs-target="#apr" type="button" role="tab" aria-controls="apr" aria-selected="false">April</button>
+                  <button class="nav-link" id="may-tab" data-bs-toggle="pill" data-bs-target="#may" type="button" role="tab" aria-controls="may" aria-selected="false">May</button>
+                  <button class="nav-link" id="jun-tab" data-bs-toggle="pill" data-bs-target="#jun" type="button" role="tab" aria-controls="jun" aria-selected="false">June</button>
+                  <button class="nav-link" id="jul-tab" data-bs-toggle="pill" data-bs-target="#jul" type="button" role="tab" aria-controls="jul" aria-selected="false">July</button>
+                  <button class="nav-link" id="aug-tab" data-bs-toggle="pill" data-bs-target="#aug" type="button" role="tab" aria-controls="aug" aria-selected="false">August</button>
+                  <button class="nav-link" id="sep-tab" data-bs-toggle="pill" data-bs-target="#sep" type="button" role="tab" aria-controls="sep" aria-selected="false">September</button>
+                  <button class="nav-link" id="oct-tab" data-bs-toggle="pill" data-bs-target="#oct" type="button" role="tab" aria-controls="oct" aria-selected="false">October</button>
+                  <button class="nav-link" id="nov-tab" data-bs-toggle="pill" data-bs-target="#nov" type="button" role="tab" aria-controls="nov" aria-selected="false">November</button>
+                  <button class="nav-link" id="dec-tab" data-bs-toggle="pill" data-bs-target="#dec" type="button" role="tab" aria-controls="dec" aria-selected="false">December</button>
                 </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Tom Andrews</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
+              </div>
+          
+              <!-- Right side: Tab Content -->
+              <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                  <div class="tab-pane fade show active" id="jan" role="tabpanel" aria-labelledby="jan-tab">
+                    <h4>January in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> -5°C to 8°C</p>
+                    <p>January is the coldest month, especially in mountainous areas like Bamyan and Kabul. Snow covers many regions, creating stunning winter landscapes. Perfect for enjoying traditional winter foods and cozy indoor activities.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="feb" role="tabpanel" aria-labelledby="feb-tab">
+                    <h4>February in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 0°C to 10°C</p>
+                    <p>February remains cold but starts showing signs of early spring in lower regions. Snow is still common in highlands. It’s a quieter time for tourism, great for peaceful exploration and winter festivals.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="mar" role="tabpanel" aria-labelledby="mar-tab">
+                    <h4>March in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 5°C to 15°C</p>
+                    <p>Spring arrives, bringing blossoming trees and more daylight. Rainfall increases slightly, nurturing the green valleys. Ideal for trekking and exploring ancient sites as the weather becomes milder.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="apr" role="tabpanel" aria-labelledby="apr-tab">
+                    <h4>April in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 10°C to 20°C</p>
+                    <p>April offers mild weather and vibrant landscapes, with wildflowers blooming across the country. Perfect for hiking and cultural visits. The pleasant climate invites outdoor markets and festivals.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="may" role="tabpanel" aria-labelledby="may-tab">
+                    <h4>May in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 15°C to 30°C</p>
+                    <p>May brings warm, sunny days, especially in southern regions like Kandahar. It’s an excellent time for outdoor adventures, including visiting lakes and valleys before the summer heat peaks.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="jun" role="tabpanel" aria-labelledby="jun-tab">
+                    <h4>June in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 25°C to 38°C</p>
+                    <p>June marks the start of hot summer weather, with temperatures rising especially in the south and lowlands. Stay hydrated and explore higher altitudes like the Hindu Kush to beat the heat.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="jul" role="tabpanel" aria-labelledby="jul-tab">
+                    <h4>July in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 28°C to 42°C</p>
+                    <p>July is the hottest month, with intense heat in many regions. It’s advisable to avoid midday sun. Early mornings and evenings are best for sightseeing. Water activities and shaded gardens provide welcome relief.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="aug" role="tabpanel" aria-labelledby="aug-tab">
+                    <h4>August in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 26°C to 38°C</p>
+                    <p>August remains hot but starts to cool towards the end. Dust storms can occur, especially in dry southern areas. It's a good time for cultural events indoors or in cooler mountain retreats.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="sep" role="tabpanel" aria-labelledby="sep-tab">
+                    <h4>September in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 20°C to 30°C</p>
+                    <p>September brings cooler temperatures and comfortable evenings. It’s an ideal month for hiking and visiting ancient sites. Harvest festivals and fresh produce markets thrive this time of year.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="oct" role="tabpanel" aria-labelledby="oct-tab">
+                    <h4>October in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 15°C to 25°C</p>
+                    <p>October offers crisp air and colorful autumn scenery. Perfect weather for exploring cities and mountains. Outdoor cafes and cultural events flourish with pleasant daytime temperatures.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="nov" role="tabpanel" aria-labelledby="nov-tab">
+                    <h4>November in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> 5°C to 15°C</p>
+                    <p>November marks the start of colder weather and shorter days. Snow begins falling in higher elevations. It’s a quieter season great for cultural visits and preparing for winter.</p>
+                  </div>
+          
+                  <div class="tab-pane fade" id="dec" role="tabpanel" aria-labelledby="dec-tab">
+                    <h4>December in Afghanistan</h4>
+                    <p class="mt-3"><strong>Average temperature:</strong> -2°C to 10°C</p>
+                    <p>December is a winter month with snowfall in mountains and chilly days in cities. Cozy indoor activities and winter festivals highlight the season. Warm clothing is essential.</p>
+                  </div>
                 </div>
-            </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>15<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Beth Williams</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>14<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Merkel James</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>18<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Tom Andrews</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>18<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Tom Andrews</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>15<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Beth Williams</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>14<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Merkel James</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="card-img rounded-top">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>18<span class="d-block">Jul</span></h6>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                            <span class="avatar avatar-md flex-shrink-0 me-2">
-                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
-                            </span>
-                            <p class="fs-14 text-truncate">Tom Andrews</p>
-                        </a>
-                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                    </div>
-                </div>
-            </div></div></div>
-        </div>
-    <div class="owl-dots disabled"></div></div>
+              </div>
+            </div>
+          </div>
+          
     </div>
 </section>
 {% endblock %}
