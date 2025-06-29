@@ -79,3 +79,12 @@ def food_and_drink(request):
 
 def New_and_Trending(request):
     return render(request, 'things_to_do/New_and_Trending.html')
+
+
+
+
+def Shopping(request):
+    return render(request, 'things_to_do/Shopping.html')
+
+def Sights_(request):
+    return render(request, 'things_to_do/Sights_.html')
