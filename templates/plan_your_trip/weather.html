@@ -1,0 +1,334 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="container my-5">
+    <!-- Breadcrumb -->
+
+  
+    <!-- Page Title -->
+    <h1 class="mb-3">Weather in Afghanistan </h1>
+    <p class="text-muted mb-4">
+        Learn about Afghanistan’s climate now and throughout the year, and discover the best times to visit with our weather guide.
+    </p>
+  
+    <!-- Booking Card -->
+    <div class="row bg-white border rounded shadow p-4">
+      <!-- Left image -->
+      <div class="col-md-4">
+        <img src="https://kamairmedia.s3.ap-south-1.amazonaws.com/airline_37388ec6bd.webp" alt="Fly Afghanistan" class="img-fluid rounded">
+      </div>
+  
+      <!-- Right form -->
+      <div class="col-md-8">
+        <!-- <form> -->
+            <div class="container my-5">
+                <div class="card shadow p-4">
+                  <h4 class="mb-3">Afghanistan Weather</h4>
+              
+                  <div class="row">
+        
+                    <div class="col-md-6 d-flex align-items-end">
+                      <div id="weatherInfo" class="mt-3">
+                        <p><strong>Kabul</strong></p>
+                        <p>🌤 Temp: 28°C</p>
+                        <p>💧 Humidity: 40%</p>
+                        <p>🌬 Wind: 4.2 m/s</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <script>
+                const fakeWeatherData = {
+                  "Kabul": {
+                    temp: "28°C",
+                    humidity: "40%",
+                    wind: "4.2 m/s",
+                    icon: "🌤"
+                  },
+                  "Herat": {
+                    temp: "32°C",
+                    humidity: "30%",
+                    wind: "3.5 m/s",
+                    icon: "☀️"
+                  },
+                  "Kandahar": {
+                    temp: "35°C",
+                    humidity: "20%",
+                    wind: "5.0 m/s",
+                    icon: "🔥"
+                  },
+                  "Mazar-i-Sharif": {
+                    temp: "30°C",
+                    humidity: "35%",
+                    wind: "3.8 m/s",
+                    icon: "🌤"
+                  }
+                };
+              
+                function updateWeather(city) {
+                  const data = fakeWeatherData[city];
+                  document.getElementById("weatherInfo").innerHTML = `
+                    <p><strong>${city}</strong></p>
+                    <p>${data.icon} Temp: ${data.temp}</p>
+                    <p>💧 Humidity: ${data.humidity}</p>
+                    <p>🌬 Wind: ${data.wind}</p>
+                  `;
+                }
+              </script>
+              
+        <!-- </form> -->
+      </div>
+    </div>
+  </div>
+
+
+  <section class="section blog-sec-two pt-0">
+    <div class="container">
+        <div class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
+            <div>
+                <h2>Hotels and accommodation ideas
+
+                    <span class="text-primary">.</span></h2>
+            </div>
+            <div>
+                <a href="blog-grid.html" class="btn btn-primary">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+        <div class="blog-slider owl-carousel owl-loaded owl-drag">
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+            <!-- Blog Item-->
+            
+            <!-- /Blog Item-->
+
+        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-1760px, 0px, 0px); transition: 2s; width: 4400px;"><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>14<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Merkel James</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>15<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Beth Williams</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>14<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Merkel James</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item active" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>15<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Beth Williams</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>14<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be notified about new post and news from our Portal ?</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Merkel James</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                <div class="card-img rounded-top">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block">Jul</span></h6>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers designers to swiftly created informative landing pages</a></h5>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
+                            <span class="avatar avatar-md flex-shrink-0 me-2">
+                                <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle" alt="img">
+                            </span>
+                            <p class="fs-14 text-truncate">Tom Andrews</p>
+                        </a>
+                        <a href="blog-details.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                    </div>
+                </div>
+            </div></div></div>
+        </div>
+    <div class="owl-dots disabled"></div></div>
+    </div>
+</section>
+{% endblock %}

@@ -16,3 +16,9 @@ def Accommodation(request):
 
 def Getting_to_around_afg(request):
     return render(request, 'plan_your_trip/Getting_to_around_afg.html')
+
+def safety(request):
+    return render(request, 'plan_your_trip/safety.html')
+
+def weather(request):
+    return render(request, 'plan_your_trip/weather.html')
