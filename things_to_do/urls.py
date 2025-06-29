@@ -10,4 +10,7 @@ urlpatterns = [
     path('New_and_Trending/', views.New_and_Trending, name='New_and_Trending'),
     path('wellness-in-dubai/', views.wellness_in_dubai, name='wellness_in_dubai'),
     path('Itineraries/', views.Itineraries, name='Itineraries'),
+    path('New_and_Trending/', views.New_and_Trending, name='New_and_Trending'), 
+    path('Shopping/', views.Shopping, name='Shopping'), 
+    path('Sights_/', views.Sights_, name='Sights_'), 
 ]

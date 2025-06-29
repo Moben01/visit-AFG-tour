@@ -91,3 +91,8 @@ def wellness_in_dubai(request):
 
 def Itineraries(request):
     return render(request, 'things_to_do/Itineraries.html')
+def Shopping(request):
+    return render(request, 'things_to_do/Shopping.html')
+
+def Sights_(request):
+    return render(request, 'things_to_do/Sights_.html')
