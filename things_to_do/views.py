@@ -79,3 +79,15 @@ def food_and_drink(request):
 
 def New_and_Trending(request):
     return render(request, 'things_to_do/New_and_Trending.html')
+
+
+
+
+def wellness_in_dubai(request):
+    return render(request, 'things_to_do/wellness_in_dubai.html')
+
+
+
+
+def Itineraries(request):
+    return render(request, 'things_to_do/Itineraries.html')
