@@ -83,7 +83,7 @@ def New_and_Trending(request):
 
 
 
-def wellness_in_dubai(request):
+def wellness_in_afg(request):
     return render(request, 'things_to_do/wellness_in_dubai.html')
 
 
