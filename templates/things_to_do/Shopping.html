@@ -4,19 +4,20 @@
 
 <!-- Breadcrumb -->
 <!-- Experiences Hero Section -->
-<section class="hero-section experiences-hero">
+<!-- Shopping Hero Section -->
+<section class="hero-section shopping-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Afghan Adventures">
+            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Traditional Markets">
         </div>
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Mountain Trekking">
+            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Handcrafted Goods">
         </div>
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Cultural Experiences">
+            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Local Bazaars">
         </div>
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Historical Sites">
+            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Artisan Crafts">
         </div>
     </div>
     <div class="container">
@@ -24,26 +25,42 @@
             <div class="row align-items-center">
                 <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
                     <div class="banner-content mx-auto text-center">
-                        <h1 class="text-white display-4 mb-3"><span>Shopping in Afghanistan</span></h1>
-                        <h4 class="text-light mx-auto mb-4"> Discover the vibrant shopping culture of Afghanistan - from traditional bazaars to modern markets offering unique handicrafts, textiles and souvenirs.</h4>
+                        <h1 class="text-white display-4 mb-3"><span>Sights & Attractions</span></h1>
+                        <h4 class="text-light mx-auto mb-4">Discover the vibrant bazaars, traditional crafts, and unique treasures that make Afghan shopping an unforgettable experience</h4>
                     </div>
                     
                     <div class="container my-4">
-                        <!-- Experiences Overview Card -->
+                        <!-- Shopping Overview Card -->
                         <div class="row justify-content-center mb-5">
                             <div class="col-lg-8">
-                                <div class="card experiences-card border-0 shadow-lg wow fadeIn" data-wow-delay="0.2s">
+                                <div class="card shopping-card border-0 shadow-lg wow fadeIn" data-wow-delay="0.2s">
                                     <div class="card-body p-4 text-center">
-                                        <div class="experiences-icon mb-3">
-                                            <i class="fas fa-map-marked-alt fa-3x text-primary"></i>
+                                        <div class="shopping-icon mb-3">
+                                            <i class="fas fa-shopping-basket fa-3x text-warning"></i>
                                         </div>
-                                        <h3 class="mb-3">Authentic Afghan Journeys</h3>
-                                        <p class="mb-0">Immerse yourself in Afghanistan's most remarkable experiences - from mountain treks to ancient cities, each journey tells a unique story</p>
+                                        <h3 class="mb-3">Afghan Markets & Crafts</h3>
+                                        <p class="mb-0">Experience the rich traditions of Afghan artisanship and the bustling energy of local markets filled with handwoven rugs, jewelry, and more</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+  
+                    
+                        <!-- View More Button -->
+                        <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
+                            <a href="shopping-listings.html" class="btn btn-warning btn-lg px-4">
+                                <i class="fas fa-shopping-basket me-2"></i> Discover More Shopping Treasures
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  
 
+  
 
 
 
@@ -158,6 +175,7 @@
     </div>
 </section>
 
+
 <!-- Shopping Tips -->
 <section class="section pt-0">
     <div class="container">
@@ -188,6 +206,7 @@
 </section>
 
 <!-- FAQ Section -->
+ 
 <section class="section pt-0">
     <div class="container">
         <h4 class="mb-4">Shopping in Afghanistan: FAQs</h4>
@@ -232,32 +251,81 @@
     </div>
 </section>
 
-<!-- Image Gallery -->
-<section class="section pt-0">
+
+
+<!-- Top Shopping Destinations -->
+<section class="section blog-section blog-section-four pt-0">
     <div class="container">
-        <h4 class="mb-4 text-center">Afghan Shopping Gallery</h4>
-        <div class="row g-3">
-            <div class="col-md-4 col-6">
-                <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Market scene" class="img-fluid rounded">
+        <div class="row justify-content-center">
+            <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header section-header-four text-center">
+                    <h2 class="mb-2">Afghan Shopping Gallery</h2>
+                    <p class="sub-title">From ancient bazaars to modern markets, explore Afghanistan's shopping treasures</p>
+                </div>
             </div>
-            <div class="col-md-4 col-6">
-                <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Carpet weaving" class="img-fluid rounded">
+        </div>
+
+        <div class="row">
+            <!-- Chicken Street -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
+                    <a href="#" class="blog-img">
+                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Chicken Street" class="img-fluid rounded">
+                    </a>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Kabul</span>
+                        <h5><a href="#">Chicken Street</a></h5>
+                        <p>Famous for carpets, antiques, and lapis lazuli</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 col-6">
-                <img src="{% static 'img/blog/blog-14.jpg' %}" alt="Spice market" class="img-fluid rounded">
+
+            <!-- Herat Bazaar -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="#" class="blog-img">
+                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Herat Bazaar" class="img-fluid rounded">
+                    </a>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Herat</span>
+                        <h5><a href="#">Herat Grand Bazaar</a></h5>
+                        <p>Traditional crafts and Persian-style pottery</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 col-6">
-                <img src="{% static 'img/blog/blog-11.jpg' %}" alt="Jewelry making" class="img-fluid rounded">
+
+            <!-- Mazar Sharif -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
+                    <a href="#" class="blog-img">
+                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Mazar Sharif" class="img-fluid rounded">
+                    </a>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Mazar Sharif</span>
+                        <h5><a href="#">Blue Mosque Market</a></h5>
+                        <p>Uzbek textiles and Turkmen jewelry</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4 col-6">
-                <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Copper crafts" class="img-fluid rounded">
-            </div>
-            <div class="col-md-4 col-6">
-                <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Textile shop" class="img-fluid rounded">
+
+            <!-- Kandahar -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
+                    <a href="#" class="blog-img">
+                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Kandahar" class="img-fluid rounded">
+                    </a>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Kandahar</span>
+                        <h5><a href="#">Shahr-e-Naw Market</a></h5>
+                        <p>Traditional Pashtun clothing and handicrafts</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+
 
 
 {% endblock %}
