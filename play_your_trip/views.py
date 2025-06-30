@@ -70,3 +70,9 @@ def weather(request):
 
 def currency(request):
     return render(request, 'plan_your_trip/currecy.html')
+
+def accessibility(request):
+    return render(request, 'plan_your_trip/accessibility.html')
+
+def afghanistan_attractions_passes(request):
+    return render(request, 'plan_your_trip/afghanistan_attractions_passes.html')

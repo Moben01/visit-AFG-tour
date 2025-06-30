@@ -13,4 +13,6 @@ urlpatterns = [
     path('safety', views.safety, name="safety"),
     path('weather', views.weather, name="weather"),
     path('currency', views.currency, name="currency"),
+    path('accessibility', views.accessibility, name="accessibility"),
+    path('afghanistan_attractions_passes', views.afghanistan_attractions_passes, name="afghanistan_attractions_passes"),
 ]

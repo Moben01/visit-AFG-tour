@@ -4,14 +4,6 @@
 
 
 <div class="container my-5">
-    <!-- Breadcrumb -->
-    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Visit Afghanistan</a></li>
-            <li class="breadcrumb-item"><a href="#">Plan your trip</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Flights to Afghanistan</li>
-        </ol>
-    </nav>
 
     <!-- Page Title -->
     <h1 class="mb-3">Afghanistan Currency Guide</h1>
@@ -33,480 +25,232 @@
 
     <!-- Booking Card -->
     <div class="row bg-white border rounded shadow p-4">
-        <!-- Left image -->
-        <div class="col-md-4">
-            <img src="https://kamairmedia.s3.ap-south-1.amazonaws.com/airline_37388ec6bd.webp" alt="Fly Afghanistan"
-                class="img-fluid rounded">
-        </div>
+
 
         <!-- Right form -->
-        <div class="col-md-8">
-            <h4 class="mb-4">Fly with Afghanistan</h4>
+        <div class="col-md-12">
             <!-- <form> -->
             <div class="row mb-3">
-                <!-- Departure -->
-                <div class="col-md-6">
-                    <label class="form-label">Departure airport</label>
-                    <select class="form-select">
-                        <option selected>Select airport</option>
-                        <option>Kabul (KBL)</option>
-                        <option>Kandahar (KDH)</option>
-                        <option>Herat (HEA)</option>
-                        <option>Mazar-i-Sharif (MZR)</option>
-                    </select>
-                </div>
-                <!-- Arrival -->
-                <div class="col-md-6">
-                    <label class="form-label">Arrival airport</label>
-                    <div class="input-group">
-                        <input type="text" class="form-control" value="Afghanistan (DXB)" readonly>
-                        <span class="input-group-text bg-light">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-lock-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 1a3 3 0 0 0-3 3v3H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V4a3 3 0 0 0-3-3zm-2 6V4a2 2 0 1 1 4 0v3H6z" />
-                            </svg>
-                        </span>
-                    </div>
-                </div>
+                 <style>
+    .flag-img {
+      width: 40px;
+      height: auto;
+    }
+  </style>
+
+<div class="bg-light">
+  <div class="container py-5">
+    <div class="card shadow rounded-4 p-4">
+      <h2 class="mb-4 text-center">Currency Exchange to Afghani</h2>
+      <form id="exchangeForm">
+        <!-- Amount -->
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount</label>
+          <input type="number" class="form-control" id="amount" placeholder="Enter amount" required>
+        </div>
+
+        <!-- Currency Choice -->
+        <div class="mb-3">
+          <label for="currency" class="form-label">Select Currency</label>
+          <select class="form-select" id="currency" required>
+            <option value="">Choose...</option>
+            <option value="USD">USA Dollar (USD)</option>
+            <option value="EUR">Euro (EUR)</option>
+            <option value="GBP">Pound (GBP)</option>
+          </select>
+        </div>
+
+        <!-- Converted Amount -->
+        <div class="mb-3">
+          <label for="converted" class="form-label">Converted Amount (AFN)</label>
+          <input type="text" class="form-control" id="converted" readonly>
+        </div>
+
+        <!-- Afghanistan Flag -->
+        <div class="text-center">
+          <img src="https://m.media-amazon.com/images/I/61tp-IyAevL.jpg" alt="Afghanistan Flag" class="flag-img">
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const rates = {
+      USD: 75,  // Example exchange rate
+      EUR: 80,
+      GBP: 90
+    };
+
+    document.getElementById('currency').addEventListener('change', convert);
+    document.getElementById('amount').addEventListener('input', convert);
+
+    function convert() {
+      const amount = parseFloat(document.getElementById('amount').value);
+      const currency = document.getElementById('currency').value;
+      const convertedInput = document.getElementById('converted');
+
+      if (!amount || !currency || !rates[currency]) {
+        convertedInput.value = '';
+        return;
+      }
+
+      const converted = amount * rates[currency];
+      convertedInput.value = `${converted.toFixed(2)} AFN`;
+    }
+  </script>
             </div>
 
-            <div class="row mb-3">
-                <!-- Date -->
-                <div class="col-md-6">
-                    <label class="form-label">Select date</label>
-                    <input type="date" class="form-control" value="2025-06-28">
-                </div>
-                <!-- Passengers -->
-                <!-- Container for Passenger Selection -->
-                <div class="mb-4 position-relative col-md-6">
-                    <label class="form-label d-block">Passenger(s)</label>
-
-                    <!-- Trigger Input -->
-                    <input type="text" id="passengerSummary" class="form-control" value="3 Passenger(s)" readonly
-                        onclick="togglePassengerBox()">
-
-                    <!-- Passenger Dropdown Box -->
-                    <div id="passengerBox" class="card shadow p-3 position-absolute bg-white"
-                        style="z-index: 1000; display: none; width: 100%; max-width: 300px;">
-                        <!-- Adults -->
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <strong>Adults</strong><br><small>Ages 12+</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-light"
-                                    onclick="updateCount('adult', -1)">−</button>
-                                <span id="adultCount" class="mx-2">1</span>
-                                <button type="submit" class="btn btn-light" onclick="updateCount('adult', 1)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Children -->
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <strong>Children</strong><br><small>Ages 2–11</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-light"
-                                    onclick="updateCount('child', -1)">−</button>
-                                <span id="childCount" class="mx-2">1</span>
-                                <button type="submit" class="btn btn-light" onclick="updateCount('child', 1)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Infants -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <strong>Infants</strong><br><small>Age under 2 on lap</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-light"
-                                    onclick="updateCount('infant', -1)">−</button>
-                                <span id="infantCount" class="mx-2">1</span>
-                                <button type="submit" class="btn btn-light"
-                                    onclick="updateCount('infant', 1)">+</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <script>
-                    let counts = {
-                        adult: 1,
-                        child: 1,
-                        infant: 1
-                    };
-
-                    function updateCount(type, change) {
-                        if (counts[type] + change >= 0) {
-                            counts[type] += change;
-                            document.getElementById(type + 'Count').innerText = counts[type];
-                            updateSummary();
-                        }
-                    }
-
-                    function updateSummary() {
-                        const total = counts.adult + counts.child + counts.infant;
-                        document.getElementById('passengerSummary').value = total + ' Passenger(s)';
-                    }
-
-                    function togglePassengerBox() {
-                        const box = document.getElementById('passengerBox');
-                        box.style.display = box.style.display === 'none' ? 'block' : 'none';
-                    }
-
-                    // Optional: Hide when clicking outside
-                    document.addEventListener('click', function (event) {
-                        const box = document.getElementById('passengerBox');
-                        const input = document.getElementById('passengerSummary');
-                        if (!box.contains(event.target) && event.target !== input) {
-                            box.style.display = 'none';
-                        }
-                    });
-                </script>
-            </div>
-
-            <div class="row mb-4">
-                <!-- Class -->
-                <div class="col-md-6">
-                    <label class="form-label">Class</label>
-                    <select class="form-select">
-                        <option selected>Economy Class</option>
-                        <option>Business Class</option>
-                        <option>First Class</option>
-                    </select>
-                </div>
-                <!-- Button -->
-                <div class="col-md-6 d-flex align-items-end">
-                    <button type="button" class="btn btn-secondary w-100" disabled>Search flights</button>
-                </div>
-            </div>
-            <!-- </form> -->
         </div>
     </div>
 </div>
 
-
-<section class="section blog-sec-two pt-0">
-    <div class="container">
-        <div class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-            <div>
-                <h2>Hotels and accommodation ideas
-
-                    <span class="text-primary">.</span>
-                </h2>
-            </div>
-            <div>
-                <a href="blog-grid.html" class="btn btn-primary">View All Articles<i
-                        class="isax isax-arrow-right-3 ms-2"></i></a>
-            </div>
+<div class="container py-5">
+    <div class="card shadow rounded-4 p-4">
+      <h2 class="text-center mb-4">What do Afghanis look like?</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <p>
+            Afghan currency is called the <strong>Afghani (AFN)</strong>. Coins are rarely used in daily transactions, but when available, they include denominations such as 1, 2, and 5 Afghanis, typically made of metal with national symbols and inscriptions in Dari or Pashto.
+          </p>
+          <p>
+            More commonly, the Afghani is used in the form of colourful <strong>banknotes</strong>, ranging from <strong>AFN10 to AFN1,000</strong> (approximately <strong>USD0.13 to USD13.50</strong>).
+            Each note features <strong>cultural and historical landmarks of Afghanistan</strong>, such as the <em>Blue Mosque (Shrine of Hazrat Ali)</em> in Mazar-i-Sharif, <em>Darul Aman Palace</em> in Kabul, and images of <strong>Afghan wildlife, traditional patterns, and national emblems</strong>.
+          </p>
+          <p>
+            The designs reflect the rich heritage and diverse identity of Afghanistan.
+          </p>
         </div>
-        <div class="blog-slider owl-carousel owl-loaded owl-drag">
-
-            <!-- Blog Item-->
-
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-
-            <!-- /Blog Item-->
-
-            <div class="owl-stage-outer">
-                <div class="owl-stage"
-                    style="transform: translate3d(-1760px, 0px, 0px); transition: 2s; width: 4400px;">
-                    <div class="owl-item cloned" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>14<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be
-                                        notified about new post and news from our Portal ?</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Merkel James</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>18<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Tom Andrews</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>18<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Tom Andrews</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>15<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Beth Williams</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>14<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be
-                                        notified about new post and news from our Portal ?</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Merkel James</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>18<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Tom Andrews</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item active" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>18<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Tom Andrews</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-15.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>15<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-01.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Beth Williams</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-16.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>14<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">Want to be
-                                        notified about new post and news from our Portal ?</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-02.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Merkel James</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="owl-item cloned" style="width: 416px; margin-right: 24px;">
-                        <div class="card blog-grid wow fadeInUp" data-wow-delay="0.2s"
-                            style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                            <div class="card-img rounded-top">
-                                <a href="blog-details.html" class="blog-img">
-                                    <img src="{% static 'img/blog/blog-17.jpg' %}" class="rounded-top" alt="img">
-                                </a>
-                                <div class="blog-date">
-                                    <h6>18<span class="d-block">Jul</span></h6>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <h5 class="mb-3"><a href="blog-details.html" class="two-line-ellipsis">It empowers
-                                        designers to swiftly created informative landing pages</a></h5>
-                                <div class="d-flex align-items-center justify-content-between">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center overflow-hidden">
-                                        <span class="avatar avatar-md flex-shrink-0 me-2">
-                                            <img src="{% static 'img/users/user-03.jpg' %}" class="rounded-circle"
-                                                alt="img">
-                                        </span>
-                                        <p class="fs-14 text-truncate">Tom Andrews</p>
-                                    </a>
-                                    <a href="blog-details.html" class="rounded-arrow-next"><i
-                                            class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-dots disabled"></div>
+        <div class="col-md-6 text-center">
+          <img src="https://www.ariananews.af/wp-content/uploads/2022/08/new-banknotes.jpg" 
+               alt="Afghani Banknotes" class="currency-image">
+          <p class="mt-2 text-muted">A selection of modern Afghani banknotes</p>
         </div>
+      </div>
     </div>
-</section>
+  </div>
+
+  <div class="container my-5">
+    <div class="row g-4">
+      
+      <!-- Card 1: Tax-Free Shopping -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">🛍️ Tax-Free Shopping in Afghanistan</h5>
+            <p class="card-text">Learn how to make smart purchases and understand local tax policies while shopping in Afghanistan’s bustling bazaars and modern stores. From carpets to gemstones, here's how to get the best value.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 2: Currency Exchange -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">💱 Where to Exchange Money</h5>
+            <p class="card-text">Want to know the best places to exchange foreign currency during your visit? Explore trusted money changers and banks across Kabul, Herat, and other major cities.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Discover more</a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 3: Coins Museum -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">🪙 Coins Museum – Kabul</h5>
+            <p class="card-text">Visit the National Museum in Kabul to explore Afghanistan’s numismatic history, including rare coins from the Kushan, Ghaznavid, and Durrani empires dating back over a thousand years.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Card 4: Save Money Tips -->
+      <div class="col-md-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">💡 Save Money in Afghanistan</h5>
+            <p class="card-text">From affordable guesthouses to budget-friendly transport and meals, discover practical tips to experience Afghanistan’s rich heritage and landscapes without overspending.</p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="mb-4">FAQs – Travel & Money in Afghanistan</h2>
+    <div class="accordion" id="faqAccordion">
+  
+      <!-- Credit Card Usage -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            Can I use my credit card in Afghanistan?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            While Afghanistan is largely cash-based, some hotels, airlines, and businesses in major cities like Kabul may accept credit cards. Always check with your bank about international usage and carry cash as a backup.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Taxis and US Dollars -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Do taxis in Afghanistan accept US dollars?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Taxis in Afghanistan typically only accept cash in Afghan afghanis (AFN). US dollars are not commonly accepted for local transport.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Carrying Cash -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+            Should I carry cash in Afghanistan?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, carrying cash is essential. While some major hotels or businesses may accept cards, most daily transactions in Afghanistan are cash-based.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Currency Exchange -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+            Where can I exchange US dollars in Afghanistan?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can exchange US dollars at licensed money exchange shops and banks in major cities such as Kabul, Herat, and Mazar-i-Sharif. Always check rates before exchanging.
+          </div>
+        </div>
+      </div>
+  
+      <!-- Daily Expenses -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+            How much money do you need per day in Afghanistan?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Daily costs vary depending on your travel style. Budget travelers may spend $20–$40 per day, while those seeking comfort or private guides may spend $70 or more.
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
 {% endblock %}

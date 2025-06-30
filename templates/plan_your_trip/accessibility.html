@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar breadcrumb-bg-05 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <h2 class="breadcrumb-title mb-2">Travel accessibility</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <h4 class="text-white"> Dubai strives to enhance its offerings for travellers with special needs</h4>
+
+                            <p class="mt-2">As a leading global destination, Dubai aims to improve travel accessibility for visitors
+                                with special needs, known as ‘People of Determination’ in the UAE. Whether it is at the
+                                airport, public transport, top attractions or accommodation, we continue to enhance the
+                                traveller experience to help you navigate our city with ease.</p>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+
+<div class="container my-5">
+    <div class="row">
+      <!-- Left Tabs -->
+      <div class="col-md-4">
+        <div class="nav flex-column nav-pills me-3" id="essentials-tabs" role="tablist" aria-orientation="vertical">
+          <button class="nav-link active" id="airports-tab" data-bs-toggle="pill" data-bs-target="#airports" type="button" role="tab">Airports in Afghanistan</button>
+          <button class="nav-link" id="cruise-tab" data-bs-toggle="pill" data-bs-target="#cruise" type="button" role="tab">Cruise Terminals</button>
+          <button class="nav-link" id="accommodation-tab" data-bs-toggle="pill" data-bs-target="#accommodation" type="button" role="tab">Accommodation</button>
+          <button class="nav-link" id="sights-tab" data-bs-toggle="pill" data-bs-target="#sights" type="button" role="tab">Sights and Attractions</button>
+        </div>
+      </div>
+  
+      <!-- Right Content -->
+      <div class="col-md-8">
+        <div class="tab-content" id="essentials-tabs-content">
+          
+          <!-- Airports Tab Content -->
+          <div class="tab-pane fade show active" id="airports" role="tabpanel" aria-labelledby="airports-tab">
+            <h4>Airport Accessibility Guide</h4>
+            <p>
+              At Hamid Karzai International Airport (KBL) in Kabul and other major airports, travelers with disabilities can access essential services including wheelchair support, priority lanes, and immigration assistance. 
+              Accessible washrooms, dedicated parking, and assistance for visual or hearing impairments are also available. 
+              People with hidden disabilities, including autism, are encouraged to notify their airline in advance to ensure personalized support and smoother airport experiences.
+            </p>
+          </div>
+  
+          <!-- Cruise Tab Content -->
+          <div class="tab-pane fade" id="cruise" role="tabpanel" aria-labelledby="cruise-tab">
+            <h4>Cruise Terminals</h4>
+            <p>
+              Afghanistan is landlocked and does not have cruise terminals. However, visitors can explore regional travel hubs in neighboring countries for cruise tourism.
+            </p>
+          </div>
+  
+          <!-- Accommodation Tab Content -->
+          <div class="tab-pane fade" id="accommodation" role="tabpanel" aria-labelledby="accommodation-tab">
+            <h4>Accommodation</h4>
+            <p>
+              Hotels in Afghanistan’s major cities offer a range of options. Some upscale hotels provide accessible rooms, ramps, and elevator access. Contact the property in advance to confirm availability of accessibility features.
+            </p>
+          </div>
+  
+          <!-- Sights Tab Content -->
+          <div class="tab-pane fade" id="sights" role="tabpanel" aria-labelledby="sights-tab">
+            <h4>Sights and Attractions</h4>
+            <p>
+              While many historical sites in Afghanistan are not fully accessible, some museums and modern public areas in cities like Kabul are working to accommodate visitors with physical limitations. It’s best to check ahead when planning your visit.
+            </p>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Fitness and Activities for People of Determination</h4>
+            <p class="card-text">
+              Afghanistan is steadily developing inclusive spaces for physical activity. While not as advanced as global hubs, initiatives are underway to support fitness opportunities for people with disabilities.
+              Parks, local NGOs, and a growing number of sports centers are offering basic accessible facilities in Kabul and other urban centers.
+            </p>
+            <p class="card-text">
+              In global cities like Dubai, Paralympic gold medallist Kevin Paul showcases how accessibility is prioritized across fitness spaces such as <strong>Wellfit Gym</strong>, <strong>Aventura Parks</strong>, and <strong>Jumeirah Public Beach</strong>. These serve as inspiring models for cities like Kabul working toward more inclusive environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <h2 class="mb-4">Accessibility FAQs for Afghanistan</h2>
+  
+    <div class="accordion" id="accessibilityFAQs">
+  
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            Is Afghanistan accessible for people with disabilities?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accessibilityFAQs">
+          <div class="accordion-body">
+            Accessibility in Afghanistan is limited but gradually improving. In major cities like Kabul, some hospitals, educational institutions, and NGOs are working toward greater inclusion for people with disabilities. However, most public infrastructure remains a challenge.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            Can I get assistance at airports in Afghanistan?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accessibilityFAQs">
+          <div class="accordion-body">
+            At Hamid Karzai International Airport (Kabul), basic assistance is available upon request, such as wheelchair support and priority processing for travelers with physical limitations. However, services may vary and it's strongly recommended to inform your airline in advance.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            Are accessible hotels available in Afghanistan?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accessibilityFAQs">
+          <div class="accordion-body">
+            Some major hotels in Kabul and Herat may offer limited accessibility features such as elevator access and wide entryways. It is important to contact the hotel ahead of time to confirm available facilities for guests with disabilities.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+            Are there accessible public spaces in Afghanistan?
+          </button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accessibilityFAQs">
+          <div class="accordion-body">
+            Public parks and recreational areas in Afghanistan are generally not fully accessible. Some new developments may have ramps or accessible pathways, but these are rare. Awareness and infrastructure are still developing.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+            Are there affordable transport options for people of determination?
+          </button>
+        </h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accessibilityFAQs">
+          <div class="accordion-body">
+            Public transportation is very limited for people with disabilities. Taxis and buses usually lack accessibility features. Some private organizations and NGOs offer transport services, but availability is limited and must be arranged in advance.
+          </div>
+        </div>
+      </div>
+  
+      <!-- FAQ 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+            Are NGOs or support groups available?
+          </button>
+        </h2>
+        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accessibilityFAQs">
+          <div class="accordion-body">
+            Yes. Several NGOs, such as the Afghan Landmine Survivors’ Organization (ALSO) and Handicap International, provide rehabilitation, mobility support, and advocacy for people with disabilities across Afghanistan.
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Things to Do in Afghanistan: Our Tips for People of Determination</h4>
+            <p class="card-text">
+              Whether you're visiting for a single day or exploring for a full week, there are enriching activities and cultural experiences available for everyone – including people of determination.
+            </p>
+            <p class="card-text">
+              From visits to the National Museum of Afghanistan and the historic Gardens of Babur, to peaceful time in parks or workshops organized by NGOs, there are accessible and inclusive ways to experience the country.
+            </p>
+            <p class="card-text">
+              Stay tuned for our recommended itineraries for 1, 2, and 5 days that consider mobility, accessibility, and comfort for all travelers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+{% endblock %}
