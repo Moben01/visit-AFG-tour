@@ -73,3 +73,20 @@ class Frequently_asked_questions(models.Model):
     question = models.CharField(max_length=30000)
     answer = models.TextField()
     data_bs_target = models.CharField(max_length=200)
+
+
+class EnquireUs(models.Model):
+    full_name = models.CharField(max_length=150)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20, blank=True, null=True)
+    subject = models.CharField(max_length=200, blank=True)
+    message = models.TextField()
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, null=True, blank=True, help_text="Optional - the tour user is enquiring about")
+    date_created = models.DateTimeField(auto_now_add=True)
+    responded = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-date_created']
+
+    def __str__(self):
+        return f"Enquiry from {self.full_name} - {self.subject[:30]}"

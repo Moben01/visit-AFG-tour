@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Frequently_asked_questions, TourCategory, Tour, TourImage, Booking
+from .models import *
 
 class TourImageInline(admin.TabularInline):
     model = TourImage
@@ -17,6 +17,11 @@ class TourCategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Booking)
 
+@admin.register(EnquireUs)
+class EnquireUsAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'subject', 'tour', 'date_created', 'responded')
+    search_fields = ('full_name', 'email', 'subject')
+    list_filter = ('responded', 'date_created')
 # admin.py
 
 from .models import ItineraryItem
