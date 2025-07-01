@@ -1,0 +1,466 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="breadcrumb-title mb-2">Tours</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
+                            <li class="breadcrumb-item">Tours</li>
+                            <li class="breadcrumb-item active" aria-current="page">Tour Grid</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Breadcrumb -->
+
+    <!-- Page Wrapper -->
+    <div class="content">
+        <div class="container">
+
+            <!-- Tour Types -->
+            <div class="mb-2">
+                <div class="mb-3">
+                    <h5 class="mb-2">Choose type of Tours you are interested</h5>
+                </div>
+                <div class="scroll-x">
+                    {% for i in get_tour_categories %}
+                      <div class="d-flex align-items-center hotel-type-item mb-3" style="min-width: 250px; scroll-snap-align: start;">
+                        <a href="{% url 'tour:tour_category_list' i.slug %}" class="avatar avatar-lg">
+                          <!-- <img src="{{ i.image.url }}" class="rounded-circle" alt="{{ i.name }}"> -->
+
+                          <div class="icon-container">
+                            {{ i.icon|safe }}
+                          </div>
+                          </a>
+
+                        <div class="ms-2 d-flex align-items-center gap-1">
+                          <h6 class="fs-16 fw-medium mb-0">
+                            <a href="{% url 'tour:tour_category_list' i.slug %}" class="d-flex align-items-center gap-1">
+                              {{ i.name }}
+                              <!-- SVG icon -->
+                             
+                            </a>
+                          </h6>
+                          <!-- <p class="fs-14 mb-0">{{ i.tours.count }} Hotels</p> -->
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                  
+<style>.scroll-x {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-x::-webkit-scrollbar {
+    height: 8px;
+  }
+  .scroll-x::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  </style>                  
+            </div>
+            <!-- /Tour Types -->
+
+            <div class="row">
+
+                <!-- Sidebar -->
+                <div class="col-xl-3 col-lg-4 theiaStickySidebar">
+                    <div class="card filter-sidebar mb-4 mb-lg-0">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h5>Filters</h5>
+                            <a href="javascript:void(0);" class="fs-14 link-primary">Reset</a>
+                        </div>
+                        <div class="card-body p-0">
+                            <form action="https://dreamstour.dreamstechnologies.com/html/search.html">
+                                <div class="p-3 border-bottom">
+                                    <label class="form-label fs-16">Search by Tour Type</label>
+                                    <div class="input-icon">
+                                        <span class="input-icon-addon">
+											<i class="isax isax-search-normal"></i>
+										</span>
+                                        <input type="text" class="form-control" placeholder="Search by Tour Type">
+                                    </div>
+                                </div>
+                                <div class="accordion accordion-list">
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-populars" aria-expanded="true" aria-controls="accordion-populars" role="button">
+                                                <i class="isax isax-ranking me-2 text-primary"></i>Popular
+                                            </div>
+                                        </div>
+                                        <div id="accordion-populars" class="accordion-collapse collapse show">
+                                            <div class="accordion-body pt-2">
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="popular1" type="checkbox" id="popular1">
+                                                    <label class="form-check-label ms-2" for="popular1">
+                                                        Local Guide
+                                                    </label>
+                                                </div>
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="popular2" type="checkbox" id="popular2">
+                                                    <label class="form-check-label ms-2" for="popular2">
+                                                        VIP Access
+                                                    </label>
+                                                </div>
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="popular3" type="checkbox" id="popular3">
+                                                    <label class="form-check-label ms-2" for="popular3">
+                                                        Photographs
+                                                    </label>
+                                                </div>
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="popular4" type="checkbox" id="popular4">
+                                                    <label class="form-check-label ms-2" for="popular4">
+                                                        Adventure Gears
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-popular" aria-expanded="true" aria-controls="accordion-popular" role="button">
+                                                <i class="isax isax-coin me-2 text-primary"></i>Price Per Night
+                                            </div>
+                                        </div>
+                                        <div id="accordion-popular" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <div class="filter-range">
+                                                    <input type="text" id="range_03">
+                                                </div>
+                                                <div class="filter-range-amount">
+                                                    <p class="fs-14">Range : <span class="text-gray-9 fw-medium">$200 - $800</span></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-hotel" aria-expanded="true" aria-controls="accordion-hotel" role="button">
+                                                <i class="isax isax-buildings me-2 text-primary"></i>Tour Types
+                                            </div>
+                                        </div>
+                                        <div id="accordion-hotel" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <div class="more-content">
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel1" type="checkbox" id="hotel1" checked>
+                                                        <label class="form-check-label ms-2" for="hotel1">
+                                                            Ecotourism
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel2" type="checkbox" id="hotel2" checked>
+                                                        <label class="form-check-label ms-2" for="hotel2">
+                                                            Adventure Tour
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel3" type="checkbox" id="hotel3" checked>
+                                                        <label class="form-check-label ms-2" for="hotel3">
+                                                            Group Tours
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel4" type="checkbox" id="hotel4" checked>
+                                                        <label class="form-check-label ms-2" for="hotel4">
+                                                            Beach Tours
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel5" type="checkbox" id="hotel5">
+                                                        <label class="form-check-label ms-2" for="hotel5">
+                                                            Honey Moon
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel6" type="checkbox" id="hotel6" checked>
+                                                        <label class="form-check-label ms-2" for="hotel6">
+                                                            Historical Tours
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel7" type="checkbox" id="hotel7" checked>
+                                                        <label class="form-check-label ms-2" for="hotel7">
+                                                            Summer Trip
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="hotel8" type="checkbox" id="hotel8">
+                                                        <label class="form-check-label ms-2" for="hotel8">
+                                                            City Trip
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <a href="javascript:void(0);" class="more-view text-primary fw-medium fs-14">See Less</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-amenity" aria-expanded="true" aria-controls="accordion-amenity" role="button">
+                                                <i class="isax isax-candle me-2 text-primary"></i>Accommodation Type
+                                            </div>
+                                        </div>
+                                        <div id="accordion-amenity" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="amenity1" type="checkbox" id="amenity1">
+                                                        <label class="form-check-label ms-2" for="amenity1">
+                                                            Hotel
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="amenity2" type="checkbox" id="amenity2">
+                                                        <label class="form-check-label ms-2" for="amenity2">
+                                                            Campsite
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="amenity3" type="checkbox" id="amenity3">
+                                                        <label class="form-check-label ms-2" for="amenity3">
+                                                            Resort
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-0">
+                                                        <input class="form-check-input ms-0 mt-0" name="amenity4" type="checkbox" id="amenity4" checked>
+                                                        <label class="form-check-label ms-2" for="amenity4">
+                                                            Cabin
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-cusine" aria-expanded="true" aria-controls="accordion-cusine" role="button">
+                                                <i class="isax isax-activity me-2 text-primary"></i>Activities
+                                            </div>
+                                        </div>
+                                        <div id="accordion-cusine" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="cusine1" type="checkbox" id="cusine1">
+                                                        <label class="form-check-label ms-2" for="cusine1">
+                                                            Hiking
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="cusine2" type="checkbox" id="cusine2">
+                                                        <label class="form-check-label ms-2" for="cusine2">
+                                                            Sightseeing
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="cusine3" type="checkbox" id="cusine3">
+                                                        <label class="form-check-label ms-2" for="cusine3">
+                                                            Wildlife Safari
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-0">
+                                                        <input class="form-check-input ms-0 mt-0" name="cusine4" type="checkbox" id="cusine4" checked>
+                                                        <label class="form-check-label ms-2" for="cusine4">
+                                                            Boat Tours
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-meal" aria-expanded="true" aria-controls="accordion-meal" role="button">
+                                                <i class="isax isax-reserve me-2 text-primary"></i>Meal plans available
+                                            </div>
+                                        </div>
+                                        <div id="accordion-meal" class="accordion-collapse collapse show">
+                                            <div class="accordion-body pt-2">
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="meals1" type="checkbox" id="meals1">
+                                                    <label class="form-check-label ms-2" for="meals1">
+                                                        All inclusive
+                                                    </label>
+                                                </div>
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="meals2" type="checkbox" id="meals2">
+                                                    <label class="form-check-label ms-2" for="meals2">
+                                                        Breakfast
+                                                    </label>
+                                                </div>
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="meals3" type="checkbox" id="meals3">
+                                                    <label class="form-check-label ms-2" for="meals3">
+                                                        Lunch
+                                                    </label>
+                                                </div>
+                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="meals4" type="checkbox" id="meals4" checked>
+                                                    <label class="form-check-label ms-2" for="meals4">
+                                                        Dinner
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-style" aria-expanded="true" aria-controls="accordion-style" role="button">
+                                                <i class="isax isax-profile-2user me-2 text-primary"></i>Guests
+                                            </div>
+                                        </div>
+                                        <div id="accordion-style" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="style1" type="checkbox" id="style1">
+                                                        <label class="form-check-label ms-2" for="style1">
+                                                            1 - 5
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="style2" type="checkbox" id="style2">
+                                                        <label class="form-check-label ms-2" for="style2">
+                                                            5 - 10
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="style3" type="checkbox" id="style3">
+                                                        <label class="form-check-label ms-2" for="style3">
+                                                            10 - 15
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                        <input class="form-check-input ms-0 mt-0" name="style4" type="checkbox" id="style4" checked>
+                                                        <label class="form-check-label ms-2" for="style4">
+                                                            15 - 20
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check d-flex align-items-center ps-0 mb-0">
+                                                        <input class="form-check-input ms-0 mt-0" name="style5" type="checkbox" id="style5">
+                                                        <label class="form-check-label ms-2" for="style5">
+                                                            20+
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item border-bottom p-3">
+                                        <div class="accordion-header">
+                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-brand" aria-expanded="true" aria-controls="accordion-brand" role="button">
+                                                <i class="isax isax-discount-shape me-2 text-primary"></i>Reviews
+                                            </div>
+                                        </div>
+                                        <div id="accordion-brand" class="accordion-collapse collapse show">
+                                            <div class="accordion-body">
+                                                <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="review1" type="checkbox" id="review1">
+                                                    <label class="form-check-label ms-2" for="review1">
+                                                        <span class="rating d-flex align-items-center">
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary"></i>
+                                                            <span class="ms-2">5 Star</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="review2" type="checkbox" id="review2">
+                                                    <label class="form-check-label ms-2" for="review2">
+                                                        <span class="rating d-flex align-items-center">
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary"></i>
+                                                            <span class="ms-2">4 Star</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="review3" type="checkbox" id="review3">
+                                                    <label class="form-check-label ms-2" for="review3">
+                                                        <span class="rating d-flex align-items-center">
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary"></i>
+                                                            <span class="ms-2">3 Star</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check d-flex align-items-center ps-0 mb-2">
+                                                    <input class="form-check-input ms-0 mt-0" name="review4" type="checkbox" id="review4">
+                                                    <label class="form-check-label ms-2" for="review4">
+                                                        <span class="rating d-flex align-items-center">
+                                                            <i class="fas fa-star filled text-primary me-1"></i>
+                                                            <i class="fas fa-star filled text-primary"></i>
+                                                            <span class="ms-2">2 Star</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-check d-flex align-items-center ps-0 mb-0">
+                                                    <input class="form-check-input ms-0 mt-0" name="review5" type="checkbox" id="review5">
+                                                    <label class="form-check-label ms-2" for="review5">
+                                                        <span class="rating d-flex align-items-center">
+                                                            <i class="fas fa-star filled text-primary"></i>
+                                                            <span class="ms-2">1 Star</span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Sidebar -->
+
+                <div class="col-xl-9 col-lg-8 theiaStickySidebar">
+                    <section class="section">
+                        <div class="container">
+
+                            <div class="row g-4">
+                                {% for i in find_tours %}
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="location-wrap location-wrap-two">
+                                        <img src="{{ i.image.url }}" alt="Img" class="img-fluid" style="height: 250px; object-fit: cover;">
+
+                                        <div class="loc-name-top">
+                                            <h5 class="text-white mb-1">{{i.title}}</h5>
+                                            <span class="text-white">{{i.price}}</span>
+                                        </div>
+                                        <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- /Page Wrapper -->
+
+{% endblock %}
