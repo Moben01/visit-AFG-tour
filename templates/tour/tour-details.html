@@ -136,38 +136,18 @@
                     <h5 class="fs-18 mb-3">Includes & Excludes</h5>
                     <div class="row gy-2">
                         <div class="col-md-6">
+                            {% for i in Includess %}
                             <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-tick-square5 text-success me-2"></i> Exclusive Merchandise
+                                <i class="isax isax-tick-square5 text-success me-2"></i> {{i.title}}
                             </p>
-                            <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-tick-square5 text-success me-2"></i> Early Venue Access
-                            </p>
-                            <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-tick-square5 text-success me-2"></i> Acoustic Performance
-                            </p>
-                            <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-tick-square5 text-success me-2"></i> Tour Program
-                            </p>
-                            <p class="d-flex align-items-center">
-                                <i class="isax isax-tick-square5 text-success me-2"></i> Transportation (if applicable)
-                            </p>
+                            {% endfor %}
                         </div>
+                    {% for i in Excludess %}
                         <div class="col-md-6">
                             <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-close-square5 text-danger me-2"></i> Travel Expenses
+                                <i class="isax isax-close-square5 text-danger me-2"></i> {{i.title}}
                             </p>
-                            <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-close-square5 text-danger me-2"></i> Accommodation
-                            </p>
-                            <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-close-square5 text-danger me-2"></i> Food and Beverage
-                            </p>
-                            <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-close-square5 text-danger me-2"></i> Parking Fees
-                            </p>
-                            <p class="d-flex align-items-center">
-                                <i class="isax isax-close-square5 text-danger me-2"></i> Personal Expenses
-                            </p>
+                           {% endfor %}
                         </div>
                     </div>
                 </div>

@@ -53,6 +53,10 @@ def tour_details(request, slug):
     find_Itinerary = ItineraryItem.objects.filter(tour=get_tour)
     get_EnquireUs = EnquireUs.objects.filter(tour=get_tour)
     get_faqs = Frequently_asked_questions.objects.filter(tour_id=get_tour)
+    Includess = Includes.objects.filter(tour=get_tour)
+    Excludess = Excludes.objects.filter(tour=get_tour)
+
+
 
     is_favorite = False
     if request.user.is_authenticated:
@@ -68,5 +72,7 @@ def tour_details(request, slug):
         'get_EnquireUs':get_EnquireUs,
         'is_favorite': is_favorite,
         'find_user_favorite': find_user_favorite,
+        'Includess':Includess,
+        'Excludess':Excludess,
     }
     return render(request, 'tour/tour-details.html', context)
