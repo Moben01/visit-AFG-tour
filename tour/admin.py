@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Frequently_asked_questions, TourCategory, Tour, TourImage, Booking
+from .models import *
 
 class TourImageInline(admin.TabularInline):
     model = TourImage
@@ -27,3 +27,5 @@ class ItineraryItemInline(admin.TabularInline):
 
 admin.site.register(ItineraryItem)
 admin.site.register(Frequently_asked_questions)
+admin.site.register(Includes)
+admin.site.register(Excludes)

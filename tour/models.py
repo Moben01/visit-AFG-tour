@@ -22,7 +22,7 @@ class Tour(models.Model):
     end_date = models.DateField()
     description = models.TextField()
     location = models.CharField(max_length=100)
-    duration_days = models.CharField()
+    duration_days = models.CharField(max_length=150)
     price = models.DecimalField(max_digits=8, decimal_places=2)
     available = models.BooleanField(default=True)
     google_location = models.CharField(max_length=2000000)
@@ -73,3 +73,12 @@ class Frequently_asked_questions(models.Model):
     question = models.CharField(max_length=30000)
     answer = models.TextField()
     data_bs_target = models.CharField(max_length=200)
+
+class Includes(models.Model):
+        tour =models.ForeignKey(Tour, on_delete=models.CASCADE)
+        title =models.CharField(max_length=500)
+
+    
+class Excludes(models.Model):
+        tour =models.ForeignKey(Tour, on_delete=models.CASCADE)
+        title =models.CharField(max_length=500)

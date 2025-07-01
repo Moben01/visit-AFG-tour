@@ -21,6 +21,10 @@ def tour_details(request, slug):
     tour_images = get_tour.images.all()  # related_name = 'images'
     find_Itinerary = ItineraryItem.objects.filter(tour=get_tour)
     get_faqs = Frequently_asked_questions.objects.filter(tour_id=get_tour)
+    Includess = Includes.objects.filter(tour=get_tour)
+    Excludess = Excludes.objects.filter(tour=get_tour)
+
+
 
     context = {
         'get_tour':get_tour,
@@ -28,5 +32,7 @@ def tour_details(request, slug):
         'find_Itinerary':find_Itinerary,
         'get_tour_categories':get_tour_categories,
         'get_faqs':get_faqs,
+        'Includess':Includess,
+        'Excludess':Excludess,
     }
     return render(request, 'tour/tour-details.html', context)
