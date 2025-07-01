@@ -1,10 +1,10 @@
 from django.urls import path
 from .import views
+from home.views import favorite_user_tour
 
 app_name = 'home'
 
 urlpatterns = [
     path('', views.home_view, name='home'),
-    path('user_favorite_tour', views.user_favorite_tour, name='user_favorite_tour')
 ]
 

@@ -26,7 +26,7 @@ def custom_404_view(request, exception):
 
 
 @login_required  # better than manual check for logged-in user
-def user_favorite_tour(request):
+def favorite_user_tour(request):
     get_tour_categories = TourCategory.objects.all()
 
     if request.method == "POST":
