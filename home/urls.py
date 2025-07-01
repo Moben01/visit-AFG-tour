@@ -4,6 +4,7 @@ from .import views
 app_name = 'home'
 
 urlpatterns = [
-    path('', views.home_view, name='home')
+    path('', views.home_view, name='home'),
+    path('user_favorite_tour', views.user_favorite_tour, name='user_favorite_tour')
 ]
 

@@ -99,7 +99,7 @@
                                     <div class="fav-dropdown">
                                         <a href="wishlist.html" class="position-relative">
                                             <i class="isax isax-heart"></i><span
-                                                class="count-icon bg-secondary text-gray-9">0</span>
+                                                class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
                                         </a>
                                     </div>
                                 </div>
@@ -884,8 +884,8 @@
                 </a>
             </div>
             <div class="fav-dropdown me-3">
-                <a href="wishlist.html" class="position-relative">
-                    <i class="isax isax-heart"></i><span class="count-icon bg-secondary text-gray-9">0</span>
+                <a href="{% url 'home:user_favorite_tour' %}" class="position-relative">
+                    <i class="isax isax-heart"></i><span class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
                 </a>
             </div>
             <a href="add-flight.html" class="btn btn-dark d-inline-flex align-items-center me-3"><i

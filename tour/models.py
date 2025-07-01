@@ -1,6 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class TourCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -90,3 +93,10 @@ class EnquireUs(models.Model):
 
     def __str__(self):
         return f"Enquiry from {self.full_name} - {self.subject[:30]}"
+
+
+class User_favorite_tour(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    favorite = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)

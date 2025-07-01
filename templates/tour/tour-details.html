@@ -70,9 +70,21 @@
                             <a href="javascript:void(0);"
                                 class="btn btn-outline-light btn-icon btn-sm d-flex align-items-center justify-content-center me-2"><i
                                     class="isax isax-share"></i></a>
-                            <a href="javascript:void(0);"
-                                class="btn btn-outline-light btn-sm d-inline-flex align-items-center"><i
-                                    class="isax isax-heart5 text-danger me-1"></i>Save</a>
+                                    
+                                    <form method="POST" action="{% url 'tour:toggle_favorite' slug=get_tour.slug %}">
+                                        {% csrf_token %}
+                                        {% if is_favorite %}
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="isax isax-heart5 me-1"></i> 
+                                            </button>
+                                        {% else %}
+                                            <button type="submit" class="btn btn-outline-light btn-sm">
+                                                <i class="isax isax-heart me-1"></i> 
+                                            </button>
+                                        {% endif %}
+
+                                        
+                                    </form>
                         </div>
                     </div>
                 </div>
@@ -200,12 +212,6 @@
                 </div>
                 <!-- /FAQ -->
 
-                <!-- Reviews -->
-                <div class="d-flex align-items-center justify-content-between flex-wrap mb-2" id="reviews">
-                    <h6 class="mb-3">Reviews (45)</h6>
-                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_review"
-                        class="btn btn-primary btn-md mb-3"><i class="isax isax-edit-2 me-1"></i>Write a Review</a>
-                </div>
 
                 {% for i in get_EnquireUs %}
                 <div class="card review-item shadow-none mb-3">
