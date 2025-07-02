@@ -76,3 +76,26 @@ def tour_details(request, slug):
         'Excludess':Excludess,
     }
     return render(request, 'tour/tour-details.html', context)
+
+def tour_booking(request, slug):
+    find_tour = Tour.objects.get(slug=slug)
+
+    if request.method == "POST":
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.tour = find_tour
+            instance.save()
+        else:
+            messages.warning(request, 'Form has Error')
+    else:
+        form = BookingForm()
+
+    get_tour_categories = TourCategory.objects.all()
+
+    context = {
+        'get_tour_categories':get_tour_categories,
+        'find_tour':find_tour,
+        'form':form,
+    }
+    return render(request, 'tour/tour-booking.html', context)
