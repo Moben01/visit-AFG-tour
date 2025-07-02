@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar breadcrumb-bg-01 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="breadcrumb-title mb-2">Wishlist</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Breadcrumb -->
+
+    <!-- Page Wrapper -->
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Sidebar -->
+                <div class="col-xl-3 col-lg-4 theiaStickySidebar">
+                    <div class="card user-sidebar mb-4 mb-lg-0">
+                        <div class="card-header user-sidebar-header">
+                            <div class="profile-content rounded-pill">
+                                <div class="d-flex align-items-center justify-content-between ">
+                                    <div class=" d-flex align-items-center justify-content-center ">
+                                        <img src="{% static 'img/users/user-lg-26.jpg' %}" alt="image" class="img-fluid avatar avatar-lg rounded-circle flex-shrink-0 me-1">
+                                        <div>
+                                            <h6 class="fs-16">Chris Foxy</h6>
+                                            <span class="fs-14 text-gray-6">Since 10 May 2025</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <a href="profile-settings.html" class="p-1 rounded-circle btn btn-light d-flex align-items-center justify-content-center"><i class="isax isax-edit-2 fs-14"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body user-sidebar-body">
+                            <ul>
+                                <li>
+                                    <span class="fs-14 text-gray-3 fw-medium mb-2">Main</span>
+                                </li>
+                                <li>
+                                    <a href="dashboard.html" class="d-flex align-items-center">
+                                        <i class="isax isax-grid-55"></i> Dashboard
+                                    </a>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="d-block"><i class="isax isax-calendar-tick5"></i><span>My Bookings</span><span class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="customer-flight-booking.html" class="fs-14 d-inline-flex align-items-center">Flights</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-hotel-booking.html" class="fs-14 d-inline-flex align-items-center">Hotels</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-car-booking.html" class="fs-14 d-inline-flex align-items-center">Cars</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-cruise-booking.html" class="fs-14 d-inline-flex align-items-center">Cruise</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-tour-booking.html" class="fs-14 d-inline-flex align-items-center">Tour</a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="review.html" class="d-flex align-items-center">
+                                        <i class="isax isax-magic-star5"></i> My Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="message-content">
+                                        <a href="chat.html" class="d-flex align-items-center">
+                                            <i class="isax isax-message-square5"></i> Messages
+                                        </a>
+                                        <span class="msg-count rounded-circle">02</span>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="wishlist.html" class="d-flex align-items-center active">
+                                        <i class="isax isax-heart5"></i> Wishlist
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="fs-14 text-gray-3 fw-medium mb-2">Finance</span>
+                                </li>
+                                <li>
+                                    <a href="wallet.html" class="d-flex align-items-center">
+                                        <i class="isax isax-wallet-add-15"></i> Wallet
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="payment.html" class="d-flex align-items-center">
+                                        <i class="isax isax-money-recive5"></i> Payments
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="fs-14 text-gray-3 fw-medium mb-2">Account</span>
+                                </li>
+                                <li>
+                                    <a href="my-profile.html" class="d-flex align-items-center">
+                                        <i class="isax isax-profile-tick5"></i> My Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="message-content">
+                                        <a href="notification.html" class="d-flex align-items-center">
+                                            <i class="isax isax-notification-bing5"></i> Notifications
+                                        </a>
+                                        <span class="msg-count bg-purple rounded-circle">05</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="profile-settings.html" class="d-flex align-items-center">
+                                        <i class="isax isax-setting-25"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html" class="d-flex align-items-center pb-0">
+                                        <i class="isax isax-logout-15"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Sidebar -->
+
+                <div class="col-xl-9 col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h6>My Wishlist</h6>
+                            <p class="fs-14">Items in Wishlist : 60</p>
+                        </div>
+                    </div>
+                    {% for i in find_user_favorites %}
+                    <!-- Hotel Grid -->
+                    <div class="hotel-list">
+                      <div class="place-item mb-4">
+                        <div class="place-img">
+                          
+                          <div id="tourImageCarousel{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                              {% for img in i.tour.images.all %}
+                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                  <a href="{% url 'tour:tour_details' slug=i.tour.slug %}">
+                                    <img src="{{ img.image.url }}" 
+                                         class="d-block mx-auto img-fluid" 
+                                         alt="{{ i.tour.title }}" 
+                                         style="max-height: 400px; width: auto;">
+                                  </a>
+                                </div>
+                              {% endfor %}
+                            </div>
+                          
+                            <button class="carousel-control-prev" type="button" data-bs-target="#tourImageCarousel{{ forloop.counter }}" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            
+                            <button class="carousel-control-next" type="button" data-bs-target="#tourImageCarousel{{ forloop.counter }}" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                          </div>
+                  
+                       
+                          <div class="fav-item">
+                            <form method="post" action="{% url 'favorite_user_tour' %}" style="display: inline;">
+                              {% csrf_token %}
+                              <input type="hidden" name="slug" value="{{ i.tour.slug }}">
+                              <button type="submit" class="fav-icon selected" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                <i class="isax isax-heart5"></i>
+                              </button>
+                            </form>
+                          </div>
+                          
+                          
+                        </div>
+                  
+                        <div class="place-content pb-1">
+                          <div class="d-flex align-items-center justify-content-between flex-wrap">
+                            <div>
+                              <h5 class="mb-1 text-truncate">
+                                <a href="{% url 'tour:tour_details' slug=i.tour.slug %}">{{ i.tour.title }}</a>
+                              </h5>
+                              <p class="d-flex align-items-center mb-2">
+                                <i class="isax isax-location5 me-2"></i>{{ i.tour.location }}
+                              </p>
+                            </div>
+                          </div>
+                          <p class="line-ellipsis fs-14">{{ i.tour.description }}</p>
+                          <div class="d-flex align-items-center justify-content-between flex-wrap border-top pt-3">
+                            <h5 class="text-primary text-nowrap me-2 mb-3">{{ i.tour.price }} <span class="fs-14 fw-normal text-default">/ Night</span></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /Hotel Grid -->
+                  {% endfor %}
+                  
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- /Page Wrapper -->
+
+{% endblock %}

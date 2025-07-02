@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="breadcrumb-title mb-2">Tour Booking</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Tour Booking</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Breadcrumb -->
+
+    <!-- Page Wrapper -->
+    <div class="content content-two">
+        <div class="container">            
+            <div class="row">
+
+                <!-- Checkout -->
+                <form method="post" action="{% url 'tour:tour_booking' slug=find_tour.slug %}">
+                    {% csrf_token %}
+                    <div class="row">
+                
+                        <!-- Checkout -->
+                        <div class="col-lg-8">
+                            <div class="card checkout-card">
+                                <div class="card-header">
+                                    <h5>Secure Checkout</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div>
+                                        <div class="checkout-title">
+                                            <h6 class="mb-2">Contact Info</h6>
+                                        </div>
+                                        <div class="checkout-details">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Name</label>
+                                                        {{ form.name }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Email</label>
+                                                        {{ form.email }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Date</label>
+                                                        {{ form.booking_date }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Phone</label>
+                                                        {{ form.phone }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                                            <div class="row">
+                                                <div class="col-lg-6 mb-3">
+                                                    <label class="form-label">Adults</label>
+                                                    <p class="text-muted mb-1">Age limit: 12 years and up</p>
+                                                    <div class="input-group">
+                                                        <button type="button" class="btn btn-outline-secondary" onclick="stepDown('id_adults')">-</button>
+                                                        {{ form.adults }}
+                                                        <button type="button" class="btn btn-outline-secondary" onclick="stepUp('id_adults')">+</button>
+                                                    </div>
+                                                </div>
+                
+                                                <div class="col-lg-6 mb-3">
+                                                    <label class="form-label">Children</label>
+                                                    <p class="text-muted mb-1">Age limit: 0 - 11 years</p>
+                                                    <div class="input-group">
+                                                        <button type="button" class="btn btn-outline-secondary" onclick="stepDown('id_children')">-</button>
+                                                        {{ form.children }}
+                                                        <button type="button" class="btn btn-outline-secondary" onclick="stepUp('id_children')">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                
+                                            <script>
+                                                function stepUp(id) {
+                                                    let input = document.getElementById(id);
+                                                    if (input) input.stepUp();
+                                                }
+                
+                                                function stepDown(id) {
+                                                    let input = document.getElementById(id);
+                                                    if (input && parseInt(input.value) > 0) input.stepDown();
+                                                }
+                                            </script>
+                
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Note</label>
+                                                        {{ form.notes }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-end flex-wrap gap-2">
+                                        <button type="submit" class="btn btn-primary">Confirm & Pay $9569 </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Checkout -->
+                
+                 
+                </form>
+                
+                <!-- Checkout -->
+
+                <!-- Review Order Details -->
+                <div class="col-lg-4 theiaStickySidebar">
+                    <div class="card order-details">
+                        <div class="card-header">
+                            <div class="d-flex align-items-center justify-content-between header-content">
+                                <h5>Review Order Details</h5>
+                                <a href="tour-details.html" class="rounded-circle p-2 btn btn-light d-flex align-items-center justify-content-center"><span class="fs-16 d-flex align-items-center justify-content-center"><i class="isax isax-edit-2"></i></span></a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="pb-3 border-bottom">
+                                <div class="mb-3 review-img">
+                                    <img src="{{ find_tour.image.url }}" alt="Img" class="img-fluid">
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="mb-2">{{find_tour.title}}</h6>
+                                        <p class="fs-14 "><span class="badge badge-warning text-gray-9 fs-13 fw-medium me-2">5.0</span>(400 Reviews)</p>
+                                    </div>
+                                    <h6 class="fs-14 fw-normal text-gray-9"> {{find_tour.price}} </h6>
+                                </div>
+                            </div>
+                            <div class="mt-3 pb-3 border-bottom">
+                                <h6 class="text-primary mb-3">Order Info</h6>
+                                <div class="d-flex align-items-center details-info">
+                                    <h6 class="fs-16">Departure</h6>
+                                    <p class="fs-16">25 May 2025, 04:45 AM</p>
+                                </div>
+                                <div class="d-flex align-items-center details-info">
+                                    <h6 class="fs-16">Return</h6>
+                                    <p class="fs-16">31 May 2025, 10:00 PM</p>
+                                </div>
+                                <div class="d-flex align-items-center  details-info">
+                                    <h6 class="fs-16">Adults</h6>
+                                    <p class="fs-16">20</p>
+                                </div>
+                                <div class="d-flex align-items-center  details-info">
+                                    <h6 class="fs-16">Children</h6>
+                                    <p class="fs-16">8</p>
+                                </div>
+                                <div class="d-flex align-items-center details-info">
+                                    <h6 class="fs-16">No of Days</h6>
+                                    <p class="fs-16">4 Days, 3 Nights</p>
+                                </div>
+                            </div>
+                            <div class="mt-3 border-bottom">
+                                <h6 class="text-primary mb-3">Payment Info</h6>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h6 class="fs-16">Sub Total</h6>
+                                    <p class="fs-16">$8565</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h6 class="fs-16">Tax <span class="text-gray-6"> (10%)</span></h6>
+                                    <p class="fs-16">$85</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h6 class="fs-16">Booking Fees</h6>
+                                    <p class="fs-16">$89</p>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h6 class="fs-16">Discount <span class="text-gray-6"> (10%)</span></h6>
+                                    <p class="fs-16">-$20</p>
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h6>Amount to Pay</h6>
+                                    <h6 class="text-primary">$9569</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <!-- /Review Order Details -->
+
+        </div>
+    </div>
+    <!-- /Page Wrapper -->
+
+    <!-- Booking Success -->
+    <div class="modal fade" id="booking-success" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content booking-success-modal">
+                <div class="modal-body">
+                    <div>
+                        <div class="booking-icon text-center mb-3">
+                            <img src="{% static 'img/icons/tick-circle.svg' %}" alt="icon" class="img-fluid">
+                        </div>
+                        <h5 class="text-center mb-3">Payment Successful</h5>
+                        <div class="text-center mb-4">
+                            <p>Booking on <strong>Rainbow Mountain Valley</strong> has been successful with Reference Number <span class="text-primary"> #12559845</span></p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <a href="tour-booking-confirmation.html" class="btn btn-primary d-flex flex-shrink-0">View Booking Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Booking Success -->
+
+{% endblock %}

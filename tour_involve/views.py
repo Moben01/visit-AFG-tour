@@ -2,6 +2,12 @@ from django.shortcuts import render
 
 from django.shortcuts import render, redirect
 from .forms import TranslatorForm
+from tour.models import TourCategory
+
+
+
+
+
 
 def translator_view(request):
     message = ""  # پیام خالی در ابتدا
@@ -16,5 +22,6 @@ def translator_view(request):
     context = {
         'form': form,
         'message': message,
+        'get_tour_categories': TourCategory.objects.all() 
     }
     return render(request, 'tour_involve/translator.html', context)
