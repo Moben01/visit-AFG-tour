@@ -76,19 +76,21 @@
                 <div class="row g-4">
                     {% for i in find_tours %}
                     <div class="col-lg-4 col-md-6">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <img src="{{ i.image.url }}" class="card-img-top rounded-top img-fluid"
-                                 alt="{{ i.title }}" style="height: 250px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column justify-content-between">
-                                <div>
-                                    <h5 class="card-title">{{ i.title }}</h5>
-                                    <p class="card-text text-muted">${{ i.price }}</p>
-                                </div>
-                                <a href="{% url 'tour:tour_details' i.slug %}" class="btn btn-outline-primary btn-sm mt-3 w-100">
-                                    View Details <i class="isax isax-arrow-right-1"></i>
-                                </a>
+                        <div class="location-wrap location-wrap-two">
+                            <img src="{{ i.image.url }}" alt="Img" class="img-fluid" style="height: 250px; object-fit: cover;">
+
+                            <div class="loc-name-top">
+                                <h5 class="text-white mb-1">{{i.title}}</h5>
+                                <span class="text-white">{{i.price}}</span>
                             </div>
+                            <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
                         </div>
+
+
+
+
+
+
                     </div>
                     {% empty %}
                     <div class="col-12">
