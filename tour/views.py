@@ -7,13 +7,18 @@ def tour_category_list(request, slug):
     get_tour_categories = TourCategory.objects.all()
     get_tour_category = TourCategory.objects.get(slug=slug)
     find_tours = Tour.objects.filter(category=get_tour_category)
+    selected_types = request.GET.getlist('types')
+    if selected_types:
+        find_tours = Tour.objects.filter(category__id__in=selected_types)
 
     context = {
-        'get_tour_category':get_tour_category,
-        'find_tours':find_tours,
-        'get_tour_categories':get_tour_categories,
+        'get_tour_category': get_tour_category,
+        'find_tours': find_tours,
+        'get_tour_categories': get_tour_categories,
+        'selected_types': list(map(int, selected_types)) if selected_types else [],
     }
     return render(request, 'tour/tour-list.html', context)
+
 
 def tour_details(request, slug):
     get_tour_categories = TourCategory.objects.all()
