@@ -22,14 +22,10 @@
 
     <!-- Page Wrapper -->
     <div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-
+        <div class="container">
+            <div class="row">
                 <!-- Sidebar -->
-               <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div class="col-xl-3 col-lg-4">
                     <div class="card user-sidebar shadow-sm">
                         <div class="card-header bg-white border-bottom">
                             <div class="profile-content p-2">
@@ -79,7 +75,6 @@
                                         <li>
                                             <a href="customer-tour-booking.html" class="fs-14 d-inline-flex align-items-center">Tour</a>
                                         </li>
-
                                     </ul>
                                 </li>
                                 <li>
@@ -95,6 +90,8 @@
                                         <span class="msg-count rounded-circle">02</span>
                                     </div>
                                 </li>
+           
+           
                                 <li class="mb-2">
                                     <a href="wishlist.html" class="d-flex align-items-center active">
                                         <i class="isax isax-heart5"></i> Wishlist
@@ -125,6 +122,9 @@
                                     <div class="message-content">
                                         <a href="notification.html" class="d-flex align-items-center">
                                             <i class="isax isax-notification-bing5"></i> Notifications
+
+                                        
+                                        
                                         </a>
                                         <span class="msg-count bg-purple rounded-circle">05</span>
                                     </div>
@@ -145,84 +145,111 @@
                 </div>
                 <!-- /Sidebar -->
 
+                <!-- Main Content -->
                 <div class="col-xl-9 col-lg-8">
                     <div class="card">
                         <div class="card-body">
+                    
+                    
                             <h6>My Wishlist</h6>
                             <p class="fs-14">Items in Wishlist : 60</p>
                         </div>
                     </div>
+
+
+
+
+
+
+
                     {% for i in find_user_favorites %}
                     <!-- Hotel Grid -->
                     <div class="hotel-list">
-                      <div class="place-item mb-4">
-                        <div class="place-img">
-                          
-                          <div id="tourImageCarousel{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                              {% for img in i.tour.images.all %}
-                                <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                                  <a href="{% url 'tour:tour_details' slug=i.tour.slug %}">
-                                    <img src="{{ img.image.url }}" 
-                                         class="d-block mx-auto img-fluid" 
-                                         alt="{{ i.tour.title }}" 
-                                         style="max-height: 400px; width: auto;">
-                                  </a>
+                        <div class="place-item mb-4">
+                            <div class="place-img">
+                                <div id="tourImageCarousel{{ forloop.counter }}" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        {% for img in i.tour.images.all %}
+                                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                            <a href="{% url 'tour:tour_details' slug=i.tour.slug %}">
+                                                <img src="{{ img.image.url }}" 
+                                                     class="d-block mx-auto img-fluid" 
+                                                     alt="{{ i.tour.title }}" 
+                                                     style="max-height: 400px; width: auto;">
+                                            </a>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#tourImageCarousel{{ forloop.counter }}" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    
+                                    <button class="carousel-control-next" type="button" data-bs-target="#tourImageCarousel{{ forloop.counter }}" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
-                              {% endfor %}
+                        
+                                <div class="fav-item">
+                                    <form method="post" action="{% url 'favorite_user_tour' %}" style="display: inline;">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="slug" value="{{ i.tour.slug }}">
+                                        <button type="submit" class="fav-icon selected" style="background: none; border: none; padding: 0; cursor: pointer;">
+                                            <i class="isax isax-heart5"></i>
+                             
+                             
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
-                          
-                            <button class="carousel-control-prev" type="button" data-bs-target="#tourImageCarousel{{ forloop.counter }}" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            
-                            <button class="carousel-control-next" type="button" data-bs-target="#tourImageCarousel{{ forloop.counter }}" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
-                          </div>
-                  
-                       
-                          <div class="fav-item">
-                            <form method="post" action="{% url 'favorite_user_tour' %}" style="display: inline;">
-                              {% csrf_token %}
-                              <input type="hidden" name="slug" value="{{ i.tour.slug }}">
-                              <button type="submit" class="fav-icon selected" style="background: none; border: none; padding: 0; cursor: pointer;">
-                                <i class="isax isax-heart5"></i>
-                              </button>
-                            </form>
-                          </div>
-                          
-                          
-                        </div>
-                  
-                        <div class="place-content pb-1">
-                          <div class="d-flex align-items-center justify-content-between flex-wrap">
-                            <div>
-                              <h5 class="mb-1 text-truncate">
-                                <a href="{% url 'tour:tour_details' slug=i.tour.slug %}">{{ i.tour.title }}</a>
-                              </h5>
-                              <p class="d-flex align-items-center mb-2">
-                                <i class="isax isax-location5 me-2"></i>{{ i.tour.location }}
-                              </p>
+                        
+                            <div class="place-content pb-1">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                    <div>
+                                        <h5 class="mb-1 text-truncate">
+                                            <a href="{% url 'tour:tour_details' slug=i.tour.slug %}">{{ i.tour.title }}</a>
+                                        </h5>
+                           
+                           
+                           
+                                        <p class="d-flex align-items-center mb-2">
+                                            <i class="isax isax-location5 me-2"></i>{{ i.tour.location }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <p class="line-ellipsis fs-14">{{ i.tour.description }}</p>
+                                <div class="d-flex align-items-center justify-content-between flex-wrap border-top pt-3">
+                                    <h5 class="text-primary text-nowrap me-2 mb-3">{{ i.tour.price }} <span class="fs-14 fw-normal text-default">/ Night</span></h5>
+                                </div>
                             </div>
-                          </div>
-                          <p class="line-ellipsis fs-14">{{ i.tour.description }}</p>
-                          <div class="d-flex align-items-center justify-content-between flex-wrap border-top pt-3">
-                            <h5 class="text-primary text-nowrap me-2 mb-3">{{ i.tour.price }} <span class="fs-14 fw-normal text-default">/ Night</span></h5>
-                          </div>
                         </div>
-                      </div>
                     </div>
                     <!-- /Hotel Grid -->
-                  {% endfor %}
-                  
+                    {% endfor %}
                 </div>
+                
+                
 
 
+
+
+
+                <!-- /Main Content -->
+    
+    
+    
+    
+    
+    
+    
+    
             </div>
         </div>
+
+
+
     </div>
     <!-- /Page Wrapper -->
 
