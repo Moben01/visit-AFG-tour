@@ -1,55 +1,38 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
-    <!-- Breadcrumb -->
-    <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-12">
-                    <h2 class="breadcrumb-title mb-2">Tours</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
-                            <li class="breadcrumb-item">Tours</li>
-                            <li class="breadcrumb-item active" aria-current="page">Tour Grid</li>
-                        </ol>
-                    </nav>
-                </div>
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <h2 class="breadcrumb-title mb-2">Tours</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="/"><i class="isax isax-home5"></i></a></li>
+                        <li class="breadcrumb-item">Tours</li>
+                        <li class="breadcrumb-item active" aria-current="page">Tour Grid</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>
-    <!-- /Breadcrumb -->
+</div>
+<!-- /Breadcrumb -->
 
-    <!-- Page Wrapper -->
-    <div class="content">
-        <div class="container">
+<!-- Page Content -->
+<div class="content py-5">
+    <div class="container">
+        <div class="row">
 
-            <!-- Tour Types -->
-            <div class="mb-2">
-                <div class="mb-3">
-                    <h5 class="mb-2">Choose type of Tours you are interested</h5>
-                </div>
-                <div class="scroll-x">
-                    {% for i in get_tour_categories %}
-                      <div class="d-flex align-items-center hotel-type-item mb-3" style="min-width: 250px; scroll-snap-align: start;">
-                        <a href="{% url 'tour:tour_category_list' i.slug %}" class="avatar avatar-lg">
-                          <!-- <img src="{{ i.image.url }}" class="rounded-circle" alt="{{ i.name }}"> -->
-
-                          <div class="icon-container">
-                            {{ i.icon|safe }}
-                          </div>
-                          </a>
-
-                        <div class="ms-2 d-flex align-items-center gap-1">
-                          <h6 class="fs-16 fw-medium mb-0">
-                            <a href="{% url 'tour:tour_category_list' i.slug %}" class="d-flex align-items-center gap-1">
-                              {{ i.name }}
-                              <!-- SVG icon -->
-                             
-                            </a>
-                          </h6>
-                          <!-- <p class="fs-14 mb-0">{{ i.tours.count }} Hotels</p> -->
+            <!-- Filter Sidebar -->
+            <div class="col-xl-3 col-lg-4 mb-4">
+                <form method="get">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Filters</h5>
+                            <a href="{% url 'tour:tour_category_list' get_tour_category.slug %}" class="text-danger small">Reset</a>
                         </div>
                         <div class="card-body">
                             <div class="accordion" id="filterAccordion">
@@ -62,7 +45,7 @@
                                     </h2>
                                     <div id="collapseTypes" class="accordion-collapse collapse show"
                                          aria-labelledby="headingTypes" data-bs-parent="#filterAccordion">
-                                         <div class="accordion-body pt-2">
+                                        <div class="accordion-body pt-2">
                                             {% for cat in get_tour_categories %}
                                             <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
                                                 <input class="form-check-input ms-0 mt-0"
@@ -76,17 +59,13 @@
                                                 </label>
                                             </div>
                                             {% endfor %}
-                                        
-                                            <div class="mt-3">
-                                                <button type="submit" class="btn btn-primary btn-sm w-100">
-                                                    Apply Filters
-                                                </button>
-                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-sm w-100 mt-3">
+                                                Apply Filters
+                                            </button>
                                         </div>
-                                        
                                     </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </form>
@@ -104,9 +83,20 @@
                             <div class="loc-name-top">
                                 <h5 class="text-white mb-1">{{i.title}}</h5>
                                 <span class="text-white">{{i.price}}</span>
+
+
+
+
+
                             </div>
                             <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
                         </div>
+
+
+
+
+
+
                     </div>
                     {% empty %}
                     <div class="col-12">
@@ -116,35 +106,12 @@
                     </div>
                     {% endfor %}
                 </div>
-                <!-- /Sidebar -->
-
-                <div class="col-xl-9 col-lg-8 theiaStickySidebar">
-                    <section class="section">
-                        <div class="container">
-
-                            <div class="row g-4">
-                                {% for i in find_tours %}
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="location-wrap location-wrap-two">
-                                        <img src="{{ i.image.url }}" alt="Img" class="img-fluid" style="height: 250px; object-fit: cover;">
-
-                                        <div class="loc-name-top">
-                                            <h5 class="text-white mb-1">{{i.title}}</h5>
-                                            <span class="text-white">{{i.price}}</span>
-                                        </div>
-                                        <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </section>
-
-                </div>
-
             </div>
+            <!-- /Tours Grid -->
+
         </div>
     </div>
-    <!-- /Page Wrapper -->
+</div>
+<!-- /Page Content -->
 
 {% endblock %}

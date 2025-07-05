@@ -16,7 +16,12 @@ def home_view(request):
         # handle the empty case, e.g. set defaults or skip
         pass
     user_id = request.user.id
-    find_user = User.objects.get(id=user_id)
+    try:
+        find_user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        find_user = None  # or handle however you want if user not found
+
+        
     find_user_favorite = User_favorite_tour.objects.filter(user=find_user, favorite=True).count()
     find_user_favorite = 0  # Default for anonymous users
 
