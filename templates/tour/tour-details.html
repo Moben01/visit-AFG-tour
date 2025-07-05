@@ -395,6 +395,58 @@
                         </div>
                     </div>
                 </div>
+                <style>
+                    /* Apply styles for all screen sizes */
+                    #pwa-install-btn {
+                        position: relative;
+                        border-radius: 50px;
+                        background: radial-gradient(circle at center, #ff6a00, #ff0080); /* Starting blend */
+                        color: #fff;
+                        font-size: 15px;
+                        font-weight: 600;
+                        padding: 10px 25px;
+                        margin-top: 10px;
+                        font-family: XW_Zar_Bd_0;
+                        z-index: 1;
+                        overflow: hidden;
+                        animation: centerColorBlend 6s ease-in-out infinite;
+                        background-size: 200% 200%;
+                        border: none;
+                    }
+                    
+                    /* Animated multicolor border */
+                    #pwa-install-btn:after {
+                        content: '';
+                        position: absolute;
+                        top: -4px;
+                        left: -4px;
+                        right: -4px;
+                        bottom: -4px;
+                        border-radius: 50px;
+                        background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+                        z-index: -1;
+                        animation: animatedborder 3s linear infinite;
+                        background-size: 300% 300%;
+                    }
+                    
+                    /* Border animation */
+                    @keyframes animatedborder {
+                        0% { background-position: 0% 50%; }
+                        50% { background-position: 100% 50%; }
+                        100% { background-position: 0% 50%; }
+                    }
+                    
+                    /* Center gradient animation */
+                    @keyframes centerColorBlend {
+                        0% { background: radial-gradient(circle at center, #ff6a00, #ff0080); }
+                        33% { background: radial-gradient(circle at center, #ff0080, #00c3ff); }
+                        66% { background: radial-gradient(circle at center, #00c3ff, #00ff72); }
+                        100% { background: radial-gradient(circle at center, #ff6a00, #ff0080); }
+                    }
+                    </style>
+
+                <a href="{% url 'tour:tour_booking' get_tour.slug %}" class="btn btn-primary btn-lg search-btn ms-0 w-100 fs-14 mb-4" id="pwa-install-btn">Book Now</a>
+
                 <div class="card shadow-none mb-0">
                     <div class="card-body">
                         <h5 class="fs-18 mb-3">Provider Details</h5>

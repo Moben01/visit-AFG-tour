@@ -10,7 +10,7 @@
                     <h2 class="breadcrumb-title mb-2">Wishlist</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
+                              <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
                             <li class="breadcrumb-item active" aria-current="page">Wishlist</li>
                         </ol>
                     </nav>
@@ -22,27 +22,31 @@
 
     <!-- Page Wrapper -->
     <div class="content">
-        <div class="container">
-
-            <div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
 
                 <!-- Sidebar -->
-                <div class="col-xl-3 col-lg-4 theiaStickySidebar">
-                    <div class="card user-sidebar mb-4 mb-lg-0">
-                        <div class="card-header user-sidebar-header">
-                            <div class="profile-content rounded-pill">
-                                <div class="d-flex align-items-center justify-content-between ">
-                                    <div class=" d-flex align-items-center justify-content-center ">
-                                        <img src="{% static 'img/users/user-lg-26.jpg' %}" alt="image" class="img-fluid avatar avatar-lg rounded-circle flex-shrink-0 me-1">
+               <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                    <div class="card user-sidebar shadow-sm">
+                        <div class="card-header bg-white border-bottom">
+                            <div class="profile-content p-2">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                    <div class="d-flex align-items-center">
+                                        <img src="{% static 'img/users/user-lg-26.jpg' %}" alt="image"
+                                            class="img-fluid avatar avatar-lg rounded-circle flex-shrink-0 me-2" style="width: 60px; height: 60px; object-fit: cover;">
                                         <div>
-                                            <h6 class="fs-16">Chris Foxy</h6>
-                                            <span class="fs-14 text-gray-6">Since 10 May 2025</span>
+                                            <h6 class="fs-16 mb-1">Chris Foxy</h6>
+                                            <span class="fs-14 text-muted">عضو از 10 می 2025</span>
                                         </div>
                                     </div>
-                                    <div>
-                                        <div class="d-flex align-items-center justify-content-center">
-                                            <a href="profile-settings.html" class="p-1 rounded-circle btn btn-light d-flex align-items-center justify-content-center"><i class="isax isax-edit-2 fs-14"></i></a>
-                                        </div>
+                                    <div class="mt-2 mt-sm-0">
+                                        <a href="profile-settings.html"
+                                            class="btn btn-light p-2 rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="isax isax-edit-2 fs-14"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

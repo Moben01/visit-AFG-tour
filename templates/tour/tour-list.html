@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block content %}
 {% load static %}
+{% block content %}
 
     <!-- Breadcrumb -->
     <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
@@ -17,215 +17,95 @@
             </div>
         </div>
     </div>
-    <!-- /Breadcrumb -->
+</div>
+<!-- /Breadcrumb -->
 
-    <!-- Page Wrapper -->
-    <div class="content">
-        <div class="container">
+<!-- Page Content -->
+<div class="content py-5">
+    <div class="container">
+        <div class="row">
 
-            <!-- Tour Types -->
-            <div class="mb-2">
-                <div class="mb-3">
-                    <h5 class="mb-2">Choose type of Tours you are interested</h5>
-                </div>
-                <div class="scroll-x">
-                    {% for i in get_tour_categories %}
-                      <div class="d-flex align-items-center hotel-type-item mb-3" style="min-width: 250px; scroll-snap-align: start;">
-                        <a href="{% url 'tour:tour_category_list' i.slug %}" class="avatar avatar-lg">
-                          <!-- <img src="{{ i.image.url }}" class="rounded-circle" alt="{{ i.name }}"> -->
-
-                          <div class="rounded-circle">
-                            {{ i.icon|safe }}
-                          </div>
-                          </a>
-
-                        <div class="ms-2 d-flex align-items-center gap-1">
-                          <h6 class="fs-16 fw-medium mb-0">
-                            <a href="{% url 'tour:tour_category_list' i.slug %}" class="d-flex align-items-center gap-1">
-                              {{ i.name }}
-                              <!-- SVG icon -->
-                             
-                            </a>
-                          </h6>
-                          <!-- <p class="fs-14 mb-0">{{ i.tours.count }} Hotels</p> -->
+            <!-- Filter Sidebar -->
+            <div class="col-xl-3 col-lg-4 mb-4">
+                <form method="get">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">Filters</h5>
+                            <a href="{% url 'tour:tour_category_list' get_tour_category.slug %}" class="text-danger small">Reset</a>
                         </div>
-                      </div>
-                    {% endfor %}
-                  </div>
-                  
-<style>.scroll-x {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scroll-snap-type: x mandatory;
-  }
-  .scroll-x::-webkit-scrollbar {
-    height: 8px;
-  }
-  .scroll-x::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 4px;
-  }
-  </style>                  
-            </div>
-            <!-- /Tour Types -->
-
-            <div class="row">
-
-                <!-- Sidebar -->
-                <div class="col-xl-3 col-lg-4 theiaStickySidebar">
-                    <div class="card filter-sidebar mb-4 mb-lg-0">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <h5>Filters</h5>
-                            <a href="javascript:void(0);" class="fs-14 link-primary">Reset</a>
-                        </div>
-                        <div class="card-body p-0">
-                            <form action="https://dreamstour.dreamstechnologies.com/html/search.html">
-                                <div class="p-3 border-bottom">
-                                    <label class="form-label fs-16">Search by Tour Type</label>
-                                    <div class="input-icon">
-                                        <span class="input-icon-addon">
-											<i class="isax isax-search-normal"></i>
-										</span>
-                                        <input type="text" class="form-control" placeholder="Search by Tour Type">
+                        <div class="card-body">
+                            <div class="accordion" id="filterAccordion">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="headingTypes">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTypes" aria-expanded="true" aria-controls="collapseTypes">
+                                            <i class="isax isax-buildings me-2 text-primary"></i> Tour Types
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTypes" class="accordion-collapse collapse show"
+                                         aria-labelledby="headingTypes" data-bs-parent="#filterAccordion">
+                                        <div class="accordion-body pt-2">
+                                            {% for cat in get_tour_categories %}
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input"
+                                                       type="checkbox"
+                                                       name="types"
+                                                       id="cat_{{ cat.id }}"
+                                                       value="{{ cat.id }}"
+                                                       {% if cat.id in selected_types %}checked{% endif %}>
+                                                <label class="form-check-label fw-semibold" for="cat_{{ cat.id }}">
+                                                    {{ cat.name }}
+                                                </label>
+                                            </div>
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary btn-sm w-100 mt-3">
+                                                Apply Filters
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="accordion accordion-list">
-                                    <div class="accordion-item border-bottom p-3">
-                                        <div class="accordion-header">
-                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-populars" aria-expanded="true" aria-controls="accordion-populars" role="button">
-                                                <i class="isax isax-ranking me-2 text-primary"></i>Popular
-                                            </div>
-                                        </div>
-                                        <div id="accordion-populars" class="accordion-collapse collapse show">
-                                            <div class="accordion-body pt-2">
-                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
-                                                    <input class="form-check-input ms-0 mt-0" name="popular1" type="checkbox" id="popular1">
-                                                    <label class="form-check-label ms-2" for="popular1">
-                                                        Local Guide
-                                                    </label>
-                                                </div>
-                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
-                                                    <input class="form-check-input ms-0 mt-0" name="popular2" type="checkbox" id="popular2">
-                                                    <label class="form-check-label ms-2" for="popular2">
-                                                        VIP Access
-                                                    </label>
-                                                </div>
-                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
-                                                    <input class="form-check-input ms-0 mt-0" name="popular3" type="checkbox" id="popular3">
-                                                    <label class="form-check-label ms-2" for="popular3">
-                                                        Photographs
-                                                    </label>
-                                                </div>
-                                                <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
-                                                    <input class="form-check-input ms-0 mt-0" name="popular4" type="checkbox" id="popular4">
-                                                    <label class="form-check-label ms-2" for="popular4">
-                                                        Adventure Gears
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-item border-bottom p-3">
-                                        <div class="accordion-header">
-                                            <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-hotel" aria-expanded="true" aria-controls="accordion-hotel" role="button">
-                                                <i class="isax isax-buildings me-2 text-primary"></i>Tour Types
-                                            </div>
-                                        </div>
-                                        <div id="accordion-hotel" class="accordion-collapse collapse show">
-                                            <div class="accordion-body">
-                                                <div class="more-content">
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel1" type="checkbox" id="hotel1" checked>
-                                                        <label class="form-check-label ms-2" for="hotel1">
-                                                            Ecotourism
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel2" type="checkbox" id="hotel2" checked>
-                                                        <label class="form-check-label ms-2" for="hotel2">
-                                                            Adventure Tour
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel3" type="checkbox" id="hotel3" checked>
-                                                        <label class="form-check-label ms-2" for="hotel3">
-                                                            Group Tours
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel4" type="checkbox" id="hotel4" checked>
-                                                        <label class="form-check-label ms-2" for="hotel4">
-                                                            Beach Tours
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel5" type="checkbox" id="hotel5">
-                                                        <label class="form-check-label ms-2" for="hotel5">
-                                                            Honey Moon
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel6" type="checkbox" id="hotel6" checked>
-                                                        <label class="form-check-label ms-2" for="hotel6">
-                                                            Historical Tours
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel7" type="checkbox" id="hotel7" checked>
-                                                        <label class="form-check-label ms-2" for="hotel7">
-                                                            Summer Trip
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                                        <input class="form-check-input ms-0 mt-0" name="hotel8" type="checkbox" id="hotel8">
-                                                        <label class="form-check-label ms-2" for="hotel8">
-                                                            City Trip
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                                <a href="javascript:void(0);" class="more-view text-primary fw-medium fs-14">See Less</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Sidebar -->
-
-                <div class="col-xl-9 col-lg-8 theiaStickySidebar">
-                    <section class="section">
-                        <div class="container">
-
-                            <div class="row g-4">
-                                {% for i in find_tours %}
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="location-wrap location-wrap-two">
-                                        <img src="{{ i.image.url }}" alt="Img" class="img-fluid" style="height: 250px; object-fit: cover;">
-
-                                        <div class="loc-name-top">
-                                            <h5 class="text-white mb-1">{{i.title}}</h5>
-                                            <span class="text-white">{{i.price}}</span>
-                                        </div>
-                                        <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
-                                    </div>
-                                </div>
-                                {% endfor %}
                             </div>
                         </div>
-                    </section>
-
-                </div>
-
+                    </div>
+                </form>
             </div>
+            <!-- /Filter Sidebar -->
+
+            <!-- Tours Grid -->
+            <div class="col-xl-9 col-lg-8">
+                <div class="row g-4">
+                    {% for i in find_tours %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="location-wrap location-wrap-two">
+                            <img src="{{ i.image.url }}" alt="Img" class="img-fluid" style="height: 250px; object-fit: cover;">
+
+                            <div class="loc-name-top">
+                                <h5 class="text-white mb-1">{{i.title}}</h5>
+                                <span class="text-white">{{i.price}}</span>
+                            </div>
+                            <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    {% empty %}
+                    <div class="col-12">
+                        <div class="alert alert-warning text-center">
+                            No tours found for the selected filters.
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- /Tours Grid -->
+
         </div>
     </div>
-    <!-- /Page Wrapper -->
+</div>
+<!-- /Page Content -->
 
 {% endblock %}

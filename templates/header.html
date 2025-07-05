@@ -642,7 +642,7 @@
                                                                 <h6>Wellness in Afghanistan</h6>
                                                             </a></li>
                                                         </h6></a>
-                                    </li>
+                               
                                     <li><a href="{% url 'things_to_do:Shopping' %}">
                                             <h6>Shopping </h6>
                                         </a></li>
@@ -655,41 +655,14 @@
                                             <h6>Itineraries</h6>
                                         </a></li>
                                     </h6></a>
-                            </li>
-                        </ul>
+                         </ul>
                 </div>
             </div>
         </div>
-        </li>
-        </ul>
-        </li>
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Hotel<i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu mega-submenu">
-                <li>
-                    <div class="megamenu-wrapper">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h6>Hotel Bookings</h6>
-                                <ul>
-                                    <li><a href="hotel-grid.html">Hotel Grid</a></li>
-                                    <li><a href="hotel-list.html">Hotel List</a></li>
-                                    <li><a href="hotel-map.html">Hotel Map</a></li>
-                                    <li><a href="hotel-details.html">Hotel Details</a></li>
-                                    <li><a href="booking-confirmation.html">Hotel Booking</a></li>
-                                    <li><a href="add-hotel.html">Add Hotel</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="menu-img">
-                                    <img src="{% static 'img/menu/hotel.jpg' %}" alt="img" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </li>
+                                    </li>
+                                    </ul>
+                                    </li>
+
         <li class="has-submenu mega-innermenu">
             <a href="javascript:void(0);">Plan Your Trip<i class="fa-solid fa-angle-down"></i></a>
             <ul class="submenu mega-submenu">
@@ -739,55 +712,46 @@
                 </li>
             </ul>
         </li>
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Cruise<i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu mega-submenu">
-                <li>
-                    <div class="megamenu-wrapper">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h6>Cruise Bookings</h6>
-                                <ul>
-                                    <li><a href="cruise-grid.html">Cruise Grid</a></li>
-                                    <li><a href="cruise-list.html">Cruise List</a></li>
-                                    <li><a href="cruise-map.html">Cruise Map</a></li>
-                                    <li><a href="cruise-details.html">Cruise Details</a></li>
-                                    <li><a href="cruise-booking-confirmation.html">Cruise Booking</a></li>
-                                    <li><a href="add-cruise.html">Add Cruise</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="menu-img">
-                                    <img src="{% static 'img/menu/cruise.jpg' %}" alt="img" class="img-fluid">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </li>
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Tour <i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu mega-submenu">
-                <li>
-                    <div class="megamenu-wrapper">
+<li class="has-submenu mega-innermenu">
+    <a href="javascript:void(0);">Tour <i class="fa-solid fa-angle-down"></i></a>
+    <ul class="submenu mega-submenu">
+        <li>
+            <div class="megamenu-wrapper">
+                <div class="row">
+                    <!-- Left Column: Tour -->
+                    <div class="col-lg-6">
+                        <h5 class="mb-2">Tour</h5>
                         <div class="row">
                             {% for category_chunk in get_tour_categories|chunked:5 %}
-                            <div class="col-lg-6">
-                                <ul>
-                                    {% for i in category_chunk %}
-                                    <li><a href="{% url 'tour:tour_category_list' i.slug %}">
-                                            <h6>{{ i.name }}</h6>
-                                        </a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                                <div class="col-lg-12">
+                                    <ul>
+                                        {% for i in category_chunk %}
+                                            <li>
+                                                <a href="{% url 'tour:tour_category_list' i.slug %}">
+                                                    <h6>{{ i.name }}</h6>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             {% endfor %}
                         </div>
                     </div>
-                </li>
-            </ul>
+
+                    <!-- Right Column: Tour Involve -->
+                    <div class="col-lg-6">
+                        <h5 class="mb-2">Tour Involve</h5>
+                        <ul>
+                            <li><a href="{% url 'tour:translator_view' %}">Add Translator </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </li>
+    </ul>
+</li>
+
+
 
         <li class="has-submenu mega-innermenu">
             <a href="javascript:void(0);">Pages<i class="fa-solid fa-angle-down"></i></a>
@@ -833,45 +797,32 @@
                 </li>
             </ul>
         </li>
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Dashboard<i class="fa-solid fa-plus"></i></a>
+        <!-- <li class="has-submenu mega-innermenu">
+            <a href="javascript:void(0);">Tour Involve <i class="fa-solid fa-angle-down"></i></a>
             <ul class="submenu mega-submenu">
                 <li>
                     <div class="megamenu-wrapper">
-                        <div class="row g-lg-4">
+                        <div class="row">
                             <div class="col-lg-6">
-                                <h6>User Dashboard</h6>
+                                <h6>Tour Bookings</h6>
                                 <ul>
-                                    <li><a href="dashboard.html">Dashboard</a></li>
-                                    <li><a href="customer-flight-booking.html">My Bookings</a></li>
-                                    <li><a href="review.html">Reviews</a></li>
-                                    <li><a href="chat.html">Message</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="wallet.html">Wallet</a></li>
-                                    <li><a href="payment.html">Payments</a></li>
-                                    <li><a href="profile-settings.html">Profile Settings</a></li>
-                                    <li><a href="notification-settings.html">Notifications</a></li>
-                                    <li><a href="my-profile.html">My Profile</a></li>
-                                    <li><a href="security-settings.html">Settings</a></li>
+                                    <li><a href="tour-grid.html">Tour Grid</a></li>
+                                    <li><a href="tour-list.html">Tour List</a></li>
+                                  
+                                    <li><a href="add-tour.html">Add Tour</a></li>
                                 </ul>
                             </div>
                             <div class="col-lg-6">
-                                <h6>Agent Dashboard</h6>
-                                <ul>
-                                    <li><a href="agent-dashboard.html">Dashboard</a></li>
-                                    <li><a href="agent-listings.html">Listings</a></li>
-                                    <li><a href="agent-hotel-booking.html">Bookings</a></li>
-                                    <li><a href="agent-enquirers.html">Enquiries</a></li>
-                                    <li><a href="agent-earnings.html">Earnings</a></li>
-                                    <li><a href="agent-review.html">Reviews</a></li>
-                                    <li><a href="agent-settings.html">Settings</a></li>
-                                </ul>
+                                <div class="menu-img">
+                                    <img src="{% static 'img/menu/tour.jpg' %}" alt="img" class="img-fluid">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </li>
             </ul>
-        </li>
+        </li> -->
+
         </ul>
         </nav>
         <div class="header-btn d-flex align-items-center">
@@ -886,6 +837,9 @@
             <div class="fav-dropdown me-3">
                 <a href="wishlist.html" class="position-relative">
                     <i class="isax isax-heart"></i><span class="count-icon bg-secondary text-gray-9">0</span>
+                <a href="{% url 'favorite_user_tour' %}" class="position-relative">
+                    <i class="isax isax-heart"></i><span
+                        class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
                 </a>
             </div>
             <a href="add-flight.html" class="btn btn-dark d-inline-flex align-items-center me-3"><i
