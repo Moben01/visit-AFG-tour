@@ -1,0 +1,78 @@
+{% load static %}
+{% for i in get_EnquireUs %}
+<div class="card review-item shadow-none mb-3" id="enquires-content">
+    <div class="card-body p-3">
+        <div class="review-info">
+            <div class="d-flex align-items-center justify-content-between flex-wrap">
+                <div class="d-flex align-items-center mb-2">
+                    <span class="avatar avatar-lg me-2 flex-shrink-0">
+                        <img src="{% static 'img/users/user-05.jpg' %}" class="rounded-circle"
+                            alt="img">
+                    </span>
+                    <div>
+                        <h6 class="fs-16 fw-medium mb-1">{{i.full_name}}</h6>
+                        <div class="d-flex align-items-center flex-wrap date-info">
+                            <p class="fs-14 mb-0">{{i.date_created}}</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:void(0);"
+                    class="btn btn-outline-light btn-md d-inline-flex align-items-center mb-2"><i
+                        class="isax isax-repeat me-1"></i>Reply</a>
+            </div>
+            <p class="mb-2">
+                {{i.message}}
+            </p>
+
+            <div class="d-inline-flex align-items-center">
+                <a href="javascript:void(0);" class="d-inline-flex align-items-center fs-14 me-3"><i
+                        class="isax isax-like-1 me-2"></i>21</a>
+                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
+                        class="isax isax-dislike me-2"></i>50</a>
+                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
+                        class="isax isax-heart5 text-danger me-2"></i>45</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+<div id="django-messages" style="display:none;">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="message" data-message="{{ message }}" data-level="{{ message.level_tag }}"></div>
+        {% endfor %}
+    {% endif %}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  // Listen for HTMX after content swap
+  document.body.addEventListener('htmx:afterSwap', (event) => {
+    // Only run on your enquiry partial update container, e.g. "enquires-content"
+    if (event.detail.target.id === "enquires-content") {
+      // Find messages inside #django-messages
+      const messagesContainer = document.getElementById('django-messages');
+      if (!messagesContainer) return;
+
+      const messageDivs = messagesContainer.querySelectorAll('.message');
+      messageDivs.forEach(div => {
+        const message = div.getAttribute('data-message');
+        const level = div.getAttribute('data-level');
+
+        Swal.fire({
+          toast: true,
+          position: "top-end",
+          icon: level === 'error' ? 'error' : 'success',
+          title: message,
+          showConfirmButton: false,
+          timer: 5000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer);
+            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          }
+        });
+      });
+    }
+  });
+</script>

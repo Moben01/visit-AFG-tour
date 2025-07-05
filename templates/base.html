@@ -1,9 +1,14 @@
+{% load django_htmx %}
+
 <!DOCTYPE html>
 <html lang="en">
         {% include 'head.html' %}
-    <body>
+        {% htmx_script %}
+    <body hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'>
         {% include 'header.html' %}
+      
         {% block content %}{% endblock %} 
+     
         {% include 'footer.html' %}
         {% include 'scripts.html' %}
         {% block extra_scripts %}{% endblock %}
@@ -18,3 +23,4 @@
             <!-- /Loader -->	
     </body>
 </html>
+</div>

@@ -38,24 +38,39 @@ class Tour(models.Model):
         return reverse('tour_detail', args=[self.slug])
 
 
+
+class User_favorite_tour(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    favorite = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        status = "Yes" if self.favorite else "No"
+        return f"{self.user} - Favorite '{self.tour}': {status}"
+
+
 class TourImage(models.Model):
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='tours/')
 
 
 class Booking(models.Model):
-    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='bookings')
+    tour = models.ForeignKey('Tour', on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='booked_tours')
+    booking_date = models.DateField()
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
     adults = models.PositiveIntegerField(default=1)
     children = models.PositiveIntegerField(default=0)
-    booking_date = models.DateField()
+    paid = models.BooleanField(default=False)
+    paid_amount = models.IntegerField(blank=True, null=True)
     notes = models.TextField(blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
-        return f"{self.name} - {self.tour.title}"
+        return f"{self.user} booked {self.tour} on {self.booking_date.strftime('%Y-%m-%d')}"
 
 
 class ItineraryItem(models.Model):
@@ -96,12 +111,6 @@ class EnquireUs(models.Model):
         return f"Enquiry from {self.full_name} - {self.subject[:30]}"
 
 
-class User_favorite_tour(models.Model):
-    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    favorite = models.BooleanField(default=False)
-    created = models.DateTimeField(auto_now_add=True)
-
     
 class Includes(models.Model):
         tour =models.ForeignKey(Tour, on_delete=models.CASCADE)
@@ -111,3 +120,14 @@ class Includes(models.Model):
 class Excludes(models.Model):
         tour =models.ForeignKey(Tour, on_delete=models.CASCADE)
         title =models.CharField(max_length=500)
+
+class Ready_tour_for_booking(models.Model):
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    create_at = models.DateTimeField(auto_now_add=True)
+    class Meta:
+        unique_together = ('user',)  # Optional: only allow 1 active per user
+
+    def __str__(self):
+        return f"{self.user.username} is preparing to book {self.tour.title}"
+

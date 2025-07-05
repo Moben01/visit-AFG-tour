@@ -1,0 +1,15 @@
+<div id="favorite-button" 
+     hx-post="{% url 'tour:toggle_favorite' slug=get_tour.slug %}" 
+     hx-target="#favorite-button" 
+     hx-swap="outerHTML">
+
+    {% if is_favorite %}
+        <button type="submit" class="btn btn-danger btn-sm">
+            <i class="isax isax-heart5 me-1"></i> 
+        </button>
+    {% else %}
+        <button type="submit" class="btn btn-outline-light btn-sm">
+            <i class="isax isax-heart me-1"></i> 
+        </button>
+    {% endif %}
+</div>

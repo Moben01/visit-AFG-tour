@@ -44,24 +44,28 @@
                                     </h2>
                                     <div id="collapseTypes" class="accordion-collapse collapse show"
                                          aria-labelledby="headingTypes" data-bs-parent="#filterAccordion">
-                                        <div class="accordion-body pt-2">
+                                         <div class="accordion-body pt-2">
                                             {% for cat in get_tour_categories %}
-                                            <div class="form-check mb-3">
-                                                <input class="form-check-input"
+                                            <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                <input class="form-check-input ms-0 mt-0"
                                                        type="checkbox"
                                                        name="types"
                                                        id="cat_{{ cat.id }}"
                                                        value="{{ cat.id }}"
                                                        {% if cat.id in selected_types %}checked{% endif %}>
-                                                <label class="form-check-label fw-semibold" for="cat_{{ cat.id }}">
-                                                    {{ cat.name }}
+                                                <label class="form-check-label ms-2 fw-semibold" for="cat_{{ cat.id }}">
+                                                    {{ cat.icon|safe }} {{ cat.name }}
                                                 </label>
                                             </div>
                                             {% endfor %}
-                                            <button type="submit" class="btn btn-primary btn-sm w-100 mt-3">
-                                                Apply Filters
-                                            </button>
+                                        
+                                            <div class="mt-3">
+                                                <button type="submit" class="btn btn-primary btn-sm w-100">
+                                                    Apply Filters
+                                                </button>
+                                            </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -85,12 +89,6 @@
                             </div>
                             <a href="{% url 'tour:tour_details' i.slug %}" class="loc-view-bottom"><i class="isax isax-arrow-right-1"></i></a>
                         </div>
-
-
-
-
-
-
                     </div>
                     {% empty %}
                     <div class="col-12">

@@ -33,3 +33,4 @@ class ItineraryItemInline(admin.TabularInline):
 admin.site.register(ItineraryItem)
 admin.site.register(Frequently_asked_questions)
 admin.site.register(User_favorite_tour)
+admin.site.register(Ready_tour_for_booking)

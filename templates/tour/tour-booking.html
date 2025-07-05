@@ -27,6 +27,7 @@
 
                 <!-- Checkout -->
                 <form method="post" action="{% url 'tour:tour_booking' slug=find_tour.slug %}">
+                    
                     {% csrf_token %}
                     <div class="row">
                 
@@ -115,8 +116,9 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <input type="hidden" name="tour_slug" value="{{ find_tour.slug }}">
                                     <div class="d-flex align-items-center justify-content-end flex-wrap gap-2">
-                                        <button type="submit" class="btn btn-primary">Confirm & Pay $9569 </button>
+                                        <button type="submit" class="btn btn-primary">Confirm & Pay {{find_tour.price}} </button>
                                     </div>
                                 </div>
                             </div>
@@ -160,42 +162,62 @@
                                     <h6 class="fs-16">Return</h6>
                                     <p class="fs-16">31 May 2025, 10:00 PM</p>
                                 </div>
-                                <div class="d-flex align-items-center  details-info">
+                              <!-- Your display area -->
+                                <div class="d-flex align-items-center details-info">
                                     <h6 class="fs-16">Adults</h6>
-                                    <p class="fs-16">20</p>
-                                </div>
-                                <div class="d-flex align-items-center  details-info">
-                                    <h6 class="fs-16">Children</h6>
-                                    <p class="fs-16">8</p>
+                                    <p id="display-adults" class="fs-16">0</p>
                                 </div>
                                 <div class="d-flex align-items-center details-info">
+                                    <h6 class="fs-16">Children</h6>
+                                    <p id="display-children" class="fs-16">0</p>
+                                </div>
+
+                                <script>
+                                    const adultsInput = document.getElementById('id_adults');
+                                    const childrenInput = document.getElementById('id_children');
+
+                                    const displayAdults = document.getElementById('display-adults');
+                                    const displayChildren = document.getElementById('display-children');
+
+                                    function updateCounts() {
+                                        displayAdults.textContent = adultsInput.value;
+                                        displayChildren.textContent = childrenInput.value;
+                                    }
+
+                                    adultsInput.addEventListener('input', updateCounts);
+                                    childrenInput.addEventListener('input', updateCounts);
+
+                                    // initialize display on page load
+                                    updateCounts();
+                                </script>
+                                <div class="d-flex align-items-center details-info">
                                     <h6 class="fs-16">No of Days</h6>
-                                    <p class="fs-16">4 Days, 3 Nights</p>
+                                    <p class="fs-16">{{find_tour.duration_days}}</p>
                                 </div>
                             </div>
                             <div class="mt-3 border-bottom">
                                 <h6 class="text-primary mb-3">Payment Info</h6>
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <h6 class="fs-16">Sub Total</h6>
-                                    <p class="fs-16">$8565</p>
+                                    <p class="fs-16"> {{find_tour.price}} </p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <h6 class="fs-16">Tax <span class="text-gray-6"> (10%)</span></h6>
-                                    <p class="fs-16">$85</p>
+                                    <p class="fs-16"> Free For Now </p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <h6 class="fs-16">Booking Fees</h6>
-                                    <p class="fs-16">$89</p>
+                                    <p class="fs-16">Free For Now</p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mb-3">
                                     <h6 class="fs-16">Discount <span class="text-gray-6"> (10%)</span></h6>
-                                    <p class="fs-16">-$20</p>
+                                    <p class="fs-16">Free For Now</p>
                                 </div>
                             </div>
                             <div class="mt-3">
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h6>Amount to Pay</h6>
-                                    <h6 class="text-primary">$9569</h6>
+                                    <h6 class="text-primary"> {{find_tour.price}} </h6>
                                 </div>
                             </div>
                         </div>

@@ -32,18 +32,75 @@
                 <div>
                     <div class="service-wrap mb-4">
                         <!-- Gallery -->
+                        <!-- Swiper CSS -->
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+                        <style>
+                            .swiper-slide {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 250px;
+                                background-color: #f8f9fa;
+                                overflow: hidden;
+                                border-radius: 12px;
+                            }
+
+                            .swiper-slide img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                object-position: center;
+                                border-radius: 12px;
+                            }
+                        </style>
+
                         <div class="bg-light-200 card-bg-light mb-4">
                             <h5 class="fs-18 mb-3">Gallery</h5>
-                            <div class="tour-gallery-slider owl-carousel">
-                                {% for img in tour_images %}
-                                <a class="galley-wrap" data-fancybox="gallery" href="{{ img.image.url }}">
-                                    <img src="{{ img.image.url }}" alt="Tour Image">
-                                </a>
-                                {% empty %}
-                                <p>No images available for this tour.</p>
-                                {% endfor %}
+
+                            {% if tour_images %}
+                            <div class="swiper tourSwiper">
+                                <div class="swiper-wrapper">
+                                    {% for img in tour_images %}
+                                    <div class="swiper-slide">
+                                        <a data-fancybox="gallery" href="{{ img.image.url }}">
+                                            <img src="{{ img.image.url }}" alt="Tour Image" />
+                                        </a>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                                <!-- Controls -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
                             </div>
+                            {% else %}
+                            <p>No images available for this tour.</p>
+                            {% endif %}
                         </div>
+
+                        <!-- Swiper JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                        <script>
+                            const swiper = new Swiper('.tourSwiper', {
+                                loop: true,
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                                pagination: {
+                                    el: '.swiper-pagination',
+                                    clickable: true,
+                                },
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                },
+                                breakpoints: {
+                                    768: { slidesPerView: 2 },
+                                    992: { slidesPerView: 3 },
+                                },
+                            });
+                        </script>
 
                         <!-- /Gallery -->
                     </div>
@@ -70,21 +127,20 @@
                             <a href="javascript:void(0);"
                                 class="btn btn-outline-light btn-icon btn-sm d-flex align-items-center justify-content-center me-2"><i
                                     class="isax isax-share"></i></a>
-                                    
-                                    <form method="POST" action="{% url 'tour:toggle_favorite' slug=get_tour.slug %}">
-                                        {% csrf_token %}
-                                        {% if is_favorite %}
-                                            <button type="submit" class="btn btn-danger btn-sm">
-                                                <i class="isax isax-heart5 me-1"></i> 
-                                            </button>
-                                        {% else %}
-                                            <button type="submit" class="btn btn-outline-light btn-sm">
-                                                <i class="isax isax-heart me-1"></i> 
-                                            </button>
-                                        {% endif %}
 
-                                        
-                                    </form>
+                            <div id="favorite-button" hx-post="{% url 'tour:toggle_favorite' slug=get_tour.slug %}"
+                                hx-target="#favorite-button" hx-swap="outerHTML">
+
+                                {% if is_favorite %}
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="isax isax-heart5 me-1"></i>
+                                </button>
+                                {% else %}
+                                <button type="submit" class="btn btn-outline-light btn-sm">
+                                    <i class="isax isax-heart me-1"></i>
+                                </button>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,7 +180,7 @@
                                         </p>
                                     </div>
                                 </div>
-                               {% endfor %}
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -142,13 +198,13 @@
                             </p>
                             {% endfor %}
                         </div>
-                    
+
                         <div class="col-md-6">
                             {% for i in Excludess %}
                             <p class="d-flex align-items-center mb-2">
                                 <i class="isax isax-close-square5 text-danger me-2"></i> {{i.title}}
                             </p>
-                           {% endfor %}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -158,10 +214,8 @@
                     <h5 class="fs-18 mb-3">Location</h5>
                     <!-- Map -->
                     <div>
-                        <iframe
-                            src="{{ get_tour.google_location }}"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            class="tour-detail-map w-100"></iframe>
+                        <iframe src="{{ get_tour.google_location }}" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" class="tour-detail-map w-100"></iframe>
                     </div>
                     <!-- /Map -->
                 </div>
@@ -194,43 +248,10 @@
                 <!-- /FAQ -->
 
 
-                {% for i in get_EnquireUs %}
-                <div class="card review-item shadow-none mb-3">
-                    <div class="card-body p-3">
-                        <div class="review-info">
-                            <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="avatar avatar-lg me-2 flex-shrink-0">
-                                        <img src="{% static 'img/users/user-05.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </span>
-                                    <div>
-                                        <h6 class="fs-16 fw-medium mb-1">{{i.full_name}}</h6>
-                                        <div class="d-flex align-items-center flex-wrap date-info">
-                                            <p class="fs-14 mb-0">{{i.date_created}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="javascript:void(0);"
-                                    class="btn btn-outline-light btn-md d-inline-flex align-items-center mb-2"><i
-                                        class="isax isax-repeat me-1"></i>Reply</a>
-                            </div>
-                            <p class="mb-2">
-                                {{i.message}}
-                            </p>
-
-                            <div class="d-inline-flex align-items-center">
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center fs-14 me-3"><i
-                                        class="isax isax-like-1 me-2"></i>21</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-dislike me-2"></i>50</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-heart5 text-danger me-2"></i>45</a>
-                            </div>
-                        </div>
-                    </div>
+                <div id="enquires-content">
+                    {% include 'tour/partials/endquires_list.html' %}
                 </div>
-                {% endfor %}
+
                 <div class="text-center mb-4 mb-xl-0">
                     <a href="javascript:void(0);"
                         class="btn btn-primary btn-md d-inline-flex align-items-center justify-content-center mt-2">See
@@ -298,32 +319,83 @@
                     <div class="card-body">
                         <h5 class="fs-18 mb-3">Enquire Us</h5>
                         <div class="banner-form">
-                            <form action="{% url 'tour:tour_details' slug=get_tour.slug %}" method="post">
-                                {% csrf_token %}
+                            <form method="post" hx-post="{% url 'tour:tour_details' slug=get_tour.slug %}"
+                                hx-target="#enquires-content" hx-swap="innerHTML">
                                 <div class="mb-3">
                                     <label class="form-label">Name</label>
                                     {{form.full_name}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                   {{form.email}}
+                                    {{form.email}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Phone</label>
-                                 {{form.phone}}
+                                    {{form.phone}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Subject</label>
-                                 {{form.subject}}
+                                    {{form.subject}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Message</label>
-                                  {{form.message}}
+                                    {{form.message}}
                                 </div>
-                                
+
                                 <button type="submit" class="btn btn-primary btn-lg search-btn ms-0 w-100 fs-14">Submit
-                                    Enquiry</button>
+                                    Enquiry
+                                    <span id="spinner" class="loader"></span>
+                                </button>
+                                {% if message %}
+                                <div class="alert alert-success" id="enquiry-success">
+                                    {{ message }}
+                                </div>
+                                {% endif %}
+                                <style>
+                                    .loader {
+                                        display: none;
+                                        /* hide initially */
+                                        width: 24px;
+                                        height: 24px;
+                                        border: 3px solid #FFF;
+                                        border-bottom-color: transparent;
+                                        border-radius: 50%;
+                                        box-sizing: border-box;
+                                        animation: rotation 1s linear infinite;
+                                        margin-left: 8px;
+                                    }
+
+                                    @keyframes rotation {
+                                        0% {
+                                            transform: rotate(0deg);
+                                        }
+
+                                        100% {
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+                                </style>
+
+
                             </form>
+                            <script>
+                                const spinner = document.getElementById('spinner');
+                              
+                                // Show spinner when HTMX request starts
+                                document.body.addEventListener('htmx:configRequest', function (event) {
+                                  if (spinner) {
+                                    spinner.style.display = 'inline-block';
+                                  }
+                                });
+                              
+                                // Hide spinner when HTMX request completes (success or failure)
+                                document.body.addEventListener('htmx:afterRequest', function (event) {
+                                  if (spinner) {
+                                    spinner.style.display = 'none';
+                                  }
+                                });
+                              </script>
+
                         </div>
                     </div>
                 </div>
@@ -332,7 +404,8 @@
                     #pwa-install-btn {
                         position: relative;
                         border-radius: 50px;
-                        background: radial-gradient(circle at center, #ff6a00, #ff0080); /* Starting blend */
+                        background: radial-gradient(circle at center, #ff6a00, #ff0080);
+                        /* Starting blend */
                         color: #fff;
                         font-size: 15px;
                         font-weight: 600;
@@ -345,7 +418,7 @@
                         background-size: 200% 200%;
                         border: none;
                     }
-                    
+
                     /* Animated multicolor border */
                     #pwa-install-btn:after {
                         content: '';
@@ -360,24 +433,44 @@
                         animation: animatedborder 3s linear infinite;
                         background-size: 300% 300%;
                     }
-                    
+
                     /* Border animation */
                     @keyframes animatedborder {
-                        0% { background-position: 0% 50%; }
-                        50% { background-position: 100% 50%; }
-                        100% { background-position: 0% 50%; }
+                        0% {
+                            background-position: 0% 50%;
+                        }
+
+                        50% {
+                            background-position: 100% 50%;
+                        }
+
+                        100% {
+                            background-position: 0% 50%;
+                        }
                     }
-                    
+
                     /* Center gradient animation */
                     @keyframes centerColorBlend {
-                        0% { background: radial-gradient(circle at center, #ff6a00, #ff0080); }
-                        33% { background: radial-gradient(circle at center, #ff0080, #00c3ff); }
-                        66% { background: radial-gradient(circle at center, #00c3ff, #00ff72); }
-                        100% { background: radial-gradient(circle at center, #ff6a00, #ff0080); }
-                    }
-                    </style>
+                        0% {
+                            background: radial-gradient(circle at center, #ff6a00, #ff0080);
+                        }
 
-                <a href="{% url 'tour:tour_booking' get_tour.slug %}" class="btn btn-primary btn-lg search-btn ms-0 w-100 fs-14 mb-4" id="pwa-install-btn">Book Now</a>
+                        33% {
+                            background: radial-gradient(circle at center, #ff0080, #00c3ff);
+                        }
+
+                        66% {
+                            background: radial-gradient(circle at center, #00c3ff, #00ff72);
+                        }
+
+                        100% {
+                            background: radial-gradient(circle at center, #ff6a00, #ff0080);
+                        }
+                    }
+                </style>
+
+                <a href="{% url 'tour:tour_booking' get_tour.slug %}"
+                    class="btn btn-primary btn-lg search-btn ms-0 w-100 fs-14 mb-4" id="pwa-install-btn">Book Now</a>
 
                 <div class="card shadow-none mb-0">
                     <div class="card-body">
