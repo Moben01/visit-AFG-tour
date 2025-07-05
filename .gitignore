@@ -173,9 +173,7 @@ __pycache__/
 # Media files
 media/
 
-# Django settings
-settings.py
-local_settings.py
+
 
 
 # Byte-compiled / optimized / DLL files

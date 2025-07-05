@@ -12,6 +12,9 @@ from .models import*
 def home_view(request):
     get_tour_categories = TourCategory.objects.all()
     get_main_things = Main_things.objects.last()
+    if get_main_things is None:
+        # handle the empty case, e.g. set defaults or skip
+        pass
     user_id = request.user.id
     find_user = User.objects.get(id=user_id)
     find_user_favorite = User_favorite_tour.objects.filter(user=find_user, favorite=True).count()
