@@ -9,17 +9,22 @@ from django.contrib.auth.models import User
 
 def home_view(request):
     get_tour_categories = TourCategory.objects.all()
-    user_id = request.user.id
-    find_user = User.objects.get(id=user_id)
-    find_user_favorite = User_favorite_tour.objects.filter(user=find_user, favorite=True).count()
+    find_user_favorite = 0  # Default for anonymous users
+
+    if request.user.is_authenticated:
+        try:
+            find_user = User.objects.get(id=request.user.id)
+            find_user_favorite = User_favorite_tour.objects.filter(user=find_user, favorite=True).count()
+        except User.DoesNotExist:
+            find_user_favorite = 0  # fallback if user not found for some reason
 
     language_code = get_language()
 
-    if language_code == 'fa' or language_code == "ar":
-            # Do something for right-to-left languages
+    if language_code in ['fa', 'ar']:
         return render(request, 'RTL/index.html')
     else:
-        return render(request, 'index.html', {'get_tour_categories':get_tour_categories, 'find_user_favorite':find_user_favorite})
+        return render(request,'index.html',{'get_tour_categories': get_tour_categories,'find_user_favorite': find_user_favorite})
+
 
 def custom_404_view(request, exception):
     return render(request, '404.html', status=404)

@@ -33,3 +33,7 @@ class ItineraryItemInline(admin.TabularInline):
 admin.site.register(ItineraryItem)
 admin.site.register(Frequently_asked_questions)
 admin.site.register(User_favorite_tour)
+
+from .models import Translator
+
+admin.site.register(Translator)
