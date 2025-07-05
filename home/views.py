@@ -1,14 +1,20 @@
+from django.shortcuts import render
+from django.utils.translation import *
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.translation import get_language
 from tour.models import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.contrib.auth.models import User
+from .models import*
 
 # Create your views here.
-
 def home_view(request):
     get_tour_categories = TourCategory.objects.all()
+    get_main_things = Main_things.objects.last()
+    user_id = request.user.id
+    find_user = User.objects.get(id=user_id)
+    find_user_favorite = User_favorite_tour.objects.filter(user=find_user, favorite=True).count()
     find_user_favorite = 0  # Default for anonymous users
 
     if request.user.is_authenticated:
@@ -23,6 +29,7 @@ def home_view(request):
     if language_code in ['fa', 'ar']:
         return render(request, 'RTL/index.html')
     else:
+        return render(request, 'index.html', {'get_tour_categories':get_tour_categories, 'find_user_favorite':find_user_favorite, 'get_main_things':get_main_things})
         return render(request,'index.html',{'get_tour_categories': get_tour_categories,'find_user_favorite': find_user_favorite})
 
 

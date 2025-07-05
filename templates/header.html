@@ -9,11 +9,11 @@
             <div class="d-flex align-items-center justify-content-between flex-wrap">
                 <div class="d-flex align-items-center flex-wrap">
                     <p class="d-flex align-items-center fs-14 mb-2 me-3 "><i class="isax isax-call5 me-2"></i>Toll Free
-                        : +1 56565 56594</p>
+                        : {{get_main_things.noumber}} </p>
                     <p class="mb-2 d-flex align-items-center fs-14"><i class="isax isax-message-text-15 me-2"></i>Email
                         : <a href="https://dreamstour.dreamstechnologies.com/cdn-cgi/l/email-protection"
                             class="__cf_email__"
-                            data-cfemail="375e59515877524f565a475b521954585a">[email&#160;protected]</a></p>
+                            data-cfemail="375e59515877524f565a475b521954585a">{{get_main_things.email}}</a></p>
                 </div>
                 <div class="d-flex align-items-center">
 
@@ -99,7 +99,7 @@
                                     <div class="fav-dropdown">
                                         <a href="wishlist.html" class="position-relative">
                                             <i class="isax isax-heart"></i><span
-                                                class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
+                                                class="count-icon bg-secondary text-gray-9">0</span>
                                         </a>
                                     </div>
                                 </div>
@@ -712,29 +712,46 @@
                 </li>
             </ul>
         </li>
-   
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Tour <i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu mega-submenu">
-                <li>
-                    <div class="megamenu-wrapper">
+<li class="has-submenu mega-innermenu">
+    <a href="javascript:void(0);">Tour <i class="fa-solid fa-angle-down"></i></a>
+    <ul class="submenu mega-submenu">
+        <li>
+            <div class="megamenu-wrapper">
+                <div class="row">
+                    <!-- Left Column: Tour -->
+                    <div class="col-lg-6">
+                        <h5 class="mb-2">Tour</h5>
                         <div class="row">
                             {% for category_chunk in get_tour_categories|chunked:5 %}
-                            <div class="col-lg-6">
-                                <ul>
-                                    {% for i in category_chunk %}
-                                    <li><a href="{% url 'tour:tour_category_list' i.slug %}">
-                                            <h6>{{ i.name }}</h6>
-                                        </a></li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
+                                <div class="col-lg-12">
+                                    <ul>
+                                        {% for i in category_chunk %}
+                                            <li>
+                                                <a href="{% url 'tour:tour_category_list' i.slug %}">
+                                                    <h6>{{ i.name }}</h6>
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
                             {% endfor %}
                         </div>
                     </div>
-                </li>
-            </ul>
+
+                    <!-- Right Column: Tour Involve -->
+                    <div class="col-lg-6">
+                        <h5 class="mb-2">Tour Involve</h5>
+                        <ul>
+                            <li><a href="{% url 'tour:translator_view' %}">Add Translator </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </li>
+    </ul>
+</li>
+
+
 
         <li class="has-submenu mega-innermenu">
             <a href="javascript:void(0);">Pages<i class="fa-solid fa-angle-down"></i></a>
@@ -780,7 +797,7 @@
                 </li>
             </ul>
         </li>
-        <li class="has-submenu mega-innermenu">
+        <!-- <li class="has-submenu mega-innermenu">
             <a href="javascript:void(0);">Tour Involve <i class="fa-solid fa-angle-down"></i></a>
             <ul class="submenu mega-submenu">
                 <li>
@@ -791,7 +808,7 @@
                                 <ul>
                                     <li><a href="tour-grid.html">Tour Grid</a></li>
                                     <li><a href="tour-list.html">Tour List</a></li>
-                                    <li><a href="{% url 'tour_involve:translator_view' %}">Add Translator </a></li>
+                                  
                                     <li><a href="add-tour.html">Add Tour</a></li>
                                 </ul>
                             </div>
@@ -804,7 +821,7 @@
                     </div>
                 </li>
             </ul>
-        </li>
+        </li> -->
 
         </ul>
         </nav>
@@ -818,6 +835,8 @@
                 </a>
             </div>
             <div class="fav-dropdown me-3">
+                <a href="wishlist.html" class="position-relative">
+                    <i class="isax isax-heart"></i><span class="count-icon bg-secondary text-gray-9">0</span>
                 <a href="{% url 'favorite_user_tour' %}" class="position-relative">
                     <i class="isax isax-heart"></i><span
                         class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
