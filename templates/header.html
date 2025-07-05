@@ -8,11 +8,12 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center justify-content-between flex-wrap">
                 <div class="d-flex align-items-center flex-wrap">
-                   {% for i in Main_things %}
+                    <p class="d-flex align-items-center fs-14 mb-2 me-3 "><i class="isax isax-call5 me-2"></i>Toll Free
+                        : {{get_main_things.noumber}} </p>
                     <p class="mb-2 d-flex align-items-center fs-14"><i class="isax isax-message-text-15 me-2"></i>Email
                         : <a href="https://dreamstour.dreamstechnologies.com/cdn-cgi/l/email-protection"
                             class="__cf_email__"
-                            data-cfemail="375e59515877524f565a475b521954585a">[email&#160;protected]</a></p>
+                            data-cfemail="375e59515877524f565a475b521954585a">{{get_main_things.email}}</a></p>
                 </div>
                 <div class="d-flex align-items-center">
 
@@ -98,7 +99,7 @@
                                     <div class="fav-dropdown">
                                         <a href="wishlist.html" class="position-relative">
                                             <i class="isax isax-heart"></i><span
-                                                class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
+                                                class="count-icon bg-secondary text-gray-9">0</span>
                                         </a>
                                     </div>
                                 </div>
@@ -883,8 +884,8 @@
                 </a>
             </div>
             <div class="fav-dropdown me-3">
-                <a href="{% url 'favorite_user_tour' %}" class="position-relative">
-                    <i class="isax isax-heart"></i><span class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
+                <a href="wishlist.html" class="position-relative">
+                    <i class="isax isax-heart"></i><span class="count-icon bg-secondary text-gray-9">0</span>
                 </a>
             </div>
             <a href="add-flight.html" class="btn btn-dark d-inline-flex align-items-center me-3"><i
