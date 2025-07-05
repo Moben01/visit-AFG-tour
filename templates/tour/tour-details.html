@@ -135,6 +135,24 @@
                             <a href="javascript:void(0);"
                                 class="btn btn-outline-light btn-sm d-inline-flex align-items-center"><i
                                     class="isax isax-heart5 text-danger me-1"></i>Save</a>
+                            <a href="javascript:void(0);"
+                                class="btn btn-outline-light btn-icon btn-sm d-flex align-items-center justify-content-center me-2"><i
+                                    class="isax isax-share"></i></a>
+                                    
+                                    <form method="POST" action="{% url 'tour:toggle_favorite' slug=get_tour.slug %}">
+                                        {% csrf_token %}
+                                        {% if is_favorite %}
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="isax isax-heart5 me-1"></i> 
+                                            </button>
+                                        {% else %}
+                                            <button type="submit" class="btn btn-outline-light btn-sm">
+                                                <i class="isax isax-heart me-1"></i> 
+                                            </button>
+                                        {% endif %}
+
+                                        
+                                    </form>
                         </div>
                     </div>
                 </div>
@@ -192,8 +210,9 @@
                             </p>
                             {% endfor %}
                         </div>
-                    {% for i in Excludess %}
+                    
                         <div class="col-md-6">
+                            {% for i in Excludess %}
                             <p class="d-flex align-items-center mb-2">
                                 <i class="isax isax-close-square5 text-danger me-2"></i> {{i.title}}
                             </p>
@@ -242,74 +261,8 @@
                 </div>
                 <!-- /FAQ -->
 
-                <!-- Reviews -->
-                <div class="d-flex align-items-center justify-content-between flex-wrap mb-2" id="reviews">
-                    <h6 class="mb-3">Reviews (45)</h6>
-                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#add_review"
-                        class="btn btn-primary btn-md mb-3"><i class="isax isax-edit-2 me-1"></i>Write a Review</a>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 d-flex">
-                        <div class="rating-item bg-light-200 text-center flex-fill mb-3">
-                            <h6 class="fw-medium mb-3">Customer Reviews & Ratings</h6>
-                            <h5 class="display-6">4.9 / 5.0</h5>
-                            <div class="d-inline-flex align-items-center justify-content-center mb-3">
-                                <i class="ti ti-star-filled text-primary me-1"></i>
-                                <i class="ti ti-star-filled text-primary me-1"></i>
-                                <i class="ti ti-star-filled text-primary me-1"></i>
-                                <i class="ti ti-star-filled text-primary me-1"></i>
-                                <i class="ti ti-star-filled text-primary"></i>
-                            </div>
-                            <p>Based On 2,459 Reviews</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 d-flex">
-                        <div class="card rating-progress shadow-none flex-fill mb-3">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center mb-2">
-                                    <p class="me-2 text-nowrap mb-0">5 Star Ratings</p>
-                                    <div class="progress w-100" role="progressbar" aria-valuenow="90" aria-valuemin="0"
-                                        aria-valuemax="100">
-                                        <div class="progress-bar bg-primary" style="width: 90%"></div>
-                                    </div>
-                                    <p class="progress-count ms-2">247</p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <p class="me-2 text-nowrap mb-0">4 Star Ratings</p>
-                                    <div class="progress mb-0 w-100" role="progressbar" aria-valuenow="80"
-                                        aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar bg-primary" style="width: 80%"></div>
-                                    </div>
-                                    <p class="progress-count ms-2">145</p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <p class="me-2 text-nowrap mb-0">3 Star Ratings</p>
-                                    <div class="progress mb-0 w-100" role="progressbar" aria-valuenow="70"
-                                        aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar bg-primary" style="width: 70%"></div>
-                                    </div>
-                                    <p class="progress-count ms-2">600</p>
-                                </div>
-                                <div class="d-flex align-items-center mb-2">
-                                    <p class="me-2 text-nowrap mb-0">2 Star Ratings</p>
-                                    <div class="progress mb-0 w-100" role="progressbar" aria-valuenow="90"
-                                        aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar bg-primary" style="width: 60%"></div>
-                                    </div>
-                                    <p class="progress-count ms-2">560</p>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <p class="me-2 text-nowrap mb-0">1 Star Ratings</p>
-                                    <div class="progress mb-0 w-100" role="progressbar" aria-valuenow="40"
-                                        aria-valuemin="0" aria-valuemax="100">
-                                        <div class="progress-bar bg-primary" style="width: 40%"></div>
-                                    </div>
-                                    <p class="progress-count ms-2">400</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                {% for i in get_EnquireUs %}
                 <div class="card review-item shadow-none mb-3">
                     <div class="card-body p-3">
                         <div class="review-info">
@@ -320,12 +273,9 @@
                                             alt="img">
                                     </span>
                                     <div>
-                                        <h6 class="fs-16 fw-medium mb-1">Joseph Massey</h6>
+                                        <h6 class="fs-16 fw-medium mb-1">{{i.full_name}}</h6>
                                         <div class="d-flex align-items-center flex-wrap date-info">
-                                            <p class="fs-14 mb-0">2 days ago</p>
-                                            <p class="fs-14 d-inline-flex align-items-center mb-0"><span
-                                                    class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">5.0</span>Unforgettable
-                                                Stay!</p>
+                                            <p class="fs-14 mb-0">{{i.date_created}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -333,22 +283,10 @@
                                     class="btn btn-outline-light btn-md d-inline-flex align-items-center mb-2"><i
                                         class="isax isax-repeat me-1"></i>Reply</a>
                             </div>
-                            <p class="mb-2">It was a good location however the cocoon concept was weird. No tables,
-                                chairs etc was difficult as everything went on the floor.</p>
-                            <div class="d-flex align-items-center">
-                                <div class="avatar avatar-md me-2 mb-2" data-fancybox="gallery"
-                                    href="{% static 'img/tours/tour-large-01.jpg' %}">
-                                    <img src="{% static 'img/tours/tour-thumb-01.jpg' %}" class="br-10" alt="img">
-                                </div>
-                                <div class="avatar avatar-md me-2 mb-2" data-fancybox="gallery"
-                                    href="{% static 'img/tours/tour-large-02.jpg' %}">
-                                    <img src="{% static 'img/tours/tour-thumb-02.jpg' %}" class="br-10" alt="img">
-                                </div>
-                                <div class="avatar avatar-md me-0 mb-2" data-fancybox="gallery"
-                                    href="{% static 'img/tours/tour-large-03.jpg' %}">
-                                    <img src="{% static 'img/tours/tour-thumb-03.jpg' %}" class="br-10" alt="img">
-                                </div>
-                            </div>
+                            <p class="mb-2">
+                                {{i.message}}
+                            </p>
+
                             <div class="d-inline-flex align-items-center">
                                 <a href="javascript:void(0);" class="d-inline-flex align-items-center fs-14 me-3"><i
                                         class="isax isax-like-1 me-2"></i>21</a>
@@ -360,113 +298,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card review-item shadow-none mb-3">
-                    <div class="card-body p-3">
-                        <div class="review-info">
-                            <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="avatar avatar-lg me-2 flex-shrink-0">
-                                        <img src="{% static 'img/users/user-21.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </span>
-                                    <div>
-                                        <h6 class="fs-16 fw-medium mb-1">Jeffrey Jones</h6>
-                                        <div class="d-flex align-items-center flex-wrap date-info">
-                                            <p class="fs-14 mb-0">2 days ago</p>
-                                            <p class="fs-14 d-inline-flex align-items-center mb-0"><span
-                                                    class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.0</span>Excellent
-                                                service!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="javascript:void(0);"
-                                    class="btn btn-outline-light btn-md d-inline-flex align-items-center mb-2"><i
-                                        class="isax isax-repeat me-1"></i>Reply</a>
-                            </div>
-                            <p class="mb-2">From the moment we arrived, the staff made us feel welcome. The rooms were
-                                immaculate, and every detail was thoughtfully arranged. It was the perfect blend of
-                                comfort and luxury!</p>
-                            <div class="d-inline-flex align-items-center">
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center fs-14 me-3"><i
-                                        class="isax isax-like-1 me-2"></i>15</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-dislike me-2"></i>30</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-heart5 text-danger me-2"></i>52</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card review-item shadow-none mb-3">
-                    <div class="card-body p-3">
-                        <div class="review-info">
-                            <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="avatar avatar-lg me-2 flex-shrink-0">
-                                        <img src="{% static 'img/users/user-26.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </span>
-                                    <div>
-                                        <h6 class="fs-16 fw-medium mb-1">Jessie Alves</h6>
-                                        <div class="d-flex align-items-center flex-wrap date-info">
-                                            <p class="fs-14 mb-0">2 days ago</p>
-                                            <p class="fs-14 d-inline-flex align-items-center mb-0"><span
-                                                    class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">5.0</span>Convenient
-                                                Location!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="javascript:void(0);"
-                                    class="btn btn-outline-light btn-md d-inline-flex align-items-center mb-2"><i
-                                        class="isax isax-repeat me-1"></i>Reply</a>
-                            </div>
-                            <p class="mb-2">The location was perfect for exploring the city, and the views from our room
-                                were breathtaking. It made our trip so much more enjoyable to stay somewhere central and
-                                scenic</p>
-                            <div class="d-inline-flex align-items-center">
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center fs-14 me-3"><i
-                                        class="isax isax-like-1 me-2"></i>13</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-dislike me-2"></i>38</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-heart5 text-danger me-2"></i>75</a>
-                            </div>
-                        </div>
-                        <div class="review-info reply mt-4 p-3">
-                            <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                <div class="d-flex align-items-center mb-2">
-                                    <span class="avatar avatar-lg me-2 flex-shrink-0">
-                                        <img src="{% static 'img/users/user-25.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </span>
-                                    <div>
-                                        <h6 class="fs-16 fw-medium mb-1">Adrian Hendriques</h6>
-                                        <div class="d-flex align-items-center flex-wrap date-info">
-                                            <p class="fs-14 mb-0">2 days ago</p>
-                                            <p class="fs-14 d-inline-flex align-items-center mb-0"><span
-                                                    class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">2.0</span>Excellent
-                                                service!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="javascript:void(0);"
-                                    class="btn btn-outline-light btn-md d-inline-flex align-items-center me-2"><i
-                                        class="isax isax-repeat me-1"></i>Reply</a>
-                            </div>
-                            <p class="mb-2">Thank you so much for your kind words! We're thrilled to hear that our
-                                location and views made your trip even more enjoyable. We hope to welcome you back soon
-                                for another scenic stay!</p>
-                            <div class="d-inline-flex align-items-center">
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center fs-14 me-3"><i
-                                        class="isax isax-like-1 me-2"></i>10</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-dislike me-2"></i>21</a>
-                                <a href="javascript:void(0);" class="d-inline-flex align-items-center me-3"><i
-                                        class="isax isax-heart5 text-danger me-2"></i>46</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
                 <div class="text-center mb-4 mb-xl-0">
                     <a href="javascript:void(0);"
                         class="btn btn-primary btn-md d-inline-flex align-items-center justify-content-center mt-2">See
@@ -534,23 +366,29 @@
                     <div class="card-body">
                         <h5 class="fs-18 mb-3">Enquire Us</h5>
                         <div class="banner-form">
-                            <form action="https://dreamstour.dreamstechnologies.com/html/tour-details.html">
+                            <form action="{% url 'tour:tour_details' slug=get_tour.slug %}" method="post">
+                                {% csrf_token %}
                                 <div class="mb-3">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control">
+                                    {{form.full_name}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <input type="text" class="form-control">
+                                   {{form.email}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control">
+                                 {{form.phone}}
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Subject</label>
+                                 {{form.subject}}
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Message</label>
-                                    <textarea class="form-control" rows="3"></textarea>
+                                  {{form.message}}
                                 </div>
+                                
                                 <button type="submit" class="btn btn-primary btn-lg search-btn ms-0 w-100 fs-14">Submit
                                     Enquiry</button>
                             </form>

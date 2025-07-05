@@ -17,6 +17,11 @@ class TourCategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Booking)
 
+@admin.register(EnquireUs)
+class EnquireUsAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'subject', 'tour', 'date_created', 'responded')
+    search_fields = ('full_name', 'email', 'subject')
+    list_filter = ('responded', 'date_created')
 # admin.py
 
 from .models import ItineraryItem
@@ -27,5 +32,4 @@ class ItineraryItemInline(admin.TabularInline):
 
 admin.site.register(ItineraryItem)
 admin.site.register(Frequently_asked_questions)
-admin.site.register(Includes)
-admin.site.register(Excludes)
+admin.site.register(User_favorite_tour)
