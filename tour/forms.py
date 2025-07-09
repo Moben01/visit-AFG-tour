@@ -61,18 +61,13 @@ class TranslatorForm(forms.ModelForm):
             'phone',
             'email',
             'languages',
-            'nationality',
             'experience_years',
             'certifications',
             'bio',
-            'available_from',
-            'available_to',
             'profile_image',
         ]
         widgets = {
             'date_of_birth': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-            'available_from': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-            'available_to': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         }
 
     def _init_(self, *args, **kwargs):
@@ -96,10 +91,6 @@ class TranslatorForm(forms.ModelForm):
         self.fields['languages'].widget.attrs.update({
             'class': 'form-control',
             'placeholder': 'e.g. English ↔ Pashto, Chinese ↔ Dari',
-        })
-        self.fields['nationality'].widget.attrs.update({
-            'class': 'form-control',
-            'placeholder': 'Enter nationality',
         })
         self.fields['experience_years'].widget.attrs.update({
             'class': 'form-control',

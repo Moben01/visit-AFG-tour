@@ -2,6 +2,9 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import get_user_model
+from multiselectfield import MultiSelectField
+
+
 
 User = get_user_model()
 
@@ -139,25 +142,87 @@ class Ready_tour_for_booking(models.Model):
 from django.db import models
 
 
+
+from django.db import models
+
+class TourGuide(models.Model):
+    SPECIALTY_CHOICES = [
+        ('cultural', 'Cultural Tours'),
+        ('historical', 'Historical Tours'),
+        ('adventure', 'Adventure & Trekking'),
+        ('nature', 'Nature & Wildlife'),
+        ('religious', 'Religious & Pilgrimage Tours'),
+        ('city', 'City & Walking Tours'),
+        ('archaeology', 'Archaeological Sites'),
+        ('language', 'Language Interpretation'),
+        ('photography', 'Photography Tours'),
+        ('custom', 'Custom / Private Tours'),
+    ]
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+    ]
+
+    name = models.CharField(max_length=100)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+    provinces = models.CharField(max_length=200, help_text="City or region based in")
+    languages = models.CharField(max_length=200, help_text="e.g. English, Pashto, Chinese")
+    experience_years = models.PositiveIntegerField()
+    specialties = MultiSelectField(
+        choices=SPECIALTY_CHOICES,
+        max_choices=5,
+        max_length=200,
+        help_text="Select the types of tours you specialize in"
+    )
+   
+    bio = models.TextField(blank=True)
+    id_number = models.CharField(
+        max_length=50,
+        help_text="National ID or Passport Number"
+    )
+    certifications = models.TextField(
+        blank=True,
+        help_text="Any certifications or training in guiding or tourism"
+    )
+    cv = models.FileField(upload_to='guides/cv/', blank=True, null=True)
+    profile_image = models.ImageField(upload_to='guides/', blank=True, null=True)
+    is_approved = models.BooleanField(default=False, help_text="Approved by admin")
+    is_active = models.BooleanField(default=True, help_text="Visible on the website")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+
+
+
+
+
+
 class Translator(models.Model):
     GENDER_CHOICES = [
         ('M', 'Male'),
         ('F', 'Female'),
         
     ]
-
     name = models.CharField(max_length=100)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     date_of_birth = models.DateField(null=True, blank=True)
-    phone = models.CharField(max_length=20)
-    email = models.EmailField(blank=True)
-    languages = models.CharField(max_length=200, help_text="e.g. English ↔ Pashto, Chinese ↔ Dari")
-    nationality = models.CharField(max_length=50, blank=True)
+    phone = models.CharField(max_length=20, blank=False)
+    email = models.EmailField(blank=False)
+    languages = models.CharField(max_length=200, help_text="e.g. English ↔ Pashto, Chinese ↔ Dari", blank=False)
     experience_years = models.PositiveIntegerField()
     certifications = models.TextField(blank=True, help_text="Translation certificates or qualifications")
     bio = models.TextField(blank=True)
-    available_from = models.DateField(null=True, blank=True)
-    available_to = models.DateField(null=True, blank=True)
+    id_number = models.CharField(max_length=50, blank=False, help_text="For verification (optional)")
+    cv = models.FileField(upload_to='translators/cv/', blank=True, null=True)
     profile_image = models.ImageField(upload_to='translators/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    is_approved = models.BooleanField(default=False, help_text="Checked and approved by admin")
+    is_active = models.BooleanField(default=True, help_text="Can appear publicly on the website")
+
+
+    def __str__(self):
+        return self.name
 
