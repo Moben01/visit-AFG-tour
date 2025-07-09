@@ -1,29 +1,37 @@
 from django.shortcuts import render
 from dotenv import load_dotenv
 load_dotenv()
+from tour.models import *
 import requests
 
 # Create your views here.
 
 def visa_guide(request):
-    return render(request, 'plan_your_trip/visa_guide.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/visa_guide.html', {'get_tour_categories':get_tour_categories})
 
 def essentials(request):
-    return render(request, 'plan_your_trip/essentials.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/essentials.html', {'get_tour_categories':get_tour_categories})
 
 def flight(request):
-    return render(request, 'plan_your_trip/flight.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/flight.html', {'get_tour_categories':get_tour_categories})
 
 def Accommodation(request):
-    return render(request, 'plan_your_trip/Accommodation.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/Accommodation.html', {'get_tour_categories':get_tour_categories})
 
 def Getting_to_around_afg(request):
-    return render(request, 'plan_your_trip/Getting_to_around_afg.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/Getting_to_around_afg.html', {'get_tour_categories':get_tour_categories})
 
 def safety(request):
-    return render(request, 'plan_your_trip/safety.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/safety.html', {'get_tour_categories':get_tour_categories})
 
 def weather(request):
+    get_tour_categories = TourCategory.objects.all()
     api_key = "2c8f25d1c7a10cb132adfa1884766a2e"
 
     # City names with country code Afghanistan (AF)
@@ -69,10 +77,13 @@ def weather(request):
     return render(request, 'plan_your_trip/weather.html', {'weather_data': weather_data})
 
 def currency(request):
-    return render(request, 'plan_your_trip/currecy.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/currecy.html', {'get_tour_categories':get_tour_categories})
 
 def accessibility(request):
-    return render(request, 'plan_your_trip/accessibility.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/accessibility.html', {'get_tour_categories':get_tour_categories})
 
 def afghanistan_attractions_passes(request):
-    return render(request, 'plan_your_trip/afghanistan_attractions_passes.html')
+    get_tour_categories = TourCategory.objects.all()
+    return render(request, 'plan_your_trip/afghanistan_attractions_passes.html', {'get_tour_categories':get_tour_categories})
