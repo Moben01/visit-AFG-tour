@@ -199,7 +199,9 @@ def translator_view(request):
         form = TranslatorForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            message = "The information has been successfully registered."
+            message = "Your information has been successfully registered."
+            return redirect('home:home')  # create a success page
+
 
     context = {
         'form': form,
@@ -210,5 +212,26 @@ def translator_view(request):
 
 
 
+
+def tour_guide_view(request):
+    message = ""  # پیام خالی در ابتدا
+
+    if request.method == 'POST':
+        form = TourGuideForm(request.POST, request.FILES)
+        if form.is_valid():
+            tour_guide = form.save(commit=False)
+            tour_guide.is_approved = False  # Require admin approval
+            tour_guide.save()
+            message = "Your information has been successfully registered."
+
+            return redirect('home:home')  # create a success page
+    else:
+        form = TourGuideForm()
+    context = {
+        'form': form,
+        'message': message,
+        'get_tour_categories': TourCategory.objects.all() 
+    }
+    return render(request, 'tour_involve/tour_guide.html', context)
 
 

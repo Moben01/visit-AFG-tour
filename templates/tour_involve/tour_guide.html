@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-12">
+                <h2 class="breadcrumb-title mb-2">Become a Certified Tour Guide in Afghanistan</h2>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="#">Complete the form to join our tour guide network</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Breadcrumb -->
+
+<!-- Page Wrapper -->
+<div class="content">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Tour Guide Registration Form</h4>
+                        {% if message %}
+                            <p class="text-success messages">{{ message }}</p>
+                            <script>
+                                setTimeout(function() {
+                                    $('.messages').fadeOut('slow');
+                                }, 9000);
+                            </script>
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="mb-3">
+                                    <label class="form-label" for="{{ field.id_for_label }}">
+                                        {{ field.label }}
+                                        {% if field.field.required %}<span class="text-danger">*</span>{% endif %}
+                                    </label>
+
+                                    {% if field.name == 'specialties' %}
+                                        <div class="form-check">
+                                            {{ field }}
+                                        </div>
+                                    {% elif field.field.widget.input_type == 'select' %}
+                                        <select class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            {% for choice in field.field.choices %}
+                                                <option value="{{ choice.0 }}" {% if field.value == choice.0 %}selected{% endif %}>{{ choice.1 }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    {% elif field.field.widget.input_type == 'file' %}
+                                        <input type="file" class="form-control" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                    {% elif field.field.widget.input_type == 'textarea' %}
+                                        {{ field }}
+                                    {% else %}
+                                        <input type="{{ field.field.widget.input_type }}" 
+                                               class="form-control" 
+                                               name="{{ field.name }}" 
+                                               id="{{ field.id_for_label }}" 
+                                               value="{{ field.value|default_if_none:'' }}"
+                                               placeholder="{{ field.field.widget.attrs.placeholder|default:'' }}">
+                                    {% endif %}
+
+                                    {% if field.help_text %}
+                                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                                    {% endif %}
+
+                                    {% for error in field.errors %}
+                                        <div class="text-danger">{{ error }}</div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+
+                            <div class="d-flex align-items-center justify-content-center mt-4">
+                                <button type="reset" class="btn btn-light me-2">Reset</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

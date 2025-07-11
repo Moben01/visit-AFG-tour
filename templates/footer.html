@@ -64,7 +64,7 @@
                                     <h5>Work With Us</h5>
                                     <ul class="footer-menu">
                                         <li>
-                                            <a href="#">Join as a Guide</a>
+                                            <a href="{% url 'tour:tour_guide_view' %}">Join as a Guide</a>
                                         </li>
                                         <li>
                                             <a href="{% url 'tour:translator_view' %}">Join as a Translator</a>
@@ -92,7 +92,7 @@
                                             <a href="contact-us.html">Contact Us</a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0);">Legal Notice</a>
+                                            <a href="{% url 'home:rules_of_conduct' %}">Rules of Conduct</a>
                                         </li>
                                         <li>
                                             <a href="privacy-policy.html">Privacy Policy</a>

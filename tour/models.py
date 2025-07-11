@@ -172,7 +172,7 @@ class TourGuide(models.Model):
     experience_years = models.PositiveIntegerField()
     specialties = MultiSelectField(
         choices=SPECIALTY_CHOICES,
-        max_choices=5,
+        
         max_length=200,
         help_text="Select the types of tours you specialize in"
     )
