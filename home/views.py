@@ -76,3 +76,10 @@ def favorite_user_tour(request):
     }
 
     return render(request, 'home/user-wish-list.html', context)
+
+
+
+
+def rules_of_conduct(request):
+    return render(request, 'home/rules_of_conduct.html')
+

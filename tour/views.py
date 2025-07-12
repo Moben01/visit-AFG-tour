@@ -10,6 +10,7 @@ from django.conf import settings
 import json
 from django.http import JsonResponse
 
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
 
@@ -199,7 +200,9 @@ def translator_view(request):
         form = TranslatorForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            message = "The information has been successfully registered."
+            message = "Your information has been successfully registered."
+            return redirect('home:home')  # create a success page
+
 
     context = {
         'form': form,
@@ -211,4 +214,59 @@ def translator_view(request):
 
 
 
+def tour_guide_view(request):
+    message = ""  # پیام خالی در ابتدا
 
+    if request.method == 'POST':
+        form = TourGuideForm(request.POST, request.FILES)
+        if form.is_valid():
+            tour_guide = form.save(commit=False)
+            tour_guide.is_approved = False  # Require admin approval
+            tour_guide.save()
+            message = "Your information has been successfully registered."
+
+            return redirect('home:home')  # create a success page
+    else:
+        form = TourGuideForm()
+    context = {
+        'form': form,
+        'message': message,
+        'get_tour_categories': TourCategory.objects.all() 
+    }
+    return render(request, 'tour_involve/tour_guide.html', context)
+
+
+
+
+
+
+@login_required
+def tg_doc_dashboard(request):
+    user = request.user
+
+    # Example context data
+    context = {
+        'username': user.username,
+        'email': user.email,
+        'last_login': user.last_login,
+        'date_joined': user.date_joined,
+        'notifications': ['Welcome to your dashboard!', 'New message from support.'],
+        'recent_activities': [
+            'Logged in today',
+            'Updated profile info',
+            'Viewed product XYZ'
+        ]
+    }
+    return render(request, 'tour_involve/tg_dashboard.html', context)
+
+
+
+@login_required
+def user_newsfeed(request):
+    user = request.user
+    all_tours_assignment = TourGuideAssignment.objects.filter(status = True) 
+
+    context = {
+        'all_tours_assignment':all_tours_assignment,
+    }
+    return render(request, 'tour_involve/tg_doc_newsfeed.html', context)

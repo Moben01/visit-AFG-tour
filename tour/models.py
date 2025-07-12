@@ -172,7 +172,7 @@ class TourGuide(models.Model):
     experience_years = models.PositiveIntegerField()
     specialties = MultiSelectField(
         choices=SPECIALTY_CHOICES,
-        max_choices=5,
+        
         max_length=200,
         help_text="Select the types of tours you specialize in"
     )
@@ -226,3 +226,39 @@ class Translator(models.Model):
     def __str__(self):
         return self.name
 
+
+
+
+class TourGuideInterest(models.Model):
+    tour = models.ForeignKey('Tour', on_delete=models.CASCADE, related_name='guide_interests')
+    guide = models.ForeignKey(User, on_delete=models.CASCADE, related_name='interested_tours')
+    message = models.TextField(blank=True, null=True)
+    applied_at = models.DateTimeField(auto_now_add=True)
+    is_shortlisted = models.BooleanField(default=False)  # ✅ multiple can be True
+    is_selected = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = ('tour', 'guide')  # Prevent duplicate applications
+
+    def __str__(self):
+        return f"{self.guide.username} → {self.tour.title}"
+
+
+
+class TourGuideAssignment(models.Model):
+    URGENCY_CHOICES = [
+        ('Normal', 'Normal'),
+        ('Urgent', 'Urgent'),
+        ('Emergency', 'Emergency'),
+    ]
+
+    tour = models.OneToOneField('Tour', on_delete=models.CASCADE, related_name='assigned_guide')
+    assigned_at = models.DateTimeField(auto_now_add=True)
+    urgency_level = models.CharField(max_length=20, choices=URGENCY_CHOICES, default='Normal')
+    bonus_amount = models.DecimalField(max_digits=8, decimal_places=2, default=0.00)  # ✅ for urgent/emergency cases
+    note = models.TextField(blank=True, null=True)
+    status = models.BooleanField(default=True)
+ 
+
+    def __str__(self):
+        return f"Guide {self.tour.title} assigned to {self.tour.title}"

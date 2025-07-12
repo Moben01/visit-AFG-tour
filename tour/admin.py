@@ -5,11 +5,7 @@ class TourImageInline(admin.TabularInline):
     model = TourImage
     extra = 1
 
-@admin.register(Tour)
-class TourAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
-    inlines = [TourImageInline]
-    list_display = ('title', 'location', 'available', 'price')
+
 
 @admin.register(TourCategory)
 class TourCategoryAdmin(admin.ModelAdmin):
@@ -29,6 +25,54 @@ from .models import ItineraryItem
 class ItineraryItemInline(admin.TabularInline):
     model = ItineraryItem
     extra = 1
+
+class TourGuideInterestInline(admin.TabularInline):
+    model = TourGuideInterest
+    extra = 0
+    fields = ('guide', 'applied_at', 'is_shortlisted', 'is_selected', 'message')
+    readonly_fields = ('applied_at',)
+    show_change_link = True
+
+
+@admin.register(Tour)
+class TourAdmin(admin.ModelAdmin):
+    list_display = ('title', 'start_date', 'location', 'available', 'get_assigned_guide')
+    list_filter = ( 'available', 'start_date')
+    search_fields = ('title', 'location')
+    prepopulated_fields = {'slug': ('title',)}
+    inlines = [TourGuideInterestInline]
+
+    def get_assigned_guide(self, obj):
+        try:
+            return obj.assigned_guide
+        except TourGuideAssignment.DoesNotExist:
+            return "—"
+    get_assigned_guide.short_description = 'Assigned Guide'
+
+
+@admin.register(TourGuideInterest)
+class TourGuideInterestAdmin(admin.ModelAdmin):
+    list_display = ('tour', 'guide', 'applied_at', 'is_shortlisted', 'is_selected')
+    list_filter = ('is_shortlisted', 'is_selected', 'applied_at')
+    search_fields = ('guide__username', 'tour__title')
+    autocomplete_fields = ('tour', 'guide')
+
+
+@admin.register(TourGuideAssignment)
+class TourGuideAssignmentAdmin(admin.ModelAdmin):
+    list_display = ('tour', 'assigned_at', 'bonus_amount')
+    search_fields = ('guide__username', 'tour__title')
+    autocomplete_fields = ('tour',)
+
+
+
+
+
+
+
+
+
+
 
 admin.site.register(ItineraryItem)
 admin.site.register(Frequently_asked_questions)

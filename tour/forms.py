@@ -109,3 +109,19 @@ class TranslatorForm(forms.ModelForm):
         self.fields['profile_image'].widget.attrs.update({
             'class': 'form-control',
         })
+
+
+
+
+class TourGuideForm(forms.ModelForm):
+    class Meta:
+        model = TourGuide
+        fields = [
+            'name', 'gender', 'phone', 'email', 'provinces', 'languages', 'experience_years',
+            'specialties', 'bio', 'id_number', 'certifications', 'cv', 'profile_image'
+        ]
+        widgets = {
+            'specialties': forms.CheckboxSelectMultiple(),
+            'bio': forms.Textarea(attrs={'rows': 4}),
+            'certifications': forms.Textarea(attrs={'rows': 3}),
+        }
