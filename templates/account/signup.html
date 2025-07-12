@@ -57,14 +57,22 @@
                                         <input type="email" name="{{ form.email.name }}" value="{{ form.email.value|stringformat:'s' }}" class="form-control form-control-lg" placeholder="{% trans 'Enter Email' %}">
                                     </div>
                                 </div>
-
-
-                                <label for="{{ form.type_of_customer.id_for_label }}">Account Type</label>
-                                <select name="{{ form.type_of_customer.html_name }}" id="{{ form.type_of_customer.id_for_label }}">
-                                    {% for value, label in form.type_of_customer.field.choices %}
-                                        <option value="{{ value }}" {% if form.type_of_customer.value == value %}selected{% endif %}>{{ label }}</option>
-                                    {% endfor %}
-                                </select>
+                              
+                                <div class="mb-3">
+                                    <label class="form-label">{{ form.my_choice_field.label }}</label>
+                                    <div class="input-icon">
+                                      <span class="input-icon-addon"><i class="isax isax-list"></i></span>
+                                      <select name="{{ form.my_choice_field.name }}" class="form-control form-control-lg">
+                                        {% for val, text in form.my_choice_field.field.choices %}
+                                          <option value="{{ val }}" {% if val == form.my_choice_field.value %}selected{% endif %}>{{ text }}</option>
+                                        {% endfor %}
+                                      </select>
+                                    </div>
+                                    {% if form.my_choice_field.errors %}
+                                      <div class="text-danger mt-1">{{ form.my_choice_field.errors|striptags }}</div>
+                                    {% endif %}
+                                  </div>
+                                  
 
                                 
                                 <div class="mb-3">

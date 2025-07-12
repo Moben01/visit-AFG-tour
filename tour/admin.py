@@ -7,6 +7,7 @@ class TourImageInline(admin.TabularInline):
 
 
 
+
 @admin.register(TourCategory)
 class TourCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
@@ -50,12 +51,12 @@ class TourAdmin(admin.ModelAdmin):
     get_assigned_guide.short_description = 'Assigned Guide'
 
 
-@admin.register(TourGuideInterest)
-class TourGuideInterestAdmin(admin.ModelAdmin):
-    list_display = ('tour', 'guide', 'applied_at', 'is_shortlisted', 'is_selected')
-    list_filter = ('is_shortlisted', 'is_selected', 'applied_at')
-    search_fields = ('guide__username', 'tour__title')
-    autocomplete_fields = ('tour', 'guide')
+# @admin.register(TourGuideInterest)
+# class TourGuideInterestAdmin(admin.ModelAdmin):
+#     list_display = ('tour', 'guide', 'applied_at', 'is_shortlisted', 'is_selected')
+#     list_filter = ('is_shortlisted', 'is_selected', 'applied_at')
+#     search_fields = ('guide__username', 'tour__title')
+#     autocomplete_fields = ('tour', 'guide')
 
 
 @admin.register(TourGuideAssignment)
@@ -63,15 +64,6 @@ class TourGuideAssignmentAdmin(admin.ModelAdmin):
     list_display = ('tour', 'assigned_at', 'bonus_amount')
     search_fields = ('guide__username', 'tour__title')
     autocomplete_fields = ('tour',)
-
-
-
-
-
-
-
-
-
 
 
 admin.site.register(ItineraryItem)

@@ -198,5 +198,4 @@ STRIPE_PUBLIC_KEY = "pk_test_51RhQJfQcT0hWuQaMDCIAH6pycZ8stKnokzNasbojzoBa6zKEAK
 STRIPE_SECRET_KEY = "sk_test_51RhQJfQcT0hWuQaMyyqKUwZjQTOwkRQYkV7BAJNWOhJ2VxHN9uNHDF0ef6WDtbKCbmdgpYkzElkKTxlonTHJACOs00NiYnWWM6"
 DOMAIN = "http://localhost:8000"  # Or your real domain
 
-SIGNUP_FORM_CLASS = 'accounts.forms.CustomSignupForm'  # Adjust path to match your app + filename
 AUTH_USER_MODEL = 'accounts.CustomUser'
