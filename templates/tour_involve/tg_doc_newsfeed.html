@@ -1,0 +1,596 @@
+{% extends 'tour_involve/tg_dashboard_template.html'%}
+{% load static %}
+
+{% block breadcrump %}
+
+  <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="breadcrumb-title mb-2">Agent Dashboard</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Agent Dashboard</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+                              
+{% endblock %}
+
+{% block main%}
+
+<div class="col-xl-9 col-lg-8"> 
+                    <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-3">
+                        <div class="place-nav listing-nav">
+                            <ul class="nav mb-2" role="tablist">
+                                <li class="me-2">
+                                    <a href="javascript:void(0);" class="nav-link active" data-bs-toggle="tab" data-bs-target="#Hotels-list" aria-selected="true" role="tab">
+                                        Hotels
+                                    </a>
+                                </li>
+                                <li class="me-2">
+                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Cars-list" aria-selected="false" tabindex="-1" role="tab">
+                                        Cars
+                                    </a>
+                                </li>
+                                <li class="me-2">
+                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Cruise-list" aria-selected="false" tabindex="-1" role="tab">
+                                        Cruise
+                                    </a>
+                                </li>
+                                <li class="me-2">
+                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#Tour-list" aria-selected="false" tabindex="-1" role="tab">
+                                        Tour
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="nav-link" data-bs-toggle="tab" data-bs-target="#flight-list" aria-selected="false" tabindex="-1" role="tab">
+                                        Flights
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mb-4">
+                            <a href="javascript:void(0);" class="dropdown-toggle text-gray-6 btn  rounded border d-inline-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+                                All Listing
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end p-3">
+                                <li>
+                                    <a href="javascript:void(0);" class="dropdown-item rounded-1">Active</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="dropdown-item rounded-1">Inactive</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="tab-content">
+
+                        <!-- Hotels List -->
+                        <div class="tab-pane fade active show" id="Hotels-list" role="tabpanel">
+                            <div class="card border-0">
+                                <div class="card-body d-flex align-items-center justify-content-between flex-wrap row-gap-2">
+                                    <div>
+                                        <h5 class="mb-1">Listings</h5>
+                                        <p>No of  Listings : 200</p>
+                                    </div>
+                                   <div>
+                                    <a href="add-hotel.html" class="btn btn-primary d-inline-flex align-items-center me-0"><i class="isax isax-add me-1 fs-16"></i>Add Listing</a>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+
+                                {% for i in all_tours_assignment %}
+
+                                <!-- Hotel Grid -->
+                                <div class="col-xl-4 col-md-6 d-flex">
+                                    <div class="place-item mb-4 flex-fill">
+                                        <div class="place-img">
+                                            <a href="hotel-details.html">
+                                                <img src="{{i.tour.image.url}}" class="img-fluid" alt="img">
+                                            </a>
+                                            <div class="edit-delete-item d-flex align-items-center">
+                                               
+                                                    <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#upcoming"><i class="isax isax-eye"></i></a>
+                                               
+                                            </div>
+                                        </div>
+                                        <div class="place-content">
+                                            <h5 class="mb-1 text-truncate"><a href="hotel-details.html">{{i.tour.title}}</a></h5>
+                                            <p class="d-flex align-items-center mb-2"><i class="isax isax-location5 me-2"></i>{{i.tour.location}}</p>
+                                            <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                                <h5 class="text-primary text-nowrap me-2">{{i.tour.start_date}} <span class="fs-14 fw-normal text-default">/ {{i.urgency_level}}</span></h5>
+                                                <div class="d-flex align-items-center lh-1">
+                                                    <a href="#inactive_list" data-bs-toggle="modal" class="d-flex align-items-center"><i class="isax isax-info-circle me-1"></i>Active</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor  %}
+                                <!-- /Hotel Grid -->
+
+                                <div class="modal fade" id="upcoming" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" style="display: none;" aria-hidden="true">
+                                    <div class="modal-dialog  modal-dialog-centered modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5>Tour Info <span class="fs-14 fw-medium text-primary">#HB-1245</span></h5>
+                                                <a href="javascript:void(0);" data-bs-dismiss="modal" class="btn-close text-dark"></a>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="upcoming-content">
+                                                    <div class="upcoming-title mb-4 d-flex align-items-center justify-content-between p-3 rounded">
+                                                        <div class="d-flex align-items-center flex-wrap">
+                                                            <div class="me-2">
+                                                                <img src="assets/img/hotels/hotel-13.jpg" alt="image" class="avatar avartar-md avatar-rounded">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-1">The Luxe Haven</h6>
+                                                                <div class="title-list">
+                                                                    <p class="d-flex align-items-center pe-2 me-2 border-end border-light fw-normal"><i class="isax isax-building me-2"></i>Luxury Hotel</p>
+                                                                    <p class="d-flex align-items-center pe-2 me-2 border-end border-light fw-normal"><i class="isax isax-location5 me-2"></i>15/C Prince Dareen Road, New York</p>
+                                                                    <p class="d-flex align-items-center pe-2 me-2  fw-normal"><span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">5.0</span>(400 Reviews)</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <span class="badge badge-info rounded-pill d-inline-flex align-items-center fs-10"><i class="fa-solid fa-circle fs-5 me-1"></i>Upcoming</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upcoming-details">
+                                                        <h6 class="mb-2">Room Details</h6>
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Room Type</h6>
+                                                                <p class="text-gray-6 fs-16 ">Queen Room</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">No of Rooms</h6>
+                                                                <p class="text-gray-6 fs-16 ">1</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Room Price</h6>
+                                                                <p class="text-gray-6 fs-16 ">$400</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Guests</h6>
+                                                                <p class="text-gray-6 fs-16 ">4 Adults, 2 Child</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upcoming-details">
+                                                        <h6 class="mb-2">Booking Info</h6>
+                                                        <div class="row">
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Booked On</h6>
+                                                                <p class="text-gray-6 fs-16 ">15 May 2024</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Check In Date &amp; Time</h6>
+                                                                <p class="text-gray-6 fs-16 ">20 May 2024, 10:50 AM</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Checkout Date &amp; Time</h6>
+                                                                <p class="text-gray-6 fs-16 ">25 May 2024, 10:50 AM</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">No of Days Stay</h6>
+                                                                <p class="text-gray-6 fs-16 ">4 Days, 5 Nights</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upcoming-details">
+                                                        <h6 class="mb-2">Extra Service Info</h6>
+                                                        <div class="d-flex align-items-center">
+                                                            <span class="bg-light rounded-pill py-1 px-2 text-gray-6 fs-14 me-2">Cleaning</span>
+                                                            <span class="bg-light rounded-pill py-1 px-2 text-gray-6 fs-14 me-2">Airport Pickup</span>
+                                                            <span class="bg-light rounded-pill py-1 px-2 text-gray-6 fs-14">Breakfast</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upcoming-details">
+                                                        <h6 class="mb-2">Billing Info</h6>
+                                                        <div class="row gy-3">
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Name</h6>
+                                                                <p class="text-gray-6 fs-16 ">Chris Foxy</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Email</h6>
+                                                                <p class="text-gray-6 fs-16 ">chrfo2356@example.com</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Phone</h6>
+                                                                <p class="text-gray-6 fs-16 ">+1 12656 26654</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Address</h6>
+                                                                <p class="text-gray-6 fs-16 ">15/C Prince Dareen Road, New York</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upcoming-details">
+                                                        <h6 class="mb-2">Order Info</h6>
+                                                        <div class="row gy-3">
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Order Id</h6>
+                                                                <p class="text-primary fs-16 ">#45669</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Payment Method</h6>
+                                                                <p class="text-gray-6 fs-16 ">Credit Card (Visa)</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Payment Status</h6>
+                                                                <p class="text-success fs-16 ">Paid</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Date of Payment</h6>
+                                                                <p class="text-gray-6 fs-16 ">20 May 2024, 10:50 AM</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Tax</h6>
+                                                                <p class="text-gray-6 fs-16 ">15% ($60)</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Discount</h6>
+                                                                <p class="text-gray-6 fs-16 ">20% ($15)</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Booking Fees</h6>
+                                                                <p class="text-gray-6 fs-16 ">$25</p>
+                                                            </div>
+                                                            <div class="col-lg-3">
+                                                                <h6 class="fs-14">Total Paid</h6>
+                                                                <p class="text-gray-6 fs-16 ">$6569</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="javascript:void(0);" class="btn btn-md btn-primary" data-bs-toggle="modal" data-bs-target="#cancel-booking">Cancel Booking</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+        
+                            
+
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <nav class="pagination-nav">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!-- /Pagination -->
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!-- /Hotels List -->
+        
+                        <!-- Cars List -->
+                        <div class="tab-pane fade" id="Cars-list" role="tabpanel">
+                            <div class="card border-0">
+                                <div class="card-body d-flex align-items-center justify-content-between flex-wrap row-gap-2">
+                                    <div>
+                                        <h5 class="mb-1">Listings</h5>
+                                        <p>No of  Listings : 200</p>
+                                    </div>
+                                   <div>
+                                    <a href="add-car.html" class="btn btn-primary d-inline-flex align-items-center me-0"><i class="isax isax-add me-1 fs-16"></i>Add Listing</a>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+
+                                <!-- Car Grid -->
+                                <div class="col-xxl-4 col-md-6 d-flex">
+                                    <div class="place-item mb-4 flex-fill">
+                                        <div class="place-img">
+                                            <a href="car-details.html">
+                                                <img src="assets/img/cars/car-06.jpg" class="img-fluid" alt="img">
+                                            </a>
+                                            <div class="edit-delete-item d-flex align-items-center">
+                                                <a href="edit-car.html" class="me-2 d-inline-flex align-items-center justify-content-center"><i class="isax isax-edit"></i></a>
+                                                <a href="#" class="d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#delete-list"><i class="isax isax-trash"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="place-content">
+                                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                                <div class="d-flex flex-wrap align-items-center">
+                                                    <span class="badge badge-secondary  fs-10 fw-medium me-1">Sedan</span>
+                                                </div>
+                                            </div>
+                                            <h5 class="mb-1 text-truncate"><a href="car-details.html">Toyota Camry SE 400</a></h5>
+                                            <p class="d-flex align-items-center mb-3"><i class="isax isax-location5 me-2"></i>Ciutat Vella, Barcelona</p>
+                                            <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                                <div class="d-flex flex-wrap align-items-center me-2">
+                                                    <h5 class="text-primary">$500 <span class="fs-14 text-gray-6 fw-normal">/ day</span></h5>
+        
+                                                </div>
+                                                <div class="d-flex align-items-center lh-1">
+                                                    <a href="#inactive_list" data-bs-toggle="modal" class="d-flex align-items-center"><i class="isax isax-info-circle me-1"></i>Active</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Car Grid -->
+        
+                              
+
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <nav class="pagination-nav">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!-- /Pagination -->
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!-- /Cars List -->
+        
+                        <!-- Cruise List -->
+                        <div class="tab-pane fade" id="Cruise-list" role="tabpanel">
+                            <div class="card border-0">
+                                <div class="card-body d-flex align-items-center justify-content-between flex-wrap row-gap-2">
+                                    <div>
+                                        <h5 class="mb-1">Listings</h5>
+                                        <p>No of  Listings : 200</p>
+                                    </div>
+                                   <div>
+                                    <a href="add-cruise.html" class="btn btn-primary d-inline-flex align-items-center me-0"><i class="isax isax-add me-1 fs-16"></i>Add Listing</a>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+
+                                <!-- Cruise Grid -->
+                                <div class="col-xl-4 col-md-6 d-flex">
+                                    <div class="place-item mb-4 flex-fill">
+                                        <div class="place-img">
+                                            <a href="cruise-details.html">
+                                                <img src="assets/img/cruise/cruise-05.jpg" class="img-fluid" alt="img">
+                                            </a>
+                                            <div class="edit-delete-item d-flex align-items-center">
+                                                <a href="edit-cruise.html" class="me-2 d-inline-flex align-items-center justify-content-center"><i class="isax isax-edit"></i></a>
+                                                <a href="#" class="d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#delete-list"><i class="isax isax-trash"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="place-content">
+                                            <h5 class="mb-1 text-truncate"><a href="cruise-details.html">Super Aquamarine</a></h5>
+                                            <p class="d-flex align-items-center mb-3"><i class="isax isax-location5 me-2"></i>Ciutat Vella, Barcelona</p>
+                                            <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                                <div class="d-flex flex-wrap align-items-center me-2">
+                                                    <h5 class="text-primary">$700 <span class="fs-14 text-gray-6 fw-normal">/ day</span></h5>
+        
+                                                </div>
+                                                <div class="d-flex align-items-center lh-1">
+                                                    <a href="#inactive_list" data-bs-toggle="modal" class="d-flex align-items-center"><i class="isax isax-info-circle me-1"></i>Active</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Cruise Grid -->
+        
+                              
+
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <nav class="pagination-nav">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!-- /Pagination -->
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!-- /Cruise List -->
+        
+                        <!-- Tour List -->
+                        <div class="tab-pane fade" id="Tour-list" role="tabpanel">
+                            <div class="card border-0">
+                                <div class="card-body d-flex align-items-center justify-content-between flex-wrap row-gap-2">
+                                    <div>
+                                        <h5 class="mb-1">Listings</h5>
+                                        <p>No of  Listings : 200</p>
+                                    </div>
+                                   <div>
+                                    <a href="add-hotel.html" class="btn btn-primary d-inline-flex align-items-center me-0"><i class="isax isax-add me-1 fs-16"></i>Add Listing</a>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+
+                                <!-- Tours Grid -->
+                                <div class="col-xxl-4 col-md-6 d-flex">
+                                    <div class="place-item mb-4 flex-fill">
+                                        <div class="place-img">
+                                            <a href="tour-details.html">
+                                                <img src="assets/img/tours/tours-07.jpg" class="img-fluid" alt="img">
+                                            </a>
+                                            <div class="edit-delete-item d-flex align-items-center">
+                                                <a href="edit-tour.html" class="me-2 d-inline-flex align-items-center justify-content-center"><i class="isax isax-edit"></i></a>
+                                                <a href="#" class="d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#delete-list"><i class="isax isax-trash"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="place-content">
+                                            <h5 class="mb-1 text-truncate"><a href="tour-details.html">Rainbow Mountain Valley</a></h5>
+                                            <p class="d-flex align-items-center mb-3"><i class="isax isax-location5 me-2"></i>Ciutat Vella, Barcelona</p>
+                                            <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                                <div class="d-flex flex-wrap align-items-center me-2">
+                                                    <h5 class="text-primary">$650 <span class="fs-14 text-gray-6 fw-normal">/ day</span></h5>
+                                                </div>
+                                                <div class="d-flex align-items-center lh-1">
+                                                    <a href="#inactive_list" data-bs-toggle="modal" class="d-flex align-items-center"><i class="isax isax-info-circle me-1"></i>Active</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Tours Grid -->
+        
+                              
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <nav class="pagination-nav">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!-- /Pagination -->
+                                </div>
+        
+                            </div>
+                        </div>
+                        <!-- /Tour List -->
+
+                        <!-- Flight List -->
+                        <div class="tab-pane fade" id="flight-list" role="tabpanel">
+                            <div class="card border-0">
+                                <div class="card-body d-flex align-items-center justify-content-between flex-wrap row-gap-2">
+                                    <div>
+                                        <h5 class="mb-1">Listings</h5>
+                                        <p>No of  Listings : 200</p>
+                                    </div>
+                                   <div>
+                                    <a href="add-flight.html" class="btn btn-primary d-inline-flex align-items-center me-0"><i class="isax isax-add me-1 fs-16"></i>Add Listing</a>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center">
+
+                                <!-- Flight Grid -->
+                                <div class="col-xxl-4 col-md-6 d-flex">
+                                    <div class="place-item mb-4 flex-fill">
+                                        <div class="place-img">
+                                            <a href="flight-details.html">
+                                                <img src="assets/img/flight/flight-09.jpg" class="img-fluid" alt="img">
+                                            </a>
+                                            <div class="edit-delete-item d-flex align-items-center">
+                                                <a href="edit-flight.html" class="me-2 d-inline-flex align-items-center justify-content-center"><i class="isax isax-edit"></i></a>
+                                                <a href="#" class="d-inline-flex align-items-center justify-content-center" data-bs-toggle="modal" data-bs-target="#delete-list"><i class="isax isax-trash"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="place-content">
+                                            <h5 class="text-truncate mb-1"><a href="flight-details.html">Antonov An-32</a></h5>
+                                            <div class="d-flex align-items-center mb-2">
+                                                <span class="avatar avatar-sm me-2">
+                                                    <img src="assets/img/icons/airindia.svg" class="rounded-circle" alt="icon">
+                                                </span>
+                                                <p class="fs-14 mb-0 me-2">Air India</p>
+                                                <p class="fs-14 mb-0"><i class="ti ti-point-filled text-primary me-2"></i>1-stop at Texas</p>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between border-top pt-3">
+                                                <div class="d-flex flex-wrap align-items-center me-2">
+                                                    <h5 class="text-primary">$500 <span class="fs-14 text-gray-6 fw-normal">/ day</span></h5>
+                                                </div>
+                                                <div class="d-flex align-items-center lh-1">
+                                                    <a href="#inactive_list" data-bs-toggle="modal" class="d-flex align-items-center"><i class="isax isax-info-circle me-1"></i>Active</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Flight Grid -->
+        
+                                
+                                <div class="col-md-12">
+                                    <!-- Pagination -->
+                                    <nav class="pagination-nav">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Previous">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript:void(0);" aria-label="Next">
+                                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!-- /Pagination -->
+                                </div>          
+                            </div>
+                        </div>
+                        <!-- /Flight List -->
+        
+                    </div>
+                </div>
+{% endblock %}
+
+

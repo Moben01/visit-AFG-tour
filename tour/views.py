@@ -10,6 +10,7 @@ from django.conf import settings
 import json
 from django.http import JsonResponse
 
+
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
 
@@ -235,3 +236,37 @@ def tour_guide_view(request):
     return render(request, 'tour_involve/tour_guide.html', context)
 
 
+
+
+
+
+@login_required
+def tg_doc_dashboard(request):
+    user = request.user
+
+    # Example context data
+    context = {
+        'username': user.username,
+        'email': user.email,
+        'last_login': user.last_login,
+        'date_joined': user.date_joined,
+        'notifications': ['Welcome to your dashboard!', 'New message from support.'],
+        'recent_activities': [
+            'Logged in today',
+            'Updated profile info',
+            'Viewed product XYZ'
+        ]
+    }
+    return render(request, 'tour_involve/tg_dashboard.html', context)
+
+
+
+@login_required
+def user_newsfeed(request):
+    user = request.user
+    all_tours_assignment = TourGuideAssignment.objects.filter(status = True) 
+
+    context = {
+        'all_tours_assignment':all_tours_assignment,
+    }
+    return render(request, 'tour_involve/tg_doc_newsfeed.html', context)

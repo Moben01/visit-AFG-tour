@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+<div class="breadcrumb-bar breadcrumb-bg-04 text-center">
+        <div class="container">
+
+            {% block breadcrump %}
+
+
+
+
+                      
+            {% endblock %}
+          
+        </div>
+    </div>
+
+    <div class="content" style="transform: none;">
+        <div class="container" style="transform: none;">
+
+            <div class="row" style="transform: none;">
+
+                <!-- Sidebar -->
+                <div class="col-xl-3 col-lg-4 theiaStickySidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px; transform: none;">
+                    
+                <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; overflow: visible; box-sizing: border-box; min-height: 1px; top: 0px; left: 120px;"><div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><div class="card user-sidebar agent-sidebar mb-4 mb-lg-0">
+                        <div class="card-header user-sidebar-header text-center bg-gray-transparent">
+                            <div class="agent-profile d-inline-flex">
+                                <img src="assets/img/users/user-43.jpg" alt="image" class="img-fluid rounded-circle">
+                                <a href="agent-settings.html" class="avatar avatar-sm rounded-circle btn btn-primary d-flex align-items-center justify-content-center p-0"><i class="isax isax-edit-2 fs-14"></i></a>
+                            </div>
+                            <h6 class="fs-16">Chris Foxy</h6>
+                            <p class="fs-14 mb-2">Member Since 10 May 2025</p>
+                            <div class="d-flex align-items-center justify-content-center notify-item">
+                                <a href="agent-notifications.html" class="rounded-circle btn btn-white d-flex align-items-center justify-content-center p-0 me-2 position-relative">
+                                    <i class="isax isax-notification-bing5 fs-20"></i>
+                                    <span class="position-absolute p-1 bg-secondary rounded-circle"></span>
+                                </a>
+                                <a href="agent-chat.html" class="rounded-circle btn btn-white d-flex align-items-center justify-content-center p-0 position-relative">
+                                    <i class="isax isax-message-square5 fs-20"></i>
+                                    <span class="position-absolute p-1 bg-danger rounded-circle"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body user-sidebar-body">
+                            <ul>
+                                 <li>
+                                    <a href="{% url 'tour:user_newsfeed' %}" class="d-flex align-items-center active">
+                                        <i class="isax isax-menu-14 me-2"></i>Newsfeed
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'tour:tg_doc_dashboard' %}" class="d-flex align-items-center">
+                                        <i class="isax isax-grid-55 me-2"></i>Dashboard
+                                    </a>
+                                </li>
+                               
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="d-block"><i class="isax isax-calendar-tick5 me-2"></i><span>Bookings</span><span class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="agent-hotel-booking.html" class="fs-14 d-inline-flex align-items-center">New Tours</a>
+                                        </li>
+                                        <li>
+                                            <a href="agent-car-booking.html" class="fs-14 d-inline-flex align-items-center">interests</a>
+                                        </li>
+                                        <li>
+                                            <a href="agent-cruise-booking.html" class="fs-14 d-inline-flex align-items-center">Accepts</a>
+                                        </li>
+                                        <li>
+                                            <a href="agent-tour-booking.html" class="fs-14 d-inline-flex align-items-center">Cancelled</a>
+                                        </li>
+                                        <li>
+                                            <a href="agent-flight-booking.html" class="fs-14 d-inline-flex align-items-center">Inqueries</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                               
+                                <li>
+                                    <a href="agent-earnings.html" class="d-flex align-items-center">
+                                        <i class="isax isax-wallet-add-15 me-2"></i>Earnings
+                                    </a>
+                                </li>
+                                 <li>
+                                    <a href="agent-enquirers.html" class="d-flex align-items-center">
+                                        <i class="isax isax-magic-star5 me-2"></i>Achievements
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="agent-review.html" class="d-flex align-items-center">
+                                        <i class="isax isax-magic-star5 me-2"></i>Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="agent-settings.html" class="d-flex align-items-center">
+                                        <i class="isax isax-setting-25"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="agent-settings.html" class="d-flex align-items-center">
+                                        <i class="isax isax-setting-25"></i> How We Work
+                                    </a>
+                                </li>
+                                <li class="logout-link">
+                                    <a href="index.html" class="d-flex align-items-center pb-0">
+                                        <i class="isax isax-logout-15"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 316px; height: 624px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 340px; height: 1672px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div></div>
+                <!-- /Sidebar -->
+
+                 
+                {% block main %}
+
+
+
+
+                      
+                {% endblock %}
+
+
+
+            
+            </div>
+        </div>
+    </div>
+     
+
+{% endblock %}
