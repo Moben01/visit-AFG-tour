@@ -58,6 +58,15 @@
                                     </div>
                                 </div>
 
+
+                                <label for="{{ form.type_of_customer.id_for_label }}">Account Type</label>
+                                <select name="{{ form.type_of_customer.html_name }}" id="{{ form.type_of_customer.id_for_label }}">
+                                    {% for value, label in form.type_of_customer.field.choices %}
+                                        <option value="{{ value }}" {% if form.type_of_customer.value == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+
+                                
                                 <div class="mb-3">
                                     <label class="form-label">{% trans "Password" %}</label>
                                     <div class="input-icon">

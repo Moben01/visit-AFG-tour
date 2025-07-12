@@ -5,7 +5,7 @@ from django.utils.translation import get_language
 from tour.models import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
-from django.contrib.auth.models import User
+from accounts.models import CustomUser
 from .models import*
 
 # Create your views here.
@@ -17,7 +17,7 @@ def home_view(request):
         pass
     user_id = request.user.id
     try:
-        find_user = User.objects.get(id=user_id)
+        find_user = CustomUser.objects.get(id=user_id)
     except User.DoesNotExist:
         find_user = None  # or handle however you want if user not found
 
@@ -35,10 +35,9 @@ def home_view(request):
     language_code = get_language()
 
     if language_code in ['fa', 'ar']:
-        return render(request, 'RTL/index.html')
+        return render(request, 'RTL/index.html',{'get_tour_categories':get_tour_categories, 'find_user_favorite':find_user_favorite, 'get_main_things':get_main_things})
     else:
         return render(request, 'index.html', {'get_tour_categories':get_tour_categories, 'find_user_favorite':find_user_favorite, 'get_main_things':get_main_things})
-        return render(request,'index.html',{'get_tour_categories': get_tour_categories,'find_user_favorite': find_user_favorite})
 
 
 def custom_404_view(request, exception):

@@ -74,7 +74,7 @@ def weather(request):
                 "description": "Data not available",
                 "icon": None,
             }
-    return render(request, 'plan_your_trip/weather.html', {'weather_data': weather_data})
+    return render(request, 'plan_your_trip/weather.html', {'weather_data': weather_data, 'get_tour_categories':get_tour_categories})
 
 def currency(request):
     get_tour_categories = TourCategory.objects.all()

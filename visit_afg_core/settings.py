@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # The following apps are required:
     'allauth',
     'allauth.account',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -197,16 +198,5 @@ STRIPE_PUBLIC_KEY = "pk_test_51RhQJfQcT0hWuQaMDCIAH6pycZ8stKnokzNasbojzoBa6zKEAK
 STRIPE_SECRET_KEY = "sk_test_51RhQJfQcT0hWuQaMyyqKUwZjQTOwkRQYkV7BAJNWOhJ2VxHN9uNHDF0ef6WDtbKCbmdgpYkzElkKTxlonTHJACOs00NiYnWWM6"
 DOMAIN = "http://localhost:8000"  # Or your real domain
 
-JAZZMIN_SETTINGS = {
-    "site_title": "My Project Admin",
-    "site_header": "My Admin",
-    "welcome_sign": "Welcome to the Admin",
-    "copyright": "My Company",
-    "search_model": "auth.User",
-    "topmenu_links": [
-        {"name": "Home", "url": "/", "permissions": ["auth.view_user"]},
-        {"model": "auth.User"},
-        {"app": "auth"},
-    ],
-    # more options here: https://django-jazzmin.readthedocs.io/
-}
+SIGNUP_FORM_CLASS = 'accounts.forms.CustomSignupForm'  # Adjust path to match your app + filename
+AUTH_USER_MODEL = 'accounts.CustomUser'
