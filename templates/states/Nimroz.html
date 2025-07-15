@@ -409,115 +409,31 @@ The best time to visit Nimroz is between October and April, when desert temperat
 
 <h4 class="mb-4 mt-4">Best Places to Visit in Nimroz</h4>
 
-<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-    <!-- Place 1 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Zaranj City</h5>
-                <p>(Nimroz Capital)</p>
+             <div class="row">
+                {% for i in find_best_places_in_this_province %}
+                    <div class="col-md-3 mb-4">
+                        <div class="location-item">
+                            <a href="#" class="location-img">
+                                <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                                <div class="location-name">
+                                    <h5 class="mb-1">{{ i.title }}</h5>
+                                    <p>({{ i.location }})</p>
+                                </div>
+                            </a>
+                            <div class="location-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                                    <p class="fs-14"><span class="text-primary">${{ i.start_price }}</span></p>
+                                </div>
+                                <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Border Markets</h6>
-                <p class="fs-14">Explore bustling border bazaars</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
 
-    <!-- Place 2 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Helmand River Delta</h5>
-                <p>(Wetland Area)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Bird Watching</h6>
-                <p class="fs-14">Unique wetland in the desert</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
+ 
 
-    <!-- Place 3 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Chahar Burjak</h5>
-                <p>(Desert District)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Desert Landscapes</h6>
-                <p class="fs-14">Stunning sand dunes and vistas</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 4 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Kang District</h5>
-                <p>(Traditional Villages)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Baloch Culture</h6>
-                <p class="fs-14">Experience traditional Baloch life</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 5 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Historic Caravanserais</h5>
-                <p>(Trade Route Stops)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Ancient Commerce</h6>
-                <p class="fs-14">Visit historic desert trade posts</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 6 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Desert Oases</h5>
-                <p>(Green Havens)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Natural Beauty</h6>
-                <p class="fs-14">Discover green spots in the desert</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-</div>
 
 <h4 class="mb-4 mt-4">Popular Tourist Attractions in Nimroz</h4>
 

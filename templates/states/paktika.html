@@ -489,116 +489,32 @@
         </div>
         
         <h4 class="mb-4 mt-4">Best Places to Visit in Paktika</h4>
-        
-        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-            <!-- Place 1 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Sharana City</h5>
-                        <p>(Capital & Cultural Center)</p>
+          <div class="row">
+                {% for i in find_best_places_in_this_province %}
+                    <div class="col-md-3 mb-4">
+                        <div class="location-item">
+                            <a href="#" class="location-img">
+                                <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                                <div class="location-name">
+                                    <h5 class="mb-1">{{ i.title }}</h5>
+                                    <p>({{ i.location }})</p>
+                                </div>
+                            </a>
+                            <div class="location-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                                    <p class="fs-14"><span class="text-primary">${{ i.start_price }}</span></p>
+                                </div>
+                                <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">12 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
+                {% endfor %}
             </div>
+
         
-            <!-- Place 2 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Gomal Pass</h5>
-                        <p>(Historic Mountain Pass & Scenic Views)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">15 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$180</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
+         
         
-            <!-- Place 3 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Ziarat Sharif Shrine</h5>
-                        <p>(Religious & Spiritual Site)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">18 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 4 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Spera Valley</h5>
-                        <p>(Natural Beauty & Village Life)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">20 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$170</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 5 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Shkin Border Market</h5>
-                        <p>(Cross-Border Trading Hub & Local Bazaar)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">10 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$160</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 6 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Zadran Tribal Market</h5>
-                        <p>(Traditional Crafts & Village Culture)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">22 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$175</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        </div>
         
 
 
