@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from multiselectfield import MultiSelectField
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 User = get_user_model()
@@ -262,3 +262,89 @@ class TourGuideAssignment(models.Model):
 
     def __str__(self):
         return f"Guide {self.tour.title} assigned to {self.tour.title}"
+
+
+# AccommodationBooking
+
+class Accommodation(models.Model):
+    ACCOMMODATION_TYPES = [
+        ('hotel', 'Hotel'),
+        ('hostel', 'Hostel'),
+        ('guesthouse', 'Guesthouse'),
+        ('camp', 'Camp'),
+        ('resort', 'Resort'),
+        ('homestay', 'Homestay'),
+        ('apartment', 'Apartment'),
+    ]
+
+    name = models.CharField(max_length=255)
+    type = models.CharField(max_length=20, choices=ACCOMMODATION_TYPES)
+    description = models.TextField(blank=True)
+    location = models.CharField(max_length=255)
+    address = models.TextField()
+    phone = models.CharField(max_length=50, blank=True)
+    email = models.EmailField(blank=True)
+    website = models.URLField(blank=True)
+    rating = models.DecimalField(
+        max_digits=3,
+        decimal_places=2,
+        null=True,
+        blank=True,
+        validators=[
+            MinValueValidator(0.0),
+            MaxValueValidator(5.0)
+        ]
+    )    
+    price_per_night = models.DecimalField(max_digits=8, decimal_places=2)
+    image = models.ImageField(upload_to='accommodation_images/', blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} ({self.get_type_display()})"
+
+class AccommodationImage(models.Model):
+    accommodation = models.ForeignKey(Accommodation, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='accommodation_gallery/')
+    caption = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return f"Image for {self.accommodation.name}"
+
+class Transport(models.Model):
+    TRANSPORT_TYPES = [
+        ('bus', 'Bus'),
+        ('car', 'Car'),
+        ('van', 'Van'),
+        ('train', 'Train'),
+        ('flight', 'Flight'),
+        ('boat', 'Boat'),
+        ('bike', 'Bike'),
+        ('walking', 'Walking'),
+    ]
+
+    type = models.CharField(max_length=20, choices=TRANSPORT_TYPES)
+    company_name = models.CharField(max_length=100, blank=True)
+    description = models.TextField(blank=True)
+    vehicle_number = models.CharField(max_length=50, blank=True)
+    seats_available = models.PositiveIntegerField(null=True, blank=True)
+    departure_location = models.CharField(max_length=255)
+    arrival_location = models.CharField(max_length=255)
+    departure_time = models.DateTimeField()
+    arrival_time = models.DateTimeField()
+    price = models.DecimalField(max_digits=8, decimal_places=2)
+
+    image = models.ImageField(upload_to='transport_images/', blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.get_type_display()} from {self.departure_location} to {self.arrival_location}"
+
+class TransportImage(models.Model):
+    transport = models.ForeignKey(Transport, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='transport_gallery/')
+    caption = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return f"Image for {self.transport}"

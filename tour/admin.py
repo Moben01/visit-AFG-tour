@@ -70,3 +70,22 @@ admin.site.register(ItineraryItem)
 admin.site.register(Frequently_asked_questions)
 admin.site.register(User_favorite_tour)
 admin.site.register(Ready_tour_for_booking)
+
+
+class AccommodationImageInline(admin.TabularInline):  # or use StackedInline
+    model = AccommodationImage
+    extra = 1  # Number of empty forms to show
+
+@admin.register(Accommodation)
+class AccommodationAdmin(admin.ModelAdmin):
+    list_display = ['name', 'type', 'location', 'price_per_night']
+    inlines = [AccommodationImageInline]
+
+class TransportImageInline(admin.TabularInline):
+    model = TransportImage
+    extra = 1
+
+@admin.register(Transport)
+class TransportAdmin(admin.ModelAdmin):
+    list_display = ['type', 'departure_location', 'arrival_location', 'departure_time', 'price']
+    inlines = [TransportImageInline]

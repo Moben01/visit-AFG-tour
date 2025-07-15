@@ -11,4 +11,4 @@ class CustomUser(AbstractUser):
         ('Operator', 'Operator'),
         ('Moderator', 'Moderator'),
     ]
-    my_choice_field = models.CharField(max_length=20, choices=CHOICES, blank=True, null=True)
+    my_choice_field = models.CharField(max_length=20, choices=CHOICES, blank=True, null=True, default="Tourist")

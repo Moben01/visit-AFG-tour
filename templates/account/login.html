@@ -42,7 +42,10 @@
                                     <label class="form-label">{% trans "Email or Username" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-message"></i></span>
-                                        <input type="text" name="{{ form.login.name }}" value="{{ form.login.value|stringformat:'s' }}" class="form-control form-control-lg" placeholder="{% trans 'Enter Email or Username' %}">
+                                        <input type="text" name="{{ form.login.name }}" 
+                                               value="{% if form.login.value %}{{ form.login.value|stringformat:'s' }}{% endif %}" 
+                                               class="form-control form-control-lg" 
+                                               placeholder="{% trans 'Enter Email or Username' %}">
                                     </div>
                                 </div>
 
