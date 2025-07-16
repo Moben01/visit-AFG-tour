@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404  # optional, for clarity
-from home.views import favorite_user_tour
+from home.views import *
 
 # Custom error handlers (MUST be here — project-level only)
 handler404 = 'home.views.custom_404_view'
@@ -21,9 +21,9 @@ urlpatterns += i18n_patterns(
     path('states/', include('states.urls', namespace='states')),
     path('play_your_trip/', include('play_your_trip.urls', namespace='play_your_trip')),
     path('things_to_do/', include('things_to_do.urls', namespace='things_to_do')),
-
     path('tour/', include('tour.urls', namespace='tour')),
-    path('favorite_user_tour', favorite_user_tour, name='favorite_user_tour')
+    path('favorite_user_tour', favorite_user_tour, name='favorite_user_tour'),
+    path('rules_of_conduct', rules_of_conduct, name='rules_of_conduct'),
 )
 
 # Include Rosetta only if DEBUG = True (recommended)

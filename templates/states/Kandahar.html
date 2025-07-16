@@ -410,121 +410,34 @@ The best time to visit Kandahar is from October to April when temperatures are m
     </div>
 </div>
 
-<h4 class="mb-4 mt-4">Best Places to Visit in Kandahar</h4>
+        <h4 class="mb-4 mt-4">Best Places to Visit in Kandahar</h4>
 
-<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-    <!-- Place 1 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Shrine of the Cloak</h5>
-                <p>(Sacred Islamic Site)</p>
+         <div class="row">
+                {% for i in find_best_places_in_this_province %}
+                    <div class="col-md-3 mb-4">
+                        <div class="location-item">
+                            <a href="#" class="location-img">
+                                <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                                <div class="location-name">
+                                    <h5 class="mb-1">{{ i.title }}</h5>
+                                    <p>({{ i.location }})</p>
+                                </div>
+                            </a>
+                            <div class="location-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                                    <p class="fs-14"><span class="text-primary">${{ i.start_price }}</span></p>
+                                </div>
+                                <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Islamic Heritage</h6>
-                <p class="fs-14">Houses a relic of Prophet Muhammad</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
 
-    <!-- Place 2 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Arghandab Valley</h5>
-                <p>(Pomegranate Orchards)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Natural Beauty</h6>
-                <p class="fs-14">Lush valley famous for fruit production</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
+   
 
-    <!-- Place 3 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Chilzina</h5>
-                <p>(Ancient Rock Chambers)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Historical Site</h6>
-                <p class="fs-14">Mughal-era inscriptions and panoramic views</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 4 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Shah Bazaar</h5>
-                <p>(Traditional Market)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Shopping</h6>
-                <p class="fs-14">Famous for fruits, spices and handicrafts</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 5 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Friday Mosque</h5>
-                <p>(Masjid Jame)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Islamic Architecture</h6>
-                <p class="fs-14">Kandahar's most important mosque</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 6 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Baba Wali Shrine</h5>
-                <p>(Pilgrimage Site)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Spiritual Site</h6>
-                <p class="fs-14">Popular shrine in Arghandab Valley</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-
-        
-        </div>
-        
-    </div>
-
-</div>
+  
 <h4 class="mb-4 mt-4">Popular Tourist Attractions in Kandahar</h4>
 
 <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">

@@ -418,116 +418,31 @@ The best time to visit Helmand is during the cooler months from October to April
 
 <h4 class="mb-4 mt-4">Best Places to Visit in Helmand</h4>
 
-<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-    <!-- Place 1 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Qala-e-Bost</h5>
-                <p>(Ancient Fortress)</p>
+   <div class="row">
+                {% for i in find_best_places_in_this_province %}
+                    <div class="col-md-3 mb-4">
+                        <div class="location-item">
+                            <a href="#" class="location-img">
+                                <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                                <div class="location-name">
+                                    <h5 class="mb-1">{{ i.title }}</h5>
+                                    <p>({{ i.location }})</p>
+                                </div>
+                            </a>
+                            <div class="location-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                                    <p class="fs-14"><span class="text-primary">${{ i.start_price }}</span></p>
+                                </div>
+                                <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Historical Site</h6>
-                <p class="fs-14">Famous arch and ancient ruins</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
 
-    <!-- Place 2 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Lashkargah</h5>
-                <p>(Provincial Capital)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Urban Center</h6>
-                <p class="fs-14">Markets and cultural sites</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
 
-    <!-- Place 3 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Helmand River</h5>
-                <p>(Lifeline of the Region)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Agricultural Valley</h6>
-                <p class="fs-14">Fertile lands and traditional villages</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 4 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Girishk</h5>
-                <p>(Historic Town)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Ancient Settlement</h6>
-                <p class="fs-14">Strategic location on the river</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 5 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Kajaki Dam</h5>
-                <p>(Hydroelectric Project)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Engineering Marvel</h6>
-                <p class="fs-14">Important water management system</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 6 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Registan Desert</h5>
-                <p>(Southern Desert)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">Desert Landscape</h6>
-                <p class="fs-14">Unique arid environment</p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-</div>
-
+   
 
 
 <h4 class="mb-4 mt-4">Popular Tourist Attractions in Helmand</h4>

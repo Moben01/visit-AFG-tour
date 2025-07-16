@@ -46,7 +46,7 @@
                                     <label class="form-label">{% trans "Username" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-user"></i></span>
-                                        <input type="text" name="{{ form.username.name }}" value="{{ form.username.value|stringformat:'s' }}" class="form-control form-control-lg" placeholder="{% trans 'Enter Username' %}">
+                                        <input type="text" name="{{ form.username.name }}" value="{% if form.username.value %}{{ form.username.value|stringformat:'s' }}{% endif %}" class="form-control form-control-lg" placeholder="{% trans 'Enter Username' %}">
                                     </div>
                                 </div>
 
@@ -54,26 +54,11 @@
                                     <label class="form-label">{% trans "Email" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-message"></i></span>
-                                        <input type="email" name="{{ form.email.name }}" value="{{ form.email.value|stringformat:'s' }}" class="form-control form-control-lg" placeholder="{% trans 'Enter Email' %}">
+                                        <input type="email" name="{{ form.email.name }}" value="{% if form.email.value %}{{ form.email.value|stringformat:'s' }}{% endif %}"                                        class="form-control form-control-lg" placeholder="{% trans 'Enter Email' %}">
                                     </div>
                                 </div>
-                              
-                                <div class="mb-3">
-                                    <label class="form-label">{{ form.my_choice_field.label }}</label>
-                                    <div class="input-icon">
-                                      <span class="input-icon-addon"><i class="isax isax-list"></i></span>
-                                      <select name="{{ form.my_choice_field.name }}" class="form-control form-control-lg">
-                                        {% for val, text in form.my_choice_field.field.choices %}
-                                          <option value="{{ val }}" {% if val == form.my_choice_field.value %}selected{% endif %}>{{ text }}</option>
-                                        {% endfor %}
-                                      </select>
-                                    </div>
-                                    {% if form.my_choice_field.errors %}
-                                      <div class="text-danger mt-1">{{ form.my_choice_field.errors|striptags }}</div>
-                                    {% endif %}
-                                  </div>
+                          
                                   
-
                                 
                                 <div class="mb-3">
                                     <label class="form-label">{% trans "Password" %}</label>

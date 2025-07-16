@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "home",
     'tour',
     'jazzmin',  # must be before 'django.contrib.admin'
-   
+    'things_to_do', 
     'rosetta',
     # The following apps are required:
     'allauth',
