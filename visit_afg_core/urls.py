@@ -21,6 +21,7 @@ urlpatterns += i18n_patterns(
     path('states/', include('states.urls', namespace='states')),
     path('play_your_trip/', include('play_your_trip.urls', namespace='play_your_trip')),
     path('things_to_do/', include('things_to_do.urls', namespace='things_to_do')),
+    path('accounts/', include('accounts.urls', namespace='accounts')),
     path('tour/', include('tour.urls', namespace='tour')),
     path('favorite_user_tour', favorite_user_tour, name='favorite_user_tour'),
     path('rules_of_conduct', rules_of_conduct, name='rules_of_conduct'),
