@@ -1,3 +1,4 @@
+import re
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
@@ -198,20 +199,27 @@ class TourGuide(models.Model):
 
 
 
+class Languages(models.Model):
+    name = models.CharField(max_length=120)
+    code = models.CharField(max_length=100)
+    total_price = models.FloatField()
+
+    def __str__(self):
+        return f"language {self.name} | code {self.code}"
 
 
 class Translator(models.Model):
     GENDER_CHOICES = [
         ('M', 'Male'),
-        ('F', 'Female'),
-        
+        ('F', 'Female'),   
     ]
+
     name = models.CharField(max_length=100)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     date_of_birth = models.DateField(null=True, blank=True)
     phone = models.CharField(max_length=20, blank=False)
     email = models.EmailField(blank=False)
-    languages = models.CharField(max_length=200, help_text="e.g. English ↔ Pashto, Chinese ↔ Dari", blank=False)
+    languages = models.ManyToManyField('Languages', blank=True)
     experience_years = models.PositiveIntegerField()
     certifications = models.TextField(blank=True, help_text="Translation certificates or qualifications")
     bio = models.TextField(blank=True)
@@ -219,6 +227,7 @@ class Translator(models.Model):
     cv = models.FileField(upload_to='translators/cv/', blank=True, null=True)
     profile_image = models.ImageField(upload_to='translators/', blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    total_price = models.IntegerField()
     is_approved = models.BooleanField(default=False, help_text="Checked and approved by admin")
     is_active = models.BooleanField(default=True, help_text="Can appear publicly on the website")
 
@@ -296,6 +305,7 @@ class Accommodation(models.Model):
         ]
     )    
     price_per_night = models.DecimalField(max_digits=8, decimal_places=2)
+    total_price = models.FloatField(default=0)
     image = models.ImageField(upload_to='accommodation_images/', blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
@@ -325,6 +335,7 @@ class Transport(models.Model):
 
     type = models.CharField(max_length=20, choices=TRANSPORT_TYPES)
     company_name = models.CharField(max_length=100, blank=True)
+    total_price = models.FloatField(default=0)
     description = models.TextField(blank=True)
     vehicle_number = models.CharField(max_length=50, blank=True)
     seats_available = models.PositiveIntegerField(null=True, blank=True)
@@ -348,3 +359,33 @@ class TransportImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.transport}"
+
+class SecurityGuard(models.Model):
+    GENDER_CHOICES = [
+        ('M', 'Male'),
+        ('F', 'Female'),
+    ]
+
+    name = models.CharField(max_length=100)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    date_of_birth = models.DateField(null=True, blank=True)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField()
+
+    experience_years = models.PositiveIntegerField()
+    languages = models.ManyToManyField('Languages', blank=True)  # Optional if they communicate with clients
+    certifications = models.TextField(blank=True, help_text="Security training or licenses")
+    location = models.CharField(max_length=100, help_text="City or area they operate in")
+    
+    availability = models.BooleanField(default=True)
+    daily_rate = models.FloatField(help_text="Price per day in USD")
+    total_price = models.FloatField()
+    bio = models.TextField(blank=True)
+    profile_image = models.ImageField(upload_to='security_guards/', blank=True, null=True)
+
+    id_document = models.FileField(upload_to='security_guards/ids/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_approved = models.BooleanField(default=False, help_text="Verified by admin")
+
+    def __str__(self):
+        return f"{self.name} ({self.get_gender_display()})"

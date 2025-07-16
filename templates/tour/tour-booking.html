@@ -92,12 +92,12 @@
                                             <div
                                                 class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
                                                 <div>
-                                                    <h5>
-                                                        <p class="text-muted mb-3">
+                                                    <h6>
+                                                        <p class="text-muted mb-0 mt-0 my-0">
                                                             <i class="isax isax-setting-2 me-1"></i>
                                                             Customize your tour details: accommodation, transport, tickets, security guide & translator.
                                                         </p>
-                                                    </h5>
+                                                    </h6>
                                                 </div>
                                             </div>
                                             <div class="place-slider owl-carousel owl-loaded owl-drag">
@@ -106,6 +106,7 @@
                                                       hx-swap="innerHTML">
                                                       
                                                     {% csrf_token %}
+                                                    <h6 class="mb-4">Accommodations</h6>
                                                     <div class="owl-stage-outer">
                                                         <div class="owl-stage"
                                                             style="transform: translate3d(-330px, 0px, 0px); transition: 2s; width: 1650px;">
@@ -196,6 +197,8 @@
                                                             {% endfor %}
                                                         </div>
                                                     </div>
+                                                    <hr class="w-100 bg-black"/>
+                                                    <h6 class="mb-4">Transports</h6>
                                                     <div class="owl-stage-outer">
                                                         <div class="owl-stage"
                                                             style="transform: translate3d(-330px, 0px, 0px); transition: 2s; width: 1650px;">
@@ -253,8 +256,8 @@
                                                                                 {{ trans.price }} <span class="fs-12 fw-normal text-default">/ Night</span>
                                                                             </h6>
                                                                             <div class="form-check mb-0">
-                                                                                <input class="form-check-input" type="radio" name="selected_accommodation" id="acc{{ trans.id }}" value="{{ trans.id }}"
-                                                                                    {% if selected_accommodation and selected_accommodation.id == trans.id %}checked{% endif %}>
+                                                                                <input class="form-check-input" type="radio" name="selected_transport" id="acc{{ trans.id }}" value="{{ trans.id }}"
+                                                                                    {% if selected_transport and selected_transport.id == trans.id %}checked{% endif %}>
                                                                                 <label class="form-check-label" for="acc{{ trans.id }}">
                                                                                     Select
                                                                                 </label>
@@ -266,12 +269,77 @@
                                                             {% endfor %}
                                                         </div>
                                                     </div>
-                                                
+                                                </div>
+                                                    <hr class="w-100 bg-black"/>
+                                              
+                                                      
+                                                    <div class="place-content pb-1">
+                                                        <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                            <div class="overflow-hidden">
+                                                              <h6 class="mb-2 d-inline-flex align-items-center text-truncate">
+                                                                <a href="flight-details.html">Translators (Optional)</a>
+                                                              </h6>
+                                                            </div>
+                                                          </div>
+                                                          
+                                                          <div class="card-body p-0">                                                                 
+                                                            <div class="accordion accordion-list">
+                                                                <div class="accordion-item border-bottom p-3">
+                                                                    <div class="accordion-header">
+                                                                        <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-populars" aria-expanded="true" aria-controls="accordion-populars" role="button">
+                                                                            <i class="isax isax-ranking me-2 text-primary"></i>Popular Languages
+                                                                        </div>
+                                                                    </div>
+                                                                    <div id="accordion-populars" class="accordion-collapse collapse show">
+                                                                        <div class="accordion-body pt-2 d-flex flex-wrap">
+                                                                            {% for lang in languages_ %}
+                                                                          <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
+                                                                            <input class="form-check-input ms-0 mt-0" name="language[]" type="checkbox" value="{{lang.code}}">
+                                                                            <label class="form-check-label ms-2" for="lang1">{{lang.name}}</label>
+                                                                          </div>
+                                                                            {% endfor %}
+                                                                        </div>
+                                                                      </div>                                                                              
+                                                                </div>
+                                                            </div>
+                                                    </div>
+                                          
+                                                    </div>
+
+                                                    <hr class="w-100 bg-black"/>
+                                                      
+                                                    <div class="place-content pb-1">
+                                                        <div class="d-flex align-items-center justify-content-between flex-wrap">
+                                                            <div class="overflow-hidden">
+                                                              <h6 class="mb-2 d-inline-flex align-items-center text-truncate">
+                                                                <a href="flight-details.html">Security Guard (Optional)</a>
+                                                              </h6>
+                                                            </div>
+                                                          </div>
+                                                          
+                                                          <div class="d-flex align-items-center flex-wrap">
+                                                            <p class="me-3 mb-3 d-inline-flex align-items-center">
+                                                              <i class="isax isax-tick-circle5 text-success me-1"></i>Personal Safety & Protection
+                                                            </p>
+                                                            <p class="mb-3 d-inline-flex align-items-center">
+                                                              <i class="isax isax-tick-circle5 text-success me-1"></i>Assistance in Emergencies
+                                                            </p>
+                                                          </div>                                                          
+                                                        <div class="d-flex align-items-center flex-wrap">
+                                                            <div class="btn btn-primary btn-md">
+                                                                <div class="form-check d-flex align-items-center ps-0">
+                                                                    <input class="form-check-input ms-0 mt-0 border border-white" name="security" type="checkbox" id="book1" checked="">
+                                                                    <label class="form-check-label fs-13 text-white ms-2" for="book1">Select</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                          
+                                                    </div>
                                                     <button type="submit" class="btn btn-primary mt-3">Save Selected Accommodation</button>
                                                 </form>
                                                 
                                                 <div class="owl-dots disabled"></div>
-                                            </div>
+                                          
                                         </div>
                                     </section>
                                     <!-- /Itinerary -->
@@ -279,8 +347,25 @@
 
                                 </div>
                             </div>
+
+
                             <div id="total_price_container" class="d-flex align-items-center justify-content-end flex-wrap gap-2 mt-3">
                                 {% include 'partials/tour/_total_price_button.html' with total_price=None %}
+                                <span id="spinner" class="loader"></span>
+                                <style>.loader { display: none; /* hide initially */ width: 24px; height: 24px; border: 3px solid #FFF; border-bottom-color: transparent; border-radius: 50%; box-sizing: border-box; animation: rotation 1s linear infinite; margin-left: 8px;}@keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }} </style>
+                                <script>
+                                    const spinner = document.getElementById('spinner');
+                                  
+                                    // Show spinner when HTMX request starts
+                                    document.body.addEventListener('htmx:configRequest', function () {
+                                      spinner.style.display = 'inline-block';
+                                    });
+                                  
+                                    // Hide spinner when HTMX request completes
+                                    document.body.addEventListener('htmx:afterRequest', function () {
+                                      spinner.style.display = 'none';
+                                    });
+                                  </script>
                             </div>
                             
                         </div>
@@ -291,11 +376,11 @@
 
             </div>
             <!-- /Review Order Details -->
-
         </div>
     </div>
     <!-- /Page Wrapper -->
 
+    <!-- Accommodation Modal With Their Scrpit -->
     <div class="modal fade" id="accommodationModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
@@ -306,7 +391,7 @@
             <div class="modal-body">
               <div class="row gy-4">
                 <div class="col-md-5">
-                  <img id="accModalMainImage" src="" class="img-fluid rounded w-100" alt="">
+                    <img id="accModalMainImage" src="" class="modal-main-image" alt="">
                 </div>
                 <div class="col-md-7">
                   <h5 id="accModalName"></h5>
@@ -320,16 +405,23 @@
                   <p><strong>Rating:</strong> <span id="accModalRatingStars"></span></p>
                 </div>
                 <div class="col-12">
-                  <h6>Gallery</h6>
+                  <h6 class="mb-2">Gallery</h6>
                   <div class="d-flex flex-wrap gap-2" id="accModalGallery"></div>
+                  
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-
+      <style>
+          .modal-main-image {
+            width: 100%;
+            height: 320px; /* or whatever fits your layout */
+            object-fit: cover;
+            border-radius: 10px;
+            }
+      </style>
       <script>
         document.getElementById('accommodationModal').addEventListener('show.bs.modal', function (event) {
             const trigger = event.relatedTarget;
@@ -375,17 +467,113 @@
             // Gallery images
             const gallery = document.getElementById('accModalGallery');
             gallery.innerHTML = '';
-            imageList.split(',').forEach(url => {
-                if (url.trim()) {
-                    const img = document.createElement('img');
-                    img.src = url.trim();
-                    img.className = 'rounded';
-                    img.style = 'width: 80px; height: 60px; object-fit: cover;';
-                    gallery.appendChild(img);
-                }
-            });
+            imageList.split(',').forEach(item => {
+            const [url, caption] = item.split('||'); // Split URL and caption if exists
+            if (url.trim()) {
+                const img = document.createElement('img');
+                img.src = url.trim();
+                img.className = 'rounded cursor-pointer';
+                img.style = 'width: 80px; height: 60px; object-fit: cover;';
+                img.setAttribute('data-full', url.trim());
+                img.setAttribute('data-caption', caption || '');
+                
+                // Click: replace main image
+                img.addEventListener('click', function () {
+                    document.getElementById('accModalMainImage').src = this.getAttribute('data-full');
+
+                    const captionText = this.getAttribute('data-caption');
+                    const captionElem = document.getElementById('accModalMainCaption');
+                    if (captionElem) captionElem.textContent = captionText || '';
+                });
+
+                gallery.appendChild(img);
+            }
+        });
+
         });
         </script>
+    <!-- Transport Modal With Their Script -->
+    <div class="modal fade" id="transportModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="transModalTitle">Transport Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row gy-4">
+                <div class="col-md-5">
+                    <img id="transModalMainImage" src="" class="modal-main-image" alt="">
+                </div>
+                <div class="col-md-7">
+                  <h5 id="transModalCompanyName"></h5>
+                  <p><strong>Type:</strong> <span id="transModalType"></span></p>
+                  <p><strong>Description:</strong> <span id="transModalDescription"></span></p>
+                  <p><strong>Vehicle Number:</strong> <span id="transModalVehicleNumber"></span></p>
+                  <p><strong>Seats Available:</strong> <span id="transModalSeatsAvailable"></span></p>
+                  <p><strong>Departure Location:</strong> <span id="transModalDepartureLocation"></span></p>
+                  <p><strong>Arrival Location:</strong> <span id="transModalArrivalLocation"></span></p>
+                  <p><strong>Departure Time:</strong> <span id="transModalDepartureTime"></span></p>
+                  <p><strong>Arrival Time:</strong> <span id="transModalArrivalTime"></span></p>
+                  <p><strong>Price / Night:</strong> $<span id="transModalPrice"></span></p>
+                </div>
+                <div class="col-12">
+                  <h6 class="mb-2">Gallery</h6>
+                  <div class="d-flex flex-wrap gap-2" id="transModalGallery"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>      
+      <script>
+        document.getElementById('transportModal').addEventListener('show.bs.modal', function (event) {
+          const trigger = event.relatedTarget;
         
+          const type = trigger.getAttribute('data-type');
+          const company_name = trigger.getAttribute('data-company_name');
+          const description = trigger.getAttribute('data-description');
+          const vehicle_number = trigger.getAttribute('data-vehicle_number');
+          const seats_available = trigger.getAttribute('data-seats_available');
+          const departure_location = trigger.getAttribute('data-departure_location');
+          const arrival_location = trigger.getAttribute('data-arrival_location');
+          const departure_time = trigger.getAttribute('data-departure_time');
+          const arrival_time = trigger.getAttribute('data-arrival_time');
+          const price = trigger.getAttribute('data-price');
+          const mainImage = trigger.getAttribute('data-image');
+          const imageList = trigger.getAttribute('data-images') || '';
+        
+          document.getElementById('transModalTitle').textContent = company_name;
+          document.getElementById('transModalCompanyName').textContent = company_name;
+          document.getElementById('transModalType').textContent = type;
+          document.getElementById('transModalDescription').textContent = description;
+          document.getElementById('transModalVehicleNumber').textContent = vehicle_number;
+          document.getElementById('transModalSeatsAvailable').textContent = seats_available || 'N/A';
+          document.getElementById('transModalDepartureLocation').textContent = departure_location || 'N/A';
+          document.getElementById('transModalArrivalLocation').textContent = arrival_location || 'N/A';
+          document.getElementById('transModalDepartureTime').textContent = departure_time;
+          document.getElementById('transModalArrivalTime').textContent = arrival_time;
+          document.getElementById('transModalPrice').textContent = price;
+        
+          document.getElementById('transModalMainImage').src = mainImage;
+        
+          const gallery = document.getElementById('transModalGallery');
+          gallery.innerHTML = '';
+          imageList.split(',').forEach(url => {
+  if (url.trim()) {
+    const img = document.createElement('img');
+    img.src = url.trim();
+    img.className = 'rounded';
+    img.style = 'width: 80px; height: 60px; object-fit: cover; cursor: pointer;';
+    
+    // 🔁 Clicking gallery image updates main image
+    img.addEventListener('click', () => {
+      document.getElementById('transModalMainImage').src = img.src;
+    });
 
+    gallery.appendChild(img);
+  }
+});
+        });
+        </script>        
     {% endblock %}

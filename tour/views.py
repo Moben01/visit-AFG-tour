@@ -122,32 +122,61 @@ def tour_booking(request, slug):
     get_tour_categories = TourCategory.objects.all()
     accommodation = Accommodation.objects.all()
     transport = Transport.objects.all()
+    languages_ = Languages.objects.all()
+    security_guards = SecurityGuard.objects.all()
 
     selected_accommodation = None
     selected_transport = None
     total_price = 0
 
+
+
     if request.method == 'POST' and request.htmx:
         accommodation_id = request.POST.get('selected_accommodation')
         transport_id = request.POST.get('selected_transport')
+        selected_languages = request.POST.getlist('language[]')  # This returns a list of all selected values (lang.code)
+        security_gard = request.POST.get('security')  # returns 'on' if checked, or None if not
 
         total_price = 0
         if accommodation_id:
             selected_accommodation = get_object_or_404(Accommodation, id=accommodation_id)
-            total_price += selected_accommodation.price_per_night
+            total_price += selected_accommodation.total_price
         else:
             selected_accommodation = None
 
         if transport_id:
             selected_transport = get_object_or_404(Transport, id=transport_id)
-            total_price += selected_transport.price
+            total_price += selected_transport.total_price
         else:
             selected_transport = None
+
+        selected_language_objs = []
+        if selected_languages:
+            selected_language_objs = Languages.objects.filter(code__in=selected_languages)
+            total_price = sum(lang.total_price for lang in selected_language_objs)
+        else:
+            selected_languages = None
+        
+        # ✅ SECURITY GUARD LOGIC
+        if security_gard and selected_language_objs:
+            from django.db.models import Count, Q
+
+            find_security_guard = (
+                SecurityGuard.objects
+                .annotate(match_count=Count('languages', filter=Q(languages__in=selected_language_objs), distinct=True))
+                .filter(match_count=selected_language_objs.count())
+                .last()
+            )
+
+            if find_security_guard:
+                total_price += find_security_guard.total_price
+        else:
+            security_gard = None
 
         return render(request, 'partials/tour/_total_price_button.html', {
             'total_price': total_price,
         })
-            
+
     context = {
         'get_tour_categories':get_tour_categories,
         'find_tour':find_tour,
@@ -156,6 +185,8 @@ def tour_booking(request, slug):
         'transport':transport,
         'selected_accommodation':selected_accommodation,
         'total_price':total_price,
+        'languages_':languages_,
+        'security_guards':security_guards,
     }
     
     return render(request, 'tour/tour-booking.html', context)

@@ -89,3 +89,7 @@ class TransportImageInline(admin.TabularInline):
 class TransportAdmin(admin.ModelAdmin):
     list_display = ['type', 'departure_location', 'arrival_location', 'departure_time', 'price']
     inlines = [TransportImageInline]
+
+admin.site.register(Languages)
+admin.site.register(Translator)
+admin.site.register(SecurityGuard)
