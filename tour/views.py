@@ -6,6 +6,7 @@ from tour.forms import *
 from django.contrib import messages
 from django.http import HttpResponse
 import stripe
+from decimal import Decimal
 from django.conf import settings
 import json
 from django.http import JsonResponse
@@ -117,6 +118,9 @@ def tour_details(request, slug):
 
 
 def tour_booking(request, slug):
+    selected_accommodation = None
+    selected_transport = None
+
     find_tour = Tour.objects.get(slug=slug)
     get_interary = ItineraryItem.objects.filter(tour=find_tour)
     get_tour_categories = TourCategory.objects.all()
@@ -125,11 +129,15 @@ def tour_booking(request, slug):
     languages_ = Languages.objects.all()
     security_guards = SecurityGuard.objects.all()
 
-    selected_accommodation = None
-    selected_transport = None
-    total_price = 0
+    # Get selected transport and accommodation from itinerary items
+    selected_transports = set(item.transport for item in get_interary if item.transport)
+    selected_accommodations = set(item.accommodation for item in get_interary if item.accommodation)
 
+    # Calculate total price
+    total_transport_price = sum(t.total_price for t in selected_transports)
+    total_accommodation_price = sum(a.total_price for a in selected_accommodations)
 
+    total_price = Decimal(total_transport_price) + Decimal(total_accommodation_price)
 
     if request.method == 'POST' and request.htmx:
         accommodation_id = request.POST.get('selected_accommodation')
@@ -137,23 +145,22 @@ def tour_booking(request, slug):
         selected_languages = request.POST.getlist('language[]')  # This returns a list of all selected values (lang.code)
         security_gard = request.POST.get('security')  # returns 'on' if checked, or None if not
 
-        total_price = 0
+        # Here we reset total price, **only add newly selected items prices**
+        total_price = Decimal('0')
+
         if accommodation_id:
             selected_accommodation = get_object_or_404(Accommodation, id=accommodation_id)
-            total_price += selected_accommodation.total_price
-        else:
-            selected_accommodation = None
+            total_price += Decimal(selected_accommodation.total_price)
 
         if transport_id:
             selected_transport = get_object_or_404(Transport, id=transport_id)
-            total_price += selected_transport.total_price
-        else:
-            selected_transport = None
+            total_price += Decimal(selected_transport.total_price)
 
         selected_language_objs = []
+
         if selected_languages:
             selected_language_objs = Languages.objects.filter(code__in=selected_languages)
-            total_price = sum(lang.total_price for lang in selected_language_objs)
+            total_price += sum((Decimal(lang.total_price) for lang in selected_language_objs), Decimal('0'))
         else:
             selected_languages = None
         
@@ -169,13 +176,16 @@ def tour_booking(request, slug):
             )
 
             if find_security_guard:
-                total_price += find_security_guard.total_price
+                total_price += Decimal(find_security_guard.total_price)
         else:
             security_gard = None
+
 
         return render(request, 'partials/tour/_total_price_button.html', {
             'total_price': total_price,
         })
+
+    request.session['totalprice'] = float(total_price)
 
     context = {
         'get_tour_categories':get_tour_categories,
@@ -187,87 +197,13 @@ def tour_booking(request, slug):
         'total_price':total_price,
         'languages_':languages_,
         'security_guards':security_guards,
+        'selected_transports': selected_transports,
+        'selected_accommodations': selected_accommodations,
     }
     
     return render(request, 'tour/tour-booking.html', context)
 
 
-# @login_required
-# def tour_booking(request, slug):
-#     find_tour = Tour.objects.get(slug=slug)
-
-#     # ✅ Always delete old "ready to book" records for this user
-#     Ready_tour_for_booking.objects.filter(user=request.user).delete()
-
-#     # ✅ Then create a new one for the selected tour
-#     Ready_tour_for_booking.objects.create(
-#         tour=find_tour,
-#         user=request.user
-#     )
-#     user_id = request.user.id
-#     find_user = User.objects.get(id=user_id)
-#     cart = Ready_tour_for_booking.objects.filter(user=find_user)
-#     total_price = 0
-
-#     items = []
-
-
-#     if request.method == "POST":
-#         form = BookingForm(request.POST)
-#         if form.is_valid():
-#             instance = form.save(commit=False)
-#             instance.tour = find_tour
-#             instance.user = find_user
-#             for item in cart:
-#                 product = item.tour  # product is Tour instance
-#                 total_price += int(product.price * 100)  # convert to cents for Stripe
-
-#                 items.append({
-#                     'price_data': {
-#                         'currency': 'usd',
-#                         'product_data': {
-#                             'name': product.title,  # usually Tour uses title, not name
-#                             'images': [request.build_absolute_uri(product.image.url)],  # must be publicly accessible HTTPS URL
-#                         },
-#                         'unit_amount': int(product.price * 100),  # Stripe expects amount in cents as int
-#                     },
-#                     'quantity': 1,
-#                 })
-
-#             stripe.api_key = settings.STRIPE_SECRET_KEY
-#             session = stripe.checkout.Session.create(
-#                 payment_method_types=['card'],
-#                 line_items=items,
-#                 mode='payment',
-#                 success_url='http://127.0.0.1:8000/cart/success/',
-#                 cancel_url='http://127.0.0.1:8000/cart/'
-#             )
-#             instance.save()
-#             return redirect(session.url, code=303)  # 303 redirect to Stripe checkout
-#         else:
-#             messages.warning(request, 'Form has Error')
-#     else:
-#         form = BookingForm()
-
-#     get_tour_categories = TourCategory.objects.all()
-
-#     context = {
-#         'get_tour_categories':get_tour_categories,
-#         'find_tour':find_tour,
-#         'form':form,
-#     }
-    
-#     return render(request, 'tour/tour-booking.html', context)
-
-
-
-
-
-from django.shortcuts import render
-
-from django.shortcuts import render, redirect
-from .forms import TranslatorForm
-from tour.models import TourCategory
 def translator_view(request):
     message = ""  # پیام خالی در ابتدا
     form = TranslatorForm()
@@ -346,3 +282,45 @@ def user_newsfeed(request):
         'all_tours_assignment':all_tours_assignment,
     }
     return render(request, 'tour_involve/tg_doc_newsfeed.html', context)
+
+@login_required
+def payment(request):
+    selected_accommodation = request.session.get('totalprice', None)
+
+    html_content = f"""
+    <html>
+      <head>
+        <style>
+          /* Spinner CSS */
+          .spinner {{
+            margin: 20px auto;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #ccc;
+            border-top: 4px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+          }}
+
+          @keyframes spin {{
+            0% {{ transform: rotate(0deg); }}
+            100% {{ transform: rotate(360deg); }}
+          }}
+
+          .message {{
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+          }}
+        </style>
+      </head>
+      <body>
+        <div class="message">Payment Is In Processing .... {selected_accommodation}</div>
+        <div class="spinner"></div>
+      </body>
+    </html>
+    """
+
+    return HttpResponse(html_content)

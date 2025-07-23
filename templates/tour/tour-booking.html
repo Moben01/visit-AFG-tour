@@ -184,8 +184,11 @@
                                                                                 {{ acc.price_per_night }} <span class="fs-12 fw-normal text-default">/ Night</span>
                                                                             </h6>
                                                                             <div class="form-check mb-0">
-                                                                                <input class="form-check-input" type="radio" name="selected_accommodation" id="acc{{ acc.id }}" value="{{ acc.id }}"
-                                                                                    {% if selected_accommodation and selected_accommodation.id == acc.id %}checked{% endif %}>
+                                                                                <!-- <input class="form-check-input" type="radio" name="selected_accommodation" id="acc{{ acc.id }}" value="{{ acc.id }}"
+                                                                                    {% if selected_accommodation and selected_accommodation.id == acc.id %}checked{% endif %}> -->
+                                                                                    <input class="form-check-input" type="radio" name="selected_accommodation" id="acc{{ acc.id }}" value="{{ acc.id }}"
+                                                                                        {% if acc in selected_accommodations %}checked{% endif %} style="transform: scale(1.5); margin-right: 5px;">
+
                                                                                 <label class="form-check-label" for="acc{{ acc.id }}">
                                                                                     Select
                                                                                 </label>
@@ -256,8 +259,11 @@
                                                                                 {{ trans.price }} <span class="fs-12 fw-normal text-default">/ Night</span>
                                                                             </h6>
                                                                             <div class="form-check mb-0">
-                                                                                <input class="form-check-input" type="radio" name="selected_transport" id="acc{{ trans.id }}" value="{{ trans.id }}"
-                                                                                    {% if selected_transport and selected_transport.id == trans.id %}checked{% endif %}>
+                                                                                <!-- <input class="form-check-input" type="radio" name="selected_transport" id="acc{{ trans.id }}" value="{{ trans.id }}"
+                                                                                    {% if selected_transport and selected_transport.id == trans.id %}checked{% endif %}> -->
+                                                                                    <input class="form-check-input" type="radio" name="selected_transport" id="acc{{ trans.id }}" value="{{ trans.id }}"
+                                                                                        {% if trans in selected_transports %}checked{% endif %} style="transform: scale(1.5); margin-right: 5px;">
+    
                                                                                 <label class="form-check-label" for="acc{{ trans.id }}">
                                                                                     Select
                                                                                 </label>
@@ -350,7 +356,10 @@
 
 
                             <div id="total_price_container" class="d-flex align-items-center justify-content-end flex-wrap gap-2 mt-3">
-                                {% include 'partials/tour/_total_price_button.html' with total_price=None %}
+                                <a href="{% url 'tour:payment' %}" class="btn btn-primary d-inline-flex align-items-center justify-content-center px-4 py-2" id="total_price">
+                                    Confirm & Pay {% if total_price %}${{ total_price }}{% else %}--{% endif %}
+                                </a>
+
                                 <span id="spinner" class="loader"></span>
                                 <style>.loader { display: none; /* hide initially */ width: 24px; height: 24px; border: 3px solid #FFF; border-bottom-color: transparent; border-radius: 50%; box-sizing: border-box; animation: rotation 1s linear infinite; margin-left: 8px;}@keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }} </style>
                                 <script>

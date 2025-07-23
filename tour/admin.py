@@ -1,11 +1,10 @@
 from django.contrib import admin
 from .models import *
+from django import forms
 
 class TourImageInline(admin.TabularInline):
     model = TourImage
     extra = 1
-
-
 
 
 @admin.register(TourCategory)
@@ -35,10 +34,20 @@ class TourGuideInterestInline(admin.TabularInline):
     show_change_link = True
 
 
+# Custom form for injecting JS
+class TourAdminForm(forms.ModelForm):
+    class Meta:
+        model = Tour
+        fields = '__all__'
+
+    class Media:
+        js = ('admin/js/tour_form.js',)  # Make sure this path is correct
+
 @admin.register(Tour)
 class TourAdmin(admin.ModelAdmin):
+    form = TourAdminForm
     list_display = ('title', 'start_date', 'location', 'available', 'get_assigned_guide')
-    list_filter = ( 'available', 'start_date')
+    list_filter = ('available', 'start_date')
     search_fields = ('title', 'location')
     prepopulated_fields = {'slug': ('title',)}
     inlines = [TourGuideInterestInline]
@@ -51,14 +60,6 @@ class TourAdmin(admin.ModelAdmin):
     get_assigned_guide.short_description = 'Assigned Guide'
 
 
-# @admin.register(TourGuideInterest)
-# class TourGuideInterestAdmin(admin.ModelAdmin):
-#     list_display = ('tour', 'guide', 'applied_at', 'is_shortlisted', 'is_selected')
-#     list_filter = ('is_shortlisted', 'is_selected', 'applied_at')
-#     search_fields = ('guide__username', 'tour__title')
-#     autocomplete_fields = ('tour', 'guide')
-
-
 @admin.register(TourGuideAssignment)
 class TourGuideAssignmentAdmin(admin.ModelAdmin):
     list_display = ('tour', 'assigned_at', 'bonus_amount')
@@ -66,7 +67,19 @@ class TourGuideAssignmentAdmin(admin.ModelAdmin):
     autocomplete_fields = ('tour',)
 
 
-admin.site.register(ItineraryItem)
+class ItineraryItemForm(forms.ModelForm):
+    class Meta:
+        model = ItineraryItem
+        fields = '__all__'
+
+    class Media:
+        js = ('admin/js/itinerary_filter.js',)  # We'll write this JS file next
+
+@admin.register(ItineraryItem)
+class ItineraryItemAdmin(admin.ModelAdmin):
+    form = ItineraryItemForm
+
+    
 admin.site.register(Frequently_asked_questions)
 admin.site.register(User_favorite_tour)
 admin.site.register(Ready_tour_for_booking)

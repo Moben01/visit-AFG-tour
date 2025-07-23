@@ -12,4 +12,5 @@ urlpatterns = [
    path('tour_guide_view/', views.tour_guide_view, name='tour_guide_view'), 
    path('dashboard/', views.tg_doc_dashboard, name='tg_doc_dashboard'),
    path('user_newsfeed/', views.user_newsfeed, name='user_newsfeed'),
+   path('payment/', views.payment, name='payment'),
 ]
