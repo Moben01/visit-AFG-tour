@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+<div class="breadcrumb-bar breadcrumb-bg-04 text-center">
+        <div class="container">
+
+            {% block breadcrump %}
+
+
+
+
+                      
+            {% endblock %}
+          
+        </div>
+    </div>
+
+    <div class="content" style="transform: none;">
+        <div class="container" style="transform: none;">
+
+            <div class="row" style="transform: none;">
+
+               <div class="col-xl-3 col-lg-4 theiaStickySidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px; transform: none;">
+                    
+                <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none; left: 120px; top: 0px; overflow: visible; box-sizing: border-box; min-height: 1px;"><div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: static; transform: none;"><div class="card user-sidebar mb-4">
+                        <div class="card-header user-sidebar-header">
+                            <div class="profile-content rounded-pill">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div class=" d-flex align-items-center justify-content-center">
+                                        <img src="assets/img/users/user-01.jpg" alt="image" class="img-fluid avatar avatar-lg rounded-circle me-1">
+                                        <div>
+                                            <h6 class="fs-16">Jeffrey Wilson</h6>
+                                            <span class="fs-14 text-gray-6">Since 10 May 2025</span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <a href="profile-settings.html" class="p-1 rounded-circle btn btn-light d-flex align-items-center justify-content-center"><i class="isax isax-edit-2 fs-14"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body user-sidebar-body">
+                            <ul>
+                                <li>
+                                    <span class="fs-14 text-gray-3 fw-medium mb-2">Main</span>
+                                </li>
+                                <li>
+                                    <a href="dashboard.html" class="d-flex align-items-center active">
+                                        <i class="isax isax-grid-55"></i> Dashboard
+                                    </a>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="d-block subdrop"><i class="isax isax-calendar-tick5"></i><span>My Tours</span><span class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li>
+                                            <a href="customer-flight-booking.html" class="fs-14 d-inline-flex align-items-center">All Bookings</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'tour:up_commoing_tours' %}" class="fs-14 d-inline-flex align-items-center">Upcomming</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-car-booking.html" class="fs-14 d-inline-flex align-items-center">Pending</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-cruise-booking.html" class="fs-14 d-inline-flex align-items-center">Completed</a>
+                                        </li>
+                                        <li>
+                                            <a href="customer-tour-booking.html" class="fs-14 d-inline-flex align-items-center">Cancelled</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="review.html" class="d-flex align-items-center">
+                                        <i class="isax isax-magic-star5"></i> My Reviews
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="message-content">
+                                        <a href="chat.html" class="d-flex align-items-center">
+                                            <i class="isax isax-message-square5"></i> Messages
+                                        </a>
+                                        <span class="msg-count rounded-circle">02</span>
+                                    </div>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="wishlist.html" class="d-flex align-items-center">
+                                        <i class="isax isax-heart5"></i> Wishlist
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="fs-14 text-gray-3 fw-medium mb-2">Finance</span>
+                                </li>
+                                <li>
+                                    <a href="wallet.html" class="d-flex align-items-center">
+                                        <i class="isax isax-wallet-add-15"></i> Wallet
+                                    </a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="payment.html" class="d-flex align-items-center">
+                                        <i class="isax isax-money-recive5"></i> Payments
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="fs-14 text-gray-3 fw-medium mb-2">Account</span>
+                                </li>
+                                <li>
+                                    <a href="my-profile.html" class="d-flex align-items-center">
+                                        <i class="isax isax-profile-tick5"></i> My Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="message-content">
+                                        <a href="notification.html" class="d-flex align-items-center">
+                                            <i class="isax isax-notification-bing5"></i> Notifications
+                                        </a>
+                                        <span class="msg-count bg-purple rounded-circle">05</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="profile-settings.html" class="d-flex align-items-center">
+                                        <i class="isax isax-setting-25"></i> Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="index.html" class="d-flex align-items-center pb-0">
+                                        <i class="isax isax-logout-15"></i> Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 316px; height: 667px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 340px; height: 1765px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div></div>
+
+                 
+                {% block main %}
+
+
+
+
+                      
+                {% endblock %}
+
+
+
+            
+            </div>
+        </div>
+    </div>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+{% endblock %}

@@ -10,8 +10,9 @@ from decimal import Decimal
 from django.conf import settings
 import json
 from django.http import JsonResponse
-
-
+from django.db import transaction
+from django.views.decorators.http import require_POST
+from django.http import HttpResponseRedirect
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
 
@@ -276,12 +277,23 @@ def tg_doc_dashboard(request):
 @login_required
 def user_newsfeed(request):
     user = request.user
-    all_tours_assignment = TourGuideAssignment.objects.filter(status = True) 
+    user_type = user.my_choice_field  # Accessing the custom field
+
+    all_tours_assignment = TourGuideAssignment.objects.filter(status=True)
 
     context = {
-        'all_tours_assignment':all_tours_assignment,
+        'all_tours_assignment': all_tours_assignment,
     }
-    return render(request, 'tour_involve/tg_doc_newsfeed.html', context)
+
+    # Conditionally render different templates based on user type
+    if user_type == 'Tourist':
+        return render(request, 'tour/tourist_newsfeed.html', context)
+    elif user_type == 'Guide':
+        return render(request, 'tour_involve/guide_newsfeed.html', context)
+    else:
+        return render(request, 'tour_involve/default_newsfeed.html', context)
+    
+
 
 @login_required
 def payment(request):
@@ -324,3 +336,245 @@ def payment(request):
     """
 
     return HttpResponse(html_content)
+
+
+
+
+@login_required
+def up_commoing_tours(request):
+    user = request.user
+    user_type = user.my_choice_field  # Accessing the custom field
+
+    upcomming_tours = Booking.objects.filter(situation='upcoming', user=user)
+
+    context = {
+        'upcomming_tours': upcomming_tours,
+    }
+
+    # Conditionally render different templates based on user type
+    return render(request, 'tour/upcomming_tours/tourist_upcomming_tour.html', context)
+    
+    
+
+
+
+
+@login_required
+def up_commoing_tours_more_info(request, id):
+    booking = get_object_or_404(Booking, id=id, user=request.user)
+    edit_mode = request.GET.get('edit') == '1'
+
+    # Ensure 0..1 object per booking
+    pre_arrival = PreArrivalRequirement.objects.filter(booking=booking).first()
+
+    # When not editing and a record exists: hide form
+    show_form = edit_mode or (pre_arrival is None)
+
+    form = PreArrivalRequirementForm(
+        request.POST or None,
+        request.FILES or None,
+        instance=pre_arrival
+    )
+
+    tour = booking.tour
+    itinerary_items = tour.itinerary_items.all().order_by('day_number')
+
+    if request.method == 'POST':
+        if form.is_valid():
+            with transaction.atomic():
+                instance = form.save(commit=False)
+                instance.user = request.user
+                instance.booking = booking
+
+                # Optionally: clear fields based on visa_status like we set earlier
+                status = instance.visa_status
+                if status == 'yes':
+                    instance.passport_copy = None
+                    instance.travel_start_date = None
+                    instance.travel_end_date = None
+                    instance.embassy_location = ''
+                    instance.emergency_contact_name = ''
+                    instance.emergency_contact_phone = ''
+                    instance.emergency_contact_email = None
+                    instance.has_insurance = False
+                    instance.insurance_copy = None
+                    instance.has_medical_conditions = False
+                    instance.medical_notes = ''
+                    instance.needs_afghan_sim = False
+                    instance.safety_guideline_accepted = False
+                elif status == 'no':
+                    if instance.visa_copy:
+                        try:
+                            instance.visa_copy.delete(save=False)
+                        except Exception:
+                            pass
+                        instance.visa_copy = None
+
+                instance.save()
+
+            messages.success(request, "Your pre-arrival information was saved.")
+            # Redirect WITHOUT ?edit=1 so the form is hidden after save
+            return redirect('tour:up_commoing_tours_more_info', id=booking.id)
+
+        messages.error(request, "Please fix the errors below.")
+
+    context = {
+        'form': form,
+        'booking': booking,
+        'pre_arrival': pre_arrival,
+        'show_form': show_form,
+        'itinerary_items': itinerary_items,
+    }
+    return render(request, 'tour/upcomming_tours/tourist_upcomming_tour_details.html', context)
+
+
+
+
+@login_required
+def pre_arrival_form(request, id):
+    booking = get_object_or_404(Booking, id=id, user=request.user)
+    tour = booking.tour
+    itinerary_items = tour.itinerary_items.all().order_by('day_number')
+
+
+
+    # One-to-one: either edit existing or create new
+    instance = getattr(booking, 'pre_arrival', None)
+
+    if request.method == 'POST':
+        form = PreArrivalForm(request.POST, request.FILES, instance=instance)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.user = request.user
+            obj.booking = booking
+            obj.save()
+
+            return redirect('tour:pre_arrival_form', id=booking.id)
+    else:
+        form = PreArrivalForm(instance=instance)
+
+    return render(request, 'tour/upcomming_tours/tourist_pre_arrival_info.html', {
+        'form': form,
+        'booking': booking,
+        'instance': instance,
+        'itinerary_items':itinerary_items,
+    })
+
+
+
+
+@login_required
+def pickup_plan_edit(request, booking_id):
+
+    booking = get_object_or_404(Booking, id=booking_id)
+    instance = getattr(booking, 'pickup', None)
+    tour = booking.tour
+    itinerary_items = tour.itinerary_items.all().order_by('day_number')
+
+
+    if request.method == 'POST':
+        form = PickupPlanForm(request.POST, request.FILES, instance=instance)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.booking = booking
+            # tip: prefill from pre_arrival if empty
+            if not obj.entry_point_code and hasattr(booking, 'pre_arrival'):
+                obj.entry_point_code = booking.pre_arrival.entry_point
+                obj.entry_point_label = booking.pre_arrival.get_entry_point_display()
+            obj.save()
+            return redirect('pickup_plan_detail', booking_id=booking.id)
+    else:
+        form = PickupPlanForm(instance=instance)
+
+    return render(request, 'tour/upcomming_tours/tourist_arrival_pickup.html', {
+        'booking': booking, 'form': form, 'instance': instance, 'itinerary_items':itinerary_items,
+    })
+
+@login_required
+def pickup_plan_detail(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    tour = booking.tour
+    itinerary_items = tour.itinerary_items.all().order_by('day_number')
+
+    pickup = getattr(booking, 'pickup', None)
+    return render(request, 'tour/upcomming_tours/tourist_arrival_pickup.html', {
+        'booking': booking, 'pickup': pickup, 'itinerary_items':itinerary_items,
+    })
+
+
+@login_required
+@require_POST
+def pickup_update_status(request, booking_id):
+    pickup = get_object_or_404(PickupPlan, booking_id=booking_id)
+    new_status = request.POST.get('status')
+    if new_status in dict(PickupPlan.STATUS):
+        pickup.status = new_status
+        if new_status == 'picked_up':
+            pickup.mark_picked_up()
+        else:
+            pickup.save(update_fields=['status','updated_at'])
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+
+
+
+@login_required
+def welcome_package_detail(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    tour = booking.tour
+    itinerary_items = tour.itinerary_items.all().order_by('day_number')
+
+
+    # Restrict access so only the booking owner or staff can view
+    if request.user != booking.user and not request.user.is_staff:
+        return render(request, "403.html", status=403)
+
+    package = getattr(booking, 'welcome_package', None)
+
+    # For an elegant empty state
+    gifts = package.gifts.all() if package else []
+
+    return render(request, "tour/upcomming_tours/tourist_wellcom_package.html", {
+        "booking": booking,
+        "package": package,
+        "gifts": gifts,
+        'itinerary_items':itinerary_items,
+    })
+
+
+
+def itenary_full_info(request, id, booking_id ):
+    booking = get_object_or_404(Booking, id=booking_id)
+    tour = booking.tour
+    itinerary_items = tour.itinerary_items.all().order_by('day_number')
+
+    item_id = id
+
+    item = get_object_or_404(
+        ItineraryItem.objects.select_related(
+            "tour", "accommodation", "transport", "tour_guide", "meals", "logistics"
+        ),
+        id=item_id,
+    )
+
+    # Prev / Next within the same tour by day_number
+    prev_item = (
+        ItineraryItem.objects
+        .filter(tour=item.tour, day_number__lt=item.day_number)
+        .order_by("-day_number")
+        .first()
+    )
+    next_item = (
+        ItineraryItem.objects
+        .filter(tour=item.tour, day_number__gt=item.day_number)
+        .order_by("day_number")
+        .first()
+    )
+
+    return render(request, "tour/upcomming_tours/tourist_itenary_info.html", {
+        "item": item,
+        "prev_item": prev_item,
+        "next_item": next_item,
+        "booking": booking,
+        'itinerary_items':itinerary_items,
+
+    })

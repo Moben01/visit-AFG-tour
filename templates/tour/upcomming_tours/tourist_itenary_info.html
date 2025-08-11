@@ -1,0 +1,128 @@
+{% extends 'tour/upcomming_tours/upcomming_tour_template.html'%}
+{% load static %}
+
+
+{% block main %}
+     <div class="col-lg-9" style="padding-left: 25px;">
+        {% if message %}
+            <p class="text-success messages">{{ message }}</p>
+            <script>
+                setTimeout(function() {
+                    $('.messages').fadeOut('slow');
+                }, 9000);
+            </script>
+        {% endif %}
+
+
+        <div class="container py-4">
+
+  <!-- Header / Breadcrumb -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h4 class="mb-1">Day {{ item.day_number }} — {{ item.title|default:"Itinerary" }}</h4>
+      <div class="text-muted">
+        Tour: <strong>{{ item.tour.title }}</strong> • {{ item.date|date:"M d, Y H:i" }}
+      </div>
+    </div>
+    <div class="d-flex gap-2">
+      {% if prev_item %}
+        <a class="btn btn-outline-secondary" href="">
+          ← Day {{ prev_item.day_number }}
+        </a>
+      {% endif %}
+      {% if next_item %}
+        <a class="btn btn-outline-secondary" href="">
+          Day {{ next_item.day_number }} →
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Hero image + description -->
+  <div class="card mb-4">
+    {% if item.image %}
+      <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}">
+    {% endif %}
+    <div class="card-body">
+      <p class="mb-0">{{ item.description|linebreaks }}</p>
+    </div>
+  </div>
+
+  <!-- Details grid -->
+  <div class="row g-3">
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header bg-light"><strong>Transport</strong></div>
+        <div class="card-body">
+          <p class="mb-1"><strong>Type:</strong> {{ item.get_type_of_transport_display }}</p>
+          {% if item.transport %}
+            <p class="mb-1"><strong>Vehicle:</strong> {{ item.transport.type }}</p>
+            <p class="mb-1"><strong>From → To:</strong>
+              {{ item.transport.departure_location }} → {{ item.transport.arrival_location }}</p>
+            <p class="mb-0"><strong>Departure:</strong> {{ item.transport.departure_time }}</p>
+          {% else %}
+            <p class="text-muted mb-0">No specific transport assigned.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header bg-light"><strong>Accommodation</strong></div>
+        <div class="card-body">
+          {% if item.accommodation %}
+            <p class="mb-1"><strong>Name:</strong> {{ item.accommodation.name }}</p>
+            <p class="mb-1"><strong>Type:</strong> {{ item.accommodation.type }}</p>
+            <p class="mb-1"><strong>Location:</strong> {{ item.accommodation.location }}</p>
+            <p class="mb-0"><strong>Price/Night:</strong> {{ item.accommodation.price_per_night }}</p>
+          {% else %}
+            <p class="text-muted mb-0">No accommodation specified for this day.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header bg-light"><strong>Guide</strong></div>
+        <div class="card-body">
+          {% if item.tour_guide %}
+            <p class="mb-1"><strong>Name:</strong> {{ item.tour_guide.user.get_full_name|default:item.tour_guide }}</p>
+            {% if item.tour_guide.phone %}<p class="mb-1"><strong>Phone:</strong> {{ item.tour_guide.phone }}</p>{% endif %}
+            {% if item.tour_guide.languages %}<p class="mb-0"><strong>Languages:</strong> {{ item.tour_guide.languages }}</p>{% endif %}
+          {% else %}
+            <p class="text-muted mb-0">Guide will be announced soon.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card h-100">
+        <div class="card-header bg-light"><strong>Meals & Logistics</strong></div>
+        <div class="card-body">
+          {% if item.meals %}
+            <p class="mb-1"><strong>Meals:</strong> {{ item.meals }}</p>
+          {% endif %}
+          {% if item.logistics %}
+            <p class="mb-0"><strong>Logistics:</strong> {{ item.logistics }}</p>
+          {% endif %}
+          {% if not item.meals and not item.logistics %}
+            <p class="text-muted mb-0">No meals or logistics details for this day.</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back link -->
+  <div class="mt-4">
+    <a href="" class="btn btn-outline-primary">Back to Tour</a>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

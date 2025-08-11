@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+
+
+
+
+<!-- Page Wrapper -->
+<div class="content content-two">
+    <div class="container">
+        <div class="row" style="transform: none;">
+
+            <div class="row row-cols-1 row-cols-md-3 row-cols-xl-5 justify-content-center">
+                        <div class="col p-3">
+                            <div class="card bg-success-100 border-0 shadow-none">
+                               <div class="card-body">
+                                    <h6 class="mb-1">4 Hotels</h6>
+                                    <a href="add-hotel.html" class="fs-14 fw-medium link-default text-decoration-underline">Add New Hotels</a>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-3">
+                            <div class="card bg-pink-100 border-0 shadow-none">
+                               <div class="card-body">
+                                    <h6 class="mb-1">4 Flights</h6>
+                                    <a href="add-flight.html" class="fs-14 fw-medium link-primary text-decoration-underline">Add New Flight</a>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-3">
+                            <div class="card bg-danger-100 border-0 shadow-none">
+                               <div class="card-body">
+                                    <h6 class="mb-1">5 Tours</h6>
+                                    <a href="add-tour.html" class="fs-14 fw-medium link-default text-decoration-underline">Add New Tour</a>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-3">
+                            <div class="card bg-purple-100 border-0 shadow-none">
+                               <div class="card-body">
+                                    <h6 class="mb-1">9 Cars</h6>
+                                    <a href="add-car.html" class="fs-14 fw-medium link-default text-decoration-underline">Add New Car</a>
+                               </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-3">
+                            <div class="card bg-cyan-100 border-0 shadow-none">
+                               <div class="card-body">
+                                    <h6 class="mb-1">8 Cruise</h6>
+                                    <a href="add-cruise.html" class="fs-14 fw-medium link-default text-decoration-underline">Add New Cruise</a>
+                               </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                <!-- Sidebar -->
+                <div class="col-lg-3 theiaStickySidebar" style="position: relative; overflow: visible; box-sizing: border-box; min-height: 1px; transform: none;">
+                    
+                <div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: relative; transform: none; overflow: visible; box-sizing: border-box; min-height: 1px;"><div class="theiaStickySidebar" style="padding-top: 0px; padding-bottom: 1px; position: relative; transform: none;"><div class="card border-0 mb-4 mb-lg-0">
+                        <div class="card-body">
+                            <div>
+                                <h5 class="mb-3">My Tour Dashboard</h5>
+                                <ul class="add-tab-list">
+                                     <li>
+                                        <a href="{% url 'tour:up_commoing_tours_more_info' booking.id  %}" class="active d-flex justify-content-between align-items-center mb-2">
+                                            Visa Application Support
+                                            <i class="isax isax-tick-square5 text-success ms-2"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'tour:pre_arrival_form' booking.id  %}" class="d-flex justify-content-between align-items-center mb-2">
+                                            Pre-Arrival
+                                            <i class="isax isax-tick-square5 text-success ms-2"></i>
+                                        </a>
+                                    </li>
+                                      <li>
+                                        <a href="{% url 'tour:pickup_plan_detail' booking.id  %}" class="d-flex justify-content-between align-items-center mb-2">
+                                            Arrival & Pickup
+                                            <i class="isax isax-tick-square5 text-success ms-2"></i>
+                                        </a>
+                                    </li>
+
+
+                                      <li>
+                                        <a href="{% url 'tour:welcome_package_detail' booking.id  %}" class="d-flex justify-content-between align-items-center mb-2">
+                                            Wellcome Package
+                                            <i class="isax isax-tick-square5 text-success ms-2"></i>
+                                        </a>
+                                    </li>
+
+                                    {% for item in itinerary_items %}
+                                      <li>
+                                        <a href="{% url 'tour:itenary_full_info' item.id booking.id  %}" class="d-flex justify-content-between align-items-center mb-2">
+                                            {{ item.title }}
+                                            <i class="isax isax-tick-square5 text-success ms-2"></i>
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                      <li>
+                                        <a href="#" class="d-flex justify-content-between align-items-center mb-2">
+                                            Final Day & Feedback
+                                            <i class="isax isax-tick-square5 text-success ms-2"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="d-flex justify-content-between align-items-center mb-2">
+                                            Live Updates & Notices
+                                            <i class="isax isax-refresh text-warning ms-2"></i>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 316px; height: 491px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div><div class="resize-sensor" style="position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden;"><div class="resize-sensor-expand" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 316px; height: 491px;"></div></div><div class="resize-sensor-shrink" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: hidden; z-index: -1; visibility: hidden;"><div style="position: absolute; left: 0; top: 0; transition: 0s; width: 200%; height: 200%"></div></div></div></div></div></div>
+                <!-- /Sidebar -->
+
+                <!-- Add Tour -->
+                {% block main %}
+
+
+
+
+                      
+                {% endblock %}
+
+
+
+           
+                <!-- /Add Tour -->
+
+            </div>
+        
+    </div>
+</div>
+            
+
+
+
+{% endblock %}

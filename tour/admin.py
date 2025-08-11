@@ -2,6 +2,8 @@ from django.contrib import admin
 from .models import *
 from django import forms
 
+
+
 class TourImageInline(admin.TabularInline):
     model = TourImage
     extra = 1
@@ -11,7 +13,6 @@ class TourImageInline(admin.TabularInline):
 class TourCategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
-admin.site.register(Booking)
 
 @admin.register(EnquireUs)
 class EnquireUsAdmin(admin.ModelAdmin):
@@ -50,7 +51,7 @@ class TourAdmin(admin.ModelAdmin):
     list_filter = ('available', 'start_date')
     search_fields = ('title', 'location')
     prepopulated_fields = {'slug': ('title',)}
-    inlines = [TourGuideInterestInline]
+    inlines = [TourGuideInterestInline, TourImageInline]
 
     def get_assigned_guide(self, obj):
         try:
@@ -103,6 +104,80 @@ class TransportAdmin(admin.ModelAdmin):
     list_display = ['type', 'departure_location', 'arrival_location', 'departure_time', 'price']
     inlines = [TransportImageInline]
 
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+    # REQUIRED for other admins' autocomplete_fields
+    search_fields = (
+        "id",
+        "tour__title",
+        "user__username", "user__first_name", "user__last_name",
+        "email", "phone",
+    )
+    list_display = ("id", "tour", "user", "booking_date", "situation", "paid")
+    raw_id_fields = ("tour", "user")   # optional nicety
+
+@admin.register(Driver)
+class DriverAdmin(admin.ModelAdmin):
+    search_fields = ("name", "phone", "languages")
+
+@admin.register(Operator)
+class OperatorAdmin(admin.ModelAdmin):
+    search_fields = ("name", "phone", "languages")
+
+@admin.register(Vehicle)
+class VehicleAdmin(admin.ModelAdmin):
+    search_fields = ("title", "plate_no", "color")
+
+@admin.register(PreArrival)
+class PreArrivalAdmin(admin.ModelAdmin):
+    # You can keep your existing config — but E040 is about the related admins above.
+    search_fields = (
+        "booking__id", "booking__tour__title",
+        "user__username", "user__first_name", "user__last_name",
+        "airline_name", "flight_number", "entry_point_other",
+        "emergency_contact_name", "emergency_contact_phone",
+    )
+    raw_id_fields = ("user", "booking")
+    # ...rest unchanged...
+
+@admin.register(PickupPlan)
+class PickupPlanAdmin(admin.ModelAdmin):
+    search_fields = (
+        "booking__id", "booking__tour__title",
+        "entry_point_label",
+        "driver__name", "operator__name",
+        "vehicle__title", "vehicle__plate_no",
+    )
+    autocomplete_fields = ("booking", "driver", "operator", "vehicle")
+    # ...rest unchanged...
+
+@admin.register(GiftItem)
+class GiftItemAdmin(admin.ModelAdmin):
+    list_display = ("name", "is_afghan_special")
+    search_fields = ("name",)
+    list_filter = ("is_afghan_special",)
+
+
+@admin.register(WelcomePackage)
+class WelcomePackageAdmin(admin.ModelAdmin):
+    list_display = ("booking", "user", "prepared_at", "delivered_at")
+    search_fields = ("booking__id", "user__username", "user__first_name", "user__last_name")
+    raw_id_fields = ("booking", "user", "gifts")    
+
+
+
+
 admin.site.register(Languages)
 admin.site.register(Translator)
 admin.site.register(SecurityGuard)
+
+
+
+
+
+
+
+
+
+

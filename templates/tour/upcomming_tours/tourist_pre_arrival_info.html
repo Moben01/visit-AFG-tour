@@ -1,0 +1,241 @@
+{% extends 'tour/upcomming_tours/upcomming_tour_template.html'%}
+{% load static %}
+
+
+{% block main %}
+     <div class="col-lg-9" style="padding-left: 25px;">
+        {% if message %}
+            <p class="text-success messages">{{ message }}</p>
+            <script>
+                setTimeout(function() {
+                    $('.messages').fadeOut('slow');
+                }, 9000);
+            </script>
+        {% endif %}
+
+        {% if instance %}
+  <div class="alert alert-success d-flex align-items-center justify-content-between">
+    <div>
+      <strong>Pre-arrival submitted.</strong>
+      — Visa status: <span class="badge bg-secondary">
+        {{ pre_arrival.get_visa_status_display }}
+      </span>
+    </div>
+    <a class="btn btn-outline-primary btn-sm"
+       href="{% url 'tour:up_commoing_tours_more_info' booking.id %}?edit=1">
+       Edit
+    </a>
+  </div>
+
+    <div class="alert alert-success d-flex align-items-center justify-content-between">
+    <div>
+      <strong>Download Your Invitation Letter Here.</strong>
+      — Visa status: <span class="badge bg-secondary">
+        Your Invitation Letter is ready
+      </span>
+    </div>
+    <a class="btn btn-outline-success btn-sm"
+       href="{% url 'tour:up_commoing_tours_more_info' booking.id %}?edit=1">
+       Download Invitation Letter
+    </a>
+  </div>
+
+  {# Page stays otherwise blank per your requirement #}
+
+
+
+{% else %}
+
+<div class="wrapper">
+  <div class="page-content">
+    <div class="container-fluid">
+
+      <!-- Page Title -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <h4 class="fw-bold">🛂 Pre-Arrival Requirements</h4>
+          <p class="text-muted mb-0">
+            Please complete the pre-arrival form for <strong>{{ booking.tour.title }}</strong>.
+          </p>
+        </div>
+      </div>
+
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Required Documents -->
+        <div class="card mb-4">
+          <div class="card-header bg-light">
+            <h6 class="mb-0 fw-bold">📄 Required Documents</h6>
+          </div>
+          <div class="card-body">
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Passport Copy <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.passport_copy }}
+                {% if form.passport_copy.errors %}
+                  <div class="text-danger small">{{ form.passport_copy.errors }}</div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Visa Copy (if available)</label>
+              <div class="col-md-9">
+                {{ form.visa_copy }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Flight Ticket <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.flight_ticket }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flight Details -->
+        <div class="card mb-4">
+          <div class="card-header bg-light">
+            <h6 class="mb-0 fw-bold">✈️ Flight Details</h6>
+          </div>
+          <div class="card-body">
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Flight Date <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.flight_date }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Flight Time <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.flight_time }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Airline Name</label>
+              <div class="col-md-9">
+                {{ form.airline_name }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Flight Number</label>
+              <div class="col-md-9">
+                {{ form.flight_number }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Entry Point to Afghanistan <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.entry_point }}
+              </div>
+            </div>
+
+            <div class="row mb-3" id="entry-point-other" style="display:none;">
+              <label class="col-md-3 col-form-label">If "Other", please specify</label>
+              <div class="col-md-9">
+                {{ form.entry_point_other }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency & Health -->
+        <div class="card mb-4">
+          <div class="card-header bg-light">
+            <h6 class="mb-0 fw-bold">🚑 Emergency & Health Information</h6>
+          </div>
+          <div class="card-body">
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Emergency Contact Name <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.emergency_contact_name }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Emergency Contact Phone <span class="text-danger">*</span></label>
+              <div class="col-md-9">
+                {{ form.emergency_contact_phone }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Emergency Contact Email</label>
+              <div class="col-md-9">
+                {{ form.emergency_contact_email }}
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-3">
+                <label class="form-check-label">{{ form.has_medical_conditions }} Medical Conditions</label>
+              </div>
+              <div class="col-md-9">
+                {{ form.medical_details }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Safety & Additional Notes -->
+        <div class="card mb-4">
+          <div class="card-header bg-light">
+            <h6 class="mb-0 fw-bold">🛡 Safety & Additional Notes</h6>
+          </div>
+          <div class="card-body">
+            <div class="form-check mb-3">
+              {{ form.safety_acknowledgement }}
+              <label class="form-check-label ms-1">I have read and accepted the safety guidelines <span class="text-danger">*</span></label>
+            </div>
+
+            <div class="row mb-3">
+              <label class="col-md-3 col-form-label">Additional Notes</label>
+              <div class="col-md-9">
+                {{ form.additional_notes }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-end">
+          <button type="submit" class="btn btn-success">Submit Pre-Arrival</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  // Show/Hide Other entry point field
+  (function () {
+    const entrySelect = document.getElementById("id_entry_point");
+    const otherWrap = document.getElementById("entry-point-other");
+
+    function toggleOther() {
+      if (!entrySelect) return;
+      otherWrap.style.display = entrySelect.value === 'other' ? 'flex' : 'none';
+    }
+    if (entrySelect) {
+      entrySelect.addEventListener('change', toggleOther);
+      toggleOther();
+    }
+  })();
+</script>
+
+
+
+
+                    
+                </div>
+
+ {% endif %}
+{% endblock %}

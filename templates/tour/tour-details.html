@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- Breadcrumb -->
-<div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+<!-- <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-12">
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- /Breadcrumb -->
 
 <!-- Page Wrapper -->
@@ -231,7 +231,7 @@
                                         <div class="d-flex align-items-center justify-content-between mb-2">
                                             <div>
                                                 <h6 class="fw-medium mb-1">Day {{i.day_number}}, {{i.title}}</h6>
-                                                <p>{{i.date}}</p>
+                                                <!-- <p>{{i.date}}</p> -->
                                             </div>
                                             <span class="avatar avatar-lg avatar-rounded flex-shrink-0"><img src="{{ i.image.url }}" alt="Img"></span>
                                         </div>
@@ -349,16 +349,25 @@
                         </h5>
                         <div>
                             <div class="d-flex align-items-center justify-content-between details-info">
-                                <h6 class="fw-medium">Date</h6>
+                                <h6 class="fw-medium">Date:</h6>
+
+                                {% if get_tour.type == 'schedule' %}
+
                                 <p class="flex-fill">{{get_tour.start_date}} - {{get_tour.end_date}}</p>
+
+                                {% else %}
+                                <p class="flex-fill">Choose any dates you prefer</p>
+                                {% endif %}
+
+
                             </div>
                             <!-- <div class="d-flex align-items-center justify-content-between details-info">
                                 <h6 class="fw-medium">Destination</h6>
                                 <p class="flex-fill">Eidnesburg</p>
                             </div> -->
                             <div class="d-flex align-items-center justify-content-between details-info">
-                                <h6 class="fw-medium">Duration</h6>
-                                <p class="flex-fill">{{get_tour.duration_days}}</p>
+                                <h6 class="fw-medium">Duration:</h6>
+                                <p class="flex-fill">{{get_tour.duration_day}} Days, {{get_tour.duration_night}} Nights</p>
                             </div>
                             <!-- <div class="d-flex align-items-center justify-content-between details-info">
                                 <h6 class="fw-medium">Departure</h6>
@@ -393,7 +402,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card shadow-none">
+                <!-- <div class="card shadow-none">
                     <div class="card-body">
                         <h5 class="fs-18 mb-3">Enquire Us</h5>
                         <div class="banner-form">
@@ -476,7 +485,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <style>
                     /* Apply styles for all screen sizes */
                     #pwa-install-btn {
@@ -552,9 +561,9 @@
 
                 <div class="card shadow-none mb-0">
                     <div class="card-body">
-                        <h5 class="fs-18 mb-3">Provider Details</h5>
+                        <h5 class="fs-18 mb-3">Support Details</h5>
                         <div class="py-1">
-                            <div class="bg-light-500 br-10 mb-3 d-flex align-items-center p-3">
+                            <!-- <div class="bg-light-500 br-10 mb-3 d-flex align-items-center p-3">
                                 <a href="javascript:void(0);" class="avatar avatar-lg flex-shrink-0">
                                     <img src="{% static 'img/users/user-05.jpg' %}" alt="img" class="rounded-circle">
                                 </a>
@@ -563,7 +572,7 @@
                                             Hendriques</a></h6>
                                     <p class="fs-14">Member Since : 14 May 2024</p>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="border br-10 mb-3 p-3">
                                 <div class="d-flex align-items-center border-bottom pb-3 mb-3">
                                     <span class="avatar avatar-sm me-2 rounded-circle flex-shrink-0 bg-primary"><i

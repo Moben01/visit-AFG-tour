@@ -13,4 +13,15 @@ urlpatterns = [
    path('dashboard/', views.tg_doc_dashboard, name='tg_doc_dashboard'),
    path('user_newsfeed/', views.user_newsfeed, name='user_newsfeed'),
    path('payment/', views.payment, name='payment'),
+
+   path('up_commoing_tours/', views.up_commoing_tours, name='up_commoing_tours'),
+   path('up_commoing_tours_more_info/<int:id>/', views.up_commoing_tours_more_info, name='up_commoing_tours_more_info'),
+   path('pre-arrival/<int:id>/', views.pre_arrival_form, name='pre_arrival_form'),
+   path('pickup/<int:booking_id>/', views.pickup_plan_detail, name='pickup_plan_detail'),
+   path('pickup/<int:booking_id>/edit/', views.pickup_plan_edit, name='pickup_plan_edit'),
+   path('pickup/<int:booking_id>/status/', views.pickup_update_status, name='pickup_update_status'),
+   path("welcome-package/<int:booking_id>/", views.welcome_package_detail, name="welcome_package_detail"),
+
+   path('itenary_full_info/<int:id>/<int:booking_id>', views.itenary_full_info, name='itenary_full_info'),
+
 ]

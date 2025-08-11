@@ -225,12 +225,24 @@ class TourImage(models.Model):
 
 
 class Booking(models.Model):
+    BOOKING_SIT = [
+        ('Booked', 'Booked'),
+        ('in_progress', 'in_progress'),
+        ('upcoming', 'upcoming'),
+        ('completed', 'completed'),
+        ('Cancelled', 'Cancelled'),
+        ('Reviewed', 'Reviewed'),
+       
+    ]
+
     tour = models.ForeignKey('Tour', on_delete=models.SET_NULL, null=True, blank=True, related_name='bookings')
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='booked_tours')
     booking_date = models.DateField()
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=20)
+    situation = models.CharField(max_length=20, choices=BOOKING_SIT, default='upcoming')
+
     adults = models.PositiveIntegerField(default=1)
     children = models.PositiveIntegerField(default=0)
     paid = models.BooleanField(default=False)
@@ -480,3 +492,249 @@ class TransportImage(models.Model):
 
     def __str__(self):
         return f"Image for {self.transport}"
+    
+
+
+
+
+class PreArrivalRequirement(models.Model):
+    VISA_STATUS_CHOICES = [
+        ('yes', 'Yes, I have the visa'),
+        ('no', 'No, I need an invitation letter'),
+    ]
+
+    booking = models.OneToOneField('Booking', on_delete=models.CASCADE, related_name='pre_arrival_tour')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='pre_arrival_forms_tour')
+
+    # Visa-related fields
+    visa_status = models.CharField(max_length=10, choices=VISA_STATUS_CHOICES)
+    visa_copy = models.FileField(upload_to='visa_copies/', blank=True, null=True)
+
+    # Passport
+    passport_copy = models.FileField(upload_to='passport_copies/', blank=True, null=True)
+
+    # Travel details
+    travel_start_date = models.DateField(blank=True, null=True)
+    travel_end_date = models.DateField(blank=True, null=True)
+    embassy_location = models.CharField(max_length=255, blank=True, null=True)
+
+    # Emergency contact
+    emergency_contact_name = models.CharField(max_length=100, blank=True, null=True)
+    emergency_contact_phone = models.CharField(max_length=25, blank=True, null=True)
+    emergency_contact_email = models.EmailField(blank=True, null=True)
+
+    # Insurance
+    has_insurance = models.BooleanField(default=False)
+    insurance_copy = models.FileField(upload_to='insurance_docs/', blank=True, null=True)
+
+    invitation_letter = models.FileField(upload_to='insurance_docs/', blank=True, null=True)
+
+    # Medical info
+    has_medical_conditions = models.BooleanField(default=False)
+    medical_notes = models.TextField(blank=True)
+
+    # SIM / Communication
+    needs_afghan_sim = models.BooleanField(default=False)
+
+    # Acknowledgment
+    safety_guideline_accepted = models.BooleanField(default=False)
+
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Pre-Arrival for {self.user.get_full_name()} - {self.booking.tour.title}"
+
+
+
+    
+
+class PreArrival(models.Model):
+    ENTRY_POINTS = [
+        ('kabul_airport', 'Kabul International Airport'),
+        ('herat_airport', 'Herat International Airport'),
+        ('mazar_airport', 'Mazar-i-Sharif Airport'),
+        ('kandahar_airport', 'Kandahar Airport'),
+        ('torkham_border', 'Torkham Border (Pakistan)'),
+        ('spin_boldak', 'Spin Boldak (Pakistan)'),
+        ('islam_qala', 'Islam Qala (Iran)'),
+        ('hairatan', 'Hairatan (Uzbekistan)'),
+        ('torghundi', 'Torghundi (Turkmenistan)'),
+        ('other', 'Other'),
+    ]
+
+
+   
+
+    booking = models.OneToOneField('Booking', on_delete=models.CASCADE, related_name='pre_arrival')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='pre_arrival_forms')
+
+    # Visa status + required docs
+    passport_copy = models.FileField(upload_to='pre_arrival/passport/', blank=False, null=False)
+    visa_copy = models.FileField(upload_to='pre_arrival/visa/', blank=True, null=True)
+    
+    # Flight details
+    flight_ticket = models.FileField(upload_to='pre_arrival/flight/', blank=False, null=False)
+    flight_date = models.DateField(blank=False, null=False)
+    flight_time = models.TimeField(blank=False, null=False)
+    airline_name = models.CharField(max_length=100, blank=True, help_text="Optional: Airline name or flight number")
+    flight_number = models.CharField(max_length=50, blank=True, help_text="Optional: Flight number if available")
+    entry_point = models.CharField(max_length=50, choices=ENTRY_POINTS, help_text="Where will you enter Afghanistan?")
+    entry_point_other = models.CharField(
+        max_length=100, blank=True, null=True,
+        help_text="If 'Other', please specify"
+    )
+    # Emergency info
+    emergency_contact_name = models.CharField(max_length=100)
+    emergency_contact_phone = models.CharField(max_length=20)
+    emergency_contact_email = models.EmailField(blank=True, null=True)
+    # Health info
+    has_medical_conditions = models.BooleanField(default=False)
+    medical_details = models.TextField(blank=True, help_text="List any allergies or chronic conditions.")
+
+    # Travel preferences
+
+    # Safety acknowledgment
+    safety_acknowledgement = models.BooleanField(default=False, help_text="Confirm that you have read and accepted the safety guidelines.")
+
+    # Optional notes
+    additional_notes = models.TextField(blank=True, help_text="Anything else you'd like us to know before arrival.")
+
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Pre-Arrival · {self.booking} ({self.user})"
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Driver(models.Model):
+    name = models.CharField(max_length=120)
+    phone = models.CharField(max_length=30)
+    photo = models.ImageField(upload_to='pickup/driver/', blank=True, null=True)
+    bio = models.CharField(max_length=255, blank=True)
+    languages = models.CharField(max_length=120, blank=True)  # e.g. "Dari, Pashto, English"
+    def __str__(self): return self.name
+
+class Operator(models.Model):
+    name = models.CharField(max_length=120)
+    phone = models.CharField(max_length=30)
+    photo = models.ImageField(upload_to='pickup/operator/', blank=True, null=True)
+    bio = models.CharField(max_length=255, blank=True)
+    languages = models.CharField(max_length=120, blank=True)
+    def __str__(self): return self.name
+
+class Vehicle(models.Model):
+    title = models.CharField(max_length=120)  # e.g., "Land Cruiser"
+    plate_no = models.CharField(max_length=50, blank=True)
+    capacity = models.PositiveIntegerField(default=4)
+    photo = models.ImageField(upload_to='pickup/vehicle/', blank=True, null=True)
+    color = models.CharField(max_length=50, blank=True)
+    def __str__(self): return f"{self.title} {self.plate_no or ''}".strip()
+
+class PickupPlan(models.Model):
+    STATUS = [
+        ('scheduled', 'Scheduled'),
+        ('on_route', 'On Route'),
+        ('waiting', 'Waiting at Point'),
+        ('picked_up', 'Picked Up'),
+        ('no_show', 'No Show'),
+        ('cancelled', 'Cancelled'),
+    ]
+    TYPE = [('airport','Airport'), ('border','Land Border'), ('hotel','Hotel/Other')]
+
+    booking = models.OneToOneField('Booking', on_delete=models.CASCADE, related_name='pickup')
+
+    # context (from PreArrival snapshot)
+    pickup_type = models.CharField(max_length=20, choices=TYPE, default='airport')
+    entry_point_label = models.CharField(max_length=120)
+    entry_point_code = models.CharField(max_length=50, blank=True)
+
+    scheduled_at = models.DateTimeField()
+    window_minutes = models.PositiveIntegerField(default=60)
+
+    # crew
+    driver = models.ForeignKey(Driver, null=True, blank=True, on_delete=models.SET_NULL)
+    operator = models.ForeignKey(Operator, null=True, blank=True, on_delete=models.SET_NULL)
+    vehicle = models.ForeignKey(Vehicle, null=True, blank=True, on_delete=models.SET_NULL)
+
+    # contact details shown to tourist (can override)
+    driver_phone_share = models.CharField(max_length=30, blank=True)
+    operator_phone_share = models.CharField(max_length=30, blank=True)
+    tourist_phone_share = models.CharField(max_length=30, blank=True)
+
+    # meeting guidance
+    meeting_point = models.CharField(max_length=255, blank=True)     # "Arrival Gate A – Exit 2"
+    meeting_note = models.TextField(blank=True)                      # signage text, what to look for
+    welcome_note = models.CharField(max_length=255, blank=True)      # short greeting for tourist
+
+    # tourist-facing visibility
+    visible_to_tourist = models.BooleanField(default=True)
+
+    # ops tracking
+    status = models.CharField(max_length=20, choices=STATUS, default='scheduled')
+    otp_code = models.CharField(max_length=8, blank=True)
+    checkin_photo = models.ImageField(upload_to='pickup/proofs/', blank=True, null=True)
+    picked_up_at = models.DateTimeField(blank=True, null=True)
+    no_show_reason = models.CharField(max_length=255, blank=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self): return f"Pickup · {self.booking_id} · {self.entry_point_label}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+class GiftItem(models.Model):
+    """List of possible gifts (dynamic, admin-manageable)."""
+    name = models.CharField(max_length=200, unique=True)
+    description = models.TextField(blank=True)
+    photo = models.ImageField(upload_to='gifts/photos/', blank=True, null=True)
+    is_afghan_special = models.BooleanField(default=False, help_text="Mark if this is an Afghan cultural gift")
+
+    def __str__(self):
+        return self.name
+
+
+class WelcomePackage(models.Model):
+    booking = models.OneToOneField('Booking', on_delete=models.CASCADE, related_name='welcome_package')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='welcome_packages')
+
+    # Generic welcome items
+    welcome_letter = models.BooleanField(default=False)
+    sim_card = models.BooleanField(default=False)
+    printed_itinerary = models.BooleanField(default=False)
+    local_map = models.BooleanField(default=False)
+    emergency_numbers_card = models.BooleanField(default=False)
+
+    # Dynamic gift selection
+    gifts = models.ManyToManyField(GiftItem, blank=True, related_name="welcome_packages")
+
+    package_photo = models.ImageField(upload_to='welcome_packages/photos/', blank=True, null=True)
+    special_notes = models.TextField(blank=True, help_text="Any special items or notes for this tourist.")
+    prepared_at = models.DateTimeField(blank=True, null=True)
+    delivered_at = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Welcome Package for {self.user} - {self.booking.tour.title}"

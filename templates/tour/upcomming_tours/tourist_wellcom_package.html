@@ -1,0 +1,195 @@
+{% extends 'tour/upcomming_tours/upcomming_tour_template.html'%}
+{% load static %}
+
+
+{% block main %}
+     <div class="col-lg-9" style="padding-left: 25px;">
+        {% if message %}
+            <p class="text-success messages">{{ message }}</p>
+            <script>
+                setTimeout(function() {
+                    $('.messages').fadeOut('slow');
+                }, 9000);
+            </script>
+        {% endif %}
+
+
+        <div class="wrapper">
+  <div class="page-content">
+    <div class="container-fluid">
+
+      <!-- Header -->
+      <div class="row align-items-center mb-4">
+        <div class="col-md-8">
+          <h4 class="fw-bold mb-1">🎁 Welcome Package</h4>
+          <div class="text-muted">
+            Tour: <strong>{{ booking.tour.title }}</strong> • Booking #{{ booking.id }}
+          </div>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          {% if package %}
+            <span class="badge bg-success me-1" title="Prepared at">
+              {% if package.prepared_at %}Prepared: {{ package.prepared_at|date:"M d, Y H:i" }}{% else %}Prepared: —{% endif %}
+            </span>
+            <span class="badge bg-info" title="Delivered at">
+              {% if package.delivered_at %}Delivered: {{ package.delivered_at|date:"M d, Y H:i" }}{% else %}Delivered: —{% endif %}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+
+      {% if not package %}
+        <!-- Empty state -->
+        <div class="alert alert-info">
+          Your welcome package is being prepared. Please check back soon.
+        </div>
+        {% if request.user.is_staff %}
+          <a href="{% url 'admin:tour_welcomepackage_add' %}" class="btn btn-primary">Create Package in Admin</a>
+        {% endif %}
+      {% else %}
+
+      <!-- Package hero / photo -->
+      <div class="row g-3 mb-4">
+        <div class="col-lg-5">
+          <div class="card h-100">
+            {% if package.package_photo %}
+              <img src="{{ package.package_photo.url }}" class="card-img-top" alt="Welcome package photo">
+            {% else %}
+              <div class="d-flex align-items-center justify-content-center" style="height:260px;background:#f8f9fa;">
+                <span class="text-muted">Package preview coming soon</span>
+              </div>
+            {% endif %}
+            <div class="card-body">
+              <h6 class="fw-bold mb-2">What is a Welcome Package?</h6>
+              <p class="mb-0 text-muted small">
+                A curated set of items to make your arrival comfortable—essentials, information, and Afghan cultural gifts.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Checklist items -->
+        <div class="col-lg-7">
+          <div class="card h-100">
+            <div class="card-header bg-light">
+              <h6 class="mb-0 fw-bold">Included Essentials</h6>
+            </div>
+            <div class="card-body">
+              <div class="row g-2">
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-2 border rounded">
+                    <i class="bi bi-file-earmark-text me-2 text-success"></i>
+                    Welcome Letter
+                    <span class="ms-auto badge bg-{{ package.welcome_letter|yesno:'success,secondary' }}">
+                      {{ package.welcome_letter|yesno:"Yes,No" }}
+                    </span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-2 border rounded">
+                    <i class="bi bi-sim me-2 text-success"></i>
+                    Local SIM Card
+                    <span class="ms-auto badge bg-{{ package.sim_card|yesno:'success,secondary' }}">
+                      {{ package.sim_card|yesno:"Yes,No" }}
+                    </span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-2 border rounded">
+                    <i class="bi bi-map me-2 text-success"></i>
+                    Printed Itinerary
+                    <span class="ms-auto badge bg-{{ package.printed_itinerary|yesno:'success,secondary' }}">
+                      {{ package.printed_itinerary|yesno:"Yes,No" }}
+                    </span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-2 border rounded">
+                    <i class="bi bi-geo-alt me-2 text-success"></i>
+                    Local Map
+                    <span class="ms-auto badge bg-{{ package.local_map|yesno:'success,secondary' }}">
+                      {{ package.local_map|yesno:"Yes,No" }}
+                    </span>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="d-flex align-items-center p-2 border rounded">
+                    <i class="bi bi-telephone me-2 text-success"></i>
+                    Emergency Numbers Card
+                    <span class="ms-auto badge bg-{{ package.emergency_numbers_card|yesno:'success,secondary' }}">
+                      {{ package.emergency_numbers_card|yesno:"Yes,No" }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {% if package.special_notes %}
+                <div class="alert alert-warning mt-3 mb-0">
+                  <strong>Note:</strong> {{ package.special_notes }}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Afghan gifts grid -->
+      <div class="card mb-4">
+        <div class="card-header bg-light d-flex align-items-center justify-content-between">
+          <h6 class="mb-0 fw-bold">Afghan Gifts Included</h6>
+          <span class="badge bg-secondary">{{ gifts|length }} item{{ gifts|length|pluralize }}</span>
+        </div>
+        <div class="card-body">
+          {% if gifts %}
+            <div class="row g-3">
+              {% for gift in gifts %}
+                <div class="col-6 col-md-4 col-lg-3">
+                  <div class="card h-100 shadow-sm">
+                    {% if gift.photo %}
+                      <img src="{{ gift.photo.url }}" class="card-img-top" alt="{{ gift.name }}">
+                    {% else %}
+                      <div class="d-flex align-items-center justify-content-center" style="height:160px;background:#f8f9fa;">
+                        <span class="text-muted small">No image</span>
+                      </div>
+                    {% endif %}
+                    <div class="card-body">
+                      <div class="d-flex align-items-start">
+                        <h6 class="card-title mb-1 flex-grow-1">{{ gift.name }}</h6>
+                        {% if gift.is_afghan_special %}
+                          <span class="badge bg-success ms-2">Afghan</span>
+                        {% endif %}
+                      </div>
+                      {% if gift.description %}
+                        <p class="card-text text-muted small mb-0">{{ gift.description|truncatechars:100 }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <div class="text-muted">No gifts have been assigned to your welcome package yet.</div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Helpful footer -->
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="text-muted small">
+          Need help? Call our 24/7 support on your arrival day.
+        </div>
+        {% if request.user.is_staff %}
+          <a href="{% url 'admin:tour_welcomepackage_change' package.id %}" class="btn btn-outline-secondary btn-sm">Edit in Admin</a>
+        {% endif %}
+      </div>
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+       
+
+
+
+
+{% endblock %}
