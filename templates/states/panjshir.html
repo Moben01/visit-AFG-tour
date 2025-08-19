@@ -72,37 +72,37 @@
                         <div class="row text-center justify-content-center">
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#overview">Overview</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" id="overview">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#howtoreach">How to Reach</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#palcetovisit">Places to Visit</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#thingstodo">Things to Do</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#packages">Packages</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#map">Map</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +208,7 @@
                         <th>Region</th>
                         <td>Central Afghanistan</td>
                     </tr>
-                    <tr>
+                    <tr id="packages">
                         <th>Capital of Province</th>
                         <td>Bazarak</td>
                     </tr>
@@ -328,7 +328,7 @@
                 </div>
             </div>
         
-            <div class="card travelers-card">
+            <div class="card travelers-card" id="besttimetovisit">
                 <div class="card-img">
                     <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
                             alt="Trekking and Culture Adventure in Panjshir Mountains"></a>
@@ -432,7 +432,7 @@
                 </div>
         
                 <!-- Summer -->
-                <div class="col-md-4">
+                <div class="col-md-4" id="palcetovisit">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title text-danger">Summer Season in Panjshir</h5>
@@ -488,7 +488,7 @@
         
         
 
-        <h4 class="mb-4 mt-4">Popular Tourist Attractions in Panjshir</h4>
+        <h4 class="mb-4 mt-4" id="thingstodo">Popular Tourist Attractions in Panjshir</h4>
 
         <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
             <!-- Place 1 -->
@@ -676,7 +676,7 @@
             </div>
         
             <!-- Place 5 -->
-            <div class="location-item">
+            <div class="location-item" id="howtoreach">
                 <a href="car-grid.html" class="location-img">
                     <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
                     <div class="location-name">
@@ -981,7 +981,7 @@
                 </div>
         
                 <!-- Tips Before Visiting Panjshir -->
-                <div class="container mt-5">
+                <div class="container mt-5" id="map">
                     <h5 class="mb-4">A Few Tips Before Visiting Panjshir</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Dress conservatively and respectfully in public areas.</li>

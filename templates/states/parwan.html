@@ -74,37 +74,37 @@
                         <div class="row text-center justify-content-center">
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#overview">Overview</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">Best Time to Visit</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#howtoreach">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" id="overview">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#palcetovisit">Places to Visit</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#thingstodo">Things to Do</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#packages">Packages</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#map">Map</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +200,7 @@ The best time to visit Parwan is between April and June, and again from Septembe
                 <th>Coordinates</th>
                 <td>35.0132° N, 69.1675° E</td>
             </tr>
-            <tr>
+            <tr id="packages">
                 <th>Estimated Population</th>
                 <td>Approximately 1.2 million (2021 estimate)</td>
             </tr>
@@ -308,7 +308,7 @@ The best time to visit Parwan is between April and June, and again from Septembe
         </div>
     </div>
 
-    <div class="card travelers-card">
+    <div class="card travelers-card" id="besttimetovisit">
         <div class="card-img">
             <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top" alt="Cultural Experience in Parwan"></a>
             <span class="overlay-icon"><i class="isax isax-building"></i></span>
@@ -344,7 +344,7 @@ The best time to visit Parwan is between April and June, and again from Septembe
         </div>
     </div>
 
-    <div class="card travelers-card">
+    <div class="card travelers-card" id="palcetovisit">
         <div class="card-img">
             <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top" alt="Parwan Highlights"></a>
             <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
@@ -408,7 +408,7 @@ The best time to visit Parwan is between April and June, and again from Septembe
     </div>
 </div>
 
-<h4 class="mb-4 mt-4">Best Places to Visit in Parwan</h4>
+<h4 class="mb-4 mt-4" id="thingstodo">Best Places to Visit in Parwan</h4>
  <div class="row">
     {% for i in find_best_places_in_this_province %}
         <div class="col-md-3 mb-4">
@@ -547,7 +547,7 @@ The best time to visit Parwan is between April and June, and again from Septembe
     </div>
 </div>
 
-<h4 class="mb-4 mt-4">Top Things to Do in Parwan</h4>
+<h4 class="mb-4 mt-4" id="howtoreach">Top Things to Do in Parwan</h4>
 
 <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
     <!-- Place 1 -->
@@ -866,7 +866,7 @@ The best time to visit Parwan is between April and June, and again from Septembe
                         </div>
 
                         <!-- Q9 -->
-                        <div class="accordion-item mb-3">
+                        <div class="accordion-item mb-3" id="map">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
