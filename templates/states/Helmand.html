@@ -71,37 +71,37 @@
                         <div class="row text-center justify-content-center">
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#overview">Overview</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">Best Time to Visit</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" id="overview">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#howtoreach">How to Reach</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#palcetovisit">Places to Visit</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#thingstodo">Things to Do</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#packages">Packages</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#map">Map</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ The best time to visit Helmand is during the cooler months from October to April
                 <th>Province Bird</th>
                 <td>Desert Eagle Owl</td>
             </tr>
-            <tr>
+            <tr id="packages">
                 <th>Province Tree</th>
                 <td>Date Palm</td>
             </tr>
@@ -260,7 +260,7 @@ The best time to visit Helmand is during the cooler months from October to April
     </table>
 </div>
 
-<h4 class="mb-4 mt-4">Best Selling Helmand Tour Packages</h4>
+<h4 class="mb-4 mt-4" id="besttimetovisit">Best Selling Helmand Tour Packages</h4>
 <style>
     .truncate-title {
         white-space: nowrap;
@@ -363,7 +363,7 @@ The best time to visit Helmand is during the cooler months from October to April
     </div>
 </div>
 
-<div class="container my-5">
+<div class="container my-5" id="palcetovisit">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Best Time to Visit Helmand</h4>
         <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
@@ -495,7 +495,7 @@ The best time to visit Helmand is during the cooler months from October to April
     </div>
 
     <!-- Place 4 -->
-    <div class="location-item">
+    <div class="location-item" id="thingstodo">
         <a href="car-grid.html" class="location-img">
             <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
             <div class="location-name">
@@ -531,7 +531,7 @@ The best time to visit Helmand is during the cooler months from October to April
     </div>
 
     <!-- Place 6 -->
-    <div class="location-item">
+    <div class="location-item" id="howtoreach">
         <a href="car-grid.html" class="location-img">
             <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
             <div class="location-name">
@@ -551,115 +551,71 @@ The best time to visit Helmand is during the cooler months from October to April
 
 <h4 class="mb-4 mt-4">Top Things to Do in Helmand</h4>
 
-<div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-    <!-- Place 1 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Explore Lashkargah Bazaar</h5>
-                <p>(Cultural Shopping)</p>
+<div class="overflow-auto">
+    <div class="d-flex gap-3">
+      {% for i in find_things_to_do_in_this_province %}
+        <div class="col-md-3 mb-4 flex-shrink-0">
+          <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
+            <a href="javascript:void(0)" class="location-img">
+              <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
+              <div class="location-name">
+                <h5 class="mb-1">{{ i.title }}</h5>
+                <p>({{ i.location }})</p>
+              </div>
+            </a>
+            <div class="location-info d-flex align-items-center justify-content-between">
+              <div>
+                <p class="fs-14"><span class="text-primary">Start from {{ i.price }}</span></p>
+              </div>
+              <a href="javascript:void(0)" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
             </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">28 Cars</h6>
-                <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+          </div>
         </div>
-    </div>
-
-    <!-- Place 2 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Helmand River Boat Tour</h5>
-                <p>(Scenic Adventure)</p>
+  
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ i.id }}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow">
+              <div class="modal-header">
+                <h5 class="modal-title">{{ i.title }} - {{ i.location }}</h5>  
+                <span class="badge bg-primary ms-2">{{ i.provinces|join:", " }}</span> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+  
+                <!-- Main image preview -->
+                <div class="d-flex justify-content-center">
+                  <img id="mainImage{{ i.id }}" src="{{ i.image.url }}" 
+                       style="max-width: 309px;" class="img-fluid rounded mb-3 border" alt="{{ i.title }}">
+                </div>
+  
+                <!-- Small images -->
+                {% if i.images.all %}
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                  {% for img in i.images.all %}
+                    <img src="{{ img.image.url }}" 
+                         class="img-fluid rounded border small-img"
+                         style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                         alt="{{ img.caption }}"
+                         onclick="document.getElementById('mainImage{{ i.id }}').src=this.src">
+                  {% endfor %}
+                </div>
+                {% endif %}
+  
+                <!-- Description -->
+                <p>{{ i.description }}</p>
+              </div>
+              <div class="modal-footer">
+                <span class="fw-bold text-success">From ${{ i.price }}</span>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
             </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">60 Cars</h6>
-                <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+          </div>
         </div>
+  
+      {% endfor %}
     </div>
-
-    <!-- Place 3 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Visit Bost Fort</h5>
-                <p>(Historical Exploration)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">50 Cars</h6>
-                <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 4 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Kajaki Dam Visit</h5>
-                <p>(Engineering Tour)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">67 Cars</h6>
-                <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 5 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Grishk Farm Tours</h5>
-                <p>(Agricultural Experience)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">45 Cars</h6>
-                <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-
-    <!-- Place 6 -->
-    <div class="location-item">
-        <a href="car-grid.html" class="location-img">
-            <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-            <div class="location-name">
-                <h5 class="mb-1">Desert Safari</h5>
-                <p>(Adventure Activity)</p>
-            </div>
-        </a>
-        <div class="location-info d-flex align-items-center justify-content-between">
-            <div>
-                <h6 class="fw-medium mb-1">12 Cars</h6>
-                <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
-            </div>
-            <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-        </div>
-    </div>
-</div>
+  </div>
 
 <h4 class="mb-4 mt-4">How to Reach Helmand?</h4>
 
@@ -856,7 +812,7 @@ The best time to visit Helmand is during the cooler months from October to April
                         </div>
 
                         <!-- Q9 -->
-                        <div class="accordion-item mb-3">
+                        <div class="accordion-item mb-3" id="map">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button"
                                     data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
@@ -920,5 +876,8 @@ The best time to visit Helmand is during the cooler months from October to April
         </div>
     </div>
 </div>
+
+</div>
+</section>
 
 {% endblock %}

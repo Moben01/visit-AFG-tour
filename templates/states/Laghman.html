@@ -525,7 +525,7 @@
         <div class="location-item">
             <a href="car-grid.html" class="location-img">
                 <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                <div class="location-name">
+                <div class="location-name" id="howtoreach">
                     <h5 class="mb-1">Abdul Haq Square</h5>
                     <p>(Historic Landmark of Mehtarlam)</p>
                 </div>
@@ -543,115 +543,71 @@
 
         <h4 class="mb-4 mt-4">Top Things to Do in Laghman</h4>
 
-        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-            <!-- Place 1 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Mehtarlam Botanical Garden</h5>
-                        <p>(Bāgh-e Laghman)</p>
+        <div class="overflow-auto">
+            <div class="d-flex gap-3">
+              {% for i in find_things_to_do_in_this_province %}
+                <div class="col-md-3 mb-4 flex-shrink-0">
+                  <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
+                    <a href="javascript:void(0)" class="location-img">
+                      <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
+                      <div class="location-name">
+                        <h5 class="mb-1">{{ i.title }}</h5>
+                        <p>({{ i.location }})</p>
+                      </div>
+                    </a>
+                    <div class="location-info d-flex align-items-center justify-content-between">
+                      <div>
+                        <p class="fs-14"><span class="text-primary">Start from {{ i.price }}</span></p>
+                      </div>
+                      <a href="javascript:void(0)" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
                     </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">28 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$200</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                  </div>
                 </div>
-            </div>
-
-            <!-- Place 2 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Laghman Cultural Museum</h5>
-                        <p>(Eastern Heritage Center)</p>
+          
+                <!-- Modal for each place -->
+                <div class="modal fade" id="placeModal{{ i.id }}" tabindex="-1" aria-hidden="true">
+                  <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content rounded-3 shadow">
+                      <div class="modal-header">
+                        <h5 class="modal-title">{{ i.title }} - {{ i.location }}</h5>  
+                        <span class="badge bg-primary ms-2">{{ i.provinces|join:", " }}</span> 
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
+                      <div class="modal-body">
+          
+                        <!-- Main image preview -->
+                        <div class="d-flex justify-content-center">
+                          <img id="mainImage{{ i.id }}" src="{{ i.image.url }}" 
+                               style="max-width: 309px;" class="img-fluid rounded mb-3 border" alt="{{ i.title }}">
+                        </div>
+          
+                        <!-- Small images -->
+                        {% if i.images.all %}
+                        <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                          {% for img in i.images.all %}
+                            <img src="{{ img.image.url }}" 
+                                 class="img-fluid rounded border small-img"
+                                 style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                 alt="{{ img.caption }}"
+                                 onclick="document.getElementById('mainImage{{ i.id }}').src=this.src">
+                          {% endfor %}
+                        </div>
+                        {% endif %}
+          
+                        <!-- Description -->
+                        <p>{{ i.description }}</p>
+                      </div>
+                      <div class="modal-footer">
+                        <span class="fw-bold text-success">From ${{ i.price }}</span>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
                     </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">60 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$300</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                  </div>
                 </div>
+          
+              {% endfor %}
             </div>
-
-            <!-- Place 3 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Torkham Border Viewpoint</h5>
-                        <p>(Historic Gate & Scenic Point)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">50 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$250</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-
-            <!-- Place 4 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Darunta Lake</h5>
-                        <p>(Nature & Picnic Spot)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">67 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$400</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-
-            <!-- Place 5 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Spin Ghar Foothills</h5>
-                        <p>(Mountain Views & Hiking)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">45 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$150</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-
-            <!-- Place 6 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Abdul Haq Monument</h5>
-                        <p>(Heroic Memorial Site)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">12 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        </div>
+          </div>
         <h4 class="mb-4 mt-4">How to Reach Laghman?</h4>
 
         <div class="reach-method">
