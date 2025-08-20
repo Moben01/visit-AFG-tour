@@ -497,116 +497,84 @@
 
 
         <h4 class="mb-4 mt-4">Popular Tourist Attractions in Khost</h4>
+<div class="container">
+    <div class="d-flex overflow-auto pb-3" style="gap: 1rem;">
+        {% for place in Popular_Tourist_in_the_province %}
+        <div class="card shadow-sm" style="min-width: 250px; max-width: 250px; flex: 0 0 auto;">
+            <!-- Image (click to open modal) -->
+            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}">
+                <img src="{{ place.image.url }}" class="card-img-top" alt="{{ place.title }}"
+                     style="height: 160px; object-fit: cover;">
+            </a>
 
-        <div class="owl-carousel location-slider owl-dot-bottom owl-loaded owl-drag">
-            <!-- Place 1 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-35.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Khost City</h5>
-                        <p>(Capital & Cultural Sites)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">25 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 2 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-36.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Mountain Pass</h5>
-                        <p>(Mountain Views & History)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">40 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$280</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 3 -->
-            <div class="location-item" id="thingstodo">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Ziarat Sharif Shrine</h5>
-                        <p>(Historic Religious Site)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">30 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$230</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 4 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-38.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Spera Valley</h5>
-                        <p>(Traditional Villages & Handicrafts)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">20 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$190</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 5 -->
-            <div class="location-item">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Shkin Border Market</h5>
-                        <p>(Local Market & Souvenirs)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">15 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$160</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        
-            <!-- Place 6 -->
-            <div class="location-item" id="howtoreach">
-                <a href="car-grid.html" class="location-img">
-                    <img src="{% static 'img/destination/destination-37.jpg' %}" alt="img">
-                    <div class="location-name">
-                        <h5 class="mb-1">Zadran Tribal Market</h5>
-                        <p>(Tribal Crafts & Culture)</p>
-                    </div>
-                </a>
-                <div class="location-info d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="fw-medium mb-1">28 Cars</h6>
-                        <p class="fs-14">Starts From <span class="text-primary">$210</span></p>
-                    </div>
-                    <a href="car-grid.html" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+            <!-- Body -->
+            <div class="card-body">
+                <h6 class="card-title two-line-ellipsis mb-2">{{ place.title }}</h6>
+                <p class="card-text text-muted small mb-2">
+                    {{ place.description|truncatewords:12 }}
+                </p>
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="badge bg-primary">{{ place.location }}</span>
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}"
+                       class="btn btn-sm btn-outline-primary">
+                        <i class="isax isax-arrow-right-3"></i>
+                    </a>
                 </div>
             </div>
         </div>
+
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ place.id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content rounded-3 shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ place.title }} - {{ place.location }}</h5>  
+                        <span class="badge bg-primary ms-2">{{ place.provinces|join:", " }}</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Main image preview -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <img id="mainImage{{ place.id }}" src="{{ place.image.url }}" 
+                                 style="max-width: 309px;" class="img-fluid rounded border" alt="{{ place.title }}">
+                        </div>
+
+                        <!-- Small images -->
+                        <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                            <!-- Main image as thumbnail -->
+                            <img src="{{ place.image.url }}" 
+                                 class="img-fluid rounded border small-img"
+                                 style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                 alt="{{ place.title }}"
+                                 onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
+
+                            <!-- Extra images from Popular_Tourist_images -->
+                            {% for img in place.images.all %}
+                                <img src="{{ img.image.url }}" 
+                                     class="img-fluid rounded border small-img"
+                                     style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                     alt="{{ img.caption }}"
+                                     onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
+                            {% endfor %}
+                        </div>
+
+                        <!-- Description -->
+                        <p>{{ place.description }}</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% empty %}
+        <p class="text-center text-muted">No tourist attractions found in this province.</p>
+        {% endfor %}
+    </div>
+</div>
         
         <h4 class="mb-4 mt-4">Top Things to Do in Khost</h4>
         

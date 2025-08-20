@@ -48,3 +48,37 @@ class TopThingsToDoInProvinceImagesAdmin(admin.ModelAdmin):
         return obj.place.title
 
     get_place_title.short_description = 'Place'
+
+
+
+
+
+from django.contrib import admin
+from .models import Popular_Tourist, Popular_Tourist_images
+
+
+# Inline for adding images directly on the place page
+class PopularTouristImagesInline(admin.TabularInline):  # or admin.StackedInline
+    model = Popular_Tourist_images
+    extra = 1  # how many empty image forms to show by default
+
+
+@admin.register(Popular_Tourist)
+class PopularTouristAdmin(admin.ModelAdmin):
+    list_display = ('title', 'location')
+    search_fields = ('title', 'location')
+    list_filter = ('provinces',)
+    inlines = [PopularTouristImagesInline]  # add images inside the form
+
+
+# Optional: register image model separately if you want
+@admin.register(Popular_Tourist_images)
+class PopularTouristImagesAdmin(admin.ModelAdmin):
+    list_display = ('caption', 'get_place_title')
+
+    def get_place_title(self, obj):
+        return obj.place.title
+
+    get_place_title.short_description = 'Place'
+
+
