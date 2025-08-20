@@ -38,77 +38,40 @@
                         </div>
 
                         <!-- Hotel Types Grid -->
-                        <div class="row">
-                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
-                                <div class="d-flex align-items-center hotel-type-item">
-                                    <a href="hotel-grid.html" class="avatar avatar-lg">
-                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </a>
-                                    <div class="ms-2">
-                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Condos</a></h6>
-                                        <p class="fs-14">216 Hotels</p>
-                                    </div>
+                        <div class="row text-center justify-content-center">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#Overview">Overview</a></h6>
                                 </div>
                             </div>
-                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
-                                <div class="d-flex align-items-center hotel-type-item">
-                                    <a href="hotel-grid.html" class="avatar avatar-lg">
-                                        <img src="{% static 'img/hotels/hotel-model-02.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </a>
-                                    <div class="ms-2">
-                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Apartments</a></h6>
-                                        <p class="fs-14">569 Hotels</p>
-                                    </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#best">Best Time to Visit</a></h6>
                                 </div>
                             </div>
-                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
-                                <div class="d-flex align-items-center hotel-type-item">
-                                    <a href="hotel-grid.html" class="avatar avatar-lg">
-                                        <img src="{% static 'img/hotels/hotel-model-03.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </a>
-                                    <div class="ms-2">
-                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Villas</a></h6>
-                                        <p class="fs-14">129 Hotels</p>
-                                    </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#how">How to Reach</a></h6>
                                 </div>
                             </div>
-                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
-                                <div class="d-flex align-items-center hotel-type-item">
-                                    <a href="hotel-grid.html" class="avatar avatar-lg">
-                                        <img src="{% static 'img/hotels/hotel-model-04.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </a>
-                                    <div class="ms-2">
-                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">5 Star Hotels</a></h6>
-                                        <p class="fs-14">600 Hotels</p>
-                                    </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#Places">Places to Visit</a></h6>
                                 </div>
                             </div>
-                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
-                                <div class="d-flex align-items-center hotel-type-item">
-                                    <a href="hotel-grid.html" class="avatar avatar-lg">
-                                        <img src="{% static 'img/hotels/hotel-model-01.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </a>
-                                    <div class="ms-2">
-                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">3 Star Hotels</a></h6>
-                                        <p class="fs-14">200 Hotels</p>
-                                    </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#things">Things to Do</a></h6>
                                 </div>
                             </div>
-                            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 mb-3">
-                                <div class="d-flex align-items-center hotel-type-item">
-                                    <a href="hotel-grid.html" class="avatar avatar-lg">
-                                        <img src="{% static 'img/hotels/hotel-model-06.jpg' %}" class="rounded-circle"
-                                            alt="img">
-                                    </a>
-                                    <div class="ms-2">
-                                        <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">2 Star Hotels</a></h6>
-                                        <p class="fs-14">180 Hotels</p>
-                                    </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#packges">Packages</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item" id="Overview">
+                                    <h6 class="fs-16 fw-medium"><a href="#map">Map</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -312,7 +275,7 @@
                         <th>Coordinates</th>
                         <td>35.9333° N, 64.7833° E</td>
                     </tr>
-                    <tr>
+                    <tr id="packges">
                         <th>Total Population</th>
                         <td>Approximately 1,000,000 (estimate)</td>
                     </tr>
@@ -452,7 +415,7 @@
                 </div>
             </div>
 
-            <div class="card travelers-card">
+            <div class="card travelers-card" id="best">
                 <div class="card-img">
                     <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
                             alt="Faryab’s Best Tour Packages – Book Now!"></a>
@@ -515,7 +478,7 @@
                 </div>
 
                 <!-- Summer -->
-                <div class="col-md-4">
+                <div class="col-md-4" id="Places">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title text-danger">Summer Season in Faryab</h5>
@@ -649,7 +612,7 @@
             </div>
 
             <!-- Place 5 -->
-            <div class="location-item">
+            <div class="location-item" id="things">
                 <a href="car-grid.html" class="location-img">
                     <img src="{% static 'img/destination/destination-44.jpg' %}" alt="Koh-e-Zendan">
                     <div class="location-name">
@@ -1074,7 +1037,7 @@
                     safety.</li>
                 <li class="list-group-item">Stay updated on travel conditions through local sources and avoid traveling
                     at night in remote areas.</li>
-                <li class="list-group-item">Negotiating prices is common in Faryab markets — polite bargaining is
+                <li class="list-group-item" id="map">Negotiating prices is common in Faryab markets — polite bargaining is
                     expected.</li>
                 <li class="list-group-item">Bring bottled water, especially in warmer months, and avoid untreated water
                     sources.</li>

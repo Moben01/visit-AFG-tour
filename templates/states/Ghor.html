@@ -38,40 +38,40 @@
                         </div>
 
                         <!-- Hotel Types Grid -->
-                        <div class="row text-center justify-content-center">
+                          <div class="row text-center justify-content-center">
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Overview</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#Overview">Overview</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Best Time to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#best">Best Time to Visit</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">How to Reach</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#how">How to Reach</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" >
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#Places">Places to Visit</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Places to Visit</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#things">Things to Do</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
                                 <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Things to Do</a></h6>
+                                    <h6 class="fs-16 fw-medium"><a href="#packges">Packages</a></h6>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Packages</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="hotel-grid.html">Map</a></h6>
+                                <div class="hotel-type-item" id="Overview">
+                                    <h6 class="fs-16 fw-medium"><a href="#map">Map</a></h6>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                 <th>City Animal Symbol</th>
                 <td>Snow Leopard (symbolic of Afghan mountains)</td>
             </tr>
-            <tr>
+            <tr id="packges">
                 <th>City Flower</th>
                 <td>Wild Rose (native to the region’s valleys and hills)</td>
             </tr>
@@ -375,7 +375,7 @@
     </div>
 </div>
 
-<div class="container my-5">
+<div class="container my-5" id="best">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h4 class="mb-0">Best Time to Visit Ghor</h4>
         <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
@@ -411,7 +411,7 @@
 
         <!-- Autumn -->
         <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm" id="Places">
                 <div class="card-body">
                     <h5 class="card-title text-warning">Autumn Season in Ghor</h5>
                     <p class="mb-2"><strong>Months:</strong> September to November</p>
@@ -536,7 +536,7 @@
     </div>
 
     <!-- Place 5 -->
-    <div class="location-item">
+    <div class="location-item" id="things">
         <a href="car-grid.html" class="location-img">
             <img src="{% static 'img/destination/destination-39.jpg' %}" alt="img">
             <div class="location-name">
@@ -886,7 +886,7 @@
 <!-- Tips Before Visiting Ghor -->
 <div class="container mt-5">
     <h5 class="mb-4">A Few Tips Before Visiting Ghor</h5>
-    <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush" id="map">
         <li class="list-group-item">Ghor has a mix of urban and traditional culture — dress modestly and respectfully, especially when visiting local areas or religious sites.</li>
         <li class="list-group-item">It’s best to travel with a local guide or someone familiar with the area for a smoother experience.</li>
         <li class="list-group-item">Carry valid identification and keep digital and physical copies of your documents.</li>
