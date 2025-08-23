@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from tour.models import *
+from django.utils.translation import get_language
 from things_to_do.models import *
 from django.http import HttpResponse
 # Create your views here.
@@ -9,7 +10,13 @@ def kabul(request):
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kabul")
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Kabul")
 
-    return render(request, 'states/kabul.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province})
+    language_code = get_language()
+
+    if language_code in ['fa', 'ar']:
+        return render(request, 'RTL/states/kabul.html',{'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province})
+    else:
+        return render(request, 'states/kabul.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province})
+
 
 def kabul_maping(request):
     get_tour_categories = TourCategory.objects.all()    
