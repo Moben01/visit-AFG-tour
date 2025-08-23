@@ -10,13 +10,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-08-23 12:47+0430\n"
 "PO-Revision-Date: 2025-08-23 14:49+0000\n"
+"POT-Creation-Date: 2025-08-23 02:48-0700\n"
+"PO-Revision-Date: 2025-06-26 13:50+0000\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Translated-Using: django-rosetta 0.10.2\n"
 
 #: .\templates\RTL\index.html:16
@@ -30,7 +33,8 @@ msgstr ""
 #: .\templates\RTL\index.html:24
 msgid ""
 "\n"
-"                                مقصد نهایی شما برای هر آنچه که به شما کمک می‌کند تا تجربهٔ سفر را جشن بگیرید و به یاد بسپارید.\n"
+"                                مقصد نهایی شما برای هر آنچه که به شما کمک "
+"می‌کند تا تجربهٔ سفر را جشن بگیرید و به یاد بسپارید.\n"
 "                                "
 msgstr ""
 
@@ -1099,13 +1103,16 @@ msgstr ""
 #: .\templates\account\email\account_already_exists_message.txt:4
 #, python-format
 msgid ""
-"You are receiving this email because you or someone else tried to signup for an\n"
+"You are receiving this email because you or someone else tried to signup for "
+"an\n"
 "account using email address:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"However, an account using that email address already exists.  In case you have\n"
-"forgotten about this, please use the password forgotten procedure to recover\n"
+"However, an account using that email address already exists.  In case you "
+"have\n"
+"forgotten about this, please use the password forgotten procedure to "
+"recover\n"
 "your account:\n"
 "\n"
 "%(password_reset_url)s"
@@ -1136,7 +1143,8 @@ msgstr ""
 #: .\templates\account\email\base_notification.txt:10
 #, python-format
 msgid ""
-"If you do not recognize this change then please take proper security precautions immediately. The change to your account originates from:\n"
+"If you do not recognize this change then please take proper security "
+"precautions immediately. The change to your account originates from:\n"
 "\n"
 "- IP address: %(ip)s\n"
 "- Browser: %(user_agent)s\n"
@@ -1227,8 +1235,10 @@ msgstr ""
 
 #: .\templates\account\email\password_reset_key_message.txt:4
 msgid ""
-"You're receiving this email because you or someone else has requested a password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
+"You're receiving this email because you or someone else has requested a "
+"password reset for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the "
+"link below to reset your password."
 msgstr ""
 
 #: .\templates\account\email\password_reset_key_message.txt:9
@@ -1312,14 +1322,16 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                                        Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an email address for user %(user_display)s.\n"
+"                                        Please confirm that <a href=\"mailto:"
+"%(email)s\">%(email)s</a> is an email address for user %(user_display)s.\n"
 "                                        "
 msgstr ""
 
 #: .\templates\account\email_confirm.html:43
 msgid ""
 "\n"
-"                                        Unable to confirm this email because it is already confirmed by a different account.\n"
+"                                        Unable to confirm this email because "
+"it is already confirmed by a different account.\n"
 "                                        "
 msgstr ""
 
@@ -1494,8 +1506,10 @@ msgstr ""
 #: .\templates\account\password_reset_done.html:30
 msgid ""
 "\n"
-"                                    We have sent you an email. If you do not receive it, please check your spam folder.\n"
-"                                    Otherwise, contact us if you do not receive it within a few minutes.\n"
+"                                    We have sent you an email. If you do not "
+"receive it, please check your spam folder.\n"
+"                                    Otherwise, contact us if you do not "
+"receive it within a few minutes.\n"
 "                                "
 msgstr ""
 
@@ -1511,7 +1525,9 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"                                            The password reset link was invalid, possibly because it has already been used. Please request a <a href=\"%(passwd_reset_url)s\">new password reset</a>.\n"
+"                                            The password reset link was "
+"invalid, possibly because it has already been used. Please request a <a "
+"href=\"%(passwd_reset_url)s\">new password reset</a>.\n"
 "                                        "
 msgstr ""
 
@@ -1665,8 +1681,8 @@ msgstr ""
 
 #: .\templates\account\snippets\warn_no_email.html:3
 msgid ""
-"You currently do not have any email address set up. You should really add an"
-" email address so you can receive notifications, reset your password, etc."
+"You currently do not have any email address set up. You should really add an "
+"email address so you can receive notifications, reset your password, etc."
 msgstr ""
 
 #: .\templates\account\verification_sent.html:5
@@ -1694,7 +1710,9 @@ msgstr ""
 #: .\templates\account\verified_email_required.html:18
 msgid ""
 "We have sent an email to you for\n"
-"verification. Please click on the link inside that email. If you do not see the verification email in your main inbox, check your spam folder. Otherwise\n"
+"verification. Please click on the link inside that email. If you do not see "
+"the verification email in your main inbox, check your spam folder. "
+"Otherwise\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
 
@@ -1705,1232 +1723,1305 @@ msgid ""
 "email address</a>."
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
-msgid "Messages"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:22
+msgid "گردشگری هلمند"
+msgstr "السياحة في هلمند"
 
-#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
-msgid "Site Maps"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
-msgid "Static Files"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
-msgid "Syndication"
-msgstr ""
-
-#. Translators: String used to replace omitted page numbers in elided page
-#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
-#: .\venv\Lib\site-packages\django\core\paginator.py:30
-msgid "…"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\paginator.py:32
-msgid "That page number is not an integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\paginator.py:33
-msgid "That page number is less than 1"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\paginator.py:34
-msgid "That page contains no results"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:22
-msgid "Enter a valid value."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:70
-msgid "Enter a valid domain name."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:153
-#: .\venv\Lib\site-packages\django\forms\fields.py:775
-msgid "Enter a valid URL."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:200
-msgid "Enter a valid integer."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:211
-msgid "Enter a valid email address."
-msgstr ""
-
-#. Translators: "letters" means latin letters: a-z and A-Z.
-#: .\venv\Lib\site-packages\django\core\validators.py:289
+#: .\templates\states\Helmand_farsi.html:25
 msgid ""
-"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+"هلمند یک ولایت تاریخی و غنی در جنوب افغانستان است که به خاطر آثار باستانی، "
+"زمین‌های کشاورزی حاصلخیز در کنار رود هلمند و مناظر بیابانی منحصر به فردش "
+"شناخته می‌شود. این ولایت نگاهی به تمدن‌های باستانی افغانستان و زندگی سنتی "
+"روستایی ارائه می‌دهد."
 msgstr ""
+"هلمند ولاية تاريخية وغنية في جنوب أفغانستان، مشهورة بآثارها القديمة، "
+"وأراضيها الزراعية الخصبة على ضفاف نهر هلمند ومناظرها الصحراوية الفريدة. "
+"تقدم هذه الولاية لمحة عن الحضارات القديمة في أفغانستان والحياة الريفية التقليدية."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:297
+#: .\templates\states\Helmand_farsi.html:38
+#: .\templates\states\kandahar_farsi.html:36
+msgid "جشن نوروز"
+msgstr "عيد نوروز"
+
+#: .\templates\states\Helmand_farsi.html:39
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
-" hyphens."
-msgstr ""
+"در طول رود هلمند با وعده‌های غذایی سنتی و گردهمایی‌های خانوادگی در لشکرگاه جشن "
+"گرفته می‌شود."
+msgstr "يُحتفل على طول نهر هلمند مع وجبات تقليدية وتجمعات عائلية في لشكرگاه."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:309
-#: .\venv\Lib\site-packages\django\core\validators.py:318
-#: .\venv\Lib\site-packages\django\core\validators.py:332
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
-#, python-format
-msgid "Enter a valid %(protocol)s address."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:51
+msgid "جشن برداشت انار"
+msgstr "مهرجان حصاد الرمان"
 
-#: .\venv\Lib\site-packages\django\core\validators.py:311
-msgid "IPv4"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:320
-#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
-msgid "IPv6"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:334
-msgid "IPv4 or IPv6"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:375
-msgid "Enter only digits separated by commas."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:381
-#, python-format
-msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:416
-#, python-format
-msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:425
-#, python-format
-msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:434
-#, python-format
-msgid "Ensure this value is a multiple of step size %(limit_value)s."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:441
-#, python-format
+#: .\templates\states\Helmand_farsi.html:52
 msgid ""
-"Ensure this value is a multiple of step size %(limit_value)s, starting from "
-"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
-msgstr ""
+"هلمند به انارهای شیرین خود معروف است و این جشن با بازارهای محلی و مراسم "
+"برداشت برگزار می‌شود."
+msgstr "هلمند مشهورة بالرمان الحلو، ويقام هذا المهرجان مع الأسواق المحلية واحتفالات الحصاد."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:473
-#, python-format
+#: .\templates\states\Helmand_farsi.html:64
+#: .\templates\states\kandahar_farsi.html:62
+msgid "صنایع دستی سنتی"
+msgstr "الحرف التقليدية"
+
+#: .\templates\states\Helmand_farsi.html:65
 msgid ""
-"Ensure this value has at least %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at least %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
+"کشف سفالگری محلی، منسوجات بافته شده و قالیچه‌های دست‌بافت در روستاهای هلمند."
+msgstr "استكشاف الفخار المحلي، المنسوجات المطرزة والسجاد اليدوي في قرى هلمند."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:491
-#, python-format
+#: .\templates\states\Helmand_farsi.html:76
+msgid "نمای کلی"
+msgstr "نظرة عامة"
+
+#: .\templates\states\Helmand_farsi.html:81
+#: .\templates\states\kandahar_farsi.html:79
+msgid "بهترین زمان بازدید"
+msgstr "أفضل وقت للزيارة"
+
+#: .\templates\states\Helmand_farsi.html:86
+msgid "راه‌های رسیدن"
+msgstr "طرق الوصول"
+
+#: .\templates\states\Helmand_farsi.html:91
+#: .\templates\states\kandahar_farsi.html:89
+msgid "مکان‌های دیدنی"
+msgstr "أماكن للزيارة"
+
+#: .\templates\states\Helmand_farsi.html:96
+msgid "کارهایی برای انجام"
+msgstr "أشياء للقيام بها"
+
+#: .\templates\states\Helmand_farsi.html:101
+#: .\templates\states\kandahar_farsi.html:99
+msgid "پکیج‌ها"
+msgstr "الباقات"
+
+#: .\templates\states\Helmand_farsi.html:106
+#: .\templates\states\kandahar_farsi.html:104
+msgid "نقشه"
+msgstr "الخريطة"
+
+#: .\templates\states\Helmand_farsi.html:126
+msgid "درباره گردشگری هلمند"
+msgstr "حول سياحة هلمند"
+
+#: .\templates\states\Helmand_farsi.html:127
 msgid ""
-"Ensure this value has at most %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at most %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:514
-#: .\venv\Lib\site-packages\django\forms\fields.py:366
-#: .\venv\Lib\site-packages\django\forms\fields.py:405
-msgid "Enter a number."
+"هلمند یک ولایت با اهمیت تاریخی و دارای زمین‌های کشاورزی حاصلخیز است، که به "
+"خاطر آثار باستانی، دره‌های حاصلخیز رودخانه و فرهنگ سنتی پشتون شناخته می‌شود. "
+"از بقایای تمدن‌های باستانی تا آب‌های روان رود هلمند، این ولایت جنوبی دیدگاه "
+"منحصربه‌فردی از میراث افغانستان ارائه می‌دهد."
 msgstr ""
+"هلمند ولاية ذات أهمية تاريخية وأراضٍ زراعية خصبة، مشهورة بآثارها القديمة، ووديانها الخصبة على طول النهر، والثقافة التقليدية للپشتون. من آثار الحضارات القديمة إلى مياه نهر هلمند الجارية، تقدم هذه الولاية الجنوبية رؤية فريدة لتراث أفغانستان."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:516
-#, python-format
-msgid "Ensure that there are no more than %(max)s digit in total."
-msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
+#: .\templates\states\Helmand_farsi.html:129
+msgid "گنجینه‌های تاریخی: شهرهای باستانی و سایت‌های باستان‌شناسی"
+msgstr "الكنوز التاريخية: المدن القديمة والمواقع الأثرية"
 
-#: .\venv\Lib\site-packages\django\core\validators.py:521
-#, python-format
-msgid "Ensure that there are no more than %(max)s decimal place."
-msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\core\validators.py:526
-#, python-format
+#: .\templates\states\Helmand_farsi.html:130
 msgid ""
-"Ensure that there are no more than %(max)s digit before the decimal point."
-msgid_plural ""
-"Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
+"هلمند میزبان چندین سایت باستان‌شناسی مهم است، از جمله شهر باستانی بست با قلعه "
+"مشهور قلاى بست. این ولایت زمانی بخشی از امپراتوری هخامنشی و سپس پادشاهی "
+"یونان باختری بود که خرابه‌هایی به جا گذاشته که داستان تمدن‌های گذشته را روایت "
+"می‌کنند. دره رودخانه هلمند شامل تپه‌های حفاری‌نشده زیادی است که احتمالاً "
+"گنجینه‌های باستان‌شناسی بیشتری در خود دارند."
+msgstr ""
+"تستضيف هلمند العديد من المواقع الأثرية المهمة، بما في ذلك المدينة القديمة بست وقلعة بست الشهيرة. كانت هذه الولاية جزءًا من الإمبراطورية الأخمينية ثم المملكة الإغريقية الغربية، والتي تركت آثارًا تحكي قصص الحضارات الماضية. يشمل وادي نهر هلمند العديد من التلال غير المنقبة التي قد تحتوي على المزيد من الكنوز الأثرية."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:597
-#, python-format
+#: .\templates\states\Helmand_farsi.html:132
+msgid "سرزمین کشاورزی: دره رودخانه هلمند"
+msgstr "أرض الزراعة: وادي نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:133
 msgid ""
-"File extension “%(extension)s” is not allowed. Allowed extensions are: "
-"%(allowed_extensions)s."
+"رودخانه هلمند، طولانی‌ترین رودخانه افغانستان، یک دره حاصلخیز ایجاد می‌کند که "
+"از کشاورزی گسترده پشتیبانی می‌کند. هلمند به عنوان نان‌خوار افغانستان شناخته "
+"می‌شود و گندم، پنبه و انارهای معروف خود را تولید می‌کند. سیستم‌های سنتی آبیاری "
+"(کاریز) نشان‌دهنده تکنیک‌های مدیریت آب باستانی است که هنوز هم استفاده می‌شوند."
 msgstr ""
+"يشكل نهر هلمند، أطول أنهار أفغانستان، وادياً خصباً يدعم الزراعة المكثفة. تُعرف هلمند بـ 'خباز أفغانستان' وتنتج القمح والقطن والرمان الشهير. أنظمة الري التقليدية (القنات) تعكس تقنيات إدارة المياه القديمة التي لا تزال مستخدمة."
 
-#: .\venv\Lib\site-packages\django\core\validators.py:659
-msgid "Null characters are not allowed."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:135
+msgid "مناظر بیابانی و اکوسیستم‌های منحصربه‌فرد"
+msgstr "المناظر الصحراوية والنظم البيئية الفريدة"
 
-#: .\venv\Lib\site-packages\django\db\models\base.py:1600
-#: .\venv\Lib\site-packages\django\forms\models.py:908
-msgid "and"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\base.py:1602
-#, python-format
-msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\constraints.py:22
-#, python-format
-msgid "Constraint “%(name)s” is violated."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
-#, python-format
-msgid "Value %(value)r is not a valid choice."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
-msgid "This field cannot be null."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
-msgid "This field cannot be blank."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
-#, python-format
-msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
-
-#. Translators: The 'lookup_type' is one of 'date', 'year' or
-#. 'month'. Eg: "Title must be unique for pub_date year"
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:141
-#, python-format
+#: .\templates\states\Helmand_farsi.html:136
 msgid ""
-"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+"فراتر از دره رودخانه، هلمند دارای مناظر بیابانی دیدنی از جمله بخش‌هایی از "
+"بیابان رگستان است. این ولایت اکوسیستم‌های متنوعی از تالاب‌های کنار رودخانه تا "
+"مناطق بیابانی خشک دارد و حیات وحش منحصربه‌فردی که با این محیط‌ها سازگار است، "
+"در آن زندگی می‌کند."
 msgstr ""
+"بعيداً عن وادي النهر، تتميز هلمند بمناظر صحراوية خلابة تشمل أجزاء من صحراء رگستان. تحتوي الولاية على نظم بيئية متنوعة من الأراضي الرطبة المجاورة للنهر إلى المناطق الصحراوية الجافة، مع حياة برية فريدة متأقلمة مع هذه البيئات."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
-#, python-format
-msgid "Field of type: %(field_type)s"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:138
+msgid "فرهنگ سنتی پشتون و مهمان‌نوازی"
+msgstr "الثقافة البشتونية التقليدية والضيافة"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
-#, python-format
-msgid "“%(value)s” value must be either True or False."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1163
-#, python-format
-msgid "“%(value)s” value must be either True, False, or None."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1165
-msgid "Boolean (Either True or False)"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1215
-#, python-format
-msgid "String (up to %(max_length)s)"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1217
-msgid "String (unlimited)"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1326
-msgid "Comma-separated integers"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1427
-#, python-format
+#: .\templates\states\Helmand_farsi.html:139
 msgid ""
-"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
-"format."
+"هلمند عمدتاً پشتون است و دارای سنت‌های قبیله‌ای قوی و میراث فرهنگی غنی است. "
+"بازدیدکنندگان می‌توانند مهمان‌نوازی سنتی، جرگه‌های قبیله‌ای و قانون معروف "
+"پشتون‌ها (پشتونوالی) را تجربه کنند. این ولایت صنایع دستی، موسیقی و "
+"داستان‌سرایی سنتی را حفظ می‌کند."
 msgstr ""
+"هلمند تتكون أساساً من البشتون وتمتلك تقاليد قبلية قوية وتراث ثقافي غني. يمكن للزوار تجربة الضيافة التقليدية، الجورجة القبلية وقانون البشتون الشهير (پشتونوالی). تحافظ الولاية على الحرف اليدوية والموسيقى والحكايات التقليدية."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1431
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1566
-#, python-format
+#: .\templates\states\Helmand_farsi.html:141
+msgid "بازارهای محلی و صنایع دستی"
+msgstr "الأسواق المحلية والحرف اليدوية"
+
+#: .\templates\states\Helmand_farsi.html:142
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
-"date."
+"بازارهای لشکرگاه صنایع دستی سنتی شامل گلدوزی‌های پیچیده، فرش‌های دست‌بافت و "
+"سفال ارائه می‌دهند. این ولایت به ویژه به خاطر خربزه و انارهای خود معروف است "
+"که در جشنواره‌های فصلی جشن گرفته می‌شوند. بازارهای محلی نگاهی به زندگی روزمره "
+"و تجارت سنتی ارائه می‌دهند."
 msgstr ""
+"توفر أسواق لشكرگاه الحرف التقليدية بما في ذلك التطريز المعقد والسجاد اليدوي والفخار. تشتهر الولاية أيضًا بالبطيخ والرمان الذي يُحتفل به في المهرجانات الموسمية. تعكس الأسواق المحلية الحياة اليومية والتجارة التقليدية."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1435
-msgid "Date (without time)"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:144
+msgid "غذاهای سنتی هلمندی"
+msgstr "الأطعمة التقليدية في هلمند"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1562
-#, python-format
+#: .\templates\states\Helmand_farsi.html:145
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
-"HH:MM[:ss[.uuuuuu]][TZ] format."
+"غذاهای هلمند شامل خوراک‌هایی مانند لندی (گوشت خشک)، شوروا (سوپ گوشت) و انواع "
+"غذاهای برنجی است. این ولایت به خاطر غذاها و سس‌های مبتنی بر انار مشهور است. "
+"پخت نان سنتی در تنورهای گلی در روستاها رایج است."
 msgstr ""
+"تشمل أطعمة هلمند أطباقًا مثل لندي (اللحم المجفف)، شوروا (حساء اللحم) وأنواع أطباق الأرز. تشتهر الولاية بالأطعمة والصلصات المستندة إلى الرمان. ويُعد خبز الخبز التقليدي في الأفران الطينية شائعًا في القرى."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1570
-#, python-format
+#: .\templates\states\Helmand_farsi.html:147
+msgid "اقامتگاه‌های ساده با جذابیت سنتی"
+msgstr "الإقامة البسيطة ذات الطابع التقليدي"
+
+#: .\templates\states\Helmand_farsi.html:148
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD "
-"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
+"با وجود اینکه هلمند هتل‌های لوکس ندارد، بازدیدکنندگان می‌توانند مهمان‌خانه‌های "
+"سنتی (حجره‌ها) را تجربه کنند که مهمان‌نوازی اصیل پشتون را ارائه می‌دهند. این "
+"اقامتگاه‌ها راحتی پایه و فرصت تجربه فرهنگ محلی را فراهم می‌کنند."
 msgstr ""
+"على الرغم من عدم وجود فنادق فاخرة في هلمند، يمكن للزوار تجربة بيوت الضيافة التقليدية (الحجرة) التي تقدم الضيافة البشتونية الأصيلة. توفر هذه الإقامات الراحة الأساسية وفرصة تجربة الثقافة المحلية."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1575
-msgid "Date (with time)"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:150
+msgid "کاوش در رودخانه هلمند و کانال‌ها"
+msgstr "استكشاف نهر هلمند والقنوات"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1702
-#, python-format
-msgid "“%(value)s” value must be a decimal number."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1704
-msgid "Decimal number"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
-#, python-format
+#: .\templates\states\Helmand_farsi.html:151
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] "
-"[[HH:]MM:]ss[.uuuuuu] format."
+"شبکه گسترده کانال‌های منشعب از رودخانه هلمند فرصت‌های کاوش فراهم می‌کند. "
+"قایق‌های سنتی چوبی (جلاس) هنوز در برخی مناطق برای حمل و نقل استفاده می‌شوند. "
+"رودخانه زیستگاه پرندگان متنوعی است که برای مشاهده طبیعت جالب است."
 msgstr ""
+"توفر شبكة القنوات المتفرعة من نهر هلمند فرص استكشاف واسعة. لا تزال القوارب الخشبية التقليدية (جلاس) تستخدم في بعض المناطق للنقل. ويعد النهر موطنًا للعديد من الطيور مما يجعله مثيرًا لمراقبة الطبيعة."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
-msgid "Duration"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:153
+msgid "سایت‌های تاریخی و فرهنگی"
+msgstr "المواقع التاريخية والثقافية"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
-msgid "Email address"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
-msgid "File path"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
-#, python-format
-msgid "“%(value)s” value must be a float."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
-msgid "Floating point number"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
-#, python-format
-msgid "“%(value)s” value must be an integer."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
-msgid "Integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
-msgid "Big (8 byte) integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
-msgid "Small integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
-msgid "IPv4 address"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
-msgid "IP address"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
-#, python-format
-msgid "“%(value)s” value must be either None, True or False."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
-msgid "Boolean (Either True, False or None)"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
-msgid "Positive big integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
-msgid "Positive integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
-msgid "Positive small integer"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
-#, python-format
-msgid "Slug (up to %(max_length)s)"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
-msgid "Text"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
-#, python-format
+#: .\templates\states\Helmand_farsi.html:154
 msgid ""
-"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-"format."
+"سایت‌های مهم شامل مجموعه بودایی باستانی در قلاى بست، خرابه‌های شهر قرون وسطایی "
+"بست و مساجد و زیارتگاه‌های تاریخی متعدد است. تاریخ این ولایت بازتاب "
+"امپراتوری‌های مختلفی است که این منطقه استراتژیک را تحت کنترل داشته‌اند."
 msgstr ""
+"تشمل المواقع المهمة مجمعًا بوذيًا قديمًا في قلعة بست، وأطلال المدينة الوسطى بست، والعديد من المساجد والمزارات التاريخية. تعكس تاريخ هذه الولاية الإمبراطوريات المختلفة التي سيطرت على هذه المنطقة الاستراتيجية."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
-#, python-format
+#: .\templates\states\Helmand_farsi.html:156
+msgid "۱۰ مکان برتر برای بازدید در هلمند"
+msgstr "أفضل 10 أماكن للزيارة في هلمند"
+
+#: .\templates\states\Helmand_farsi.html:158
+msgid "قلاى بست"
+msgstr "قلعة بست"
+
+#: .\templates\states\Helmand_farsi.html:158
+msgid "قلعه باستانی با قوس‌های دیدنی نزدیک لشکرگاه"
+msgstr "قلعة قديمة بأقواس رائعة بالقرب من لشكرگاه"
+
+#: .\templates\states\Helmand_farsi.html:159
+#: .\templates\states\Helmand_farsi.html:183
+msgid "لشکرگاه"
+msgstr "لشكرگاه"
+
+#: .\templates\states\Helmand_farsi.html:159
+msgid "مرکز ولایت در کنار رود هلمند"
+msgstr "مركز الولاية بجانب نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:160
+msgid "دره رودخانه هلمند"
+msgstr "وادي نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:160
+msgid "منطقه کشاورزی حاصلخیز با روستاهای سنتی"
+msgstr "منطقة زراعية خصبة مع قرى تقليدية"
+
+#: .\templates\states\Helmand_farsi.html:161
+msgid "فرودگاه بست"
+msgstr "مطار بست"
+
+#: .\templates\states\Helmand_farsi.html:161
+msgid "فرودگاه تاریخی با سابقه نظامی"
+msgstr "مطار تاريخي ذو خلفية عسكرية"
+
+#: .\templates\states\Helmand_farsi.html:162
+msgid "گریشک"
+msgstr "غريشك"
+
+#: .\templates\states\Helmand_farsi.html:162
+msgid "شهر تاریخی در کنار رود هلمند"
+msgstr "مدينة تاريخية بجانب نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:163
+msgid "سد کجکی"
+msgstr "سد كاجكي"
+
+#: .\templates\states\Helmand_farsi.html:163
+msgid "پروژه بزرگ برق‌آبی روی رود هلمند"
+msgstr "مشروع الطاقة الكهرمائية الكبرى على نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:164
+msgid "ناد علی"
+msgstr "ناد علي"
+
+#: .\templates\states\Helmand_farsi.html:164
+msgid "ولسوالی کشاورزی مشهور به انار"
+msgstr "الولاية الزراعية المشهورة بالرمان"
+
+#: .\templates\states\Helmand_farsi.html:165
+msgid "بیابان رگستان"
+msgstr "صحراء رگستان"
+
+#: .\templates\states\Helmand_farsi.html:165
+msgid "منطقه بیابانی جنوبی با مناظر منحصربه‌فرد"
+msgstr "المنطقة الصحراوية الجنوبية ذات المناظر الفريدة"
+
+#: .\templates\states\Helmand_farsi.html:166
+msgid "دانشگاه بست"
+msgstr "جامعة بست"
+
+#: .\templates\states\Helmand_farsi.html:166
+msgid "مرکز آموزش در ولایت"
+msgstr "مركز التعليم في الولاية"
+
+#: .\templates\states\Helmand_farsi.html:167
+msgid "بازارهای محلی"
+msgstr "الأسواق المحلية"
+
+#: .\templates\states\Helmand_farsi.html:167
+msgid "بازارهای سنتی در لشکرگاه و مرکز ولسوالی‌ها"
+msgstr "الأسواق التقليدية في لشكرگاه ومراكز المديريات"
+
+#: .\templates\states\Helmand_farsi.html:170
+msgid "بهترین زمان برای بازدید از هلمند"
+msgstr "أفضل وقت لزيارة هلمند"
+
+#: .\templates\states\Helmand_farsi.html:171
 msgid ""
-"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-"invalid time."
+"بهترین زمان برای بازدید از هلمند در ماه‌های خنک‌تر از اکتبر تا آوریل است، "
+"زمانی که دما معتدل‌تر است. بهار (مارس تا آوریل) به‌خصوص خوشایند است با گل‌های "
+"شکوفا و دمای مناسب. تابستان‌ها می‌تواند بسیار گرم باشد، به ویژه در مناطق "
+"بیابانی."
 msgstr ""
+"أفضل وقت لزيارة هلمند هو خلال الأشهر الأكثر اعتدالًا من أكتوبر إلى أبريل، عندما تكون درجات الحرارة معتدلة. الربيع (مارس إلى أبريل) لطيف بشكل خاص مع الزهور المتفتحة ودرجات الحرارة المناسبة. يمكن أن تكون الصيف شديد الحرارة، خصوصاً في المناطق الصحراوية."
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
-msgid "Time"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:173
+msgid "اطلاعات سریع درباره هلمند"
+msgstr "معلومات سريعة عن هلمند"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
-msgid "URL"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:178
+#: .\templates\states\kandahar_farsi.html:169
+msgid "منطقه"
+msgstr "المنطقة"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
-msgid "Raw binary data"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:179
+#: .\templates\states\kandahar_farsi.html:170
+msgid "جنوب افغانستان"
+msgstr "جنوب أفغانستان"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
-#, python-format
-msgid "“%(value)s” is not a valid UUID."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:182
+#: .\templates\states\kandahar_farsi.html:173
+msgid "مرکز ولایت"
+msgstr "مركز الولاية"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
-msgid "Universally unique identifier"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:186
+msgid "مختصات"
+msgstr "الإحداثيات"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
-msgid "File"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:190
+#: .\templates\states\kandahar_farsi.html:181
+msgid "جمعیت تقریبی"
+msgstr "عدد السكان التقريبي"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
-msgid "Image"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:191
+msgid "تقریباً ۱.۴ میلیون (برآورد ۲۰۲۱)"
+msgstr "حوالي 1.4 مليون (تقدير 2021)"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
-msgid "A JSON object"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:194
+#: .\templates\states\kandahar_farsi.html:185
+msgid "مساحت جغرافیایی"
+msgstr "المساحة الجغرافية"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
-msgid "Value must be valid JSON."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:195
+msgid "حدود ۵۸,۵۸۴ کیلومتر مربع"
+msgstr "حوالي 58,584 كم²"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\related.py:978
-#, python-format
-msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:198
+msgid "ولسوالی‌ها در هلمند"
+msgstr "المديريات في هلمند"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\related.py:981
-msgid "Foreign Key (type determined by related field)"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:199
+msgid "۱۴ ولسوالی"
+msgstr "14 مديرية"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1275
-msgid "One-to-one relationship"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:202
+msgid "ادیان اصلی"
+msgstr "الأديان الرئيسية"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1332
-#, python-format
-msgid "%(from)s-%(to)s relationship"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:203
+#: .\templates\states\kandahar_farsi.html:194
+msgid "اسلام (عمدتاً سنی)"
+msgstr "الإسلام (غالبًا سني)"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1334
-#, python-format
-msgid "%(from)s-%(to)s relationships"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:206
+#: .\templates\states\kandahar_farsi.html:197
+msgid "گروه‌های قومی"
+msgstr "المجموعات العرقية"
 
-#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1382
-msgid "Many-to-many relationship"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:207
+msgid "عمدتاً پشتون، با اقلیت بلوچ و تاجیک"
+msgstr "غالبًا البشتون، مع أقليات البلوش والطاجيك"
 
-#. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the
-#. label
-#: .\venv\Lib\site-packages\django\forms\boundfield.py:185
-msgid ":?.!"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:210
+msgid "زبان‌های رایج"
+msgstr "اللغات المستخدمة"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:95
-msgid "This field is required."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:211
+#: .\templates\states\kandahar_farsi.html:202
+msgid "پشتو (اصلی)، دری"
+msgstr "البشتو (الرئيسية)، الداري"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:315
-msgid "Enter a whole number."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:214
+msgid "نماد حیوانی ولایت"
+msgstr "رمز الحيوان للولاية"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:486
-#: .\venv\Lib\site-packages\django\forms\fields.py:1267
-msgid "Enter a valid date."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:215
+msgid "شتر (نماد مناطق بیابانی)"
+msgstr "الجمل (رمز المناطق الصحراوية)"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:509
-#: .\venv\Lib\site-packages\django\forms\fields.py:1268
-msgid "Enter a valid time."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:218
+msgid "گل ولایت"
+msgstr "زهرة الولاية"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:536
-msgid "Enter a valid date/time."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:219
+msgid "شکوفه انار"
+msgstr "زهرة الرمان"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:570
-msgid "Enter a valid duration."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:222
+msgid "پرنده ولایت"
+msgstr "طائر الولاية"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:571
-#, python-brace-format
-msgid "The number of days must be between {min_days} and {max_days}."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:223
+msgid "جغد عقاب بیابانی"
+msgstr "بومة العقاب الصحراوية"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:640
-msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:226
+msgid "درخت ولایت"
+msgstr "شجرة الولاية"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:641
-msgid "No file was submitted."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:227
+msgid "نخل"
+msgstr "نخلة"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:642
-msgid "The submitted file is empty."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:230
+#: .\templates\states\kandahar_farsi.html:221
+msgid "رقص سنتی"
+msgstr "رقص تقليدي"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:644
-#, python-format
+#: .\templates\states\Helmand_farsi.html:231
+#: .\templates\states\kandahar_farsi.html:222
+msgid "آتان (رقص سنتی پشتون)"
+msgstr "آتّان (الرقص التقليدي البشتوني)"
+
+#: .\templates\states\Helmand_farsi.html:234
+#: .\templates\states\kandahar_farsi.html:225
+msgid "ورزش‌های محبوب"
+msgstr "الرياضات الشعبية"
+
+#: .\templates\states\Helmand_farsi.html:235
+msgid "بزکشی، کشتی"
+msgstr "بزكشي، مصارعة"
+
+#: .\templates\states\Helmand_farsi.html:238
+msgid "مناطق اصلی گردشگری"
+msgstr "المناطق السياحية الرئيسية"
+
+#: .\templates\states\Helmand_farsi.html:239
+msgid "قلاى بست، لشکرگاه، دره رودخانه هلمند"
+msgstr "قلعة بست، لشكرگاه، وادي نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:242
+#: .\templates\states\kandahar_farsi.html:233
+msgid "جاذبه‌های اصلی"
+msgstr "الوجهات الرئيسية"
+
+#: .\templates\states\Helmand_farsi.html:243
+msgid "خرابه‌های باستانی، مناظر کشاورزی، بازارهای سنتی، مناظر بیابانی"
+msgstr "الآثار القديمة، المناظر الزراعية، الأسواق التقليدية، المناظر الصحراوية"
+
+#: .\templates\states\Helmand_farsi.html:250
+msgid "محبوب‌ترین پکیج‌های تور هلمند"
+msgstr "أشهر برامج الجولات في هلمند"
+
+#: .\templates\states\Helmand_farsi.html:256
+#: .\templates\states\Helmand_farsi.html:262
+#: .\templates\states\Helmand_farsi.html:263
+msgid "کشف تاریخ باستانی هلمند"
+msgstr "استكشاف التاريخ القديم لهلمند"
+
+#: .\templates\states\Helmand_farsi.html:266
+msgid "۷ شب - ۸ روز"
+msgstr "7 ليالٍ - 8 أيام"
+
+#: .\templates\states\Helmand_farsi.html:275
+#: .\templates\states\Helmand_farsi.html:281
+#: .\templates\states\Helmand_farsi.html:282
+msgid "اکتشاف دره رودخانه هلمند"
+msgstr "استكشاف وادي نهر هلمند"
+
+#: .\templates\states\Helmand_farsi.html:285
+msgid "۵ شب - ۶ روز"
+msgstr "5 ليالٍ - 6 أيام"
+
+#: .\templates\states\Helmand_farsi.html:294
+#: .\templates\states\Helmand_farsi.html:300
+#: .\templates\states\Helmand_farsi.html:301
+msgid "تور بیابان و واحه"
+msgstr "جولة الصحراء والواحة"
+
+#: .\templates\states\Helmand_farsi.html:304
+msgid "۴ شب - ۵ روز"
+msgstr "4 ليالٍ - 5 أيام"
+
+#: .\templates\states\Helmand_farsi.html:313
+#: .\templates\states\Helmand_farsi.html:319
+#: .\templates\states\Helmand_farsi.html:320
+msgid "تجربه فرهنگی در هلمند"
+msgstr "تجربة ثقافية في هلمند"
+
+#: .\templates\states\Helmand_farsi.html:323
+msgid "۶ شب - ۷ روز"
+msgstr "6 ليالٍ - 7 أيام"
+
+#: .\templates\states\Helmand_farsi.html:332
+#: .\templates\states\Helmand_farsi.html:338
+#: .\templates\states\Helmand_farsi.html:339
+msgid "جاذبه‌های هلمند"
+msgstr "معالم هلمند"
+
+#: .\templates\states\Helmand_farsi.html:342
+msgid "۳ شب - ۴ روز"
+msgstr "3 ليالٍ - 4 أيام"
+
+#: .\templates\states\Helmand_farsi.html:353
+msgid "بهترین زمان بازدید از هلمند"
+msgstr "أفضل وقت لزيارة هلمند"
+
+#: .\templates\states\Helmand_farsi.html:354
+msgid "مشاهده بیشتر"
+msgstr "عرض المزيد"
+
+#: .\templates\states\Helmand_farsi.html:362
+msgid "فصل زمستان در هلمند"
+msgstr "فصل الشتاء في هلمند"
+
+#: .\templates\states\Helmand_farsi.html:363
+#: .\templates\states\Helmand_farsi.html:375
+#: .\templates\states\Helmand_farsi.html:387
+#: .\templates\states\kandahar_farsi.html:356
+#: .\templates\states\kandahar_farsi.html:368
+#: .\templates\states\kandahar_farsi.html:380
+msgid "ماه‌ها:"
+msgstr "الأشهر:"
+
+#: .\templates\states\Helmand_farsi.html:363
+msgid "نوامبر تا فوریه"
+msgstr "نوفمبر إلى فبراير"
+
+#: .\templates\states\Helmand_farsi.html:364
+#: .\templates\states\Helmand_farsi.html:376
+#: .\templates\states\Helmand_farsi.html:388
+#: .\templates\states\kandahar_farsi.html:357
+#: .\templates\states\kandahar_farsi.html:369
+#: .\templates\states\kandahar_farsi.html:381
+msgid "دمای هوا:"
+msgstr "درجة الحرارة:"
+
+#: .\templates\states\Helmand_farsi.html:365
 msgid ""
-"Ensure this filename has at most %(max)d character (it has %(length)d)."
-msgid_plural ""
-"Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] ""
-msgstr[1] ""
+"روزهای معتدل و شب‌های خنک زمستان، زمان ایده‌آلی برای کاوش سایت‌های باستان‌شناسی "
+"و دره رودخانه بدون گرمای شدید است."
+msgstr "أيام معتدلة وليالٍ باردة في الشتاء تجعلها مثالية لاستكشاف المواقع الأثرية والوادي دون حرارة شديدة."
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:649
-msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:374
+msgid "فصل بهار در هلمند"
+msgstr "فصل الربيع في هلمند"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:717
+#: .\templates\states\Helmand_farsi.html:375
+#: .\templates\states\kandahar_farsi.html:356
+msgid "مارس تا مه"
+msgstr "مارس إلى مايو"
+
+#: .\templates\states\Helmand_farsi.html:377
 msgid ""
-"Upload a valid image. The file you uploaded was either not an image or a "
-"corrupted image."
-msgstr ""
+"بهار با شکوفه‌های فراوان و دمای معتدل، زمان مناسبی برای فعالیت‌های فضای باز "
+"قبل از گرمای تابستان است."
+msgstr "الربيع مع الأزهار الكثيرة ودرجات الحرارة المعتدلة هو وقت مناسب للأنشطة الخارجية قبل حرارة الصيف."
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:889
-#: .\venv\Lib\site-packages\django\forms\fields.py:975
-#: .\venv\Lib\site-packages\django\forms\models.py:1592
-#, python-format
-msgid "Select a valid choice. %(value)s is not one of the available choices."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:386
+msgid "فصل پاییز در هلمند"
+msgstr "فصل الخريف في هلمند"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:977
-#: .\venv\Lib\site-packages\django\forms\fields.py:1096
-#: .\venv\Lib\site-packages\django\forms\models.py:1590
-msgid "Enter a list of values."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:387
+msgid "سپتامبر تا اکتبر"
+msgstr "سبتمبر إلى أكتوبر"
 
-#: .\venv\Lib\site-packages\django\forms\fields.py:1097
-msgid "Enter a complete value."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\fields.py:1339
-msgid "Enter a valid UUID."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\fields.py:1369
-msgid "Enter a valid JSON."
-msgstr ""
-
-#. Translators: This is the default suffix added to form field labels
-#: .\venv\Lib\site-packages\django\forms\forms.py:97
-msgid ":"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\forms.py:239
-#, python-format
-msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\formsets.py:61
-#, python-format
+#: .\templates\states\Helmand_farsi.html:389
 msgid ""
-"ManagementForm data is missing or has been tampered with. Missing fields: "
-"%(field_names)s. You may need to file a bug report if the issue persists."
-msgstr ""
+"فصل برداشت مناظر رنگارنگ و رویدادهای فرهنگی ارائه می‌دهد و دما از اوج تابستان "
+"کاهش می‌یابد."
+msgstr "يقدم موسم الحصاد مناظر ملونة وفعاليات ثقافية، وتنخفض درجات الحرارة بعد ذروة الصيف."
 
-#: .\venv\Lib\site-packages\django\forms\formsets.py:65
-#, python-format
-msgid "Please submit at most %(num)d form."
-msgid_plural "Please submit at most %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
+#: .\templates\states\Helmand_farsi.html:396
+msgid "بهترین مکان‌ها برای بازدید در هلمند"
+msgstr "أفضل الأماكن للزيارة في هلمند"
 
-#: .\venv\Lib\site-packages\django\forms\formsets.py:70
-#, python-format
-msgid "Please submit at least %(num)d form."
-msgid_plural "Please submit at least %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
+#: .\templates\states\Helmand_farsi.html:415
+msgid "شروع قیمت:"
+msgstr "سعر البداية:"
 
-#: .\venv\Lib\site-packages\django\forms\formsets.py:484
-#: .\venv\Lib\site-packages\django\forms\formsets.py:491
-msgid "Order"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:429
+msgid "Popular Tourist Attractions in Helmand"
+msgstr "المعالم السياحية الشهيرة في هلمند"
 
-#: .\venv\Lib\site-packages\django\forms\formsets.py:499
-msgid "Delete"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:496
+msgid "Close"
+msgstr "إغلاق"
 
-#: .\venv\Lib\site-packages\django\forms\models.py:901
-#, python-format
-msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:503
+msgid "No tourist attractions found in this province."
+msgstr "لا توجد معالم سياحية في هذه المحافظة."
 
-#: .\venv\Lib\site-packages\django\forms\models.py:906
-#, python-format
-msgid "Please correct the duplicate data for %(field)s, which must be unique."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:510
+msgid "بهترین فعالیت‌ها در هلمند"
+msgstr "أفضل الأنشطة في هلمند"
 
-#: .\venv\Lib\site-packages\django\forms\models.py:913
-#, python-format
+#: .\templates\states\Helmand_farsi.html:526
+#: .\templates\states\Helmand_farsi.html:567
+#: .\templates\states\kandahar_farsi.html:406
+#: .\templates\states\kandahar_farsi.html:515
+#: .\templates\states\kandahar_farsi.html:556
+msgid "شروع از"
+msgstr "تبدأ من"
+
+#: .\templates\states\Helmand_farsi.html:568
+#: .\templates\states\kandahar_farsi.html:486
+#: .\templates\states\kandahar_farsi.html:557
+msgid "بستن"
+msgstr "إغلاق"
+
+#: .\templates\states\Helmand_farsi.html:580
+msgid "چگونه به هلمند برسیم؟"
+msgstr "كيفية الوصول إلى هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:590
+#: .\templates\states\kandahar_farsi.html:578
+msgid "با هواپیما"
+msgstr "عن طريق الطائرة"
+
+#: .\templates\states\Helmand_farsi.html:595
 msgid ""
-"Please correct the duplicate data for %(field_name)s which must be unique "
-"for the %(lookup)s in %(date_field)s."
-msgstr ""
+"هلمند از طریق فرودگاه لشکرگاه قابل دسترسی است و پروازهای داخلی محدودی دارد. "
+"بیشتر مسافران بین‌المللی ابتدا به کابل پرواز می‌کنند و سپس با خودرو ادامه "
+"می‌دهند."
+msgstr "يمكن الوصول إلى هلمند عبر مطار لشكرگاه، مع رحلات داخلية محدودة. معظم المسافرين الدوليين يطيرون أولاً إلى كابول ثم يواصلون بالسيارة."
 
-#: .\venv\Lib\site-packages\django\forms\models.py:922
-msgid "Please correct the duplicate values below."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:606
+#: .\templates\states\kandahar_farsi.html:594
+msgid "با جاده"
+msgstr "عن طريق الطريق"
 
-#: .\venv\Lib\site-packages\django\forms\models.py:1359
-msgid "The inline value did not match the parent instance."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\models.py:1450
+#: .\templates\states\Helmand_farsi.html:611
 msgid ""
-"Select a valid choice. That choice is not one of the available choices."
-msgstr ""
+"هلمند از طریق بزرگراه‌ها به قندهار و کابل متصل است، اما سفر جاده‌ای به دلیل "
+"شرایط امنیتی می‌تواند خطرناک باشد."
+msgstr "هلمند متصلة عبر الطرق السريعة إلى قندهار وكابول، لكن السفر البري قد يكون خطيرًا بسبب الظروف الأمنية."
 
-#: .\venv\Lib\site-packages\django\forms\models.py:1594
-#, python-format
-msgid "“%(pk)s” is not a valid value."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:622
+#: .\templates\states\kandahar_farsi.html:610
+msgid "با قطار"
+msgstr "عن طريق القطار"
 
-#: .\venv\Lib\site-packages\django\forms\utils.py:229
-#, python-format
+#: .\templates\states\Helmand_farsi.html:627
+msgid "هیچ خدمات قطاری در هلمند موجود نیست؛ تنها گزینه‌ها هواپیما و جاده هستند."
+msgstr "لا توجد خدمات قطار في هلمند؛ الخيارات الوحيدة هي الطائرة والطريق."
+
+#: .\templates\states\Helmand_farsi.html:639
+#: .\templates\states\kandahar_farsi.html:625
+msgid "سوالات متداول"
+msgstr "الأسئلة الشائعة"
+
+#: .\templates\states\Helmand_farsi.html:639
+msgid "Questions"
+msgstr "الأسئلة"
+
+#: .\templates\states\Helmand_farsi.html:653
+msgid "بهترین زمان برای بازدید از هلمند چه زمانی است؟"
+msgstr "ما هو أفضل وقت لزيارة هلمند؟"
+
+
+#: .\templates\states\Helmand_farsi.html:658
 msgid ""
-"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
-"may be ambiguous or it may not exist."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:527
-msgid "Clear"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:528
-msgid "Currently"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:529
-msgid "Change"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:866
-msgid "Unknown"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:867
-msgid "Yes"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\widgets.py:868
-msgid "No"
-msgstr ""
-
-#. Translators: Please do not add spaces around commas.
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:873
-msgid "yes,no,maybe"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:903
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:920
-#, python-format
-msgid "%(size)d byte"
-msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:922
-#, python-format
-msgid "%s KB"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:924
-#, python-format
-msgid "%s MB"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:926
-#, python-format
-msgid "%s GB"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:928
-#, python-format
-msgid "%s TB"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\template\defaultfilters.py:930
-#, python-format
-msgid "%s PB"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
-msgid "p.m."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
-msgid "a.m."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
-msgid "PM"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
-msgid "AM"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
-msgid "midnight"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
-msgid "noon"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:7
-msgid "Monday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:8
-msgid "Tuesday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:9
-msgid "Wednesday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:10
-msgid "Thursday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:11
-msgid "Friday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:12
-msgid "Saturday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:13
-msgid "Sunday"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:16
-msgid "Mon"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:17
-msgid "Tue"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:18
-msgid "Wed"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:19
-msgid "Thu"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:20
-msgid "Fri"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:21
-msgid "Sat"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:22
-msgid "Sun"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:25
-msgid "January"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:26
-msgid "February"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:27
-msgid "March"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:28
-msgid "April"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:29
-msgid "May"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:30
-msgid "June"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:31
-msgid "July"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:32
-msgid "August"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:33
-msgid "September"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:34
-msgid "October"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:35
-msgid "November"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:36
-msgid "December"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:39
-msgid "jan"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:40
-msgid "feb"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:41
-msgid "mar"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:42
-msgid "apr"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:43
-msgid "may"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:44
-msgid "jun"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:45
-msgid "jul"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:46
-msgid "aug"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:47
-msgid "sep"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:48
-msgid "oct"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:49
-msgid "nov"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:50
-msgid "dec"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:53
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:54
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:55
-msgctxt "abbrev. month"
-msgid "March"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:56
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:57
-msgctxt "abbrev. month"
-msgid "May"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:58
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:59
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:60
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:61
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:62
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:63
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:64
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:67
-msgctxt "alt. month"
-msgid "January"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:68
-msgctxt "alt. month"
-msgid "February"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:69
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:70
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:71
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:72
-msgctxt "alt. month"
-msgid "June"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:73
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:74
-msgctxt "alt. month"
-msgid "August"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:75
-msgctxt "alt. month"
-msgid "September"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:76
-msgctxt "alt. month"
-msgid "October"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:77
-msgctxt "alt. month"
-msgid "November"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\dates.py:78
-msgctxt "alt. month"
-msgid "December"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
-msgid "This is not a valid IPv6 address."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\text.py:76
-#, python-format
-msgctxt "String to return when truncating text"
-msgid "%(truncated_text)s…"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\text.py:287
-msgid "or"
-msgstr ""
-
-#. Translators: This string is used as a separator between list elements
-#: .\venv\Lib\site-packages\django\utils\text.py:306
-#: .\venv\Lib\site-packages\django\utils\timesince.py:135
-msgid ", "
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\utils\timesince.py:8
-#, python-format
-msgid "%(num)d year"
-msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\utils\timesince.py:9
-#, python-format
-msgid "%(num)d month"
-msgid_plural "%(num)d months"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\utils\timesince.py:10
-#, python-format
-msgid "%(num)d week"
-msgid_plural "%(num)d weeks"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\utils\timesince.py:11
-#, python-format
-msgid "%(num)d day"
-msgid_plural "%(num)d days"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\utils\timesince.py:12
-#, python-format
-msgid "%(num)d hour"
-msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\utils\timesince.py:13
-#, python-format
-msgid "%(num)d minute"
-msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\venv\Lib\site-packages\django\views\csrf.py:29
-msgid "Forbidden"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\csrf.py:30
-msgid "CSRF verification failed. Request aborted."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\csrf.py:34
+"بهترین زمان برای بازدید از هلمند زمستان (نوامبر تا فوریه) است که دما معتدل‌تر "
+"است. تابستان‌ها بسیار گرم هستند."
+msgstr "أفضل وقت لزيارة هلمند هو الشتاء (نوفمبر إلى فبراير) حيث تكون درجات الحرارة معتدلة. الصيف حار جدًا."
+
+#: .\templates\states\Helmand_farsi.html:669
+msgid "چگونه می‌توانم به هلمند برسم؟"
+msgstr "كيف يمكنني الوصول إلى هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:674
 msgid ""
-"You are seeing this message because this HTTPS site requires a “Referer "
-"header” to be sent by your web browser, but none was sent. This header is "
-"required for security reasons, to ensure that your browser is not being "
-"hijacked by third parties."
-msgstr ""
+"هلمند از طریق جاده از قندهار یا کابل قابل دسترسی است. پرواز به فرودگاه "
+"لشکرگاه محدود و اغلب غیرقابل اعتماد است."
+msgstr "يمكن الوصول إلى هلمند عبر الطريق من قندهار أو كابول. الرحلات إلى مطار لشكرگاه محدودة وغالبًا غير موثوقة."
 
-#: .\venv\Lib\site-packages\django\views\csrf.py:40
+#: .\templates\states\Helmand_farsi.html:685
+msgid "جاذبه‌های گردشگری مشهور در هلمند کدام‌ها هستند؟"
+msgstr "ما هي أشهر المعالم السياحية في هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:690
 msgid ""
-"If you have configured your browser to disable “Referer” headers, please re-"
-"enable them, at least for this site, or for HTTPS connections, or for “same-"
-"origin” requests."
-msgstr ""
+"مکان‌های کلیدی شامل قلعۀ بوست، بازار لشکرگاه، سد کجکی و درۀ رود هلمند است."
+msgstr "تشمل المواقع الرئيسية قلعة بوست، سوق لشكرگاه، سد كجكي ووادي نهر هلمند."
 
-#: .\venv\Lib\site-packages\django\views\csrf.py:45
+#: .\templates\states\Helmand_farsi.html:701
+msgid "آیا هلمند برای گردشگران امن است؟"
+msgstr "هل هلمند آمنة للسياح؟"
+
+#: .\templates\states\Helmand_farsi.html:706
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
-" including the “Referrer-Policy: no-referrer” header, please remove them. "
-"The CSRF protection requires the “Referer” header to do strict referer "
-"checking. If you’re concerned about privacy, use alternatives like <a "
-"rel=\"noreferrer\" …> for links to third-party sites."
-msgstr ""
+"هلمند دارای خطرات امنیتی قابل توجه است. مسافران باید به توصیه‌های مسافرتی "
+"دولت خود توجه کنند و سفرهای غیرضروری را اجتناب کنند."
+msgstr "هلمند تواجه مخاطر أمنية كبيرة. يجب على المسافرين اتباع نصائح السفر الحكومية وتجنب الرحلات غير الضرورية."
 
-#: .\venv\Lib\site-packages\django\views\csrf.py:54
+#: .\templates\states\Helmand_farsi.html:717
+msgid "واحد پول محلی در هلمند چیست؟"
+msgstr "ما هي العملة المحلية في هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:722
+msgid "واحد پول محلی افغانی (AFN) است."
+msgstr "العملة المحلية هي الأفغاني (AFN)."
+
+#: .\templates\states\Helmand_farsi.html:733
+msgid "آیا برای بازدید از هلمند نیاز به ویزا دارم؟"
+msgstr "هل أحتاج إلى تأشيرة لزيارة هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:738
 msgid ""
-"You are seeing this message because this site requires a CSRF cookie when "
-"submitting forms. This cookie is required for security reasons, to ensure "
-"that your browser is not being hijacked by third parties."
-msgstr ""
+"بله، بیشتر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. با سفارت "
+"افغانستان در کشور خود مشورت کنید."
+msgstr "نعم، يحتاج معظم الأجانب إلى تأشيرة لدخول أفغانستان. استشر السفارة الأفغانية في بلدك."
 
-#: .\venv\Lib\site-packages\django\views\csrf.py:60
+#: .\templates\states\Helmand_farsi.html:749
+msgid "چه زبانی در هلمند صحبت می‌شود؟"
+msgstr "ما هي اللغة المستخدمة في هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:754
 msgid ""
-"If you have configured your browser to disable cookies, please re-enable "
-"them, at least for this site, or for “same-origin” requests."
-msgstr ""
+"پشتو زبان اصلی است و مقداری فارسی دری صحبت می‌شود. انگلیسی به ندرت فهمیده "
+"می‌شود."
+msgstr "البشتو هي اللغة الرئيسية، ويتحدث البعض الفارسية الدارية. اللغة الإنجليزية مفهومة نادرًا."
 
-#: .\venv\Lib\site-packages\django\views\csrf.py:66
-msgid "More information is available with DEBUG=True."
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:765
+msgid "چه نوع لباس‌هایی باید در هلمند پوشید؟"
+msgstr "ما نوع الملابس المناسبة في هلمند؟"
 
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
-msgid "No year specified"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
-msgid "Date out of range"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
-msgid "No month specified"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
-msgid "No day specified"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
-msgid "No week specified"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:353
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:384
-#, python-format
-msgid "No %(verbose_name_plural)s available"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:680
-#, python-format
+#: .\templates\states\Helmand_farsi.html:770
 msgid ""
-"Future %(verbose_name_plural)s not available because "
-"%(class_name)s.allow_future is False."
-msgstr ""
+"پوشش محافظه‌کارانه الزامی است. زنان باید موهای خود را بپوشانند و لباس‌های گشاد "
+"بپوشند؛ مردان باید از شلوارک خودداری کنند."
+msgstr "الزي المحافظ مطلوب. يجب على النساء تغطية شعرهن وارتداء ملابس فضفاضة؛ يجب على الرجال تجنب السراويل القصيرة."
 
-#: .\venv\Lib\site-packages\django\views\generic\dates.py:720
-#, python-format
-msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:781
+msgid "غذاهای محلی هلمند چگونه است؟"
+msgstr "كيف هي الأطعمة المحلية في هلمند؟"
 
-#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
-#, python-format
-msgid "No %(verbose_name)s found matching the query"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\list.py:70
-msgid "Page is not “last”, nor can it be converted to an int."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\list.py:77
-#, python-format
-msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\generic\list.py:173
-#, python-format
-msgid "Empty list and “%(class_name)s.allow_empty” is False."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\static.py:49
-msgid "Directory indexes are not allowed here."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\static.py:51
-#, python-format
-msgid "“%(path)s” does not exist"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\static.py:68
-#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
-#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
-#, python-format
-msgid "Index of %(directory)s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
-#, python-format
+#: .\templates\states\Helmand_farsi.html:786
 msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
+"غذاهای هلمند شامل کباب بره، غذاهای برنجی مانند چلو و نان تازه است. چای "
+"نوشیدنی اصلی است."
+msgstr "تشمل الأطعمة المحلية في هلمند كباب لحم الضأن، أطباق الأرز مثل تشيلو وخبز طازج. الشاي هو المشروب الرئيسي."
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
-#, python-format
+#: .\templates\states\Helmand_farsi.html:797
+msgid "آیا می‌توانم از کارت اعتباری در هلمند استفاده کنم؟"
+msgstr "هل يمكنني استخدام بطاقة ائتمان في هلمند؟"
+
+#: .\templates\states\Helmand_farsi.html:802
+msgid "خیر. تنها پرداخت نقدی (افغانی یا دلار) پذیرفته می‌شود."
+msgstr "لا. فقط الدفع النقدي (أفغاني أو دولار) مقبول."
+
+#: .\templates\states\Helmand_farsi.html:817
+msgid "نقشه هلمند"
+msgstr "خريطة هلمند"
+
+#: .\templates\states\Helmand_farsi.html:830
+msgid "سوالات دیگر دارید؟"
+msgstr "هل لديك أسئلة أخرى؟"
+
+#: .\templates\states\Helmand_farsi.html:831
 msgid ""
-"You are seeing this page because <a "
-"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
-"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
-"and you have not configured any URLs."
-msgstr ""
+"اگر پاسخ سوال خود را در بخش سوالات متداول پیدا نکردید، می‌توانید همیشه با ما "
+"تماس بگیرید. ما به زودی پاسخ شما را خواهیم داد!"
+msgstr "إذا لم تجد إجابة سؤالك في قسم الأسئلة الشائعة، يمكنك دائمًا الاتصال بنا. سنجيبك قريبًا!"
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
-msgid "Django Documentation"
-msgstr ""
+#: .\templates\states\Helmand_farsi.html:834
+#: .\templates\states\kandahar_farsi.html:822
+msgid "تماس با ما"
+msgstr "اتصل بنا"
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
-msgid "Topics, references, &amp; how-to’s"
-msgstr ""
+#: .\templates\states\kandahar_farsi.html:19
+msgid "گردشگری قندهار"
+msgstr "سياحة قندهار"
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
-msgid "Tutorial: A Polling App"
-msgstr ""
+#: .\templates\states\kandahar_farsi.html:22
+msgid ""
+"قندهار دومین شهر بزرگ افغانستان و قلب فرهنگی مردم پشتون است. این شهر با "
+"تاریخ غنی، باغ‌های انار و بازارهای سنتی، به بازدیدکنندگان نمایی از فرهنگ و "
+"میراث اصیل افغان ارائه می‌دهد."
+msgstr "قندهار ثاني أكبر مدينة في أفغانستان وقلب الثقافة البشتونية. هذه المدينة بتاريخ غني وحدائق الرمان والأسواق التقليدية، تقدم للزوار لمحة عن الثقافة والتراث الأفغاني الأصيل."
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
-msgid "Get started with Django"
-msgstr ""
+#: .\templates\states\kandahar_farsi.html:37
+msgid ""
+"قندهار نوروز را با گردهمایی‌های ویژه در پارک‌ها و خانه‌ها جشن می‌گیرد، شامل "
+"غذاهای سنتی و دیدارهای خانوادگی."
+msgstr "تحتفل قندهار بمهرجان نوروز من خلال تجمعات خاصة في الحدائق والمنازل، بما في ذلك الأطعمة التقليدية واللقاءات العائلية."
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
-msgid "Django Community"
-msgstr ""
+#: .\templates\states\kandahar_farsi.html:49
+msgid "جشن انار"
+msgstr "مهرجان الرمان"
 
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
-msgid "Connect, get help, or contribute"
-msgstr ""
+#: .\templates\states\kandahar_farsi.html:50
+msgid ""
+"قندهار به انارهای شیرین خود مشهور است. فصل برداشت بازارهای رنگارنگ و جشن‌های "
+"ویژه را به همراه دارد."
+msgstr "قندهار مشهورة بالرمان الحلو. موسم الحصاد يجلب أسواقاً ملونة واحتفالات خاصة."
+
+#: .\templates\states\kandahar_farsi.html:63
+msgid ""
+"صنایع دستی معروف قندهار مانند گلدوزی، چرم و محصولات مسی را در بازارهای قدیمی "
+"کاوش کنید."
+msgstr "استكشف الحرف اليدوية الشهيرة في قندهار مثل التطريز والجلود والمنتجات النحاسية في الأسواق القديمة."
+
+#: .\templates\states\kandahar_farsi.html:74
+msgid "بررسی اجمالی"
+msgstr "نظرة عامة"
+
+#: .\templates\states\kandahar_farsi.html:84
+msgid "چگونه برسیم"
+msgstr "كيفية الوصول"
+
+#: .\templates\states\kandahar_farsi.html:94
+msgid "فعالیت‌ها"
+msgstr "الأنشطة"
+
+#: .\templates\states\kandahar_farsi.html:120
+msgid "درباره گردشگری قندهار"
+msgstr "حول سياحة قندهار"
+
+#: .\templates\states\kandahar_farsi.html:121
+msgid ""
+"قندهار شهری با اهمیت تاریخی عمیق و غنای فرهنگی است که به عنوان قلب سنتی مردم "
+"پشتون شناخته می‌شود. از بازارهای قدیمی گرفته تا باغ‌های اطراف، قندهار تجربه "
+"اصیل افغان را به بازدیدکنندگان ارائه می‌دهد."
+msgstr "قندهار مدينة ذات أهمية تاريخية وثقافية عميقة، وتعرف كقلب تقليدي للشعب البشتوني. من الأسواق القديمة إلى الحدائق المحيطة، تقدم قندهار تجربة أفغانية أصيلة للزوار."
+
+#: .\templates\states\kandahar_farsi.html:123
+msgid "شکوه معماری: مساجد، آرامگاه‌ها و اماکن تاریخی"
+msgstr "روعة العمارة: المساجد، الأضرحة والأماكن التاريخية"
+
+#: .\templates\states\kandahar_farsi.html:124
+msgid ""
+"قندهار میزبان چندین سایت مهم معماری اسلامی است. آرامگاه عبای پیامبر، بقایایی "
+"را که اعتقاد بر این است که عبای پیامبر محمد است، در خود جای داده است. مسجد "
+"جمعه معماری سنتی اسلامی را نشان می‌دهد و آرامگاه احمد شاه درانی به بنیانگذار "
+"افغانستان اختصاص دارد. شهر قدیمی دارای خانه‌های سنتی گل‌خشت و کوچه‌های باریک "
+"است که قرن‌ها پابرجا مانده‌اند."
+msgstr "تستضيف قندهار العديد من المواقع المعمارية الإسلامية المهمة. ضريح عباءة النبي، والذي يُعتقد أنه يحتوي على عباءة النبي محمد، مسجد الجمعة يظهر العمارة الإسلامية التقليدية وضريح أحمد شاه دراني مخصص لمؤسس أفغانستان. المدينة القديمة تحتوي على منازل تقليدية وأزقة ضيقة صامدة منذ قرون."
+
+#: .\templates\states\kandahar_farsi.html:126
+msgid "میراث فرهنگی غنی پشتون‌ها"
+msgstr "التراث الثقافي الغني للبشتون"
+
+#: .\templates\states\kandahar_farsi.html:127
+msgid ""
+"قندهار مرکز فرهنگی سنت‌های پشتون است. این شهر نوروز را با گردهمایی‌های "
+"خانوادگی و بازدید از زیارتگاه‌های محلی جشن می‌گیرد. مهمان‌نوازی سنتی پشتون‌ها "
+"معروف است و مهمانان با غذاهای مفصل شامل نان قندهاری، گوشت بره کبابی و انار "
+"تازه پذیرایی می‌شوند. شهر همچنین به صنایع دستی و گلدوزی‌های خاص خود مشهور است."
+msgstr "قندهار مركز الثقافة والتقاليد البشتونية. تحتفل المدينة بالنوروز من خلال التجمعات العائلية وزيارة المزارات المحلية. الضيافة البشتونية التقليدية مشهورة، ويتم تقديم وجبات كبيرة تشمل خبز قندهاري، لحم ضأن مشوي ورمان طازج. المدينة مشهورة أيضًا بالحرف اليدوية والتطريز الخاص بها."
+
+#: .\templates\states\kandahar_farsi.html:129
+msgid "کشتزارهای دره ارغنداب و باغ‌های اطراف"
+msgstr "حقول وادي أرخنداب والحدائق المحيطة"
+
+#: .\templates\states\kandahar_farsi.html:130
+msgid ""
+"دره سرسبز ارغنداب اطراف قندهار برای باغ‌های انار و انگور خود مشهور است. "
+"بازدیدکنندگان می‌توانند در باغ‌های میوه قدم بزنند، به ویژه در فصل برداشت که "
+"مناظر زیبایی ارائه می‌دهد. این دره همچنین چشم‌اندازهایی از کوه‌های هندوکش و "
+"فرصت‌هایی برای پیک‌نیک در کنار رودخانه ارغنداب دارد."
+msgstr "وادي أرخنداب الخصب حول قندهار مشهور بحدائقه من الرمان والعنب. يمكن للزوار التجول في حدائق الفاكهة، خاصة خلال موسم الحصاد الذي يقدم مناظر جميلة. كما يوفر الوادي إطلالات على جبال هندوكوش وفرصًا للنزهات بجانب نهر أرخنداب."
+
+#: .\templates\states\kandahar_farsi.html:132
+msgid "خرید صنایع دستی سنتی و میوه‌های تازه"
+msgstr "شراء الحرف اليدوية التقليدية والفواكه الطازجة"
+
+#: .\templates\states\kandahar_farsi.html:133
+msgid ""
+"بازارهای قندهار به انار، انگور و خربزه‌های با کیفیت خود مشهور هستند. این شهر "
+"همچنین به صنایع دستی سنتی شامل گلدوزی‌های پیچیده (خامک)، محصولات چرمی و صنایع "
+"مسی معروف است. بازار شاه و بازار هرات مکان‌های عالی برای یافتن محصولات اصیل "
+"قندهاری هستند."
+msgstr "أسواق قندهار مشهورة بالرمان والعنب والبطيخ عالي الجودة. المدينة مشهورة أيضًا بالحرف اليدوية التقليدية بما في ذلك التطريز المعقد (خامك)، المنتجات الجلدية والنحاسية. سوق شاه وسوق هرات أماكن ممتازة للحصول على المنتجات القندهارية الأصيلة."
+
+#: .\templates\states\kandahar_farsi.html:135
+msgid "از نان قندهاری تا گوشت بره کبابی: لذت بردن از غذاهای محلی"
+msgstr "من خبز قندهاري إلى لحم الضأن المشوي: الاستمتاع بالمأكولات المحلية"
+
+#: .\templates\states\kandahar_farsi.html:136
+msgid ""
+"غذاهای قندهار در سراسر افغانستان مشهور است. نان قندهاری (نان بزرگ و بیضوی) "
+"یک غذای ویژه است و گوشت بره کبابی و انواع غذاهای برنجی نیز محبوب هستند. شهر "
+"به انارهایش معروف است که در غذاهای شیرین و شور استفاده می‌شوند. وعده‌ها اغلب "
+"با چای سبز و ماست تازه همراه است."
+msgstr "المأكولات القندهارية مشهورة في جميع أنحاء أفغانستان. خبز قندهاري (خبز كبير بيضاوي) هو طبق مميز، ولحم الضأن المشوي وأطباق الأرز متنوعة شهيرة أيضًا. المدينة مشهورة بالرمان الذي يستخدم في الأطعمة الحلوة والمالحة. غالبًا ما تُقدم الوجبات مع الشاي الأخضر واللبن الطازج."
+
+#: .\templates\states\kandahar_farsi.html:138
+msgid "مهمان‌نوازی سنتی در مهمانسراهای محلی"
+msgstr "الضيافة التقليدية في النزل المحلية"
+
+#: .\templates\states\kandahar_farsi.html:139
+msgid ""
+"اگرچه قندهار هتل‌های لوکس ندارد، بازدیدکنندگان می‌توانند مهمان‌نوازی اصیل پشتون "
+"را در مهمانسراهای محلی تجربه کنند. این مکان‌ها اتاق‌های ساده اما راحت، وعده‌های "
+"خانگی و فرصت تجربه زندگی سنتی قندهاری را ارائه می‌دهند."
+msgstr "على الرغم من أن قندهار لا تحتوي على فنادق فاخرة، يمكن للزوار تجربة الضيافة البشتونية الأصيلة في النزل المحلية. توفر هذه الأماكن غرفًا بسيطة ولكن مريحة، ووجبات منزلية وفرصة لتجربة الحياة التقليدية القندهارية."
+
+
+#: .\templates\states\kandahar_farsi.html:141
+msgid "بازدید از اماکن تاریخی قندهار"
+msgstr "زيارة المواقع التاريخية في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:142
+msgid ""
+"قندهار به بازدیدکنندگان فرصت می‌دهد تا از اماکن تاریخی مهم مانند آرامگاه عبای "
+"پیامبر، آرامگاه احمد شاه درانی و چیلزینا بازدید کنند. محله قدیمی شهر دارای "
+"معماری سنتی و بازارهای پرجنب و جوش است که طی قرن‌ها تغییر چندانی نکرده‌اند."
+msgstr "تتيح قندهار للزوار فرصة زيارة المواقع التاريخية المهمة مثل ضريح عباءة النبي، ضريح أحمد شاه دراني وتشيلزينا. الحي القديم يتميز بالعمارة التقليدية والأسواق النابضة بالحياة التي لم تتغير كثيرًا على مر القرون."
+
+#: .\templates\states\kandahar_farsi.html:144
+msgid "مکان‌های مذهبی و مساجد تاریخی"
+msgstr "المواقع الدينية والمساجد التاريخية"
+
+#: .\templates\states\kandahar_farsi.html:145
+msgid ""
+"قندهار میزبان چندین مکان مهم اسلامی است که زائران را از سراسر افغانستان جذب "
+"می‌کند. مسجد جمعه به ویژه زیبا است و آرامگاه عبای پیامبر یکی از مقدس‌ترین "
+"اماکن افغانستان است. جشن‌های مذهبی با دقت و احترام در قندهار برگزار می‌شوند."
+msgstr "تستضيف قندهار العديد من المواقع الإسلامية المهمة التي تجذب الزوار من جميع أنحاء أفغانستان. مسجد الجمعة جميل بشكل خاص وضريح عباءة النبي من أقدس الأماكن في أفغانستان. تُقام الاحتفالات الدينية بعناية واحترام في قندهار."
+
+#: .\templates\states\kandahar_farsi.html:147
+msgid "۱۰ مکان برتر برای بازدید در قندهار"
+msgstr "أفضل 10 أماكن للزيارة في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:149
+msgid "آرامگاه عبای پیامبر"
+msgstr "ضريح عباءة النبي"
+
+#: .\templates\states\kandahar_farsi.html:149
+msgid ""
+"مکانی که بقایی اعتقاد بر این است که عبای پیامبر محمد است در آن قرار دارد."
+msgstr "المكان الذي يُعتقد أنه يحتوي على بقايا عباءة النبي محمد."
+
+#: .\templates\states\kandahar_farsi.html:150
+msgid "آرامگاه احمد شاه درانی"
+msgstr "ضريح أحمد شاه دراني"
+
+#: .\templates\states\kandahar_farsi.html:150
+msgid "مقبره بنیانگذار افغانستان."
+msgstr "مقبرة مؤسس أفغانستان."
+
+#: .\templates\states\kandahar_farsi.html:151
+msgid "چیلزینا"
+msgstr "تشيلزينا"
+
+#: .\templates\states\kandahar_farsi.html:151
+msgid "اتاق‌های سنگی با کتیبه‌های دوره مغول."
+msgstr "غرف حجرية تحتوي على نقوش من العصر المغولي."
+
+#: .\templates\states\kandahar_farsi.html:152
+msgid "دره ارغنداب"
+msgstr "وادي أرخنداب"
+
+#: .\templates\states\kandahar_farsi.html:152
+msgid "باغ‌ها و مناظر طبیعی سرسبز."
+msgstr "حدائق ومناظر طبيعية خضراء."
+
+#: .\templates\states\kandahar_farsi.html:153
+msgid "مسجد جمعه"
+msgstr "مسجد الجمعة"
+
+#: .\templates\states\kandahar_farsi.html:153
+msgid "مهم‌ترین مسجد قندهار."
+msgstr "أهم مسجد في قندهار."
+
+#: .\templates\states\kandahar_farsi.html:154
+msgid "بازار شاه"
+msgstr "سوق شاه"
+
+#: .\templates\states\kandahar_farsi.html:154
+msgid "بازاری سنتی که میوه، ادویه و صنایع دستی می‌فروشد."
+msgstr "سوق تقليدي يبيع الفواكه والتوابل والحرف اليدوية."
+
+#: .\templates\states\kandahar_farsi.html:155
+msgid "بازار هرات"
+msgstr "سوق هرات"
+
+#: .\templates\states\kandahar_farsi.html:155
+msgid "مشهور به گلدوزی‌ها و صنایع دستی قندهاری."
+msgstr "مشهور بالتطريزات والحرف القندهارية."
+
+#: .\templates\states\kandahar_farsi.html:156
+msgid "زیارت بابا ولی"
+msgstr "زيارة بابا ولي"
+
+#: .\templates\states\kandahar_farsi.html:156
+msgid "مکان زیارتی محبوب در دره ارغنداب."
+msgstr "مكان ديني شهير في وادي أرخنداب."
+
+#: .\templates\states\kandahar_farsi.html:157
+msgid "موزه قندهار"
+msgstr "متحف قندهار"
+
+#: .\templates\states\kandahar_farsi.html:157
+msgid "نمایشگاه آثار باستانی و تاریخ غنی منطقه."
+msgstr "عرض للآثار القديمة والتاريخ الغني للمنطقة."
+
+#: .\templates\states\kandahar_farsi.html:158
+msgid "باغ‌های انار"
+msgstr "حدائق الرمان"
+
+#: .\templates\states\kandahar_farsi.html:158
+msgid "بازدید در فصل برداشت (سپتامبر-اکتبر)."
+msgstr "الزيارة خلال موسم الحصاد (سبتمبر-أكتوبر)."
+
+#: .\templates\states\kandahar_farsi.html:161
+msgid "بهترین زمان بازدید از قندهار"
+msgstr "أفضل وقت لزيارة قندهار"
+
+#: .\templates\states\kandahar_farsi.html:162
+msgid ""
+"بهترین زمان بازدید از قندهار از اکتبر تا آوریل است که دما معتدل‌تر است. بهار "
+"(مارس-آوریل) به ویژه زیباست زیرا باغ‌ها شکوفه می‌دهند. تابستان‌ها بسیار گرم است "
+"و دما معمولاً از ۴۰ درجه سانتی‌گراد فراتر می‌رود."
+msgstr "أفضل وقت لزيارة قندهار من أكتوبر إلى أبريل حيث تكون درجات الحرارة معتدلة. الربيع (مارس-أبريل) جميل جدًا لأن الحدائق تتفتح. الصيف حار جدًا وتصل الحرارة غالبًا إلى أكثر من 40 درجة مئوية."
+
+#: .\templates\states\kandahar_farsi.html:164
+msgid "اطلاعات سریع درباره قندهار"
+msgstr "معلومات سريعة عن قندهار"
+
+#: .\templates\states\kandahar_farsi.html:174
+msgid "شهر قندهار"
+msgstr "مدينة قندهار"
+
+#: .\templates\states\kandahar_farsi.html:177
+msgid "مختصات جغرافیایی"
+msgstr "الإحداثيات الجغرافية"
+
+#: .\templates\states\kandahar_farsi.html:182
+msgid "حدود ۱.۲ میلیون نفر (برآورد ۲۰۲۱)"
+msgstr "حوالي 1.2 مليون نسمة (تقدير 2021)"
+
+#: .\templates\states\kandahar_farsi.html:186
+msgid "حدود ۵۴٬۰۲۲ کیلومتر مربع"
+msgstr "حوالي 54,022 كيلومتر مربع"
+
+#: .\templates\states\kandahar_farsi.html:189
+msgid "ولسوالی‌ها"
+msgstr "المقاطعات"
+
+#: .\templates\states\kandahar_farsi.html:190
+msgid "۱۶ ولسوالی"
+msgstr "16 مقاطعة"
+
+#: .\templates\states\kandahar_farsi.html:193
+msgid "مذهب‌های اصلی"
+msgstr "الأديان الرئيسية"
+
+#: .\templates\states\kandahar_farsi.html:198
+msgid "عمدتاً پشتون، با اقلیت تاجیک و هزاره"
+msgstr "غالبًا بشتون، مع أقليات تاجيك وهزاره"
+
+#: .\templates\states\kandahar_farsi.html:201
+msgid "زبان‌های مورد استفاده"
+msgstr "اللغات المستخدمة"
+
+#: .\templates\states\kandahar_farsi.html:205
+msgid "حیوان سمبل ولایت"
+msgstr "الحيوان الرمزي للمحافظة"
+
+#: .\templates\states\kandahar_farsi.html:206
+msgid "سگ افغان"
+msgstr "الكلب الأفغاني"
+
+#: .\templates\states\kandahar_farsi.html:209
+msgid "گل سمبل ولایت"
+msgstr "الزهرة الرمزية للمحافظة"
+
+#: .\templates\states\kandahar_farsi.html:210
+msgid "گل انار"
+msgstr "زهرة الرمان"
+
+#: .\templates\states\kandahar_farsi.html:213
+msgid "پرنده سمبل ولایت"
+msgstr "الطائر الرمزي للمحافظة"
+
+#: .\templates\states\kandahar_farsi.html:214
+msgid "باز"
+msgstr "الصقر"
+
+#: .\templates\states\kandahar_farsi.html:217
+msgid "درخت سمبل ولایت"
+msgstr "الشجرة الرمزية للمحافظة"
+
+#: .\templates\states\kandahar_farsi.html:218
+msgid "درخت انار"
+msgstr "شجرة الرمان"
+
+#: .\templates\states\kandahar_farsi.html:226
+msgid "بزکشی، کریکت"
+msgstr "بزكشي، الكريكيت"
+
+#: .\templates\states\kandahar_farsi.html:229
+msgid "مناطق گردشگری اصلی"
+msgstr "المناطق السياحية الرئيسية"
+
+#: .\templates\states\kandahar_farsi.html:230
+msgid "آرامگاه عبای پیامبر، دره ارغنداب، چیلزینا، بازارهای محلی"
+msgstr "ضريح عباءة النبي، وادي أرخنداب، تشيلزينا، الأسواق المحلية"
+
+#: .\templates\states\kandahar_farsi.html:234
+msgid "اماكن تاریخی، باغ‌های انار، بازارهای سنتی، معماری اسلامی"
+msgstr "المواقع التاريخية، حدائق الرمان، الأسواق التقليدية، العمارة الإسلامية"
+
+#: .\templates\states\kandahar_farsi.html:346
+msgid "بهترین زمان برای بازدید از قندهار"
+msgstr "أفضل وقت لزيارة قندهار"
+
+#: .\templates\states\kandahar_farsi.html:347
+msgid "نمایش بیشتر"
+msgstr "عرض المزيد"
+
+#: .\templates\states\kandahar_farsi.html:355
+msgid "فصل بهار در قندهار"
+msgstr "فصل الربيع في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:358
+msgid ""
+"بهار هوای مطبوع و باغ‌های شکوفه زده را به ارمغان می‌آورد و زمان ایده‌آلی برای "
+"بازدید از مکان‌های تاریخی و فعالیت‌های بیرونی است."
+msgstr "يقدم الربيع طقسًا معتدلًا وحدائق مزهرة، وهو الوقت المثالي لزيارة المواقع التاريخية والأنشطة الخارجية."
+
+#: .\templates\states\kandahar_farsi.html:367
+msgid "فصل پاییز در قندهار"
+msgstr "فصل الخريف في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:368
+msgid "اکتبر تا نوامبر"
+msgstr "أكتوبر حتى نوفمبر"
+
+#: .\templates\states\kandahar_farsi.html:370
+msgid ""
+"پاییز دماهای مطبوع و فصل برداشت انار را ارائه می‌دهد و بازارهای رنگارنگ و "
+"رویدادهای فرهنگی را تجربه خواهید کرد."
+msgstr "يقدم الخريف درجات حرارة معتدلة وموسم حصاد الرمان، كما ستستمتع بالأسواق الملونة والفعاليات الثقافية."
+
+#: .\templates\states\kandahar_farsi.html:379
+msgid "فصل زمستان در قندهار"
+msgstr "فصل الشتاء في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:380
+msgid "دسامبر تا فوریه"
+msgstr "ديسمبر حتى فبراير"
+
+#: .\templates\states\kandahar_farsi.html:382
+msgid ""
+"زمستان‌ها معتدل با شب‌های خنک هستند و زمان ایده‌آلی برای بازدید از جاذبه‌های "
+"داخلی شهر و مکان‌های تاریخی می‌باشند."
+msgstr "الشتاء معتدل مع ليالٍ باردة، وهو وقت مثالي لزيارة المعالم الداخلية للمدينة والمواقع التاريخية."
+
+#: .\templates\states\kandahar_farsi.html:390
+msgid "بهترین مکان‌ها برای بازدید در قندهار"
+msgstr "أفضل الأماكن للزيارة في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:419
+msgid "جاذبه‌های گردشگری محبوب در قندهار"
+msgstr "المعالم السياحية الشهيرة في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:493
+msgid "هیچ جاذبه گردشگری در این ولایت یافت نشد."
+msgstr "لم يتم العثور على أي معالم سياحية في هذه المحافظة."
+
+#: .\templates\states\kandahar_farsi.html:499
+msgid "برترین فعالیت‌ها در قندهار"
+msgstr "أفضل الأنشطة في قندهار"
+
+#: .\templates\states\kandahar_farsi.html:568
+msgid "چگونه به قندهار برسیم؟"
+msgstr "كيف تصل إلى قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:583
+msgid ""
+"فرودگاه بین‌المللی قندهار شهر را با پروازهای داخلی به کابل و برخی مقاصد "
+"بین‌المللی در منطقه متصل می‌کند."
+msgstr "يربط مطار قندهار الدولي المدينة بالرحلات الداخلية إلى كابول وبعض الوجهات الدولية في المنطقة."
+
+#: .\templates\states\kandahar_farsi.html:599
+msgid ""
+"قندهار از طریق جاده حلقوی به سایر شهرهای مهم متصل است. سفر از کابل حدود ۸ تا "
+"۱۰ ساعت طول می‌کشد و بستگی به شرایط امنیتی دارد."
+msgstr "قندهار متصلة بالطرق الدائرية إلى المدن الرئيسية الأخرى. تستغرق الرحلة من كابول حوالي 8 إلى 10 ساعات وتعتمد على الظروف الأمنية."
+
+#: .\templates\states\kandahar_farsi.html:615
+msgid ""
+"در حال حاضر قندهار هیچ خدمات قطاری ندارد؛ سفر با هواپیما و جاده گزینه‌های "
+"اصلی برای رسیدن به شهر هستند."
+msgstr "حاليًا، لا توجد خدمات قطار في قندهار؛ السفر جواً أو بالطرق هو الخيار الرئيسي للوصول إلى المدينة."
+
+#: .\templates\states\kandahar_farsi.html:640
+msgid "بهترین زمان بازدید از قندهار چه زمانی است؟"
+msgstr "متى هو أفضل وقت لزيارة قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:646
+msgid ""
+"بهترین زمان بازدید از قندهار از اکتبر تا آوریل است که دما ملایم‌تر است. بهار "
+"(مارچ-آوریل) به ویژه دلپذیر است."
+msgstr "أفضل وقت لزيارة قندهار من أكتوبر إلى أبريل حيث تكون درجات الحرارة معتدلة. الربيع (مارس-أبريل) ممتع بشكل خاص."
+
+#: .\templates\states\kandahar_farsi.html:657
+msgid "چگونه می‌توانم به قندهار برسم؟"
+msgstr "كيف يمكنني الوصول إلى قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:662
+msgid ""
+"می‌توانید از طریق فرودگاه بین‌المللی قندهار یا جاده حلقوی از کابل یا سایر "
+"شهرهای بزرگ به قندهار برسید."
+msgstr "يمكنك الوصول إلى قندهار عبر مطار قندهار الدولي أو الطريق الدائري من كابول أو المدن الكبرى الأخرى."
+
+#: .\templates\states\kandahar_farsi.html:673
+msgid "برخی از جاذبه‌های گردشگری معروف قندهار کدامند؟"
+msgstr "ما هي بعض المعالم السياحية الشهيرة في قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:678
+msgid ""
+"جاذبه‌های محبوب شامل حرم عبای پیامبر، آرامگاه احمد شاه درانی، چیلزینا و دره "
+"ارغنداب هستند."
+msgstr "تشمل المعالم الشهيرة ضريح عباءة النبي، ضريح أحمد شاه دراني، تشيلزينا ووادي أرخنداب."
+
+#: .\templates\states\kandahar_farsi.html:689
+msgid "آیا قندهار برای گردشگران ایمن است؟"
+msgstr "هل قندهار آمنة للسياح؟"
+
+#: .\templates\states\kandahar_farsi.html:694
+msgid ""
+"وضعیت امنیتی در قندهار متفاوت است. ضروری است که قبل از بازدید، توصیه‌های سفر "
+"و مشورت با مقامات محلی را بررسی کنید."
+msgstr "الوضع الأمني في قندهار متفاوت. من الضروري مراجعة نصائح السفر واستشارة السلطات المحلية قبل الزيارة."
+
+#: .\templates\states\kandahar_farsi.html:705
+msgid "واحد پول محلی در قندهار چیست؟"
+msgstr "ما هي العملة المحلية في قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:710
+msgid "واحد پول محلی در قندهار افغانی (AFN) است."
+msgstr "العملة المحلية في قندهار هي الأفغاني (AFN)."
+
+#: .\templates\states\kandahar_farsi.html:721
+msgid "آیا برای بازدید از قندهار نیاز به ویزا دارم؟"
+msgstr "هل أحتاج إلى تأشيرة لزيارة قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:726
+msgid ""
+"بله، اکثر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. برای "
+"اطلاعات بیشتر با سفارت یا کنسولگری افغانستان در کشور خود تماس بگیرید."
+msgstr "نعم، يحتاج معظم الأجانب إلى تأشيرة لدخول أفغانستان. لمزيد من المعلومات، اتصل بسفارة أو قنصلية أفغانستان في بلدك."
+
+#: .\templates\states\kandahar_farsi.html:737
+msgid "در قندهار چه زبانی صحبت می‌شود؟"
+msgstr "ما اللغة التي يتحدث بها في قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:742
+msgid ""
+"زبان اصلی قندهار پشتو است، اما بسیاری نیز دری را می‌فهمند. انگلیسی به طور "
+"گسترده صحبت نمی‌شود."
+msgstr "اللغة الرئيسية في قندهار هي البشتو، لكن الكثيرون يفهمون الدري. الإنجليزية لا تُتحدث على نطاق واسع."
+
+#: .\templates\states\kandahar_farsi.html:753
+msgid "چه نوع لباسی در قندهار بپوشم؟"
+msgstr "ما نوع الملابس التي يجب ارتداؤها في قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:758
+msgid ""
+"قندهار محافظه‌کار است. مردان باید شلوار و پیراهن بلند بپوشند و زنان لباس‌های "
+"گشاد که بازوها و پاها را می‌پوشاند همراه با روسری سر بپوشند."
+msgstr "قندهار محافظة. يجب على الرجال ارتداء بنطال وقميص طويل، وعلى النساء ارتداء ملابس فضفاضة تغطي الذراعين والساقين مع ارتداء الحجاب."
+
+#: .\templates\states\kandahar_farsi.html:769
+msgid "غذاهای محلی قندهار چگونه است؟"
+msgstr "كيف هي الأطعمة المحلية في قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:774
+msgid ""
+"قندهار به نان قندهاری، گوشت بره کبابی (شینوری) و انارهای تازه معروف است. "
+"وعده‌های غذایی سنتی اغلب شامل پلو و کباب هستند."
+msgstr "قندهار مشهورة بخبزها القندهاري، لحم الضأن المشوي (شينوري) والرمان الطازج. غالبًا ما تشمل الوجبات التقليدية الأرز والكباب."
+
+#: .\templates\states\kandahar_farsi.html:785
+msgid "آیا می‌توانم از کارت اعتباری در قندهار استفاده کنم؟"
+msgstr "هل يمكنني استخدام بطاقة ائتمان في قندهار؟"
+
+#: .\templates\states\kandahar_farsi.html:790
+msgid ""
+"کارت‌های اعتباری به ندرت پذیرفته می‌شوند. توصیه می‌شود برای همه تراکنش‌ها نقدی "
+"به واحد افغانی همراه داشته باشید."
+msgstr "نادراً ما تُقبل بطاقات الائتمان. يُنصح بحمل نقدًا بالعملة الأفغانية لجميع المعاملات."
+
+#: .\templates\states\kandahar_farsi.html:805
+msgid "نقشه قندهار"
+msgstr "خريطة قندهار"
+
+#: .\templates\states\kandahar_farsi.html:818
+msgid "سوالات دیگری دارید؟"
+msgstr "هل لديك أسئلة أخرى؟"
+
+#: .\templates\states\kandahar_farsi.html:819
+msgid ""
+"اگر پاسخ سوال خود را در بخش سوالات متداول پیدا نکردید، همیشه می‌توانید با ما "
+"تماس بگیرید. ما به زودی به شما پاسخ خواهیم داد!"
+msgstr "إذا لم تجد إجابة لسؤالك في قسم الأسئلة المتكررة، يمكنك دائمًا الاتصال بنا. سنرد عليك قريبًا!"
+
 
 #: .\visit_afg_core\settings.py:156
 msgid "English"

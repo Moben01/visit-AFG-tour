@@ -1,0 +1,834 @@
+{% extends 'rtl-base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'state-image/kandahar/Kandahar_City_Aerial-780x470-1.jpg' %}" alt="Img">
+        </div>
+
+    </div>
+<div class="container">
+    <div class="hero-content">
+        <div class="row align-items-center">
+            <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                <div class="banner-content mx-auto">
+                    <h1 class="text-white display-5 mb-2">
+                        <span>{% trans "گردشگری قندهار" %}</span>
+                    </h1>
+                    <p class="text-light mt-3">
+                        {% trans "قندهار دومین شهر بزرگ افغانستان و قلب فرهنگی مردم پشتون است. این شهر با تاریخ غنی، باغ‌های انار و بازارهای سنتی، به بازدیدکنندگان نمایی از فرهنگ و میراث اصیل افغان ارائه می‌دهد." %}
+                    </p>
+                </div>
+
+                <div class="container my-5">
+
+                    <!-- Festivals Cards -->
+                    <div class="row justify-content-center mb-4">
+                        <!-- Festival 1: Nowruz -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card banner-form mb-3">
+                                <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                    data-wow-delay="0.1s">
+                                    <div class="card-body text-center">
+                                        <h5 class="mb-1">{% trans "جشن نوروز" %}</h5>
+                                        <p>{% trans "قندهار نوروز را با گردهمایی‌های ویژه در پارک‌ها و خانه‌ها جشن می‌گیرد، شامل غذاهای سنتی و دیدارهای خانوادگی." %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Festival 2: Pomegranate Festival -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card banner-form mb-3">
+                                <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                    data-wow-delay="0.2s">
+                                    <div class="card-body text-center">
+                                        <h5 class="mb-1">{% trans "جشن انار" %}</h5>
+                                        <p>{% trans "قندهار به انارهای شیرین خود مشهور است. فصل برداشت بازارهای رنگارنگ و جشن‌های ویژه را به همراه دارد." %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Festival 3: Handicrafts -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card banner-form mb-3">
+                                <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                    data-wow-delay="0.3s">
+                                    <div class="card-body text-center">
+                                        <h5 class="mb-1">{% trans "صنایع دستی سنتی" %}</h5>
+                                        <p>{% trans "صنایع دستی معروف قندهار مانند گلدوزی، چرم و محصولات مسی را در بازارهای قدیمی کاوش کنید." %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hotel Types Grid -->
+                    <div class="row text-center justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#overview">{% trans "بررسی اجمالی" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">{% trans "بهترین زمان بازدید" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" id="overview">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#howtoreach">{% trans "چگونه برسیم" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#palcetovisit">{% trans "مکان‌های دیدنی" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#thingstodo">{% trans "فعالیت‌ها" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#packages">{% trans "پکیج‌ها" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#map">{% trans "نقشه" %}</a></h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+       <h4 class="mb-2">{% trans "درباره گردشگری قندهار" %}</h4>
+<p class="mb-1">{% trans "قندهار شهری با اهمیت تاریخی عمیق و غنای فرهنگی است که به عنوان قلب سنتی مردم پشتون شناخته می‌شود. از بازارهای قدیمی گرفته تا باغ‌های اطراف، قندهار تجربه اصیل افغان را به بازدیدکنندگان ارائه می‌دهد." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "شکوه معماری: مساجد، آرامگاه‌ها و اماکن تاریخی" %}</h4>
+<p class="mb-1">{% trans "قندهار میزبان چندین سایت مهم معماری اسلامی است. آرامگاه عبای پیامبر، بقایایی را که اعتقاد بر این است که عبای پیامبر محمد است، در خود جای داده است. مسجد جمعه معماری سنتی اسلامی را نشان می‌دهد و آرامگاه احمد شاه درانی به بنیانگذار افغانستان اختصاص دارد. شهر قدیمی دارای خانه‌های سنتی گل‌خشت و کوچه‌های باریک است که قرن‌ها پابرجا مانده‌اند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "میراث فرهنگی غنی پشتون‌ها" %}</h4>
+<p class="mb-1">{% trans "قندهار مرکز فرهنگی سنت‌های پشتون است. این شهر نوروز را با گردهمایی‌های خانوادگی و بازدید از زیارتگاه‌های محلی جشن می‌گیرد. مهمان‌نوازی سنتی پشتون‌ها معروف است و مهمانان با غذاهای مفصل شامل نان قندهاری، گوشت بره کبابی و انار تازه پذیرایی می‌شوند. شهر همچنین به صنایع دستی و گلدوزی‌های خاص خود مشهور است." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "کشتزارهای دره ارغنداب و باغ‌های اطراف" %}</h4>
+<p class="mb-1">{% trans "دره سرسبز ارغنداب اطراف قندهار برای باغ‌های انار و انگور خود مشهور است. بازدیدکنندگان می‌توانند در باغ‌های میوه قدم بزنند، به ویژه در فصل برداشت که مناظر زیبایی ارائه می‌دهد. این دره همچنین چشم‌اندازهایی از کوه‌های هندوکش و فرصت‌هایی برای پیک‌نیک در کنار رودخانه ارغنداب دارد." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "خرید صنایع دستی سنتی و میوه‌های تازه" %}</h4>
+<p class="mb-1">{% trans "بازارهای قندهار به انار، انگور و خربزه‌های با کیفیت خود مشهور هستند. این شهر همچنین به صنایع دستی سنتی شامل گلدوزی‌های پیچیده (خامک)، محصولات چرمی و صنایع مسی معروف است. بازار شاه و بازار هرات مکان‌های عالی برای یافتن محصولات اصیل قندهاری هستند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "از نان قندهاری تا گوشت بره کبابی: لذت بردن از غذاهای محلی" %}</h4>
+<p class="mb-1">{% trans "غذاهای قندهار در سراسر افغانستان مشهور است. نان قندهاری (نان بزرگ و بیضوی) یک غذای ویژه است و گوشت بره کبابی و انواع غذاهای برنجی نیز محبوب هستند. شهر به انارهایش معروف است که در غذاهای شیرین و شور استفاده می‌شوند. وعده‌ها اغلب با چای سبز و ماست تازه همراه است." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "مهمان‌نوازی سنتی در مهمانسراهای محلی" %}</h4>
+<p class="mb-1">{% trans "اگرچه قندهار هتل‌های لوکس ندارد، بازدیدکنندگان می‌توانند مهمان‌نوازی اصیل پشتون را در مهمانسراهای محلی تجربه کنند. این مکان‌ها اتاق‌های ساده اما راحت، وعده‌های خانگی و فرصت تجربه زندگی سنتی قندهاری را ارائه می‌دهند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "بازدید از اماکن تاریخی قندهار" %}</h4>
+<p class="mb-1">{% trans "قندهار به بازدیدکنندگان فرصت می‌دهد تا از اماکن تاریخی مهم مانند آرامگاه عبای پیامبر، آرامگاه احمد شاه درانی و چیلزینا بازدید کنند. محله قدیمی شهر دارای معماری سنتی و بازارهای پرجنب و جوش است که طی قرن‌ها تغییر چندانی نکرده‌اند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "مکان‌های مذهبی و مساجد تاریخی" %}</h4>
+<p class="mb-1">{% trans "قندهار میزبان چندین مکان مهم اسلامی است که زائران را از سراسر افغانستان جذب می‌کند. مسجد جمعه به ویژه زیبا است و آرامگاه عبای پیامبر یکی از مقدس‌ترین اماکن افغانستان است. جشن‌های مذهبی با دقت و احترام در قندهار برگزار می‌شوند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "۱۰ مکان برتر برای بازدید در قندهار" %}</h4>
+<div class="mb-4">
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "آرامگاه عبای پیامبر" %}</strong> — {% trans "مکانی که بقایی اعتقاد بر این است که عبای پیامبر محمد است در آن قرار دارد." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "آرامگاه احمد شاه درانی" %}</strong> — {% trans "مقبره بنیانگذار افغانستان." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "چیلزینا" %}</strong> — {% trans "اتاق‌های سنگی با کتیبه‌های دوره مغول." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "دره ارغنداب" %}</strong> — {% trans "باغ‌ها و مناظر طبیعی سرسبز." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "مسجد جمعه" %}</strong> — {% trans "مهم‌ترین مسجد قندهار." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "بازار شاه" %}</strong> — {% trans "بازاری سنتی که میوه، ادویه و صنایع دستی می‌فروشد." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "بازار هرات" %}</strong> — {% trans "مشهور به گلدوزی‌ها و صنایع دستی قندهاری." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "زیارت بابا ولی" %}</strong> — {% trans "مکان زیارتی محبوب در دره ارغنداب." %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "موزه قندهار" %}</strong> — {% trans "نمایشگاه آثار باستانی و تاریخ غنی منطقه." %}</p>
+    <p><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "باغ‌های انار" %}</strong> — {% trans "بازدید در فصل برداشت (سپتامبر-اکتبر)." %}</p>
+</div>
+
+<h4 class="mb-3 mt-3">{% trans "بهترین زمان بازدید از قندهار" %}</h4>
+<p class="mb-1">{% trans "بهترین زمان بازدید از قندهار از اکتبر تا آوریل است که دما معتدل‌تر است. بهار (مارس-آوریل) به ویژه زیباست زیرا باغ‌ها شکوفه می‌دهند. تابستان‌ها بسیار گرم است و دما معمولاً از ۴۰ درجه سانتی‌گراد فراتر می‌رود." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "اطلاعات سریع درباره قندهار" %}</h4>
+<div style="overflow-x:auto;">
+    <table class="table table-bordered" style="min-width: 700px;">
+        <tbody>
+            <tr>
+                <th>{% trans "منطقه" %}</th>
+                <td>{% trans "جنوب افغانستان" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مرکز ولایت" %}</th>
+                <td>{% trans "شهر قندهار" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مختصات جغرافیایی" %}</th>
+                <td>31.6288° N, 65.7372° E</td>
+            </tr>
+            <tr>
+                <th>{% trans "جمعیت تقریبی" %}</th>
+                <td>{% trans "حدود ۱.۲ میلیون نفر (برآورد ۲۰۲۱)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مساحت جغرافیایی" %}</th>
+                <td>{% trans "حدود ۵۴٬۰۲۲ کیلومتر مربع" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "ولسوالی‌ها" %}</th>
+                <td>{% trans "۱۶ ولسوالی" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مذهب‌های اصلی" %}</th>
+                <td>{% trans "اسلام (عمدتاً سنی)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "گروه‌های قومی" %}</th>
+                <td>{% trans "عمدتاً پشتون، با اقلیت تاجیک و هزاره" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "زبان‌های مورد استفاده" %}</th>
+                <td>{% trans "پشتو (اصلی)، دری" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "حیوان سمبل ولایت" %}</th>
+                <td>{% trans "سگ افغان" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "گل سمبل ولایت" %}</th>
+                <td>{% trans "گل انار" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "پرنده سمبل ولایت" %}</th>
+                <td>{% trans "باز" %}</td>
+            </tr>
+            <tr id="packages">
+                <th>{% trans "درخت سمبل ولایت" %}</th>
+                <td>{% trans "درخت انار" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "رقص سنتی" %}</th>
+                <td>{% trans "آتان (رقص سنتی پشتون)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "ورزش‌های محبوب" %}</th>
+                <td>{% trans "بزکشی، کریکت" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مناطق گردشگری اصلی" %}</th>
+                <td>{% trans "آرامگاه عبای پیامبر، دره ارغنداب، چیلزینا، بازارهای محلی" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "جاذبه‌های اصلی" %}</th>
+                <td>{% trans "اماكن تاریخی، باغ‌های انار، بازارهای سنتی، معماری اسلامی" %}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<h4 class="mb-4 mt-4" id="besttimetovisit">Best Selling Kandahar Tour Packages</h4>
+<style>
+    .truncate-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 170px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+</style>
+<div class="travelers-slider owl-carousel owl-loaded owl-drag">
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top" alt="Explore Kandahar's Heritage"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Explore Kandahar's Heritage">
+                        Explore Kandahar's Heritage
+                    </a>
+                </h6>
+                <p>7 Nights - 8 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top" alt="Cultural Tour in Kandahar"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Cultural Tour in Kandahar">
+                        Cultural Tour in Kandahar
+                    </a>
+                </h6>
+                <p>5 Nights - 6 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top" alt="Pomegranate Harvest Experience"></a>
+            <span class="overlay-icon"><i class="isax isax-building"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Pomegranate Harvest Experience">
+                        Pomegranate Harvest Experience
+                    </a>
+                </h6>
+                <p>4 Nights - 5 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top" alt="Historic Kandahar Tour"></a>
+            <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Historic Kandahar Tour">
+                        Historic Kandahar Tour
+                    </a>
+                </h6>
+                <p>3 Nights - 4 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top" alt="Kandahar Highlights"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="Kandahar Highlights">
+                        Kandahar Highlights
+                    </a>
+                </h6>
+                <p>2 Nights - 3 Days</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">{% trans "بهترین زمان برای بازدید از قندهار" %}</h4>
+        <a href="#" class="btn btn-outline-primary btn-sm">{% trans "نمایش بیشتر" %}</a>
+    </div>
+
+    <div class="row g-3">
+        <!-- Spring -->
+        <div class="col-md-4" id="palcetovisit">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success">{% trans "فصل بهار در قندهار" %}</h5>
+                    <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "مارس تا مه" %}</p>
+                    <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> ۱۵°C تا ۳۰°C</p>
+                    <p class="card-text">{% trans "بهار هوای مطبوع و باغ‌های شکوفه زده را به ارمغان می‌آورد و زمان ایده‌آلی برای بازدید از مکان‌های تاریخی و فعالیت‌های بیرونی است." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autumn -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">{% trans "فصل پاییز در قندهار" %}</h5>
+                    <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "اکتبر تا نوامبر" %}</p>
+                    <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> ۱۸°C تا ۳۲°C</p>
+                    <p class="card-text">{% trans "پاییز دماهای مطبوع و فصل برداشت انار را ارائه می‌دهد و بازارهای رنگارنگ و رویدادهای فرهنگی را تجربه خواهید کرد." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Winter -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-info">{% trans "فصل زمستان در قندهار" %}</h5>
+                    <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "دسامبر تا فوریه" %}</p>
+                    <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> ۵°C تا ۱۸°C</p>
+                    <p class="card-text">{% trans "زمستان‌ها معتدل با شب‌های خنک هستند و زمان ایده‌آلی برای بازدید از جاذبه‌های داخلی شهر و مکان‌های تاریخی می‌باشند." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<h4 class="mb-4 mt-4">{% trans "بهترین مکان‌ها برای بازدید در قندهار" %}</h4>
+
+<div class="row">
+    {% for i in find_best_places_in_this_province %}
+        <div class="col-md-3 mb-4">
+            <div class="location-item">
+                <a href="#" class="location-img">
+                    <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                    <div class="location-name">
+                        <h5 class="mb-1">{{ i.title }}</h5>
+                        <p>({{ i.location }})</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                        <p class="fs-14"><span class="text-primary">{% trans "شروع از" %} ${{ i.start_price }}</span></p>
+                    </div>
+                    <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+   
+
+  
+<h4 class="mb-4 mt-4">{% trans "جاذبه‌های گردشگری محبوب در قندهار" %}</h4>
+
+<div class="container">
+    <div class="d-flex overflow-auto pb-3" style="gap: 1rem;">
+        {% for place in Popular_Tourist_in_the_province %}
+        <div class="card shadow-sm" style="min-width: 250px; max-width: 250px; flex: 0 0 auto;">
+            <!-- Image (click to open modal) -->
+            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}">
+                <img src="{{ place.image.url }}" class="card-img-top" alt="{{ place.title }}"
+                     style="height: 160px; object-fit: cover;">
+            </a>
+
+            <!-- Body -->
+            <div class="card-body">
+                <h6 class="card-title two-line-ellipsis mb-2">{{ place.title }}</h6>
+                <p class="card-text text-muted small mb-2">
+                    {{ place.description|truncatewords:12 }}
+                </p>
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="badge bg-primary">{{ place.location }}</span>
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}"
+                       class="btn btn-sm btn-outline-primary">
+                        <i class="isax isax-arrow-right-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ place.id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content rounded-3 shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ place.title }} - {{ place.location }}</h5>  
+                        <span class="badge bg-primary ms-2">{{ place.provinces|join:", " }}</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Main image preview -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <img id="mainImage{{ place.id }}" src="{{ place.image.url }}" 
+                                 style="max-width: 309px;" class="img-fluid rounded border" alt="{{ place.title }}">
+                        </div>
+
+                        <!-- Small images -->
+                        <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                            <img src="{{ place.image.url }}" 
+                                 class="img-fluid rounded border small-img"
+                                 style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                 alt="{{ place.title }}"
+                                 onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
+
+                            {% for img in place.images.all %}
+                                <img src="{{ img.image.url }}" 
+                                     class="img-fluid rounded border small-img"
+                                     style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                     alt="{{ img.caption }}"
+                                     onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
+                            {% endfor %}
+                        </div>
+
+                        <!-- Description -->
+                        <p>{{ place.description }}</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "بستن" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% empty %}
+        <p class="text-center text-muted">{% trans "هیچ جاذبه گردشگری در این ولایت یافت نشد." %}</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+<h4 class="mb-4 mt-4">{% trans "برترین فعالیت‌ها در قندهار" %}</h4>
+
+<div class="overflow-auto">
+    <div class="d-flex gap-3">
+      {% for i in find_things_to_do_in_this_province %}
+        <div class="col-md-3 mb-4 flex-shrink-0">
+          <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
+            <a href="javascript:void(0)" class="location-img">
+              <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
+              <div class="location-name">
+                <h5 class="mb-1">{{ i.title }}</h5>
+                <p>({{ i.location }})</p>
+              </div>
+            </a>
+            <div class="location-info d-flex align-items-center justify-content-between">
+              <div>
+                <p class="fs-14"><span class="text-primary">{% trans "شروع از" %} {{ i.price }}</span></p>
+              </div>
+              <a href="javascript:void(0)" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ i.id }}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow">
+              <div class="modal-header">
+                <h5 class="modal-title">{{ i.title }} - {{ i.location }}</h5>  
+                <span class="badge bg-primary ms-2">{{ i.provinces|join:", " }}</span> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+  
+                <!-- Main image preview -->
+                <div class="d-flex justify-content-center">
+                  <img id="mainImage{{ i.id }}" src="{{ i.image.url }}" 
+                       style="max-width: 309px;" class="img-fluid rounded mb-3 border" alt="{{ i.title }}">
+                </div>
+  
+                <!-- Small images -->
+                {% if i.images.all %}
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                  {% for img in i.images.all %}
+                    <img src="{{ img.image.url }}" 
+                         class="img-fluid rounded border small-img"
+                         style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                         alt="{{ img.caption }}"
+                         onclick="document.getElementById('mainImage{{ i.id }}').src=this.src">
+                  {% endfor %}
+                </div>
+                {% endif %}
+  
+                <!-- Description -->
+                <p>{{ i.description }}</p>
+              </div>
+              <div class="modal-footer">
+                <span class="fw-bold text-success">{% trans "شروع از" %} ${{ i.price }}</span>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "بستن" %}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      {% endfor %}
+    </div>
+</div>
+
+
+<h4 class="mb-4 mt-4">{% trans "چگونه به قندهار برسیم؟" %}</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>{% trans "با هواپیما" %}</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>{% trans "فرودگاه بین‌المللی قندهار شهر را با پروازهای داخلی به کابل و برخی مقاصد بین‌المللی در منطقه متصل می‌کند." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>{% trans "با جاده" %}</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>{% trans "قندهار از طریق جاده حلقوی به سایر شهرهای مهم متصل است. سفر از کابل حدود ۸ تا ۱۰ ساعت طول می‌کشد و بستگی به شرایط امنیتی دارد." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Train -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>{% trans "با قطار" %}</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-train fs-24"></i>
+                        </span>
+                    </div>
+                    <p>{% trans "در حال حاضر قندهار هیچ خدمات قطاری ندارد؛ سفر با هواپیما و جاده گزینه‌های اصلی برای رسیدن به شهر هستند." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Train -->
+
+    </div>
+</div>
+
+
+<h4 class="mb-4 mt-5">{% trans "سوالات متداول" %}</h4>
+
+<div class="container">
+    <!-- FAQ Section -->
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    {% trans "بهترین زمان بازدید از قندهار چه زمانی است؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "بهترین زمان بازدید از قندهار از اکتبر تا آوریل است که دما ملایم‌تر است. بهار (مارچ-آوریل) به ویژه دلپذیر است." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                    aria-controls="faq2">
+                                    {% trans "چگونه می‌توانم به قندهار برسم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "می‌توانید از طریق فرودگاه بین‌المللی قندهار یا جاده حلقوی از کابل یا سایر شهرهای بزرگ به قندهار برسید." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                    aria-controls="faq3">
+                                    {% trans "برخی از جاذبه‌های گردشگری معروف قندهار کدامند؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "جاذبه‌های محبوب شامل حرم عبای پیامبر، آرامگاه احمد شاه درانی، چیلزینا و دره ارغنداب هستند." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                    aria-controls="faq4">
+                                    {% trans "آیا قندهار برای گردشگران ایمن است؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "وضعیت امنیتی در قندهار متفاوت است. ضروری است که قبل از بازدید، توصیه‌های سفر و مشورت با مقامات محلی را بررسی کنید." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                    aria-controls="faq5">
+                                    {% trans "واحد پول محلی در قندهار چیست؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "واحد پول محلی در قندهار افغانی (AFN) است." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                    aria-controls="faq6">
+                                    {% trans "آیا برای بازدید از قندهار نیاز به ویزا دارم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "بله، اکثر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. برای اطلاعات بیشتر با سفارت یا کنسولگری افغانستان در کشور خود تماس بگیرید." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                    aria-controls="faq7">
+                                    {% trans "در قندهار چه زبانی صحبت می‌شود؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "زبان اصلی قندهار پشتو است، اما بسیاری نیز دری را می‌فهمند. انگلیسی به طور گسترده صحبت نمی‌شود." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                    aria-controls="faq8">
+                                    {% trans "چه نوع لباسی در قندهار بپوشم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "قندهار محافظه‌کار است. مردان باید شلوار و پیراهن بلند بپوشند و زنان لباس‌های گشاد که بازوها و پاها را می‌پوشاند همراه با روسری سر بپوشند." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3" id="map">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                    aria-controls="faq9">
+                                    {% trans "غذاهای محلی قندهار چگونه است؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "قندهار به نان قندهاری، گوشت بره کبابی (شینوری) و انارهای تازه معروف است. وعده‌های غذایی سنتی اغلب شامل پلو و کباب هستند." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                    aria-controls="faq10">
+                                    {% trans "آیا می‌توانم از کارت اعتباری در قندهار استفاده کنم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "کارت‌های اعتباری به ندرت پذیرفته می‌شوند. توصیه می‌شود برای همه تراکنش‌ها نقدی به واحد افغانی همراه داشته باشید." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Kandahar Map Section -->
+<div class="container mt-5">
+    <h4 class="mb-4">{% trans "نقشه قندهار" %}</h4>
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221997.7784079602!2d65.583333!3d31.616667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4235e7a1bf7e4f%3A0x3f3f3f3f3f3f3f3f!2sKandahar%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719252086420!5m2!1sen!2s"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+        <div class="que-sec text-center">
+            <h4 class="mb-3">{% trans "سوالات دیگری دارید؟" %}</h4>
+            <p class="mb-3">{% trans "اگر پاسخ سوال خود را در بخش سوالات متداول پیدا نکردید، همیشه می‌توانید با ما تماس بگیرید. ما به زودی به شما پاسخ خواهیم داد!" %}</p>
+            <div class="d-flex justify-content-center">
+                <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                    {% trans "تماس با ما" %}<i class="isax isax-arrow-right-3 ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+</section>
+{% endblock %}
