@@ -2,6 +2,7 @@ from django.shortcuts import render
 from tour.models import *
 from things_to_do.models import *
 from django.http import HttpResponse
+from django.utils.translation import get_language
 # Create your views here.
 
 def kabul(request):
@@ -262,6 +263,20 @@ def Kandahar(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Kandahar")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Kandahar")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kandahar")
+
+
+
+
+    language_code = get_language()
+
+    if language_code in ['fa', 'ar']:
+        return render(request, 'states/kandahar_farsi.html',{'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    else:
+        return render(request, 'states/Kandahar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+
+
+
+
     return render(request, 'states/Kandahar.html', {'get_tour_categories':get_tour_categories, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'find_best_places_in_this_province':find_best_places_in_this_province})
 
 def Helmand(request):
@@ -269,7 +284,17 @@ def Helmand(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Helmand")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Helmand")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Helmand")
-    return render(request, 'states/Helmand.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    language_code = get_language()
+
+    if language_code in ['fa', 'ar']:
+        return render(request, 'states/Helmand_farsi.html',{'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    else:
+        return render(request, 'states/Helmand.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+
+
+
+
+
 
 def Zabul(request):
     get_tour_categories = TourCategory.objects.all()

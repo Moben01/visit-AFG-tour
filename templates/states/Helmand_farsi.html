@@ -1,0 +1,845 @@
+{% extends 'rtl-base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'state-image/helmand/94116a86-f712-45b0-a2eb-e19ca65a71e4.jpeg' %}" alt="Img">
+        </div>
+
+    </div>
+{% load i18n %}
+
+<div class="container">
+    <div class="hero-content">
+        <div class="row align-items-center">
+            <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                <div class="banner-content mx-auto">
+                    <h1 class="text-white display-5 mb-2">
+                        <span>{% trans "گردشگری هلمند" %}</span>
+                    </h1>
+                    <p class="text-light mt-3">
+                        {% trans "هلمند یک ولایت تاریخی و غنی در جنوب افغانستان است که به خاطر آثار باستانی، زمین‌های کشاورزی حاصلخیز در کنار رود هلمند و مناظر بیابانی منحصر به فردش شناخته می‌شود. این ولایت نگاهی به تمدن‌های باستانی افغانستان و زندگی سنتی روستایی ارائه می‌دهد." %}
+                    </p>
+                </div>
+                <div class="container my-5">
+
+                    <!-- Festivals Cards -->
+                    <div class="row justify-content-center mb-4">
+                        <!-- Festival 1: Nowruz -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card banner-form mb-3">
+                                <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                    data-wow-delay="0.1s">
+                                    <div class="card-body text-center">
+                                        <h5 class="mb-1">{% trans "جشن نوروز" %}</h5>
+                                        <p>{% trans "در طول رود هلمند با وعده‌های غذایی سنتی و گردهمایی‌های خانوادگی در لشکرگاه جشن گرفته می‌شود." %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Festival 2: Pomegranate Festival -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card banner-form mb-3">
+                                <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                    data-wow-delay="0.2s">
+                                    <div class="card-body text-center">
+                                        <h5 class="mb-1">{% trans "جشن برداشت انار" %}</h5>
+                                        <p>{% trans "هلمند به انارهای شیرین خود معروف است و این جشن با بازارهای محلی و مراسم برداشت برگزار می‌شود." %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Festival 3: Handicrafts -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card banner-form mb-3">
+                                <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
+                                    data-wow-delay="0.3s">
+                                    <div class="card-body text-center">
+                                        <h5 class="mb-1">{% trans "صنایع دستی سنتی" %}</h5>
+                                        <p>{% trans "کشف سفالگری محلی، منسوجات بافته شده و قالیچه‌های دست‌بافت در روستاهای هلمند." %}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hotel Types Grid -->
+                    <div class="row text-center justify-content-center">
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#overview">{% trans "نمای کلی" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">{% trans "بهترین زمان بازدید" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" id="overview">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#howtoreach">{% trans "راه‌های رسیدن" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#palcetovisit">{% trans "مکان‌های دیدنی" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#thingstodo">{% trans "کارهایی برای انجام" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#packages">{% trans "پکیج‌ها" %}</a></h6>
+                            </div>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                            <div class="hotel-type-item">
+                                <h6 class="fs-16 fw-medium"><a href="#map">{% trans "نقشه" %}</a></h6>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</section>
+
+
+<section class="section destination-section">
+    <div class="container">
+      {% load i18n %}
+
+<h4 class="mb-2">{% trans "درباره گردشگری هلمند" %}</h4>
+<p class="mb-1">{% trans "هلمند یک ولایت با اهمیت تاریخی و دارای زمین‌های کشاورزی حاصلخیز است، که به خاطر آثار باستانی، دره‌های حاصلخیز رودخانه و فرهنگ سنتی پشتون شناخته می‌شود. از بقایای تمدن‌های باستانی تا آب‌های روان رود هلمند، این ولایت جنوبی دیدگاه منحصربه‌فردی از میراث افغانستان ارائه می‌دهد." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "گنجینه‌های تاریخی: شهرهای باستانی و سایت‌های باستان‌شناسی" %}</h4>
+<p class="mb-1">{% trans "هلمند میزبان چندین سایت باستان‌شناسی مهم است، از جمله شهر باستانی بست با قلعه مشهور قلاى بست. این ولایت زمانی بخشی از امپراتوری هخامنشی و سپس پادشاهی یونان باختری بود که خرابه‌هایی به جا گذاشته که داستان تمدن‌های گذشته را روایت می‌کنند. دره رودخانه هلمند شامل تپه‌های حفاری‌نشده زیادی است که احتمالاً گنجینه‌های باستان‌شناسی بیشتری در خود دارند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "سرزمین کشاورزی: دره رودخانه هلمند" %}</h4>
+<p class="mb-1">{% trans "رودخانه هلمند، طولانی‌ترین رودخانه افغانستان، یک دره حاصلخیز ایجاد می‌کند که از کشاورزی گسترده پشتیبانی می‌کند. هلمند به عنوان نان‌خوار افغانستان شناخته می‌شود و گندم، پنبه و انارهای معروف خود را تولید می‌کند. سیستم‌های سنتی آبیاری (کاریز) نشان‌دهنده تکنیک‌های مدیریت آب باستانی است که هنوز هم استفاده می‌شوند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "مناظر بیابانی و اکوسیستم‌های منحصربه‌فرد" %}</h4>
+<p class="mb-1">{% trans "فراتر از دره رودخانه، هلمند دارای مناظر بیابانی دیدنی از جمله بخش‌هایی از بیابان رگستان است. این ولایت اکوسیستم‌های متنوعی از تالاب‌های کنار رودخانه تا مناطق بیابانی خشک دارد و حیات وحش منحصربه‌فردی که با این محیط‌ها سازگار است، در آن زندگی می‌کند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "فرهنگ سنتی پشتون و مهمان‌نوازی" %}</h4>
+<p class="mb-1">{% trans "هلمند عمدتاً پشتون است و دارای سنت‌های قبیله‌ای قوی و میراث فرهنگی غنی است. بازدیدکنندگان می‌توانند مهمان‌نوازی سنتی، جرگه‌های قبیله‌ای و قانون معروف پشتون‌ها (پشتونوالی) را تجربه کنند. این ولایت صنایع دستی، موسیقی و داستان‌سرایی سنتی را حفظ می‌کند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "بازارهای محلی و صنایع دستی" %}</h4>
+<p class="mb-1">{% trans "بازارهای لشکرگاه صنایع دستی سنتی شامل گلدوزی‌های پیچیده، فرش‌های دست‌بافت و سفال ارائه می‌دهند. این ولایت به ویژه به خاطر خربزه و انارهای خود معروف است که در جشنواره‌های فصلی جشن گرفته می‌شوند. بازارهای محلی نگاهی به زندگی روزمره و تجارت سنتی ارائه می‌دهند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "غذاهای سنتی هلمندی" %}</h4>
+<p class="mb-1">{% trans "غذاهای هلمند شامل خوراک‌هایی مانند لندی (گوشت خشک)، شوروا (سوپ گوشت) و انواع غذاهای برنجی است. این ولایت به خاطر غذاها و سس‌های مبتنی بر انار مشهور است. پخت نان سنتی در تنورهای گلی در روستاها رایج است." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "اقامتگاه‌های ساده با جذابیت سنتی" %}</h4>
+<p class="mb-1">{% trans "با وجود اینکه هلمند هتل‌های لوکس ندارد، بازدیدکنندگان می‌توانند مهمان‌خانه‌های سنتی (حجره‌ها) را تجربه کنند که مهمان‌نوازی اصیل پشتون را ارائه می‌دهند. این اقامتگاه‌ها راحتی پایه و فرصت تجربه فرهنگ محلی را فراهم می‌کنند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "کاوش در رودخانه هلمند و کانال‌ها" %}</h4>
+<p class="mb-1">{% trans "شبکه گسترده کانال‌های منشعب از رودخانه هلمند فرصت‌های کاوش فراهم می‌کند. قایق‌های سنتی چوبی (جلاس) هنوز در برخی مناطق برای حمل و نقل استفاده می‌شوند. رودخانه زیستگاه پرندگان متنوعی است که برای مشاهده طبیعت جالب است." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "سایت‌های تاریخی و فرهنگی" %}</h4>
+<p class="mb-1">{% trans "سایت‌های مهم شامل مجموعه بودایی باستانی در قلاى بست، خرابه‌های شهر قرون وسطایی بست و مساجد و زیارتگاه‌های تاریخی متعدد است. تاریخ این ولایت بازتاب امپراتوری‌های مختلفی است که این منطقه استراتژیک را تحت کنترل داشته‌اند." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "۱۰ مکان برتر برای بازدید در هلمند" %}</h4>
+<div class="mb-4">
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "قلاى بست" %}</strong> — {% trans "قلعه باستانی با قوس‌های دیدنی نزدیک لشکرگاه" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "لشکرگاه" %}</strong> — {% trans "مرکز ولایت در کنار رود هلمند" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "دره رودخانه هلمند" %}</strong> — {% trans "منطقه کشاورزی حاصلخیز با روستاهای سنتی" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "فرودگاه بست" %}</strong> — {% trans "فرودگاه تاریخی با سابقه نظامی" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "گریشک" %}</strong> — {% trans "شهر تاریخی در کنار رود هلمند" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "سد کجکی" %}</strong> — {% trans "پروژه بزرگ برق‌آبی روی رود هلمند" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "ناد علی" %}</strong> — {% trans "ولسوالی کشاورزی مشهور به انار" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "بیابان رگستان" %}</strong> — {% trans "منطقه بیابانی جنوبی با مناظر منحصربه‌فرد" %}</p>
+    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "دانشگاه بست" %}</strong> — {% trans "مرکز آموزش در ولایت" %}</p>
+    <p><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "بازارهای محلی" %}</strong> — {% trans "بازارهای سنتی در لشکرگاه و مرکز ولسوالی‌ها" %}</p>
+</div>
+
+<h4 class="mb-3 mt-3">{% trans "بهترین زمان برای بازدید از هلمند" %}</h4>
+<p class="mb-1">{% trans "بهترین زمان برای بازدید از هلمند در ماه‌های خنک‌تر از اکتبر تا آوریل است، زمانی که دما معتدل‌تر است. بهار (مارس تا آوریل) به‌خصوص خوشایند است با گل‌های شکوفا و دمای مناسب. تابستان‌ها می‌تواند بسیار گرم باشد، به ویژه در مناطق بیابانی." %}</p>
+
+<h4 class="mb-3 mt-3">{% trans "اطلاعات سریع درباره هلمند" %}</h4>
+<div style="overflow-x:auto;">
+    <table class="table table-bordered" style="min-width: 700px;">
+        <tbody>
+            <tr>
+                <th>{% trans "منطقه" %}</th>
+                <td>{% trans "جنوب افغانستان" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مرکز ولایت" %}</th>
+                <td>{% trans "لشکرگاه" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مختصات" %}</th>
+                <td>31.5833° N, 64.3667° E</td>
+            </tr>
+            <tr>
+                <th>{% trans "جمعیت تقریبی" %}</th>
+                <td>{% trans "تقریباً ۱.۴ میلیون (برآورد ۲۰۲۱)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مساحت جغرافیایی" %}</th>
+                <td>{% trans "حدود ۵۸,۵۸۴ کیلومتر مربع" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "ولسوالی‌ها در هلمند" %}</th>
+                <td>{% trans "۱۴ ولسوالی" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "ادیان اصلی" %}</th>
+                <td>{% trans "اسلام (عمدتاً سنی)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "گروه‌های قومی" %}</th>
+                <td>{% trans "عمدتاً پشتون، با اقلیت بلوچ و تاجیک" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "زبان‌های رایج" %}</th>
+                <td>{% trans "پشتو (اصلی)، دری" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "نماد حیوانی ولایت" %}</th>
+                <td>{% trans "شتر (نماد مناطق بیابانی)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "گل ولایت" %}</th>
+                <td>{% trans "شکوفه انار" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "پرنده ولایت" %}</th>
+                <td>{% trans "جغد عقاب بیابانی" %}</td>
+            </tr>
+            <tr id="packages">
+                <th>{% trans "درخت ولایت" %}</th>
+                <td>{% trans "نخل" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "رقص سنتی" %}</th>
+                <td>{% trans "آتان (رقص سنتی پشتون)" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "ورزش‌های محبوب" %}</th>
+                <td>{% trans "بزکشی، کشتی" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "مناطق اصلی گردشگری" %}</th>
+                <td>{% trans "قلاى بست، لشکرگاه، دره رودخانه هلمند" %}</td>
+            </tr>
+            <tr>
+                <th>{% trans "جاذبه‌های اصلی" %}</th>
+                <td>{% trans "خرابه‌های باستانی، مناظر کشاورزی، بازارهای سنتی، مناظر بیابانی" %}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<h4 class="mb-4 mt-4" id="besttimetovisit">{% trans "محبوب‌ترین پکیج‌های تور هلمند" %}</h4>
+
+<div class="travelers-slider owl-carousel owl-loaded owl-drag">
+    <!-- Package 1 -->
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top" alt="{% trans "کشف تاریخ باستانی هلمند" %}"></a>
+            <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="{% trans "کشف تاریخ باستانی هلمند" %}">
+                        {% trans "کشف تاریخ باستانی هلمند" %}
+                    </a>
+                </h6>
+                <p>{% trans "۷ شب - ۸ روز" %}</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top" alt="{% trans "اکتشاف دره رودخانه هلمند" %}"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="{% trans "اکتشاف دره رودخانه هلمند" %}">
+                        {% trans "اکتشاف دره رودخانه هلمند" %}
+                    </a>
+                </h6>
+                <p>{% trans "۵ شب - ۶ روز" %}</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top" alt="{% trans "تور بیابان و واحه" %}"></a>
+            <span class="overlay-icon"><i class="isax isax-building"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="{% trans "تور بیابان و واحه" %}">
+                        {% trans "تور بیابان و واحه" %}
+                    </a>
+                </h6>
+                <p>{% trans "۴ شب - ۵ روز" %}</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Package 4 -->
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top" alt="{% trans "تجربه فرهنگی در هلمند" %}"></a>
+            <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="{% trans "تجربه فرهنگی در هلمند" %}">
+                        {% trans "تجربه فرهنگی در هلمند" %}
+                    </a>
+                </h6>
+                <p>{% trans "۶ شب - ۷ روز" %}</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+
+    <!-- Package 5 -->
+    <div class="card travelers-card">
+        <div class="card-img">
+            <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top" alt="{% trans "جاذبه‌های هلمند" %}"></a>
+            <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+        </div>
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h6 class="mb-1">
+                    <a href="hotel-grid.html" class="truncate-title" title="{% trans "جاذبه‌های هلمند" %}">
+                        {% trans "جاذبه‌های هلمند" %}
+                    </a>
+                </h6>
+                <p>{% trans "۳ شب - ۴ روز" %}</p>
+            </div>
+            <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container my-5" id="palcetovisit">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="mb-0">{% trans "بهترین زمان بازدید از هلمند" %}</h4>
+        <a href="#" class="btn btn-outline-primary btn-sm">{% trans "مشاهده بیشتر" %}</a>
+    </div>
+
+    <div class="row g-3">
+        <!-- Winter -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-primary">{% trans "فصل زمستان در هلمند" %}</h5>
+                    <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "نوامبر تا فوریه" %}</p>
+                    <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> 5°C تا 20°C</p>
+                    <p class="card-text">{% trans "روزهای معتدل و شب‌های خنک زمستان، زمان ایده‌آلی برای کاوش سایت‌های باستان‌شناسی و دره رودخانه بدون گرمای شدید است." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Spring -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-success">{% trans "فصل بهار در هلمند" %}</h5>
+                    <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "مارس تا مه" %}</p>
+                    <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> 15°C تا 30°C</p>
+                    <p class="card-text">{% trans "بهار با شکوفه‌های فراوان و دمای معتدل، زمان مناسبی برای فعالیت‌های فضای باز قبل از گرمای تابستان است." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autumn -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title text-warning">{% trans "فصل پاییز در هلمند" %}</h5>
+                    <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "سپتامبر تا اکتبر" %}</p>
+                    <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> 20°C تا 35°C</p>
+                    <p class="card-text">{% trans "فصل برداشت مناظر رنگارنگ و رویدادهای فرهنگی ارائه می‌دهد و دما از اوج تابستان کاهش می‌یابد." %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4 class="mb-4 mt-4">{% trans "بهترین مکان‌ها برای بازدید در هلمند" %}</h4>
+
+
+
+<div class="row">
+    {% for i in find_best_places_in_this_province %}
+        <div class="col-md-3 mb-4">
+            <div class="location-item">
+                <a href="#" class="location-img">
+                    <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                    <div class="location-name">
+                        <h5 class="mb-1">{{ i.title }}</h5>
+                        <p>({{ i.location }})</p>
+                    </div>
+                </a>
+                <div class="location-info d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                        <p class="fs-14">
+                            <span class="text-primary">{% trans "شروع قیمت:" %} ${{ i.start_price }}</span>
+                        </p>
+                    </div>
+                    <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+   
+
+<h4 class="mb-4 mt-4">{% trans "Popular Tourist Attractions in Helmand" %}</h4>
+
+<div class="container">
+    <div class="d-flex overflow-auto pb-3" style="gap: 1rem;">
+        {% for place in Popular_Tourist_in_the_province %}
+        <div class="card shadow-sm" style="min-width: 250px; max-width: 250px; flex: 0 0 auto;">
+            <!-- Image (click to open modal) -->
+            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}">
+                <img src="{{ place.image.url }}" class="card-img-top" alt="{{ place.title }}"
+                     style="height: 160px; object-fit: cover;">
+            </a>
+
+            <!-- Body -->
+            <div class="card-body">
+                <h6 class="card-title two-line-ellipsis mb-2">{{ place.title }}</h6>
+                <p class="card-text text-muted small mb-2">
+                    {{ place.description|truncatewords:12 }}
+                </p>
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="badge bg-primary">{{ place.location }}</span>
+                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}"
+                       class="btn btn-sm btn-outline-primary">
+                        <i class="isax isax-arrow-right-3"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ place.id }}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content rounded-3 shadow">
+                    <div class="modal-header">
+                        <h5 class="modal-title">{{ place.title }} - {{ place.location }}</h5>  
+                        <span class="badge bg-primary ms-2">{{ place.provinces|join:", " }}</span>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <!-- Main image preview -->
+                        <div class="d-flex justify-content-center mb-3">
+                            <img id="mainImage{{ place.id }}" src="{{ place.image.url }}" 
+                                 style="max-width: 309px;" class="img-fluid rounded border" alt="{{ place.title }}">
+                        </div>
+
+                        <!-- Small images -->
+                        <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                            <img src="{{ place.image.url }}" 
+                                 class="img-fluid rounded border small-img"
+                                 style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                 alt="{{ place.title }}"
+                                 onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
+
+                            {% for img in place.images.all %}
+                                <img src="{{ img.image.url }}" 
+                                     class="img-fluid rounded border small-img"
+                                     style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                                     alt="{{ img.caption }}"
+                                     onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
+                            {% endfor %}
+                        </div>
+
+                        <!-- Description -->
+                        <p>{{ place.description }}</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Close" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% empty %}
+        <p class="text-center text-muted">{% trans "No tourist attractions found in this province." %}</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+<h4 class="mb-4 mt-4">{% trans "بهترین فعالیت‌ها در هلمند" %}</h4>
+
+<div class="overflow-auto">
+    <div class="d-flex gap-3">
+      {% for i in find_things_to_do_in_this_province %}
+        <div class="col-md-3 mb-4 flex-shrink-0">
+          <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
+            <a href="javascript:void(0)" class="location-img">
+              <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
+              <div class="location-name">
+                <h5 class="mb-1">{{ i.title }}</h5>
+                <p>({{ i.location }})</p>
+              </div>
+            </a>
+            <div class="location-info d-flex align-items-center justify-content-between">
+              <div>
+                <p class="fs-14"><span class="text-primary">{% trans "شروع از" %} ${{ i.price }}</span></p>
+              </div>
+              <a href="javascript:void(0)" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ i.id }}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow">
+              <div class="modal-header">
+                <h5 class="modal-title">{{ i.title }} - {{ i.location }}</h5>  
+                <span class="badge bg-primary ms-2">{{ i.provinces|join:", " }}</span> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+  
+                <!-- Main image preview -->
+                <div class="d-flex justify-content-center">
+                  <img id="mainImage{{ i.id }}" src="{{ i.image.url }}" 
+                       style="max-width: 309px;" class="img-fluid rounded mb-3 border" alt="{{ i.title }}">
+                </div>
+  
+                <!-- Small images -->
+                {% if i.images.all %}
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                  {% for img in i.images.all %}
+                    <img src="{{ img.image.url }}" 
+                         class="img-fluid rounded border small-img"
+                         style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                         alt="{{ img.caption }}"
+                         onclick="document.getElementById('mainImage{{ i.id }}').src=this.src">
+                  {% endfor %}
+                </div>
+                {% endif %}
+  
+                <!-- Description -->
+                <p>{{ i.description }}</p>
+              </div>
+              <div class="modal-footer">
+                <span class="fw-bold text-success">{% trans "شروع از" %} ${{ i.price }}</span>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "بستن" %}</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      {% endfor %}
+    </div>
+</div>
+
+
+
+<h4 class="mb-4 mt-4">{% trans "چگونه به هلمند برسیم؟" %}</h4>
+
+<div class="reach-method">
+    <div class="row justify-content-center g-4">
+
+        <!-- By Air -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>{% trans "با هواپیما" %}</h5>
+                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-airplane fs-24"></i>
+                        </span>
+                    </div>
+                    <p>{% trans "هلمند از طریق فرودگاه لشکرگاه قابل دسترسی است و پروازهای داخلی محدودی دارد. بیشتر مسافران بین‌المللی ابتدا به کابل پرواز می‌کنند و سپس با خودرو ادامه می‌دهند." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Air -->
+
+        <!-- By Road -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>{% trans "با جاده" %}</h5>
+                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-car fs-24"></i>
+                        </span>
+                    </div>
+                    <p>{% trans "هلمند از طریق بزرگراه‌ها به قندهار و کابل متصل است، اما سفر جاده‌ای به دلیل شرایط امنیتی می‌تواند خطرناک باشد." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Road -->
+
+        <!-- By Train -->
+        <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h5>{% trans "با قطار" %}</h5>
+                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                            <i class="isax isax-train fs-24"></i>
+                        </span>
+                    </div>
+                    <p>{% trans "هیچ خدمات قطاری در هلمند موجود نیست؛ تنها گزینه‌ها هواپیما و جاده هستند." %}</p>
+                </div>
+            </div>
+        </div>
+        <!-- /By Train -->
+
+    </div>
+</div>
+
+
+
+
+<h4 class="mb-4 mt-5">{% trans "سوالات متداول" %} <span>{% trans "Questions" %}</span></h4>
+
+<div class="container">
+    <div class="faq">
+        <div class="faq-sec p-0">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion" id="accordionFaq">
+
+                        <!-- Q1 -->
+                        <div class="accordion-item mb-3 pb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                    {% trans "بهترین زمان برای بازدید از هلمند چه زمانی است؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "بهترین زمان برای بازدید از هلمند زمستان (نوامبر تا فوریه) است که دما معتدل‌تر است. تابستان‌ها بسیار گرم هستند." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
+                                    aria-controls="faq2">
+                                    {% trans "چگونه می‌توانم به هلمند برسم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "هلمند از طریق جاده از قندهار یا کابل قابل دسترسی است. پرواز به فرودگاه لشکرگاه محدود و اغلب غیرقابل اعتماد است." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
+                                    aria-controls="faq3">
+                                    {% trans "جاذبه‌های گردشگری مشهور در هلمند کدام‌ها هستند؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "مکان‌های کلیدی شامل قلعۀ بوست، بازار لشکرگاه، سد کجکی و درۀ رود هلمند است." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
+                                    aria-controls="faq4">
+                                    {% trans "آیا هلمند برای گردشگران امن است؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "هلمند دارای خطرات امنیتی قابل توجه است. مسافران باید به توصیه‌های مسافرتی دولت خود توجه کنند و سفرهای غیرضروری را اجتناب کنند." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
+                                    aria-controls="faq5">
+                                    {% trans "واحد پول محلی در هلمند چیست؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "واحد پول محلی افغانی (AFN) است." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
+                                    aria-controls="faq6">
+                                    {% trans "آیا برای بازدید از هلمند نیاز به ویزا دارم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "بله، بیشتر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. با سفارت افغانستان در کشور خود مشورت کنید." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
+                                    aria-controls="faq7">
+                                    {% trans "چه زبانی در هلمند صحبت می‌شود؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "پشتو زبان اصلی است و مقداری فارسی دری صحبت می‌شود. انگلیسی به ندرت فهمیده می‌شود." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
+                                    aria-controls="faq8">
+                                    {% trans "چه نوع لباس‌هایی باید در هلمند پوشید؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "پوشش محافظه‌کارانه الزامی است. زنان باید موهای خود را بپوشانند و لباس‌های گشاد بپوشند؛ مردان باید از شلوارک خودداری کنند." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="accordion-item mb-3" id="map">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
+                                    aria-controls="faq9">
+                                    {% trans "غذاهای محلی هلمند چگونه است؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "غذاهای هلمند شامل کباب بره، غذاهای برنجی مانند چلو و نان تازه است. چای نوشیدنی اصلی است." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="accordion-item mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
+                                    aria-controls="faq10">
+                                    {% trans "آیا می‌توانم از کارت اعتباری در هلمند استفاده کنم؟" %}
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>{% trans "خیر. تنها پرداخت نقدی (افغانی یا دلار) پذیرفته می‌شود." %}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mt-5">
+    <h4 class="mb-4">{% trans "نقشه هلمند" %}</h4>
+    <div class="ratio ratio-16x9">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27798.19706376941!2d64.3606113!3d31.583164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f423c3adb5a0f2d%3A0x2f2e6e1a3a2b3b1a!2sLashkargah%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719252086420!5m2!1sen!2s"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+        <div class="que-sec text-center">
+            <h4 class="mb-3">{% trans "سوالات دیگر دارید؟" %}</h4>
+            <p class="mb-3">{% trans "اگر پاسخ سوال خود را در بخش سوالات متداول پیدا نکردید، می‌توانید همیشه با ما تماس بگیرید. ما به زودی پاسخ شما را خواهیم داد!" %}</p>
+            <div class="d-flex justify-content-center">
+                <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                    {% trans "تماس با ما" %}<i class="isax isax-arrow-right-3 ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+</section>
+
+{% endblock %}

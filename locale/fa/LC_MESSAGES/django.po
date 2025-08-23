@@ -8,25 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-23 02:48-0700\n"
-"PO-Revision-Date: 2025-06-26 13:50+0000\n"
-"Last-Translator:   <>\n"
+"POT-Creation-Date: 2025-08-23 03:47-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Translated-Using: django-rosetta 0.10.2\n"
-
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 #: .\templates\RTL\index.html:16
 msgid "جهان را کشف کنید، یک"
-msgstr "اكتشف العالم،"
+msgstr ""
 
 #: .\templates\RTL\index.html:20
 msgid "پرواز در یک زمان با لارموند!"
-msgstr "رحلة واحدة في كل مرة مع لارموند!"
+msgstr ""
 
 #: .\templates\RTL\index.html:24
 msgid ""
@@ -35,8 +32,6 @@ msgid ""
 "می‌کند تا تجربهٔ سفر را جشن بگیرید و به یاد بسپارید.\n"
 "                                "
 msgstr ""
-"\n"
-"وجهتك النهائية لكل ما يساعدك على الاحتفال بتجربة السفر وتذكرها."
 
 #: .\templates\account\account_inactive.html:5
 #: .\templates\account\account_inactive.html:9
@@ -803,7 +798,7 @@ msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:22
 msgid "گردشگری هلمند"
-msgstr "السياحة في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:25
 msgid ""
@@ -812,76 +807,73 @@ msgid ""
 "شناخته می‌شود. این ولایت نگاهی به تمدن‌های باستانی افغانستان و زندگی سنتی "
 "روستایی ارائه می‌دهد."
 msgstr ""
-"هلمند ولاية تاريخية وغنية في جنوب أفغانستان، مشهورة بآثارها القديمة، "
-"وأراضيها الزراعية الخصبة على ضفاف نهر هلمند ومناظرها الصحراوية الفريدة. "
-"تقدم هذه الولاية لمحة عن الحضارات القديمة في أفغانستان والحياة الريفية التقليدية."
 
 #: .\templates\states\Helmand_farsi.html:38
 #: .\templates\states\kandahar_farsi.html:36
 msgid "جشن نوروز"
-msgstr "عيد نوروز"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:39
 msgid ""
 "در طول رود هلمند با وعده‌های غذایی سنتی و گردهمایی‌های خانوادگی در لشکرگاه جشن "
 "گرفته می‌شود."
-msgstr "يُحتفل على طول نهر هلمند مع وجبات تقليدية وتجمعات عائلية في لشكرگاه."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:51
 msgid "جشن برداشت انار"
-msgstr "مهرجان حصاد الرمان"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:52
 msgid ""
 "هلمند به انارهای شیرین خود معروف است و این جشن با بازارهای محلی و مراسم "
 "برداشت برگزار می‌شود."
-msgstr "هلمند مشهورة بالرمان الحلو، ويقام هذا المهرجان مع الأسواق المحلية واحتفالات الحصاد."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:64
 #: .\templates\states\kandahar_farsi.html:62
 msgid "صنایع دستی سنتی"
-msgstr "الحرف التقليدية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:65
 msgid ""
 "کشف سفالگری محلی، منسوجات بافته شده و قالیچه‌های دست‌بافت در روستاهای هلمند."
-msgstr "استكشاف الفخار المحلي، المنسوجات المطرزة والسجاد اليدوي في قرى هلمند."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:76
 msgid "نمای کلی"
-msgstr "نظرة عامة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:81
 #: .\templates\states\kandahar_farsi.html:79
 msgid "بهترین زمان بازدید"
-msgstr "أفضل وقت للزيارة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:86
 msgid "راه‌های رسیدن"
-msgstr "طرق الوصول"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:91
 #: .\templates\states\kandahar_farsi.html:89
 msgid "مکان‌های دیدنی"
-msgstr "أماكن للزيارة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:96
 msgid "کارهایی برای انجام"
-msgstr "أشياء للقيام بها"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:101
 #: .\templates\states\kandahar_farsi.html:99
 msgid "پکیج‌ها"
-msgstr "الباقات"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:106
 #: .\templates\states\kandahar_farsi.html:104
 msgid "نقشه"
-msgstr "الخريطة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:126
 msgid "درباره گردشگری هلمند"
-msgstr "حول سياحة هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:127
 msgid ""
@@ -890,11 +882,10 @@ msgid ""
 "از بقایای تمدن‌های باستانی تا آب‌های روان رود هلمند، این ولایت جنوبی دیدگاه "
 "منحصربه‌فردی از میراث افغانستان ارائه می‌دهد."
 msgstr ""
-"هلمند ولاية ذات أهمية تاريخية وأراضٍ زراعية خصبة، مشهورة بآثارها القديمة، ووديانها الخصبة على طول النهر، والثقافة التقليدية للپشتون. من آثار الحضارات القديمة إلى مياه نهر هلمند الجارية، تقدم هذه الولاية الجنوبية رؤية فريدة لتراث أفغانستان."
 
 #: .\templates\states\Helmand_farsi.html:129
 msgid "گنجینه‌های تاریخی: شهرهای باستانی و سایت‌های باستان‌شناسی"
-msgstr "الكنوز التاريخية: المدن القديمة والمواقع الأثرية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:130
 msgid ""
@@ -904,11 +895,10 @@ msgid ""
 "می‌کنند. دره رودخانه هلمند شامل تپه‌های حفاری‌نشده زیادی است که احتمالاً "
 "گنجینه‌های باستان‌شناسی بیشتری در خود دارند."
 msgstr ""
-"تستضيف هلمند العديد من المواقع الأثرية المهمة، بما في ذلك المدينة القديمة بست وقلعة بست الشهيرة. كانت هذه الولاية جزءًا من الإمبراطورية الأخمينية ثم المملكة الإغريقية الغربية، والتي تركت آثارًا تحكي قصص الحضارات الماضية. يشمل وادي نهر هلمند العديد من التلال غير المنقبة التي قد تحتوي على المزيد من الكنوز الأثرية."
 
 #: .\templates\states\Helmand_farsi.html:132
 msgid "سرزمین کشاورزی: دره رودخانه هلمند"
-msgstr "أرض الزراعة: وادي نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:133
 msgid ""
@@ -917,11 +907,10 @@ msgid ""
 "می‌شود و گندم، پنبه و انارهای معروف خود را تولید می‌کند. سیستم‌های سنتی آبیاری "
 "(کاریز) نشان‌دهنده تکنیک‌های مدیریت آب باستانی است که هنوز هم استفاده می‌شوند."
 msgstr ""
-"يشكل نهر هلمند، أطول أنهار أفغانستان، وادياً خصباً يدعم الزراعة المكثفة. تُعرف هلمند بـ 'خباز أفغانستان' وتنتج القمح والقطن والرمان الشهير. أنظمة الري التقليدية (القنات) تعكس تقنيات إدارة المياه القديمة التي لا تزال مستخدمة."
 
 #: .\templates\states\Helmand_farsi.html:135
 msgid "مناظر بیابانی و اکوسیستم‌های منحصربه‌فرد"
-msgstr "المناظر الصحراوية والنظم البيئية الفريدة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:136
 msgid ""
@@ -930,11 +919,10 @@ msgid ""
 "مناطق بیابانی خشک دارد و حیات وحش منحصربه‌فردی که با این محیط‌ها سازگار است، "
 "در آن زندگی می‌کند."
 msgstr ""
-"بعيداً عن وادي النهر، تتميز هلمند بمناظر صحراوية خلابة تشمل أجزاء من صحراء رگستان. تحتوي الولاية على نظم بيئية متنوعة من الأراضي الرطبة المجاورة للنهر إلى المناطق الصحراوية الجافة، مع حياة برية فريدة متأقلمة مع هذه البيئات."
 
 #: .\templates\states\Helmand_farsi.html:138
 msgid "فرهنگ سنتی پشتون و مهمان‌نوازی"
-msgstr "الثقافة البشتونية التقليدية والضيافة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:139
 msgid ""
@@ -943,11 +931,10 @@ msgid ""
 "پشتون‌ها (پشتونوالی) را تجربه کنند. این ولایت صنایع دستی، موسیقی و "
 "داستان‌سرایی سنتی را حفظ می‌کند."
 msgstr ""
-"هلمند تتكون أساساً من البشتون وتمتلك تقاليد قبلية قوية وتراث ثقافي غني. يمكن للزوار تجربة الضيافة التقليدية، الجورجة القبلية وقانون البشتون الشهير (پشتونوالی). تحافظ الولاية على الحرف اليدوية والموسيقى والحكايات التقليدية."
 
 #: .\templates\states\Helmand_farsi.html:141
 msgid "بازارهای محلی و صنایع دستی"
-msgstr "الأسواق المحلية والحرف اليدوية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:142
 msgid ""
@@ -956,11 +943,10 @@ msgid ""
 "که در جشنواره‌های فصلی جشن گرفته می‌شوند. بازارهای محلی نگاهی به زندگی روزمره "
 "و تجارت سنتی ارائه می‌دهند."
 msgstr ""
-"توفر أسواق لشكرگاه الحرف التقليدية بما في ذلك التطريز المعقد والسجاد اليدوي والفخار. تشتهر الولاية أيضًا بالبطيخ والرمان الذي يُحتفل به في المهرجانات الموسمية. تعكس الأسواق المحلية الحياة اليومية والتجارة التقليدية."
 
 #: .\templates\states\Helmand_farsi.html:144
 msgid "غذاهای سنتی هلمندی"
-msgstr "الأطعمة التقليدية في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:145
 msgid ""
@@ -968,11 +954,10 @@ msgid ""
 "غذاهای برنجی است. این ولایت به خاطر غذاها و سس‌های مبتنی بر انار مشهور است. "
 "پخت نان سنتی در تنورهای گلی در روستاها رایج است."
 msgstr ""
-"تشمل أطعمة هلمند أطباقًا مثل لندي (اللحم المجفف)، شوروا (حساء اللحم) وأنواع أطباق الأرز. تشتهر الولاية بالأطعمة والصلصات المستندة إلى الرمان. ويُعد خبز الخبز التقليدي في الأفران الطينية شائعًا في القرى."
 
 #: .\templates\states\Helmand_farsi.html:147
 msgid "اقامتگاه‌های ساده با جذابیت سنتی"
-msgstr "الإقامة البسيطة ذات الطابع التقليدي"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:148
 msgid ""
@@ -980,11 +965,10 @@ msgid ""
 "سنتی (حجره‌ها) را تجربه کنند که مهمان‌نوازی اصیل پشتون را ارائه می‌دهند. این "
 "اقامتگاه‌ها راحتی پایه و فرصت تجربه فرهنگ محلی را فراهم می‌کنند."
 msgstr ""
-"على الرغم من عدم وجود فنادق فاخرة في هلمند، يمكن للزوار تجربة بيوت الضيافة التقليدية (الحجرة) التي تقدم الضيافة البشتونية الأصيلة. توفر هذه الإقامات الراحة الأساسية وفرصة تجربة الثقافة المحلية."
 
 #: .\templates\states\Helmand_farsi.html:150
 msgid "کاوش در رودخانه هلمند و کانال‌ها"
-msgstr "استكشاف نهر هلمند والقنوات"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:151
 msgid ""
@@ -992,11 +976,10 @@ msgid ""
 "قایق‌های سنتی چوبی (جلاس) هنوز در برخی مناطق برای حمل و نقل استفاده می‌شوند. "
 "رودخانه زیستگاه پرندگان متنوعی است که برای مشاهده طبیعت جالب است."
 msgstr ""
-"توفر شبكة القنوات المتفرعة من نهر هلمند فرص استكشاف واسعة. لا تزال القوارب الخشبية التقليدية (جلاس) تستخدم في بعض المناطق للنقل. ويعد النهر موطنًا للعديد من الطيور مما يجعله مثيرًا لمراقبة الطبيعة."
 
 #: .\templates\states\Helmand_farsi.html:153
 msgid "سایت‌های تاریخی و فرهنگی"
-msgstr "المواقع التاريخية والثقافية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:154
 msgid ""
@@ -1004,96 +987,95 @@ msgid ""
 "بست و مساجد و زیارتگاه‌های تاریخی متعدد است. تاریخ این ولایت بازتاب "
 "امپراتوری‌های مختلفی است که این منطقه استراتژیک را تحت کنترل داشته‌اند."
 msgstr ""
-"تشمل المواقع المهمة مجمعًا بوذيًا قديمًا في قلعة بست، وأطلال المدينة الوسطى بست، والعديد من المساجد والمزارات التاريخية. تعكس تاريخ هذه الولاية الإمبراطوريات المختلفة التي سيطرت على هذه المنطقة الاستراتيجية."
 
 #: .\templates\states\Helmand_farsi.html:156
 msgid "۱۰ مکان برتر برای بازدید در هلمند"
-msgstr "أفضل 10 أماكن للزيارة في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:158
 msgid "قلاى بست"
-msgstr "قلعة بست"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:158
 msgid "قلعه باستانی با قوس‌های دیدنی نزدیک لشکرگاه"
-msgstr "قلعة قديمة بأقواس رائعة بالقرب من لشكرگاه"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:159
 #: .\templates\states\Helmand_farsi.html:183
 msgid "لشکرگاه"
-msgstr "لشكرگاه"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:159
 msgid "مرکز ولایت در کنار رود هلمند"
-msgstr "مركز الولاية بجانب نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:160
 msgid "دره رودخانه هلمند"
-msgstr "وادي نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:160
 msgid "منطقه کشاورزی حاصلخیز با روستاهای سنتی"
-msgstr "منطقة زراعية خصبة مع قرى تقليدية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:161
 msgid "فرودگاه بست"
-msgstr "مطار بست"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:161
 msgid "فرودگاه تاریخی با سابقه نظامی"
-msgstr "مطار تاريخي ذو خلفية عسكرية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:162
 msgid "گریشک"
-msgstr "غريشك"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:162
 msgid "شهر تاریخی در کنار رود هلمند"
-msgstr "مدينة تاريخية بجانب نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:163
 msgid "سد کجکی"
-msgstr "سد كاجكي"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:163
 msgid "پروژه بزرگ برق‌آبی روی رود هلمند"
-msgstr "مشروع الطاقة الكهرمائية الكبرى على نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:164
 msgid "ناد علی"
-msgstr "ناد علي"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:164
 msgid "ولسوالی کشاورزی مشهور به انار"
-msgstr "الولاية الزراعية المشهورة بالرمان"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:165
 msgid "بیابان رگستان"
-msgstr "صحراء رگستان"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:165
 msgid "منطقه بیابانی جنوبی با مناظر منحصربه‌فرد"
-msgstr "المنطقة الصحراوية الجنوبية ذات المناظر الفريدة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:166
 msgid "دانشگاه بست"
-msgstr "جامعة بست"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:166
 msgid "مرکز آموزش در ولایت"
-msgstr "مركز التعليم في الولاية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:167
 msgid "بازارهای محلی"
-msgstr "الأسواق المحلية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:167
 msgid "بازارهای سنتی در لشکرگاه و مرکز ولسوالی‌ها"
-msgstr "الأسواق التقليدية في لشكرگاه ومراكز المديريات"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:170
 msgid "بهترین زمان برای بازدید از هلمند"
-msgstr "أفضل وقت لزيارة هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:171
 msgid ""
@@ -1102,217 +1084,216 @@ msgid ""
 "شکوفا و دمای مناسب. تابستان‌ها می‌تواند بسیار گرم باشد، به ویژه در مناطق "
 "بیابانی."
 msgstr ""
-"أفضل وقت لزيارة هلمند هو خلال الأشهر الأكثر اعتدالًا من أكتوبر إلى أبريل، عندما تكون درجات الحرارة معتدلة. الربيع (مارس إلى أبريل) لطيف بشكل خاص مع الزهور المتفتحة ودرجات الحرارة المناسبة. يمكن أن تكون الصيف شديد الحرارة، خصوصاً في المناطق الصحراوية."
 
 #: .\templates\states\Helmand_farsi.html:173
 msgid "اطلاعات سریع درباره هلمند"
-msgstr "معلومات سريعة عن هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:178
 #: .\templates\states\kandahar_farsi.html:169
 msgid "منطقه"
-msgstr "المنطقة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:179
 #: .\templates\states\kandahar_farsi.html:170
 msgid "جنوب افغانستان"
-msgstr "جنوب أفغانستان"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:182
 #: .\templates\states\kandahar_farsi.html:173
 msgid "مرکز ولایت"
-msgstr "مركز الولاية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:186
 msgid "مختصات"
-msgstr "الإحداثيات"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:190
 #: .\templates\states\kandahar_farsi.html:181
 msgid "جمعیت تقریبی"
-msgstr "عدد السكان التقريبي"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:191
 msgid "تقریباً ۱.۴ میلیون (برآورد ۲۰۲۱)"
-msgstr "حوالي 1.4 مليون (تقدير 2021)"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:194
 #: .\templates\states\kandahar_farsi.html:185
 msgid "مساحت جغرافیایی"
-msgstr "المساحة الجغرافية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:195
 msgid "حدود ۵۸,۵۸۴ کیلومتر مربع"
-msgstr "حوالي 58,584 كم²"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:198
 msgid "ولسوالی‌ها در هلمند"
-msgstr "المديريات في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:199
 msgid "۱۴ ولسوالی"
-msgstr "14 مديرية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:202
 msgid "ادیان اصلی"
-msgstr "الأديان الرئيسية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:203
 #: .\templates\states\kandahar_farsi.html:194
 msgid "اسلام (عمدتاً سنی)"
-msgstr "الإسلام (غالبًا سني)"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:206
 #: .\templates\states\kandahar_farsi.html:197
 msgid "گروه‌های قومی"
-msgstr "المجموعات العرقية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:207
 msgid "عمدتاً پشتون، با اقلیت بلوچ و تاجیک"
-msgstr "غالبًا البشتون، مع أقليات البلوش والطاجيك"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:210
 msgid "زبان‌های رایج"
-msgstr "اللغات المستخدمة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:211
 #: .\templates\states\kandahar_farsi.html:202
 msgid "پشتو (اصلی)، دری"
-msgstr "البشتو (الرئيسية)، الداري"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:214
 msgid "نماد حیوانی ولایت"
-msgstr "رمز الحيوان للولاية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:215
 msgid "شتر (نماد مناطق بیابانی)"
-msgstr "الجمل (رمز المناطق الصحراوية)"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:218
 msgid "گل ولایت"
-msgstr "زهرة الولاية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:219
 msgid "شکوفه انار"
-msgstr "زهرة الرمان"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:222
 msgid "پرنده ولایت"
-msgstr "طائر الولاية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:223
 msgid "جغد عقاب بیابانی"
-msgstr "بومة العقاب الصحراوية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:226
 msgid "درخت ولایت"
-msgstr "شجرة الولاية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:227
 msgid "نخل"
-msgstr "نخلة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:230
 #: .\templates\states\kandahar_farsi.html:221
 msgid "رقص سنتی"
-msgstr "رقص تقليدي"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:231
 #: .\templates\states\kandahar_farsi.html:222
 msgid "آتان (رقص سنتی پشتون)"
-msgstr "آتّان (الرقص التقليدي البشتوني)"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:234
 #: .\templates\states\kandahar_farsi.html:225
 msgid "ورزش‌های محبوب"
-msgstr "الرياضات الشعبية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:235
 msgid "بزکشی، کشتی"
-msgstr "بزكشي، مصارعة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:238
 msgid "مناطق اصلی گردشگری"
-msgstr "المناطق السياحية الرئيسية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:239
 msgid "قلاى بست، لشکرگاه، دره رودخانه هلمند"
-msgstr "قلعة بست، لشكرگاه، وادي نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:242
 #: .\templates\states\kandahar_farsi.html:233
 msgid "جاذبه‌های اصلی"
-msgstr "الوجهات الرئيسية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:243
 msgid "خرابه‌های باستانی، مناظر کشاورزی، بازارهای سنتی، مناظر بیابانی"
-msgstr "الآثار القديمة، المناظر الزراعية، الأسواق التقليدية، المناظر الصحراوية"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:250
 msgid "محبوب‌ترین پکیج‌های تور هلمند"
-msgstr "أشهر برامج الجولات في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:256
 #: .\templates\states\Helmand_farsi.html:262
 #: .\templates\states\Helmand_farsi.html:263
 msgid "کشف تاریخ باستانی هلمند"
-msgstr "استكشاف التاريخ القديم لهلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:266
 msgid "۷ شب - ۸ روز"
-msgstr "7 ليالٍ - 8 أيام"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:275
 #: .\templates\states\Helmand_farsi.html:281
 #: .\templates\states\Helmand_farsi.html:282
 msgid "اکتشاف دره رودخانه هلمند"
-msgstr "استكشاف وادي نهر هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:285
 msgid "۵ شب - ۶ روز"
-msgstr "5 ليالٍ - 6 أيام"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:294
 #: .\templates\states\Helmand_farsi.html:300
 #: .\templates\states\Helmand_farsi.html:301
 msgid "تور بیابان و واحه"
-msgstr "جولة الصحراء والواحة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:304
 msgid "۴ شب - ۵ روز"
-msgstr "4 ليالٍ - 5 أيام"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:313
 #: .\templates\states\Helmand_farsi.html:319
 #: .\templates\states\Helmand_farsi.html:320
 msgid "تجربه فرهنگی در هلمند"
-msgstr "تجربة ثقافية في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:323
 msgid "۶ شب - ۷ روز"
-msgstr "6 ليالٍ - 7 أيام"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:332
 #: .\templates\states\Helmand_farsi.html:338
 #: .\templates\states\Helmand_farsi.html:339
 msgid "جاذبه‌های هلمند"
-msgstr "معالم هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:342
 msgid "۳ شب - ۴ روز"
-msgstr "3 ليالٍ - 4 أيام"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:353
 msgid "بهترین زمان بازدید از هلمند"
-msgstr "أفضل وقت لزيارة هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:354
 msgid "مشاهده بیشتر"
-msgstr "عرض المزيد"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:362
 msgid "فصل زمستان در هلمند"
-msgstr "فصل الشتاء في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:363
 #: .\templates\states\Helmand_farsi.html:375
@@ -1321,11 +1302,11 @@ msgstr "فصل الشتاء في هلمند"
 #: .\templates\states\kandahar_farsi.html:368
 #: .\templates\states\kandahar_farsi.html:380
 msgid "ماه‌ها:"
-msgstr "الأشهر:"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:363
 msgid "نوامبر تا فوریه"
-msgstr "نوفمبر إلى فبراير"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:364
 #: .\templates\states\Helmand_farsi.html:376
@@ -1334,66 +1315,67 @@ msgstr "نوفمبر إلى فبراير"
 #: .\templates\states\kandahar_farsi.html:369
 #: .\templates\states\kandahar_farsi.html:381
 msgid "دمای هوا:"
-msgstr "درجة الحرارة:"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:365
 msgid ""
 "روزهای معتدل و شب‌های خنک زمستان، زمان ایده‌آلی برای کاوش سایت‌های باستان‌شناسی "
 "و دره رودخانه بدون گرمای شدید است."
-msgstr "أيام معتدلة وليالٍ باردة في الشتاء تجعلها مثالية لاستكشاف المواقع الأثرية والوادي دون حرارة شديدة."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:374
 msgid "فصل بهار در هلمند"
-msgstr "فصل الربيع في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:375
 #: .\templates\states\kandahar_farsi.html:356
 msgid "مارس تا مه"
-msgstr "مارس إلى مايو"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:377
 msgid ""
 "بهار با شکوفه‌های فراوان و دمای معتدل، زمان مناسبی برای فعالیت‌های فضای باز "
 "قبل از گرمای تابستان است."
-msgstr "الربيع مع الأزهار الكثيرة ودرجات الحرارة المعتدلة هو وقت مناسب للأنشطة الخارجية قبل حرارة الصيف."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:386
 msgid "فصل پاییز در هلمند"
-msgstr "فصل الخريف في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:387
 msgid "سپتامبر تا اکتبر"
-msgstr "سبتمبر إلى أكتوبر"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:389
 msgid ""
 "فصل برداشت مناظر رنگارنگ و رویدادهای فرهنگی ارائه می‌دهد و دما از اوج تابستان "
 "کاهش می‌یابد."
-msgstr "يقدم موسم الحصاد مناظر ملونة وفعاليات ثقافية، وتنخفض درجات الحرارة بعد ذروة الصيف."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:396
 msgid "بهترین مکان‌ها برای بازدید در هلمند"
-msgstr "أفضل الأماكن للزيارة في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:415
 msgid "شروع قیمت:"
-msgstr "سعر البداية:"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:429
 msgid "Popular Tourist Attractions in Helmand"
-msgstr "المعالم السياحية الشهيرة في هلمند"
+msgstr "جاذبه‌های گردشگری محبوب در هلمند"
+
 
 #: .\templates\states\Helmand_farsi.html:496
 msgid "Close"
-msgstr "إغلاق"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:503
 msgid "No tourist attractions found in this province."
-msgstr "لا توجد معالم سياحية في هذه المحافظة."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:510
 msgid "بهترین فعالیت‌ها در هلمند"
-msgstr "أفضل الأنشطة في هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:526
 #: .\templates\states\Helmand_farsi.html:567
@@ -1401,233 +1383,232 @@ msgstr "أفضل الأنشطة في هلمند"
 #: .\templates\states\kandahar_farsi.html:515
 #: .\templates\states\kandahar_farsi.html:556
 msgid "شروع از"
-msgstr "تبدأ من"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:568
 #: .\templates\states\kandahar_farsi.html:486
 #: .\templates\states\kandahar_farsi.html:557
 msgid "بستن"
-msgstr "إغلاق"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:580
 msgid "چگونه به هلمند برسیم؟"
-msgstr "كيفية الوصول إلى هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:590
 #: .\templates\states\kandahar_farsi.html:578
 msgid "با هواپیما"
-msgstr "عن طريق الطائرة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:595
 msgid ""
 "هلمند از طریق فرودگاه لشکرگاه قابل دسترسی است و پروازهای داخلی محدودی دارد. "
 "بیشتر مسافران بین‌المللی ابتدا به کابل پرواز می‌کنند و سپس با خودرو ادامه "
 "می‌دهند."
-msgstr "يمكن الوصول إلى هلمند عبر مطار لشكرگاه، مع رحلات داخلية محدودة. معظم المسافرين الدوليين يطيرون أولاً إلى كابول ثم يواصلون بالسيارة."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:606
 #: .\templates\states\kandahar_farsi.html:594
 msgid "با جاده"
-msgstr "عن طريق الطريق"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:611
 msgid ""
 "هلمند از طریق بزرگراه‌ها به قندهار و کابل متصل است، اما سفر جاده‌ای به دلیل "
 "شرایط امنیتی می‌تواند خطرناک باشد."
-msgstr "هلمند متصلة عبر الطرق السريعة إلى قندهار وكابول، لكن السفر البري قد يكون خطيرًا بسبب الظروف الأمنية."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:622
 #: .\templates\states\kandahar_farsi.html:610
 msgid "با قطار"
-msgstr "عن طريق القطار"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:627
 msgid "هیچ خدمات قطاری در هلمند موجود نیست؛ تنها گزینه‌ها هواپیما و جاده هستند."
-msgstr "لا توجد خدمات قطار في هلمند؛ الخيارات الوحيدة هي الطائرة والطريق."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:639
 #: .\templates\states\kandahar_farsi.html:625
 msgid "سوالات متداول"
-msgstr "الأسئلة الشائعة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:639
 msgid "Questions"
-msgstr "الأسئلة"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:653
 msgid "بهترین زمان برای بازدید از هلمند چه زمانی است؟"
-msgstr "ما هو أفضل وقت لزيارة هلمند؟"
-
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:658
 msgid ""
 "بهترین زمان برای بازدید از هلمند زمستان (نوامبر تا فوریه) است که دما معتدل‌تر "
 "است. تابستان‌ها بسیار گرم هستند."
-msgstr "أفضل وقت لزيارة هلمند هو الشتاء (نوفمبر إلى فبراير) حيث تكون درجات الحرارة معتدلة. الصيف حار جدًا."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:669
 msgid "چگونه می‌توانم به هلمند برسم؟"
-msgstr "كيف يمكنني الوصول إلى هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:674
 msgid ""
 "هلمند از طریق جاده از قندهار یا کابل قابل دسترسی است. پرواز به فرودگاه "
 "لشکرگاه محدود و اغلب غیرقابل اعتماد است."
-msgstr "يمكن الوصول إلى هلمند عبر الطريق من قندهار أو كابول. الرحلات إلى مطار لشكرگاه محدودة وغالبًا غير موثوقة."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:685
 msgid "جاذبه‌های گردشگری مشهور در هلمند کدام‌ها هستند؟"
-msgstr "ما هي أشهر المعالم السياحية في هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:690
 msgid ""
 "مکان‌های کلیدی شامل قلعۀ بوست، بازار لشکرگاه، سد کجکی و درۀ رود هلمند است."
-msgstr "تشمل المواقع الرئيسية قلعة بوست، سوق لشكرگاه، سد كجكي ووادي نهر هلمند."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:701
 msgid "آیا هلمند برای گردشگران امن است؟"
-msgstr "هل هلمند آمنة للسياح؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:706
 msgid ""
 "هلمند دارای خطرات امنیتی قابل توجه است. مسافران باید به توصیه‌های مسافرتی "
 "دولت خود توجه کنند و سفرهای غیرضروری را اجتناب کنند."
-msgstr "هلمند تواجه مخاطر أمنية كبيرة. يجب على المسافرين اتباع نصائح السفر الحكومية وتجنب الرحلات غير الضرورية."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:717
 msgid "واحد پول محلی در هلمند چیست؟"
-msgstr "ما هي العملة المحلية في هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:722
 msgid "واحد پول محلی افغانی (AFN) است."
-msgstr "العملة المحلية هي الأفغاني (AFN)."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:733
 msgid "آیا برای بازدید از هلمند نیاز به ویزا دارم؟"
-msgstr "هل أحتاج إلى تأشيرة لزيارة هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:738
 msgid ""
 "بله، بیشتر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. با سفارت "
 "افغانستان در کشور خود مشورت کنید."
-msgstr "نعم، يحتاج معظم الأجانب إلى تأشيرة لدخول أفغانستان. استشر السفارة الأفغانية في بلدك."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:749
 msgid "چه زبانی در هلمند صحبت می‌شود؟"
-msgstr "ما هي اللغة المستخدمة في هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:754
 msgid ""
 "پشتو زبان اصلی است و مقداری فارسی دری صحبت می‌شود. انگلیسی به ندرت فهمیده "
 "می‌شود."
-msgstr "البشتو هي اللغة الرئيسية، ويتحدث البعض الفارسية الدارية. اللغة الإنجليزية مفهومة نادرًا."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:765
 msgid "چه نوع لباس‌هایی باید در هلمند پوشید؟"
-msgstr "ما نوع الملابس المناسبة في هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:770
 msgid ""
 "پوشش محافظه‌کارانه الزامی است. زنان باید موهای خود را بپوشانند و لباس‌های گشاد "
 "بپوشند؛ مردان باید از شلوارک خودداری کنند."
-msgstr "الزي المحافظ مطلوب. يجب على النساء تغطية شعرهن وارتداء ملابس فضفاضة؛ يجب على الرجال تجنب السراويل القصيرة."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:781
 msgid "غذاهای محلی هلمند چگونه است؟"
-msgstr "كيف هي الأطعمة المحلية في هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:786
 msgid ""
 "غذاهای هلمند شامل کباب بره، غذاهای برنجی مانند چلو و نان تازه است. چای "
 "نوشیدنی اصلی است."
-msgstr "تشمل الأطعمة المحلية في هلمند كباب لحم الضأن، أطباق الأرز مثل تشيلو وخبز طازج. الشاي هو المشروب الرئيسي."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:797
 msgid "آیا می‌توانم از کارت اعتباری در هلمند استفاده کنم؟"
-msgstr "هل يمكنني استخدام بطاقة ائتمان في هلمند؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:802
 msgid "خیر. تنها پرداخت نقدی (افغانی یا دلار) پذیرفته می‌شود."
-msgstr "لا. فقط الدفع النقدي (أفغاني أو دولار) مقبول."
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:817
 msgid "نقشه هلمند"
-msgstr "خريطة هلمند"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:830
 msgid "سوالات دیگر دارید؟"
-msgstr "هل لديك أسئلة أخرى؟"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:831
 msgid ""
 "اگر پاسخ سوال خود را در بخش سوالات متداول پیدا نکردید، می‌توانید همیشه با ما "
 "تماس بگیرید. ما به زودی پاسخ شما را خواهیم داد!"
-msgstr "إذا لم تجد إجابة سؤالك في قسم الأسئلة الشائعة، يمكنك دائمًا الاتصال بنا. سنجيبك قريبًا!"
+msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:834
 #: .\templates\states\kandahar_farsi.html:822
 msgid "تماس با ما"
-msgstr "اتصل بنا"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:19
 msgid "گردشگری قندهار"
-msgstr "سياحة قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:22
 msgid ""
 "قندهار دومین شهر بزرگ افغانستان و قلب فرهنگی مردم پشتون است. این شهر با "
 "تاریخ غنی، باغ‌های انار و بازارهای سنتی، به بازدیدکنندگان نمایی از فرهنگ و "
 "میراث اصیل افغان ارائه می‌دهد."
-msgstr "قندهار ثاني أكبر مدينة في أفغانستان وقلب الثقافة البشتونية. هذه المدينة بتاريخ غني وحدائق الرمان والأسواق التقليدية، تقدم للزوار لمحة عن الثقافة والتراث الأفغاني الأصيل."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:37
 msgid ""
 "قندهار نوروز را با گردهمایی‌های ویژه در پارک‌ها و خانه‌ها جشن می‌گیرد، شامل "
 "غذاهای سنتی و دیدارهای خانوادگی."
-msgstr "تحتفل قندهار بمهرجان نوروز من خلال تجمعات خاصة في الحدائق والمنازل، بما في ذلك الأطعمة التقليدية واللقاءات العائلية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:49
 msgid "جشن انار"
-msgstr "مهرجان الرمان"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:50
 msgid ""
 "قندهار به انارهای شیرین خود مشهور است. فصل برداشت بازارهای رنگارنگ و جشن‌های "
 "ویژه را به همراه دارد."
-msgstr "قندهار مشهورة بالرمان الحلو. موسم الحصاد يجلب أسواقاً ملونة واحتفالات خاصة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:63
 msgid ""
 "صنایع دستی معروف قندهار مانند گلدوزی، چرم و محصولات مسی را در بازارهای قدیمی "
 "کاوش کنید."
-msgstr "استكشف الحرف اليدوية الشهيرة في قندهار مثل التطريز والجلود والمنتجات النحاسية في الأسواق القديمة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:74
 msgid "بررسی اجمالی"
-msgstr "نظرة عامة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:84
 msgid "چگونه برسیم"
-msgstr "كيفية الوصول"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:94
 msgid "فعالیت‌ها"
-msgstr "الأنشطة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:120
 msgid "درباره گردشگری قندهار"
-msgstr "حول سياحة قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:121
 msgid ""
 "قندهار شهری با اهمیت تاریخی عمیق و غنای فرهنگی است که به عنوان قلب سنتی مردم "
 "پشتون شناخته می‌شود. از بازارهای قدیمی گرفته تا باغ‌های اطراف، قندهار تجربه "
 "اصیل افغان را به بازدیدکنندگان ارائه می‌دهد."
-msgstr "قندهار مدينة ذات أهمية تاريخية وثقافية عميقة، وتعرف كقلب تقليدي للشعب البشتوني. من الأسواق القديمة إلى الحدائق المحيطة، تقدم قندهار تجربة أفغانية أصيلة للزوار."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:123
 msgid "شکوه معماری: مساجد، آرامگاه‌ها و اماکن تاریخی"
-msgstr "روعة العمارة: المساجد، الأضرحة والأماكن التاريخية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:124
 msgid ""
@@ -1636,11 +1617,11 @@ msgid ""
 "جمعه معماری سنتی اسلامی را نشان می‌دهد و آرامگاه احمد شاه درانی به بنیانگذار "
 "افغانستان اختصاص دارد. شهر قدیمی دارای خانه‌های سنتی گل‌خشت و کوچه‌های باریک "
 "است که قرن‌ها پابرجا مانده‌اند."
-msgstr "تستضيف قندهار العديد من المواقع المعمارية الإسلامية المهمة. ضريح عباءة النبي، والذي يُعتقد أنه يحتوي على عباءة النبي محمد، مسجد الجمعة يظهر العمارة الإسلامية التقليدية وضريح أحمد شاه دراني مخصص لمؤسس أفغانستان. المدينة القديمة تحتوي على منازل تقليدية وأزقة ضيقة صامدة منذ قرون."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:126
 msgid "میراث فرهنگی غنی پشتون‌ها"
-msgstr "التراث الثقافي الغني للبشتون"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:127
 msgid ""
@@ -1648,11 +1629,11 @@ msgid ""
 "خانوادگی و بازدید از زیارتگاه‌های محلی جشن می‌گیرد. مهمان‌نوازی سنتی پشتون‌ها "
 "معروف است و مهمانان با غذاهای مفصل شامل نان قندهاری، گوشت بره کبابی و انار "
 "تازه پذیرایی می‌شوند. شهر همچنین به صنایع دستی و گلدوزی‌های خاص خود مشهور است."
-msgstr "قندهار مركز الثقافة والتقاليد البشتونية. تحتفل المدينة بالنوروز من خلال التجمعات العائلية وزيارة المزارات المحلية. الضيافة البشتونية التقليدية مشهورة، ويتم تقديم وجبات كبيرة تشمل خبز قندهاري، لحم ضأن مشوي ورمان طازج. المدينة مشهورة أيضًا بالحرف اليدوية والتطريز الخاص بها."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:129
 msgid "کشتزارهای دره ارغنداب و باغ‌های اطراف"
-msgstr "حقول وادي أرخنداب والحدائق المحيطة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:130
 msgid ""
@@ -1660,11 +1641,11 @@ msgid ""
 "بازدیدکنندگان می‌توانند در باغ‌های میوه قدم بزنند، به ویژه در فصل برداشت که "
 "مناظر زیبایی ارائه می‌دهد. این دره همچنین چشم‌اندازهایی از کوه‌های هندوکش و "
 "فرصت‌هایی برای پیک‌نیک در کنار رودخانه ارغنداب دارد."
-msgstr "وادي أرخنداب الخصب حول قندهار مشهور بحدائقه من الرمان والعنب. يمكن للزوار التجول في حدائق الفاكهة، خاصة خلال موسم الحصاد الذي يقدم مناظر جميلة. كما يوفر الوادي إطلالات على جبال هندوكوش وفرصًا للنزهات بجانب نهر أرخنداب."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:132
 msgid "خرید صنایع دستی سنتی و میوه‌های تازه"
-msgstr "شراء الحرف اليدوية التقليدية والفواكه الطازجة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:133
 msgid ""
@@ -1672,11 +1653,11 @@ msgid ""
 "همچنین به صنایع دستی سنتی شامل گلدوزی‌های پیچیده (خامک)، محصولات چرمی و صنایع "
 "مسی معروف است. بازار شاه و بازار هرات مکان‌های عالی برای یافتن محصولات اصیل "
 "قندهاری هستند."
-msgstr "أسواق قندهار مشهورة بالرمان والعنب والبطيخ عالي الجودة. المدينة مشهورة أيضًا بالحرف اليدوية التقليدية بما في ذلك التطريز المعقد (خامك)، المنتجات الجلدية والنحاسية. سوق شاه وسوق هرات أماكن ممتازة للحصول على المنتجات القندهارية الأصيلة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:135
 msgid "از نان قندهاری تا گوشت بره کبابی: لذت بردن از غذاهای محلی"
-msgstr "من خبز قندهاري إلى لحم الضأن المشوي: الاستمتاع بالمأكولات المحلية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:136
 msgid ""
@@ -1684,422 +1665,420 @@ msgid ""
 "یک غذای ویژه است و گوشت بره کبابی و انواع غذاهای برنجی نیز محبوب هستند. شهر "
 "به انارهایش معروف است که در غذاهای شیرین و شور استفاده می‌شوند. وعده‌ها اغلب "
 "با چای سبز و ماست تازه همراه است."
-msgstr "المأكولات القندهارية مشهورة في جميع أنحاء أفغانستان. خبز قندهاري (خبز كبير بيضاوي) هو طبق مميز، ولحم الضأن المشوي وأطباق الأرز متنوعة شهيرة أيضًا. المدينة مشهورة بالرمان الذي يستخدم في الأطعمة الحلوة والمالحة. غالبًا ما تُقدم الوجبات مع الشاي الأخضر واللبن الطازج."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:138
 msgid "مهمان‌نوازی سنتی در مهمانسراهای محلی"
-msgstr "الضيافة التقليدية في النزل المحلية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:139
 msgid ""
 "اگرچه قندهار هتل‌های لوکس ندارد، بازدیدکنندگان می‌توانند مهمان‌نوازی اصیل پشتون "
 "را در مهمانسراهای محلی تجربه کنند. این مکان‌ها اتاق‌های ساده اما راحت، وعده‌های "
 "خانگی و فرصت تجربه زندگی سنتی قندهاری را ارائه می‌دهند."
-msgstr "على الرغم من أن قندهار لا تحتوي على فنادق فاخرة، يمكن للزوار تجربة الضيافة البشتونية الأصيلة في النزل المحلية. توفر هذه الأماكن غرفًا بسيطة ولكن مريحة، ووجبات منزلية وفرصة لتجربة الحياة التقليدية القندهارية."
-
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:141
 msgid "بازدید از اماکن تاریخی قندهار"
-msgstr "زيارة المواقع التاريخية في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:142
 msgid ""
 "قندهار به بازدیدکنندگان فرصت می‌دهد تا از اماکن تاریخی مهم مانند آرامگاه عبای "
 "پیامبر، آرامگاه احمد شاه درانی و چیلزینا بازدید کنند. محله قدیمی شهر دارای "
 "معماری سنتی و بازارهای پرجنب و جوش است که طی قرن‌ها تغییر چندانی نکرده‌اند."
-msgstr "تتيح قندهار للزوار فرصة زيارة المواقع التاريخية المهمة مثل ضريح عباءة النبي، ضريح أحمد شاه دراني وتشيلزينا. الحي القديم يتميز بالعمارة التقليدية والأسواق النابضة بالحياة التي لم تتغير كثيرًا على مر القرون."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:144
 msgid "مکان‌های مذهبی و مساجد تاریخی"
-msgstr "المواقع الدينية والمساجد التاريخية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:145
 msgid ""
 "قندهار میزبان چندین مکان مهم اسلامی است که زائران را از سراسر افغانستان جذب "
 "می‌کند. مسجد جمعه به ویژه زیبا است و آرامگاه عبای پیامبر یکی از مقدس‌ترین "
 "اماکن افغانستان است. جشن‌های مذهبی با دقت و احترام در قندهار برگزار می‌شوند."
-msgstr "تستضيف قندهار العديد من المواقع الإسلامية المهمة التي تجذب الزوار من جميع أنحاء أفغانستان. مسجد الجمعة جميل بشكل خاص وضريح عباءة النبي من أقدس الأماكن في أفغانستان. تُقام الاحتفالات الدينية بعناية واحترام في قندهار."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:147
 msgid "۱۰ مکان برتر برای بازدید در قندهار"
-msgstr "أفضل 10 أماكن للزيارة في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:149
 msgid "آرامگاه عبای پیامبر"
-msgstr "ضريح عباءة النبي"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:149
 msgid ""
 "مکانی که بقایی اعتقاد بر این است که عبای پیامبر محمد است در آن قرار دارد."
-msgstr "المكان الذي يُعتقد أنه يحتوي على بقايا عباءة النبي محمد."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:150
 msgid "آرامگاه احمد شاه درانی"
-msgstr "ضريح أحمد شاه دراني"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:150
 msgid "مقبره بنیانگذار افغانستان."
-msgstr "مقبرة مؤسس أفغانستان."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:151
 msgid "چیلزینا"
-msgstr "تشيلزينا"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:151
 msgid "اتاق‌های سنگی با کتیبه‌های دوره مغول."
-msgstr "غرف حجرية تحتوي على نقوش من العصر المغولي."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:152
 msgid "دره ارغنداب"
-msgstr "وادي أرخنداب"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:152
 msgid "باغ‌ها و مناظر طبیعی سرسبز."
-msgstr "حدائق ومناظر طبيعية خضراء."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:153
 msgid "مسجد جمعه"
-msgstr "مسجد الجمعة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:153
 msgid "مهم‌ترین مسجد قندهار."
-msgstr "أهم مسجد في قندهار."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:154
 msgid "بازار شاه"
-msgstr "سوق شاه"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:154
 msgid "بازاری سنتی که میوه، ادویه و صنایع دستی می‌فروشد."
-msgstr "سوق تقليدي يبيع الفواكه والتوابل والحرف اليدوية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:155
 msgid "بازار هرات"
-msgstr "سوق هرات"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:155
 msgid "مشهور به گلدوزی‌ها و صنایع دستی قندهاری."
-msgstr "مشهور بالتطريزات والحرف القندهارية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:156
 msgid "زیارت بابا ولی"
-msgstr "زيارة بابا ولي"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:156
 msgid "مکان زیارتی محبوب در دره ارغنداب."
-msgstr "مكان ديني شهير في وادي أرخنداب."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:157
 msgid "موزه قندهار"
-msgstr "متحف قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:157
 msgid "نمایشگاه آثار باستانی و تاریخ غنی منطقه."
-msgstr "عرض للآثار القديمة والتاريخ الغني للمنطقة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:158
 msgid "باغ‌های انار"
-msgstr "حدائق الرمان"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:158
 msgid "بازدید در فصل برداشت (سپتامبر-اکتبر)."
-msgstr "الزيارة خلال موسم الحصاد (سبتمبر-أكتوبر)."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:161
 msgid "بهترین زمان بازدید از قندهار"
-msgstr "أفضل وقت لزيارة قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:162
 msgid ""
 "بهترین زمان بازدید از قندهار از اکتبر تا آوریل است که دما معتدل‌تر است. بهار "
 "(مارس-آوریل) به ویژه زیباست زیرا باغ‌ها شکوفه می‌دهند. تابستان‌ها بسیار گرم است "
 "و دما معمولاً از ۴۰ درجه سانتی‌گراد فراتر می‌رود."
-msgstr "أفضل وقت لزيارة قندهار من أكتوبر إلى أبريل حيث تكون درجات الحرارة معتدلة. الربيع (مارس-أبريل) جميل جدًا لأن الحدائق تتفتح. الصيف حار جدًا وتصل الحرارة غالبًا إلى أكثر من 40 درجة مئوية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:164
 msgid "اطلاعات سریع درباره قندهار"
-msgstr "معلومات سريعة عن قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:174
 msgid "شهر قندهار"
-msgstr "مدينة قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:177
 msgid "مختصات جغرافیایی"
-msgstr "الإحداثيات الجغرافية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:182
 msgid "حدود ۱.۲ میلیون نفر (برآورد ۲۰۲۱)"
-msgstr "حوالي 1.2 مليون نسمة (تقدير 2021)"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:186
 msgid "حدود ۵۴٬۰۲۲ کیلومتر مربع"
-msgstr "حوالي 54,022 كيلومتر مربع"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:189
 msgid "ولسوالی‌ها"
-msgstr "المقاطعات"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:190
 msgid "۱۶ ولسوالی"
-msgstr "16 مقاطعة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:193
 msgid "مذهب‌های اصلی"
-msgstr "الأديان الرئيسية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:198
 msgid "عمدتاً پشتون، با اقلیت تاجیک و هزاره"
-msgstr "غالبًا بشتون، مع أقليات تاجيك وهزاره"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:201
 msgid "زبان‌های مورد استفاده"
-msgstr "اللغات المستخدمة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:205
 msgid "حیوان سمبل ولایت"
-msgstr "الحيوان الرمزي للمحافظة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:206
 msgid "سگ افغان"
-msgstr "الكلب الأفغاني"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:209
 msgid "گل سمبل ولایت"
-msgstr "الزهرة الرمزية للمحافظة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:210
 msgid "گل انار"
-msgstr "زهرة الرمان"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:213
 msgid "پرنده سمبل ولایت"
-msgstr "الطائر الرمزي للمحافظة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:214
 msgid "باز"
-msgstr "الصقر"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:217
 msgid "درخت سمبل ولایت"
-msgstr "الشجرة الرمزية للمحافظة"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:218
 msgid "درخت انار"
-msgstr "شجرة الرمان"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:226
 msgid "بزکشی، کریکت"
-msgstr "بزكشي، الكريكيت"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:229
 msgid "مناطق گردشگری اصلی"
-msgstr "المناطق السياحية الرئيسية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:230
 msgid "آرامگاه عبای پیامبر، دره ارغنداب، چیلزینا، بازارهای محلی"
-msgstr "ضريح عباءة النبي، وادي أرخنداب، تشيلزينا، الأسواق المحلية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:234
 msgid "اماكن تاریخی، باغ‌های انار، بازارهای سنتی، معماری اسلامی"
-msgstr "المواقع التاريخية، حدائق الرمان، الأسواق التقليدية، العمارة الإسلامية"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:346
 msgid "بهترین زمان برای بازدید از قندهار"
-msgstr "أفضل وقت لزيارة قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:347
 msgid "نمایش بیشتر"
-msgstr "عرض المزيد"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:355
 msgid "فصل بهار در قندهار"
-msgstr "فصل الربيع في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:358
 msgid ""
 "بهار هوای مطبوع و باغ‌های شکوفه زده را به ارمغان می‌آورد و زمان ایده‌آلی برای "
 "بازدید از مکان‌های تاریخی و فعالیت‌های بیرونی است."
-msgstr "يقدم الربيع طقسًا معتدلًا وحدائق مزهرة، وهو الوقت المثالي لزيارة المواقع التاريخية والأنشطة الخارجية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:367
 msgid "فصل پاییز در قندهار"
-msgstr "فصل الخريف في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:368
 msgid "اکتبر تا نوامبر"
-msgstr "أكتوبر حتى نوفمبر"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:370
 msgid ""
 "پاییز دماهای مطبوع و فصل برداشت انار را ارائه می‌دهد و بازارهای رنگارنگ و "
 "رویدادهای فرهنگی را تجربه خواهید کرد."
-msgstr "يقدم الخريف درجات حرارة معتدلة وموسم حصاد الرمان، كما ستستمتع بالأسواق الملونة والفعاليات الثقافية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:379
 msgid "فصل زمستان در قندهار"
-msgstr "فصل الشتاء في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:380
 msgid "دسامبر تا فوریه"
-msgstr "ديسمبر حتى فبراير"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:382
 msgid ""
 "زمستان‌ها معتدل با شب‌های خنک هستند و زمان ایده‌آلی برای بازدید از جاذبه‌های "
 "داخلی شهر و مکان‌های تاریخی می‌باشند."
-msgstr "الشتاء معتدل مع ليالٍ باردة، وهو وقت مثالي لزيارة المعالم الداخلية للمدينة والمواقع التاريخية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:390
 msgid "بهترین مکان‌ها برای بازدید در قندهار"
-msgstr "أفضل الأماكن للزيارة في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:419
 msgid "جاذبه‌های گردشگری محبوب در قندهار"
-msgstr "المعالم السياحية الشهيرة في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:493
 msgid "هیچ جاذبه گردشگری در این ولایت یافت نشد."
-msgstr "لم يتم العثور على أي معالم سياحية في هذه المحافظة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:499
 msgid "برترین فعالیت‌ها در قندهار"
-msgstr "أفضل الأنشطة في قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:568
 msgid "چگونه به قندهار برسیم؟"
-msgstr "كيف تصل إلى قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:583
 msgid ""
 "فرودگاه بین‌المللی قندهار شهر را با پروازهای داخلی به کابل و برخی مقاصد "
 "بین‌المللی در منطقه متصل می‌کند."
-msgstr "يربط مطار قندهار الدولي المدينة بالرحلات الداخلية إلى كابول وبعض الوجهات الدولية في المنطقة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:599
 msgid ""
 "قندهار از طریق جاده حلقوی به سایر شهرهای مهم متصل است. سفر از کابل حدود ۸ تا "
 "۱۰ ساعت طول می‌کشد و بستگی به شرایط امنیتی دارد."
-msgstr "قندهار متصلة بالطرق الدائرية إلى المدن الرئيسية الأخرى. تستغرق الرحلة من كابول حوالي 8 إلى 10 ساعات وتعتمد على الظروف الأمنية."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:615
 msgid ""
 "در حال حاضر قندهار هیچ خدمات قطاری ندارد؛ سفر با هواپیما و جاده گزینه‌های "
 "اصلی برای رسیدن به شهر هستند."
-msgstr "حاليًا، لا توجد خدمات قطار في قندهار؛ السفر جواً أو بالطرق هو الخيار الرئيسي للوصول إلى المدينة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:640
 msgid "بهترین زمان بازدید از قندهار چه زمانی است؟"
-msgstr "متى هو أفضل وقت لزيارة قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:646
 msgid ""
 "بهترین زمان بازدید از قندهار از اکتبر تا آوریل است که دما ملایم‌تر است. بهار "
 "(مارچ-آوریل) به ویژه دلپذیر است."
-msgstr "أفضل وقت لزيارة قندهار من أكتوبر إلى أبريل حيث تكون درجات الحرارة معتدلة. الربيع (مارس-أبريل) ممتع بشكل خاص."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:657
 msgid "چگونه می‌توانم به قندهار برسم؟"
-msgstr "كيف يمكنني الوصول إلى قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:662
 msgid ""
 "می‌توانید از طریق فرودگاه بین‌المللی قندهار یا جاده حلقوی از کابل یا سایر "
 "شهرهای بزرگ به قندهار برسید."
-msgstr "يمكنك الوصول إلى قندهار عبر مطار قندهار الدولي أو الطريق الدائري من كابول أو المدن الكبرى الأخرى."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:673
 msgid "برخی از جاذبه‌های گردشگری معروف قندهار کدامند؟"
-msgstr "ما هي بعض المعالم السياحية الشهيرة في قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:678
 msgid ""
 "جاذبه‌های محبوب شامل حرم عبای پیامبر، آرامگاه احمد شاه درانی، چیلزینا و دره "
 "ارغنداب هستند."
-msgstr "تشمل المعالم الشهيرة ضريح عباءة النبي، ضريح أحمد شاه دراني، تشيلزينا ووادي أرخنداب."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:689
 msgid "آیا قندهار برای گردشگران ایمن است؟"
-msgstr "هل قندهار آمنة للسياح؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:694
 msgid ""
 "وضعیت امنیتی در قندهار متفاوت است. ضروری است که قبل از بازدید، توصیه‌های سفر "
 "و مشورت با مقامات محلی را بررسی کنید."
-msgstr "الوضع الأمني في قندهار متفاوت. من الضروري مراجعة نصائح السفر واستشارة السلطات المحلية قبل الزيارة."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:705
 msgid "واحد پول محلی در قندهار چیست؟"
-msgstr "ما هي العملة المحلية في قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:710
 msgid "واحد پول محلی در قندهار افغانی (AFN) است."
-msgstr "العملة المحلية في قندهار هي الأفغاني (AFN)."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:721
 msgid "آیا برای بازدید از قندهار نیاز به ویزا دارم؟"
-msgstr "هل أحتاج إلى تأشيرة لزيارة قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:726
 msgid ""
 "بله، اکثر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. برای "
 "اطلاعات بیشتر با سفارت یا کنسولگری افغانستان در کشور خود تماس بگیرید."
-msgstr "نعم، يحتاج معظم الأجانب إلى تأشيرة لدخول أفغانستان. لمزيد من المعلومات، اتصل بسفارة أو قنصلية أفغانستان في بلدك."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:737
 msgid "در قندهار چه زبانی صحبت می‌شود؟"
-msgstr "ما اللغة التي يتحدث بها في قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:742
 msgid ""
 "زبان اصلی قندهار پشتو است، اما بسیاری نیز دری را می‌فهمند. انگلیسی به طور "
 "گسترده صحبت نمی‌شود."
-msgstr "اللغة الرئيسية في قندهار هي البشتو، لكن الكثيرون يفهمون الدري. الإنجليزية لا تُتحدث على نطاق واسع."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:753
 msgid "چه نوع لباسی در قندهار بپوشم؟"
-msgstr "ما نوع الملابس التي يجب ارتداؤها في قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:758
 msgid ""
 "قندهار محافظه‌کار است. مردان باید شلوار و پیراهن بلند بپوشند و زنان لباس‌های "
 "گشاد که بازوها و پاها را می‌پوشاند همراه با روسری سر بپوشند."
-msgstr "قندهار محافظة. يجب على الرجال ارتداء بنطال وقميص طويل، وعلى النساء ارتداء ملابس فضفاضة تغطي الذراعين والساقين مع ارتداء الحجاب."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:769
 msgid "غذاهای محلی قندهار چگونه است؟"
-msgstr "كيف هي الأطعمة المحلية في قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:774
 msgid ""
 "قندهار به نان قندهاری، گوشت بره کبابی (شینوری) و انارهای تازه معروف است. "
 "وعده‌های غذایی سنتی اغلب شامل پلو و کباب هستند."
-msgstr "قندهار مشهورة بخبزها القندهاري، لحم الضأن المشوي (شينوري) والرمان الطازج. غالبًا ما تشمل الوجبات التقليدية الأرز والكباب."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:785
 msgid "آیا می‌توانم از کارت اعتباری در قندهار استفاده کنم؟"
-msgstr "هل يمكنني استخدام بطاقة ائتمان في قندهار؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:790
 msgid ""
 "کارت‌های اعتباری به ندرت پذیرفته می‌شوند. توصیه می‌شود برای همه تراکنش‌ها نقدی "
 "به واحد افغانی همراه داشته باشید."
-msgstr "نادراً ما تُقبل بطاقات الائتمان. يُنصح بحمل نقدًا بالعملة الأفغانية لجميع المعاملات."
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:805
 msgid "نقشه قندهار"
-msgstr "خريطة قندهار"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:818
 msgid "سوالات دیگری دارید؟"
-msgstr "هل لديك أسئلة أخرى؟"
+msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:819
 msgid ""
 "اگر پاسخ سوال خود را در بخش سوالات متداول پیدا نکردید، همیشه می‌توانید با ما "
 "تماس بگیرید. ما به زودی به شما پاسخ خواهیم داد!"
-msgstr "إذا لم تجد إجابة لسؤالك في قسم الأسئلة المتكررة، يمكنك دائمًا الاتصال بنا. سنرد عليك قريبًا!"
-
+msgstr ""
 
 #: .\visit_afg_core\settings.py:156
 msgid "English"
