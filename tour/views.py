@@ -291,7 +291,7 @@ def user_newsfeed(request):
     elif user_type == 'Guide':
         return render(request, 'tour_involve/guide_newsfeed.html', context)
     else:
-        return render(request, 'tour_involve/default_newsfeed.html', context)
+        return render(request, 'tour_involve/tg_doc_newsfeed.html', context)
     
 
 
