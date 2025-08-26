@@ -1,0 +1,555 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+
+   <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-12">
+                    <h2 class="breadcrumb-title mb-2">LARMOND MICE</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center mb-0">
+                        
+                            <li class="breadcrumb-item active" aria-current="page">Your Corporate Travel Partner</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<section class="section benefit-section bg-light-300">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header text-center">
+                    <h2 class="mb-2">Why <span class="text-primary text-decoration-underline">Larmond</span> for Your MICE & Travel Needs</h2>
+                    <p class="sub-title">Larmond is your trusted partner for tourism and MICE (Meetings, Incentives, Conferences, and Exhibitions) in Afghanistan, offering tailored travel experiences, cultural exploration, and seamless event solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card-body text-center">
+                        <div class="benefit-icon mb-2 bg-secondary text-gray-9 mx-auto">
+                            <i class="isax isax-lock-1"></i>
+                        </div>
+                        <h5 class="mb-2">Tailored Packages</h5>
+                        <p class="mb-0">Customized travel and event solutions that meet your budget and preferences.</p>
+                        <span class="icon-view text-secondary"><i class="isax isax-lock-1"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="card-body text-center">
+                        <div class="benefit-icon mb-2 bg-orange text-white mx-auto">
+                            <i class="isax isax-magicpen"></i>
+                        </div>
+                        <h5 class="mb-2">Cultural Experiences</h5>
+                        <p class="mb-0">Authentic Afghan tours including heritage sites, local traditions, and guided excursions.</p>
+                        <span class="icon-view text-orange"><i class="isax isax-magicpen"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="card-body text-center">
+                        <div class="benefit-icon mb-2 bg-purple text-white mx-auto">
+                            <i class="isax isax-receipt-add"></i>
+                        </div>
+                        <h5 class="mb-2">Event Management</h5>
+                        <p class="mb-0">From business meetings to exhibitions, we handle planning, logistics, and execution.</p>
+                        <span class="icon-view text-purple"><i class="isax isax-receipt-add"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 d-flex">
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="card-body text-center">
+                        <div class="benefit-icon mb-2 bg-teal text-white mx-auto">
+                            <i class="isax isax-location-tick"></i>
+                        </div>
+                        <h5 class="mb-2">Best Price Guarantee</h5>
+                        <p class="mb-0">Affordable packages with transparent pricing and unbeatable value for money.</p>
+                        <span class="icon-view text-teal"><i class="isax isax-location-tick"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--end section-->
+        <div class="position-relative">
+            <div class="shape overflow-hidden text-color-white">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- Hero End -->
+
+        
+        <section class="section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 filters-group-wrap">
+                        <div class="filters-group">
+                            <ul class="container-filter list-inline mb-0 filter-options text-center">
+                                <li class="list-inline-item">
+                                    <button class="btn btn-outline-primary categories-name" data-group="all">All</button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="btn btn-outline-primary categories-name" data-group="business">MEETINGS</button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="btn btn-outline-primary categories-name" data-group="marketing">INCENTIVES</button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="btn btn-outline-primary categories-name" data-group="finance">CONFERENCES</button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="btn btn-outline-primary categories-name" data-group="human">EVENTS</button>
+                                </li>
+                                <li class="list-inline-item">
+                                    <button class="btn btn-outline-primary categories-name" data-group="EDUCATIONAL">EDUCATIONAL TOURS</button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div id="grid" class="row">
+                        <div class="col-12 mt-4 pt-2 picture-item" data-groups='["business"]'>
+                            <div class="card shadow-lg border-0 rounded-3">
+                                <!-- Card Image -->
+                                <img src="{% static 'state-image/kabul/kabul-view.jpg' %}" class="card-img-top img-fluid" alt="Business Image" style="max-height: 400px; object-fit: cover;">
+
+                                <!-- Card Body -->
+                                <div class="card-body p-4">
+                                    <span class="badge bg-primary text-white mb-2">MEETINGS</span>
+                                    <h4 class="card-title fw-bold">
+                                        <a href="page-case-detail.html" class="stretched-link text-dark text-decoration-none">
+                                            Social Media & Small Business
+                                        </a>
+                                    </h4>
+                                    <p class="card-text text-muted mt-2 fs-5">
+                                        This is required when, for example, the final text is not yet available.
+                                    </p>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="page-case-detail.html" class="btn btn-primary btn-lg">
+                                        Read More <i class="uil uil-angle-right-b align-middle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12 mt-4 pt-2 picture-item" data-groups='["marketing"]'>
+                            <div class="card shadow-lg border-0 rounded-3">
+                                <!-- Card Image -->
+                                <img src="{% static 'state-image/kabul/kabul-view.jpg' %}" class="card-img-top img-fluid" alt="Marketing Image" style="max-height: 400px; object-fit: cover;">
+
+                                <!-- Card Body -->
+                                <div class="card-body p-4">
+                                    <span class="badge bg-warning text-dark mb-2">Incentives</span>
+                                    <h4 class="card-title fw-bold">
+                                        <a href="page-case-detail.html" class="stretched-link text-dark text-decoration-none">
+                                            PPC Success For HVAC Company
+                                        </a>
+                                    </h4>
+                                    <p class="card-text text-muted mt-2 fs-5">
+                                        This is required when, for example, the final text is not yet available.
+                                    </p>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="page-case-detail.html" class="btn btn-primary btn-lg">
+                                        Read More <i class="uil uil-angle-right-b align-middle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+<!--end col-->
+
+                        <div class="col-12 mt-4 pt-2 picture-item" data-groups='["finance"]'>
+                            <div class="card shadow-lg border-0 rounded-3">
+                                <!-- Card Image -->
+                                <img src="{% static 'state-image/kabul/kabul-view.jpg' %}" class="card-img-top img-fluid" alt="Finance Image" style="max-height: 400px; object-fit: cover;">
+
+                                <!-- Card Body -->
+                                <div class="card-body p-4">
+                                    <span class="badge bg-success mb-2">CONFERENCES</span>
+                                    <h4 class="card-title fw-bold">
+                                        <a href="page-case-detail.html" class="stretched-link text-dark text-decoration-none">
+                                            Ecommerce PPC Case Study
+                                        </a>
+                                    </h4>
+                                    <p class="card-text text-muted mt-2 fs-5">
+                                        This is required when, for example, the final text is not yet available.
+                                    </p>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="page-case-detail.html" class="btn btn-success btn-lg">
+                                        Read More <i class="uil uil-angle-right-b align-middle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+<!--end col-->
+
+                        <div class="col-12 mt-4 pt-2 picture-item" data-groups='["human"]'>
+                            <div class="card shadow-lg border-0 rounded-3">
+                                <!-- Card Image -->
+                                <img src="{% static 'state-image/kabul/kabul-view.jpg' %}" class="card-img-top img-fluid" alt="Human Research Image" style="max-height: 400px; object-fit: cover;">
+
+                                <!-- Card Body -->
+                                <div class="card-body p-4">
+                                    <span class="badge bg-info mb-2">EVENTS</span>
+                                    <h4 class="card-title fw-bold">
+                                        <a href="page-case-detail.html" class="stretched-link text-dark text-decoration-none">
+                                            iPhone Mockup
+                                        </a>
+                                    </h4>
+                                    <p class="card-text text-muted mt-2 fs-5">
+                                        This is required when, for example, the final text is not yet available.
+                                    </p>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="page-case-detail.html" class="btn btn-info btn-lg">
+                                        Read More <i class="uil uil-angle-right-b align-middle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4 pt-2 picture-item" data-groups='["EDUCATIONAL"]'>
+                            <div class="card shadow-lg border-0 rounded-3">
+                                <!-- Card Image -->
+                                <img src="{% static 'state-image/kabul/kabul-view.jpg' %}" class="card-img-top img-fluid" alt="Human Research Image" style="max-height: 400px; object-fit: cover;">
+
+                                <!-- Card Body -->
+                                <div class="card-body p-4">
+                                    <span class="badge bg-info mb-2">EDUCATIONAL</span>
+                                    <h4 class="card-title fw-bold">
+                                        <a href="page-case-detail.html" class="stretched-link text-dark text-decoration-none">
+                                            iPhone Mockup
+                                        </a>
+                                    </h4>
+                                    <p class="card-text text-muted mt-2 fs-5">
+                                        This is required when, for example, the final text is not yet available.
+                                    </p>
+                                </div>
+
+                                <!-- Card Footer -->
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="page-case-detail.html" class="btn btn-info btn-lg">
+                                        Read More <i class="uil uil-angle-right-b align-middle"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+        
+<section class="faq-section section" style="padding-top: 0px;">
+    <div class="container">
+        <div class="faq-sec">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header text-center">
+                        <h2 class="mb-2">Services  <span class="text-primary text-decoration-underline">Offered</span></h2>
+                        <p class="sub-title">Larmond helps travelers and businesses explore Afghanistan with comfort, safety, and tailored experiences. Here are answers to the most common questions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion accordion-flush" id="accordionFaq">
+                        
+                        <!-- FAQ 1 -->
+                        <div class="accordion-item show mb-3 pb-3 wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapseOne" aria-expanded="true" aria-controls="faq-collapseOne">
+                                    What types of tours do you offer?
+                                </button>
+                            </h2>
+                            <div id="faq-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p class="mb-0">We provide a wide variety of tours, including:</p>
+                                    <ul>
+                                        <li>Cultural and historical tours across Afghanistan</li>
+                                        <li>Adventure experiences such as hiking and exploring nature</li>
+                                        <li>Business and MICE (Meetings, Incentives, Conferences, Exhibitions) packages</li>
+                                        <li>Customized itineraries based on your interests</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 2 -->
+                        <div class="accordion-item mb-3 pb-3 wow fadeInUp" data-wow-delay="0.4s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsetwo" aria-expanded="false" aria-controls="faq-collapsetwo">
+                                    Are the tours customizable?
+                                </button>
+                            </h2>
+                            <div id="faq-collapsetwo" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Yes, absolutely! At Larmond, we specialize in creating tailored packages. Whether you want to focus on culture, nature, or business events, we adapt the itinerary to suit your preferences, group size, and budget.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 3 -->
+                        <div class="accordion-item mb-3 pb-3 wow fadeInUp" data-wow-delay="0.6s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsthree" aria-expanded="false" aria-controls="faq-collapsthree">
+                                    What safety measures do you follow?
+                                </button>
+                            </h2>
+                            <div id="faq-collapsthree" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Your safety is our top priority. We partner with trusted local guides, follow government travel advisories, and ensure secure transport and accommodations. Our team is available 24/7 for assistance during your trip.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 4 -->
+                        <div class="accordion-item mb-3 pb-3 wow fadeInUp" data-wow-delay="0.8s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsefour" aria-expanded="false" aria-controls="faq-collapsefour">
+                                    How far in advance should I book?
+                                </button>
+                            </h2>
+                            <div id="faq-collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>We recommend booking at least 4–6 weeks in advance for regular tours. For large MICE events, booking 2–3 months ahead ensures the best arrangements and availability of venues.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ 5 -->
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="1.0s">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-collapsefive" aria-expanded="false" aria-controls="faq-collapsefive">
+                                    What is your cancellation policy?
+                                </button>
+                            </h2>
+                            <div id="faq-collapsefive" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                <div class="accordion-body">
+                                    <p>Cancellations made 14 days before the start date receive a full refund. For cancellations made within 7 days, a partial refund (50%) applies. Unfortunately, last-minute cancellations (less than 48 hours) are non-refundable due to prior bookings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="section experts-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header text-center">
+                        <h2 class="mb-2">Meet  <span class="text-primary  text-decoration-underline">our </span> Team</h2>
+                        <p class="sub-title">Here are some famous tourist places around the world that are known for their historical significance,natural beauty, or cultural impact:</p>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel experts-slider nav-center">
+
+                <!-- Expert Item-->
+                <div class="expert-item mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <div class="bg-purple-100 position-relative">
+                            <img src="{% static 'img/expert/expert-01.png' %}" alt="img">
+                            <span class="bg-info circle-shape"></span>
+                        </div>
+                    </a>
+                    <div class="expert-content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">5.0</span>
+                            <p>(499 Reviews)</p>
+                        </div>
+                        <h5 class="mb-1"><a href="javascript:void(0);">Damien Martien</a></h5>                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill">
+                                <p class="mb-1">Total Listings</p>
+                                <h6>14</h6>
+                            </div>
+                            <div class="flex-fill">
+                                <p class="mb-1">Starts From</p>
+                                <h6>$452</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="expert-item mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <div class="bg-orange-100 position-relative">
+                            <img src="{% static 'img/expert/expert-02.png' %}" alt="img">
+                            <span class="bg-orange circle-shape"></span>
+                        </div>
+                    </a>
+                    <div class="expert-content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.9</span>
+                            <p>(315 Reviews)</p>
+                        </div>
+                        <h5 class="mb-1"><a href="javascript:void(0);">Connie Allen</a></h5>                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill">
+                                <p class="mb-1">Total Listings</p>
+                                <h6>21</h6>
+                            </div>
+                            <div class="flex-fill">
+                                <p class="mb-1">Starts From</p>
+                                <h6>$689</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="expert-item mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <div class="bg-pink-100 position-relative">
+                            <img src="{% static 'img/expert/expert-03.png' %}" alt="img">
+                            <span class="bg-pink circle-shape"></span>
+                        </div>
+                    </a>
+                    <div class="expert-content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.7</span>
+                            <p>(220 Reviews)</p>
+                        </div>
+                        <h5 class="mb-1"><a href="javascript:void(0);">Ida Olsen</a></h5></p>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill">
+                                <p class="mb-1">Total Listings</p>
+                                <h6>15</h6>
+                            </div>
+                            <div class="flex-fill">
+                                <p class="mb-1">Starts From</p>
+                                <h6>$230</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="expert-item mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <div class="bg-teal-100 position-relative">
+                            <img src="{% static 'img/expert/expert-04.png' %}" alt="img">
+                            <span class="bg-teal circle-shape"></span>
+                        </div>
+                    </a>
+                    <div class="expert-content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">5.0</span>
+                            <p>(180 Reviews)</p>
+                        </div>
+                        <h5 class="mb-1"><a href="javascript:void(0);">Damien Martien</a></h5></p>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill">
+                                <p class="mb-1">Total Listings</p>
+                                <h6>15</h6>
+                            </div>
+                            <div class="flex-fill">
+                                <p class="mb-1">Starts From</p>
+                                <h6>$563</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+                <!-- Expert Item-->
+                <div class="expert-item mb-4">
+                    <a href="javascript:void(0);" class="expert-img">
+                        <div class="bg-purple-100 position-relative">
+                            <img src="{% static 'img/expert/expert-05.png' %}" alt="img">
+                            <span class="bg-purple circle-shape"></span>
+                        </div>
+                    </a>
+                    <div class="expert-content">
+                        <div class="d-flex align-items-center mb-1">
+                            <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-2">4.9</span>
+                            <p>(160 Reviews)</p>
+                        </div>
+                        <h5 class="mb-1"><a href="javascript:void(0);">Catalina Schmeling</a></h5>
+                        <div class="d-flex border-top mt-3 pt-3">
+                            <div class="flex-fill">
+                                <p class="mb-1">Total Listings</p>
+                                <h6>17</h6>
+                            </div>
+                            <div class="flex-fill">
+                                <p class="mb-1">Starts From</p>
+                                <h6>$550</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Expert Item-->
+
+            </div>
+            <div class="text-center view-all wow fadeInUp">
+                <a href="team.html" class="btn btn-dark">View All Experts<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".categories-name");
+    const items = document.querySelectorAll(".picture-item");
+
+    function filter(group) {
+        items.forEach(item => {
+            const groups = JSON.parse(item.getAttribute("data-groups"));
+            item.style.display = (group === "all" || groups.includes(group)) ? "block" : "none";
+        });
+    }
+
+    // Show all by default
+    filter("all");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+            buttons.forEach(b => b.classList.remove("active"));
+            this.classList.add("active");
+            filter(this.getAttribute("data-group"));
+        });
+    });
+});
+</script>
+
+
+
+
+{% endblock %}
