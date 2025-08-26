@@ -1,5 +1,12 @@
 from django.contrib import admin
 from .models import *
+from django.contrib import admin
+from .models import Best_Selling, Best_Selling_images
+
+
+
+
+
 
 # Inline for adding images directly on the place page
 class BestPlacesForVisitImagesInline(admin.TabularInline):  # or StackedInline
@@ -82,3 +89,26 @@ class PopularTouristImagesAdmin(admin.ModelAdmin):
     get_place_title.short_description = 'Place'
 
 
+
+
+
+# Inline برای افزودن تصاویر داخل صفحه Best_Selling
+class BestSellingImagesInline(admin.TabularInline):  # یا StackedInline
+    model = Best_Selling_images
+    extra = 1  # تعداد فرم‌های خالی برای تصویر جدید
+
+@admin.register(Best_Selling)
+class BestSellingAdmin(admin.ModelAdmin):
+    list_display = ('title', 'location')
+    search_fields = ('title', 'location')
+    list_filter = ('provinces',)
+    inlines = [BestSellingImagesInline]
+
+# ثبت جداگانه مدل تصاویر (اختیاری)
+@admin.register(Best_Selling_images)
+class BestSellingImagesAdmin(admin.ModelAdmin):
+    list_display = ('caption', 'get_province_title')
+
+    def get_province_title(self, obj):
+        return obj.province.title  # توجه: فیلد ForeignKey شما province است
+    get_province_title.short_description = 'Place'

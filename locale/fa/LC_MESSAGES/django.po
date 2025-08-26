@@ -8,6 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-23 12:45+0430\n"
 "POT-Creation-Date: 2025-08-23 03:47-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -17,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: .\templates\RTL\index.html:16
 msgid "جهان را کشف کنید، یک"
 msgstr ""
@@ -31,6 +33,770 @@ msgid ""
 "                                مقصد نهایی شما برای هر آنچه که به شما کمک "
 "می‌کند تا تجربهٔ سفر را جشن بگیرید و به یاد بسپارید.\n"
 "                                "
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:22
+msgid "ولایت"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:22 .\templates\RTL\states\kabul.html:157
+msgid "کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:25
+msgid ""
+"سرزمینی با کوه‌های باشکوه، میراث باستانی، سنت‌های رنگارنگ و مهمان‌نوازی بی‌نظیر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:34
+msgid "بررسی اجمالی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:39
+msgid "بهترین زمان بازدید"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:44
+msgid "چگونه برسیم"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:49
+msgid "مکان‌های دیدنی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:54
+msgid "کارهایی برای انجام"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:59
+msgid "پکیج‌ها"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:64
+msgid "نقشه"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:79
+msgid "درباره گردشگری کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:80
+msgid ""
+"کابل شهری با تاریخ غنی و فرهنگ زنده است، با بازارهای قدیمی، کوه‌های باشکوه، "
+"موسیقی سنتی، غذاهای خوش‌طعم، قالی‌های رنگارنگ و مردمی مهربان. این شهر تجربه‌ای "
+"شگفت‌انگیز برای مسافرانی که به دنبال تاریخ، فرهنگ، ماجراجویی و مهمان‌نوازی "
+"اصیل افغان هستند ارائه می‌دهد. واقع در دره رودخانه کابل، این شهر برای "
+"علاقه‌مندان به تاریخ، کاوشگران فرهنگی، دوستداران طبیعت و تعطیلات خانوادگی "
+"عالی است."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:82
+msgid "شکوه معماری: قلعه‌ها، مساجد و خانه‌های سنتی!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:83
+msgid ""
+"جاذبه‌های گردشگری اصلی کابل شامل قلعه تاریخی بالا حصار، کاخ‌های سلطنتی مانند "
+"دارالامان و خانه‌های سنتی افغان است که میراث غنی شهر را نشان می‌دهند. قلعه "
+"بالا حصار که بر تپه‌ای مشرف به کابل واقع شده است، نگاهی به قرن‌ها تاریخ "
+"افغانستان ارائه می‌دهد. اگرچه کابل کاخ‌های بزرگ مانند برخی مناطق ندارد، معماری "
+"اسلامی، بازارهای پرجنب و جوش و باغ‌های باستانی تجربه‌ای فرهنگی منحصر به فرد "
+"فراهم می‌کنند. بازدیدکنندگان می‌توانند مساجد و زیارتگاه‌های باشکوهی را نیز "
+"ببینند که اهمیت تاریخی و معنوی شهر را نشان می‌دهند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:85
+msgid "ترکیبی غنی از رقص‌های سنتی، آهنگ‌های دلنشین، سواری با اسب و رنگ‌های زنده!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:86
+msgid ""
+"برای علاقه‌مندان به فرهنگ، کابل جشنواره‌ها و نمایشگاه‌های زنده‌ای برای تجربه "
+"سنت‌های افغان ارائه می‌دهد. جشن‌های شاد نوروز با موسیقی، رقص و گردهمایی‌های "
+"رنگارنگ فرا رسیدن بهار را نشان می‌دهند. عروسی‌های سنتی و جشن‌های مذهبی مانند "
+"عید، آداب و رسوم غنی، رقص‌های محلی مانند آتان و موسیقی دلنشین را به نمایش "
+"می‌گذارند. بازدیدکنندگان می‌توانند بازارها و نمایشگاه‌های اسب را نیز تجربه کنند "
+"که میراث عمیق کوچ‌نشینی و روستایی افغانستان را منعکس می‌کنند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:88
+msgid "کوه‌های باشکوه افغانستان و حیات وحش منحصر به فرد را کاوش کنید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:89
+msgid ""
+"افغانستان با کوه‌های باشکوه و مناظر ناهموار، فرصت‌های شگفت‌انگیزی برای گردشگری "
+"حیات وحش ارائه می‌دهد. این کشور میزبان گونه‌های کمیاب و در خطر انقراض مانند "
+"پلنگ برفی، قوچ مارکوپولو، جبیر و خرس‌ها است. پارک‌های ملی مانند بند امیر — "
+"اولین پارک ملی افغانستان — زیبایی طبیعی خیره‌کننده و زیستگاه گونه‌های گیاهی و "
+"جانوری متنوع را فراهم می‌کنند. برای علاقه‌مندان به پرنده‌نگری، افغانستان "
+"گونه‌های مهاجر و بومی متعددی از جمله لک‌لک‌ها و عقاب‌ها در دریاچه‌ها و تالاب‌ها "
+"دارد. اگرچه کابل شهری شلوغ است، اما به عنوان دروازه‌ای به این مناطق طبیعی بکر "
+"عمل می‌کند که طبیعت‌دوستان می‌توانند حیات وحش و زیبایی طبیعی کشور را مشاهده "
+"کنند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:91
+msgid "خرید: از جواهرات تا صنایع دستی سنتی!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:92
+msgid ""
+"خرید صنایع دستی اصیل بخش مهمی از تجربه فرهنگ افغان است. کابل به قالی‌ها و "
+"فرش‌های دست‌ساز نفیس، منسوجات رنگارنگ گلدوزی شده و جواهرات زیبا با سنگ‌های "
+"قیمتی مانند لاجورد و فیروزه مشهور است. نقاشی‌های مینیاتوری افغانستان که تحت "
+"تأثیر سبک‌های فارسی و مغولی هستند، هنر پیچیده‌ای را نشان می‌دهند و از مجموعه‌های "
+"ارزشمند محسوب می‌شوند. بازدیدکنندگان همچنین می‌توانند سفال‌های زیبا، محصولات "
+"چرمی سنتی و ابزار موسیقی مانند رباب را پیدا کنند که میراث فرهنگی غنی کشور را "
+"منعکس می‌کنند. بازارهایی مانند خیابان معروف چیکن کابل تجربه خرید زنده‌ای ارائه "
+"می‌دهند که مسافران می‌توانند سوغاتی‌های منحصر به فرد و صنایع دستی افغان اصیل را "
+"به خانه ببرند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:94
+msgid "از کبابی پلاؤ تا منتو: از غذای غنی کابل لذت ببرید!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:95
+msgid ""
+"با تأثیر تبادلات فرهنگی قرن‌ها و جغرافیای متنوع افغانستان، غذاهای افغان "
+"تجربه‌ای منحصر به فرد و خوش‌طعم ارائه می‌دهند. از غذای ملی کبابی پلاؤ — برنج "
+"معطر با کشمش، هویج و گوشت گوسفند — تا خوراکی‌های خیابانی خوشمزه مانند منتو، "
+"غذاهای افغان هر ذائقه‌ای را راضی می‌کنند. نان‌های مختلف مانند نان و بولانی "
+"همراه با خورش‌ها و کباب‌های لذیذ از گوشت گوسفند، گاو و مرغ سرو می‌شوند. همراه "
+"با ماست، سبزیجات تازه و چاشنی‌های خوش‌طعم، غذا کامل می‌شود. برای علاقه‌مندان به "
+"شیرینی، دسرهای سنتی مانند باقلوا، فرنی و شیر خرما پایان لذت‌بخشی برای هر وعده "
+"غذایی ارائه می‌دهند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:97
+msgid "تعطیلات لوکس و مهمان‌نوازی بی‌زمان افغان!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:98
+msgid ""
+"برای تعطیلات لوکس، کابل هتل‌ها و مهمان‌خانه‌های میراثی را ارائه می‌دهد که راحتی "
+"مدرن را با مهمان‌نوازی اصیل افغان ترکیب می‌کنند. اگرچه قطارهای سلطنتی وجود "
+"ندارند، مسافران می‌توانند در هتل‌هایی با دکوراسیون سنتی افغان، مهمان‌نوازی گرم "
+"و غذاهای محلی لذیذ اقامت داشته باشند. بسیاری از ساختمان‌های میراثی و کاخ‌ها "
+"بازسازی شده‌اند تا اقامتگاه‌های منحصر به فردی ارائه دهند که تاریخ و فرهنگ غنی "
+"افغانستان را نشان می‌دهند. از فضاهای داخلی زیبا با کنده‌کاری‌های چوبی پیچیده و "
+"فرش‌ها گرفته تا باغ‌های مرتب و حیاط‌های آرام، این مکان‌ها تجربه‌ای همه‌جانبه از "
+"سلطنت و سنت افغان ارائه می‌دهند. اقامت لوکس در کابل راحتی، غنای فرهنگی و "
+"استقبال گرم ارائه می‌دهد که هر مهمان را مانند سلطنت احساس می‌کند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:100
+msgid ""
+"از کوهنوردی تا پاراگلایدینگ، ماجراجویی در افغانستان انتظار شما را می‌کشد!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:101
+msgid ""
+"افغانستان فعالیت‌های گردشگری ماجراجویی متنوعی را در مناظر کوهستانی خیره‌کننده "
+"خود ارائه می‌دهد. نزدیک کابل و در مناطقی مانند دره پنجشیر و بند امیر، "
+"بازدیدکنندگان می‌توانند از پیاده‌روی، دوچرخه‌سواری کوهستانی و صخره‌نوردی لذت "
+"ببرند. برای دوستداران هیجان، پاراگلایدینگ بر فراز کوه‌های هندوکش مناظر "
+"نفس‌گیری ارائه می‌دهد. قایق‌رانی و سواری با اسب نیز فعالیت‌های محبوبی هستند. "
+"اگرچه سافاری شتر در کابل معمول نیست، سایر مناطق فرصت‌های منحصر به فردی برای "
+"کاوش در زمین‌های متنوع افغانستان ارائه می‌دهند. چه به دنبال پیاده‌روی آرام "
+"باشید یا ورزش‌های هیجان‌انگیز، افغانستان مقصدی رو به رشد برای علاقه‌مندان به "
+"ماجراجویی است."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:103
+msgid "معنویت در قلب کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:104
+msgid ""
+"کابل شهری عمیقاً ریشه‌دار در معنویت است، با مساجد، زیارتگاه‌ها و مکان‌های مذهبی "
+"متعدد که اهمیت زیادی برای مردمش دارند. این شهر میزبان مکان‌های مهم عبادتی است "
+"که توسط مسلمانان بازدید می‌شوند، از جمله مسجد مشهور عیدگاه، مسجد شاه دو "
+"شمشیره و مسجد پل خشتی — هرکدام معماری اسلامی غنی و سنت‌های چند صدساله را نشان "
+"می‌دهند. در میان نمادهای معنوی کابل، زیارتگاه محترم حضرت علی در مزار شریف، در "
+"فاصله کوتاهی از شهر واقع شده و زائرانی از سراسر منطقه را جذب می‌کند. اگرچه "
+"کابل عمدتاً اسلامی است، اما مکان‌های مذهبی شهر بر مهمان‌نوازی، صلح و تعهد تأکید "
+"دارند و بازدیدکنندگان با پیشینه‌های مختلف را می‌پذیرند. میراث معنوی کابل "
+"همچنین در مدارس قدیمی اسلامی (مدارس دینی)، خوشنویسی زیبا و باغ‌های آرام "
+"وابسته به مجموعه‌های مذهبی منعکس شده است و محیطی آرام برای تفکر و نماز فراهم "
+"می‌کند. چه به دنبال بازدید از مساجد باشکوه باشید، چه تجربه جشن‌های مذهبی "
+"پرجنب‌وجوش مانند عید، یا صرفاً جذب فضای معنوی شوید، کابل ترکیبی غنی از ایمان و "
+"فرهنگ ارائه می‌دهد."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:106
+msgid "ده مقصد پر بازدید در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:109
+msgid "قلعه بالا حصار"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:109
+msgid "قلعه تاریخی مشرف به کابل."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:112
+msgid "موزه ملی افغانستان"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:112
+msgid "نمایش میراث فرهنگی غنی."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:115
+msgid "مسجد شاه دو شمشیره"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:115
+msgid "مسجدی منحصر به فرد با معماری الهام گرفته از سبک باروک."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:118
+msgid "مسجد عیدگاه"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:118
+msgid "یکی از بزرگترین مساجد کابل که نمازهای عید در آن برگزار می‌شود."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:121
+msgid "باغ بابر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:121
+msgid "باغ‌های تاریخی تأسیس شده توسط امپراتور مغولی بابر."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:124
+msgid "باغ پغمان"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:124
+msgid "باغ‌های زیبا و محبوب برای استراحت و بازدیدهای آخر هفته."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:127
+msgid "خیابان چیکن"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:127
+msgid "بازار معروف برای صنایع دستی، قالی‌ها و سوغاتی‌های افغان."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:130
+msgid "کاخ دارالامان"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:130
+msgid "کاخ نئوکلاسیک نمادین که تاریخ سلطنتی را نشان می‌دهد."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:133
+msgid "باغ وحش کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:133
+msgid "محل خانوادگی با حیات وحش بومی افغانستان."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:136
+msgid "مسجد پل خشتی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:136
+msgid "یکی از قدیمی‌ترین مساجد کابل با معماری چشمگیر."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:141
+msgid "بهترین زمان بازدید از کابل برای تعطیلات"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:143
+msgid ""
+"بهترین زمان برای بازدید از کابل از ماه مارس تا ژوئن و از سپتامبر تا نوامبر "
+"است، زمانی که هوا معتدل و خوشایند است. در این ماه‌ها می‌توانید به راحتی از "
+"مکان‌های فرهنگی شهر دیدن کنید، از فعالیت‌های خارج از خانه لذت ببرید و "
+"جشنواره‌های محلی را تجربه کنید، بدون آنکه گرمای شدید تابستان یا سرمای زمستان "
+"را تحمل کنید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:147
+msgid "اطلاعات سریع درباره کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:152
+msgid "منطقه"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:153
+msgid "مرکز افغانستان"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:156
+msgid "مرکز ولایت"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:160
+msgid "مختصات"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:161
+msgid "۳۴.۵۵۵۳° شمال، ۶۹.۲۰۷۵° شرق"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:164
+msgid "جمعیت تخمینی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:165
+msgid "تقریباً ۴.۶ میلیون (برآورد ۲۰۲۱)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:168
+msgid "مساحت جغرافیایی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:169
+msgid "حدود ۱۰۲۳ کیلومتر مربع (ولایت کابل)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:172
+msgid "ولسوالی‌های شهر کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:173
+msgid "۲۲ ولسوالی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:176
+msgid "ادیان عمده"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:177
+msgid "اسلام (عمدتاً سنی)، اقلیت کوچک شیعه"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:180
+msgid "گروه‌های قومی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:181
+msgid "پشتون، تاجیک، هزاره، ازبک و دیگران"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:184
+msgid "زبان‌های صحبت شده"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:185
+msgid "دری، پشتو، اردو، انگلیسی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:188
+msgid "نماد حیوانی شهر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:189
+msgid "پلنگ برفی (نماد کوه‌های افغانستان)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:192
+msgid "گل شهر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:193
+msgid "لاله (لاله‌های وحشی در دره‌های اطراف می‌روید)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:196
+msgid "پرنده شهر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:197
+msgid "مونال هیمالیایی (پرنده منطقه کوه‌ها)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:200
+msgid "درخت شهر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:201
+msgid "درختان کاج و سدر (در تپه‌های اطراف یافت می‌شوند)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:204
+msgid "رقص سنتی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:205
+msgid "آتان (رقص محلی محبوب پشتون‌ها)"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:208
+msgid "ورزش‌های محبوب"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:209
+msgid "بزکشی (بازی سنتی با اسب)، فوتبال"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:212
+msgid "مناطق گردشگری اصلی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:213
+msgid ""
+"قلعه بالا حصار، باغ بابر، مسجد شاه دو شمشیره، باغ پغمان، بازار خیابان چیکن"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:216
+msgid "جاذبه‌های اصلی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:217
+msgid ""
+"قلعه‌های تاریخی، موزه‌ها، مساجد، بازارها، جشنواره‌های فرهنگی، کوهنوردی نزدیک، "
+"صنایع دستی سنتی"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:357
+msgid "بهترین زمان برای بازدید از کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:358
+msgid "نمایش بیشتر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:366
+msgid "فصل بهار در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:367 .\templates\RTL\states\kabul.html:379
+#: .\templates\RTL\states\kabul.html:391
+msgid "ماه‌ها:"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:367
+msgid "مارس تا می"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:368 .\templates\RTL\states\kabul.html:380
+#: .\templates\RTL\states\kabul.html:392
+msgid "دمای هوا:"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:369
+msgid ""
+"بهار یکی از بهترین زمان‌ها برای بازدید از کابل است. شهر با گل‌ها شکوفا می‌شود و "
+"هوا خنک و تازه است — مناسب برای گشت و گذار و بازدید از جاذبه‌های شهری."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:378
+msgid "فصل تابستان در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:379
+msgid "ژوئن تا اوت"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:381
+msgid ""
+"تابستان‌ها در کابل گرم و خشک است. اگرچه هنوز زمان خوبی برای بازدید است، "
+"فعالیت‌های روزانه بهتر است در ساعات صبح یا عصر انجام شود."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:390
+msgid "فصل پاییز در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:391
+msgid "سپتامبر تا نوامبر"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:393
+msgid ""
+"پاییز نیز زمان بسیار خوبی برای بازدید از کابل است. برگ‌ها شروع به طلایی شدن "
+"می‌کنند و هوای خنک و تازه، پیاده‌روی و بازدیدهای فرهنگی را خوشایند می‌کند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:401
+msgid "بهترین مکان‌ها برای بازدید در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:426
+msgid "بهترین فعالیت‌ها در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:498
+msgid "چگونه به کابل برسیم؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:508
+msgid "با هواپیما"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:513
+msgid ""
+"فرودگاه بین‌المللی کابل شهر را به مقصدهای داخلی و بین‌المللی متصل می‌کند و "
+"پرواز به مراکز اصلی ارائه می‌دهد."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:524
+msgid "با جاده"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:529
+msgid ""
+"کابل از طریق بزرگراه‌ها به سایر شهرهای مهم متصل است. زمان سفر بستگی به شرایط "
+"امنیتی و کیفیت جاده دارد."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:540
+msgid "با قطار"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:545
+msgid ""
+"در حال حاضر کابل خدمات قطار مستقیم ندارد؛ سفر با هواپیما و جاده گزینه‌های "
+"اصلی هستند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:555
+msgid "پرسش‌های متداول"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:555
+msgid "سوالات"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:569
+msgid "بهترین زمان برای بازدید از کابل چه زمانی است؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:574
+msgid ""
+"بهترین زمان برای بازدید از کابل در بهار (مارس تا می) و پاییز (سپتامبر تا "
+"نوامبر) است، زمانی که هوا معتدل و خوشایند است."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:583
+msgid "چگونه می‌توانم به کابل برسم؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:588
+msgid ""
+"می‌توانید از طریق فرودگاه بین‌المللی حامد کرزی به کابل برسید که شهر را به "
+"شهرهای اصلی منطقه متصل می‌کند. دسترسی جاده‌ای نیز امکان‌پذیر است اما بسته به "
+"شرایط فعلی محدود است."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:597
+msgid "جاذبه‌های گردشگری معروف کابل کدامند؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:602
+msgid ""
+"مکان‌های محبوب شامل باغ بابر، کاخ دارالامان، موزه کابل، مسجد عبد الرحمن و "
+"دریاچه قرغه هستند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:611
+msgid "آیا کابل برای گردشگران امن است؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:616
+msgid ""
+"شرایط امنیتی می‌تواند به سرعت تغییر کند. توصیه می‌شود با سفارت محلی خود مشورت "
+"کرده و قبل از بازدید از کابل، از اطلاعیه‌های مسافرتی به‌روز استفاده کنید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:625
+msgid "واحد پول محلی کابل چیست؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:630
+msgid "واحد پول محلی در کابل، افغانی افغانستان (AFN) است."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:639
+msgid "آیا برای بازدید از کابل به ویزا نیاز دارم؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:644
+msgid ""
+"بله، اکثر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. با سفارت یا "
+"کنسولگری افغانستان در کشور خود برای دریافت اطلاعات بیشتر تماس بگیرید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:653
+msgid "چه زبان‌هایی در کابل صحبت می‌شود؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:658
+msgid ""
+"زبان‌های اصلی در کابل، دری و پشتو هستند. بسیاری از مردم مناطق شهری انگلیسی "
+"پایه را نیز می‌فهمند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:667
+msgid "چه نوع لباسی باید در کابل بپوشم؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:672
+msgid ""
+"بازدیدکنندگان توصیه می‌شوند که با پوشش محافظه‌کارانه لباس بپوشند. مردان باید "
+"شلوار و پیراهن بلند بپوشند و زنان باید سر خود را بپوشانند و لباس مناسب و "
+"محتاطانه بپوشند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:681
+msgid "غذای محلی کابل چگونه است؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:686
+msgid ""
+"غذای کابل شامل کبابی پلو (پلو با گوشت و کشمش)، کباب، منتو (دامپلینگ)، و "
+"انواع نان‌های محلی است. غذاها خوشمزه و اغلب همراه با چای سبز سرو می‌شوند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:695
+msgid "آیا می‌توانم از کارت اعتباری در کابل استفاده کنم؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:700
+msgid ""
+"کارت‌های اعتباری به طور گسترده پذیرفته نمی‌شوند. توصیه می‌شود برای بیشتر "
+"تراکنش‌ها نقدی به ارز محلی همراه داشته باشید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:716
+msgid "اطلاعات ضروری کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:720
+msgid "کجا در کابل اقامت کنیم؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:722
+msgid ""
+"کابل گزینه‌های متنوع اقامتی برای انواع بودجه و سلیقه‌ها ارائه می‌دهد. چه مسافر "
+"با بودجه محدود باشید و چه به دنبال تجربه‌ای لوکس، در سراسر شهر محل مناسبی "
+"برای اقامت پیدا خواهید کرد. از هتل‌های استاندارد گرفته تا مهمان‌خانه‌های بوتیک، "
+"آپارتمان‌های سرویس‌دهی شده و هاستل‌های ساده، کابل چیزی برای همه دارد."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:725
+msgid ""
+"مناطق اصلی مانند شهرنو، کارته ۳ و وزیر اکبرخان میزبان بسیاری از اقامتگاه‌های "
+"شهر هستند. امنیت یکی از ملاحظات مهم هنگام انتخاب محل اقامت است و بسیاری از "
+"هتل‌های معتبر دارای حفاظت و خدمات حمل و نقل می‌باشند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:728
+msgid ""
+"برای رزرو، توصیه می‌شود از خدمات مسافرتی محلی معتبر استفاده کرده یا مستقیماً "
+"با هتل‌ها تماس بگیرید تا از آخرین وضعیت موجودی و قیمت‌ها مطلع شوید. توصیه‌های "
+"شخصی و آژانس‌های محلی نیز می‌توانند تجربه‌ای راحت و ایمن در کابل تضمین کنند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:736
+msgid "فعالیت‌های اصلی برای گردشگران در کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:741
+msgid ""
+"کابل تجربه فرهنگی و تاریخی منحصر به فردی برای مسافران ارائه می‌دهد. گردشگران "
+"می‌توانند از اماکن باستانی مانند باغ بابر، کاخ تاریخی دارالامان و موزه کابل "
+"که میراث غنی افغانستان را به نمایش می‌گذارد، دیدن کنند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:744
+msgid ""
+"گشت و گذار در خیابان چیکن فرصتی برای خرید فرش‌ها، صنایع دستی، سنگ‌های قیمتی و "
+"سوغاتی‌های سنتی افغان فراهم می‌کند. علاقه‌مندان به غذا می‌توانند از غذاهای محلی "
+"افغان مانند کابلی پلو، کباب و بولانی در رستوران‌های اصیل لذت ببرند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:747
+msgid ""
+"بازدیدکنندگان همچنین می‌توانند از پیاده‌روی‌های آرام در کنار دریاچه قرغه، صعود "
+"به تپه‌های اطراف کابل برای دید پانوراما، یا بازدید از مساجد محلی با معماری "
+"اسلامی منحصر به فرد لذت ببرند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:750
+msgid ""
+"برای تجربه فرهنگی عمیق‌تر، مسافران می‌توانند در اجراهای موسیقی سنتی شرکت کرده "
+"یا با صنعتگران محلی تعامل داشته باشند. عکاسی، کاوش تاریخی و تعامل فرهنگی از "
+"جمله فعالیت‌های پربار در کابل محسوب می‌شوند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:758
+msgid "چند نکته قبل از بازدید از کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:760
+msgid ""
+"کابل ترکیبی از فرهنگ شهری و سنتی دارد — لباس متین و محترمانه بپوشید، به ویژه "
+"هنگام بازدید از مناطق محلی یا اماکن مذهبی."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:761
+msgid ""
+"بهتر است با راهنمای محلی یا شخصی آشنا به منطقه سفر کنید تا تجربه‌ای روان‌تر "
+"داشته باشید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:762
+msgid ""
+"مدارک شناسایی معتبر همراه داشته و نسخه دیجیتال و چاپی آن‌ها را نگه دارید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:763
+msgid ""
+"پس از تاریکی از مناطق جدا افتاده پرهیز کنید و از اخبار محلی یا اطلاعیه‌های "
+"دولت مطلع باشید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:764
+msgid "چانه‌زنی در بازارهای محلی رایج است — هنگام خرید از مذاکره نترسید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:765
+msgid ""
+"به ویژه در ماه‌های خشک تابستان، آب کافی بنوشید و در مورد نوشیدن آب بدون تصفیه "
+"محتاط باشید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:766
+msgid ""
+"در صورت امکان از تاکسی‌های ثبت شده یا برنامه‌های حمل و نقل معتبر استفاده کنید."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:767
+msgid ""
+"چند عبارت ابتدایی به زبان دری یا پشتو یاد بگیرید — مردم محلی از آن قدردانی "
+"می‌کنند و اعتماد را سریع‌تر جلب می‌کند."
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:774
+msgid "نقشه کابل"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:792
+msgid "سایر پرسش‌ها دارید؟"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:794
+msgid ""
+"اگر پاسخ سوال خود را در بخش پرسش‌های متداول پیدا نکردید، همیشه می‌توانید با ما "
+"تماس بگیرید. ما به زودی پاسخ شما را خواهیم داد!"
+msgstr ""
+
+#: .\templates\RTL\states\kabul.html:798
+msgid "تماس با ما"
 msgstr ""
 
 #: .\templates\account\account_inactive.html:5
@@ -796,6 +1562,1228 @@ msgid ""
 "email address</a>."
 msgstr ""
 
+#: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
+msgid "Messages"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\contrib\syndication\apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: .\venv\Lib\site-packages\django\core\paginator.py:30
+msgid "…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:32
+msgid "That page number is not an integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:33
+msgid "That page number is less than 1"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\paginator.py:34
+msgid "That page contains no results"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:70
+msgid "Enter a valid domain name."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:153
+#: .\venv\Lib\site-packages\django\forms\fields.py:775
+msgid "Enter a valid URL."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:200
+msgid "Enter a valid integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:211
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: .\venv\Lib\site-packages\django\core\validators.py:289
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:297
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:309
+#: .\venv\Lib\site-packages\django\core\validators.py:318
+#: .\venv\Lib\site-packages\django\core\validators.py:332
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2220
+#, python-format
+msgid "Enter a valid %(protocol)s address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:311
+msgid "IPv4"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:320
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:43
+msgid "IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:334
+msgid "IPv4 or IPv6"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:375
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:381
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:416
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:425
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:434
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:441
+#, python-format
+msgid ""
+"Ensure this value is a multiple of step size %(limit_value)s, starting from "
+"%(offset)s, e.g. %(offset)s, %(valid_value1)s, %(valid_value2)s, and so on."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:473
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:491
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:514
+#: .\venv\Lib\site-packages\django\forms\fields.py:366
+#: .\venv\Lib\site-packages\django\forms\fields.py:405
+msgid "Enter a number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:516
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:521
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:526
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:597
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\core\validators.py:659
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1600
+#: .\venv\Lib\site-packages\django\forms\models.py:908
+msgid "and"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\base.py:1602
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\constraints.py:22
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:134
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:135
+msgid "This field cannot be null."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:136
+msgid "This field cannot be blank."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:137
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:141
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:180
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1162
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1163
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1165
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1215
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1217
+msgid "String (unlimited)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1326
+msgid "Comma-separated integers"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1427
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1431
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1566
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1435
+msgid "Date (without time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1562
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1570
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1575
+msgid "Date (with time)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1702
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1704
+msgid "Decimal number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1864
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1868
+msgid "Duration"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1920
+msgid "Email address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1945
+msgid "File path"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2023
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2025
+msgid "Floating point number"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2065
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2067
+msgid "Integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2163
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2180
+msgid "Small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2188
+msgid "IPv4 address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2219
+msgid "IP address"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2310
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2311
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2313
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2364
+msgid "Positive big integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2379
+msgid "Positive integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2394
+msgid "Positive small integer"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2410
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2446
+msgid "Text"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2526
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2530
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2534
+msgid "Time"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2642
+msgid "URL"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2666
+msgid "Raw binary data"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2731
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:2733
+msgid "Universally unique identifier"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:244
+msgid "File"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\files.py:420
+msgid "Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:24
+msgid "A JSON object"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\json.py:26
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:978
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r is not a valid choice."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:981
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1275
+msgid "One-to-one relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1332
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1334
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\db\models\fields\related.py:1382
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: .\venv\Lib\site-packages\django\forms\boundfield.py:185
+msgid ":?.!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:95
+msgid "This field is required."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:315
+msgid "Enter a whole number."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:486
+#: .\venv\Lib\site-packages\django\forms\fields.py:1267
+msgid "Enter a valid date."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:509
+#: .\venv\Lib\site-packages\django\forms\fields.py:1268
+msgid "Enter a valid time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:536
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:570
+msgid "Enter a valid duration."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:571
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:640
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:641
+msgid "No file was submitted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:642
+msgid "The submitted file is empty."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:644
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:649
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:717
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:889
+#: .\venv\Lib\site-packages\django\forms\fields.py:975
+#: .\venv\Lib\site-packages\django\forms\models.py:1592
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:977
+#: .\venv\Lib\site-packages\django\forms\fields.py:1096
+#: .\venv\Lib\site-packages\django\forms\models.py:1590
+msgid "Enter a list of values."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1097
+msgid "Enter a complete value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1339
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\fields.py:1369
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: .\venv\Lib\site-packages\django\forms\forms.py:97
+msgid ":"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\forms.py:239
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:61
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:65
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:70
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:484
+#: .\venv\Lib\site-packages\django\forms\formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:901
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:906
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:913
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:922
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1359
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1450
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\models.py:1594
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\utils.py:229
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:527
+msgid "Clear"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:528
+msgid "Currently"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:529
+msgid "Change"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:866
+msgid "Unknown"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:867
+msgid "Yes"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\forms\widgets.py:868
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:873
+msgid "yes,no,maybe"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:903
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:920
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:922
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:924
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:926
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:928
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\template\defaultfilters.py:930
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:74
+msgid "p.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:75
+msgid "a.m."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:80
+msgid "PM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:81
+msgid "AM"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:153
+msgid "midnight"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dateformat.py:155
+msgid "noon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:25
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:26
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:27
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:28
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:29
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:30
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:31
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:32
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:33
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:34
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:35
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:36
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:39
+msgid "jan"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:40
+msgid "feb"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:41
+msgid "mar"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:42
+msgid "apr"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:43
+msgid "may"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:44
+msgid "jun"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:45
+msgid "jul"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:46
+msgid "aug"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:47
+msgid "sep"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:48
+msgid "oct"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:49
+msgid "nov"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:50
+msgid "dec"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\ipv6.py:20
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:76
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\text.py:287
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: .\venv\Lib\site-packages\django\utils\text.py:306
+#: .\venv\Lib\site-packages\django\utils\timesince.py:135
+msgid ", "
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\utils\timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:29
+msgid "Forbidden"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:30
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:34
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:40
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:45
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:54
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:60
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\csrf.py:66
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:64
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:115
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:353
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:384
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:680
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\dates.py:720
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\generic\list.py:173
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:49
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:51
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\static.py:68
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:8
+#: .\venv\Lib\site-packages\django\views\templates\directory_index.html:11
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:204
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:208
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:217
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:218
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:226
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:227
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:235
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
+msgid "Connect, get help, or contribute"
 #: .\templates\states\Helmand_farsi.html:22
 msgid "گردشگری هلمند"
 msgstr ""
