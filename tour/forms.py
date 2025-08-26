@@ -45,12 +45,6 @@ class EnquireUsForm(forms.ModelForm):
             field.widget.attrs['placeholder'] = placeholders.get(field_name, field.label)
 
 
-
-
-
-from django import forms
-from .models import Translator
-
 class TranslatorForm(forms.ModelForm):
     class Meta:
         model = Translator
