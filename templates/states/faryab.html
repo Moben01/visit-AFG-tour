@@ -324,137 +324,40 @@
         </div>
 
 
-        <h4 class="mb-4 mt-4">Best Selling Faryab Tour Packages</h4>
-        <style>
-            .truncate-title {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 170px;
-                display: inline-block;
-                vertical-align: middle;
-            }
-        </style>
-        <div class="travelers-slider owl-carousel owl-loaded owl-drag">
-            <div class="card travelers-card">
-                <div class="card-img">
-                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
-                            alt="Top Faryab Travel Packages for You"></a>
-                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
-                </div>
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="mb-1">
-                            <a href="hotel-grid.html" class="truncate-title" title="Top Faryab Travel Packages for You">
-                                Top Faryab Travel Packages for You
-                            </a>
-                        </h6>
-                        <p>17 Nights - 18 Days</p>
-                    </div>
-                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
+        <h4 class="mb-4 mt-4">Best Selling in Faryab</h4>
+                <div class="row">
+                    {% for item in places %}
+                        <div class="col-md-3 mb-4">
+                            <div class="location-item">
+                                <a href="#" class="location-img">
+                                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                    <div class="location-name">
+                                        <h5 class="mb-1">{{ item.title }}</h5>
+                                        <p>({{ item.location }})</p>
+                                    </div>
+                                </a>
 
-            <!-- Repeat with new content for Faryab -->
-            <div class="card travelers-card">
-                <div class="card-img">
-                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
-                            alt="Explore the Charm of Faryab – Popular Tour Deals"></a>
-                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
-                </div>
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="mb-1">
-                            <a href="hotel-grid.html" class="truncate-title"
-                                title="Explore the Charm of Faryab – Popular Tour Deals">
-                                Explore the Charm of Faryab – Popular Tour Deals
-                            </a>
-                        </h6>
-                        <p>8 Nights - 7 Days</p>
-                    </div>
-                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
+                                <!-- تصاویر اضافی Best Selling -->
+                                <div class="additional-images mt-2">
+                                    {% for img in item.images.all %}
+                                        <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="img-fluid mb-1">
+                                        {% if img.caption %}
+                                            <p class="fs-14">{{ img.caption }}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
 
-            <div class="card travelers-card">
-                <div class="card-img">
-                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
-                            alt="Most Loved Tour Packages in Faryab"></a>
-                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                                <div class="location-info d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <h6 class="fw-medium mb-1">{{ item.description }}</h6>
+                                    </div>
+                                    <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="mb-1">
-                            <a href="hotel-grid.html" class="truncate-title" title="Most Loved Tour Packages in Faryab">
-                                Most Loved Tour Packages in Faryab
-                            </a>
-                        </h6>
-                        <p>6 Nights - 7 Days</p>
-                    </div>
-                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-
-            <div class="card travelers-card">
-                <div class="card-img">
-                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
-                            alt="Discover Faryab: Top Travel Experiences"></a>
-                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
-                </div>
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="mb-1">
-                            <a href="hotel-grid.html" class="truncate-title"
-                                title="Discover Faryab: Top Travel Experiences">
-                                Discover Faryab: Top Travel Experiences
-                            </a>
-                        </h6>
-                        <p>5 Nights - 6 Days</p>
-                    </div>
-                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-
-            <div class="card travelers-card" id="best">
-                <div class="card-img">
-                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
-                            alt="Faryab’s Best Tour Packages – Book Now!"></a>
-                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
-                </div>
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="mb-1">
-                            <a href="hotel-grid.html" class="truncate-title"
-                                title="Faryab’s Best Tour Packages – Book Now!">
-                                Faryab’s Best Tour Packages – Book Now!
-                            </a>
-                        </h6>
-                        <p>4 Nights - 5 Days</p>
-                    </div>
-                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-
-            <div class="card travelers-card">
-                <div class="card-img">
-                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
-                            alt="Classic Faryab Escapes – Bestselling Holiday Tour"></a>
-                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
-                </div>
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div>
-                        <h6 class="mb-1">
-                            <a href="hotel-grid.html" class="truncate-title"
-                                title="Classic Faryab Escapes – Bestselling Holiday Tour">
-                                Classic Faryab Escapes – Bestselling Holiday Tour
-                            </a>
-                        </h6>
-                        <p>3 Nights - 4 Days</p>
-                    </div>
-                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-                </div>
-            </div>
-        </div>
+        
 
         <div class="container my-5">
             <div class="d-flex justify-content-between align-items-center mb-3">

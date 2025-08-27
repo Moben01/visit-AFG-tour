@@ -38,54 +38,90 @@
                             <div>
 
                                 <div class="checkout-details">
-                                    <!-- Itinerary -->
-                                    <div class="bg-light-200 card-bg-light position-relative mb-4">
-                                        <!-- Custom icon in top-right with link -->
-                                        <a href="" class="position-absolute top-0 end-0 p-3 text-decoration-none"
-                                            title="Customize your itinerary">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
-                                                viewBox="0 0 20 20" fill="currentColor" class="text-primary">
-                                                <path
-                                                    d="M18.33 3.57s.27-.8-.31-1.36c-.53-.52-1.22-.24-1.22-.24c-.61.3-5.76 3.47-7.67 5.57c-.86.96-2.06 3.79-1.09 4.82c.92.98 3.96-.17 4.79-1c2.06-2.06 5.21-7.17 5.5-7.79M1.4 17.65c2.37-1.56 1.46-3.41 3.23-4.64c.93-.65 2.22-.62 3.08.29c.63.67.8 2.57-.16 3.46c-1.57 1.45-4 1.55-6.15.89" />
-                                            </svg>
-                                        </a>
+                                <!-- Itinerary -->
+<div class="bg-light-200 card-bg-light position-relative mb-4">
+    <h5 class="fs-18 mb-3">
+        Itinerary
+        <small class="text-muted d-block mt-2">
+            Tip: To customize your itinerary, click the <i class="bi bi-pencil-square text-primary"></i> icon at the top right of the itinerary you’d like to edit.
+            <br>
+            Apply your favorite hotel to all itinerary.
+            <a href="#" data-bs-toggle="modal" data-bs-target="#accommodationModal"
+               class="ms-2 text-decoration-none" title="Take This Hotel For All Of Them">
+                <!-- house svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3l10 9h-3v9h-5v-6H10v6H5v-9H2z"/></svg>
+            </a>
+        </small>
+    </h5>
 
-                                        <!-- Heading with helper text -->
-                                        <h5 class="fs-18 mb-3">
-                                            Itinerary
-                                            <small class="text-muted d-block">If you want to customize your itinerary,
-                                                click the icon on the top right.</small>
-                                        </h5>
-                                        <div class="card shadow-none mb-0">
-                                            <div class="card-body p-3">
-                                                <div class="stage-flow">
-                                                    {% for i in get_interary %}
-                                                    <div class="d-flex align-items-center flows-step">
-                                                        <span class="flow-step">{{i.day_number}}</span>
-                                                        <div class="flow-content">
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between mb-2">
-                                                                <div>
-                                                                    <h6 class="fw-medium mb-1">Day {{i.day_number}},
-                                                                        {{i.title}}</h6>
-                                                                    <p>{{i.date}}</p>
-                                                                </div>
-                                                                <span
-                                                                    class="avatar avatar-lg avatar-rounded flex-shrink-0">
-                                                                    <img src="{{ i.image.url }}" alt="Img">
-                                                                </span>
-                                                            </div>
-                                                            <p>
-                                                                {{i.description}}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
+    <div class="card shadow-none">
+        <div class="card-body p-3">
+            <div class="stage-flow">
+                {% for i in get_interary %}
+                <div class="position-relative mb-4 p-3 border rounded bg-white">
+                    
+                    <!-- Edit icon -->
+                    <a href="{% url 'tour:edit_itinerary' i.id user.id %}" 
+                    class="position-absolute bottom-0 end-0 p-3 text-decoration-none"
+                    title="Customize your itinerary">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                         fill="currentColor" class="text-primary">
+                         <path d="M15.5 2a2.5 2.5 0 0 1 1.77 4.27l-8.4 8.4-3.37.67.67-3.37 8.4-8.4A2.5 2.5 0 0 1 15.5 2z"/>
+                     </svg>
+                 </a>
+                 
 
-                                            </div>
-                                        </div>
-                                    </div>
+                    <!-- Itinerary Content -->
+                    <div class="d-flex align-items-start">
+                        <span class="flow-step me-3">{{ i.day_number }}</span>
+                        <div class="flex-grow-1">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between mb-2">
+                                <h6 class="fw-medium mb-1">
+                                    Day {{ i.day_number }}, {{ i.title }}
+                                </h6>
+                                <div class="d-flex align-items-center gap-2">
+                                    {% if i.image %}
+                                    <span class="avatar avatar-lg avatar-rounded">
+                                        <img src="{{ i.image.url }}" alt="Img" class="img-fluid rounded">
+                                    </span>
+                                    {% endif %}
+                                    {% if i.is_customized %}
+                                    <a href="{% url 'tour:edit_itinerary' i.id user.id %}">
+                                    <span class="badge bg-primary">Customized</span></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <p class="text-muted small">{{ i.description }}</p>
+
+                            <!-- Details row -->
+                            <div class="row g-3 mt-2">
+                                <!-- Accommodation -->
+                                <div class="col-12 col-md-6 d-flex align-items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 3l10 9h-3v9h-5v-6H10v6H5v-9H2z"/>
+                                    </svg>
+                                    <span>{{ i.accommodation }}</span>
+                                </div>
+
+                                <!-- Transport -->
+                                <div class="col-12 col-md-6 d-flex align-items-center gap-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                         viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M15.97 13.83A5.9 5.9 0 0 0 13.82 16l-2.27-4.37l-3.89 3.87L8 18l-1.05 1.06l-1.77-3.19L2 14.11l1.06-1.06l2.48.35l3.89-3.9L2 5.62l1.41-1.41l9.2 2.12l3.89-3.89a1.49 1.49 0 0 1 2.12 0c.58.59.58 1.56 0 2.12l-3.89 3.89zm5.37 2.01l-3.59 3.59l-1.59-1.59L15 19l2.75 3l4.75-4.75z"/>
+                                    </svg>
+                                    <span>{{ i.transport }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
 
                                     <section class="section benifit-section bg-light-200">
                                         <div class="container">
@@ -95,187 +131,12 @@
                                                     <h6>
                                                         <p class="text-muted mb-0 mt-0 my-0">
                                                             <i class="isax isax-setting-2 me-1"></i>
-                                                            Customize your tour details: accommodation, transport, tickets, security guide & translator.
+                                                            Customize your tour details: tickets, security guide & translator.
                                                         </p>
                                                     </h6>
                                                 </div>
                                             </div>
-                                            <div class="place-slider owl-carousel owl-loaded owl-drag">
-                                                <form hx-post="{% url 'tour:tour_booking' slug=find_tour.slug %}"
-                                                      hx-target="#total_price_container"
-                                                      hx-swap="innerHTML">
-                                                      
-                                                    {% csrf_token %}
-                                                    <h6 class="mb-4">Accommodations</h6>
-                                                    <div class="owl-stage-outer">
-                                                        <div class="owl-stage"
-                                                            style="transform: translate3d(-330px, 0px, 0px); transition: 2s; width: 1650px;">
-                                                            {% for acc in accommodation %}
-                                                            <div class="owl-item" style="width: 220px; margin-right: 16px;">
-                                                                <div class="place-item mb-3 flex-fill">
-                                                                    <div class="place-img">
-                                                                        <div class="slide-images">
-                                                                            <a href="#" 
-                                                                            data-bs-toggle="modal" 
-                                                                            data-bs-target="#accommodationModal"
-                                                                            data-name="{{ acc.name }}"
-                                                                            data-type="{{ acc.get_type_display }}"
-                                                                            data-location="{{ acc.location }}"
-                                                                            data-address="{{ acc.address }}"
-                                                                            data-phone="{{ acc.phone }}"
-                                                                            data-email="{{ acc.email }}"
-                                                                            data-website="{{ acc.website }}"
-                                                                            data-rating="{{ acc.rating }}"
-                                                                            data-price="{{ acc.price_per_night }}"
-                                                                            data-image="{{ acc.image.url }}"
-                                                                            data-images="{% for img in acc.images.all %}{{ img.image.url }},{% endfor %}">
-                                                                                <img src="{{ acc.image.url }}" class="img-fluid w-100 rounded" style="height: 160px; object-fit: cover;" alt="{{ acc.name }}">
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="place-content pt-2">
-                                                                        <h6 class="mb-1 text-truncate" style="font-size: 15px;">
-                                                                            <a href="#" 
-                                                                            data-bs-toggle="modal" 
-                                                                            data-bs-target="#accommodationModal"
-                                                                            data-name="{{ acc.name }}"
-                                                                            data-type="{{ acc.get_type_display }}"
-                                                                            data-location="{{ acc.location }}"
-                                                                            data-address="{{ acc.address }}"
-                                                                            data-phone="{{ acc.phone }}"
-                                                                            data-email="{{ acc.email }}"
-                                                                            data-website="{{ acc.website }}"
-                                                                            data-rating="{{ acc.rating }}"
-                                                                            data-price="{{ acc.price_per_night }}"
-                                                                            data-image="{{ acc.image.url }}"
-                                                                            data-images="{% for img in acc.images.all %}{{ img.image.url }},{% endfor %}"
-                                                                            ><span style="color: goldenrod;">{{ acc.name }}</span> | {{ acc.location }}</a>
-                                                                        </h6>
-                                                                        <div class="border-top pt-2 mb-2">
-                                                                            <h6 class="d-flex align-items-center">
-                                                                                Rating:
-                                                                                {% if acc.rating == 1 %}
-                                                                                    <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                                                {% elif acc.rating == 2 %}
-                                                                                    <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                {% elif acc.rating == 3 %}
-                                                                                    <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                {% elif acc.rating == 4 %}
-                                                                                    <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                {% elif acc.rating == 5 %}
-                                                                                    <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                    <i class="isax isax-star-1 text-warning me-1"></i>
-                                                                                {% else %}
-                                                                                    <span class="text-muted ms-2">No rating</span>
-                                                                                {% endif %}
-                                                                            </h6>
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center justify-content-between border-top pt-2">
-                                                                            <h6 class="text-primary text-nowrap me-2 mb-0" style="font-size: 15px;">
-                                                                                {{ acc.price_per_night }} <span class="fs-12 fw-normal text-default">/ Night</span>
-                                                                            </h6>
-                                                                            <div class="form-check mb-0">
-                                                                                <!-- <input class="form-check-input" type="radio" name="selected_accommodation" id="acc{{ acc.id }}" value="{{ acc.id }}"
-                                                                                    {% if selected_accommodation and selected_accommodation.id == acc.id %}checked{% endif %}> -->
-                                                                                    <input class="form-check-input" type="radio" name="selected_accommodation" id="acc{{ acc.id }}" value="{{ acc.id }}"
-                                                                                        {% if acc in selected_accommodations %}checked{% endif %} style="transform: scale(1.5); margin-right: 5px;">
 
-                                                                                <label class="form-check-label" for="acc{{ acc.id }}">
-                                                                                    Select
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            {% endfor %}
-                                                        </div>
-                                                    </div>
-                                                    <hr class="w-100 bg-black"/>
-                                                    <h6 class="mb-4">Transports</h6>
-                                                    <div class="owl-stage-outer">
-                                                        <div class="owl-stage"
-                                                            style="transform: translate3d(-330px, 0px, 0px); transition: 2s; width: 1650px;">
-                                                            {% for trans in transport %}
-                                                            <div class="owl-item" style="width: 220px; margin-right: 16px;">
-                                                                <div class="place-item mb-3 flex-fill">
-                                                                    <div class="place-img">
-                                                                        <div class="slide-images">
-                                                                            <a href="#" 
-                                                                            data-bs-toggle="modal" 
-                                                                            data-bs-target="#transportModal"
-                                                                            data-type="{{ trans.get_type_display }}"
-                                                                            data-company_name="{{ trans.company_name }}"
-                                                                            data-description="{{ trans.description }}"
-                                                                            data-vehicle_number="{{ trans.vehicle_number }}"
-                                                                            data-seats_available="{{ trans.seats_available }}"
-                                                                            data-departure_location="{{ trans.departure_location }}"
-                                                                            data-arrival_location="{{ trans.arrival_location }}"
-                                                                            data-departure_time="{{ trans.departure_time }}"
-                                                                            data-arrival_time="{{ trans.arrival_time }}"
-                                                                            data-price="{{ trans.price }}"
-                                                                            data-image="{{ trans.image.url }}"
-                                                                            data-images="{% for img in trans.images.all %}{{ img.image.url }},{% endfor %}">
-                                                                                <img src="{{ trans.image.url }}" class="img-fluid w-100 rounded" style="height: 160px; object-fit: cover;" alt="{{ trans.name }}">
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="place-content pt-2">
-                                                                        <h6 class="mb-1 text-truncate" style="font-size: 15px;">
-                                                                            <a href="#" 
-                                                                            data-bs-toggle="modal" 
-                                                                            data-bs-target="#transportModal"
-                                                                            data-type="{{ trans.get_type_display }}"
-                                                                            data-company_name="{{ trans.company_name }}"
-                                                                            data-description="{{ trans.description }}"
-                                                                            data-vehicle_number="{{ trans.vehicle_number }}"
-                                                                            data-seats_available="{{ trans.seats_available }}"
-                                                                            data-departure_location="{{ trans.departure_location }}"
-                                                                            data-arrival_location="{{ trans.arrival_location }}"
-                                                                            data-departure_time="{{ trans.departure_time }}"
-                                                                            data-arrival_time="{{ trans.arrival_time }}"
-                                                                            data-price="{{ trans.price }}"
-                                                                            data-image="{{ trans.image.url }}"
-                                                                            data-images="{% for img in trans.images.all %}{{ img.image.url }},{% endfor %}">
-                                                                            <span style="color: goldenrod;">{{ trans.get_type_display }}</span> | {{ trans.departure_location }}</a>
-                                                                        </h6>
-                                                                        <div class="border-top pt-2 mb-2">
-                                                                            <h6 class="d-flex align-items-center">
-                                                                                Company: 
-                                                                                <span style="color: rgb(195, 135, 45);">{{ trans.company_name }}</span>
-                                                                            </h6>
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center justify-content-between border-top pt-2">
-                                                                            <h6 class="text-primary text-nowrap me-2 mb-0" style="font-size: 15px;">
-                                                                                {{ trans.price }} <span class="fs-12 fw-normal text-default">/ Night</span>
-                                                                            </h6>
-                                                                            <div class="form-check mb-0">
-                                                                                <!-- <input class="form-check-input" type="radio" name="selected_transport" id="acc{{ trans.id }}" value="{{ trans.id }}"
-                                                                                    {% if selected_transport and selected_transport.id == trans.id %}checked{% endif %}> -->
-                                                                                    <input class="form-check-input" type="radio" name="selected_transport" id="acc{{ trans.id }}" value="{{ trans.id }}"
-                                                                                        {% if trans in selected_transports %}checked{% endif %} style="transform: scale(1.5); margin-right: 5px;">
-    
-                                                                                <label class="form-check-label" for="acc{{ trans.id }}">
-                                                                                    Select
-                                                                                </label>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            {% endfor %}
-                                                        </div>
-                                                    </div>
-                                                </div>
                                                     <hr class="w-100 bg-black"/>
                                               
                                                       
@@ -389,8 +250,140 @@
     </div>
     <!-- /Page Wrapper -->
 
-    <!-- Accommodation Modal With Their Scrpit -->
     <div class="modal fade" id="accommodationModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Accommodations</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    
+                    <div class="place-slider owl-carousel owl-loaded owl-drag">
+                        <form method="post" action="{% url 'tour:tour_booking' slug=find_tour.slug %}">
+                            {% csrf_token %}
+                            <h6 class="mb-4">Select your favorite accommodation to all itinerary</h6>
+                            <div class="owl-stage-outer">
+                                <div class="owl-stage"
+                                    style="transform: translate3d(-330px, 0px, 0px); transition: 2s; width: 1650px;">
+                                    {% for acc in accommodation %}
+                                    <div class="owl-item" style="width: 220px; margin-right: 16px;">
+                                        <div class="place-item mb-3 flex-fill">
+                                            <div class="place-img">
+                                                <div class="slide-images">
+                                                    <a href="#" 
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#accommodationModal1"
+                                                    data-name="{{ acc.name }}"
+                                                    data-type="{{ acc.get_type_display }}"
+                                                    data-location="{{ acc.location }}"
+                                                    data-address="{{ acc.address }}"
+                                                    data-phone="{{ acc.phone }}"
+                                                    data-email="{{ acc.email }}"
+                                                    data-website="{{ acc.website }}"
+                                                    data-rating="{{ acc.rating }}"
+                                                    data-price="{{ acc.price_per_night }}"
+                                                    data-image="{{ acc.image.url }}"
+                                                    data-images="{% for img in acc.images.all %}{{ img.image.url }},{% endfor %}">
+                                                        <img src="{{ acc.image.url }}" class="img-fluid w-100 rounded" style="height: 160px; object-fit: cover;" alt="{{ acc.name }}">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="place-content pt-2">
+                                                <h6 class="mb-1 text-truncate" style="font-size: 15px;">
+                                                    <a href="#" 
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#accommodationModal1"
+                                                    data-name="{{ acc.name }}"
+                                                    data-type="{{ acc.get_type_display }}"
+                                                    data-location="{{ acc.location }}"
+                                                    data-address="{{ acc.address }}"
+                                                    data-phone="{{ acc.phone }}"
+                                                    data-email="{{ acc.email }}"
+                                                    data-website="{{ acc.website }}"
+                                                    data-rating="{{ acc.rating }}"
+                                                    data-price="{{ acc.price_per_night }}"
+                                                    data-image="{{ acc.image.url }}"
+                                                    data-images="{% for img in acc.images.all %}{{ img.image.url }},{% endfor %}"
+                                                    ><span style="color: goldenrod;">{{ acc.name }}</span> | {{ acc.location }}</a>
+                                                </h6>
+                                                <div class="border-top pt-2 mb-2">
+                                                    <h6 class="d-flex align-items-center">
+                                                        Rating:
+                                                        {% if acc.rating == 1 %}
+                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
+                                                        {% elif acc.rating == 2 %}
+                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                        {% elif acc.rating == 3 %}
+                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                        {% elif acc.rating == 4 %}
+                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                        {% elif acc.rating == 5 %}
+                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                            <i class="isax isax-star-1 text-warning me-1"></i>
+                                                        {% else %}
+                                                            <span class="text-muted ms-2">No rating</span>
+                                                        {% endif %}
+                                                    </h6>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-between border-top pt-2">
+                                                    <h6 class="text-primary text-nowrap me-2 mb-0" style="font-size: 15px;">
+                                                        {{ acc.price_per_night }} <span class="fs-12 fw-normal text-default">/ Night</span>
+                                                    </h6>
+                                                    <div class="form-check mb-0">
+                                                        <input class="form-check-input" type="radio" 
+                                                        name="selected_accommodations" 
+                                                        id="acc{{ acc.id }}" 
+                                                        value="{{ acc.id }}"
+                                                        {% if acc.id == selected_accommodation.id %}checked{% endif %}
+                                                        style="transform: scale(1.5); margin-right: 5px;">
+                                                    <label class="form-check-label" for="acc{{ acc.id }}">
+                                                        Select
+                                                    </label>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="text-end mt-4">
+                                <button type="submit" class="btn btn-success px-4">
+                                    Save Changes
+                                </button>
+                                <a href="" class="btn btn-secondary px-4">
+                                    Cancel
+                                </a>
+                            </div>
+                            </form>
+                            </div>
+                            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+          .modal-main-image {
+            width: 100%;
+            height: 320px; /* or whatever fits your layout */
+            object-fit: cover;
+            border-radius: 10px;
+            }
+      </style>
+
+          <!-- Accommodation Modal With Their Scrpit -->
+    <div class="modal fade" id="accommodationModal1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
           <div class="modal-content">
             <div class="modal-header">
@@ -432,7 +425,7 @@
             }
       </style>
       <script>
-        document.getElementById('accommodationModal').addEventListener('show.bs.modal', function (event) {
+        document.getElementById('accommodationModal1').addEventListener('show.bs.modal', function (event) {
             const trigger = event.relatedTarget;
         
             // Get data attributes
@@ -501,88 +494,5 @@
 
         });
         </script>
-    <!-- Transport Modal With Their Script -->
-    <div class="modal fade" id="transportModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="transModalTitle">Transport Details</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-              <div class="row gy-4">
-                <div class="col-md-5">
-                    <img id="transModalMainImage" src="" class="modal-main-image" alt="">
-                </div>
-                <div class="col-md-7">
-                  <h5 id="transModalCompanyName"></h5>
-                  <p><strong>Type:</strong> <span id="transModalType"></span></p>
-                  <p><strong>Description:</strong> <span id="transModalDescription"></span></p>
-                  <p><strong>Vehicle Number:</strong> <span id="transModalVehicleNumber"></span></p>
-                  <p><strong>Seats Available:</strong> <span id="transModalSeatsAvailable"></span></p>
-                  <p><strong>Departure Location:</strong> <span id="transModalDepartureLocation"></span></p>
-                  <p><strong>Arrival Location:</strong> <span id="transModalArrivalLocation"></span></p>
-                  <p><strong>Departure Time:</strong> <span id="transModalDepartureTime"></span></p>
-                  <p><strong>Arrival Time:</strong> <span id="transModalArrivalTime"></span></p>
-                  <p><strong>Price / Night:</strong> $<span id="transModalPrice"></span></p>
-                </div>
-                <div class="col-12">
-                  <h6 class="mb-2">Gallery</h6>
-                  <div class="d-flex flex-wrap gap-2" id="transModalGallery"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>      
-      <script>
-        document.getElementById('transportModal').addEventListener('show.bs.modal', function (event) {
-          const trigger = event.relatedTarget;
         
-          const type = trigger.getAttribute('data-type');
-          const company_name = trigger.getAttribute('data-company_name');
-          const description = trigger.getAttribute('data-description');
-          const vehicle_number = trigger.getAttribute('data-vehicle_number');
-          const seats_available = trigger.getAttribute('data-seats_available');
-          const departure_location = trigger.getAttribute('data-departure_location');
-          const arrival_location = trigger.getAttribute('data-arrival_location');
-          const departure_time = trigger.getAttribute('data-departure_time');
-          const arrival_time = trigger.getAttribute('data-arrival_time');
-          const price = trigger.getAttribute('data-price');
-          const mainImage = trigger.getAttribute('data-image');
-          const imageList = trigger.getAttribute('data-images') || '';
-        
-          document.getElementById('transModalTitle').textContent = company_name;
-          document.getElementById('transModalCompanyName').textContent = company_name;
-          document.getElementById('transModalType').textContent = type;
-          document.getElementById('transModalDescription').textContent = description;
-          document.getElementById('transModalVehicleNumber').textContent = vehicle_number;
-          document.getElementById('transModalSeatsAvailable').textContent = seats_available || 'N/A';
-          document.getElementById('transModalDepartureLocation').textContent = departure_location || 'N/A';
-          document.getElementById('transModalArrivalLocation').textContent = arrival_location || 'N/A';
-          document.getElementById('transModalDepartureTime').textContent = departure_time;
-          document.getElementById('transModalArrivalTime').textContent = arrival_time;
-          document.getElementById('transModalPrice').textContent = price;
-        
-          document.getElementById('transModalMainImage').src = mainImage;
-        
-          const gallery = document.getElementById('transModalGallery');
-          gallery.innerHTML = '';
-          imageList.split(',').forEach(url => {
-  if (url.trim()) {
-    const img = document.createElement('img');
-    img.src = url.trim();
-    img.className = 'rounded';
-    img.style = 'width: 80px; height: 60px; object-fit: cover; cursor: pointer;';
-    
-    // 🔁 Clicking gallery image updates main image
-    img.addEventListener('click', () => {
-      document.getElementById('transModalMainImage').src = img.src;
-    });
-
-    gallery.appendChild(img);
-  }
-});
-        });
-        </script>        
     {% endblock %}

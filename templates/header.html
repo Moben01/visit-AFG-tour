@@ -743,50 +743,6 @@
 
 
 
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Pages<i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu mega-submenu">
-                <li>
-                    <div class="megamenu-wrapper">
-                        <h6>Pages</h6>
-                        <div class="row g-lg-4">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="about-us.html">About</a></li>
-                                    <li><a href="gallery.html">Gallery</a></li>
-                                    <li><a href="testimonial.html">Testimonials</a></li>
-                                    <li><a href="faq.html">Faq</a></li>
-                                    <li><a href="pricing-plan.html">Pricing Plan</a></li>
-                                    <li><a href="team.html">Teams</a></li>
-                                    <li><a href="invoices.html">Invoice</a></li>
-                                    <li><a href="blog-grid.html">Blogs Grid</a></li>
-                                    <li><a href="blog-list.html">Blogs List</a></li>
-                                    <li><a href="blog-details.html">Blogs Details</a></li>
-                                    <li><a href="contact-us.html">Contact Us</a></li>
-                                    <li><a href="booking-confirmation.html">Booking Confirmation</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="destination.html">Destination</a></li>
-                                    <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                    <li><a href="forgot-password.html">Forgot Password</a></li>
-                                    <li><a href="change-password.html">Change Password</a></li>
-                                    <li><a href="error-404.html">404 Error</a></li>
-                                    <li><a href="error-500.html">500 Error</a></li>
-                                    <li><a href="under-maintenance.html">Under Maintenance</a></li>
-                                    <li><a href="coming-soon.html">Coming Soon</a></li>
-                                    <li><a href="index-rtl.html">RTL</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </li>
         <!-- <li class="has-submenu mega-innermenu">
             <a href="javascript:void(0);">Tour Involve <i class="fa-solid fa-angle-down"></i></a>
             <ul class="submenu mega-submenu">
@@ -830,8 +786,8 @@
                         class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
                 </a>
             </div>
-            <a href="add-flight.html" class="btn btn-dark d-inline-flex align-items-center me-3"><i
-                    class="isax isax-lock me-2"></i>Add Your Listing</a>
+            <a href="{% url 'home:team' %}" class="btn btn-dark d-inline-flex align-items-center me-3"><i
+                    class="isax isax-user me-2"></i>TEAM</a>
                     {% if request.user.is_authenticated %}
                     <div class="dropdown profile-dropdown">
                         <a href="javascript:void(0);" class="d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">

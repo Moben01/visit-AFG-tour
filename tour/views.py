@@ -117,55 +117,82 @@ def tour_details(request, slug):
     }
     return render(request, 'tour/tour-details.html', context)
 
-
+@login_required
 def tour_booking(request, slug):
-    selected_accommodation = None
-    selected_transport = None
-
     find_tour = Tour.objects.get(slug=slug)
-    get_interary = ItineraryItem.objects.filter(tour=find_tour)
-    get_tour_categories = TourCategory.objects.all()
+    user = request.user  # Make sure the user is logged in
     accommodation = Accommodation.objects.all()
-    transport = Transport.objects.all()
+
+    # Get base itinerary items
+    base_itinerary = ItineraryItem.objects.filter(tour=find_tour)
+
+    # Check for user-specific customizations
+    user_itinerary_items = UserItineraryItem.objects.filter(user=user, tour=find_tour)
+
+    # Prepare final itinerary to display
+    final_itinerary = []
+    if user_itinerary_items.exists():
+        # If user has customized, show their version
+        for base_item in base_itinerary:
+            try:
+                customized_item = user_itinerary_items.get(itinerary_item=base_item)
+                final_itinerary.append(customized_item)
+            except UserItineraryItem.DoesNotExist:
+                final_itinerary.append(base_item)
+    else:
+        final_itinerary = list(base_itinerary)
+
+    get_tour_categories = TourCategory.objects.all()
     languages_ = Languages.objects.all()
     security_guards = SecurityGuard.objects.all()
+    total_price = 0
 
-    # Get selected transport and accommodation from itinerary items
-    selected_transports = set(item.transport for item in get_interary if item.transport)
-    selected_accommodations = set(item.accommodation for item in get_interary if item.accommodation)
-
-    # Calculate total price
-    total_transport_price = sum(t.total_price for t in selected_transports)
-    total_accommodation_price = sum(a.total_price for a in selected_accommodations)
-
-    total_price = Decimal(total_transport_price) + Decimal(total_accommodation_price)
-
-    if request.method == 'POST' and request.htmx:
-        accommodation_id = request.POST.get('selected_accommodation')
-        transport_id = request.POST.get('selected_transport')
+    if request.method == 'POST':
         selected_languages = request.POST.getlist('language[]')  # This returns a list of all selected values (lang.code)
         security_gard = request.POST.get('security')  # returns 'on' if checked, or None if not
+        accommodation_id = request.POST.get('selected_accommodations')  
 
-        # Here we reset total price, **only add newly selected items prices**
+        # Reset total price
         total_price = Decimal('0')
+        selected_language_objs = []
 
         if accommodation_id:
             selected_accommodation = get_object_or_404(Accommodation, id=accommodation_id)
-            total_price += Decimal(selected_accommodation.total_price)
 
-        if transport_id:
-            selected_transport = get_object_or_404(Transport, id=transport_id)
-            total_price += Decimal(selected_transport.total_price)
+            # Apply this accommodation to ALL itinerary items for this tour
+            base_items = ItineraryItem.objects.filter(tour=find_tour)
 
-        selected_language_objs = []
+            for item in base_items:
+                try:
+                    # If user already customized this itinerary item
+                    customized_item = UserItineraryItem.objects.get(user=user, itinerary_item=item)
+                    customized_item.accommodation = selected_accommodation
+                    customized_item.save(update_fields=['accommodation'])
+                except UserItineraryItem.DoesNotExist:
+                    # Create a new customization for this itinerary item
+                    UserItineraryItem.objects.create(
+                        user=user,
+                        itinerary_item=item,
+                        accommodation=selected_accommodation,
+                        # copy other fields from base itinerary
+                        transport=item.transport,
+                        title=item.title,
+                        description=item.description,
+                        image=item.image,
+                        date=item.date,
+                        day_number=item.day_number,
+                        type_of_transport=item.type_of_transport,
+                        tour_guide=item.tour_guide,
+                        meals=item.meals,
+                        logistics=item.logistics,
+                        tour=item.tour,
+                    )
 
         if selected_languages:
             selected_language_objs = Languages.objects.filter(code__in=selected_languages)
             total_price += sum((Decimal(lang.total_price) for lang in selected_language_objs), Decimal('0'))
-        else:
-            selected_languages = None
-        
-        # ✅ SECURITY GUARD LOGIC
+
+        # Security guard logic
         if security_gard and selected_language_objs:
             from django.db.models import Count, Q
 
@@ -181,7 +208,6 @@ def tour_booking(request, slug):
         else:
             security_gard = None
 
-
         return render(request, 'partials/tour/_total_price_button.html', {
             'total_price': total_price,
         })
@@ -189,20 +215,77 @@ def tour_booking(request, slug):
     request.session['totalprice'] = float(total_price)
 
     context = {
-        'get_tour_categories':get_tour_categories,
-        'find_tour':find_tour,
-        'get_interary':get_interary,
+        'get_tour_categories': get_tour_categories,
+        'find_tour': find_tour,
+        'get_interary': final_itinerary,  # Show customized if available
+        'languages_': languages_,
+        'security_guards': security_guards,
+        'accommodation': accommodation,
+    }
+
+    return render(request, 'tour/tour-booking.html', context)
+
+
+
+def edit_itinerary(request, itienary_id, user_id):
+    try:
+        user_itinerary = UserItineraryItem.objects.get(id=itienary_id, user=user_id)
+        base_itinerary = user_itinerary.itinerary_item  # always keep the base itinerary
+    except UserItineraryItem.DoesNotExist:
+        # Otherwise just load the base itinerary
+        base_itinerary = ItineraryItem.objects.get(id=itienary_id)
+        user_itinerary = None
+    user = User.objects.get(id=user_id)
+
+    accommodation = Accommodation.objects.all()
+    transport = Transport.objects.all()
+
+    # Just get one directly from the object
+    selected_transport = (
+        user_itinerary.transport if user_itinerary and user_itinerary.transport else base_itinerary.transport
+    )
+    selected_accommodation = (
+        user_itinerary.accommodation if user_itinerary and user_itinerary.accommodation else base_itinerary.transport
+    )
+
+    if request.method == 'POST':
+        accommodation_id = request.POST.get('selected_accommodations')   
+        transport_id = request.POST.get('selected_transport')
+        if accommodation_id:
+            selected_accommodation = get_object_or_404(Accommodation, id=accommodation_id)
+        if transport_id:
+            selected_transport = get_object_or_404(Transport, id=transport_id)
+
+        # Save or update the user’s itinerary
+        user_itinerary, created = UserItineraryItem.objects.update_or_create(
+            user=user,
+            itinerary_item=base_itinerary,  # ✅ always the base itinerary here
+            defaults={
+                'accommodation': selected_accommodation,
+                'transport': selected_transport,
+                'title': base_itinerary.title,
+                'description': base_itinerary.description,
+                'image': base_itinerary.image,
+                'date': base_itinerary.date,
+                'day_number': base_itinerary.day_number,
+                'type_of_transport': base_itinerary.type_of_transport,
+                'tour_guide': base_itinerary.tour_guide,
+                'meals': base_itinerary.meals,
+                'logistics': base_itinerary.logistics,
+                'tour': base_itinerary.tour,
+            }
+        )
+        return redirect('tour:tour_booking', base_itinerary.tour.slug)
+        # Optionally redirect or return an HTMX response
+
+    context = {
+        'get_itienary': user_itinerary or base_itinerary,
+        'selected_transport':selected_transport,
+        'selected_accommodation':selected_accommodation,
         'accommodation':accommodation,
         'transport':transport,
-        'selected_accommodation':selected_accommodation,
-        'total_price':total_price,
-        'languages_':languages_,
-        'security_guards':security_guards,
-        'selected_transports': selected_transports,
-        'selected_accommodations': selected_accommodations,
     }
-    
-    return render(request, 'tour/tour-booking.html', context)
+    return render(request, 'tour/customize-tour.html', context) 
 
 
 def translator_view(request):
@@ -291,7 +374,7 @@ def user_newsfeed(request):
     elif user_type == 'Guide':
         return render(request, 'tour_involve/guide_newsfeed.html', context)
     else:
-        return render(request, 'tour_involve/default_newsfeed.html', context)
+        return render(request, 'tour_involve/tg_doc_newsfeed.html', context)
     
 
 

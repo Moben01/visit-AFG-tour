@@ -386,7 +386,39 @@ class ItineraryItem(models.Model):
         ordering = ['day_number']
 
     def __str__(self):
-        return f"Day {self.day_number} - {self.title or 'Itinerary'}"
+        return f"Day {self.day_number} - {self.title or 'Itinerary'} - {self.tour}"
+
+    @property
+    def is_customized(self):
+        return False
+
+class UserItineraryItem(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='itinerary_items_new')
+    itinerary_item = models.ForeignKey(ItineraryItem, on_delete=models.CASCADE)
+    day_number = models.PositiveIntegerField()
+    title = models.CharField(max_length=200, blank=True)
+    description = models.TextField()
+    date = models.DateTimeField()
+    image = models.ImageField(upload_to = 'itenary-images')
+    accommodation = models.ForeignKey(Accommodation, on_delete=models.SET_NULL, blank=True, null=True)
+    type_of_transport = models.CharField(max_length=120)
+    transport = models.ForeignKey(Transport, on_delete=models.SET_NULL, blank=True, null=True)
+    tour_guide = models.ForeignKey(TourGuide, on_delete=models.SET_NULL, blank=True, null=True)
+    meals = models.ForeignKey(Meal, on_delete=models.SET_NULL, blank=True, null=True)
+    logistics = models.ForeignKey(Logistic, on_delete=models.SET_NULL, blank=True, null=True)
+    customized_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['day_number']
+
+    def __str__(self):
+        return f"Day {self.day_number} - {self.title or 'Itinerary'} - {self.tour}"
+
+    @property
+    def is_customized(self):
+        return True
 
 class Frequently_asked_questions(models.Model):
     tour_id = models.ForeignKey(Tour, on_delete=models.CASCADE)

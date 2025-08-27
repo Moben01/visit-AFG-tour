@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from tour.models import *
+from django.utils.translation import get_language
 from things_to_do.models import *
 from django.http import HttpResponse
+from django.utils.translation import get_language
 # Create your views here.
 
 def kabul(request):
@@ -9,9 +11,15 @@ def kabul(request):
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kabul")
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Kabul")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Kabul")
+    places = Best_Selling.objects.prefetch_related('images').all()
 
+    language_code = get_language()
 
-    return render(request, 'states/kabul.html', {'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province, 'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province})
+    if language_code in ['fa', 'ar']:
+        return render(request, 'RTL/states/kabul.html',{'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province})
+    else:
+        return render(request, 'states/kabul.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province})
+
 
 def kabul_maping(request):
     get_tour_categories = TourCategory.objects.all()    
@@ -23,9 +31,9 @@ def balkh(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Balkh")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Balkh")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Balkh")
-    
+    places = Best_Selling.objects.prefetch_related('images').all()
 
-    return render(request, 'states/balkh.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/balkh.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -34,9 +42,9 @@ def samangan(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Samangan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Samangan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Samangan")
-
+    places = Best_Selling.objects.prefetch_related('images').all()
     return render(request, 'states/samangan.html', 
-    {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def jawzjan(request):
@@ -44,8 +52,9 @@ def jawzjan(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Jowzjan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Jowzjan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Jowzjan")
-
-    return render(request, 'states/jawzjan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+   
+    return render(request, 'states/jawzjan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def faryab(request):
@@ -53,8 +62,9 @@ def faryab(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Faryab")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Faryab")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Faryab")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/faryab.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/faryab.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def SarePol(request):
@@ -62,8 +72,9 @@ def SarePol(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Sar-e Pol")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Sar-e Pol")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Sar-e Pol")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/SarePol.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/SarePol.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def Baghlan(request):
@@ -71,8 +82,9 @@ def Baghlan(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Baghlan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Baghlan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Baghlan")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/Baghlan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/Baghlan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def Kunduz(request):
@@ -80,8 +92,9 @@ def Kunduz(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Kunduz")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Kunduz")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kunduz")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/Kunduz.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/Kunduz.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def Takhar(request):
@@ -89,8 +102,9 @@ def Takhar(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Takhar")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Takhar")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Takhar")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/Takhar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/Takhar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 def Badakhshan(request):
@@ -98,16 +112,18 @@ def Badakhshan(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Badakhshan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Badakhshan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Badakhshan")
+    places = Best_Selling.objects.prefetch_related('images').all()
 
-    return render(request, 'states/Badakhshan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/Badakhshan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def parwan(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Parwan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Parwan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Parwan")
+    places = Best_Selling.objects.prefetch_related('images').all()
 
-    return render(request, 'states/parwan.html', {'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/parwan.html', {'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -123,7 +139,8 @@ def maidan_wardak(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Wardak")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Wardak")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Wardak")
-    return render(request, 'states/maidan_wardak.html', {'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all()
+    return render(request, 'states/maidan_wardak.html', {'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -134,7 +151,8 @@ def bamyan(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Bamyan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Bamyan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Bamyan")
-    return render(request, 'states/bamyan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all()
+    return render(request, 'states/bamyan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def logar(request):
     get_tour_categories = TourCategory.objects.all()
@@ -142,8 +160,10 @@ def logar(request):
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Logar")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Logar")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="logar")
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/logar.html', {'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
-    return render(request, 'states/logar.html', {'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+
 
 
 
@@ -157,16 +177,25 @@ def kapisa(request):
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Kapisa")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kapisa")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="kapisa")
+    places = Best_Selling.objects.prefetch_related('images').all()
 
-    return render(request, 'states/kapisa.html', {'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/kapisa.html', {'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
+
+
+
+
+
+
+
 
 def panjshir(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Panjshir")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Panjshir")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Panjshir")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/panjshir.html', {'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/panjshir.html', {'get_tour_categories':get_tour_categories,'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -177,29 +206,33 @@ def daikundi(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Daykundi")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Daykundi")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Daykundi")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/daikundi.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/daikundi.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def ghazni(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Ghazni")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Ghazni")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Ghazni")
-    return render(request, 'states/ghazni.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/ghazni.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def paktika(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Paktia")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Paktia")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Paktia")
-    return render(request, 'states/paktika.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/paktika.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def khost(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Khost")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Khost")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Khost")
-    return render(request, 'states/khost.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/khost.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -219,7 +252,8 @@ def Nangarhar(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Nangarhar")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Nangarhar")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Nangarhar")
-    return render(request, 'states/Nangarhar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Nangarhar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -230,7 +264,8 @@ def Kunar(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Kunar")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Kunar")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kunar")
-    return render(request, 'states/Kunar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Kunar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -241,7 +276,8 @@ def Laghman(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Laghman")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Laghman")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Laghman")
-    return render(request, 'states/Laghman.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Laghman.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -252,7 +288,8 @@ def Nuristan(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Nuristan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Nuristan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Nuristan")
-    return render(request, 'states/Nuristan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Nuristan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -262,6 +299,19 @@ def Kandahar(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Kandahar")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Kandahar")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Kandahar")
+    places = Best_Selling.objects.prefetch_related('images').all() 
+
+
+    language_code = get_language()
+
+    if language_code in ['fa', 'ar']:
+        return render(request, 'states/kandahar_farsi.html',{'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    else:
+        return render(request, 'states/Kandahar.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+
+
+
+
     return render(request, 'states/Kandahar.html', {'get_tour_categories':get_tour_categories, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'find_best_places_in_this_province':find_best_places_in_this_province})
 
 def Helmand(request):
@@ -269,35 +319,50 @@ def Helmand(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Helmand")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Helmand")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Helmand")
-    return render(request, 'states/Helmand.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    language_code = get_language()
+
+    if language_code in ['fa', 'ar']:
+        return render(request, 'states/Helmand_farsi.html',{'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    else:
+        return render(request, 'states/Helmand.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+
+
+
+
+
 
 def Zabul(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Zabul")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Zabul")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Zabul")
-    return render(request, 'states/Zabul.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Zabul.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def Uruzgan(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Urozgan")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Urozgan")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Urozgan")
-    return render(request, 'states/Uruzgan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Uruzgan.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def Nimroz(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Nimroz")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Nimroz")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Nimroz")
-    return render(request, 'states/Nimroz.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Nimroz.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def Paktika(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Paktika")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Paktika")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Paktika")
-    return render(request, 'states/Paktieka.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Paktieka.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -310,7 +375,8 @@ def Herat(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Herat")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Herat")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Herat")
-    return render(request, 'states/Herat.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Herat.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 
 
@@ -319,19 +385,22 @@ def Farah(request):
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Farah")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Farah")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Farah")
-    return render(request, 'states/Farah.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Farah.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def Badghis(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Badghis")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Badghis")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Badghis")
+    places = Best_Selling.objects.prefetch_related('images').all() 
 
-    return render(request, 'states/Badghis.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    return render(request, 'states/Badghis.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
 
 def Ghor(request):
     get_tour_categories = TourCategory.objects.all()
     find_things_to_do_in_this_province = Top_things_to_do_in_province.objects.filter(provinces__icontains = "Ghor")
     Popular_Tourist_in_the_province = Popular_Tourist.objects.filter(provinces__icontains="Ghor")
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Ghor")
-    return render(request, 'states/Ghor.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province})
+    places = Best_Selling.objects.prefetch_related('images').all() 
+    return render(request, 'states/Ghor.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})

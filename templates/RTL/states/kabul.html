@@ -1,0 +1,811 @@
+{% extends 'rtl-base.html' %}
+{% block content %}
+{% load static %}
+{% load i18n %}
+
+
+<!-- Hero Section -->
+<section class="hero-section" style="font-family: XW_Zar_Bd_0;">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'state-image/kabul/kabul-view.jpg' %}" alt="Img">
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="row align-items-center">
+                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+              
+                    <div class="banner-content mx-auto">
+                        <h1 class="text-white display-5 mb-2" style="font-family: XW_Zar_Bd_0;">
+                             {% trans "ولایت" %} <span>{% trans "کابل" %}</span>
+                        </h1>
+                        <h6 class="text-light mx-auto">
+                            {% trans "سرزمینی با کوه‌های باشکوه، میراث باستانی، سنت‌های رنگارنگ و مهمان‌نوازی بی‌نظیر" %}
+                        </h6>
+                    </div>
+                    
+                    <div class="container my-5">
+                        <!-- Hotel Types Grid -->
+                        <div class="row text-center justify-content-center" style="font-family: XW_Zar_Bd_0;">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#overview">{% trans "بررسی اجمالی" %}</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">{% trans "بهترین زمان بازدید" %}</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#howtoreach">{% trans "چگونه برسیم" %}</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#palcetovisit">{% trans "مکان‌های دیدنی" %}</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#thingstodo">{% trans "کارهایی برای انجام" %}</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="#packages">{% trans "پکیج‌ها" %}</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+                                <div class="hotel-type-item">
+                                    <h6 class="fs-16 fw-medium"><a href="{% url 'states:kabul_maping' %}">{% trans "نقشه" %}</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="section destination-section" id="overview" style="font-family: XW_Zar_Bd_0;">
+    <div class="container">
+        <h4 class="mb-2">{% trans "درباره گردشگری کابل" %}</h4>
+        <p class="mb-1">{% trans "کابل شهری با تاریخ غنی و فرهنگ زنده است، با بازارهای قدیمی، کوه‌های باشکوه، موسیقی سنتی، غذاهای خوش‌طعم، قالی‌های رنگارنگ و مردمی مهربان. این شهر تجربه‌ای شگفت‌انگیز برای مسافرانی که به دنبال تاریخ، فرهنگ، ماجراجویی و مهمان‌نوازی اصیل افغان هستند ارائه می‌دهد. واقع در دره رودخانه کابل، این شهر برای علاقه‌مندان به تاریخ، کاوشگران فرهنگی، دوستداران طبیعت و تعطیلات خانوادگی عالی است." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "شکوه معماری: قلعه‌ها، مساجد و خانه‌های سنتی!" %}</h4>
+        <p class="mb-1">{% trans "جاذبه‌های گردشگری اصلی کابل شامل قلعه تاریخی بالا حصار، کاخ‌های سلطنتی مانند دارالامان و خانه‌های سنتی افغان است که میراث غنی شهر را نشان می‌دهند. قلعه بالا حصار که بر تپه‌ای مشرف به کابل واقع شده است، نگاهی به قرن‌ها تاریخ افغانستان ارائه می‌دهد. اگرچه کابل کاخ‌های بزرگ مانند برخی مناطق ندارد، معماری اسلامی، بازارهای پرجنب و جوش و باغ‌های باستانی تجربه‌ای فرهنگی منحصر به فرد فراهم می‌کنند. بازدیدکنندگان می‌توانند مساجد و زیارتگاه‌های باشکوهی را نیز ببینند که اهمیت تاریخی و معنوی شهر را نشان می‌دهند." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "ترکیبی غنی از رقص‌های سنتی، آهنگ‌های دلنشین، سواری با اسب و رنگ‌های زنده!" %}</h4>
+        <p class="mb-1">{% trans "برای علاقه‌مندان به فرهنگ، کابل جشنواره‌ها و نمایشگاه‌های زنده‌ای برای تجربه سنت‌های افغان ارائه می‌دهد. جشن‌های شاد نوروز با موسیقی، رقص و گردهمایی‌های رنگارنگ فرا رسیدن بهار را نشان می‌دهند. عروسی‌های سنتی و جشن‌های مذهبی مانند عید، آداب و رسوم غنی، رقص‌های محلی مانند آتان و موسیقی دلنشین را به نمایش می‌گذارند. بازدیدکنندگان می‌توانند بازارها و نمایشگاه‌های اسب را نیز تجربه کنند که میراث عمیق کوچ‌نشینی و روستایی افغانستان را منعکس می‌کنند." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "کوه‌های باشکوه افغانستان و حیات وحش منحصر به فرد را کاوش کنید." %}</h4>
+        <p class="mb-1">{% trans "افغانستان با کوه‌های باشکوه و مناظر ناهموار، فرصت‌های شگفت‌انگیزی برای گردشگری حیات وحش ارائه می‌دهد. این کشور میزبان گونه‌های کمیاب و در خطر انقراض مانند پلنگ برفی، قوچ مارکوپولو، جبیر و خرس‌ها است. پارک‌های ملی مانند بند امیر — اولین پارک ملی افغانستان — زیبایی طبیعی خیره‌کننده و زیستگاه گونه‌های گیاهی و جانوری متنوع را فراهم می‌کنند. برای علاقه‌مندان به پرنده‌نگری، افغانستان گونه‌های مهاجر و بومی متعددی از جمله لک‌لک‌ها و عقاب‌ها در دریاچه‌ها و تالاب‌ها دارد. اگرچه کابل شهری شلوغ است، اما به عنوان دروازه‌ای به این مناطق طبیعی بکر عمل می‌کند که طبیعت‌دوستان می‌توانند حیات وحش و زیبایی طبیعی کشور را مشاهده کنند." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "خرید: از جواهرات تا صنایع دستی سنتی!" %}</h4>
+        <p class="mb-1">{% trans "خرید صنایع دستی اصیل بخش مهمی از تجربه فرهنگ افغان است. کابل به قالی‌ها و فرش‌های دست‌ساز نفیس، منسوجات رنگارنگ گلدوزی شده و جواهرات زیبا با سنگ‌های قیمتی مانند لاجورد و فیروزه مشهور است. نقاشی‌های مینیاتوری افغانستان که تحت تأثیر سبک‌های فارسی و مغولی هستند، هنر پیچیده‌ای را نشان می‌دهند و از مجموعه‌های ارزشمند محسوب می‌شوند. بازدیدکنندگان همچنین می‌توانند سفال‌های زیبا، محصولات چرمی سنتی و ابزار موسیقی مانند رباب را پیدا کنند که میراث فرهنگی غنی کشور را منعکس می‌کنند. بازارهایی مانند خیابان معروف چیکن کابل تجربه خرید زنده‌ای ارائه می‌دهند که مسافران می‌توانند سوغاتی‌های منحصر به فرد و صنایع دستی افغان اصیل را به خانه ببرند." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "از کبابی پلاؤ تا منتو: از غذای غنی کابل لذت ببرید!" %}</h4>
+        <p class="mb-1">{% trans "با تأثیر تبادلات فرهنگی قرن‌ها و جغرافیای متنوع افغانستان، غذاهای افغان تجربه‌ای منحصر به فرد و خوش‌طعم ارائه می‌دهند. از غذای ملی کبابی پلاؤ — برنج معطر با کشمش، هویج و گوشت گوسفند — تا خوراکی‌های خیابانی خوشمزه مانند منتو، غذاهای افغان هر ذائقه‌ای را راضی می‌کنند. نان‌های مختلف مانند نان و بولانی همراه با خورش‌ها و کباب‌های لذیذ از گوشت گوسفند، گاو و مرغ سرو می‌شوند. همراه با ماست، سبزیجات تازه و چاشنی‌های خوش‌طعم، غذا کامل می‌شود. برای علاقه‌مندان به شیرینی، دسرهای سنتی مانند باقلوا، فرنی و شیر خرما پایان لذت‌بخشی برای هر وعده غذایی ارائه می‌دهند." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "تعطیلات لوکس و مهمان‌نوازی بی‌زمان افغان!" %}</h4>
+        <p class="mb-1">{% trans "برای تعطیلات لوکس، کابل هتل‌ها و مهمان‌خانه‌های میراثی را ارائه می‌دهد که راحتی مدرن را با مهمان‌نوازی اصیل افغان ترکیب می‌کنند. اگرچه قطارهای سلطنتی وجود ندارند، مسافران می‌توانند در هتل‌هایی با دکوراسیون سنتی افغان، مهمان‌نوازی گرم و غذاهای محلی لذیذ اقامت داشته باشند. بسیاری از ساختمان‌های میراثی و کاخ‌ها بازسازی شده‌اند تا اقامتگاه‌های منحصر به فردی ارائه دهند که تاریخ و فرهنگ غنی افغانستان را نشان می‌دهند. از فضاهای داخلی زیبا با کنده‌کاری‌های چوبی پیچیده و فرش‌ها گرفته تا باغ‌های مرتب و حیاط‌های آرام، این مکان‌ها تجربه‌ای همه‌جانبه از سلطنت و سنت افغان ارائه می‌دهند. اقامت لوکس در کابل راحتی، غنای فرهنگی و استقبال گرم ارائه می‌دهد که هر مهمان را مانند سلطنت احساس می‌کند." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "از کوهنوردی تا پاراگلایدینگ، ماجراجویی در افغانستان انتظار شما را می‌کشد!" %}</h4>
+        <p class="mb-1">{% trans "افغانستان فعالیت‌های گردشگری ماجراجویی متنوعی را در مناظر کوهستانی خیره‌کننده خود ارائه می‌دهد. نزدیک کابل و در مناطقی مانند دره پنجشیر و بند امیر، بازدیدکنندگان می‌توانند از پیاده‌روی، دوچرخه‌سواری کوهستانی و صخره‌نوردی لذت ببرند. برای دوستداران هیجان، پاراگلایدینگ بر فراز کوه‌های هندوکش مناظر نفس‌گیری ارائه می‌دهد. قایق‌رانی و سواری با اسب نیز فعالیت‌های محبوبی هستند. اگرچه سافاری شتر در کابل معمول نیست، سایر مناطق فرصت‌های منحصر به فردی برای کاوش در زمین‌های متنوع افغانستان ارائه می‌دهند. چه به دنبال پیاده‌روی آرام باشید یا ورزش‌های هیجان‌انگیز، افغانستان مقصدی رو به رشد برای علاقه‌مندان به ماجراجویی است." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "معنویت در قلب کابل" %}</h4>
+        <p class="mb-1">{% trans "کابل شهری عمیقاً ریشه‌دار در معنویت است، با مساجد، زیارتگاه‌ها و مکان‌های مذهبی متعدد که اهمیت زیادی برای مردمش دارند. این شهر میزبان مکان‌های مهم عبادتی است که توسط مسلمانان بازدید می‌شوند، از جمله مسجد مشهور عیدگاه، مسجد شاه دو شمشیره و مسجد پل خشتی — هرکدام معماری اسلامی غنی و سنت‌های چند صدساله را نشان می‌دهند. در میان نمادهای معنوی کابل، زیارتگاه محترم حضرت علی در مزار شریف، در فاصله کوتاهی از شهر واقع شده و زائرانی از سراسر منطقه را جذب می‌کند. اگرچه کابل عمدتاً اسلامی است، اما مکان‌های مذهبی شهر بر مهمان‌نوازی، صلح و تعهد تأکید دارند و بازدیدکنندگان با پیشینه‌های مختلف را می‌پذیرند. میراث معنوی کابل همچنین در مدارس قدیمی اسلامی (مدارس دینی)، خوشنویسی زیبا و باغ‌های آرام وابسته به مجموعه‌های مذهبی منعکس شده است و محیطی آرام برای تفکر و نماز فراهم می‌کند. چه به دنبال بازدید از مساجد باشکوه باشید، چه تجربه جشن‌های مذهبی پرجنب‌وجوش مانند عید، یا صرفاً جذب فضای معنوی شوید، کابل ترکیبی غنی از ایمان و فرهنگ ارائه می‌دهد." %}</p>
+        
+        <h4 class="mb-3 mt-3">{% trans "ده مقصد پر بازدید در کابل" %}</h4>
+        <div class="mb-4">
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "قلعه بالا حصار" %}</strong> — {% trans "قلعه تاریخی مشرف به کابل." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "موزه ملی افغانستان" %}</strong> — {% trans "نمایش میراث فرهنگی غنی." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "مسجد شاه دو شمشیره" %}</strong> — {% trans "مسجدی منحصر به فرد با معماری الهام گرفته از سبک باروک." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "مسجد عیدگاه" %}</strong> — {% trans "یکی از بزرگترین مساجد کابل که نمازهای عید در آن برگزار می‌شود." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "باغ بابر" %}</strong> — {% trans "باغ‌های تاریخی تأسیس شده توسط امپراتور مغولی بابر." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "باغ پغمان" %}</strong> — {% trans "باغ‌های زیبا و محبوب برای استراحت و بازدیدهای آخر هفته." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "خیابان چیکن" %}</strong> — {% trans "بازار معروف برای صنایع دستی، قالی‌ها و سوغاتی‌های افغان." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "کاخ دارالامان" %}</strong> — {% trans "کاخ نئوکلاسیک نمادین که تاریخ سلطنتی را نشان می‌دهد." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "باغ وحش کابل" %}</strong> — {% trans "محل خانوادگی با حیات وحش بومی افغانستان." %}
+            </p>
+            <p class="mb-1">
+                <i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>{% trans "مسجد پل خشتی" %}</strong> — {% trans "یکی از قدیمی‌ترین مساجد کابل با معماری چشمگیر." %}
+            </p>
+        </div>
+        
+        <div >
+            <h4 class="mb-3 mt-3">{% trans "بهترین زمان بازدید از کابل برای تعطیلات" %}</h4>
+            <p class="mb-1">
+                {% trans "بهترین زمان برای بازدید از کابل از ماه مارس تا ژوئن و از سپتامبر تا نوامبر است، زمانی که هوا معتدل و خوشایند است. در این ماه‌ها می‌توانید به راحتی از مکان‌های فرهنگی شهر دیدن کنید، از فعالیت‌های خارج از خانه لذت ببرید و جشنواره‌های محلی را تجربه کنید، بدون آنکه گرمای شدید تابستان یا سرمای زمستان را تحمل کنید." %}
+            </p>            
+    </div>
+
+    <h4 class="mb-3 mt-3">{% trans "اطلاعات سریع درباره کابل" %}</h4>
+    <div style="overflow-x:auto;">
+        <table class="table table-bordered" style="min-width: 700px;">
+            <tbody id="packages">
+                <tr>
+                    <th>{% trans "منطقه" %}</th>
+                    <td>{% trans "مرکز افغانستان" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "مرکز ولایت" %}</th>
+                    <td>{% trans "کابل" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "مختصات" %}</th>
+                    <td>{% trans "۳۴.۵۵۵۳° شمال، ۶۹.۲۰۷۵° شرق" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "جمعیت تخمینی" %}</th>
+                    <td>{% trans "تقریباً ۴.۶ میلیون (برآورد ۲۰۲۱)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "مساحت جغرافیایی" %}</th>
+                    <td>{% trans "حدود ۱۰۲۳ کیلومتر مربع (ولایت کابل)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "ولسوالی‌های شهر کابل" %}</th>
+                    <td>{% trans "۲۲ ولسوالی" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "ادیان عمده" %}</th>
+                    <td>{% trans "اسلام (عمدتاً سنی)، اقلیت کوچک شیعه" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "گروه‌های قومی" %}</th>
+                    <td>{% trans "پشتون، تاجیک، هزاره، ازبک و دیگران" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "زبان‌های صحبت شده" %}</th>
+                    <td>{% trans "دری، پشتو، اردو، انگلیسی" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "نماد حیوانی شهر" %}</th>
+                    <td>{% trans "پلنگ برفی (نماد کوه‌های افغانستان)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "گل شهر" %}</th>
+                    <td>{% trans "لاله (لاله‌های وحشی در دره‌های اطراف می‌روید)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "پرنده شهر" %}</th>
+                    <td>{% trans "مونال هیمالیایی (پرنده منطقه کوه‌ها)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "درخت شهر" %}</th>
+                    <td>{% trans "درختان کاج و سدر (در تپه‌های اطراف یافت می‌شوند)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "رقص سنتی" %}</th>
+                    <td>{% trans "آتان (رقص محلی محبوب پشتون‌ها)" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "ورزش‌های محبوب" %}</th>
+                    <td>{% trans "بزکشی (بازی سنتی با اسب)، فوتبال" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "مناطق گردشگری اصلی" %}</th>
+                    <td>{% trans "قلعه بالا حصار، باغ بابر، مسجد شاه دو شمشیره، باغ پغمان، بازار خیابان چیکن" %}</td>
+                </tr>
+                <tr>
+                    <th>{% trans "جاذبه‌های اصلی" %}</th>
+                    <td>{% trans "قلعه‌های تاریخی، موزه‌ها، مساجد، بازارها، جشنواره‌های فرهنگی، کوهنوردی نزدیک، صنایع دستی سنتی" %}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+
+        <h4 class="mb-4 mt-4">Best Selling Kabul Tour Packages</h4>
+        <style>
+            .truncate-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 170px;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        </style>
+        <div class="travelers-slider owl-carousel owl-loaded owl-drag" id="besttimetovisit">
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Top Kabul Travel Packages for You"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Top Kabul Travel Packages for You">
+                                Top Kabul Travel Packages for You
+                            </a>
+                        </h6>
+                        <p>17 Nights - 18 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-26.jpg' %}" class="rounded-top"
+                            alt="Explore the Beauty of Kabul – Popular Tour Deals"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings-2"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Explore the Beauty of Kabul – Popular Tour Deals">
+                                Explore the Beauty of Kabul – Popular Tour Deals
+                            </a>
+                        </h6>
+                        <p>8 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-27.jpg' %}" class="rounded-top"
+                            alt="Most Loved Tour Packages in Kabul"></a>
+                    <span class="overlay-icon"><i class="isax isax-building"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title" title="Most Loved Tour Packages in Kabul">
+                                Most Loved Tour Packages in Kabul
+                            </a>
+                        </h6>
+                        <p>6 Nights - 7 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-28.jpg' %}" class="rounded-top"
+                            alt="Discover Kabul: Top Travel Experiences"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Discover Kabul: Top Travel Experiences">
+                                Discover Kabul: Top Travel Experiences
+                            </a>
+                        </h6>
+                        <p>5 Nights - 6 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-29.jpg' %}" class="rounded-top"
+                            alt="Kabul’s Best Tour Packages – Book Now!"></a>
+                    <span class="overlay-icon"><i class="isax isax-buildings4"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Kabul’s Best Tour Packages – Book Now!">
+                                Kabul’s Best Tour Packages – Book Now!
+                            </a>
+                        </h6>
+                        <p>4 Nights - 5 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+            <div class="card travelers-card">
+                <div class="card-img">
+                    <a href="hotel-grid.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" class="rounded-top"
+                            alt="Classic Kabul Escapes – Bestselling Holiday Tour"></a>
+                    <span class="overlay-icon"><i class="isax isax-building-3"></i></span>
+                </div>
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="hotel-grid.html" class="truncate-title"
+                                title="Classic Kabul Escapes – Bestselling Holiday Tour">
+                                Classic Kabul Escapes – Bestselling Holiday Tour
+                            </a>
+                        </h6>
+                        <p>3 Nights - 4 Days</p>
+                    </div>
+                    <a href="hotel-grid.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container my-5">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="mb-0">{% trans "بهترین زمان برای بازدید از کابل" %}</h4>
+                <a href="#" class="btn btn-outline-primary btn-sm">{% trans "نمایش بیشتر" %}</a>
+            </div>
+        
+            <div class="row g-3">
+                <!-- Spring -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-success">{% trans "فصل بهار در کابل" %}</h5>
+                            <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "مارس تا می" %}</p>
+                            <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> ۱۰°C تا ۲۵°C</p>
+                            <p class="card-text">{% trans "بهار یکی از بهترین زمان‌ها برای بازدید از کابل است. شهر با گل‌ها شکوفا می‌شود و هوا خنک و تازه است — مناسب برای گشت و گذار و بازدید از جاذبه‌های شهری." %}</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Summer -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-danger">{% trans "فصل تابستان در کابل" %}</h5>
+                            <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "ژوئن تا اوت" %}</p>
+                            <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> ۲۰°C تا ۳۵°C</p>
+                            <p class="card-text">{% trans "تابستان‌ها در کابل گرم و خشک است. اگرچه هنوز زمان خوبی برای بازدید است، فعالیت‌های روزانه بهتر است در ساعات صبح یا عصر انجام شود." %}</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Autumn -->
+                <div class="col-md-4" id="palcetovisit">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">{% trans "فصل پاییز در کابل" %}</h5>
+                            <p class="mb-2"><strong>{% trans "ماه‌ها:" %}</strong> {% trans "سپتامبر تا نوامبر" %}</p>
+                            <p class="mb-2"><strong>{% trans "دمای هوا:" %}</strong> ۱۰°C تا ۲۲°C</p>
+                            <p class="card-text">{% trans "پاییز نیز زمان بسیار خوبی برای بازدید از کابل است. برگ‌ها شروع به طلایی شدن می‌کنند و هوای خنک و تازه، پیاده‌روی و بازدیدهای فرهنگی را خوشایند می‌کند." %}</p>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        
+        <h4 class="mb-4 mt-4" id="thingstodo">{% trans "بهترین مکان‌ها برای بازدید در کابل" %}</h4>
+
+          <div class="row">
+                {% for i in find_best_places_in_this_province %}
+                    <div class="col-md-3 mb-4">
+                        <div class="location-item">
+                            <a href="#" class="location-img">
+                                <img src="{{ i.image.url }}" alt="{{ i.title }}">
+                                <div class="location-name">
+                                    <h5 class="mb-1">{{ i.title }}</h5>
+                                    <p>({{ i.location }})</p>
+                                </div>
+                            </a>
+                            <div class="location-info d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fw-medium mb-1">{{ i.description }}</h6>
+                                    <p class="fs-14"><span class="text-primary">${{ i.start_price }}</span></p>
+                                </div>
+                                <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <h4 class="mb-4 mt-4" id="howtoreach">{% trans "بهترین فعالیت‌ها در کابل" %}</h4>
+    
+      <!-- Horizontal scroll wrapper -->
+<div class="overflow-auto">
+    <div class="d-flex gap-3">
+      {% for i in find_things_to_do_in_this_province %}
+        <div class="col-md-3 mb-4 flex-shrink-0">
+          <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
+            <a href="javascript:void(0)" class="location-img">
+              <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
+              <div class="location-name">
+                <h5 class="mb-1">{{ i.title }}</h5>
+                <p>({{ i.location }})</p>
+              </div>
+            </a>
+            <div class="location-info d-flex align-items-center justify-content-between">
+              <div>
+                <p class="fs-14"><span class="text-primary">Start from {{ i.price }}</span></p>
+              </div>
+              <a href="javascript:void(0)" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Modal for each place -->
+        <div class="modal fade" id="placeModal{{ i.id }}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content rounded-3 shadow">
+              <div class="modal-header">
+                <h5 class="modal-title">{{ i.title }} - {{ i.location }}</h5>  
+                <span class="badge bg-primary ms-2">{{ i.provinces|join:", " }}</span> 
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+  
+                <!-- Main image preview -->
+                <div class="d-flex justify-content-center">
+                  <img id="mainImage{{ i.id }}" src="{{ i.image.url }}" 
+                       style="max-width: 309px;" class="img-fluid rounded mb-3 border" alt="{{ i.title }}">
+                </div>
+  
+                <!-- Small images -->
+                {% if i.images.all %}
+                <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
+                  {% for img in i.images.all %}
+                    <img src="{{ img.image.url }}" 
+                         class="img-fluid rounded border small-img"
+                         style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
+                         alt="{{ img.caption }}"
+                         onclick="document.getElementById('mainImage{{ i.id }}').src=this.src">
+                  {% endfor %}
+                </div>
+                {% endif %}
+  
+                <!-- Description -->
+                <p>{{ i.description }}</p>
+              </div>
+              <div class="modal-footer">
+                <span class="fw-bold text-success">From ${{ i.price }}</span>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      {% endfor %}
+    </div>
+  </div>
+  
+          
+          
+        
+  <h4 class="mb-4 mt-4">{% trans "چگونه به کابل برسیم؟" %}</h4>
+
+  <div class="reach-method">
+      <div class="row justify-content-center g-4">
+  
+          <!-- By Air -->
+          <div class="col-lg-4 col-md-6 d-flex">
+              <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                          <h5>{% trans "با هواپیما" %}</h5>
+                          <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
+                              <i class="isax isax-airplane fs-24"></i>
+                          </span>
+                      </div>
+                      <p>{% trans "فرودگاه بین‌المللی کابل شهر را به مقصدهای داخلی و بین‌المللی متصل می‌کند و پرواز به مراکز اصلی ارائه می‌دهد." %}</p>
+                  </div>
+              </div>
+          </div>
+          <!-- /By Air -->
+  
+          <!-- By Road -->
+          <div class="col-lg-4 col-md-6 d-flex">
+              <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                          <h5>{% trans "با جاده" %}</h5>
+                          <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
+                              <i class="isax isax-car fs-24"></i>
+                          </span>
+                      </div>
+                      <p>{% trans "کابل از طریق بزرگراه‌ها به سایر شهرهای مهم متصل است. زمان سفر بستگی به شرایط امنیتی و کیفیت جاده دارد." %}</p>
+                  </div>
+              </div>
+          </div>
+          <!-- /By Road -->
+  
+          <!-- By Train -->
+          <div class="col-lg-4 col-md-6 d-flex">
+              <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
+                  <div class="card-body">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                          <h5>{% trans "با قطار" %}</h5>
+                          <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
+                              <i class="isax isax-train fs-24"></i>
+                          </span>
+                      </div>
+                      <p>{% trans "در حال حاضر کابل خدمات قطار مستقیم ندارد؛ سفر با هواپیما و جاده گزینه‌های اصلی هستند." %}</p>
+                  </div>
+              </div>
+          </div>
+          <!-- /By Train -->
+  
+      </div>
+  </div>
+  
+        
+  <h4 class="mb-4 mt-5">{% trans "پرسش‌های متداول" %} <span>{% trans "سوالات" %}</span></h4>
+
+  <div class="container">
+      <!-- FAQ Section -->
+      <div class="faq">
+          <div class="faq-sec p-0">
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="accordion" id="accordionFaq">
+  
+                          <!-- Q1 -->
+                          <div class="accordion-item mb-3 pb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                      {% trans "بهترین زمان برای بازدید از کابل چه زمانی است؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "بهترین زمان برای بازدید از کابل در بهار (مارس تا می) و پاییز (سپتامبر تا نوامبر) است، زمانی که هوا معتدل و خوشایند است." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q2 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                      {% trans "چگونه می‌توانم به کابل برسم؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "می‌توانید از طریق فرودگاه بین‌المللی حامد کرزی به کابل برسید که شهر را به شهرهای اصلی منطقه متصل می‌کند. دسترسی جاده‌ای نیز امکان‌پذیر است اما بسته به شرایط فعلی محدود است." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q3 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                      {% trans "جاذبه‌های گردشگری معروف کابل کدامند؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "مکان‌های محبوب شامل باغ بابر، کاخ دارالامان، موزه کابل، مسجد عبد الرحمن و دریاچه قرغه هستند." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q4 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                      {% trans "آیا کابل برای گردشگران امن است؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "شرایط امنیتی می‌تواند به سرعت تغییر کند. توصیه می‌شود با سفارت محلی خود مشورت کرده و قبل از بازدید از کابل، از اطلاعیه‌های مسافرتی به‌روز استفاده کنید." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q5 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                      {% trans "واحد پول محلی کابل چیست؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "واحد پول محلی در کابل، افغانی افغانستان (AFN) است." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q6 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                      {% trans "آیا برای بازدید از کابل به ویزا نیاز دارم؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "بله، اکثر اتباع خارجی برای ورود به افغانستان نیاز به ویزا دارند. با سفارت یا کنسولگری افغانستان در کشور خود برای دریافت اطلاعات بیشتر تماس بگیرید." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q7 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false" aria-controls="faq7">
+                                      {% trans "چه زبان‌هایی در کابل صحبت می‌شود؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "زبان‌های اصلی در کابل، دری و پشتو هستند. بسیاری از مردم مناطق شهری انگلیسی پایه را نیز می‌فهمند." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q8 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false" aria-controls="faq8">
+                                      {% trans "چه نوع لباسی باید در کابل بپوشم؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "بازدیدکنندگان توصیه می‌شوند که با پوشش محافظه‌کارانه لباس بپوشند. مردان باید شلوار و پیراهن بلند بپوشند و زنان باید سر خود را بپوشانند و لباس مناسب و محتاطانه بپوشند." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q9 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false" aria-controls="faq9">
+                                      {% trans "غذای محلی کابل چگونه است؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "غذای کابل شامل کبابی پلو (پلو با گوشت و کشمش)، کباب، منتو (دامپلینگ)، و انواع نان‌های محلی است. غذاها خوشمزه و اغلب همراه با چای سبز سرو می‌شوند." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                          <!-- Q10 -->
+                          <div class="accordion-item mb-3">
+                              <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false" aria-controls="faq10">
+                                      {% trans "آیا می‌توانم از کارت اعتباری در کابل استفاده کنم؟" %}
+                                  </button>
+                              </h2>
+                              <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                                  <div class="accordion-body">
+                                      <p>{% trans "کارت‌های اعتباری به طور گسترده پذیرفته نمی‌شوند. توصیه می‌شود برای بیشتر تراکنش‌ها نقدی به ارز محلی همراه داشته باشید." %}</p>
+                                  </div>
+                              </div>
+                          </div>
+  
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  
+<!-- /FAQ Section -->
+
+<!-- Essential Information Section -->
+<div class="container mt-5">
+    <h3 class="mb-4">{% trans "اطلاعات ضروری کابل" %}</h3>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h5 class="mb-3">{% trans "کجا در کابل اقامت کنیم؟" %}</h5>
+            <p>
+                {% trans "کابل گزینه‌های متنوع اقامتی برای انواع بودجه و سلیقه‌ها ارائه می‌دهد. چه مسافر با بودجه محدود باشید و چه به دنبال تجربه‌ای لوکس، در سراسر شهر محل مناسبی برای اقامت پیدا خواهید کرد. از هتل‌های استاندارد گرفته تا مهمان‌خانه‌های بوتیک، آپارتمان‌های سرویس‌دهی شده و هاستل‌های ساده، کابل چیزی برای همه دارد." %}
+            </p>
+            <p>
+                {% trans "مناطق اصلی مانند شهرنو، کارته ۳ و وزیر اکبرخان میزبان بسیاری از اقامتگاه‌های شهر هستند. امنیت یکی از ملاحظات مهم هنگام انتخاب محل اقامت است و بسیاری از هتل‌های معتبر دارای حفاظت و خدمات حمل و نقل می‌باشند." %}
+            </p>
+            <p>
+                {% trans "برای رزرو، توصیه می‌شود از خدمات مسافرتی محلی معتبر استفاده کرده یا مستقیماً با هتل‌ها تماس بگیرید تا از آخرین وضعیت موجودی و قیمت‌ها مطلع شوید. توصیه‌های شخصی و آژانس‌های محلی نیز می‌توانند تجربه‌ای راحت و ایمن در کابل تضمین کنند." %}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Major Activities for Tourists in Kabul -->
+<div class="container mt-5">
+    <h5 class="mb-4">{% trans "فعالیت‌های اصلی برای گردشگران در کابل" %}</h5>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <p>
+                {% trans "کابل تجربه فرهنگی و تاریخی منحصر به فردی برای مسافران ارائه می‌دهد. گردشگران می‌توانند از اماکن باستانی مانند باغ بابر، کاخ تاریخی دارالامان و موزه کابل که میراث غنی افغانستان را به نمایش می‌گذارد، دیدن کنند." %}
+            </p>
+            <p>
+                {% trans "گشت و گذار در خیابان چیکن فرصتی برای خرید فرش‌ها، صنایع دستی، سنگ‌های قیمتی و سوغاتی‌های سنتی افغان فراهم می‌کند. علاقه‌مندان به غذا می‌توانند از غذاهای محلی افغان مانند کابلی پلو، کباب و بولانی در رستوران‌های اصیل لذت ببرند." %}
+            </p>
+            <p>
+                {% trans "بازدیدکنندگان همچنین می‌توانند از پیاده‌روی‌های آرام در کنار دریاچه قرغه، صعود به تپه‌های اطراف کابل برای دید پانوراما، یا بازدید از مساجد محلی با معماری اسلامی منحصر به فرد لذت ببرند." %}
+            </p>
+            <p>
+                {% trans "برای تجربه فرهنگی عمیق‌تر، مسافران می‌توانند در اجراهای موسیقی سنتی شرکت کرده یا با صنعتگران محلی تعامل داشته باشند. عکاسی، کاوش تاریخی و تعامل فرهنگی از جمله فعالیت‌های پربار در کابل محسوب می‌شوند." %}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- Tips Before Visiting Kabul -->
+<div class="container mt-5">
+    <h5 class="mb-4">{% trans "چند نکته قبل از بازدید از کابل" %}</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{% trans "کابل ترکیبی از فرهنگ شهری و سنتی دارد — لباس متین و محترمانه بپوشید، به ویژه هنگام بازدید از مناطق محلی یا اماکن مذهبی." %}</li>
+        <li class="list-group-item">{% trans "بهتر است با راهنمای محلی یا شخصی آشنا به منطقه سفر کنید تا تجربه‌ای روان‌تر داشته باشید." %}</li>
+        <li class="list-group-item">{% trans "مدارک شناسایی معتبر همراه داشته و نسخه دیجیتال و چاپی آن‌ها را نگه دارید." %}</li>
+        <li class="list-group-item">{% trans "پس از تاریکی از مناطق جدا افتاده پرهیز کنید و از اخبار محلی یا اطلاعیه‌های دولت مطلع باشید." %}</li>
+        <li class="list-group-item">{% trans "چانه‌زنی در بازارهای محلی رایج است — هنگام خرید از مذاکره نترسید." %}</li>
+        <li class="list-group-item">{% trans "به ویژه در ماه‌های خشک تابستان، آب کافی بنوشید و در مورد نوشیدن آب بدون تصفیه محتاط باشید." %}</li>
+        <li class="list-group-item">{% trans "در صورت امکان از تاکسی‌های ثبت شده یا برنامه‌های حمل و نقل معتبر استفاده کنید." %}</li>
+        <li class="list-group-item">{% trans "چند عبارت ابتدایی به زبان دری یا پشتو یاد بگیرید — مردم محلی از آن قدردانی می‌کنند و اعتماد را سریع‌تر جلب می‌کند." %}</li>
+    </ul>
+</div>
+
+
+<!-- Kabul Map Section -->
+<div class="container mt-5">
+    <h4 class="mb-4">{% trans "نقشه کابل" %}</h4>
+    <div class="ratio ratio-16x9">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.7895917640183!2d69.16304741520994!3d34.528455580474914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d16eb6ec1408a3%3A0x6c0fcbf215f40c0b!2sKabul!5e0!3m2!1sen!2s!4v1719248624659!5m2!1sen!2s" 
+            width="100%" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+        
+<div class="row justify-content-center mt-5">
+    <div class="col-lg-6">
+        <div class="que-sec text-center">
+            <h4 class="mb-3">{% trans "سایر پرسش‌ها دارید؟" %}</h4>
+            <p class="mb-3">
+                {% trans "اگر پاسخ سوال خود را در بخش پرسش‌های متداول پیدا نکردید، همیشه می‌توانید با ما تماس بگیرید. ما به زودی پاسخ شما را خواهیم داد!" %}
+            </p>
+            <div class="d-flex justify-content-center">
+                <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
+                    {% trans "تماس با ما" %} <i class="isax isax-arrow-right-3 ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        
+
+    </div>
+</section>
+<!-- /Hero Section -->
+{% endblock %}
