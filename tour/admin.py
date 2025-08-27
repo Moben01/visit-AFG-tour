@@ -171,13 +171,4 @@ class WelcomePackageAdmin(admin.ModelAdmin):
 admin.site.register(Languages)
 admin.site.register(Translator)
 admin.site.register(SecurityGuard)
-
-
-
-
-
-
-
-
-
-
+admin.site.register(UserItineraryItem)

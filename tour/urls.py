@@ -23,5 +23,6 @@ urlpatterns = [
    path("welcome-package/<int:booking_id>/", views.welcome_package_detail, name="welcome_package_detail"),
 
    path('itenary_full_info/<int:id>/<int:booking_id>', views.itenary_full_info, name='itenary_full_info'),
+   path('edit_itinerary/<int:itienary_id>/<int:user_id>', views.edit_itinerary, name='edit_itinerary'),
 
 ]
