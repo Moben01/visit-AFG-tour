@@ -9,6 +9,7 @@ urlpatterns = [
     path('kabul_maping', views.kabul_maping, name='kabul_maping'),
 
     path('balkh', views.balkh, name='balkh'),
+    path('team/', views.team, name='team'),
     path('samangan', views.samangan, name='samangan'),
     path('jawzjan', views.jawzjan, name='jawzjan'),
     path('faryab', views.faryab, name='faryab'),

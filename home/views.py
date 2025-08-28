@@ -83,6 +83,4 @@ def favorite_user_tour(request):
 def rules_of_conduct(request):
     return render(request, 'home/rules_of_conduct.html')
 
-def team(request):
-    return render(request, 'home/team.html')
 

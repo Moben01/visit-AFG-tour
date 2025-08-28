@@ -404,3 +404,15 @@ def Ghor(request):
     find_best_places_in_this_province = Best_places_for_visit.objects.filter(provinces__icontains = "Ghor")
     places = Best_Selling.objects.prefetch_related('images').all() 
     return render(request, 'states/Ghor.html', {'get_tour_categories':get_tour_categories, 'find_best_places_in_this_province':find_best_places_in_this_province, 'find_things_to_do_in_this_province':find_things_to_do_in_this_province,'Popular_Tourist_in_the_province':Popular_Tourist_in_the_province,'places':places})
+
+
+
+
+
+
+
+
+
+
+def team(request):
+    return render(request, 'states/team.html')
