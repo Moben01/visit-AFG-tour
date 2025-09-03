@@ -95,9 +95,6 @@ def wellness_in_afg(request):
 
 
 
-def Itineraries(request):
-    get_tour_categories = TourCategory.objects.all()
-    return render(request, 'things_to_do/Itineraries.html',{'get_tour_categories':get_tour_categories})
 def Shopping(request):
     get_tour_categories = TourCategory.objects.all()
     return render(request, 'things_to_do/Shopping.html',{'get_tour_categories':get_tour_categories})
