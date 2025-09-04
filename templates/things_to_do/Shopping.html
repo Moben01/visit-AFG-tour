@@ -8,16 +8,7 @@
 <section class="hero-section shopping-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Traditional Markets">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Handcrafted Goods">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Local Bazaars">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Artisan Crafts">
+            <img src="{% static 'image_for_province/shopafg.jpg' %}" alt="Traditional Markets">
         </div>
     </div>
     <div class="container">
@@ -78,21 +69,21 @@
                 <div class="row">
                     <div class="col-md-4 mb-4">
                         <div class="category-card text-center">
-                            <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Afghan Carpets" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+                            <img src="{% static 'image_for_province/shop2.jpg' %}" alt="Afghan Carpets" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                             <h5>Handwoven Carpets</h5>
                             <p>World-famous Afghan rugs with traditional designs</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="category-card text-center">
-                            <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Afghan Jewelry" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+                            <img src="{% static 'image_for_province/shopgold.jpg' %}" alt="Afghan Jewelry" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                             <h5>Silver Jewelry</h5>
                             <p>Traditional Pashtun and Turkoman designs</p>
                         </div>
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="category-card text-center">
-                            <img src="{% static 'img/blog/blog-14.jpg' %}" alt="Afghan Spices" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
+                            <img src="{% static 'image_for_province/shop3.jpg' %}" alt="Afghan Spices" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
                             <h5>Spices & Saffron</h5>
                             <p>Herat's famous saffron and mountain spices</p>
                         </div>
@@ -104,76 +95,55 @@
 </section>
 
 <!-- Top Shopping Destinations -->
-<section class="section blog-section blog-section-four pt-0">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <div class="section-header section-header-four text-center">
-                    <h2 class="mb-2">Must-Visit Shopping Destinations</h2>
-                    <p class="sub-title">From ancient bazaars to modern markets, explore Afghanistan's shopping treasures</p>
+    <section class="section destination-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header text-center">
+                        <h2 class="mb-2">DISCOVER <span class="text-primary  text-decoration-underline">AFG MOST SHOPPING VIEW</span>  </h2>
+                        <p class="sub-title">Find the perfect cruise experience tailored to your unique interests and travel style.</p>
+                    </div>
                 </div>
+            </div>
+            <div class="owl-carousel cruise-slider nav-center wow fadeInUp">
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop4.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">Luxury Cruise</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop5.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">Adventure Cruise</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop6.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">Expedition Cruise</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop7.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">Family Cruise</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop8.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">River Cruises</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop9.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">World Cruises</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop0.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">Luxury Cruise</a></h6>
+                </div>
+                <div class="cruise-type">
+                    <img src="{% static 'image_for_province/afgshop10.jpg' %}" alt="img">
+                    <h6><a href="cruise-grid.html">Adventure Cruise</a></h6>
+                </div>
+            </div>
+            <div class="text-center view-all wow fadeInUp">
+                <a href="cruise-grid.html" class="btn btn-primary">More Categories<i class="isax isax-arrow-right-3 ms-2"></i></a>
             </div>
         </div>
-
-        <div class="row">
-            <!-- Chicken Street -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Chicken Street" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Kabul</span>
-                        <h5><a href="#">Chicken Street</a></h5>
-                        <p>Famous for carpets, antiques, and lapis lazuli</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Herat Bazaar -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Herat Bazaar" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Herat</span>
-                        <h5><a href="#">Herat Grand Bazaar</a></h5>
-                        <p>Traditional crafts and Persian-style pottery</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mazar Sharif -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Mazar Sharif" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Mazar Sharif</span>
-                        <h5><a href="#">Blue Mosque Market</a></h5>
-                        <p>Uzbek textiles and Turkmen jewelry</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kandahar -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Kandahar" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Kandahar</span>
-                        <h5><a href="#">Shahr-e-Naw Market</a></h5>
-                        <p>Traditional Pashtun clothing and handicrafts</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
 
 <!-- Shopping Tips -->
@@ -254,75 +224,85 @@
 
 
 <!-- Top Shopping Destinations -->
+<!-- Blog Section -->
 <section class="section blog-section blog-section-four pt-0">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <div class="section-header section-header-four text-center">
-                    <h2 class="mb-2">Afghan Shopping Gallery</h2>
-                    <p class="sub-title">From ancient bazaars to modern markets, explore Afghanistan's shopping treasures</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+        <div class="section-header section-header-four text-center">
+          <h2 class="mb-2"><span>Afghanistan shopgold</span> qallery</h2>
+          <p class="sub-title">Discover Afghanistan’s hidden gems, ancient sites, and modern cultural hotspots.</p>
         </div>
-
-        <div class="row">
-            <!-- Chicken Street -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Chicken Street" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Kabul</span>
-                        <h5><a href="#">Chicken Street</a></h5>
-                        <p>Famous for carpets, antiques, and lapis lazuli</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Herat Bazaar -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Herat Bazaar" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Herat</span>
-                        <h5><a href="#">Herat Grand Bazaar</a></h5>
-                        <p>Traditional crafts and Persian-style pottery</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mazar Sharif -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="Mazar Sharif" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Mazar Sharif</span>
-                        <h5><a href="#">Blue Mosque Market</a></h5>
-                        <p>Uzbek textiles and Turkmen jewelry</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kandahar -->
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
-                    <a href="#" class="blog-img">
-                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="Kandahar" class="img-fluid rounded">
-                    </a>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Kandahar</span>
-                        <h5><a href="#">Shahr-e-Naw Market</a></h5>
-                        <p>Traditional Pashtun clothing and handicrafts</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="blog-slider owl-carousel nav-center">
+      <!-- Blog Item-->
+      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+        <a href="blog-details.html" class="blog-img">
+          <img src="{% static 'image_for_province/shopgallrey.3.jpg' %}" alt="img">
+          
+        </a>
+        <div class="blog-date">
+          <h6>02<span class="d-block fs-14 fw-normal">Jul</span></h6>
+        </div>
+        <div class="blog-info text-center">
+          <span class="badge bg-primary mb-2">Heritage</span>
+          <h5><a href="blog-details.html">Kabul City Center shopping mall.</a></h5>
+        </div>
+      </div>
+      <!-- /Blog Item-->
+
+      <!-- Blog Item-->
+      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+        <a href="blog-details.html" class="blog-img">
+          <img src="{% static 'image_for_province/shopgallrey.4.jpg' %}" alt="img">
+        </a>
+        <div class="blog-date">
+          <h6>05<span class="d-block fs-14 fw-normal">Jul</span></h6>
+        </div>
+        <div class="blog-info text-center">
+          <span class="badge bg-primary mb-2">Culture</span>
+          <h5><a href="blog-details.html">Kabul’s Modern Art Scene: Where Past Meets Present</a></h5>
+        </div>
+      </div>
+      <!-- /Blog Item-->
+
+      <!-- Blog Item-->
+      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+        <a href="blog-details.html" class="blog-img">
+          <img src="{% static 'image_for_province/shopgallrey.5.jpg' %}" alt="img">
+        </a>
+        <div class="blog-date">
+          <h6>11<span class="d-block fs-14 fw-normal">Jul</span></h6>
+        </div>
+        <div class="blog-info text-center">
+          <span class="badge bg-primary mb-2">Nature</span>
+          <h5><a href="blog-details.html">The Untouched Beauty of Band-e Amir National Park</a></h5>
+        </div>
+      </div>
+      <!-- /Blog Item-->
+
+      <!-- Blog Item-->
+      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
+        <a href="blog-details.html" class="blog-img">
+          <img src="{% static 'image_for_province/shopgallrey.6.jpg' %}" alt="img">
+        </a>
+        <div class="blog-date">
+          <h6>14<span class="d-block fs-14 fw-normal">Jul</span></h6>
+        </div>
+        <div class="blog-info text-center">
+          <span class="badge bg-primary mb-2">Local Life</span>
+          <h5><a href="blog-details.html">Top Street Markets in Mazar-e-Sharif to Visit This Year</a></h5>
+        </div>
+      </div>
+      <!-- /Blog Item-->
+    </div>
+
+    <div class="text-center view-all wow fadeInUp">
+      <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+    </div>
+  </div>
 </section>
 
 
