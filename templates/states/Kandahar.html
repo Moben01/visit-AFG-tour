@@ -447,6 +447,7 @@ The best time to visit Kandahar is from October to April when temperatures are m
     <div class="d-flex gap-3">
       {% for i in find_things_to_do_in_this_province %}
         <div class="col-md-3 mb-4 flex-shrink-0">
+            <div id="howtoreach{{ i.id }}"></div>
           <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
             <a href="javascript:void(0)" class="location-img">
               <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
