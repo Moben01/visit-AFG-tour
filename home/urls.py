@@ -6,6 +6,7 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.home_view, name='home'),
+    path('bolg_seaction', views.bolg_seaction, name='bolg_seaction'),
   
 
 ]

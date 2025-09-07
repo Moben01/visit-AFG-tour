@@ -84,3 +84,8 @@ def rules_of_conduct(request):
     return render(request, 'home/rules_of_conduct.html')
 
 
+
+def bolg_seaction(request):
+    return render(request, 'home/bolg_seaction.html')
+
+

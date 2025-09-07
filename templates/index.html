@@ -202,94 +202,100 @@
 
 
     <!-- Destination Section -->
-    <section class="section destination-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-5 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="section-header section-header-four text-center">
-                        <h2 class="mb-2"><span>Popular</span> Provinces</h2>
-                        <p class="sub-title">Connecting Needs with Offers for the Professional Flight Services, Book your next flight appointment with ease.</p>
-                    </div>
+<section class="section destination-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header section-header-four text-center">
+                    <h2 class="mb-2"><span>Popular</span> Provinces</h2>
+                    <p class="sub-title">Connecting Needs with Offers for the Professional Flight Services, Book your next flight appointment with ease.</p>
                 </div>
-            </div>
-
-            <div class="row justify-content-center g-4">
-
-                <!-- Destination Item-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                      
-                        <span class="loc-name bg-white">Denmark</span>
-                        <img src="{% static 'image_for_province/kabul.jpeg' %}" alt="img">
-                        <span class="loc-name bg-white">Kabul</span>
-                        <a href="{% url 'states:kabul' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
-                <!-- Destination Item-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                        <img src="{% static 'image_for_province/bamyan2.jpg' %}" alt="img">
-                        <span class="loc-name bg-white">Bamyan</span>
-                        <a href="{% url 'states:bamyan' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
-                <!-- Destination Item-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                        <img src="{% static 'image_for_province/herat16.jpg' %}" alt="img">
-                        <span class="loc-name bg-white">Herat</span>
-                        <a href="{% url 'states:Herat' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
-                <!-- Destination Item-->
-                <div class="col-lg-3 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                        <img src="{% static 'image_for_province/balkh.jpeg' %}" alt="img">
-                        <span class="loc-name bg-white">Balkh</span>
-                        <a href="{% url 'states:balkh' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
-                <!-- Destination Item-->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                        <img src="{% static 'img/destination/Khogyani.jpg' %}" alt="img">
-                        <span class="loc-name bg-white">Nangarhar </span>
-                        <a href="{% url 'states:Nangarhar' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
-                <!-- Destination Item-->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                        <img src="{% static 'img/destination/Kandahar۱.jpg' %}" alt="img">
-                        <span class="loc-name bg-white">Kandahar </span>
-                        <a href="{% url 'states:Kandahar' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
-                <!-- Destination Item-->
-                <div class="col-lg-4 col-sm-6">
-                    <div class="location-wrap wow fadeInDown">
-                        <img src="{% static 'img/destination/Ghor1.jpg' %}" alt="img">
-                        <span class="loc-name bg-white">Ghor</span>
-                        <a href="{% url 'states:Ghor' %}" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-                    </div>
-                </div>
-                <!-- /Destination Item-->
-
             </div>
         </div>
-    </section>
+
+        <div class="row justify-content-center g-4">
+
+            <!-- Kabul -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/kabul.jpeg' %}" alt="Kabul" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Kabul</span>
+                    <a href="{% url 'states:kabul' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bamyan -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/bamyan2.jpg' %}" alt="Bamyan" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Bamyan</span>
+                    <a href="{% url 'states:bamyan' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Herat -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/herat16.jpg' %}" alt="Herat" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Herat</span>
+                    <a href="{% url 'states:Herat' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Balkh -->
+            <div class="col-lg-3 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/balkh.jpeg' %}" alt="Balkh" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Balkh</span>
+                    <a href="{% url 'states:balkh' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Nangarhar -->
+            <div class="col-lg-4 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/nangarharnew.jpg' %}" alt="Nangarhar" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Nangarhar</span>
+                    <a href="{% url 'states:Nangarhar' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Kandahar -->
+            <div class="col-lg-4 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/kandahar.jpg' %}" alt="Kandahar" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Kandahar</span>
+                    <a href="{% url 'states:Kandahar' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ghor -->
+            <div class="col-lg-4 col-sm-6">
+                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
+                    <img src="{% static 'image_for_province/ghorphoto.jpg' %}" alt="Ghor" class="img-fluid w-100" style="height:220px; object-fit:cover;">
+                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Ghor</span>
+                    <a href="{% url 'states:Ghor' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                        <i class="isax isax-arrow-right-1"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
     <!-- /Destination Section -->
 
     <!-- Client Section -->
