@@ -7,6 +7,7 @@ app_name = 'home'
 urlpatterns = [
     path('kabul', views.kabul, name='kabul'),
     path('kabul_maping', views.kabul_maping, name='kabul_maping'),
+    path('bolg_seaction', views.bolg_seaction, name='bolg_seaction'),
 
     path('balkh', views.balkh, name='balkh'),
     path('team/', views.team, name='team'),

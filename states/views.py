@@ -416,3 +416,8 @@ def Ghor(request):
 
 def team(request):
     return render(request, 'states/team.html')
+
+
+def bolg_seaction(request):
+    return render(request, 'home/bolg_seaction.html')
+
