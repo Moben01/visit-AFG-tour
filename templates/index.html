@@ -217,84 +217,128 @@
 
             <!-- Kabul -->
             <div class="col-lg-3 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/kabul.jpeg' %}" alt="Kabul" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Kabul</span>
-                    <a href="{% url 'states:kabul' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:kabul' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/kabul.jpeg' %}" alt="Kabul" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Kabul</span>
+                        <a href="{% url 'states:kabul' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
             <!-- Bamyan -->
             <div class="col-lg-3 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/bamyan2.jpg' %}" alt="Bamyan" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Bamyan</span>
-                    <a href="{% url 'states:bamyan' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:bamyan' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/bamyan2.jpg' %}" alt="Bamyan" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Bamyan</span>
+                        <a href="{% url 'states:bamyan' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
             <!-- Herat -->
             <div class="col-lg-3 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/herat16.jpg' %}" alt="Herat" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Herat</span>
-                    <a href="{% url 'states:Herat' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:Herat' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/herat16.jpg' %}" alt="Herat" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Herat</span>
+                        <a href="{% url 'states:Herat' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
             <!-- Balkh -->
             <div class="col-lg-3 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/balkh.jpeg' %}" alt="Balkh" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Balkh</span>
-                    <a href="{% url 'states:balkh' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:balkh' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/balkh.jpeg' %}" alt="Balkh" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Balkh</span>
+                        <a href="{% url 'states:balkh' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
             <!-- Nangarhar -->
             <div class="col-lg-4 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/nangrher.jpeg' %}" alt="Nangarhar" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Nangarhar</span>
-                    <a href="{% url 'states:Nangarhar' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:Nangarhar' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/nangrher.jpeg' %}" alt="Nangarhar" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Nangarhar</span>
+                        <a href="{% url 'states:Nangarhar' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
             <!-- Kandahar -->
             <div class="col-lg-4 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/kandher.jpg' %}" alt="Kandahar" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Kandahar</span>
-                    <a href="{% url 'states:Kandahar' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:Kandahar' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/kandher.jpg' %}" alt="Kandahar" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Kandahar</span>
+                        <a href="{% url 'states:Kandahar' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
             <!-- Ghor -->
             <div class="col-lg-4 col-sm-6">
-                <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown">
-                    <img src="{% static 'image_for_province/ghor.jpeg' %}" alt="Ghor" class="img-fluid w-100" style="height:220px; object-fit:cover;">
-                    <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Ghor</span>
-                    <a href="{% url 'states:Ghor' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
-                        <i class="isax isax-arrow-right-1"></i>
-                    </a>
-                </div>
+                <a href="{% url 'states:Ghor' %}" class="text-decoration-none">
+                    <div class="position-relative overflow-hidden rounded shadow-sm wow fadeInDown"
+                         style="transition: transform 0.5s ease; cursor:pointer;"
+                         onmouseover="this.querySelector('img').style.transform='scale(1.1)';"
+                         onmouseout="this.querySelector('img').style.transform='scale(1)';">
+                        <img src="{% static 'image_for_province/ghor.jpeg' %}" alt="Ghor" class="img-fluid w-100"
+                             style="height:220px; object-fit:cover; transition: transform 0.5s ease;">
+                        <span class="position-absolute bottom-0 start-0 mb-2 ms-2 px-2 py-1 bg-white rounded fw-bold small">Ghor</span>
+                        <a href="{% url 'states:Ghor' %}" class="position-absolute top-0 end-0 mt-2 me-2 bg-white rounded-circle d-flex align-items-center justify-content-center p-2">
+                            <i class="isax isax-arrow-right-1"></i>
+                        </a>
+                    </div>
+                </a>
             </div>
 
         </div>
     </div>
 </section>
+
+
 
     <!-- /Destination Section -->
 
