@@ -2,13 +2,41 @@
 {% block content %}
 {% load static %}
 
+<head>
+  ...
+  <style>
+    .destination-img img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .destination-content {
+        padding: 15px;
+    }
+
+    .destination-btn a {
+        color: #fff;
+        background-color: #007bff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    .destination-btn a:hover {
+        background-color: #0056b3;
+    }
+  </style>
+  ...
+</head>
 
 
 <!-- Experiences Hero Section -->
 <section class="hero-section experiences-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Afghan Adventures">
+            <img src="{% static 'img/destination/destination-88_8.JPG' %}" alt="Afghan Adventures">
         </div>
         <div class="slider-img">
             <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Mountain Trekking">
@@ -104,7 +132,7 @@
       <div class="col-lg-3 col-md-6 col-12">
         <div class="destination-set wow fadeInUp">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-07.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-07.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Buzkashi Match</h5>
@@ -116,7 +144,7 @@
         </div>
         <div class="destination-set wow fadeInDown">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-08.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-08.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Kabul Street Food</h5>
@@ -132,7 +160,7 @@
       <div class="col-lg-3 col-md-6 col-12">
         <div class="destination-set wow fadeInUp">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-09.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-09.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Hiking in Bamyan</h5>
@@ -144,7 +172,7 @@
         </div>
         <div class="destination-set wow fadeInDown">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-10.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-10.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Visit Herat Citadel</h5>
@@ -160,7 +188,7 @@
       <div class="col-lg-3 col-md-6 col-12">
         <div class="destination-set wow fadeInUp">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-11.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-11.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Afghan Handicrafts</h5>
@@ -172,7 +200,7 @@
         </div>
         <div class="destination-set wow fadeInDown">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-12.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-12.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Camp in Wakhan</h5>
@@ -188,7 +216,7 @@
       <div class="col-lg-3 col-md-6 col-12">
         <div class="destination-set wow fadeInUp">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-13.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-13_33.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Kite Flying Festival</h5>
@@ -200,7 +228,7 @@
         </div>
         <div class="destination-set wow fadeInDown">
           <div class="destination-img">
-            <img src="{% static 'img/destination/destination-14.jpg' %}" alt="Img">
+            <img src="{% static 'img/destination/destination-13_00.JPG' %}" alt="Img">
           </div>
           <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
             <h5 class="text-white fs-20 fw-semibold mb-1">Attend Nowruz</h5>
@@ -431,7 +459,7 @@
 </section>
 
       
-    <section class="section blog-section blog-section-four pt-0">
+    <!-- <section class="section blog-section blog-section-four pt-0">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
@@ -444,11 +472,11 @@
             </div>
           </div>
       
-          <!-- Grid blog layout -->
-          <div class="row">
+          Grid blog layout -->
+          <!-- <div class="row"> -->
       
             <!-- Blog Item 1 -->
-            <div class="col-md-6 col-lg-3 mb-4">
+            <!-- <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
                 <a href="blog-details.html" class="blog-img">
                   <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
@@ -463,10 +491,10 @@
                   </a></h5>
                 </div>
               </div>
-            </div>
+            </div> -->
       
             <!-- Blog Item 2 -->
-            <div class="col-md-6 col-lg-3 mb-4">
+            <!-- <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
                 <a href="blog-details.html" class="blog-img">
                   <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
@@ -481,10 +509,10 @@
                   </a></h5>
                 </div>
               </div>
-            </div>
+            </div> -->
       
             <!-- Blog Item 3 (duplicate of blog-12.jpg) -->
-            <div class="col-md-6 col-lg-3 mb-4">
+            <!-- <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
                 <a href="blog-details.html" class="blog-img">
                   <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
@@ -499,10 +527,10 @@
                   </a></h5>
                 </div>
               </div>
-            </div>
+            </div> -->
       
             <!-- Blog Item 4 (duplicate of blog-13.jpg) -->
-            <div class="col-md-6 col-lg-3 mb-4">
+            <!-- <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
                 <a href="blog-details.html" class="blog-img">
                   <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
@@ -525,7 +553,7 @@
             <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
           </div>
         </div>
-      </section>
+      </section>  -->
       
       
 
@@ -583,111 +611,14 @@
       
           </div>
         </div>
-      </section>
+     
       
       
 
 
-    <section class="section blog-section blog-section-four pt-0">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <div class="section-header section-header-four  text-center">
-                        <h2 class="mb-2">Keep exploring</h2>
-                        <p class="sub-title">
-                            Whether you're journeying through Afghanistan’s ancient cities, discovering hidden cultural gems, or connecting with its warm and welcoming people, 
-                            there’s always more to explore in this land of history and heart.
-                          </p>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-slider owl-carousel nav-center owl-loaded owl-drag">
+   
+            
 
-                <!-- Blog Item-->
-                
-                <!-- /Blog Item-->
-
-                <!-- Blog Item-->
-                
-                <!-- /Blog Item-->
-
-                <!-- Blog Item-->
-                
-                <!-- /Blog Item-->
-
-                <!-- Blog Item-->
-                
-                <!-- /Blog Item-->
-
-            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2640px, 0px, 0px); transition: 2s; width: 4400px;"><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                    </div>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Work remotely programme</span>
-                        <h5><a href="blog-details.html">Do you want to mix business with pleasure in Afghanistan? With a new one-year virtual working programme, you can live and work by the beach.
-                        </a></h5>
-                    </div>
-                </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                    </div>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Residency for investors and entrepreneurs                        </span>
-                        <h5><a href="blog-details.html">If you wish to open a business or invest in property in Afghanistan, you can apply for five and ten-year residency visas, with a possibility to also bring your business partners and family.                        </a></h5>
-                    </div>
-                </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-14.jpg' %}" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>10<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                    </div>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Residency for specialist talent                        </span>
-                        <h5><a href="blog-details.html">If you are a specialist in fields of science, medicine, sport, culture, or art, Afghanistan offers growing opportunities and state-of-the-art facilities to grow your talent. Apply for this ten-year visa and reach your potential.
-                        </a></h5>
-                    </div>
-                </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-11.jpg' %}" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>10<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                    </div>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Residency for outstanding students
-
-                        </span>
-                        <h5><a href="blog-details.html">Afghanistan's cutting-edge research and facilities attract the brightest minds from around the world. Explore the five and ten-year visas supporting exceptional student talent.                        </a></h5>
-                    </div>
-                </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img">
-                    </a>
-                    <div class="blog-date">
-                        <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                    </div>
-                    <div class="blog-info text-center">
-                        <span class="badge bg-primary mb-2">Residency for retirees
-
-                        </span>
-                        <h5><a href="blog-details.html">Start your next chapter and make the most of your freedom in one of the world’s most connected, dynamic, and safest cities with Afghanistan's Golden Retirement Visa.
-                        </a></h5>
-                    </div>
-                </div></div>
-            </div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button></div><div class="owl-dots disabled"></div></div>
-            <div class="text-center view-all wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
-            </div>
-        </div>
-    </section>
 
 
 
