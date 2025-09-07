@@ -27,6 +27,19 @@
     .destination-btn a:hover {
         background-color: #0056b3;
     }
+    .location-wrap img {
+  width: 100%;
+  height: 250px;   /* ارتفاع یکسان */
+  object-fit: cover;  /* عکس بدون کشیدگی */
+  border-radius: 12px; /* گوشه‌های نرم */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* سایه زیبا */
+  transition: transform 0.3s ease-in-out;
+}
+
+.location-wrap img:hover {
+  transform: scale(1.05); /* افکت بزرگ شدن هنگام hover */
+}
+
   </style>
   ...
 </head>
@@ -282,7 +295,7 @@
             <div class="d-flex align-items-center justify-content-between">
               <div class="d-flex align-items-center">
                 <a href="javascript:void(0);" class="avatar avatar-md flex-shrink-0 me-2">
-                  <img src="assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                  <img src="{assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
                 </a>
                 <h6 class="fs-16 fw-normal">
                   <a href="javascript:void(0);">Fatima Safi</a>
@@ -318,7 +331,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center">
                     <a href="javascript:void(0);" class="avatar avatar-md flex-shrink-0 me-2">
-                      <img src="assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                      <img src="{assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
                     </a>
                     <h6 class="fs-16 fw-normal">
                       <a href="javascript:void(0);">Ahmad Jan</a>
@@ -353,7 +366,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                   <div class="d-flex align-items-center">
                     <a href="javascript:void(0);" class="avatar avatar-md flex-shrink-0 me-2">
-                      <img src="assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
+                      <img src="{assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
                     </a>
                     <h6 class="fs-16 fw-normal">
                       <a href="javascript:void(0);">Laila Wardak</a>
@@ -389,7 +402,7 @@
 
     <div class="row justify-content-center g-4">
 
-      <!-- Activity Item -->
+      <!-- Kabul Fitness Center -->
       <div class="col-lg-3 col-sm-6">
         <div class="location-wrap wow fadeInDown">
           <img src="{% static 'img/destination/destination-15_99.JPG' %}" alt="Kabul Gym">
@@ -398,16 +411,7 @@
         </div>
       </div>
 
-      <!-- Activity Item -->
-      <div class="col-lg-3 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-16.jpg' %}" alt="Herat Spa">
-          <span class="loc-name bg-white">Herat Relax Spa</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
-
-      <!-- Activity Item -->
+      <!-- Mazar Museum -->
       <div class="col-lg-3 col-sm-6">
         <div class="location-wrap wow fadeInDown">
           <img src="{% static 'img/destination/destination-17_77.JPG' %}" alt="Mazar Museum">
@@ -416,45 +420,25 @@
         </div>
       </div>
 
-      <!-- Activity Item -->
-      <div class="col-lg-3 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-18.jpg' %}" alt="Kandahar Bowling">
-          <span class="loc-name bg-white">Kandahar Bowling Club</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
-
-      <!-- Activity Item -->
+      <!-- Bamyan Public Library -->
       <div class="col-lg-4 col-sm-6">
         <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-19.jpg' %}" alt="Bamyan Library">
-          <span class="loc-name bg-white">Bamyan Public Library</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
-
-      <!-- Activity Item -->
-      <div class="col-lg-4 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-20.jpg' %}" alt="Indoor Sports Arena">
+          <img src="{% static 'img/destination/destination-20_90.JPG' %}" alt="Indoor Sports Arena">
           <span class="loc-name bg-white">Jalalabad Indoor Arena</span>
           <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
         </div>
       </div>
 
-      <!-- Activity Item -->
-      <div class="col-lg-4 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-21.jpg' %}" alt="Yoga Kabul">
-          <span class="loc-name bg-white">Kabul Yoga Studio</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
+      <!-- Jalalabad Indoor Arena -->
+     
+     
+      <!-- Kabul Yoga Studio -->
+      
 
     </div>
   </div>
 </section>
+
 
       
     <!-- <section class="section blog-section blog-section-four pt-0">
