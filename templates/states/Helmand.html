@@ -2,11 +2,12 @@
 {% block content %}
 {% load static %}
 
-<!-- Hero Section -->
-<section class="hero-section">
+
+<!-- Arts & Culture Hero Section -->
+<section class="hero-section culture-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'state-image/helmand/94116a86-f712-45b0-a2eb-e19ca65a71e4.jpeg' %}" alt="Img">
+            <img src="{% static 'img/banner/banner-22.jpg' %}" alt="Afghan Culture">
         </div>
 
     </div>
@@ -14,100 +15,34 @@
         <div class="hero-content">
             <div class="row align-items-center">
                 <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="banner-content mx-auto">
-                        <h1 class="text-white display-5 mb-2"><span>Helmand Tourism</span> </h1>
-                        <p class="text-light mt-3">
-                            Helmand is a historically rich province in southern Afghanistan, known for its ancient sites,
-                            fertile agricultural lands along the Helmand River, and unique desert landscapes. It offers
-                            a glimpse into Afghanistan's ancient civilizations and traditional rural life.
-                        </p>
-
+                    <div class="banner-content mx-auto text-center">
+                        <h1 class="text-white display-4 mb-3"><span>Afghan Cultural Heritage</span></h1>
+                        <h4 class="text-light mx-auto mb-4">Discover the vibrant tapestry of traditions that define Afghanistan's diverse cultural legacy across centuries</h4>
                     </div>
-                    <div class="container my-5">
-
-                        <!-- Festivals Cards -->
-                        <div class="row justify-content-center mb-4">
-                            <!-- Festival 1: Nowruz -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card banner-form mb-3">
-                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
-                                        data-wow-delay="0.1s">
-                                        <div class="card-body text-center">
-                                            <h5 class="mb-1">Nowruz Festival</h5>
-                                            <p>Celebrated along the Helmand River with traditional meals and family gatherings in Lashkargah.</p>
+                    
+                    <div class="container my-4">
+                        <!-- Culture Overview Card -->
+                        <div class="row justify-content-center mb-5">
+                            <div class="col-lg-8">
+                           
+                                    <div class="card-body p-4 text-center">
+                                        <div class="culture-icon mb-3">
+                                            <i class="fas fa-landmark fa-3x text-primary"></i>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Festival 2: Pomegranate Festival -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card banner-form mb-3">
-                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
-                                        data-wow-delay="0.2s">
-                                        <div class="card-body text-center">
-                                            <h5 class="mb-1">Pomegranate Harvest</h5>
-                                            <p>Helmand is famous for its sweet pomegranates, celebrated with local markets and harvest events.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Festival 3: Handicrafts -->
-                            <div class="col-lg-4 col-md-6">
-                                <div class="card banner-form mb-3">
-                                    <div class="card border-secondary shadow-none bg-secondary-transparent wow fadeInDown"
-                                        data-wow-delay="0.3s">
-                                        <div class="card-body text-center">
-                                            <h5 class="mb-1">Traditional Handicrafts</h5>
-                                            <p>Discover local pottery, woven textiles, and handmade carpets in Helmand's villages.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                              
                             </div>
                         </div>
 
-                        <!-- Hotel Types Grid -->
-                        <div class="row text-center justify-content-center">
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#overview">Overview</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#besttimetovisit">Best Time to Visit</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3" id="overview">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#howtoreach">How to Reach</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#palcetovisit">Places to Visit</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#thingstodo">Things to Do</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#packages">Packages</a></h6>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
-                                <div class="hotel-type-item">
-                                    <h6 class="fs-16 fw-medium"><a href="#map">Map</a></h6>
-                                </div>
-                            </div>
+                   
+                        
+                        <!-- View More Button -->
+                        <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
+                            <a href="culture-listings.html" class="btn btn-primary btn-lg px-4">
+                                <i class="fas fa-landmark me-2"></i> Discover More Cultural Treasures
+                            </a>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -115,673 +50,619 @@
 </section>
 
 
-<section class="section destination-section">
+    <!-- /Breadcrumb -->
+
+  <!-- /Page Wrapper -->
+
+<section class="banner-search-four my-5">
     <div class="container">
-        <h4 class="mb-2">About Helmand Tourism</h4>
-        <p class="mb-1">Helmand is a province of historical significance and agricultural abundance, known for its ancient ruins, fertile river valleys, and traditional Pashtun culture. From the remnants of ancient civilizations to the flowing waters of the Helmand River, this southern province offers a unique perspective on Afghanistan's heritage.</p>
+      <div class="card">
+        <div class="card-header">
+          <h4>Traditions and Culture of Afghanistan</h4>
+        </div>
+        <div class="card-body">
+          <ul class="mb-3">
+            <li>Traditional Afghan clothing such as <em>Perahan Tunban</em> and <em>Chador</em></li>
+            <li>Afghan music featuring instruments like the <em>rubab</em> and <em>dambura</em></li>
+            <li>Afghan cuisine, including famous dishes like <em>Kabuli Pulao</em> and <em>Mantu</em></li>
+            <li><em>Nowruz</em> (Persian New Year), widely celebrated as a cultural festival</li>
+            <li>Handwoven Afghan carpets and embroidery known for their intricate designs</li>
+            <li>Hospitality and tea culture as central parts of Afghan social life</li>
+            <li>Rich storytelling tradition, poetry (especially of Rumi and Khushal Khan Khattak)</li>
+            <li>Diverse ethnic traditions from Pashtun, Tajik, Hazara, Uzbek, and other groups</li>
+          </ul>
+          <p>Afghanistan’s culture is a vibrant blend of history, tradition, and diversity shaped over thousands of years. Despite modern challenges, its people proudly preserve their customs, languages, and arts across generations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+      
 
-<h4 class="mb-3 mt-3">Historical Treasures: Ancient Cities and Archaeological Sites</h4>
-<p class="mb-1">
-Helmand is home to several important archaeological sites, including the ancient city of Bost with its famous Qala-e-Bost fortress. The province was once part of the Achaemenid Empire and later the Greco-Bactrian Kingdom, leaving behind ruins that tell stories of civilizations past. The Helmand River valley contains numerous unexcavated mounds that likely hold further archaeological treasures.
-</p>
-
-<h4 class="mb-3 mt-3">Agricultural Heartland: The Helmand River Valley</h4>
-<p class="mb-1">
-The Helmand River, Afghanistan's longest river, creates a fertile valley that supports extensive agriculture. Known as the breadbasket of Afghanistan, Helmand produces wheat, cotton, and its famous pomegranates. Traditional irrigation systems (karez) demonstrate ancient water management techniques still in use today.
-</p>
-
-<h4 class="mb-3 mt-3">Desert Landscapes and Unique Ecosystems</h4>
-<p class="mb-1">
-Beyond the river valley, Helmand features dramatic desert landscapes including parts of the Registan Desert. The province contains diverse ecosystems from wetlands along the river to arid desert regions, supporting unique wildlife adapted to these environments.
-</p>
-
-<h4 class="mb-3 mt-3">Traditional Pashtun Culture and Hospitality</h4>
-<p class="mb-1">
-Helmand is predominantly Pashtun, with strong tribal traditions and a rich cultural heritage. Visitors can experience traditional hospitality, tribal jirgas (assemblies), and the famous Pashtun code of honor (Pashtunwali). The province maintains traditional crafts, music, and storytelling traditions.
-</p>
-
-<h4 class="mb-3 mt-3">Local Markets and Handicrafts</h4>
-<p class="mb-1">
-Lashkargah's markets offer traditional handicrafts including intricate embroidery, hand-woven carpets, and pottery. The province is particularly known for its melons and pomegranates, which are celebrated in seasonal festivals. Local bazaars provide insight into daily life and traditional commerce.
-</p>
-
-<h4 class="mb-3 mt-3">Traditional Helmandi Cuisine</h4>
-<p class="mb-1">
-Helmand's cuisine features dishes like Landi (dried meat), Shorwa (meat soup), and various rice dishes. The province is famous for its pomegranate-based dishes and sauces. Traditional bread baking in clay ovens (tandoors) is a common sight in villages.
-</p>
-
-<h4 class="mb-3 mt-3">Simple Accommodations with Traditional Charm</h4>
-<p class="mb-1">
-While Helmand doesn't have luxury hotels, visitors can experience traditional guesthouses (hujras) that offer authentic Pashtun hospitality. These accommodations provide basic comforts and opportunities to experience local culture firsthand.
-</p>
-
-<h4 class="mb-3 mt-3">Exploring the Helmand River and Canals</h4>
-<p class="mb-1">
-The extensive network of canals branching from the Helmand River offers opportunities for exploration. Traditional wooden boats (jelas) are still used for transportation in some areas. The river supports diverse birdlife, making it interesting for nature observation.
-</p>
-
-<h4 class="mb-3 mt-3">Historical and Cultural Sites</h4>
-<p class="mb-1">
-Key sites include the ancient Buddhist complex at Qala-e-Bost, the ruins of the medieval city of Bost, and numerous historical mosques and shrines. The province's history reflects the various empires that have controlled this strategic region.
-</p>
-
-<h4 class="mb-3 mt-3">Top 10 Places to Visit in Helmand</h4>
-<div class="mb-4">
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Qala-e-Bost</strong> — Ancient fortress with impressive arch near Lashkargah</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Lashkargah</strong> — Provincial capital on the Helmand River</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Helmand River Valley</strong> — Fertile agricultural region with traditional villages</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Bost Airport</strong> — Historic airfield with military history</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Girishk</strong> — Historic town on the Helmand River</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Kajaki Dam</strong> — Major hydroelectric project on the Helmand River</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Nad Ali</strong> — Agricultural district known for pomegranates</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Registan Desert</strong> — Southern desert region with unique landscapes</p>
-    <p class="mb-1"><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Bost University</strong> — Center of education in the province</p>
-    <p><i class="ti ti-square-rotated-filled text-primary me-2"></i> <strong>Local Bazaars</strong> — Traditional markets in Lashkargah and district centers</p>
-</div>
-
-<h4 class="mb-3 mt-3">Best Time for Visiting Helmand</h4>
-<p class="mb-1">
-The best time to visit Helmand is during the cooler months from October to April, when temperatures are more moderate. Spring (March-April) is particularly pleasant with blooming flowers and comfortable temperatures. Summers can be extremely hot, especially in desert areas.
-</p>
-
-<h4 class="mb-3 mt-3">A Quick Information About Helmand</h4>
-<div style="overflow-x:auto;">
-    <table class="table table-bordered" style="min-width: 700px;">
-        <tbody>
-            <tr>
-                <th>Region</th>
-                <td>Southern Afghanistan</td>
-            </tr>
-            <tr>
-                <th>Capital of Province</th>
-                <td>Lashkargah</td>
-            </tr>
-            <tr>
-                <th>Coordinates</th>
-                <td>31.5833° N, 64.3667° E</td>
-            </tr>
-            <tr>
-                <th>Estimated Population</th>
-                <td>Approximately 1.4 million (2021 estimate)</td>
-            </tr>
-            <tr>
-                <th>Geographical Area</th>
-                <td>About 58,584 square kilometers</td>
-            </tr>
-            <tr>
-                <th>Districts in Helmand Province</th>
-                <td>14 districts</td>
-            </tr>
-            <tr>
-                <th>Major Religions</th>
-                <td>Islam (primarily Sunni)</td>
-            </tr>
-            <tr>
-                <th>Ethnic Groups</th>
-                <td>Predominantly Pashtun, with Baloch and Tajik minorities</td>
-            </tr>
-            <tr>
-                <th>Languages Spoken</th>
-                <td>Pashto (primary), Dari</td>
-            </tr>
-            <tr>
-                <th>Province Animal Symbol</th>
-                <td>Camel (symbolic of desert regions)</td>
-            </tr>
-            <tr>
-                <th>Province Flower</th>
-                <td>Pomegranate Blossom</td>
-            </tr>
-            <tr>
-                <th>Province Bird</th>
-                <td>Desert Eagle Owl</td>
-            </tr>
-            <tr id="packages">
-                <th>Province Tree</th>
-                <td>Date Palm</td>
-            </tr>
-            <tr>
-                <th>Traditional Dance</th>
-                <td>Attan (Pashtun traditional dance)</td>
-            </tr>
-            <tr>
-                <th>Popular Sports</th>
-                <td>Buzkashi, Wrestling</td>
-            </tr>
-            <tr>
-                <th>Major Tourist Areas</th>
-                <td>Qala-e-Bost, Lashkargah, Helmand River Valley</td>
-            </tr>
-            <tr>
-                <th>Major Attractions</th>
-                <td>Ancient ruins, agricultural landscapes, traditional bazaars, desert scenery</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-  <h4 class="mb-4 mt-4">Best Selling in Helmand</h4>
-                <div class="row">
-                    {% for item in places %}
-                        <div class="col-md-3 mb-4">
-                            <div class="location-item">
-                                <a href="#" class="location-img">
-                                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                                    <div class="location-name">
-                                        <h5 class="mb-1">{{ item.title }}</h5>
-                                        <p>({{ item.location }})</p>
-                                    </div>
-                                </a>
-
-                                <!-- تصاویر اضافی Best Selling -->
-                                <div class="additional-images mt-2">
-                                    {% for img in item.images.all %}
-                                        <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="img-fluid mb-1">
-                                        {% if img.caption %}
-                                            <p class="fs-14">{{ img.caption }}</p>
-                                        {% endif %}
-                                    {% endfor %}
-                                </div>
-
-                                <div class="location-info d-flex align-items-center justify-content-between">
-                                    <div>
-                                        <h6 class="fw-medium mb-1">{{ item.description }}</h6>
-                                    </div>
-                                    <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-
-
-
-
-<div class="container my-5" id="palcetovisit">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="mb-0">Best Time to Visit Helmand</h4>
-        <a href="#" class="btn btn-outline-primary btn-sm">View more</a>
+<section class="py-5">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-10 text-center">
+        <h2 class="display-5 fw-bold mb-3 wow fadeInUp">Afghanistan’s Arts & Culture — A Concise, Lively Overview</h2>
+        <p class="lead text-muted wow fadeIn" data-wow-delay="0.2s">
+          Afghanistan’s culture sits at the crossroads of Central, South, and West Asia. For millennia, caravans, scholars, and artisans moved along the Silk Roads through Balkh, Herat, Ghazni, and Kabul—blending influences from Persian, Turkic, Indian, Arab, and Greek worlds. The result is a rich mosaic of languages (Dari, Pashto, Uzbeki, Turkmeni, Hazaragi, Nuristani, Baluchi), faith traditions, and artistic styles that feel both ancient and alive.
+        </p>
+      </div>
     </div>
 
-    <div class="row g-3">
-        <!-- Winter -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-primary">Winter Season in Helmand</h5>
-                    <p class="mb-2"><strong>Months:</strong> November to February</p>
-                    <p class="mb-2"><strong>Temperature:</strong> 5°C to 20°C</p>
-                    <p class="card-text">Mild days and cool nights make winter ideal for exploring archaeological sites and the river valley without extreme heat.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Spring -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-success">Spring Season in Helmand</h5>
-                    <p class="mb-2"><strong>Months:</strong> March to May</p>
-                    <p class="mb-2"><strong>Temperature:</strong> 15°C to 30°C</p>
-                    <p class="card-text">Spring brings blooming flowers and comfortable temperatures before the summer heat, perfect for outdoor activities.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Autumn -->
-        <div class="col-md-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title text-warning">Autumn Season in Helmand</h5>
-                    <p class="mb-2"><strong>Months:</strong> September to October</p>
-                    <p class="mb-2"><strong>Temperature:</strong> 20°C to 35°C</p>
-                    <p class="card-text">Harvest season offers colorful landscapes and cultural events, with temperatures cooling from summer highs.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Visual Arts & Architecture -->
+    <div class="row align-items-center mb-5 wow fadeInUp">
+      <div class="col-lg-6">
+        <img src="{% static 'image_for_province/thenew.webp' %}" alt="Visual Arts & Architecture" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 ps-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-landmark text-primary me-2"></i> Visual Arts & Architecture</h3>
+        <h5 class="fw-bold text-primary mb-2">Ancient to Islamic Eras</h5>
+        <p>From the Buddhist masterpieces of Bamiyan and Gandharan sculpture to the Timurid brilliance of 15th-century Herat, Afghan art spans stone, stucco, and dazzling glazed tile.</p>
+        <h5 class="fw-bold text-primary mb-2">Signature Monuments</h5>
+        <p>The Minaret of Jam’s brick calligraphy, Herat’s Friday Mosque, and Mazar-i-Sharif’s Blue Mosque with shimmering faience reflect refined craft and urban life.</p>
+        <h5 class="fw-bold text-primary mb-2">Calligraphy & Miniature</h5>
+        <p>Qur’anic calligraphy and Persianate miniatures flourished in Herat’s ateliers, blending script, geometry, and color.</p>
+        <h5 class="fw-bold text-primary mb-2">Materials</h5>
+        <p>Lapis lazuli from Badakhshan colored manuscripts and European paintings alike; onyx, carnelian, and jade accent jewelry and inlay work.</p>
+      </div>
     </div>
-</div>
 
-<h4 class="mb-4 mt-4">Best Places to Visit in Helmand</h4>
-
-   <div class="row">
-                {% for i in find_best_places_in_this_province %}
-                    <div class="col-md-3 mb-4">
-                        <div class="location-item">
-                            <a href="#" class="location-img">
-                                <img src="{{ i.image.url }}" alt="{{ i.title }}">
-                                <div class="location-name">
-                                    <h5 class="mb-1">{{ i.title }}</h5>
-                                    <p>({{ i.location }})</p>
-                                </div>
-                            </a>
-                            <div class="location-info d-flex align-items-center justify-content-between">
-                                <div>
-                                    <h6 class="fw-medium mb-1">{{ i.description }}</h6>
-                                    <p class="fs-14"><span class="text-primary">${{ i.start_price }}</span></p>
-                                </div>
-                                <a href="#" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-
-
-   
-
-
-<h4 class="mb-4 mt-4">Popular Tourist Attractions in Helmand</h4>
-
-
-<div class="container">
-    <div class="d-flex overflow-auto pb-3" style="gap: 1rem;">
-        {% for place in Popular_Tourist_in_the_province %}
-        <div class="card shadow-sm" style="min-width: 250px; max-width: 250px; flex: 0 0 auto;">
-            <!-- Image (click to open modal) -->
-            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}">
-                <img src="{{ place.image.url }}" class="card-img-top" alt="{{ place.title }}"
-                     style="height: 160px; object-fit: cover;">
-            </a>
-
-            <!-- Body -->
-            <div class="card-body">
-                <h6 class="card-title two-line-ellipsis mb-2">{{ place.title }}</h6>
-                <p class="card-text text-muted small mb-2">
-                    {{ place.description|truncatewords:12 }}
-                </p>
-                <div class="d-flex align-items-center justify-content-between">
-                    <span class="badge bg-primary">{{ place.location }}</span>
-                    <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#placeModal{{ place.id }}"
-                       class="btn btn-sm btn-outline-primary">
-                        <i class="isax isax-arrow-right-3"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal for each place -->
-        <div class="modal fade" id="placeModal{{ place.id }}" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content rounded-3 shadow">
-                    <div class="modal-header">
-                        <h5 class="modal-title">{{ place.title }} - {{ place.location }}</h5>  
-                        <span class="badge bg-primary ms-2">{{ place.provinces|join:", " }}</span>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <!-- Main image preview -->
-                        <div class="d-flex justify-content-center mb-3">
-                            <img id="mainImage{{ place.id }}" src="{{ place.image.url }}" 
-                                 style="max-width: 309px;" class="img-fluid rounded border" alt="{{ place.title }}">
-                        </div>
-
-                        <!-- Small images -->
-                        <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
-                            <!-- Main image as thumbnail -->
-                            <img src="{{ place.image.url }}" 
-                                 class="img-fluid rounded border small-img"
-                                 style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
-                                 alt="{{ place.title }}"
-                                 onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
-
-                            <!-- Extra images from Popular_Tourist_images -->
-                            {% for img in place.images.all %}
-                                <img src="{{ img.image.url }}" 
-                                     class="img-fluid rounded border small-img"
-                                     style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
-                                     alt="{{ img.caption }}"
-                                     onclick="document.getElementById('mainImage{{ place.id }}').src=this.src">
-                            {% endfor %}
-                        </div>
-
-                        <!-- Description -->
-                        <p>{{ place.description }}</p>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {% empty %}
-        <p class="text-center text-muted">No tourist attractions found in this province.</p>
-        {% endfor %}
+    <!-- Textiles & Crafts -->
+    <div class="row align-items-center mb-5 wow fadeInUp flex-lg-row-reverse" data-wow-delay="0.2s">
+      <div class="col-lg-6">
+        <img src="{% static 'image_for_province/newimage.jpg' %}" alt="Textiles & Crafts" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 pe-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-tshirt text-success me-2"></i> Textiles & Crafts</h3>
+        <ul class="list-unstyled">
+          <li class="mb-3">
+            <h6 class="fw-bold text-success">Carpets & Kilims</h6>
+            <p class="mb-0">Turkmen “gul” motifs, Baluch tribal patterns, and modern “war rugs” tell stories in wool.</p>
+          </li>
+          <li class="mb-3">
+            <h6 class="fw-bold text-success">Embroidery</h6>
+            <p class="mb-0">Regional styles like Kandahari khamak, Hazara needlework, and Kuchi mirror-work decorate garments and dowry pieces.</p>
+          </li>
+          <li class="mb-3">
+            <h6 class="fw-bold text-success">Pottery & Woodwork</h6>
+            <p class="mb-0">Istalif ceramics are famed for turquoise glazes; Nuristani woodcarving features bold figures and architectural reliefs.</p>
+          </li>
+          <li>
+            <h6 class="fw-bold text-success">Metal & Jewelry</h6>
+            <p class="mb-0">Silver, coins, and glass beads shape nomadic adornments; brass and copper hammered into trays, ewers, and lamps.</p>
+          </li>
+        </ul>
+      </div>
     </div>
-</div>
 
-<h4 class="mb-4 mt-4">Top Things to Do in Helmand</h4>
+    <!-- Music & Dance -->
+    <div class="row align-items-center mb-5 wow fadeInUp" data-wow-delay="0.4s">
+      <div class="col-lg-6">
+        <img src="{% static 'img/culture/music.jpg' %}" alt="Music & Dance" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 ps-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-music text-danger me-2"></i> Music & Dance</h3>
+        <h5 class="fw-bold text-danger mb-2">Instruments</h5>
+        <p>The rubab (often called the national instrument), dambura, dutar, tanbur, ghichak, tabla, and harmonium anchor classical and folk traditions.</p>
+        <h5 class="fw-bold text-danger mb-2">Genres</h5>
+        <p>Persian ghazal singing, Pashto tappa, and Uzbek/Turkmen epics thrive alongside regional lullabies and wedding songs.</p>
+        <h5 class="fw-bold text-danger mb-2">Dance</h5>
+        <p>The Attan—with its spiraling steps and rising tempo—is performed at celebrations and gatherings, symbolizing unity and endurance.</p>
+      </div>
+    </div>
 
-<div class="overflow-auto">
-    <div class="d-flex gap-3">
-      {% for i in find_things_to_do_in_this_province %}
-        <div class="col-md-3 mb-4 flex-shrink-0">
-            <div id="howtoreach{{ i.id }}"></div>
-          <div class="location-item" data-bs-toggle="modal" data-bs-target="#placeModal{{ i.id }}">
-            <a href="javascript:void(0)" class="location-img">
-              <img src="{{ i.image.url }}" alt="{{ i.title }}" class="img-fluid rounded">
-              <div class="location-name">
-                <h5 class="mb-1">{{ i.title }}</h5>
-                <p>({{ i.location }})</p>
-              </div>
-            </a>
-            <div class="location-info d-flex align-items-center justify-content-between">
-              <div>
-                <p class="fs-14"><span class="text-primary">Start from {{ i.price }}</span></p>
-              </div>
-              <a href="javascript:void(0)" class="location-view"><i class="isax isax-arrow-right-3"></i></a>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Modal for each place -->
-        <div class="modal fade" id="placeModal{{ i.id }}" tabindex="-1" aria-hidden="true">
-          <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content rounded-3 shadow">
-              <div class="modal-header">
-                <h5 class="modal-title">{{ i.title }} - {{ i.location }}</h5>  
-                <span class="badge bg-primary ms-2">{{ i.provinces|join:", " }}</span> 
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-              </div>
-              <div class="modal-body">
-  
-                <!-- Main image preview -->
-                <div class="d-flex justify-content-center">
-                  <img id="mainImage{{ i.id }}" src="{{ i.image.url }}" 
-                       style="max-width: 309px;" class="img-fluid rounded mb-3 border" alt="{{ i.title }}">
-                </div>
-  
-                <!-- Small images -->
-                {% if i.images.all %}
-                <div class="d-flex justify-content-center flex-wrap gap-2 mb-3">
-                  {% for img in i.images.all %}
-                    <img src="{{ img.image.url }}" 
-                         class="img-fluid rounded border small-img"
-                         style="width: 90px; height: 70px; object-fit: cover; cursor: pointer;"
-                         alt="{{ img.caption }}"
-                         onclick="document.getElementById('mainImage{{ i.id }}').src=this.src">
-                  {% endfor %}
-                </div>
-                {% endif %}
-  
-                <!-- Description -->
-                <p>{{ i.description }}</p>
-              </div>
-              <div class="modal-footer">
-                <span class="fw-bold text-success">From ${{ i.price }}</span>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-      {% endfor %}
+    <!-- Literature & Poetry -->
+    <div class="row align-items-center mb-5 wow fadeInUp flex-lg-row-reverse" data-wow-delay="0.6s">
+      <div class="col-lg-6">
+        <img src="{% static 'img/culture/literature.jpg' %}" alt="Literature & Poetry" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 pe-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-book-open text-warning me-2"></i> Literature & Poetry</h3>
+        <h5 class="fw-bold text-warning mb-2">Classical Giants</h5>
+        <p>Balkh-born Rumi (Jalal al-Din), Jami of Herat, Sanai of Ghazni, and mystic Ansari mark the Persian canon; in Pashto, Khushal Khan Khattak and Rahman Baba embody courage and gentle piety.</p>
+        <h5 class="fw-bold text-warning mb-2">Oral Tradition</h5>
+        <p>Proverbs, folktales, and the qissa-khwani (storyteller) tradition carry wisdom across generations.</p>
+        <h5 class="fw-bold text-warning mb-2">Modern Voices</h5>
+        <p>Contemporary poets and novelists (inside and across the diaspora) explore memory, migration, and rebuilding identity.</p>
+      </div>
+    </div>
+
+    <!-- Performing Arts, Film & Contemporary Expression -->
+    <div class="row align-items-center mb-5 wow fadeInUp" data-wow-delay="0.8s">
+      <div class="col-lg-6">
+        <img src="{% static 'img/culture/film.jpg' %}" alt="Performing Arts & Film" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 ps-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-film text-info me-2"></i> Performing Arts, Film & Contemporary Expression</h3>
+        <h5 class="fw-bold text-info mb-2">Theatre & Film</h5>
+        <p>From early Afghan Film productions to international award-winners, cinema has chronicled everyday life and resilience.</p>
+        <h5 class="fw-bold text-info mb-2">Visual Modernism</h5>
+        <p>Contemporary painters, photographers, and muralists blend calligraphy, pop iconography, and social themes.</p>
+        <h5 class="fw-bold text-info mb-2">Design & Media</h5>
+        <p>Fashion, calligraffiti, and digital arts reinterpret motifs—stars, vines, arabesques—for new audiences.</p>
+      </div>
+    </div>
+
+    <!-- Everyday Culture -->
+    <div class="row align-items-center mb-5 wow fadeInUp flex-lg-row-reverse" data-wow-delay="1s">
+      <div class="col-lg-6">
+        <img src="{% static 'img/culture/everyday.jpg' %}" alt="Everyday Culture" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 pe-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-utensils text-secondary me-2"></i> Everyday Culture</h3>
+        <h5 class="fw-bold text-secondary mb-2">Hospitality</h5>
+        <p>Guests are honored with tea, sweets, and a spread on the dastarkhān. Respectful greetings and generosity are social pillars.</p>
+        <h5 class="fw-bold text-secondary mb-2">Clothing</h5>
+        <p>Perahan-tunban, chapan, embroidered vests, shawls, and karakul hats reflect regional styles. Henna decorates hands during weddings and Eid.</p>
+        <h5 class="fw-bold text-secondary mb-2">Cuisine</h5>
+        <p>Qabuli pulao, mantu, ashak, kebabs, qormas, bolani, qurut, naan, nuts, and dried fruits—always with tea.</p>
+      </div>
+    </div>
+
+    <!-- Festivals, Sports & Rituals -->
+    <div class="row align-items-center mb-5 wow fadeInUp" data-wow-delay="1.2s">
+      <div class="col-lg-6">
+        <img src="{% static 'img/culture/festivals.jpg' %}" alt="Festivals, Sports & Rituals" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 ps-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-horse text-dark me-2"></i> Festivals, Sports & Rituals</h3>
+        <h5 class="fw-bold text-dark mb-2">Holidays</h5>
+        <p>Nowruz, Eid al-Fitr, Eid al-Adha, and local harvest festivals bring music, food, and gatherings.</p>
+        <h5 class="fw-bold text-dark mb-2">Buzkashi</h5>
+        <p>The horseback game of strength and strategy remains an emblem of northern highland culture.</p>
+        <h5 class="fw-bold text-dark mb-2">Life-cycle Customs</h5>
+        <p>Weddings, naming ceremonies, and community gatherings weave poetry, music, and gift-giving into bonds.</p>
+      </div>
+    </div>
+
+    <!-- Diversity, Continuity & Resilience -->
+    <div class="row align-items-center wow fadeInUp flex-lg-row-reverse" data-wow-delay="1.4s">
+      <div class="col-lg-6">
+        <img src="{% static 'img/culture/diversity.jpg' %}" alt="Diversity & Resilience" class="img-fluid rounded-4 shadow-sm">
+      </div>
+      <div class="col-lg-6 pe-lg-5 mt-4 mt-lg-0">
+        <h3 class="fw-bold mb-3"><i class="fas fa-users text-primary me-2"></i> Diversity, Continuity & Resilience</h3>
+        <p>Afghan culture is not one story but many—Pashtun, Tajik, Hazara, Uzbek, Turkmen, Aimaq, Nuristani, Baluch, and others—each adding languages, motifs, instruments, and cuisines.</p>
+        <p>Despite war and displacement, families, artisans, and scholars have safeguarded manuscripts, rebuilt museums, revived crafts, and kept songs alive. The diaspora amplifies this through exhibitions, translations, and education.</p>
+      </div>
     </div>
   </div>
-
-<h4 class="mb-4 mt-4">How to Reach Helmand?</h4>
-
-<div class="reach-method">
-    <div class="row justify-content-center g-4">
-
-        <!-- By Air -->
-        <div class="col-lg-4 col-md-6 d-flex">
-            <div class="card border-0 shadow-none pickup-card bg-secondary-100 flex-fill">
-                <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h5>By Air</h5>
-                        <span class="avatar avatar-lg bg-secondary rounded-circle flex-shrink-0 ms-3">
-                            <i class="isax isax-airplane fs-24"></i>
-                        </span>
-                    </div>
-                    <p>Helmand is accessible via Lashkargah Airport, with limited domestic flights. Most international travelers fly into Kabul and then drive.</p>
-                </div>
-            </div>
-        </div>
-        <!-- /By Air -->
-
-        <!-- By Road -->
-        <div class="col-lg-4 col-md-6 d-flex">
-            <div class="card border-0 shadow-none pickup-card bg-purple-100 flex-fill">
-                <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h5>By Road</h5>
-                        <span class="avatar avatar-lg bg-purple rounded-circle flex-shrink-0 ms-3">
-                            <i class="isax isax-car fs-24"></i>
-                        </span>
-                    </div>
-                    <p>Helmand is connected to Kandahar and Kabul via highways, but road travel can be dangerous due to security conditions.</p>
-                </div>
-            </div>
-        </div>
-        <!-- /By Road -->
-
-        <!-- By Train -->
-        <div class="col-lg-4 col-md-6 d-flex">
-            <div class="card border-0 shadow-none pickup-card bg-teal-100 flex-fill">
-                <div class="card-body">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h5>By Train</h5>
-                        <span class="avatar avatar-lg bg-teal rounded-circle flex-shrink-0 ms-3">
-                            <i class="isax isax-train fs-24"></i>
-                        </span>
-                    </div>
-                    <p>No train services are available in Helmand; air and road are the only options.</p>
-                </div>
-            </div>
-        </div>
-        <!-- /By Train -->
-
-    </div>
-</div>
-
-<h4 class="mb-4 mt-5">Frequently Asked <span> Questions </span></h4>
-
-<div class="container">
-    <!-- FAQ Section -->
-    <div class="faq">
-        <div class="faq-sec p-0">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="accordion" id="accordionFaq">
-
-                        <!-- Q1 -->
-                        <div class="accordion-item mb-3 pb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
-                                    When is the best time to visit Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq1" class="accordion-collapse collapse show"
-                                data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>The best time to visit Helmand is during winter (November to February) when temperatures are milder. Summers are extremely hot.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q2 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false"
-                                    aria-controls="faq2">
-                                    How can I reach Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Helmand is accessible by road from Kandahar or Kabul. Flights to Lashkargah Airport are limited and often unreliable.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q3 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false"
-                                    aria-controls="faq3">
-                                    What are some famous tourist attractions in Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Key sites include Bost Fort, Lashkargah Bazaar, Kajaki Dam, and the Helmand River valley.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q4 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false"
-                                    aria-controls="faq4">
-                                    Is Helmand safe for tourists?
-                                </button>
-                            </h2>
-                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Helmand has significant security risks. Travelers should consult their government's travel advisories and avoid non-essential trips.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q5 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false"
-                                    aria-controls="faq5">
-                                    What is the local currency used in Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>The Afghan Afghani (AFN) is the local currency.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q6 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false"
-                                    aria-controls="faq6">
-                                    Do I need a visa to visit Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Yes, a visa for Afghanistan is required for most foreign nationals. Check with the Afghan embassy in your country.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q7 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq7" aria-expanded="false"
-                                    aria-controls="faq7">
-                                    What language is spoken in Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Pashto is the primary language, with some Dari speakers. English is rarely understood.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q8 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq8" aria-expanded="false"
-                                    aria-controls="faq8">
-                                    What kind of clothes should I wear in Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Conservative clothing is mandatory. Women must cover their hair and wear loose-fitting clothes; men should avoid shorts.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q9 -->
-                        <div class="accordion-item mb-3" id="map">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq9" aria-expanded="false"
-                                    aria-controls="faq9">
-                                    What is the local cuisine like in Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>Helmand cuisine features lamb kebabs, rice dishes (like chalau), and fresh bread. Tea is the main beverage.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Q10 -->
-                        <div class="accordion-item mb-3">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq10" aria-expanded="false"
-                                    aria-controls="faq10">
-                                    Can I use credit cards in Helmand?
-                                </button>
-                            </h2>
-                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                                <div class="accordion-body">
-                                    <p>No. Cash (Afghanis or USD) is the only accepted form of payment.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Helmand Map Section -->
-<div class="container mt-5">
-    <h4 class="mb-4">Map of Helmand</h4>
-    <div class="ratio ratio-16x9">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27798.19706376941!2d64.3606113!3d31.583164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f423c3adb5a0f2d%3A0x2f2e6e1a3a2b3b1a!2sLashkargah%2C%20Afghanistan!5e0!3m2!1sen!2s!4v1719252086420!5m2!1sen!2s"
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-</div>
-
-
-<div class="row justify-content-center mt-5">
-    <div class="col-lg-6">
-        <div class="que-sec text-center">
-            <h4 class="mb-3">Have Any Other Questions?</h4>
-            <p class="mb-3">If you cannot find answer to your question in our FAQ, you can always contact us. We will answer you shortly!</p>
-            <div class="d-flex justify-content-center">
-                <a href="contact-us.html" class="btn btn-primary d-flex align-items-center justify-content-center">
-                    Contact Us<i class="isax isax-arrow-right-3 ms-1"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-</div>
 </section>
+
+
+    <section class="section blog-section blog-section-four pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four text-center">
+                        <h2 class="mb-2">Explore <span>Afghanistan</span> cultural gems</h2>
+                        <p class="sub-title">
+                            Whether you're exploring the cultural wonders of <span>Afghanistan</span>, discovering its ancient heritage, or experiencing its vibrant traditions, 
+                            there are countless ways to immerse yourself in the richness of <span>Afghanistan</span>'s identity.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Grid blog layout -->
+            <div class="row">
+    
+                <!-- Blog Item 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/banner/banner-22.jpg' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Work remotely programme</span>
+                            <h5><a href="blog-details.html">
+                                Do you want to mix business with pleasure in <span>Afghanistan</span>? With a new one-year virtual working programme, you can live and work by the beach.
+                            </a></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Blog Item 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-13_3.JPEG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Residency for investors and entrepreneurs</span>
+                            <h5><a href="blog-details.html">
+                                If you wish to open a business or invest in property in <span>Afghanistan</span>, you can apply for five and ten-year residency visas.
+                            </a></h5>
+                        </div>
+                    </div>
+                </div>
+    
+            
+    
+          
+             
+    
+            </div>
+    
+            <div class="text-center view-all wow fadeInUp">
+                <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section blog-section blog-section-four pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four text-center">
+                        <h2 class="mb-2">Upcoming Events</h2>
+                        <p class="sub-title">
+                            From cultural festivals and traditional music performances to local exhibitions and seasonal celebrations, 
+                            <span>Afghanistan</span> offers a vibrant calendar of events that highlight its rich heritage and community spirit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Two items per row -->
+            <div class="row">
+    
+                <!-- Blog Item 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-12_11.JPG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Work remotely programme</span>
+                            <h5><a href="blog-details.html">Do you want to mix business with pleasure in <span>Afghanistan</span>? With a new one-year virtual working programme, you can live and work by the beach.</a></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Blog Item 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-13_4.PNG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Residency for investors</span>
+                            <h5><a href="blog-details.html">Open a business or invest in <span>Afghanistan</span> and apply for five or ten-year residency visas for you and your family.</a></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                
+    
+            </div>
+    
+            <div class="text-center view-all wow fadeInUp">
+                <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    <section class="section blog-section blog-section-four pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="section-header section-header-four text-center">
+                        <h2 class="mb-2">All the arts & culture hotspots</h2>
+                        <p class="sub-title">
+                            Whether you're visiting <span>Afghanistan</span> for its cultural richness, planning to explore its historic landscapes, or seeking a deeper connection with its traditions, 
+                            there are countless ways to experience the true essence of <span>Afghanistan</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Two items per row -->
+            <div class="row">
+    
+                <!-- Blog Item 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-12_55.JPG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Work remotely programme</span>
+                            <h5><a href="blog-details.html">Do you want to mix business with pleasure in <span>Afghanistan</span>? With a new one-year virtual working programme, you can live and work by the beach.</a></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Blog Item 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-13_56.JPG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Residency for investors</span>
+                            <h5><a href="blog-details.html">Open a business or invest in <span>Afghanistan</span> and apply for five or ten-year residency visas for you and your family.</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-13_57.JPG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Residency for investors</span>
+                            <h5><a href="blog-details.html">Open a business or invest in <span>Afghanistan</span> and apply for five or ten-year residency visas for you and your family.</a></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
+                        <a href="blog-details.html" class="blog-img">
+                            <img src="{% static 'img/blog/blog-13_58.JPG' %}" alt="img" class="img-fluid rounded">
+                        </a>
+                        <div class="blog-date">
+                            <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                        </div>
+                        <div class="blog-info text-center">
+                            <span class="badge bg-primary mb-2">Residency for investors</span>
+                            <h5><a href="blog-details.html">Open a business or invest in <span>Afghanistan</span> and apply for five or ten-year residency visas for you and your family.</a></h5>
+                        </div>
+                    </div>
+                </div>
+    
+                
+    
+            </div>
+    
+            <div class="text-center view-all wow fadeInUp">
+                <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section blog-section blog-section-four pt-0">
+        <div class="container">
+          <div class="row justify-content-center">
+            <h4 class="mb-4 mt-5">Frequently Asked <span>Questions</span></h4>
+      
+            <div class="accordion" id="accordionFaq">
+      
+              <!-- FAQ 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faq1">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                    Does Afghanistan have a rich culture?
+                  </button>
+                </h2>
+                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    Yes, Afghanistan has a deeply rooted and diverse culture influenced by over 5,000 years of history. It is known for its poetry, music, carpet weaving, traditional clothing, and hospitality. Each region carries unique customs and languages reflecting its ethnic diversity.
+                  </div>
+                </div>
+              </div>
+      
+              <!-- FAQ 2 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faq2">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                    What are some Afghan traditions visitors should know?
+                  </button>
+                </h2>
+                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    Guests are highly respected in Afghan culture. Removing shoes before entering homes, accepting tea or food politely, and dressing modestly are all appreciated gestures. Celebrations like Nowruz (Persian New Year) and Eid festivals are also important cultural events.
+                  </div>
+                </div>
+              </div>
+      
+              <!-- FAQ 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faq3">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                    Is it safe to travel to Afghanistan as a tourist?
+                  </button>
+                </h2>
+                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    Safety conditions vary by region and may change quickly. Travelers are advised to check their government’s travel advisories and consult with local authorities or travel agencies before planning a visit. Some areas are welcoming to visitors, especially for cultural and historical exploration.
+                  </div>
+                </div>
+              </div>
+      
+              FAQ 4
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="faq4">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+                    What are five interesting facts about Afghanistan?
+                  </button>
+                </h2>
+                <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
+                  <div class="accordion-body">
+                    <ul class="mb-0">
+                      <li>1. Afghanistan was a key stop along the ancient Silk Road trade route.</li>
+                      <li>2. The country is famous for its handwoven carpets, considered among the best in the world.</li>
+                      <li>3. The national sport is Buzkashi — a horseback game like polo, but with a goat carcass.</li>
+                      <li>4. Afghanistan has two official languages: Dari and Pashto.</li>
+                      <li>5. The Buddhas of Bamiyan, once among the tallest in the world, were carved in the 6th century.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+      
+            </div> <!-- End accordion -->
+      
+          </div>
+        </div>
+      </section>
+      
+
+<!-- 
+    <section class="section blog-section blog-section-four pt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <div class="section-header section-header-four  text-center">
+                        <h2 class="mb-2">Keep exploring</h2>
+                        <p class="sub-title">
+                            Whether you're journeying through Afghanistan’s ancient cities, discovering hidden cultural gems, or connecting with its warm and welcoming people, 
+                            there’s always more to explore in this land of history and heart.
+                          </p>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-slider owl-carousel nav-center owl-loaded owl-drag">
+
+              Blog Item-->
+                
+                <!-- /Blog Item-->
+
+                <!-- Blog Item-->
+                
+                <!-- /Blog Item-->
+
+                <!-- Blog Item-->
+                
+                <!-- /Blog Item-->
+
+                <!-- Blog Item-->
+                
+                <!-- /Blog Item-->
+
+            <!-- <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-2640px, 0px, 0px); transition: 2s; width: 4400px;"><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Work remotely programme</span>
+                        <h5><a href="blog-details.html">Do you want to mix business with pleasure in Afghanistan? With a new one-year virtual working programme, you can live and work by the beach.
+                        </a></h5>
+                    </div>
+                </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Residency for investors and entrepreneurs                        </span>
+                        <h5><a href="blog-details.html">If you wish to open a business or invest in property in Afghanistan, you can apply for five and ten-year residency visas, with a possibility to also bring your business partners and family.                        </a></h5>
+                    </div>
+                </div></div><div class="owl-item cloned" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-14.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>10<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Residency for specialist talent                        </span>
+                        <h5><a href="blog-details.html">If you are a specialist in fields of science, medicine, sport, culture, or art, Afghanistan offers growing opportunities and state-of-the-art facilities to grow your talent. Apply for this ten-year visa and reach your potential.
+                        </a></h5>
+                    </div>
+                </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-11.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>10<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Residency for outstanding students
+
+                        </span>
+                        <h5><a href="blog-details.html">Afghanistan's cutting-edge research and facilities attract the brightest minds from around the world. Explore the five and ten-year visas supporting exceptional student talent.                        </a></h5>
+                    </div>
+                </div></div><div class="owl-item" style="width: 416px; margin-right: 24px;"><div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
+                    <a href="blog-details.html" class="blog-img">
+                        <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img">
+                    </a>
+                    <div class="blog-date">
+                        <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
+                    </div>
+                    <div class="blog-info text-center">
+                        <span class="badge bg-primary mb-2">Residency for retirees
+
+                        </span>
+                        <h5><a href="blog-details.html">Start your next chapter and make the most of your freedom in one of the world’s most connected, dynamic, and safest cities with Afghanistan's Golden Retirement Visa.
+                        </a></h5>
+                    </div>
+                </div></div>
+            </div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button></div><div class="owl-dots disabled"></div></div>
+            <div class="text-center view-all wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+            </div>
+        </div> -->
+    </section>
+
+
+
+<!-- 
+    <section class="my-5">
+        <div class="container">
+          <div class="card shadow">
+            <div class="card-header text-center bg-primary text-white">
+              <h4>Live Weather in Afghan Provinces</h4>
+            </div>
+            <div class="card-body">
+              {% if weather_data %}
+                <div class="row">
+                  {% for city, data in weather_data.items %}
+                    <div class="col-md-3 col-sm-6 text-center mb-4">
+                      <h5 class="fw-bold">{{ city }}</h5>
+                      {% if data.icon %}
+                        <img src="https://openweathermap.org/img/wn/{{ data.icon }}@2x.png" alt="{{ data.description }}">
+                      {% else %}
+                        <img src="https://via.placeholder.com/80?text=N/A" alt="No data">
+                      {% endif %}
+                      <p class="mb-0"><strong>{{ data.temp }} °C</strong></p>
+                      <small class="text-muted">{{ data.description }}</small>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% else %}
+                <p class="text-center text-danger">Weather data is currently unavailable.</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </section> -->
+      
+      
+
+  
+      
+<!-- Existing content -->
+
+  
+  <!-- More existing content -->
+  
 
 {% endblock %}
