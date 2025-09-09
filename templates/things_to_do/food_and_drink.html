@@ -3,19 +3,63 @@
 {% load static %}
 
 
+
+
+
+<style>
+.destination-item img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease-in-out;
+}
+.destination-item img:hover {
+  transform: scale(1.05);
+}
+
+.blog-item .blog-img img {
+  width: 100%;
+  height: 250px;       /* همه عکس‌ها ارتفاع یکسان دارند */
+  object-fit: cover;   /* کراپ تمیز بدون کشیدگی */
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.blog-item .blog-img img:hover {
+  transform: scale(1.05);
+}
+
+.blog-item {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s ease-in-out;
+  background: #fff;
+}
+
+.blog-item:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+</style>
+
+
 <section class="hero-section food-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Afghan Cuisine">
+            <img src="{% static 'img/banner/banner-0909_0.JPG' %}" alt="Afghan Cuisine">
         </div>
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Traditional Dishes">
+            <img src="{% static 'img/banner/banner-01_1.JPG' %}" alt="Traditional Dishes">
         </div>
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Food Markets">
+            <img src="{% static 'img/banner/banner-03_0.JPG' %}" alt="Food Markets">
         </div>
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Culinary Experience">
+            <img src="{% static 'img/banner/banner-04_90.JPG' %}" alt="Culinary Experience">
         </div>
     </div>
     <div class="container">
@@ -74,7 +118,7 @@
 
             <!-- Destination Item: Kabul -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-01.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-01_1.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Kabul</h5>
@@ -117,7 +161,7 @@
 
             <!-- Destination Item: Bamyan -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-02.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-02_2.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Bamyan</h5>
@@ -160,7 +204,7 @@
 
             <!-- Destination Item: Herat -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-03.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-03_3.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Herat</h5>
@@ -203,7 +247,7 @@
 
             <!-- Destination Item: Panjshir -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-04.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-04_4.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Panjshir</h5>
@@ -246,7 +290,7 @@
 
             <!-- Destination Item: Mazar-e-Sharif -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-05.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-05_5.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Mazar-e-Sharif</h5>
@@ -309,7 +353,7 @@
 
             <!-- Restaurant: Kabul -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-01.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-06_6.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Kabul</h5>
@@ -352,7 +396,7 @@
 
             <!-- Restaurant: Bamyan -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-02.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-07_7.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Bamyan</h5>
@@ -395,7 +439,7 @@
 
             <!-- Restaurant: Herat -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-03.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-08_8.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Herat</h5>
@@ -438,7 +482,7 @@
 
             <!-- Restaurant: Panjshir -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-04.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-09_9.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Panjshir</h5>
@@ -481,7 +525,7 @@
 
             <!-- Restaurant: Mazar-e-Sharif -->
             <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-05.jpg' %}" alt="img">
+                <img src="{% static 'img/destination/destination-010_10.JPG' %}" alt="img">
                 <div class="destination-info text-center">
                     <div class="destination-content">
                         <h5 class="mb-1 text-white">Mazar-e-Sharif</h5>
@@ -534,110 +578,6 @@
 
 
 
-<!-- Blog Section -->
-<section class="section blog-section pt-0">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <div class="section-header text-center">
-                    <h2 class="mb-2">Sign up for <span>culinary</span> activities <span class="text-primary text-decoration-underline">Articles</span></h2>
-                    <p class="sub-title">Explore Afghanistan’s rich culinary scene through our latest blog posts, featuring traditional dishes, food culture, and the best local dining spots.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-
-            <!-- Blog Item-->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-01.jpg' %}" alt="img">
-                    </a>
-                    <span class="badge bg-primary fs-13 fw-medium">Food</span>
-                    <div class="blog-info text-center">
-                        <div class="d-inline-flex align-items-center justify-content-center">
-                            <div class="d-inline-flex align-items-center border-end pe-3 me-3 mb-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <span class="avatar avatar-sm flex-shrink-0 me-2">
-                                        <img src="assets/img/users/user-01.jpg' %}" class="rounded-circle border border-white" alt="img">
-                                    </span>
-                                    <p>Fatima Rahimi</p>
-                                </a>
-                            </div>
-                            <p class="d-inline-flex align-items-center text-white mb-2"><i class="isax isax-calendar-2 me-2"></i>14 May 2025</p>
-                        </div>
-                        <h5><a href="blog-details.html">Top 5 Must-Try Traditional Afghan Dishes</a></h5>
-                    </div>
-                </div>
-            </div>
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-02.jpg' %}" alt="img">
-                    </a>
-                    <span class="badge bg-primary fs-13 fw-medium">Culture</span>
-                    <div class="blog-info text-center">
-                        <div class="d-inline-flex align-items-center justify-content-center">
-                            <div class="d-inline-flex align-items-center border-end pe-3 me-3 mb-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <span class="avatar avatar-sm flex-shrink-0 me-2">
-                                        <img src="assets/img/users/user-02.jpg' %}" class="rounded-circle border border-white" alt="img">
-                                    </span>
-                                    <p>Ahmad Jan</p>
-                                </a>
-                            </div>
-                            <p class="d-inline-flex align-items-center text-white mb-2"><i class="isax isax-calendar-2 me-2"></i>12 May 2025</p>
-                        </div>
-                        <h5><a href="blog-details.html">Afghan Food Culture: More Than Just Meals</a></h5>
-                    </div>
-                </div>
-            </div>
-            <!-- /Blog Item-->
-
-            <!-- Blog Item-->
-            <div class="col-lg-4 col-md-6">
-                <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="blog-details.html" class="blog-img">
-                        <img src="{% static 'img/blog/blog-03.jpg' %}" alt="img">
-                    </a>
-                    <span class="badge bg-primary fs-13 fw-medium">Dining</span>
-                    <div class="blog-info text-center">
-                        <div class="d-inline-flex align-items-center justify-content-center">
-                            <div class="d-inline-flex align-items-center border-end pe-3 me-3 mb-2">
-                                <a href="javascript:void(0);" class="d-flex align-items-center">
-                                    <span class="avatar avatar-sm flex-shrink-0 me-2">
-                                        <img src="assets/img/users/user-03.jpg' %}" class="rounded-circle border border-white" alt="img">
-                                    </span>
-                                    <p>Laila Sadat</p>
-                                </a>
-                            </div>
-                            <p class="d-inline-flex align-items-center text-white mb-2"><i class="isax isax-calendar-2 me-2"></i>14 May 2025</p>
-                        </div>
-                        <h5><a href="blog-details.html">Best Places to Eat in Kabul Right Now</a></h5>
-                    </div>
-                </div>
-            </div>
-            <!-- /Blog Item-->
-
-        </div>
-        <div class="text-center view-all wow fadeInUp">
-            <a href="blog-grid.html" class="btn btn-dark d-inline-flex align-items-center">View All Articles<i class="isax isax-arrow-right-3 ms-2"></i></a>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-
-
-
-      
-      
       
       
     <section class="section blog-section blog-section-four pt-0">
@@ -660,7 +600,7 @@
             <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
                 <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
+                  <img src="{% static 'img/blog/blog-12_34.JPG' %}" alt="img" class="img-fluid rounded">
                 </a>
                 <div class="blog-date">
                   <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
@@ -678,7 +618,7 @@
             <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
                 <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
+                  <img src="{% static 'img/blog/blog-13_888_0.JPG' %}" alt="img" class="img-fluid rounded">
                 </a>
                 <div class="blog-date">
                   <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
@@ -696,7 +636,7 @@
             <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
                 <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
+                  <img src="{% static 'img/blog/blog-55_99.JPG' %}" alt="img" class="img-fluid rounded">
                 </a>
                 <div class="blog-date">
                   <h6>20<span class="d-block fs-14 fw-normal">Jul</span></h6>
@@ -714,7 +654,7 @@
             <div class="col-md-6 col-lg-3 mb-4">
               <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
                 <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
+                  <img src="{% static 'img/blog/blog-222_22.JPG' %}" alt="img" class="img-fluid rounded">
                 </a>
                 <div class="blog-date">
                   <h6>25<span class="d-block fs-14 fw-normal">Jul</span></h6>
