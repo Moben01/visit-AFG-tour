@@ -2,680 +2,671 @@
 {% block content %}
 {% load static %}
 
-
-
-
-
 <style>
-.destination-item img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease-in-out;
-}
-.destination-item img:hover {
-  transform: scale(1.05);
-}
-
-.blog-item .blog-img img {
-  width: 100%;
-  height: 250px;       /* همه عکس‌ها ارتفاع یکسان دارند */
-  object-fit: cover;   /* کراپ تمیز بدون کشیدگی */
-  border-radius: 12px;
-  transition: transform 0.3s ease-in-out;
-}
-
-.blog-item .blog-img img:hover {
-  transform: scale(1.05);
-}
-
-.blog-item {
-  border: 1px solid #eee;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: box-shadow 0.3s ease-in-out;
-  background: #fff;
-}
-
-.blog-item:hover {
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
+    .culinary-content {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        padding-top: 20px;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-weight: 700;
+        color: #8e443d;
+        position: relative;
+    }
+    
+    .section-title:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: #e39d27;
+        margin: 15px auto;
+    }
+    
+    .card {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        background: white;
+        height: 100%;
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .dish-card .card-img-top {
+        height: 250px;
+    }
+    
+    .card-body {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+        color: #8e443d;
+    }
+    
+    .region-card {
+        border-left: 4px solid #e39d27;
+    }
+    
+    .season-box {
+        text-align: center;
+        padding: 20px 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .spring { background-color: #e8f5e9; }
+    .summer { background-color: #fff3e0; }
+    .autumn { background-color: #fbe9e7; }
+    .winter { background-color: #e3f2fd; }
+    
+    .highlight {
+        color: #e39d27;
+        font-weight: 600;
+    }
+    
+    .food-icon {
+        font-size: 2.5rem;
+        color: #e39d27;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .etiquette-item {
+        padding: 15px;
+        border-radius: 8px;
+        background-color: white;
+        margin-bottom: 15px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    }
+    
+    .persian-text {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.2rem;
+        direction: rtl;
+        text-align: right;
+    }
+    
+    .experience-card {
+        border-top: 4px solid #4a6b5f;
+    }
+    
+    .tasting-trail {
+        background: #f8f4e9;
+        border-radius: 12px;
+        padding: 30px;
+    }
+    
+    .trail-step {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 25px;
+        border-left: 3px solid #e39d27;
+    }
+    
+    .trail-step:before {
+        content: '';
+        position: absolute;
+        left: -10px;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #e39d27;
+    }
+    
+    .list-group {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .list-group-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .list-group-flush .list-group-item:last-child {
+        border-bottom: none;
+    }
+    
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .rounded {
+        border-radius: 12px;
+    }
+    
+    .shadow {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    
+    .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0 70px;
+        color: white;
+        text-align: center;
+    }
+    
+    .display-3 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: white; /* This ensures the text is white */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds subtle text shadow for better readability */
+    }
+    
+    .btn-primary {
+        display: inline-block;
+        padding: 12px 30px;
+        background-color: #8e443d;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-primary:hover {
+        background-color: #6b332d;
+        color: white;
+    }
+    
+    /* Additional spacing and styling */
+    .py-5 {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    .bg-white {
+        background-color: white;
+    }
+    
+    .bg-light {
+        background-color: #f9f9f9;
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .mb-4 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .mt-5 {
+        margin-top: 3rem;
+    }
+    
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .display-3 {
+            font-size: 2.5rem;
+        }
+        
+        .hero-section {
+            padding: 80px 0 50px;
+        }
+        
+        .card {
+            margin-bottom: 20px;
+        }
+    }
 </style>
 
+<div class="culinary-content">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="display-3">Afghan Culinary Journey</h1>
+            <p class="lead" style="color: white; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);">Discover the rich tapestry of flavors that define Afghanistan's diverse regional cuisines and centuries-old culinary traditions</p>
+            <a href="#unique" class="btn-primary">Explore Cuisine</a>
+        </div>
+    </section>
 
-<section class="hero-section food-hero">
-    <div class="banner-slider banner-sec owl-carousel">
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-0909_0.JPG' %}" alt="Afghan Cuisine">
+    <!-- Unique Features -->
+    <section class="py-5 bg-white" id="unique">
+        <div class="container">
+            <h2 class="section-title">What Makes Afghan Food Unique</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p class="lead">Afghan cuisine is herb-forward, fragrant (not fiery), and built around rice, bread, yogurt, and seasonal produce. Spices like cumin, coriander, black pepper, cardamom, and saffron add warmth rather than heat.</p>
+                    <p>Hospitality is the heart: meals are shared on a <span class="highlight">dastarkhwan</span> (floor spread), with bread doubling as a utensil.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="food-icon">🌿</div>
+                            <h4 class="card-title">Herb-Forward</h4>
+                            <p>Fresh herbs are central to Afghan cooking, providing vibrant flavors and aromas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="food-icon">🍽️</div>
+                            <h4 class="card-title">Shared Dining</h4>
+                            <p>Meals are communal experiences, often enjoyed from a shared platter on the floor.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <div class="food-icon">🧂</div>
+                            <h4 class="card-title">Warm Spices</h4>
+                            <p>Spices are used to create depth and warmth rather than intense heat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-01_1.JPG' %}" alt="Traditional Dishes">
+    </section>
+
+    <!-- Signature Dishes -->
+    <section class="py-5 bg-light" id="dishes">
+        <div class="container">
+            <h2 class="section-title">Signature Dishes</h2>
+            <p class="text-center">Explore the most beloved dishes in Afghan cuisine</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card dish-card">
+                        <img src="{% static 'img/blog/Qabuli Palaw.jpg' %}"class="card-img-top" alt="Kabuli Palaw">
+                        <div class="card-body">
+                            <h5 class="card-title">Kabuli/Qabuli Palaw <span class="persian-text">(قابلی پلو)</span></h5>
+                            <p>Long-grain rice steamed with lamb or beef, carrots, and raisins; the national dish.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card dish-card">
+                        <img src="{% static 'img/blog/Mantu.jpg' %}" class="card-img-top" alt="Mantu">
+                        <div class="card-body">
+                            <h5 class="card-title">Mantu <span class="persian-text">(منتو)</span></h5>
+                            <p>Delicate steamed dumplings (usually beef/onion) topped with garlic yogurt and a split-pea tomato sauce.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card dish-card">
+                        <img src="{% static 'img/blog/Bolani.jpg' %}" class="card-img-top" alt="Bolani">
+                        <div class="card-body">
+                            <h5 class="card-title">Bolani <span class="persian-text">(بولانی)</span></h5>
+                            <p>Griddled flatbread stuffed with potato, leeks/chives, pumpkin, or lentils; the go-to street snack.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card dish-card">
+                        <img src="{% static 'img/blog/Chapli Kebab.jpg' %}"class="card-img-top" alt="Chapli Kebab">
+                        <div class="card-body">
+                            <h5 class="card-title">Chapli Kebab <span class="persian-text">(چپلی کباب)</span></h5>
+                            <p>Spiced, shallow-fried patties with tomato, onion, and coriander, popular in the east.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card dish-card">
+                        <img src="{% static 'img/blog/Qorma.jpg' %}" class="card-img-top" alt="Qorma">
+                        <div class="card-body">
+                            <h5 class="card-title">Qorma <span class="persian-text">(قورمه)</span></h5>
+                            <p>Slow-cooked stews (e.g., meat, spinach, pumpkin, eggplant) served with rice or naan.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card dish-card">
+                        <img src="{% static 'img/blog/Ashak.jpg' %}" class="card-img-top" alt="Ashak">
+                        <div class="card-body">
+                            <h5 class="card-title">Ashak <span class="persian-text">(آشک)</span></h5>
+                            <p>Chive-filled dumplings finished with yogurt and a light meat or lentil sauce—great vegetarian option.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-03_0.JPG' %}" alt="Food Markets">
+    </section>
+
+    <!-- Breads Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title">The Breads <span class="persian-text">(نان)</span></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="lead">Afghan meals revolve around the tandoor oven, which produces various types of bread:</p>
+                    <ul class="list-group">
+                        <li class="list-group-item">Naan-e Afghani - The staple flatbread</li>
+                        <li class="list-group-item">Roghani - Enriched with oils and sometimes milk</li>
+                        <li class="list-group-item">Lavash/Chapati - Thin, unleavened bread</li>
+                        <li class="list-group-item">Kulcha - Sweet cookies or biscuits for tea</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="{% static 'img/blog/nan.jpg' %}" alt="Afghan Bread" class="img-fluid rounded shadow">
+                </div>
+            </div>
         </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-04_90.JPG' %}" alt="Culinary Experience">
+    </section>
+
+    <!-- Sweets & Tea -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Sweets & Tea Culture</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Traditional Sweets</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Sheer Khurma <span class="persian-text">(شیر خرما)</span> - Eid vermicelli dessert with dates & nuts</li>
+                                <li class="list-group-item">Ferni <span class="persian-text">(فرنی)</span> - Silky milk custard</li>
+                                <li class="list-group-item">Sheer Berenj <span class="persian-text">(شیر برنج)</span> - Rice pudding</li>
+                                <li class="list-group-item">Haft Mewa <span class="persian-text">(هفت میوه)</span> - New Year's seven-fruit compote</li>
+                                <li class="list-group-item">Jalebi/Zoolbia - Sweet syrupy treats found in markets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Tea & Beverages</h4>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Chai Sabz - Green tea, constantly served throughout the day</li>
+                                <li class="list-group-item">Chai Siyah - Black tea</li>
+                                <li class="list-group-item">Doogh - Salted yogurt drink with mint (summer favorite)</li>
+                                <li class="list-group-item">Sharbat - Sweet fruit-based drinks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="hero-content">
-            <div class="row align-items-center">
-                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="banner-content mx-auto text-center">
-                        <h1 class="text-white display-4 mb-3">Afghan Culinary <span>Journey</span></h1>
-                        <h4 class="text-light mx-auto mb-4">Discover the rich tapestry of flavors that define Afghanistan's diverse regional cuisines and centuries-old culinary traditions</h4>
+    </section>
+
+    <!-- Regional Variations -->
+    <section class="py-5 bg-white" id="regions">
+        <div class="container">
+            <h2 class="section-title">Regional Taste Map</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card region-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kabul & Parwan (Central)</h5>
+                            <p>Urban kebab houses, mantu/ashak, bakery culture, grape & mulberry season.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card region-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Herat (West)</h5>
+                            <p>Saffron fields, pistachios, raisins; Persian influences and fragrant rice dishes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card region-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kandahar (South)</h5>
+                            <p>Legendary pomegranates, sweet melons, and rich rice dishes; roadside tikka grills.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card region-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bamyan & Daykundi (Highlands)</h5>
+                            <p>Dairy (qaymaq/cream), potatoes, herb-rich stews; hearty winter fare.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card region-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Nangarhar & Kunar (East)</h5>
+                            <p>Chapli kebab culture, citrus, and fresh herbs along river valleys.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card region-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Mazar-e-Sharif & Balkh (North)</h5>
+                            <p>Wheat and grape country; kulcha bakeries, dried fruits, winter buzkashi feasts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Etiquette -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Dining Etiquette & Tips</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="etiquette-item">
+                        <h5>Greetings</h5>
+                        <p>Greet with "Salaam alaikum"; place a hand on your heart as a sign of respect.</p>
                     </div>
                     
-                    <div class="container my-4">
-                        <!-- Food Culture Card -->
-                        <div class="row justify-content-center mb-5">
-                            <div class="col-lg-8">
-                                
-                                    <div class="card-body p-4 text-center">
-                                        <div class="food-icon mb-3">
-                                            <i class="fas fa-utensils fa-3x text-primary"></i>
-                                        </div>
-                                    </div>
-                            
-                            </div>
-                        </div>
-
+                    <div class="etiquette-item">
+                        <h5>Seating</h5>
+                        <p>Shoes off if invited to sit on carpets; always eat with the right hand; use bread to scoop food.</p>
+                    </div>
+                    
+                    <div class="etiquette-item">
+                        <h5>Tea Culture</h5>
+                        <p>Always accept tea; even a small sip honors the host. Tea is constantly served throughout the day.</p>
+                    </div>
+                </div>
                 
-                        
-                        <!-- View More Button -->
-                        <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
-                            <a href="food-listings.html" class="btn btn-primary btn-lg px-4">
-                                <i class="fas fa-utensils me-2"></i> Explore More Afghan Cuisine
-                            </a>
-                        </div>
+                <div class="col-md-6">
+                    <div class="etiquette-item">
+                        <h5>Photography</h5>
+                        <p>Always ask before photographing people or inside homes to respect privacy.</p>
+                    </div>
+                    
+                    <div class="etiquette-item">
+                        <h5>Dietary Notes</h5>
+                        <p>Food is halal by default; pork and alcohol are absent. Common allergens include gluten, dairy, and nuts.</p>
+                    </div>
+                    
+                    <div class="etiquette-item">
+                        <h5>Useful Phrases</h5>
+                        <p>"Bedoon-e gosht" (without meat), "Bedoon-e maghz/badam" (without nuts), "Lactose nadāram" (I don't take milk/dairy).</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-
-  
-
-  <section class="banner-search-four my-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <div class="section-header text-center">
-                    <h2 class="mb-2">trending now</h2>
-                    <p class="sub-title">Discover the hottest experiences and must-try activities in Afghanistan, where vibrant traditions and rich culture create unforgettable moments.</p>
-                </div>
-            </div>
-        </div>
-        <div class="owl-carousel destination-slider nav-center">
-
-            <!-- Destination Item: Kabul -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-01_1.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Kabul</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">452 Reviews</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-airplane"></i></span>
-                                    <h6 class="fs-13 fw-medium">21 Flights</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-buildings"></i></span>
-                                    <h6 class="fs-13 fw-medium">15 Hotels</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-ship"></i></span>
-                                    <h6 class="fs-13 fw-medium">06 Tours</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Destination Item: Bamyan -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-02_2.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Bamyan</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">400 Reviews</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-airplane"></i></span>
-                                    <h6 class="fs-13 fw-medium">18 Flights</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-buildings"></i></span>
-                                    <h6 class="fs-13 fw-medium">10 Hotels</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-ship"></i></span>
-                                    <h6 class="fs-13 fw-medium">04 Tours</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Destination Item: Herat -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-03_3.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Herat</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">400 Reviews</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-airplane"></i></span>
-                                    <h6 class="fs-13 fw-medium">16 Flights</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-buildings"></i></span>
-                                    <h6 class="fs-13 fw-medium">12 Hotels</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-ship"></i></span>
-                                    <h6 class="fs-13 fw-medium">05 Tours</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Destination Item: Panjshir -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-04_4.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Panjshir</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">422 Reviews</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-airplane"></i></span>
-                                    <h6 class="fs-13 fw-medium">9 Flights</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-buildings"></i></span>
-                                    <h6 class="fs-13 fw-medium">8 Hotels</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-ship"></i></span>
-                                    <h6 class="fs-13 fw-medium">03 Tours</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Destination Item: Mazar-e-Sharif -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-05_5.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Mazar-e-Sharif</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">370 Reviews</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-airplane"></i></span>
-                                    <h6 class="fs-13 fw-medium">11 Flights</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-buildings"></i></span>
-                                    <h6 class="fs-13 fw-medium">9 Hotels</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-ship"></i></span>
-                                    <h6 class="fs-13 fw-medium">07 Tours</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-        </div>
-        <div class="text-center view-all wow fadeInUp">
-            <a href="destination.html" class="btn btn-dark d-inline-flex align-items-center">View All Locations<i class="isax isax-arrow-right-3 ms-2"></i></a>
-        </div>
-    </div>
-</section>
-
-
-<section class="section destination-section">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <div class="section-header text-center">
-                    <h2 class="mb-2">Discover <span>Afghanistan</span> Restaurants</h2>
-                    <p class="sub-title">Explore the best dining spots across Afghanistan, where traditional Afghan flavors meet warm hospitality and unforgettable ambiance.</p>
-                </div>
-            </div>
-        </div>
-        <div class="owl-carousel destination-slider nav-center">
-
-            <!-- Restaurant: Kabul -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-06_6.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Kabul</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">Best for Afghan BBQ and rooftop dining</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-heart"></i></span>
-                                    <h6 class="fs-13 fw-medium">12 Dishes</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-cup"></i></span>
-                                    <h6 class="fs-13 fw-medium">10 Drinks</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-user"></i></span>
-                                    <h6 class="fs-13 fw-medium">300+ Reviews</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Restaurant: Bamyan -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-07_7.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Bamyan</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">Famous for mountain view dining and Kabuli Pulao</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-heart"></i></span>
-                                    <h6 class="fs-13 fw-medium">8 Dishes</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-cup"></i></span>
-                                    <h6 class="fs-13 fw-medium">6 Drinks</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-user"></i></span>
-                                    <h6 class="fs-13 fw-medium">250+ Reviews</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Restaurant: Herat -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-08_8.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Herat</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">Known for kebabs, desserts and courtyard cafés</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-heart"></i></span>
-                                    <h6 class="fs-13 fw-medium">10 Dishes</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-cup"></i></span>
-                                    <h6 class="fs-13 fw-medium">7 Drinks</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-user"></i></span>
-                                    <h6 class="fs-13 fw-medium">320+ Reviews</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Restaurant: Panjshir -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-09_9.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Panjshir</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">Hidden gems for trout, local rice, and riverside eats</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-heart"></i></span>
-                                    <h6 class="fs-13 fw-medium">6 Dishes</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-cup"></i></span>
-                                    <h6 class="fs-13 fw-medium">5 Drinks</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-user"></i></span>
-                                    <h6 class="fs-13 fw-medium">180+ Reviews</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-            <!-- Restaurant: Mazar-e-Sharif -->
-            <div class="destination-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                <img src="{% static 'img/destination/destination-010_10.JPG' %}" alt="img">
-                <div class="destination-info text-center">
-                    <div class="destination-content">
-                        <h5 class="mb-1 text-white">Mazar-e-Sharif</h5>
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div class="rating d-flex align-items-center me-2">
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled me-1"></i>
-                                <i class="fa-solid fa-star filled"></i>
-                            </div>
-                            <p class="fs-14 text-white">Local flavors, vibrant bazaars, and tea houses</p>
-                        </div>
-                    </div>
-                    <div class="destination-overlay bg-white mt-2">
-                        <div class="d-flex">
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-indigo"><i class="isax isax-heart"></i></span>
-                                    <h6 class="fs-13 fw-medium">9 Dishes</h6>
-                                </div>
-                            </div>
-                            <div class="col border-end">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-cyan"><i class="isax isax-cup"></i></span>
-                                    <h6 class="fs-13 fw-medium">7 Drinks</h6>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="count-info text-center">
-                                    <span class="d-block mb-1 text-success"><i class="isax isax-user"></i></span>
-                                    <h6 class="fs-13 fw-medium">290+ Reviews</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="destination.html" class="overlay-circle-link"><i class="isax isax-arrow-right-1"></i></a>
-            </div>
-
-        </div>
-        <div class="text-center view-all wow fadeInUp">
-            <a href="destination.html" class="btn btn-dark d-inline-flex align-items-center">View All Locations<i class="isax isax-arrow-right-3 ms-2"></i></a>
-        </div>
-    </div>
-</section>
-
- 
-
-
-
-
-      
-      
-    <section class="section blog-section blog-section-four pt-0">
+    <!-- Seasonal Calendar -->
+    <section class="py-5 bg-white">
         <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-              <div class="section-header section-header-four text-center">
-                <h2 class="mb-2">Foodie highlights</span></h2>
-                <p class="sub-title">
-                    From hiking mountain trails and exploring ancient fortresses to riding through scenic valleys, thrilling adventures await across <span>Afghanistan</span> for every kind of explorer.
-                  </p>
-              </div>
+            <h2 class="section-title">Seasonal Flavor Calendar</h2>
+            
+            <div class="flavor-calendar">
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <div class="season-box spring">
+                            <h4>Spring</h4>
+                            <p>(Mar–May)</p>
+                            <p>Fresh herbs, dill rice, broad beans, mulberries.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="season-box summer">
+                            <h4>Summer</h4>
+                            <p>(Jun–Aug)</p>
+                            <p>Melons (Herat/Kandahar), apricots, cherries, ashak with garden chives.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="season-box autumn">
+                            <h4>Autumn</h4>
+                            <p>(Sep–Nov)</p>
+                            <p>Pomegranates (Kandahar), grapes (Parwan) → raisins, saffron harvest (Herat).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-4">
+                        <div class="season-box winter">
+                            <h4>Winter</h4>
+                            <p>(Dec–Feb)</p>
+                            <p>Slow stews, palaw feasts, nuts and dried fruits.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-      
-          <!-- Grid blog layout -->
-          <div class="row">
-      
-            <!-- Blog Item 1 -->
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-12_34.JPG' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Work remotely programme</span>
-                  <h5><a href="blog-details.html">
-                    Do you want to mix business with pleasure in <span>Afghanistan</span>? With a new one-year virtual working programme, you can live and work by the beach.
-                  </a></h5>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Blog Item 2 -->
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-13_888_0.JPG' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Residency for investors and entrepreneurs</span>
-                  <h5><a href="blog-details.html">
-                    If you wish to open a business or invest in property in <span>Afghanistan</span>, you can apply for five and ten-year residency visas.
-                  </a></h5>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Blog Item 3 (duplicate of blog-12.jpg) -->
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-55_99.JPG' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>20<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Family Experiences</span>
-                  <h5><a href="blog-details.html">
-                    Explore Afghanistan’s cultural sites and outdoor spaces — perfect for fun and learning with your family.
-                  </a></h5>
-                </div>
-              </div>
-            </div>
-      
-            <!-- Blog Item 4 (duplicate of blog-13.jpg) -->
-            <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-222_22.JPG' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>25<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Explore Together</span>
-                  <h5><a href="blog-details.html">
-                    Discover family-friendly adventures — from food tours to heritage walks — all across <span>Afghanistan</span>.
-                  </a></h5>
-                </div>
-              </div>
-            </div>
-      
-          </div>
-      
-          <div class="text-center view-all wow fadeInUp">
-            <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
-          </div>
         </div>
-      </section>
-      
-      
+    </section>
+
+    <!-- Hands-on Experiences -->
+    <section class="py-5 bg-light" id="experiences">
+        <div class="container">
+            <h2 class="section-title">Hands-on Experiences</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card experience-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kabul Street Eats</h5>
+                            <p>Bolani griddle, kebab alley, bakery tour (naan & kulcha).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card experience-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Herat Saffron Workshop</h5>
+                            <p>Seasonal experience from flower to stigma, then saffron-infused rice tasting.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card experience-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bamyan Home Kitchen</h5>
+                            <p>Make mantu/ashak, churn yogurt, breakfast with qaymaq & honey.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card experience-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Kandahar Pomegranate Farm</h5>
+                            <p>Autumn orchard walk, juice pressing, palaw pairing.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card experience-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Istalif Pottery & Lunch</h5>
+                            <p>Throw a pot, then enjoy pumpkin kadoo borani and doogh.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card experience-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Festive Table Class</h5>
+                            <p>Qabuli palaw from scratch + char-masala blending + tea ceremony.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasting Trail -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="section-title">Sample 1-Day Tasting Trail (Kabul)</h2>
+            
+            <div class="tasting-trail">
+                <div class="trail-step">
+                    <h4>Morning</h4>
+                    <p>Bread bakery & chai → Bolani stand → spice shop (char-masala)</p>
+                </div>
+                
+                <div class="trail-step">
+                    <h4>Lunch</h4>
+                    <p>Mantu with yogurt & lentil sauce</p>
+                </div>
+                
+                <div class="trail-step">
+                    <h4>Afternoon</h4>
+                    <p>Dried-fruit bazaar tasting (raisins, mulberries, nuts)</p>
+                </div>
+                
+                <div class="trail-step">
+                    <h4>Dinner</h4>
+                    <p>Charcoal kebab & Qabuli Palaw; finish with Ferni and green tea</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 {% endblock %}
