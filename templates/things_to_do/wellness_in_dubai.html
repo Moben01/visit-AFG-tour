@@ -3,325 +3,321 @@
 {% load static %}
 
 <!-- Wellness Hero Section -->
-<section class="hero-section wellness-hero">
-  <div class="banner-slider banner-sec owl-carousel">
-      <div class="slider-img">
-          <img src="{% static 'image_for_province/health.jpg' %}" alt="Natural Healing">
-      </div>
-
-  </div>
+<section class="wellness-hero-section position-relative overflow-hidden">
   <div class="container">
-      <div class="hero-content">
-          <div class="row align-items-center">
-              <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
-                  <div class="banner-content mx-auto text-center">
-                      <h1 class="text-white display-4 mb-3">Uncover afghanistan wellness <span>scene</span></h1>
-                      <h4 class="text-light mx-auto mb-4">Explore the ancient healing practices and holistic wellness that nurture the body, mind, and spirit across Afghanistan</h4>
-                  </div>
-                  
-                  <div class="container my-4">
-                      <!-- Wellness Overview Card -->
-                      <div class="row justify-content-center mb-5">
-                          <div class="col-lg-8">
-                            
-                                  <div class="card-body p-4 text-center">
-                                      <div class="wellness-icon mb-3">
-                                          <i class="fas fa-spa fa-3x text-success"></i>
-                                      </div>
-
-                                  </div>
-                       
-                          </div>
-                      </div>
-
-                 
-                      
-                      <!-- View More Button -->
-                      <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
-                          <a href="wellness-listings.html" class="btn btn-success btn-lg px-4">
-                              <i class="fas fa-spa me-2"></i> Discover More Wellness Traditions
-                          </a>
-                      </div>
-                  </div>
-              </div>
-          </div>
+    <div class="row min-vh-80 align-items-center py-5">
+      <div class="col-lg-7 col-md-10 mx-auto text-center text-white py-5">
+        <h1 class="display-3 fw-bold mb-4">Uncover Afghanistan's <span class="text-warning">Wellness Traditions</span></h1>
+        <p class="lead mb-4">Explore ancient healing practices and holistic traditions that nurture body, mind, and spirit across Afghanistan's diverse regions</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="#practices" class="btn btn-warning btn-lg px-4 py-3">Explore Traditions</a>
+          <a href="#itinerary" class="btn btn-outline-light btn-lg px-4 py-3">View Itinerary</a>
+        </div>
       </div>
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-bg" style="background-image: url('{% static 'image_for_province/wellness.jpg' %}')"></div>
+</section>
+
+<!-- Wellness Philosophy Section -->
+<section class="py-5 bg-light">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="rounded-4 overflow-hidden shadow-lg">
+          <img src="{% static 'image_for_province/Afghanistan.jpg' %}" alt="Traditional Afghan Tea Ceremony" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="ps-lg-5">
+          <h2 class="display-5 fw-bold mb-4">The Afghan Approach to <span class="text-success">Wellbeing</span></h2>
+          <p class="lead mb-4">Wellness in Afghanistan is deeply rooted in hospitality, faith, nature, and balance. Daily rituals transform ordinary moments into mindful practices.</p>
+          <div class="d-flex mb-4">
+            <div class="me-4">
+              <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                <i class="fas fa-bread-slice fa-2x text-success"></i>
+              </div>
+              <h5 class="fw-bold">Fresh Bread at Dawn</h5>
+            </div>
+            <div class="me-4">
+              <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                <i class="fas fa-mountain fa-2x text-success"></i>
+              </div>
+              <h5 class="fw-bold">Mountain Herbs</h5>
+            </div>
+            <div>
+              <div class="bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                <i class="fas fa-hands-helping fa-2x text-success"></i>
+              </div>
+              <h5 class="fw-bold">Community Healing</h5>
+            </div>
+          </div>
+          <p>Healing draws on Tibb-e Unani (Greco-Arab medicine), herbal remedies, steam baths, and community practices emphasizing rest, moderation, and respect for natural cycles.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Time-Honored Practices Section -->
+<section id="practices" class="py-5">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-4 fw-bold mb-3 animate__animated animate__fadeInUp">Time-Honored <span class="text-primary">Wellness Practices</span></h2>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Discover the ancient healing traditions that have been passed down through generations</p>
+      </div>
+    </div>
 
-
-
-
-<!-- Trending Now Section -->
-<section class="banner-search-four my-5">
-    <div class="container">
-      <div class="card shadow-sm">
-        <div class="card-header bg-primary text-white">
-          <h4 class="mb-0">A world of wellness awaits</h4>
+    <div class="row g-4">
+      <!-- Practice 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm practice-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/zafrn2.jpg' %}" alt="Tibb-e Unani" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <i class="fas fa-mortar-pestle text-primary"></i>
+              </div>
+              <h4 class="card-title mb-0">Tibb-e Unani</h4>
+            </div>
+            <p class="card-text">Traditional Greco-Arab medicine using herbal tonics, poultices, digestive bitters, and foods classified by warming/cooling properties.</p>
+            <ul class="list-unstyled">
+              <li class="mb-1"><i class="fas fa-seedling text-success me-2"></i> Saffron & black seed</li>
+              <li class="mb-1"><i class="fas fa-seedling text-success me-2"></i> Cumin & coriander</li>
+              <li class="mb-1"><i class="fas fa-seedling text-success me-2"></i> Dried fruits & nuts</li>
+            </ul>
+          </div>
         </div>
-        <div class="card-body">
-          <ul class="list-group list-group-flush mb-3">
-            <li class="list-group-item"><strong>Bamiyan Mountain Retreats</strong> – Serene eco-lodges offering meditation, clean air, and natural beauty</li>
-            <li class="list-group-item"><strong>Herbal Healing Centers</strong> – Traditional Afghan remedies and wellness treatments using natural herbs</li>
-            <li class="list-group-item"><strong>Yoga in the Valleys</strong> – Outdoor yoga sessions in the peaceful Panjshir and Nuristan landscapes</li>
-            <li class="list-group-item"><strong>Thermal Springs of Laghman</strong> – Natural hot springs attracting wellness seekers for centuries</li>
-            <li class="list-group-item"><strong>Mindfulness Tours</strong> – Guided journeys combining sightseeing with spiritual practices</li>
-            <li class="list-group-item"><strong>Women’s Wellness Circles</strong> – Community-led gatherings promoting emotional well-being and health</li>
-            <li class="list-group-item"><strong>Organic Farm Stays</strong> – Detox retreats on sustainable farms offering fresh local food and peaceful vibes</li>
-            <li class="list-group-item"><strong>Sufi Sound Healing</strong> – Ancient music therapy sessions based on spiritual traditions</li>
-          </ul>
-          <p class="mb-0">Afghanistan is embracing a new era of wellness travel — from spiritual retreats in sacred mountains to herbal healing traditions rooted in centuries of wisdom. These rejuvenating experiences invite travelers to rest, heal, and reconnect with nature.</p>
+      </div>
+
+      <!-- Practice 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm practice-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/followers.jpg' %}" alt="Herbal Bazaars" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <i class="fas fa-spa text-primary"></i>
+              </div>
+              <h4 class="card-title mb-0">Herbal Bazaars</h4>
+            </div>
+            <p class="card-text">Fragrant markets filled with dried flowers, roots, seeds, and oils—rose, nigella, asafoetida, fennel—blended into teas and home remedies.</p>
+            <ul class="list-unstyled">
+              <li class="mb-1"><i class="fas fa-shopping-basket text-success me-2"></i> Attar shops</li>
+              <li class="mb-1"><i class="fas fa-shopping-basket text-success me-2"></i> Traditional remedies</li>
+              <li class="mb-1"><i class="fas fa-shopping-basket text-success me-2"></i> Custom blends</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm practice-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/hamam.jpg' %}" alt="Hammam Culture" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <i class="fas fa-bath text-primary"></i>
+              </div>
+              <h4 class="card-title mb-0">Hammam Culture</h4>
+            </div>
+            <p class="card-text">Traditional steam baths with exfoliating scrubs, scalp washes, and rest in gender-segregated sessions—a social ritual as much as a cleanse.</p>
+            <ul class="list-unstyled">
+              <li class="mb-1"><i class="fas fa-water text-success me-2"></i> Steam therapy</li>
+              <li class="mb-1"><i class="fas fa-water text-success me-2"></i> Exfoliating scrubs</li>
+              <li class="mb-1"><i class="fas fa-water text-success me-2"></i> Social wellness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm practice-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/massge.jpg' %}" alt="Cupping Therapy" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <i class="fas fa-plus-circle text-primary"></i>
+              </div>
+              <h4 class="card-title mb-0">Cupping & Massage</h4>
+            </div>
+            <p class="card-text">Traditional Hijama (cupping) and therapeutic massage performed by licensed professionals with strict hygiene standards.</p>
+            <ul class="list-unstyled">
+              <li class="mb-1"><i class="fas fa-hand-holding-heart text-success me-2"></i> Licensed practitioners</li>
+              <li class="mb-1"><i class="fas fa-hand-holding-heart text-success me-2"></i> Traditional techniques</li>
+              <li class="mb-1"><i class="fas fa-hand-holding-heart text-success me-2"></i> Modern safety standards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm practice-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/zikar.jpg' %}" alt="Sufi Music" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <i class="fas fa-music text-primary"></i>
+              </div>
+              <h4 class="card-title mb-0">Sufi Grounding</h4>
+            </div>
+            <p class="card-text">Spiritual calm through zikr (remembrance), poetry, and the melodic sounds of the rubab—connecting to Afghanistan's rich mystical heritage.</p>
+            <ul class="list-unstyled">
+              <li class="mb-1"><i class="fas fa-pray text-success me-2"></i> Zikr meditation</li>
+              <li class="mb-1"><i class="fas fa-pray text-success me-2"></i> Poetry gatherings</li>
+              <li class="mb-1"><i class="fas fa-pray text-success me-2"></i> Rubab melodies</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm practice-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/new muotoin.jpg' %}" alt="Mountain Remedies" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                <i class="fas fa-tree text-primary"></i>
+              </div>
+              <h4 class="card-title mb-0">Mountain Remedies</h4>
+            </div>
+            <p class="card-text">High-valley households brew herb teas, churn yogurt, and use simple heat/cold therapies tied to daily labor and seasonal changes.</p>
+            <ul class="list-unstyled">
+              <li class="mb-1"><i class="fas fa-leaf text-success me-2"></i> Herb teas</li>
+              <li class="mb-1"><i class="fas fa-leaf text-success me-2"></i> Natural yogurt</li>
+              <li class="mb-1"><i class="fas fa-leaf text-success me-2"></i> Seasonal therapies</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  
-
-<section class="section blog-section blog-section-four pt-0">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-          <div class="section-header section-header-four text-center">
-            <h2 class="mb-2">A world of wellness awaits</h2>
-            <p class="sub-title">Take care of your mind, body and spirit in Dubai</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-  
-        <!-- Wellness Item 1 -->
-        <style>
-        .trending-img-container {
-          height: 200px;          /* All images same height */
-          overflow: hidden;
-          border-radius: 0.5rem;  /* Optional: rounded corners */
-        }
-
-        .trending-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;      /* Keeps aspect ratio, crops edges */
-          display: block;
-        }
-        </style>
-
-        <div class="row">
-          <!-- Wellness Item 1 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card trending-card h-100 border-0 shadow-sm">
-              <div class="trending-img-container">
-                <img src="{% static 'image_for_province/wellness doctor.jpg' %}" class="trending-img" alt="Luxury Spa">
-              </div>
-              <span class="trending-badge text-primary">#SpaDay</span>
-              <div class="card-body d-flex flex-column">
-                <span class="badge bg-primary mb-2">Relaxation</span>
-                <h5 class="card-title">Luxury Spa Experiences</h5>
-                <p class="card-text">Recharge your body with world-class massages, saunas, and full-body treatments in Dubai’s top spas.</p>
-                <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Relax Now</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wellness Item 2 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card trending-card h-100 border-0 shadow-sm">
-              <div class="trending-img-container">
-                <img src="{% static 'image_for_province/imagesdoctro.jpg' %}" class="trending-img" alt="Evening Yoga">
-              </div>
-              <span class="trending-badge text-danger">#SunsetYoga</span>
-              <div class="card-body d-flex flex-column">
-                <span class="badge bg-danger mb-2">Mind & Body</span>
-                <h5 class="card-title">Sunset Yoga by the Sea</h5>
-                <p class="card-text">Join daily yoga sessions on the beach with peaceful ocean sounds and golden-hour skies.</p>
-                <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Join Class</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wellness Item 3 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card trending-card h-100 border-0 shadow-sm">
-              <div class="trending-img-container">
-                <img src="{% static 'image_for_province/imagewellness.jpg' %}" class="trending-img" alt="Herbal Healing">
-              </div>
-              <span class="trending-badge text-success">#HealingNaturally</span>
-              <div class="card-body d-flex flex-column">
-                <span class="badge bg-success mb-2">Holistic</span>
-                <h5 class="card-title">Traditional Herbal Wellness</h5>
-                <p class="card-text">Experience time-honored natural healing methods using essential oils, herbs, and therapies.</p>
-                <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Learn More</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Wellness Item 4 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card trending-card h-100 border-0 shadow-sm">
-              <div class="trending-img-container">
-                <img src="{% static 'image_for_province/image doctor.jpg' %}" class="trending-img" alt="Wellness Retreat">
-              </div>
-              <span class="trending-badge text-info">#DesertRetreat</span>
-              <div class="card-body d-flex flex-column">
-                <span class="badge bg-info mb-2">Retreat</span>
-                <h5 class="card-title">Desert Meditation Retreats</h5>
-                <p class="card-text">Escape the noise and rediscover peace with meditation camps in the quiet sands of Dubai.</p>
-                <a href="#" class="btn btn-sm btn-outline-primary mt-auto">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-  
-      </div>
-    </div>
-  </section>
-  
-
-
+  </div>
+</section>
 
 <style>
-/* Force all traveler card images to same size */
-.travelers-card .card-img {
-  height: 220px;          /* Adjust this height as you like */
-  overflow: hidden;
-  border-radius: 0.5rem 0.5rem 0 0; /* rounded only on top */
-  position: relative;
+/* Custom styles for the practices section */
+.practice-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
 }
 
-.travelers-card .card-img img {
+.practice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* Crop edges but keep proportion */
-  display: block;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-/* Optional: make overlay icon always centered */
-.travelers-card .overlay-icon {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(255,255,255,0.8);
-  border-radius: 50%;
-  padding: 6px;
-  font-size: 1rem;
+.practice-card:hover .card-overlay {
+  opacity: 0.9;
+}
+
+/* Animation classes */
+.animate__animated {
+  opacity: 0;
 }
 </style>
 
-<section class="section traveling-sec">
-  <div class="travel-sec-bg">
-    <img src="{% static 'img/bg/hotel-bg-01.svg' %}" class="bg-1" alt="Img">
-    <img src="{% static 'img/bg/hotel-bg-02.svg' %}" class="bg-2" alt="Img">
-    <img src="{% static 'img/bg/hotel-bg-03.svg' %}" class="bg-3" alt="Img">
-  </div>
-  <div class="container">
-    <div class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-      <div>
-        <p class="mb-2 fw-medium d-flex align-items-center">
-          <span class="text-bar"></span>Featured Categories
-        </p>
-        <h2>Find health and fitness events in Afghanistan<span class="text-primary">.</span></h2>
-      </div>
-      <div>
-        <a href="health-events.html" class="btn btn-primary">View All<i class="isax isax-arrow-right-3 ms-2"></i></a>
-      </div>
-    </div>
+<script>
+// Initialize animations when document is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate practice cards when they come into view
+  const practiceCards = document.querySelectorAll('.practice-card');
+  
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate__fadeInUp');
+        entry.target.style.opacity = 1;
+      }
+    });
+  }, observerOptions);
+  
+  // Observe all practice cards
+  practiceCards.forEach(card => observer.observe(card));
+});
+</script>
 
-    <div class="travelers-slider owl-carousel">
-      <!-- Card 1 -->
-      <div class="card travelers-card">
-        <div class="card-img">
-          <a href="health-events.html"><img src="{% static 'image_for_province/fitness.jpg' %}" alt="Img"></a>
-        </div>
-        <div class="card-body d-flex align-items-center justify-content-between">
-          <div>
-            <h5 class="mb-1"><a href="health-events.html">Traditional Healing</a></h5>
-            <p>25 Events Available</p>
-          </div>
-          <div>
-            <a href="health-events.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-          </div>
+<!-- Culinary Wellness Section -->
+<section class="py-5 bg-success bg-opacity-10">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0">
+        <div class="rounded-4 overflow-hidden shadow-lg">
+          <img src="{% static 'image_for_province/newfood.jpg' %}" alt="Traditional Afghan Cuisine" class="img-fluid">
         </div>
       </div>
-
-      <!-- Card 2 -->
-      <div class="card travelers-card">
-        <div class="card-img">
-          <a href="health-events.html"><img src="{% static 'image_for_province/fiteness tow.jpg' %}" alt="Img"></a>
+      <div class="col-lg-6 order-lg-1">
+        <div class="pe-lg-5">
+          <h2 class="display-5 fw-bold mb-4">Nourishment from the <span class="text-success">Afghan Kitchen</span></h2>
+          <p class="lead mb-4">Afghan cuisine offers balanced nutrition through traditional dishes that heal and nourish both body and soul.</p>
           
-        </div>
-        <div class="card-body d-flex align-items-center justify-content-between">
-          <div>
-            <h5 class="mb-1"><a href="health-events.html">Yoga & Meditation</a></h5>
-            <p>18 Events Available</p>
+          <div class="d-flex align-items-start mb-4">
+            <div class="bg-success bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center me-4 flex-shrink-0" style="width: 60px; height: 60px;">
+              <i class="fas fa-utensils text-success"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold">Balanced Meals</h4>
+              <p>Rice and stew plates (palaw + qorma), probiotic yogurt & doogh, fiber-rich bolani (stuffed flatbreads), and seasonal produce.</p>
+            </div>
           </div>
-          <div>
-            <a href="health-events.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+          
+          <div class="d-flex align-items-start mb-4">
+            <div class="bg-success bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center me-4 flex-shrink-0" style="width: 60px; height: 60px;">
+              <i class="fas fa-cookie text-success"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold">Restorative Sweets</h4>
+              <p>Ferni, sheer berenj, and nut-dried fruit mixes consumed in moderation for winter energy and special occasions.</p>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="card travelers-card">
-        <div class="card-img">
-          <a href="health-events.html"><img src="{% static 'image_for_province/fitness three.jpg' %}" alt="Img"></a>
-         
-        </div>
-        <div class="card-body d-flex align-items-center justify-content-between">
-          <div>
-            <h5 class="mb-1"><a href="health-events.html">Mountain Hiking</a></h5>
-            <p>12 Events Available</p>
-          </div>
-          <div>
-            <a href="health-events.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card travelers-card">
-        <div class="card-img">
-          <a href="health-events.html"><img src="{% static 'image_for_province/fitness four.jpg' %}" alt="Img"></a>
-        </div>
-        <div class="card-body d-flex align-items-center justify-content-between">
-          <div>
-            <h5 class="mb-1"><a href="health-events.html">Fitness Bootcamps</a></h5>
-            <p>20 Events Available</p>
-          </div>
-          <div>
-            <a href="health-events.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="card travelers-card">
-        <div class="card-img">
-          <a href="health-events.html"><img src="{% static 'image_for_province/last fitness.jpg' %}" alt="Img"></a>
-        </div>
-        <div class="card-body d-flex align-items-center justify-content-between">
-          <div>
-            <h5 class="mb-1"><a href="health-events.html">Community Wellness</a></h5>
-            <p>14 Events Available</p>
-          </div>
-          <div>
-            <a href="health-events.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="card travelers-card">
-        <div class="card-img">
-          <a href="health-events.html"><img src="{% static 'img/hotels/hotel-25.jpg' %}" alt="Img"></a>
-        </div>
-        <div class="card-body d-flex align-items-center justify-content-between">
-          <div>
-            <h5 class="mb-1"><a href="health-events.html">Herbal Therapy</a></h5>
-            <p>10 Events Available</p>
-          </div>
-          <div>
-            <a href="health-events.html" class="rounded-arrow-next"><i class="isax isax-arrow-right-3"></i></a>
+          
+          <div class="d-flex align-items-start">
+            <div class="bg-success bg-opacity-25 rounded-circle d-flex align-items-center justify-content-center me-4 flex-shrink-0" style="width: 60px; height: 60px;">
+              <i class="fas fa-mug-hot text-success"></i>
+            </div>
+            <div>
+              <h4 class="fw-bold">Tea as Therapy</h4>
+              <p>Green or black tea with cardamom or saffron, served slowly and mindfully throughout the day.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -329,156 +325,630 @@
   </div>
 </section>
 
-  
-  
+<!-- Wellness Experiences Section -->
+<section class="py-5">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-4 fw-bold mb-3 animate__animated animate__fadeInUp">Authentic Wellness <span class="text-primary">Experiences</span></h2>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Immerse yourself in traditional Afghan healing practices and cultural wellness activities</p>
+      </div>
+    </div>
 
+    <div class="row g-4">
+      <!-- Experience 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm experience-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/helbal.jpg' %}" alt="Herbal Workshop" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+            <div class="position-absolute top-0 end-0 m-3">
+              <span class="badge bg-warning text-dark">Popular</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Herbal Market Walk & Blending Class</h4>
+            <p class="card-text">Meet an attar (herbalist), learn warm/cool herb pairings, and blend your personal tea and spice mix.</p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <span class="h5 text-primary mb-0">$45</span>
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-   <!-- Blog Section -->
-<!-- Blog Section -->
-<section class="section blog-section blog-section-four pt-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header section-header-four text-center">
-          <h2 class="mb-2"><span>Festivals of</span> Afghanistan</h2>
-          <p class="sub-title">Discover Afghanistan’s hidden gems, ancient sites, and modern cultural hotspots.</p>
+      <!-- Experience 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm experience-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/hamam3.jpg' %}" alt="Hammam Experience" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Traditional Hammam & Steam Ritual</h4>
+            <p class="card-text">Private booking with traditional scrub, scalp wash, and recovery tea in a serene environment.</p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <span class="h5 text-primary mb-0">$65</span>
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm experience-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/afternoon.jpg' %}" alt="Mindful Cooking" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Mindful Food Afternoon</h4>
+            <p class="card-text">Cook ashak or kadoo borani, practice slow plating, and share a silent first bite in traditional style.</p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <span class="h5 text-primary mb-0">$55</span>
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm experience-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/sufi1.jpg' %}" alt="Sufi Evening" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Sufi Evening of Reflection</h4>
+            <p class="card-text">Poetry reading, live rubab music, and reflective tea—planned with local custodians and proper etiquette.</p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <span class="h5 text-primary mb-0">$40</span>
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm experience-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/afgmorning.jpg' %}" alt="Village Experience" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Slow Village Day Experience</h4>
+            <p class="card-text">Morning bread-baking, orchard stroll, noon rest, sunset valley walk, and storytelling by the samovar.</p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <span class="h5 text-primary mb-0">$75</span>
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Experience 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 border-0 shadow-sm experience-card animate__animated">
+          <div class="card-img-top position-relative overflow-hidden" style="height: 250px;">
+            <img src="{% static 'image_for_province/maphandemade.jpg' %}" alt="Craft Workshop" class="img-fluid w-100 h-100" style="object-fit: cover;">
+            <div class="card-overlay"></div>
+          </div>
+          <div class="card-body">
+            <h4 class="card-title">Craft & Calm Studio Session</h4>
+            <p class="card-text">Try pottery in Istalif or miniature-painting basics while experiencing the meditative quality of traditional crafts.</p>
+            <div class="d-flex justify-content-between align-items-center mt-4">
+              <span class="h5 text-primary mb-0">$50</span>
+              <a href="#" class="btn btn-outline-primary">Learn More</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="blog-slider owl-carousel nav-center">
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/kabul.jpg' %}" alt="img">
-          
-        </a>
-        <div class="blog-date">
-          <h6>02<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Heritage</span>
-          <h5><a href="blog-details.html">Exploring the Ancient Minarets of Herat</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/mazar festival.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>05<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Culture</span>
-          <h5><a href="blog-details.html">Kabul’s Modern Art Scene: Where Past Meets Present</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/herat fes.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>11<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Nature</span>
-          <h5><a href="blog-details.html">The Untouched Beauty of Band-e Amir National Park</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/eid.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>14<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Local Life</span>
-          <h5><a href="blog-details.html">Top Street Markets in Mazar-e-Sharif to Visit This Year</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-    </div>
-
-    <div class="text-center view-all wow fadeInUp">
-      <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-primary btn-lg px-5 animate__animated animate__pulse animate__infinite">View All Experiences</a>
     </div>
   </div>
 </section>
 
+<style>
+/* Custom styles for the experiences section */
+.experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+}
 
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+}
 
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover .card-overlay {
+  opacity: 0.9;
+}
+
+/* Animation classes */
+.animate__animated {
+  opacity: 0;
+}
+</style>
+
+<script>
+// Initialize animations when document is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate experience cards when they come into view
+  const experienceCards = document.querySelectorAll('.experience-card');
   
-
-
-
-
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
   
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate__fadeInUp');
+        entry.target.style.opacity = 1;
+      }
+    });
+  }, observerOptions);
   
+  // Observe all experience cards
+  experienceCards.forEach(card => observer.observe(card));
+});
+</script>
+
+<!-- Wellness Itinerary Section -->
+<section id="itinerary" class="py-5 bg-dark text-white">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-4 fw-bold mb-3">3-Day Wellness <span class="text-warning">Retreat Itinerary</span></h2>
+        <p class="lead">A sample journey through Afghanistan's most rejuvenating experiences</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Day 1 -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="card h-100 bg-dark border-secondary itinerary-card">
+          <div class="card-header bg-secondary py-4">
+            <h3 class="card-title text-center mb-0">Day 1: Kabul Slow Start</h3>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-sun text-warning fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Sunrise Overlook</h5>
+                  <p class="mb-0">Begin your day with panoramic views and mindful breathing exercises</p>
+                </div>
+              </li>
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-bath text-info fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Traditional Hammam</h5>
+                  <p class="mb-0">Cleansing steam bath and exfoliating scrub to refresh body and mind</p>
+                </div>
+              </li>
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-mortar-pestle text-success fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Herbal Workshop</h5>
+                  <p class="mb-0">Learn about traditional remedies and blend your personal tea mixture</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <div class="me-3">
+                  <i class="fas fa-book text-primary fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Evening Poetry Circle</h5>
+                  <p class="mb-0">Reflect on the day with traditional poetry and shared stories</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2 -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="card h-100 bg-dark border-secondary itinerary-card">
+          <div class="card-header bg-secondary py-4">
+            <h3 class="card-title text-center mb-0">Day 2: Highlands Reset</h3>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-car text-info fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Scenic Drive to Bamyan</h5>
+                  <p class="mb-0">Journey through breathtaking landscapes to the peaceful highlands</p>
+                </div>
+              </li>
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-hiking text-success fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Lakeside Walk & Picnic</h5>
+                  <p class="mb-0">Gentle hike alongside pristine waters followed by a nutritious meal</p>
+                </div>
+              </li>
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-utensils text-warning fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Village Kitchen Class</h5>
+                  <p class="mb-0">Learn to prepare traditional dishes with local ingredients and techniques</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <div class="me-3">
+                  <i class="fas fa-star text-warning fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Stargazing</h5>
+                  <p class="mb-0">Marvel at the brilliant night sky free from light pollution</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3 -->
+      <div class="col-lg-4">
+        <div class="card h-100 bg-dark border-secondary itinerary-card">
+          <div class="card-header bg-secondary py-4">
+            <h3 class="card-title text-center mb-0">Day 3: Craft & Reflection</h3>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled">
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-hands text-primary fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Pottery Session</h5>
+                  <p class="mb-0">Try your hand at traditional pottery techniques in historic Istalif</p>
+                </div>
+              </li>
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-apple-alt text-success fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Quiet Lunch</h5>
+                  <p class="mb-0">Mindful eating experience with locally sourced, seasonal ingredients</p>
+                </div>
+              </li>
+              <li class="d-flex mb-3">
+                <div class="me-3">
+                  <i class="fas fa-pencil-alt text-info fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Journaling Time</h5>
+                  <p class="mb-0">Reflect on your journey in a peaceful garden setting</p>
+                </div>
+              </li>
+              <li class="d-flex">
+                <div class="me-3">
+                  <i class="fas fa-mug-hot text-warning fa-2x"></i>
+                </div>
+                <div>
+                  <h5>Closing Tea Ritual</h5>
+                  <p class="mb-0">Share insights and gratitude over traditional Afghan tea before departure</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wellness Etiquette Section -->
+<section class="py-5">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-8 text-center">
+        <h2 class="display-4 fw-bold mb-3">Wellness <span class="text-primary">Etiquette</span></h2>
+        <p class="lead">Important cultural considerations for your wellness journey in Afghanistan</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+            <i class="fas fa-tshirt fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-bold">Modest Dress</h5>
+          <p>Respect local customs with conservative clothing, especially at spiritual sites and hammams.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+            <i class="fas fa-camera fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-bold">Photography Respect</h5>
+          <p>Always ask before taking photos and keep phones away in baths and spiritual spaces.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+            <i class="fas fa-mug-hot fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-bold">Tea Hospitality</h5>
+          <p>Accepting tea (even a sip) honors your host and is an important cultural practice.</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3">
+        <div class="text-center">
+          <div class="bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px;">
+            <i class="fas fa-user-md fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-bold">Health Precautions</h5>
+          <p>Only receive treatments from qualified practitioners and consult your doctor before travel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5 bg-primary">
+  <div class="container py-5">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="display-4 fw-bold text-white mb-4">Begin Your Afghan Wellness Journey</h2>
+        <p class="lead text-white mb-5">Experience the healing traditions that have nurtured generations in the heart of Central Asia</p>
+        <div class="d-flex justify-content-center flex-wrap gap-3">
+          <a href="#" class="btn btn-light btn-lg px-5 py-3">Book a Wellness Experience</a>
+          <a href="#" class="btn btn-outline-light btn-lg px-5 py-3">Contact Our Guides</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+/* Custom Styles for Wellness Page */
+.wellness-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: -1;
+}
+
+.min-vh-80 {
+  min-height: 80vh;
+}
+
+.practice-card, .experience-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.practice-card:hover, .experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.175) !important;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.practice-card:hover .card-overlay,
+.experience-card:hover .card-overlay {
+  opacity: 0.9;
+}
+
+.it.itinerary-card {
+  transition: transform 0.3s ease;
+}
+
+.itinerary-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-3 {
+    font-size: 2.5rem;
+  }
   
+  .display-4 {
+    font-size: 2rem;
+  }
+  
+  .display-5 {
+    font-size: 1.8rem;
+  }
+}
 
+/* Animation for elements */
+.wow {
+  visibility: hidden;
+}
 
+/* Custom button styles */
+.btn-outline-primary {
+  border-width: 2px;
+  font-weight: 500;
+}
 
+.btn-outline-primary:hover {
+  box-shadow: 0 0.5rem 1rem rgba(13, 110, 253, 0.15);
+}
 
+/* Section spacing */
+section {
+  padding: 5rem 0;
+}
 
+/* Text utilities */
+.lead {
+  font-weight: 400;
+}
 
+/* Card image height consistency */
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
 
+/* Icon styling adjustments */
+.bg-primary.bg-opacity-10 {
+  background-color: rgba(13, 110, 253, 0.1) !important;
+}
+
+.bg-success.bg-opacity-10 {
+  background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+.bg-success.bg-opacity-25 {
+  background-color: rgba(25, 135, 84, 0.25) !important;
+}
+</style>
+
+<script>
+// Initialize tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+// Simple animation for elements when they come into view
+function animateOnScroll() {
+  const elements = document.querySelectorAll('.practice-card, .experience-card, .itinerary-card');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  elements.forEach(element => {
+    element.style.opacity = 0;
+    element.style.transform = 'translateY(20px)';
+    element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(element);
+  });
+}
+
+// Initialize animations when document is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  animateOnScroll();
+  
+  // Initialize carousels if any
+  if (typeof OwlCarousel !== 'undefined') {
+    $('.blog-slider').owlCarousel({
+      loop: true,
+      margin: 30,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      smartSpeed: 1000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        992: {
+          items: 3
+        }
+      }
+    });
     
-
-  <script>
-    // Scroll functionality for news section
-    function setupScrollButtons(containerId, prevBtnId, nextBtnId) {
-      const container = document.getElementById(containerId);
-      const prevBtn = document.getElementById(prevBtnId);
-      const nextBtn = document.getElementById(nextBtnId);
-  
-      prevBtn.addEventListener('click', () => {
-        container.scrollBy({ top: -200, behavior: 'smooth' });
-      });
-  
-      nextBtn.addEventListener('click', () => {
-        container.scrollBy({ top: 200, behavior: 'smooth' });
-      });
-    }
-  
-    // Horizontal scroll functionality for events
-    const eventsContainer = document.getElementById('eventsScrollContainer');
-    const btnEventsNext = document.getElementById('nextBtnEvents');
-    const btnEventsPrev = document.getElementById('prevBtnEvents');
-  
-    btnEventsNext.addEventListener('click', () => {
-      eventsContainer.scrollBy({ left: 620, behavior: 'smooth' });
+    $('.travelers-slider').owlCarousel({
+      loop: true,
+      margin: 24,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      smartSpeed: 1000,
+      responsive: {
+        0: {
+          items: 1
+        },
+        576: {
+          items: 2
+        },
+        992: {
+          items: 3
+        },
+        1200: {
+          items: 4
+        }
+      }
     });
-  
-    btnEventsPrev.addEventListener('click', () => {
-      eventsContainer.scrollBy({ left: -620, behavior: 'smooth' });
-    });
-  
-    // Horizontal scroll functionality for initiatives
-    const initiativesContainer = document.getElementById('initiativesScrollContainer');
-    const btnInitiativesNext = document.getElementById('nextBtnInitiatives');
-    const btnInitiativesPrev = document.getElementById('prevBtnInitiatives');
-  
-    btnInitiativesNext.addEventListener('click', () => {
-      initiativesContainer.scrollBy({ left: 620, behavior: 'smooth' });
-    });
-  
-    btnInitiativesPrev.addEventListener('click', () => {
-      initiativesContainer.scrollBy({ left: -620, behavior: 'smooth' });
-    });
-  
-    document.addEventListener('DOMContentLoaded', () => {
-      setupScrollButtons('scrollContainer1', 'prevBtn1', 'nextBtn1');
-    });
-  </script>
+  }
+});
+</script>
 
 {% endblock %}
+
+
