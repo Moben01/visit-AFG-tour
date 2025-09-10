@@ -3,27 +3,20 @@
 {% load static %}
 
 <!-- Trending in Afghanistan Section -->
+
 <section class="hero-section trending-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'img/banner/banner-01.jpg' %}" alt="Trending in Afghanistan">
+            <img src="{% static 'image_for_province/trandingnew.jpg' %}" alt="Trending in Afghanistan">
         </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-02.jpg' %}" alt="Viral Experiences">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-03.jpg' %}" alt="Popular Destinations">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/banner/banner-04.jpg' %}" alt="Emerging Hotspots">
-        </div>
+
     </div>
     <div class="container">
         <div class="hero-content">
             <div class="row align-items-center">
                 <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
                     <div class="banner-content mx-auto text-center">
-                        <h1 class="text-white display-4 mb-3">What's Trending in<span> Afghanistan</span></h1>
+                        <h1 class="display-4 fw-bold mb-4">What's Trending in <span class="text-warning">Afghanistan</span></h1>
                         <h4 class="text-light mx-auto mb-4">Discover the most talked-about destinations, experiences, and cultural phenomena capturing Afghanistan's attention right now</h4>
                     </div>
                     
@@ -31,26 +24,20 @@
                         <!-- Trending Overview Card -->
                         <div class="row justify-content-center mb-5">
                             <div class="col-lg-8">
-                                
-                                    <div class="card-body p-4 text-center">
-                                        <div class="trending-icon mb-3">
-                                            <i class="fas fa-fire fa-3x text-primary"></i>
-                                        </div>
-                                        <h3 class="mb-3" style="color: white;">Afghanistan's Viral Trends</h3>
-                                        <p class="mb-0" style="color: white;">From social media sensations to emerging travel destinations - explore what's making waves across Afghanistan this season</p>
-                                        
+                                <div class="card-body p-4 text-center glass-card">
+                                    <div class="trending-icon mb-3">
+                                        <i class="fas fa-fire fa-3x text-primary"></i>
                                     </div>
-                              
+                                    <h3 class="mb-3 text-white">Afghanistan's Viral Trends</h3>
+                                    <p class="mb-0 text-white">From social media sensations to emerging travel destinations - explore what's making waves across Afghanistan this season</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Trending Highlights Grid -->
-                        
-                        
                         <!-- View More Button -->
                         <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
-                            <a href="trending-listings.html" class="btn btn-primary btn-lg px-4">
-                                <i class="fas fa-fire me-2"></i> See More Trending Now
+                            <a href="#trending-content" class="btn btn-primary btn-lg px-4">
+                                <i class="fas fa-fire me-2"></i> Explore Trends
                             </a>
                         </div>
                     </div>
@@ -60,551 +47,588 @@
     </div>
 </section>
 
+<!-- Verify Before You Go Section -->
 
 
-
-
-<section class="banner-search-four my-5">
+<!-- Main Trending Content -->
+<section id="trending-content" class="py-5">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-          <div class="section-header section-header-four text-center">
-            <h2 class="mb-2">Viral Experiences</h2>
-            <p class="sub-title">The most talked-about and shared experiences in Afghanistan right now</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Trending Item 1 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card trending-card h-100 border-0 shadow-sm">
-            <div class="trending-img-container">
-              <img src="{% static 'img/blog/blog-12.jpg' %}" class="trending-img" alt="Digital Nomads">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="display-5 fw-bold mb-3">National Highlights</h2>
+                <p class="lead text-muted">What's capturing the nation's attention right now</p>
             </div>
-            <span class="trending-badge text-primary">#WorkFromAfg</span>
-            <div class="card-body">
-              <span class="badge bg-primary mb-2">New Program</span>
-              <h5 class="card-title">Afghanistan's Digital Nomad Visa</h5>
-              <p class="card-text">Live and work remotely from Afghanistan's most scenic locations with our new one-year program.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary">Learn More</a>
-            </div>
-          </div>
         </div>
 
-        <!-- Trending Item 2 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card trending-card h-100 border-0 shadow-sm">
-            <div class="trending-img-container">
-              <img src="{% static 'img/blog/blog-13.jpg' %}" class="trending-img" alt="Night Market">
+        <!-- Cricket Surge Card -->
+        <div class="row mb-5 align-items-stretch">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-lg h-100 overflow-hidden wow fadeInLeft">
+                    <div class="overflow-hidden">
+                        <img src="{% static 'image_for_province/team.jpg' %}" class="card-img-top w-100" alt="Afghanistan Cricket Team" style="height: 300px; object-fit: cover;">
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-success mb-3 fs-6">Sports</span>
+                        <h3 class="card-title h4 fw-bold">National Pride: The Cricket Surge</h3>
+                        <p class="card-text">Afghanistan's remarkable run to the T20 World Cup 2024 semifinals continues to fuel national excitement. Heroes like Rashid Khan keep stadiums and screens packed, with the coach's contract extended through 2025.</p>
+                        <div class="mt-4">
+                            <h6 class="text-muted mb-2">Featured In:</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary">Al Jazeera</span>
+                                <span class="badge bg-secondary">ICC</span>
+                                <span class="badge bg-secondary">Reuters</span>
+                                <span class="badge bg-secondary">The Guardian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span class="trending-badge text-danger">#MustVisit</span>
-            <div class="card-body">
-              <span class="badge bg-danger mb-2">Trending</span>
-              <h5 class="card-title">Bamiyan Night Market</h5>
-              <p class="card-text">The new evening market featuring local artisans, live music, and authentic street food under the stars.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary">Explore</a>
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="ps-lg-4">
+                    <h3 class="h2 mb-4">Cricket Mania Sweeps the Nation</h3>
+                    <p class="mb-4">The Afghan cricket team's incredible performance has united the country in celebration. From bustling cities to remote villages, matches are watched with intense national pride.</p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-primary p-3 rounded-circle me-4 flex-shrink-0">
+                            <i class="fas fa-users fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Record Viewership</h5>
+                            <p class="mb-0 text-muted">Stadiums consistently sold out</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-primary p-3 rounded-circle me-4 flex-shrink-0">
+                            <i class="fas fa-trophy fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">2025 Preparation</h5>
+                            <p class="mb-0 text-muted">Coach contract extended through next season</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-outline-primary mt-3">Follow Cricket Updates</a>
+                </div>
             </div>
-          </div>
         </div>
 
-        <!-- Trending Item 3 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card trending-card h-100 border-0 shadow-sm">
-            <div class="trending-img-container">
-              <img src="{% static 'img/blog/blog-12.jpg' %}" class="trending-img" alt="Heritage Tour">
+        <!-- Buzkashi Card -->
+        <div class="row mb-5 align-items-stretch flex-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-lg h-100 overflow-hidden wow fadeInRight">
+                    <div class="overflow-hidden">
+                        <img src="{% static 'image_for_province/buzkashi3.jpg' %}" class="card-img-top w-100" alt="Buzkashi Game" style="height: 300px; object-fit: cover;">
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-danger mb-3 fs-6">Traditional Sport</span>
+                        <h3 class="card-title h4 fw-bold">Winter Crowds at Buzkashi</h3>
+                        <p class="card-text">From Kabul to the northern plains, buzkashi season draws big local audiences and organized league play. Recent coverage highlights both the sport's intensity and its growing organization.</p>
+                        <div class="mt-4">
+                            <h6 class="text-muted mb-2">Featured In:</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary">TOLOnews</span>
+                                <span class="badge bg-secondary">The Washington Post</span>
+                                <span class="badge bg-secondary">Kabul Times</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span class="trending-badge text-success">#CultureTrip</span>
-            <div class="card-body">
-              <span class="badge bg-success mb-2">Cultural</span>
-              <h5 class="card-title">Kabul Heritage Walks</h5>
-              <p class="card-text">Guided tours through historic neighborhoods revealing hidden architectural gems and local stories.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary">Book Now</a>
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="pe-lg-4">
+                    <h3 class="h2 mb-4">Afghanistan's Ancient Equestrian Tradition</h3>
+                    <p class="mb-4">Buzkashi, which translates to "goat grabbing," is a Central Asian sport with deep roots in Afghan culture. The game involves horse-mounted players attempting to place a goat or calf carcass in a goal.</p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-danger p-3 rounded-circle me-4 flex-shrink-0">
+                            <i class="fas fa-horse fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Growing Organization</h5>
+                            <p class="mb-0 text-muted">Formal leagues and structured competitions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-danger p-3 rounded-circle me-4 flex-shrink-0">
+                            <i class="fas fa-calendar-alt fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Seasonal Events</h5>
+                            <p class="mb-0 text-muted">Peak viewing during winter months</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-outline-danger mt-3">View Buzkashi Schedule</a>
+                </div>
             </div>
-          </div>
         </div>
 
-        <!-- Trending Item 4 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="card trending-card h-100 border-0 shadow-sm">
-            <div class="trending-img-container">
-              <img src="{% static 'img/blog/blog-13.jpg' %}" class="trending-img" alt="Eco Tourism">
+        <!-- Saffron Production Card -->
+        <div class="row mb-5 align-items-stretch">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-lg h-100 overflow-hidden wow fadeInLeft">
+                    <div class="overflow-hidden">
+                        <img src="{% static 'image_for_province/zafarn.jpg' %}" class="card-img-top w-100" alt="Saffron Harvest" style="height: 300px; object-fit: cover;">
+                    </div>
+                    <div class="card-body p-4">
+                        <span class="badge bg-warning text-dark mb-3 fs-6">Agriculture</span>
+                        <h3 class="card-title h4 fw-bold">"Red Gold" Up, Exports Mixed</h3>
+                        <p class="card-text">Herat's saffron continues expanding in fields and festivals, but export numbers show variability. Output increased in 2024-25 while official tallies show recent export dips.</p>
+                        <div class="mt-4">
+                            <h6 class="text-muted mb-2">Featured In:</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <span class="badge bg-secondary">TOLOnews</span>
+                                <span class="badge bg-secondary">Xinhua News</span>
+                                <span class="badge bg-secondary">8am Media</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <span class="trending-badge text-info">#Sustainable</span>
-            <div class="card-body">
-              <span class="badge bg-info mb-2">Eco-Tourism</span>
-              <h5 class="card-title">Wakhan Corridor Trek</h5>
-              <p class="card-text">Community-led sustainable treks through one of Afghanistan's most breathtaking landscapes.</p>
-              <a href="#" class="btn btn-sm btn-outline-primary">Discover</a>
+            <div class="col-lg-6 d-flex align-items-center">
+                <div class="ps-lg-4">
+                    <h3 class="h2 mb-4">Afghanistan's Prized Saffron</h3>
+                    <p class="mb-4">Known as "red gold," Afghan saffron is considered among the finest in the world. The Herat region produces the majority of the country's saffron, with thousands of families involved in cultivation.</p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-warning p-3 rounded-circle me-4 flex-shrink-0">
+                            <i class="fas fa-chart-line fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Production Increase</h5>
+                            <p class="mb-0 text-muted">Output up in 2024-25 season</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="bg-warning p-3 rounded-circle me-4 flex-shrink-0">
+                            <i class="fas fa-globe fa-2x text-white"></i>
+                        </div>
+                        <div>
+                            <h5 class="mb-1">Export Challenges</h5>
+                            <p class="mb-0 text-muted">Market fluctuations affecting international sales</p>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn btn-outline-warning mt-3">Learn About Saffron</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-
- 
-<!-- Blog Section -->
-<section class="section blog-section blog-section-four pt-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header section-header-four text-center">
-          <h2 class="mb-2"><span>Breaking News in Afghan Tourism</span></h2>
-          <p class="sub-title">Explore the latest updates, tips, and travel news across Afghanistan's breathtaking destinations.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="blog-slider owl-carousel nav-center">
-
-      <!-- Blog Item -->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'img/blog/blog-11.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>02<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Heritage</span>
-          <h5><a href="blog-details.html">Hidden Gems of Bamyan: Exploring the Caves and Buddha Ruins</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item -->
-
-      <!-- Blog Item -->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>07<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Travel Tips</span>
-          <h5><a href="blog-details.html">Essential Safety Tips for Tourists Visiting Kabul</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item -->
-
-      <!-- Blog Item -->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>14<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Culture</span>
-          <h5><a href="blog-details.html">Discovering Afghan Cuisine: Top Local Dishes to Try</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item -->
-
-      <!-- Blog Item -->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'img/blog/blog-14.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>20<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Eco-Tourism</span>
-          <h5><a href="blog-details.html">Sustainable Travel in Afghanistan: A New Approach to Tourism</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item -->
-
-    </div>
-
-    <div class="text-center view-all wow fadeInUp">
-      <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
-    </div>
-  </div>
 </section>
 
-
-
-
-
-<!-- Upcoming Events & Festivals Section -->
-<section class="section destination-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header text-center">
-          <h2 class="mb-2">
-            <span class="text-primary text-decoration-underline">Upcoming</span> Events & Festivals in Afghanistan
-          </h2>
-          <p class="sub-title">Discover cultural festivals, music events, and traditional celebrations happening across Afghanistan.</p>
+<!-- Popular Destinations Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-3">Most Shared Destinations</h2>
+                <p class="lead">The stunning locations dominating social media feeds</p>
+            </div>
         </div>
-      </div>
+
+        <div class="row">
+            <!-- Band-e-Amir -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card destination-card h-100 border-0 shadow-sm">
+                    <div class="destination-img-container">
+                        <img src="{% static 'image_for_province/Bamyan.jpg' %}" class="destination-img" alt="Band-e-Amir Lakes">
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <span class="badge bg-info">Natural Wonder</span>
+                                <h5 class="text-white">Band-e-Amir, Bamyan</h5>
+                                <p class="text-white">Afghanistan's first national park remains the most shared natural scene</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Bamyan Province</small>
+                            <small class="text-muted"><i class="fas fa-share-alt me-1"></i> #1 Shared Location</small>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Visit Information</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blue Mosque -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card destination-card h-100 border-0 shadow-sm">
+                    <div class="destination-img-container">
+                        <img src="{% static 'image_for_province/blue.jpg' %}" class="destination-img" alt="Blue Mosque">
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <span class="badge bg-primary">Cultural Icon</span>
+                                <h5 class="text-white">Blue Mosque, Mazar-e-Sharif</h5>
+                                <p class="text-white">The country's most iconic tilework keeps trending in reels and posts</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Balkh Province</small>
+                            <small class="text-muted"><i class="fas fa-share-alt me-1"></i> #2 Shared Location</small>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Visit Information</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wakhan Corridor -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card destination-card h-100 border-0 shadow-sm">
+                    <div class="destination-img-container">
+                        <img src="{% static 'image_for_province/Wakhan.jpg' %}" class="destination-img" alt="Wakhan Corridor">
+                        <div class="destination-overlay">
+                            <div class="destination-info">
+                                <span class="badge bg-success">Adventure</span>
+                                <h5 class="text-white">Wakhan Corridor</h5>
+                                <p class="text-white">Reports suggest select parts have reopened to tourists in 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <small class="text-muted"><i class="fas fa-map-marker-alt me-1"></i> Badakhshan Province</small>
+                            <small class="text-muted"><i class="fas fa-share-alt me-1"></i> Emerging Destination</small>
+                        </div>
+                        <a href="#" class="btn btn-sm btn-outline-primary">Permit Information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="owl-carousel cruise-slider nav-center wow fadeInUp">
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-15.jpg' %}" alt="Nowruz Celebration">
-        <h6><a href="cruise-grid.html">Nowruz Spring Festival</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-18.jpg' %}" alt="Jashn Festival">
-        <h6><a href="cruise-grid.html">Jashn-e-Azadi (Independence Day)</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-17.jpg' %}" alt="Poetry Night">
-        <h6><a href="cruise-grid.html">Herat Poetry & Literature Night</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-19.jpg' %}" alt="Bamyan Cultural">
-        <h6><a href="cruise-grid.html">Bamyan Cultural Festival</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-16.jpg' %}" alt="Food Festival">
-        <h6><a href="cruise-grid.html">Afghan Traditional Food Festival</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-20.jpg' %}" alt="Music Event">
-        <h6><a href="cruise-grid.html">Kabul Folk Music Night</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-15.jpg' %}" alt="Horse Racing">
-        <h6><a href="cruise-grid.html">Buzkashi Tournament – North</a></h6>
-      </div>
-
-      <div class="cruise-type">
-        <img src="{% static 'img/cruise/cruise-18.jpg' %}" alt="Crafts Bazaar">
-        <h6><a href="cruise-grid.html">Afghan Handicraft & Bazaar Fair</a></h6>
-      </div>
-
-    </div>
-
-    <div class="text-center view-all wow fadeInUp">
-      <a href="cruise-grid.html" class="btn btn-primary">More Events<i class="isax isax-arrow-right-3 ms-2"></i></a>
-    </div>
-  </div>
 </section>
 
+<!-- Travel Considerations Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h4 class="mb-0"><i class="fas fa-info-circle me-2"></i> Adventure Tourism & Ethical Considerations</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Current Situation</h5>
+                                <p>A trickle of foreign "adventure" visitors (particularly to Bamyan & northern regions) is back in global headlines, alongside strong cautions and ethical questions about travel under current authorities.</p>
+                                <div class="d-flex align-items-start mb-3">
+                                    <i class="fas fa-exclamation-triangle text-warning me-2 mt-1"></i>
+                                    <span>Many sources still advise avoiding non-essential travel or restricting certain visits</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Responsible Travel Guidelines</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Verify all travel advisories before planning
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Respect local customs and traditions
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Use registered local guides and services
+                                    </li>
+                                    <li class="list-group-item d-flex align-items-center">
+                                        <i class="fas fa-check-circle text-success me-2"></i>
+                                        Follow all permit and photography regulations
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- who we are -->
-    <section class="section">
-      <div class="container">
+<!-- Pistachio Industry Section -->
+<section class="py-5 bg-light">
+    <div class="container">
         <div class="row align-items-center">
-          <!-- Left Side Images and Experience -->
-          <div class="col-lg-6">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="years-off wow fadeInUp">
-                  <h4 class="text-light">15 Years of Experience</h4>
+            <div class="col-lg-5 mb-4 mb-lg-0 wow fadeInLeft">
+                <div class="rounded overflow-hidden shadow-lg">
+                    <img src="{% static 'image_for_province/Pistachio.jpg' %}" alt="Afghan Pistachios" class="img-fluid w-100">
                 </div>
-                <div class="discover-set-img-left wow fadeInDown">
-                  <img src="{% static 'img/cruise/cruise-22.jpg' %}" alt="Afghanistan Tourism">
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="discover-set-img-right wow zoomIn">
-                  <img src="{% static 'img/cruise/cruise-21.jpg' %}" alt="Afghan Landscape">
-                </div>
-              </div>
             </div>
-          </div>
-    
-          <!-- Right Side Content -->
-          <div class="col-lg-6">
-            <div class="section-header mb-4 wow fadeInUp">
-              <h2 class="mb-2">New Tourism <span class="text-primary text-decoration-underline">Initiatives</span></h2>
-              <p class="sub-title">
-                Afghanistan is opening its doors to the world with new tourism initiatives focused on sustainability, cultural preservation, and authentic travel experiences. From the mountains of Bamyan to the historic heart of Herat, discover the new face of Afghan tourism.
-              </p>
-            </div>
-    
-            <div class="row">
-              <!-- Card 1 -->
-              <div class="col-lg-6 mb-3 wow fadeInUp">
-                <div class="card border-0">
-                  <div class="card-body">
-                    <div class="d-flex align-items-center">
-                      <img src="{% static 'img/icons/extensive.svg' %}" alt="Heritage Icon">
-                      <div class="ms-2">
-                        <h6 class="fs-16 mb-2">Cultural Heritage Tours</h6>
-                        <p>Experience guided tours through Afghanistan’s historic sites and ancient cities.</p>
-                      </div>
+            <div class="col-lg-7 ps-lg-5 wow fadeInRight">
+                <h2 class="display-6 fw-bold mb-4 text-success">Pistachio Industry News</h2>
+                <p class="lead mb-4">Afghan pistachios are making headlines as exporters warn that early harvesting is hurting quality and reputation—another hot topic in agricultural circles.</p>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-success p-3 rounded-circle me-4 flex-shrink-0">
+                        <i class="fas fa-seedling fa-2x text-white"></i>
                     </div>
-                  </div>
-                </div>
-              </div>
-    
-              <!-- Card 2 -->
-              <div class="col-lg-6 mb-3 wow fadeInUp">
-                <div class="card border-0">
-                  <div class="card-body">
-                    <div class="d-flex align-items-center">
-                      <img src="{% static 'img/icons/trust.svg' %}" alt="Trust Icon">
-                      <div class="ms-2">
-                        <h6 class="fs-16 mb-2">Community-Based Travel</h6>
-                        <p>Empowering local communities through responsible and sustainable tourism projects.</p>
-                      </div>
+                    <div>
+                        <h5 class="mb-1 fw-bold">Quality Concerns</h5>
+                        <p class="mb-0">Early harvesting affecting product quality and international reputation</p>
                     </div>
-                  </div>
                 </div>
-              </div>
-    
-              <!-- CTA Button -->
-              <div class="col-12 wow fadeInUp">
-                <a href="about-us.html" class="btn btn-primary">More About Us <i class="isax isax-arrow-right-3 ms-2"></i></a>
-              </div>
+                <div class="d-flex align-items-center mb-4">
+                    <div class="bg-success p-3 rounded-circle me-4 flex-shrink-0">
+                        <i class="fas fa-industry fa-2x text-white"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-1 fw-bold">Export Impact</h5>
+                        <p class="mb-0">Industry working to maintain Afghanistan's position in global markets</p>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-success mt-3 px-4 py-2">Agricultural Reports</a>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
-    
-  
-  <section class="section blog-section blog-section-four pt-0">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-          <div class="section-header section-header-four text-center">
-            <h2 class="mb-2">Trending Highlights</h2>
-            <p class="sub-title">
-              From cultural revivals to adventure tourism, discover what's capturing attention across Afghanistan
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Grid blog layout -->
-      <div class="row">
-  
-        <!-- Highlight Item 1 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-            <a href="blog-details.html" class="blog-img">
-              <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
-            </a>
-            <div class="blog-date">
-              <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
-            </div>
-            <div class="blog-info text-center">
-              <span class="badge bg-primary mb-2">Cultural Revival</span>
-              <h5><a href="blog-details.html">
-                Traditional crafts making a comeback as young Afghans rediscover ancestral skills.
-              </a></h5>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Highlight Item 2 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-            <a href="blog-details.html" class="blog-img">
-              <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
-            </a>
-            <div class="blog-date">
-              <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
-            </div>
-            <div class="blog-info text-center">
-              <span class="badge bg-primary mb-2">Adventure</span>
-              <h5><a href="blog-details.html">
-                Trekking the Wakhan Corridor: Afghanistan's new frontier for adventure tourism.
-              </a></h5>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Highlight Item 3 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-            <a href="blog-details.html" class="blog-img">
-              <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
-            </a>
-            <div class="blog-date">
-              <h6>20<span class="d-block fs-14 fw-normal">Jul</span></h6>
-            </div>
-            <div class="blog-info text-center">
-              <span class="badge bg-primary mb-2">Urban Exploration</span>
-              <h5><a href="blog-details.html">
-                Kabul's hidden gems: The local spots tourists are just discovering.
-              </a></h5>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Highlight Item 4 -->
-        <div class="col-md-6 col-lg-3 mb-4">
-          <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
-            <a href="blog-details.html" class="blog-img">
-              <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
-            </a>
-            <div class="blog-date">
-              <h6>25<span class="d-block fs-14 fw-normal">Jul</span></h6>
-            </div>
-            <div class="blog-info text-center">
-              <span class="badge bg-primary mb-2">Innovation</span>
-              <h5><a href="blog-details.html">
-                How technology is transforming tourism in Afghanistan's remote regions.
-              </a></h5>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <div class="text-center view-all wow fadeInUp">
-        <a href="blog-grid.html" class="btn btn-dark">View All Trends<i class="isax isax-arrow-right-3 ms-2"></i></a>
-      </div>
     </div>
-  </section>
+</section>
 
-
-
-
-  <section class="section blog-section blog-section-four pt-0">
+<!-- Live Updates Section -->
+<section class="py-5">
     <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-          <div class="section-header section-header-four text-center">
-            <h2 class="mb-2">Festivals of <span>Afghanistan</span></h2>
-            <p class="sub-title">
-              Celebrate Afghanistan’s vibrant festivals full of music, colors, and centuries-old traditions — from Nowruz to local harvest gatherings.
-            </p>
-          </div>
+        <div class="row mb-5">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-3">Live Regional Updates</h2>
+                <p class="lead">Weekly updates from key regions across Afghanistan</p>
+            </div>
         </div>
-      </div>
-  
-      <div class="d-flex overflow-auto gap-4" style="scroll-behavior: smooth;">
-        
-        <!-- Festival Item 1 -->
-        <div class="d-flex" style="min-width: 600px; flex-shrink: 0;">
-          <div class="card me-3" style="width: 280px;">
-            <img src="{% static 'img/blog/blog-12.jpg' %}" class="card-img-top rounded" alt="Nowruz Festival">
-          </div>
-          <div class="card p-3 d-flex flex-column justify-content-center" style="width: 280px;">
-            <div class="blog-date mb-2">21 Mar</div>
-            <span class="badge bg-primary mb-3">Nowruz</span>
-            <h5><a href="blog-details.html" class="stretched-link text-decoration-none">
-              Welcome spring with traditional Afghan dances, Haft Mewa, and vibrant community celebrations.
-            </a></h5>
-          </div>
-        </div>
-  
-        <!-- Festival Item 2 -->
-        <div class="d-flex" style="min-width: 600px; flex-shrink: 0;">
-          <div class="card me-3" style="width: 280px;">
-            <img src="{% static 'img/blog/blog-13.jpg' %}" class="card-img-top rounded" alt="Independence Day">
-          </div>
-          <div class="card p-3 d-flex flex-column justify-content-center" style="width: 280px;">
-            <div class="blog-date mb-2">19 Aug</div>
-            <span class="badge bg-primary mb-3">Independence Day</span>
-            <h5><a href="blog-details.html" class="stretched-link text-decoration-none">
-              Join parades, fireworks, and patriotic spirit on Afghanistan’s Independence Day nationwide.
-            </a></h5>
-          </div>
-        </div>
-  
-      </div>
-    </div>
-  </section>
-  <section class="section blog-section blog-section-four pt-0 mt-5">
-    <div class="container">
-      <div class="row justify-content-center mb-4">
-        <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-          <div class="section-header section-header-four text-center">
-            <h2 class="mb-2">Keep <span>Exploring Afghanistan</span></h2>
-            <p class="sub-title">
-              There’s always more to uncover — from ancient cities to mountain villages, every corner of Afghanistan has a story to tell.
-            </p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="d-flex overflow-auto gap-4" style="scroll-behavior: smooth;">
-        
-        <!-- Explore Item 1 -->
-        <div class="d-flex" style="min-width: 600px; flex-shrink: 0;">
-          <div class="card me-3" style="width: 280px;">
-            <img src="{% static 'img/blog/blog-122_121.JPG' %}" class="card-img-top rounded" alt="Bamyan Valley">
-          </div>
-          <div class="card p-3 d-flex flex-column justify-content-center" style="width: 280px;">
-            <div class="blog-date mb-2">10 Aug</div>
-            <span class="badge bg-primary mb-3">Bamyan</span>
-            <h5><a href="blog-details.html" class="stretched-link text-decoration-none">
-              Visit the breathtaking valleys and cultural heritage sites of Bamyan — home of the ancient Buddhas.
-            </a></h5>
-          </div>
-        </div>
-  
-        <!-- Explore Item 2 -->
-        <div class="d-flex" style="min-width: 600px; flex-shrink: 0;">
-          <div class="card me-3" style="width: 280px;">
-            <img src="{% static 'img/blog/blog-133_90.JPG' %}" class="card-img-top rounded" alt="Blue Mosque Mazar">
-          </div>
-          <div class="card p-3 d-flex flex-column justify-content-center" style="width: 280px;">
-            <div class="blog-date mb-2">15 Sep</div>
-            <span class="badge bg-primary mb-3">Mazar-e-Sharif</span>
-            <h5><a href="blog-details.html" class="stretched-link text-decoration-none">
-              Discover the stunning Blue Mosque and the peaceful energy of northern Afghanistan.
-            </a></h5>
-          </div>
-        </div>
-  
-      </div>
-    </div>
-  </section>
-    
 
-  <script>
-    // Scroll functionality for news section
-    function setupScrollButtons(containerId, prevBtnId, nextBtnId) {
-      const container = document.getElementById(containerId);
-      const prevBtn = document.getElementById(prevBtnId);
-      const nextBtn = document.getElementById(nextBtnId);
-  
-      prevBtn.addEventListener('click', () => {
-        container.scrollBy({ top: -200, behavior: 'smooth' });
-      });
-  
-      nextBtn.addEventListener('click', () => {
-        container.scrollBy({ top: 200, behavior: 'smooth' });
-      });
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Bamyan Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="update-item mb-3">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-success me-2">New</span>
+                                <div>
+                                    <h6 class="mb-1">Tourist Facilities Upgrade</h6>
+                                    <p class="mb-0 small">New visitor center opening near Band-e-Amir next month</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="update-item mb-3">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-warning me-2">Alert</span>
+                                <div>
+                                    <h6 class="mb-1">Weather Advisory</h6>
+                                    <p class="mb-0 small">Heavy snow expected in higher elevations this weekend</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-primary me-2">Event</span>
+                                <div>
+                                    <h6 class="mb-1">Cultural Festival</h6>
+                                    <p class="mb-0 small">Annual spring festival scheduled for April 15-20</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light">
+                        <small class="text-muted">Last updated: 2 hours ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Mazar-e-Sharif</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="update-item mb-3">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-info me-2">Info</span>
+                                <div>
+                                    <h6 class="mb-1">Nowruz Preparations</h6>
+                                    <p class="mb-0 small">City preparing for major Nowruz celebrations at Blue Mosque</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="update-item mb-3">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-success me-2">Improvement</span>
+                                <div>
+                                    <h6 class="mb-1">Road Work Complete</h6>
+                                    <p class="mb-0 small">Main highway to Kabul now fully repaired and open</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-primary me-2">Tourism</span>
+                                <div>
+                                    <h6 class="mb-1">Guide Training</h6>
+                                    <p class="mb-0 small">New certified guide program accepting applications</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light">
+                        <small class="text-muted">Last updated: 5 hours ago</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">Herat Region</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="update-item mb-3">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-success me-2">Harvest</span>
+                                <div>
+                                    <h6 class="mb-1">Saffron Festival</h6>
+                                    <p class="mb-0 small">Annual saffron harvest festival begins next week</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="update-item mb-3">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-info me-2">Culture</span>
+                                <div>
+                                    <h6 class="mb-1">Historic Site Reopening</h6>
+                                    <p class="mb-0 small">Herat Citadel reopening after restoration work</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="update-item">
+                            <div class="d-flex align-items-start">
+                                <span class="badge bg-primary me-2">Development</span>
+                                <div>
+                                    <h6 class="mb-1">New Market</h6>
+                                    <p class="mb-0 small">Artisan market opening in city center next month</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-light">
+                        <small class="text-muted">Last updated: 1 day ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="alert alert-warning d-flex align-items-center p-4 rounded-3 shadow-sm" role="alert">
+                    <div class="flex-shrink-0 me-4">
+                        <i class="fas fa-exclamation-triangle fa-2x"></i>
+                    </div>
+                    <div>
+                        <h4 class="alert-heading mb-2">Verify Before You Go</h4>
+                        <p class="mb-1">Travel advisories and on-the-ground rules change frequently. Always verify locally before planning your visit.</p>
+                        <p class="mb-0">Hotline: <a href="tel:+93123456789" class="alert-link fw-bold">+93 123 456 789</a> | Permitted areas list updated weekly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Custom Styles for Trending Page */
+    .trending-hero {
+        position: relative;
+        padding: 120px 0 80px;
     }
-  
-    // Horizontal scroll functionality for events
-    const eventsContainer = document.getElementById('eventsScrollContainer');
-    const btnEventsNext = document.getElementById('nextBtnEvents');
-    const btnEventsPrev = document.getElementById('prevBtnEvents');
-  
-    btnEventsNext.addEventListener('click', () => {
-      eventsContainer.scrollBy({ left: 620, behavior: 'smooth' });
+    
+    .glass-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .destination-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .destination-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .destination-img-container {
+        position: relative;
+        overflow: hidden;
+        border-top-left-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+        height: 250px;
+    }
+    
+    .destination-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .destination-card:hover .destination-img {
+        transform: scale(1.05);
+    }
+    
+    .destination-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: flex-end;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .destination-card:hover .destination-overlay {
+        opacity: 1;
+    }
+    
+    .update-item {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+    }
+    
+    .update-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+</style>
+
+<script>
+    // Initialize carousels and animations
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize banner carousel
+        $('.banner-slider').owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 0,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            smartSpeed: 1000,
+            animateOut: 'fadeOut'
+        });
+        
+        // Initialize animation on scroll
+        new WOW().init();
     });
-  
-    btnEventsPrev.addEventListener('click', () => {
-      eventsContainer.scrollBy({ left: -620, behavior: 'smooth' });
-    });
-  
-    // Horizontal scroll functionality for initiatives
-    const initiativesContainer = document.getElementById('initiativesScrollContainer');
-    const btnInitiativesNext = document.getElementById('nextBtnInitiatives');
-    const btnInitiativesPrev = document.getElementById('prevBtnInitiatives');
-  
-    btnInitiativesNext.addEventListener('click', () => {
-      initiativesContainer.scrollBy({ left: 620, behavior: 'smooth' });
-    });
-  
-    btnInitiativesPrev.addEventListener('click', () => {
-      initiativesContainer.scrollBy({ left: -620, behavior: 'smooth' });
-    });
-  
-    document.addEventListener('DOMContentLoaded', () => {
-      setupScrollButtons('scrollContainer1', 'prevBtn1', 'nextBtn1');
-    });
-  </script>
+</script>
 
 {% endblock %}
