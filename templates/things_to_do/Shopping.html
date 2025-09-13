@@ -2,13 +2,11 @@
 {% block content %}
 {% load static %}
 
-<!-- Breadcrumb -->
-<!-- Experiences Hero Section -->
 <!-- Shopping Hero Section -->
 <section class="hero-section shopping-hero">
     <div class="banner-slider banner-sec owl-carousel">
         <div class="slider-img">
-            <img src="{% static 'image_for_province/shopafg.jpg' %}" alt="Traditional Markets">
+            <img src="{% static 'image_for_province/shopafg.jpg' %}" alt="Traditional Afghan Markets">
         </div>
     </div>
     <div class="container">
@@ -16,31 +14,30 @@
             <div class="row align-items-center">
                 <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
                     <div class="banner-content mx-auto text-center">
-                        <h1 class="text-white display-4 mb-3"><span>Sights & Attractions</span></h1>
-                        <h4 class="text-light mx-auto mb-4">Discover the vibrant bazaars, traditional crafts, and unique treasures that make Afghan shopping an unforgettable experience</h4>
+                        <h1 class="text-white display-4 mb-3"><span>Shopping in Afghanistan</span></h1>
+                        <h4 class="text-light mx-auto mb-4">Discover the vibrant bazaars, traditional crafts, and unique treasures that make Afghan shopping unforgettable</h4>
                     </div>
                     
                     <div class="container my-4">
                         <!-- Shopping Overview Card -->
                         <div class="row justify-content-center mb-5">
-                            <div class="col-lg-8">
+                            <div class="col-lg-10">
                                 <div class="card shopping-card border-0 shadow-lg wow fadeIn" data-wow-delay="0.2s">
-                                    <div class="card-body p-4 text-center">
+                                    <div class="card-body p-5 text-center">
                                         <div class="shopping-icon mb-3">
                                             <i class="fas fa-shopping-basket fa-3x text-warning"></i>
                                         </div>
-                                        <h3 class="mb-3">Afghan Markets & Crafts</h3>
-                                        <p class="mb-0">Experience the rich traditions of Afghan artisanship and the bustling energy of local markets filled with handwoven rugs, jewelry, and more</p>
+                                        <h3 class="mb-3">Why Shop in Afghanistan?</h3>
+                                        <p class="lead mb-0">Afghan markets are living museums—lanes of color, the ring of metalwork, the fragrance of saffron and cardamom. You don't just buy an object; you meet the maker, hear the story, sip tea, and bargain with a smile.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
   
-                    
                         <!-- View More Button -->
                         <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
                             <a href="shopping-listings.html" class="btn btn-warning btn-lg px-4">
-                                <i class="fas fa-shopping-basket me-2"></i> Discover More Shopping Treasures
+                                <i class="fas fa-shopping-basket me-2"></i> Explore Shopping Treasures
                             </a>
                         </div>
                     </div>
@@ -48,44 +45,216 @@
             </div>
         </div>
     </div>
-  </section>
-  
+</section>
 
-  
-
-
-
-
-
+<!-- Shopping Destinations Map -->
+<section class="section pt-5 pb-0">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-3">Where to Shop in Afghanistan</h2>
+                    <p class="sub-title">Explore the vibrant markets and artisan workshops across the country</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <!-- Destination Cards -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/kabulmarket.jpg' %}" class="card-img-top" alt="Kabul Markets" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Kabul</h5>
+                        <p class="card-text">Mandawi & Chicken Street: carpets, jewelry, antiques-style curios, leather, books, handicrafts.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/mazarshop.jpeg' %}" class="card-img-top" alt="Mazar-e-Sharif Market" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Mazar-e-Sharif</h5>
+                        <p class="card-text">Blue Mosque bazaar for embroidered textiles, lapis trinkets, dried fruits, traditional hats.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/herat12.jpeg' %}" class="card-img-top" alt="Herat Market" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Herat</h5>
+                        <p class="card-text">Mosque-side workshops for wood latticework, miniature painting, saffron and glassware vendors.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/bamyan-market.jpg' %}" class="card-img-top" alt="Bamyan Market" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Bamyan</h5>
+                        <p class="card-text">Band-e Amir & valley stalls: hand-knits, village weaves, natural-dye scarves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/istalif-pottery.jpg' %}" class="card-img-top" alt="Istalif Pottery" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Istalif (near Kabul)</h5>
+                        <p class="card-text">Famous pottery village: turquoise/earth-tone bowls, plates, and vases.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/kandahar-market.jpg' %}" class="card-img-top" alt="Kandahar Market" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Kandahar</h5>
+                        <p class="card-text">Pomegranates in season, leather goods, tribal jewelry.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- Shopping Categories -->
-<section class="banner-search-four my-5">
+<section class="section bg-light">
     <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h4>Popular Shopping Categories</h4>
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-3">What to Buy in Afghanistan</h2>
+                    <p class="sub-title">Traditional crafts and how to identify quality items</p>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="category-card text-center">
-                            <img src="{% static 'image_for_province/shop2.jpg' %}" alt="Afghan Carpets" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-                            <h5>Handwoven Carpets</h5>
-                            <p>World-famous Afghan rugs with traditional designs</p>
-                        </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- Category 1 -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/afghan-carpet.jpg' %}" class="card-img-top" alt="Afghan Carpets" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Hand-knotted Carpets & Kilims</h5>
+                        <p class="card-text">
+                            <strong>Look for:</strong> Tight, even knots; natural dyes; clear motifs; firm edges.<br>
+                            <strong>Ask about:</strong> Origin, wool type, knot count, dye process.
+                        </p>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="category-card text-center">
-                            <img src="{% static 'image_for_province/shopgold.jpg' %}" alt="Afghan Jewelry" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-                            <h5>Silver Jewelry</h5>
-                            <p>Traditional Pashtun and Turkoman designs</p>
-                        </div>
+                </div>
+            </div>
+            
+            <!-- Category 2 -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/afghan-textiles.jpg' %}" class="card-img-top" alt="Afghan Textiles" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Textiles & Embroidery</h5>
+                        <p class="card-text">
+                            Suzani covers, Kuchi beadwork, Pashtun and Hazara motifs.<br>
+                            <strong>Check stitching on the back—neat = better quality.</strong>
+                        </p>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="category-card text-center">
-                            <img src="{% static 'image_for_province/shop3.jpg' %}" alt="Afghan Spices" class="img-fluid rounded mb-3" style="height: 200px; object-fit: cover;">
-                            <h5>Spices & Saffron</h5>
-                            <p>Herat's famous saffron and mountain spices</p>
+                </div>
+            </div>
+            
+            <!-- Category 3 -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/afghan-jewelry.jpg' %}" class="card-img-top" alt="Afghan Jewelry" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Jewelry & Metalwork</h5>
+                        <p class="card-text">
+                            Lapis lazuli (Badakhshan), carnelian, onyx; filigree silver, engraved brass trays.<br>
+                            <strong>Verify stones, ask for weight and metal details.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 4 -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/afghan-pottery.jpg' %}" class="card-img-top" alt="Afghan Pottery" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pottery (Istalif)</h5>
+                        <p class="card-text">
+                            Hand-thrown pieces; minor glaze variations are normal.<br>
+                            <strong>Tap lightly—clear ring suggests good firing.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 5 -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.6s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/afghan-spices.jpg' %}" class="card-img-top" alt="Afghan Spices" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Spices, Tea & Saffron</h5>
+                        <p class="card-text">
+                            Saffron threads (deep red, dry, brittle), green/black tea, cumin, coriander, dried mint.<br>
+                            <strong>Buy sealed or from trusted sellers.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Category 6 -->
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/afghan-nuts.jpg' %}" class="card-img-top" alt="Afghan Dried Fruits" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Dried Fruits & Nuts</h5>
+                        <p class="card-text">
+                            Raisins, mulberries, pistachios, almonds.<br>
+                            <strong>Taste first; choose clean, evenly sized produce.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Market Etiquette -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-3">Market Etiquette</h2>
+                    <p class="sub-title">Cultural tips for a respectful shopping experience</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-lg-10 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><span class="text-primary me-2"><i class="fas fa-hand-point-right"></i></span> Greet with <em>Salaam alaikum</em> and a hand to the heart</li>
+                                    <li class="mb-3"><span class="text-primary me-2"><i class="fas fa-hand-point-right"></i></span> Bargain kindly; it's part of the culture</li>
+                                    <li class="mb-3"><span class="text-primary me-2"><i class="fas fa-hand-point-right"></i></span> Always accept tea (even a sip)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-3"><span class="text-primary me-2"><i class="fas fa-hand-point-right"></i></span> Ask before photos, especially of people</li>
+                                    <li class="mb-3"><span class="text-primary me-2"><i class="fas fa-hand-point-right"></i></span> Dress modestly</li>
+                                    <li class="mb-3"><span class="text-primary me-2"><i class="fas fa-hand-point-right"></i></span> Keep valuables secure in inner pockets</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,79 +263,44 @@
     </div>
 </section>
 
-<!-- Top Shopping Destinations -->
-    <section class="section destination-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="section-header text-center">
-                        <h2 class="mb-2">DISCOVER <span class="text-primary  text-decoration-underline">AFG MOST SHOPPING VIEW</span>  </h2>
-                        <p class="sub-title">Find the perfect cruise experience tailored to your unique interests and travel style.</p>
-                    </div>
+<!-- Handy Phrases -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-3">Handy Shopping Phrases</h2>
+                    <p class="sub-title">Useful expressions for market interactions</p>
                 </div>
-            </div>
-            <div class="owl-carousel cruise-slider nav-center wow fadeInUp">
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop4.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">Luxury Cruise</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop5.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">Adventure Cruise</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop6.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">Expedition Cruise</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop7.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">Family Cruise</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop8.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">River Cruises</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop9.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">World Cruises</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop0.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">Luxury Cruise</a></h6>
-                </div>
-                <div class="cruise-type">
-                    <img src="{% static 'image_for_province/afgshop10.jpg' %}" alt="img">
-                    <h6><a href="cruise-grid.html">Adventure Cruise</a></h6>
-                </div>
-            </div>
-            <div class="text-center view-all wow fadeInUp">
-                <a href="cruise-grid.html" class="btn btn-primary">More Categories<i class="isax isax-arrow-right-3 ms-2"></i></a>
             </div>
         </div>
-    </section>
-
-
-<!-- Shopping Tips -->
-<section class="section pt-0">
-    <div class="container">
-        <div class="card">
-            <div class="card-header bg-primary text-white">
-                <h4 class="mb-0">Afghan Shopping Tips</h4>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-6">
+        
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Dari Phrases</h5>
+                    </div>
+                    <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">1. Bargaining is expected in bazaars - start at 50% of asking price</li>
-                            <li class="list-group-item">2. Verify authenticity of lapis lazuli and carpets</li>
-                            <li class="list-group-item">3. Carry small bills for easier transactions</li>
+                            <li class="list-group-item"><strong>Chand ast?</strong> - How much?</li>
+                            <li class="list-group-item"><strong>Arzān-tar mishawad?</strong> - Can it be cheaper?</li>
+                            <li class="list-group-item"><strong>Tashakur</strong> - Thank you</li>
                         </ul>
                     </div>
-                    <div class="col-md-6">
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Pashto Phrases</h5>
+                    </div>
+                    <div class="card-body">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">4. Check export regulations for antiques</li>
-                            <li class="list-group-item">5. Visit early morning for best selection</li>
-                            <li class="list-group-item">6. Ask for certificates for precious stones</li>
+                            <li class="list-group-item"><strong>Da bādy sara?</strong> - How much?</li>
+                            <li class="list-group-item"><strong>Arzān kәwalay shi?</strong> - Can it be cheaper?</li>
+                            <li class="list-group-item"><strong>Manana</strong> - Thanks</li>
                         </ul>
                     </div>
                 </div>
@@ -175,45 +309,45 @@
     </div>
 </section>
 
-<!-- FAQ Section -->
- 
-<section class="section pt-0">
+<!-- Shopping Experiences -->
+<section class="section">
     <div class="container">
-        <h4 class="mb-4">Shopping in Afghanistan: FAQs</h4>
-        <div class="accordion" id="shoppingFaq">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                        What are the best souvenirs from Afghanistan?
-                    </button>
-                </h2>
-                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#shoppingFaq">
-                    <div class="accordion-body">
-                        Top souvenirs include handwoven carpets, lapis lazuli jewelry, Afghan pashminas, traditional copperware, and saffron from Herat.
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-3">Shopping Experiences</h2>
+                    <p class="sub-title">Immerse yourself in Afghan crafts and culture</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/bazaar-walk.jpg' %}" class="card-img-top" alt="Bazaar Walk" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Guided Bazaar Walk + Tea Tasting</h5>
+                        <p class="card-text">Kabul/Herat/Mazar - Meet artisans, sample nuts and sweets, learn to bargain gracefully.</p>
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                        Are credit cards accepted in Afghan markets?
-                    </button>
-                </h2>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#shoppingFaq">
-                    <div class="accordion-body">
-                        Most traditional markets operate on cash only (Afghanis or USD). Larger stores in Kabul may accept credit cards.
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/carpet-workshop.jpg' %}" class="card-img-top" alt="Carpet Workshop" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Carpet Story Hour</h5>
+                        <p class="card-text">Workshop visit to see wool dyeing and knotting; learn motifs, quality checks, and care.</p>
                     </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                        How do I ship purchases home?
-                    </button>
-                </h2>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#shoppingFaq">
-                    <div class="accordion-body">
-                        Reputable carpet and jewelry shops often arrange international shipping. For larger items, DHL and FedEx operate in major cities.
+            
+            <div class="col-md-6 col-lg-4 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="card h-100 border-0 shadow-sm">
+                    <img src="{% static 'image_for_province/pottery-class.jpg' %}" class="card-img-top" alt="Pottery Class" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title">Istalif Pottery Day</h5>
+                        <p class="card-text">Throw a pot with a master, glaze your piece, picnic in the orchards.</p>
                     </div>
                 </div>
             </div>
@@ -221,91 +355,107 @@
     </div>
 </section>
 
-
-
-<!-- Top Shopping Destinations -->
-<!-- Blog Section -->
-<section class="section blog-section blog-section-four pt-0">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header section-header-four text-center">
-          <h2 class="mb-2"><span>Afghanistan shopgold</span> qallery</h2>
-          <p class="sub-title">Discover Afghanistan’s hidden gems, ancient sites, and modern cultural hotspots.</p>
+<!-- Shopping Tips & FAQ -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-sm h-100 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0">Buyer & Export Tips</h4>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Get a simple receipt with shop name/phone</li>
+                            <li class="list-group-item">For carpets/large pieces, ask for rolling, waterproof wrap, and shipping options</li>
+                            <li class="list-group-item">Gemstones/antiques: buy only from reputable sellers; avoid genuine antiquities (export-restricted)</li>
+                            <li class="list-group-item">Food items: check your destination's import rules for saffron, nuts, and dried fruit</li>
+                            <li class="list-group-item">Choose co-ops and family workshops, pay fair prices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <h4 class="mb-4 wow fadeInUp" data-wow-delay="0.3s">Shopping in Afghanistan: FAQs</h4>
+                <div class="accordion wow fadeInUp" data-wow-delay="0.4s" id="shoppingFaq">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                What are the best souvenirs from Afghanistan?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#shoppingFaq">
+                            <div class="accordion-body">
+                                Top souvenirs include handwoven carpets, lapis lazuli jewelry, Afghan pashminas, traditional copperware, pottery from Istalif, and saffron from Herat.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Are credit cards accepted in Afghan markets?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#shoppingFaq">
+                            <div class="accordion-body">
+                                Most traditional markets operate on cash only (Afghanis or USD). Larger stores in Kabul may accept credit cards.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                How do I ship purchases home?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#shoppingFaq">
+                            <div class="accordion-body">
+                                Reputable carpet and jewelry shops often arrange international shipping. For larger items, DHL and FedEx operate in major cities.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-
-    <div class="blog-slider owl-carousel nav-center">
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/shopgallrey.3.jpg' %}" alt="img">
-          
-        </a>
-        <div class="blog-date">
-          <h6>02<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Heritage</span>
-          <h5><a href="blog-details.html">Kabul City Center shopping mall.</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/shopgallrey.4.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>05<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Culture</span>
-          <h5><a href="blog-details.html">Kabul’s Modern Art Scene: Where Past Meets Present</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/shopgallrey.5.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>11<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Nature</span>
-          <h5><a href="blog-details.html">The Untouched Beauty of Band-e Amir National Park</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-
-      <!-- Blog Item-->
-      <div class="blog-item mb-4 wow fadeInUp" data-wow-delay="0.2s">
-        <a href="blog-details.html" class="blog-img">
-          <img src="{% static 'image_for_province/shopgallrey.6.jpg' %}" alt="img">
-        </a>
-        <div class="blog-date">
-          <h6>14<span class="d-block fs-14 fw-normal">Jul</span></h6>
-        </div>
-        <div class="blog-info text-center">
-          <span class="badge bg-primary mb-2">Local Life</span>
-          <h5><a href="blog-details.html">Top Street Markets in Mazar-e-Sharif to Visit This Year</a></h5>
-        </div>
-      </div>
-      <!-- /Blog Item-->
-    </div>
-
-    <div class="text-center view-all wow fadeInUp">
-      <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
-    </div>
-  </div>
 </section>
 
+<!-- Gallery Section -->
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-3">Afghan Shopping Gallery</h2>
+                    <p class="sub-title">A visual journey through Afghanistan's vibrant markets</p>
+                </div>
+            </div>
+        </div>
 
-
+        <div class="row mt-4">
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="gallery-item">
+                    <img src="{% static 'image_for_province/shopgallrey.3.jpg' %}" alt="Kabul City Center" class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="gallery-item">
+                    <img src="{% static 'image_for_province/shopgallrey.4.jpg' %}" alt="Market Scene" class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="gallery-item">
+                    <img src="{% static 'image_for_province/shopgallrey.5.jpg' %}" alt="Handicrafts" class="img-fluid rounded">
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="gallery-item">
+                    <img src="{% static 'image_for_province/shopgallrey.6.jpg' %}" alt="Market Stalls" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
