@@ -2,618 +2,284 @@
 {% block content %}
 {% load static %}
 
-<head>
-  ...
-  <style>
-    .destination-img img {
-        width: 100%;
-        height: 250px;
-        object-fit: cover;
-        border-radius: 10px;
-    }
-
-    .destination-content {
-        padding: 15px;
-    }
-
-    .destination-btn a {
-        color: #fff;
-        background-color: #007bff;
-        padding: 8px 12px;
-        border-radius: 5px;
-        transition: 0.3s;
-    }
-
-    .destination-btn a:hover {
-        background-color: #0056b3;
-    }
-    .location-wrap img {
-  width: 100%;
-  height: 250px;   /* ارتفاع یکسان */
-  object-fit: cover;  /* عکس بدون کشیدگی */
-  border-radius: 12px; /* گوشه‌های نرم */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* سایه زیبا */
-  transition: transform 0.3s ease-in-out;
+<style>
+  .experiences-full {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+                url("{% static 'img/blog/Blue Mosque.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 4rem 0;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-.location-wrap img:hover {
-  transform: scale(1.05); /* افکت بزرگ شدن هنگام hover */
-}
+  
+  .section-heading {
+    color: #2c3e50;
+    border-bottom: 2px solid #e67e22;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .experience-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+  }
+  
+  .experience-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .culture-icon {
+    font-size: 2rem;
+    color: #e67e22;
+    margin-bottom: 1rem;
+  }
+  
+  .season-card {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    height: 100%;
+  }
+  
+  .spring { background-color: rgba(46, 204, 113, 0.2); }
+  .summer { background-color: rgba(241, 196, 15, 0.2); }
+  .autumn { background-color: rgba(231, 76, 60, 0.2); }
+  .winter { background-color: rgba(52, 152, 219, 0.2); }
+  
+  .practical-note {
+    background-color: #f8f9fa;
+    border-left: 4px solid #2c3e50;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+  }
+  
+  .highlight {
+    background-color: #fff8e1;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+  }
+</style>
 
-  </style>
-  ...
-</head>
+<section class="section experiences-full my-5">
+  <div class="container">
 
-
-<!-- Experiences Hero Section -->
-<section class="hero-section experiences-hero">
-    <div class="banner-slider banner-sec owl-carousel">
-        
-        <div class="slider-img">
-            <img src="{% static 'img/destination/destination-02_8.JPG' %}" alt="Mountain Trekking">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/destination/destination-03_0.JOG' %}" alt="Cultural Experiences">
-        </div>
-        <div class="slider-img">
-            <img src="{% static 'img/destination/destination-04_5.JPG' %}" alt="Historical Sites">
-        </div>
+    <!-- Hero -->
+    <div class="hero-section text-center mb-5">
+      <p class="display-4 mb-3">Unforgettable Afghan Experiences</p>
+      <p class="lead">Discover breathtaking adventures and authentic cultural encounters across Afghanistan's diverse landscapes</p>
     </div>
-    <div class="container">
-        <div class="hero-content">
-            <div class="row align-items-center">
-                <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="banner-content mx-auto text-center">
-                        <h1 class="text-white display-4 mb-3"><span>Unforgettable Afghan Experiences</span></h1>
-                        <h4 class="text-light mx-auto mb-4">Discover breathtaking adventures and authentic cultural encounters across Afghanistan's diverse landscapes</h4>
-                    </div>
-                    
-                    <div class="container my-4">
-                        <!-- Experiences Overview Card -->
-                        <div class="row justify-content-center mb-5">
-                            <div class="col-lg-8">
-                          
-                                    <div class="card-body p-4 text-center">
-                                        <div class="experiences-icon mb-3">
-                                            <i class="fas fa-map-marked-alt fa-3x text-primary"></i>
-                                        </div>
-                                       
-                                    </div>
-                                
-                            </div>
-                        </div>
 
-                      
-                        
-                        <!-- View More Button -->
-                        <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.7s">
-                            <a href="experiences-listings.html" class="btn btn-primary btn-lg px-4">
-                                <i class="fas fa-map-marked-alt me-2"></i> Discover More Experiences
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Why it's special -->
+    <div class="mb-5">
+      <h3 class="section-heading">Why it's special</h3>
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p>Afghanistan blends snow-capped Hindu Kush peaks, sapphire lakes, living Silk Road cities, and village hospitality where every cup of tea comes with a story. From kite-flying on a Kabul hillside to yak trails in the Pamirs, it's a place that rewards curiosity and respect.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://images.unsplash.com/photo-1596726895343-5b2f2b1b5ee7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Afghan landscape" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+
+    <!-- Signature Experiences -->
+    <div class="mb-5">
+      <h3 class="section-heading">Signature Experiences</h3>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="experience-card card">
+             <img src="{% static 'img/blog/Blue Mosque.jpg' %}"class="card-img-top" alt="Blue Mosque">
+            <div class="card-body">
+              <h5 class="card-title">Blue Tiled Dawn in Mazar-e-Sharif</h5>
+              <p class="card-text">Watch the Hazrat Ali (Blue) Mosque shift from twilight to turquoise as the city wakes.</p>
             </div>
+          </div>
         </div>
+        <div class="col-md-6 mb-4">
+          <div class="experience-card card">
+              <img src="{% static 'img/blog/Band-e Amir National Park.jpg' %}"class="card-img-top" alt="Band-e Amir National Park">
+            <div class="card-body">
+              <h5 class="card-title">Band-e Amir National Park</h5>
+              <p class="card-text">Six travertine-rimmed lakes in Bamyan; hike clifftop trails and picnic by glass-clear water.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="experience-card card">
+             <img src="{% static 'img/blog/Bamyan Cliffs & Valleys.jpg' %}"class="card-img-top" alt="Bamyan Cliffs & Valleys">
+            <div class="card-body">
+              <h5 class="card-title">Bamyan Cliffs & Valleys</h5>
+              <p class="card-text">Explore niches of the ancient Buddhas, village life, and easy day hikes in the Koh-e-Baba range.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="experience-card card">
+            <img src="{% static 'img/blog/Herat.jpg' %}"class="card-img-top" alt="Herat">
+            <div class="card-body">
+              <h5 class="card-title">Herat's Timurid Heart</h5>
+              <p class="card-text">The Friday Mosque's mosaics, the Citadel at sunset, and workshops for carpet weaving and miniature painting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
 
-
-    <!-- /Breadcrumb -->
-
-  <!-- /Page Wrapper -->
-  <section class="banner-search-four my-5">
-    <div class="container">
-      <div class="card">
-        <div class="card-header">
-          <h4>Unique Experiences in Afghanistan</h4>
+    <!-- Hands-on Culture -->
+    <div class="mb-5">
+      <h3 class="section-heading">Hands-on Culture</h3>
+      <div class="row text-center">
+        <div class="col-md-3 col-6 mb-4">
+          <div class="culture-icon">🍲</div>
+          <h5>Cooking</h5>
+          <p>Cook with a local family (ashak & mantu dumplings, kabuli pulao).</p>
         </div>
-        <div class="card-body">
-          <ul class="mb-3">
-            <li>Wearing traditional Afghan clothing like <em>Perahan Tunban</em> and <em>Chador</em> during local festivals</li>
-            <li>Listening to live Afghan music with instruments like the <em>rubab</em> and <em>dambura</em></li>
-            <li>Tasting authentic Afghan cuisine, including <em>Kabuli Pulao</em> and handmade <em>Mantu</em></li>
-            <li>Celebrating <em>Nowruz</em> (Persian New Year) with music, dance, and traditional foods</li>
-            <li>Exploring local markets and witnessing the creation of handwoven carpets and embroidered fabrics</li>
-            <li>Enjoying tea and heartfelt conversations in Afghan homes — a symbol of national hospitality</li>
-            <li>Hearing age-old stories and poetry recited around gatherings, from Rumi to Khushal Khan Khattak</li>
-            <li>Engaging with the diverse cultural expressions of Pashtun, Tajik, Hazara, Uzbek, and other communities</li>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="culture-icon">🧵</div>
+          <h5>Crafts</h5>
+          <p>Learn from masters (carpets in Herat, pottery in Istalif, woodcarving in Nuristan).</p>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="culture-icon">🎵</div>
+          <h5>Music</h5>
+          <p>Music moments (rubab demonstration, attan circle dance at a village celebration).</p>
+        </div>
+        <div class="col-md-3 col-6 mb-4">
+          <div class="culture-icon">🌾</div>
+          <h5>Harvest</h5>
+          <p>Harvest days (saffron in Herat season, grapes in Parwan, pomegranates in Kandahar).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Adventure -->
+    <div class="mb-5">
+      <h3 class="section-heading">Soft Adventure to Full Trek</h3>
+      <div class="row">
+        <div class="col-md-8">
+          <ul>
+            <li>Day hikes: Bamyan plateaus, Shah-e Foladi viewpoints.</li>
+            <li>Overnights: lakeside camps at Band-e Amir; simple village stays.</li>
+            <li>Expeditions: 5–10 day Wakhan treks, Pamir high-pasture circuits.</li>
+            <li>Winter: community-led skiing on gentle Bamyan slopes (when snow allows).</li>
           </ul>
-          <p>Afghanistan offers travelers a wealth of authentic experiences that connect them to its deep traditions, resilient spirit, and cultural richness. Each encounter tells a story — of history, identity, and the warmth of its people.</p>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  
-      
-<section class="section place-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-6 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header text-center">
-          <h2 class="mb-2">Top Things to <span class="text-primary text-decoration-underline">Try</span></h2>
-          <p class="sub-title">Embark on unforgettable journeys across Afghanistan’s stunning landscapes, cultural gems, and traditional lifestyles.</p>
+        <div class="col-md-4">
+           <img src="{% static 'img/blog/bilal_1.jpg' %}"class="card-img-top" alt="bilal_1">
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <!-- Column 1 -->
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="destination-set wow fadeInUp">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-07.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Buzkashi Match</h5>
-            <h6 class="text-light fs-16 fw-normal">Traditional Horse Sport</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
-          </div>
+    <!-- Sample Itineraries -->
+    <div class="mb-5">
+      <h3 class="section-heading">Sample Itineraries</h3>
+      <div class="highlight">
+        <h5>7-Day Central Highlands Loop:</h5>
+        <p>Kabul → Bamyan (cliffs, village walks) → Band-e Amir (lakes, hike) → Kabul (Istalif pottery & old city food tour).</p>
+      </div>
+      <div class="highlight">
+        <h5>12-Day North & West Explorer:</h5>
+        <p>Kabul → Mazar-e-Sharif (Blue Mosque, Balkh) → Samangan (Takht-e Rostam) → Herat (mosque, citadel, crafts) → Fly/drive return.</p>
+      </div>
+    </div>
+
+    <!-- Respect & Etiquette -->
+    <div class="mb-5">
+      <h3 class="section-heading">Respect & Etiquette</h3>
+      <div class="row">
+        <div class="col-md-6">
+          <ul>
+            <li>Greet with "Salaam alaikum" and a hand over the heart; accept tea—it's hospitality.</li>
+            <li>Dress modestly; remove shoes in homes and shrines.</li>
+            <li>Always ask before photos, especially of women or inside religious spaces.</li>
+          </ul>
         </div>
-        <div class="destination-set wow fadeInDown">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-08.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Kabul Street Food</h5>
-            <h6 class="text-light fs-16 fw-normal">Try Afghan Kebabs & Bolani</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
-          </div>
+        <div class="col-md-6">
+          <ul>
+            <li>Fridays are the main prayer day; plan quietly around mid-day.</li>
+            <li>Simple Dari phrases: lotfan (please), tashakur (thank you), bale/na (yes/no), chand ast? (how much?).</li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <!-- Column 2 -->
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="destination-set wow fadeInUp">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-09.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Hiking in Bamyan</h5>
-            <h6 class="text-light fs-16 fw-normal">Explore Band-e Amir Lakes</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
+    <!-- When to go -->
+    <div class="mb-5">
+      <h3 class="section-heading">When to go</h3>
+      <div class="row">
+        <div class="col-md-3 mb-3">
+          <div class="season-card spring">
+            <h5>Spring (Mar–May)</h5>
+            <p>Blossom valleys, mild temperatures perfect for exploration.</p>
           </div>
         </div>
-        <div class="destination-set wow fadeInDown">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-10.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Visit Herat Citadel</h5>
-            <h6 class="text-light fs-16 fw-normal">History, Art & Architecture</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
+        <div class="col-md-3 mb-3">
+          <div class="season-card summer">
+            <h5>Summer (Jun–Aug)</h5>
+            <p>Best for high-altitude treks in the mountainous regions.</p>
           </div>
         </div>
-      </div>
-
-      <!-- Column 3 -->
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="destination-set wow fadeInUp">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-11.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Afghan Handicrafts</h5>
-            <h6 class="text-light fs-16 fw-normal">Shop Local Bazaars</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
+        <div class="col-md-3 mb-3">
+          <div class="season-card autumn">
+            <h5>Autumn (Sep–Oct)</h5>
+            <p>Golden fields, clear skies—prime photography season.</p>
           </div>
         </div>
-        <div class="destination-set wow fadeInDown">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-12.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Camp in Wakhan</h5>
-            <h6 class="text-light fs-16 fw-normal">Nature & Nomadic Life</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Column 4 -->
-      <div class="col-lg-3 col-md-6 col-12">
-        <div class="destination-set wow fadeInUp">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-13_33.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Kite Flying Festival</h5>
-            <h6 class="text-light fs-16 fw-normal">Colorful Kabul Skies</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="destination-set wow fadeInDown">
-          <div class="destination-img">
-            <img src="{% static 'img/destination/destination-13_00.JPG' %}" alt="Img">
-          </div>
-          <div class="destination-content d-flex align-items-center justify-content-center flex-column w-100">
-            <h5 class="text-white fs-20 fw-semibold mb-1">Attend Nowruz</h5>
-            <h6 class="text-light fs-16 fw-normal">Spring Festival Celebrations</h6>
-          </div>
-          <div class="destination-btn">
-            <a href="afghanistan-activities.html"><i class="fa fa-arrow-right"></i></a>
+        <div class="col-md-3 mb-3">
+          <div class="season-card winter">
+            <h5>Winter (Dec–Feb)</h5>
+            <p>Cultural city breaks, buzkashi, Bamyan snows.</p>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Practical Notes -->
+    <div class="mb-5">
+      <h3 class="section-heading">Practical Notes</h3>
+      <div class="practical-note">
+        <p><strong>Local partners & permits:</strong> Some regions require permits/escorts—organize in advance.</p>
+      </div>
+      <div class="practical-note">
+        <p><strong>Transport:</strong> Mixed flights and road days; 4×4 for remote valleys.</p>
+      </div>
+      <div class="practical-note">
+        <p><strong>Stays:</strong> Family guesthouses to boutique hotels; village homestays on treks.</p>
+      </div>
+      <div class="practical-note">
+        <p><strong>Connectivity & cash:</strong> Local SIMs are common; carry AFN cash outside major cities.</p>
+      </div>
+      <div class="practical-note">
+        <p><strong>Drones:</strong> Typically restricted—do not fly without explicit permission.</p>
+      </div>
+      <div class="practical-note">
+        <p><strong>Safety:</strong> Conditions and access can change quickly—routes are crafted day-by-day with current local guidance.</p>
+      </div>
+    </div>
+
   </div>
 </section>
-
-      
-
-
-
-
-
-<!-- Blog Section -->
-<section class="section blog-section blog-sec-six">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-8 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header-six">
-          <span class="badge badge-soft-primary rounded-pill mb-1">Make memories <span>Afghanistan</span></span>
-          <h2>Checkout our Recent Articles<span class="text-primary">.</span></h2>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="text-end">
-          <a href="blog-grid.html" class="btn btn-dark sec-head-btn">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <!-- Main Article -->
-      <div class="col-xl-6">
-        <div class="card shadow-none blog-grid-six">
-          <div class="card-img">
-            <a href="blog-details.html">
-              <img src="{% static 'img/blog/blog-30.jpg' %}" class="rounded" alt="Img">
-            </a>
-            <span class="badge bg-primary">Cuisine</span>
-          </div>
-          <div class="card-body">
-            <h5 class="mb-2">
-              <a href="blog-details.html">Exploring Afghan Cuisine: A Taste of Tradition</a>
-            </h5>
-            <p class="mb-4">From Kabuli Pulao to Mantu dumplings, dive into Afghanistan’s most beloved traditional dishes and the stories behind them.</p>
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center">
-                <a href="javascript:void(0);" class="avatar avatar-md flex-shrink-0 me-2">
-                  <img src="{assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
-                </a>
-                <h6 class="fs-16 fw-normal">
-                  <a href="javascript:void(0);">Fatima Safi</a>
-                </h6>
-              </div>
-              <span class="d-inline-flex align-items-center">
-                <i class="isax isax-calendar me-2 fs-20"></i>27 Sep 2025
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Side Articles -->
-      <div class="col-xl-6">
-        <!-- Blog 1 -->
-        <div class="card shadow-none blog-grid-six">
-          <div class="row align-items-center">
-            <div class="col-md-6 d-flex">
-              <div class="card-img flex-fill">
-                <a href="blog-details.html">
-                  <img src="{% static 'img/blog/blog-31.jpg' %}" class="rounded w-100 h-100" alt="Img">
-                </a>
-                <span class="badge bg-primary">Culture</span>
-              </div>
-            </div>
-            <div class="col-md-6 d-flex">
-              <div class="card-body ps-md-0 flex-fill">
-                <h5 class="mb-2">
-                  <a href="blog-details.html">How Afghan Meals Bring Families Together</a>
-                </h5>
-                <p class="mb-4 text-truncate line-clamb-3">Afghan hospitality shines at mealtime — discover how food fosters strong bonds across generations and tribes.</p>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex align-items-center">
-                    <a href="javascript:void(0);" class="avatar avatar-md flex-shrink-0 me-2">
-                      <img src="{assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
-                    </a>
-                    <h6 class="fs-16 fw-normal">
-                      <a href="javascript:void(0);">Ahmad Jan</a>
-                    </h6>
-                  </div>
-                  <span class="d-inline-flex align-items-center">
-                    <i class="isax isax-calendar me-2 fs-20"></i>27 Sep 2025
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Blog 2 -->
-        <div class="card shadow-none blog-grid-six">
-          <div class="row align-items-center">
-            <div class="col-md-6 d-flex">
-              <div class="card-img flex-fill">
-                <a href="blog-details.html">
-                  <img src="{% static 'img/blog/blog-32.jpg' %}" class="rounded w-100 h-100" alt="Img">
-                </a>
-                <span class="badge bg-primary">Dining</span>
-              </div>
-            </div>
-            <div class="col-md-6 d-flex">
-              <div class="card-body ps-md-0 flex-fill">
-                <h5 class="mb-2">
-                  <a href="blog-details.html">Top Local Eateries to Try in Kabul</a>
-                </h5>
-                <p class="mb-4 text-truncate line-clamb-3">Discover hidden gems in the heart of Kabul serving authentic Afghan flavors — from street vendors to cozy restaurants.</p>
-                <div class="d-flex align-items-center justify-content-between">
-                  <div class="d-flex align-items-center">
-                    <a href="javascript:void(0);" class="avatar avatar-md flex-shrink-0 me-2">
-                      <img src="{assets/img/users/user-01.jpg' %}" class="rounded-circle" alt="img">
-                    </a>
-                    <h6 class="fs-16 fw-normal">
-                      <a href="javascript:void(0);">Laila Wardak</a>
-                    </h6>
-                  </div>
-                  <span class="d-inline-flex align-items-center">
-                    <i class="isax isax-calendar me-2 fs-20"></i>27 Sep 2025
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /Side Articles -->
-      </div>
-    </div>
-  </div>
-</section>
-
-
- <!-- Destination Section -->
-<!-- Destination Section -->
-<section class="section destination-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xl-5 col-lg-10 text-center wow fadeInUp" data-wow-delay="0.2s">
-        <div class="section-header section-header-four text-center">
-          <h2 class="mb-2">Top Indoor Activities <span>Afghanistan</span></h2>
-          <p class="sub-title">Explore the best indoor experiences across Afghanistan — from fitness centers to cultural attractions, we've got you covered.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center g-4">
-
-      <!-- Kabul Fitness Center -->
-      <div class="col-lg-3 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-15_99.JPG' %}" alt="Kabul Gym">
-          <span class="loc-name bg-white">Kabul Fitness Center</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
-
-      <!-- Mazar Museum -->
-      <div class="col-lg-3 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-17_77.JPG' %}" alt="Mazar Museum">
-          <span class="loc-name bg-white">Mazar Museum</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
-
-      <!-- Bamyan Public Library -->
-      <div class="col-lg-4 col-sm-6">
-        <div class="location-wrap wow fadeInDown">
-          <img src="{% static 'img/destination/destination-20_90.JPG' %}" alt="Indoor Sports Arena">
-          <span class="loc-name bg-white">Jalalabad Indoor Arena</span>
-          <a href="flight-grid.html" class="loc-view"><i class="isax isax-arrow-right-1"></i></a>
-        </div>
-      </div>
-
-      <!-- Jalalabad Indoor Arena -->
-     
-     
-      <!-- Kabul Yoga Studio -->
-      
-
-    </div>
-  </div>
-</section>
-
-
-      
-    <!-- <section class="section blog-section blog-section-four pt-0">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-xl-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-              <div class="section-header section-header-four text-center">
-                <h2 class="mb-2">Thrilling <span>adventures</span></h2>
-                <p class="sub-title">
-                    From hiking mountain trails and exploring ancient fortresses to riding through scenic valleys, thrilling adventures await across <span>Afghanistan</span> for every kind of explorer.
-                  </p>
-              </div>
-            </div>
-          </div>
-      
-          Grid blog layout -->
-          <!-- <div class="row"> -->
-      
-            <!-- Blog Item 1 -->
-            <!-- <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.1s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>12<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Work remotely programme</span>
-                  <h5><a href="blog-details.html">
-                    Do you want to mix business with pleasure in <span>Afghanistan</span>? With a new one-year virtual working programme, you can live and work by the beach.
-                  </a></h5>
-                </div>
-              </div>
-            </div> -->
-      
-            <!-- Blog Item 2 -->
-            <!-- <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.2s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>18<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Residency for investors and entrepreneurs</span>
-                  <h5><a href="blog-details.html">
-                    If you wish to open a business or invest in property in <span>Afghanistan</span>, you can apply for five and ten-year residency visas.
-                  </a></h5>
-                </div>
-              </div>
-            </div> -->
-      
-            <!-- Blog Item 3 (duplicate of blog-12.jpg) -->
-            <!-- <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.3s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-12.jpg' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>20<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Family Experiences</span>
-                  <h5><a href="blog-details.html">
-                    Explore Afghanistan’s cultural sites and outdoor spaces — perfect for fun and learning with your family.
-                  </a></h5>
-                </div>
-              </div>
-            </div> -->
-      
-            <!-- Blog Item 4 (duplicate of blog-13.jpg) -->
-            <!-- <div class="col-md-6 col-lg-3 mb-4">
-              <div class="blog-item wow fadeInUp" data-wow-delay="0.4s">
-                <a href="blog-details.html" class="blog-img">
-                  <img src="{% static 'img/blog/blog-13.jpg' %}" alt="img" class="img-fluid rounded">
-                </a>
-                <div class="blog-date">
-                  <h6>25<span class="d-block fs-14 fw-normal">Jul</span></h6>
-                </div>
-                <div class="blog-info text-center">
-                  <span class="badge bg-primary mb-2">Explore Together</span>
-                  <h5><a href="blog-details.html">
-                    Discover family-friendly adventures — from food tours to heritage walks — all across <span>Afghanistan</span>.
-                  </a></h5>
-                </div>
-              </div>
-            </div>
-      
-          </div>
-      
-          <div class="text-center view-all wow fadeInUp">
-            <a href="blog-grid.html" class="btn btn-dark">View All Blogs<i class="isax isax-arrow-right-3 ms-2"></i></a>
-          </div>
-        </div>
-      </section>  -->
-      
-      
-
-    
-    <section class="section blog-section blog-section-four pt-0">
-        <div class="container">
-          <div class="row justify-content-center">
-            <h4 class="mb-4 mt-5">Frequently Asked <span>Questions</span></h4>
-      
-            <div class="accordion" id="accordionFaq">
-      
-              <!-- FAQ 1 -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="faq1">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
-                    What cultural experiences should I not miss in Afghanistan?
-                  </button>
-                </h2>
-                <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                  <div class="accordion-body">
-                    You should definitely experience traditional Afghan music and dance, visit historic sites like the Buddhas of Bamiyan, explore vibrant bazaars, and enjoy authentic Afghan cuisine.
-                  </div>
-                </div>
-              </div>
-      
-              <!-- FAQ 2 -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="faq2">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
-                    Is it safe to travel to Afghanistan as a tourist?
-                  </button>
-                </h2>
-                <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                  <div class="accordion-body">
-                    Safety can vary by region; it is essential to check current travel advisories, connect with local guides, and plan visits to safer areas such as Kabul, Bamiyan, and Herat.
-                  </div>
-                </div>
-              </div>
-      
-              <!-- FAQ 3 -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="faq3">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
-                    What is the best time of year to visit Afghanistan?
-                  </button>
-                </h2>
-                <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionFaq">
-                  <div class="accordion-body">
-                    The best time to visit is during spring (March to May) and autumn (September to November) when the weather is mild and landscapes are beautiful.
-                  </div>
-                </div>
-              </div>
-      
-            </div> <!-- End accordion -->
-      
-          </div>
-        </div>
-     
-      
-      
-
-
-   
-            
-
-
-
-
-
-      
-      
-
-  
-      
-<!-- Existing content -->
-
-  
-  <!-- More existing content -->
-  
 
 {% endblock %}
