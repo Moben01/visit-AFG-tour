@@ -3,280 +3,510 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero-section-four">
-    <div class="container">
-        <div class="hero-content">
-            <div class="row align-items-center">
-                <div class="col-lg-10 col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="banner-content text-center mx-auto">
-                        <h1 class="text-white display-4 mb-2">
-                            Safety in Afghanistan
-                        </h1>
-                        <p class="text-white mx-auto">Your complete guide to enjoying one of the world's safest cities
-                            to the fullest.</p>
-                        <a class="video-btn video-effect" data-fancybox="" href="https://youtu.be/NSAOrGb9orM"><i
-                                class="isax isax-play5"></i></a>
+<section class="hero-section shopping-hero">
+    <div class="banner-slider banner-sec owl-carousel">
+        <div class="slider-img">
+            <img src="{% static 'image_for_province/valige.jpeg' %}" alt="Traditional Afghan Markets">
+        </div>
+    </div>
+<div class="container">
+    <div class="hero-content">
+        <div class="row align-items-center">
+            <div class="col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
+                <div class="banner-content mx-auto text-center">
+                    <h1 class="text-white display-4 mb-3"><span>Safety in Afghanistan</span></h1>
+                    <h4 class="text-light mx-auto mb-4">
+                        Learn how to stay safe, find help quickly, and enjoy your visit responsibly while exploring Afghanistan.
+                    </h4>
+                </div>
+                
+                <div class="container my-4">
+                    <!-- Safety Overview Card -->
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-10">
+                            <div class="card border-0 wow fadeIn" data-wow-delay="0.2s" style="background: transparent;">
+                                <div class="card-body p-5 text-center text-white">
+                                    <div class="safety-icon mb-3">
+                                        <i class="fas fa-shield-alt fa-3x text-danger"></i>
+                                    </div>
+                                    <h3 class="mb-3 text-white">Why Safety Matters in Afghanistan?</h3>
+                                    <p class="lead mb-0">
+                                        Afghanistan offers breathtaking landscapes and rich culture, but travelers should be aware of local safety guidelines. 
+                                        Keep emergency numbers handy, respect local customs, stay informed, and follow official advice to ensure a smooth and safe journey.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-<div class="container my-4">
-    <p class="mb-1">
-        There are so many reasons to holiday in Dubai, from year-round sunshine and iconic attractions to
-        Michelin-starred restaurants and world-class live entertainment. But did you know that Dubai is also one of the
-        world's safest cities? Bring your loved ones to the ultimate family-friendly destination and enjoy an
-        unforgettable vacation, where your safety, security and happiness are paramount. <br>
-
-        Dubai Police has a dedicated department to address any issues that tourists may face during their stay, such as
-        lost mobile phones or bags. You can contact Dubai Tourism Police by calling the 24-hour hotline on 901, emailing
-        touristpolice@dubaipolice.gov.ae or downloading the Dubai Police app, where you can also discover more about the
-        UAE’s laws and guidelines. <br>
-
-        In the meantime, here's our guide to staying safe during your time in Dubai.
-    </p>
-
-
-
 </div>
 
-<section class="section benefit-section bg-light-300">
+</section>
+
+
+
+
+<section class="section benefit-section bg-light-300 py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-6 text-center wow fadeInUp" data-wow-delay="0.2s"
-                style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                <div class="section-header text-center">
-                    <h2 class="mb-2">Police, medical emergency, fire and coastguard numbers</h2>
+            <div class="col-lg-8 text-center wow fadeInUp" data-wow-delay="0.2s">
+                <div class="section-header">
+                    <h2 class="mb-4">Emergency Contact Numbers</h2>
+                    <p class="lead text-muted">Important emergency services available in Afghanistan</p>
                 </div>
             </div>
         </div>
-        <div class="row g-4">
+        
+        <div class="row g-4 mt-2">
+            <!-- Police -->
             <div class="col-sm-6 col-lg-3 d-flex">
-                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.2s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <div class="card-body text-center">
-                        <div class="benefit-icon mb-2 bg-secondary text-gray-9 mx-auto">
-                            <i class="isax isax-lock-1"></i>
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card-body text-center p-4">
+                        <div class="benefit-icon mb-3 bg-primary text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                            <i class="fas fa-shield-alt fa-2x"></i>
                         </div>
-                        <h5 class="mb-2">119</h5>
-                        <p class="mb-0">Afghanistan Police</p>
-                        <span class="icon-view text-secondary"><i class="isax isax-lock-1"></i></span>
+                        <h3 class="mb-3 text-primary fw-bold emergency-number">119</h3>
+                        <p class="mb-0 fw-medium">Afghanistan Police</p>
+                        <span class="icon-view text-primary mt-2 d-block">
+                            <i class="fas fa-phone-alt"></i> Call for emergency
+                        </span>
                     </div>
                 </div>
             </div>
+            
+            <!-- Ambulance -->
             <div class="col-sm-6 col-lg-3 d-flex">
-                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.2s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <div class="card-body text-center">
-                        <div class="benefit-icon mb-2 bg-orange text-white mx-auto">
-                            <i class="isax isax-magicpen"></i>
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="card-body text-center p-4">
+                        <div class="benefit-icon mb-3 bg-danger text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                            <i class="fas fa-ambulance fa-2x"></i>
                         </div>
-                        <h5 class="mb-2">112</h5>
-                        <p class="mb-0">Ambulance</p>
-                        <span class="icon-view text-orange"><i class="isax isax-magicpen"></i></span>
+                        <h3 class="mb-3 text-danger fw-bold emergency-number">112</h3>
+                        <p class="mb-0 fw-medium">Ambulance Service</p>
+                        <span class="icon-view text-danger mt-2 d-block">
+                            <i class="fas fa-phone-alt"></i> Medical emergencies
+                        </span>
                     </div>
                 </div>
             </div>
+            
+            <!-- Fire Department -->
             <div class="col-sm-6 col-lg-3 d-flex">
-                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.2s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <div class="card-body text-center">
-                        <div class="benefit-icon mb-2 bg-purple text-white mx-auto">
-                            <i class="isax isax-receipt-add"></i>
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="card-body text-center p-4">
+                        <div class="benefit-icon mb-3 bg-warning text-dark rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                            <i class="fas fa-fire-extinguisher fa-2x"></i>
                         </div>
-                        <h5 class="mb-2">113</h5>
-                        <p class="mb-0">Fire Department</p>
-                        <span class="icon-view text-purple"><i class="isax isax-receipt-add"></i></span>
+                        <h3 class="mb-3 text-warning fw-bold emergency-number">113</h3>
+                        <p class="mb-0 fw-medium">Fire Department</p>
+                        <span class="icon-view text-warning mt-2 d-block">
+                            <i class="fas fa-phone-alt"></i> Fire emergencies
+                        </span>
                     </div>
                 </div>
             </div>
+            
+            <!-- Coastguard -->
             <div class="col-sm-6 col-lg-3 d-flex">
-                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.2s"
-                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
-                    <div class="card-body text-center">
-                        <div class="benefit-icon mb-2 bg-teal text-white mx-auto">
-                            <i class="isax isax-location-tick"></i>
+                <div class="card benefit-card mb-0 flex-fill wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="card-body text-center p-4">
+                        <div class="benefit-icon mb-3 bg-info text-white rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width: 70px; height: 70px;">
+                            <i class="fas fa-life-ring fa-2x"></i>
                         </div>
-                        <h5 class="mb-2">116</h5>
-                        <p class="mb-0">Coastguard</p>
-                        <span class="icon-view text-teal"><i class="isax isax-location-tick"></i></span>
+                        <h3 class="mb-3 text-info fw-bold emergency-number">116</h3>
+                        <p class="mb-0 fw-medium">Coastguard</p>
+                        <span class="icon-view text-info mt-2 d-block">
+                            <i class="fas fa-phone-alt"></i> Maritime emergencies
+                        </span>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Info -->
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="alert alert-info text-center wow fadeIn" data-wow-delay="0.7s">
+                    <p class="mb-0"><strong>Note:</strong> These numbers may vary by region. Always verify local emergency numbers when traveling.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div class="container">
-    <hr class="my-4">
+<!-- JavaScript for pulse animation -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add pulse animation to emergency numbers
+    const emergencyNumbers = document.querySelectorAll('.emergency-number');
+    
+    emergencyNumbers.forEach(number => {
+        number.addEventListener('mouseover', function() {
+            this.classList.add('animate__animated', 'animate__pulse');
+        });
+        
+        number.addEventListener('mouseout', function() {
+            this.classList.remove('animate__animated', 'animate__pulse');
+        });
+        
+        // Click to "call" animation
+        number.addEventListener('click', function() {
+            this.classList.add('animate__animated', 'animate__heartBeat');
+            setTimeout(() => {
+                this.classList.remove('animate__animated', 'animate__heartBeat');
+            }, 1000);
+        });
+    });
+});
+</script>
 
-    <h4 class="mb-2">All About Safety in Afghanistan</h4>
-    
-    <p class="mb-1">
-        Safety in Afghanistan varies widely depending on region, time, and local conditions. While certain areas —
-        particularly major cities like Kabul, Mazar-i-Sharif, and Herat — have become more stable and are receiving more
-        domestic and international visitors, it is important for travelers to stay well-informed and follow local
-        guidelines. Always check current travel advisories issued by your home country before visiting.
-    </p>
-    
-    <p class="mb-1">
-        Local law enforcement and community elders play key roles in maintaining order. Visitors are advised to stay in
-        reputable accommodations, avoid risky areas, and travel with local guides when possible. Taking personal
-        responsibility and showing respect for Afghan customs and security protocols will help ensure a safe and enjoyable
-        visit.
-    </p>
-    
-    <h5 class="mt-3">Staying Safe on the Roads and Driving in Afghanistan</h5>
-    <p class="mb-1">
-        Road safety is a major concern in Afghanistan, especially outside of main cities. Roads can be narrow, unpaved, and
-        affected by weather or poor visibility. If you plan to rent or drive a car, you must carry an international driving
-        license and understand local traffic norms.
-    </p>
-    <p class="mb-1">
-        Seat belts are encouraged, although not always enforced. Always drive cautiously and defensively, and avoid
-        traveling at night or in remote areas without local guidance. Traffic enforcement may vary, so it's important to
-        follow the rules and remain calm in all situations.
-    </p>
-    
-    <h5 class="mt-3">Staying Safe Around Water</h5>
-    <p class="mb-1">
-        While Afghanistan is a landlocked country, there are popular local spots for swimming and picnicking along rivers
-        and lakes, such as Band-e-Amir in Bamyan, Qargha Lake near Kabul, and other reservoirs. These natural sites can be
-        beautiful but may lack formal safety supervision.
-    </p>
-    <p class="mb-1">
-        Visitors should avoid swimming alone, especially in fast-moving water or unfamiliar areas. Always check with locals
-        about safety conditions and avoid swimming during or after rainfall due to water flow changes and hidden hazards.
-    </p>
-    
-    <h5 class="mt-3">Staying Safe While Hiking in Afghanistan</h5>
-    <p class="mb-1">
-        Afghanistan offers breathtaking hiking opportunities in places like Panjshir Valley, Bamyan, and Nuristan. If you're
-        planning a trek, always travel in groups, inform someone about your route, and ideally go with a local guide.
-    </p>
-    <p class="mb-1">
-        Carry plenty of water, sun protection, warm clothing for sudden temperature changes, and wear proper hiking
-        footwear. The best time for hiking is during spring and autumn when the weather is mild. Avoid hiking alone or in
-        restricted/military zones.
-    </p>
-    
-    <button type="button" class="btn btn-secondary my-3">
-        Learn more about staying safe in Afghanistan
-    </button>
-    
-    <hr class="my-4">
+<style>
+.benefit-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    <h4 class="mb-2">Staying Safe in the Afghan Mountains and Deserts</h4>
-    
-    <p class="mb-1">
-        A journey through Afghanistan’s rugged landscapes — from the deserts of Nimruz to the majestic mountains of Bamyan and Panjshir — can be a breathtaking experience, but preparation is essential. Daytime heat can be intense in arid regions, while temperatures may drop significantly at night. If you plan to camp or stay in remote areas, bring warm clothing, plenty of water, non-perishable snacks, and a first aid kit. It’s strongly advised to coordinate trips with local guides or trusted tour operators familiar with the terrain and security situation.
-    </p>
-    
-    <h5 class="mt-3">Protect Yourself from the Sun</h5>
-    <p class="mb-1">
-        Afghanistan’s climate offers abundant sunshine, particularly in central and southern provinces. To avoid sunburn and dehydration, wear sunscreen, a wide-brimmed hat, and UV-protective sunglasses. Always carry extra water, especially when visiting high-altitude areas or traveling in spring/summer. Between 11 AM and 3 PM, seek shade where possible to avoid peak sun intensity.
-    </p>
-    
-    <h5 class="mt-3">What to Do in a Medical Emergency</h5>
-    <p class="mb-1">
-        In case of a medical emergency, dial <strong>112</strong> to request ambulance services. Be ready to explain your location clearly; if you’re in a remote area, reference a nearby village, mosque, market, or known landmark. While English may not be spoken fluently, assistance is often available in Dari and Pashto. In larger cities like Kabul, Herat, or Mazar-i-Sharif, private hospitals such as FMIC or Cure International can offer higher standards of care.
-    </p>
-    
-    <h5 class="mt-3">Tips for First-Time Visitors to Afghanistan</h5>
-    <p class="mb-1">
-        Afghan society is deeply respectful and rooted in traditional values. Visitors are encouraged to observe local customs and laws for a respectful and enjoyable stay. Here are some tips:
-    </p>
-    <ul>
-        <li>Dress modestly in public — long sleeves and loose-fitting clothes are preferred. Women should wear a headscarf in most areas.</li>
-        <li>Public displays of affection are discouraged and may be considered offensive.</li>
-        <li>Always ask permission before taking photos of people, especially women or security personnel.</li>
-        <li>Respect local prayer times and avoid loud behavior near mosques or religious gatherings.</li>
-    </ul>
-    
-    <h5 class="mt-3">Afghanistan Police Contacts</h5>
-    <p class="mb-1">
-        In case of emergencies, contact Afghan National Police by dialing <strong>119</strong>. For non-urgent matters or tourist assistance, you may also reach out through local police stations, often located near main town centers. Use mapping apps like Google Maps to find the closest post if you're in a city. In rural areas, contact may need to be made through local elders or community leaders.
-    </p>
-    
-    <button type="button" class="btn btn-secondary my-3">
-        Learn more about safety in Afghanistan
-    </button>
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
-    <div class="row g-4 mt-4">
-        <!-- Frame 1: Staying Safe in Afghanistan's Deserts and Mountains -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Staying Safe in Afghanistan's Wild Areas</h5>
-                    <p>
-                        Trips to Afghanistan's deserts and mountains (like Dasht-e-Margo or Bamyan) can be unforgettable, but safety is crucial.
-                        Temperatures fluctuate drastically between day and night — bring warm clothes if staying overnight.
-                        Always carry enough water, snacks, and a first aid kit. Use experienced local guides or trusted tour companies.
+.emergency-number {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.benefit-icon {
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1);
+}
+</style>
+
+<div class="container safety-container">
+    <!-- Header Section -->
+    <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold text-primary mb-3">Safety Guide for Afghanistan</h2>
+        <p class="lead text-muted">Essential information for a safe and respectful journey</p>
+        <div class="header-divider mx-auto"></div>
+    </div>
+
+    <!-- Main Safety Overview -->
+    <div class="card safety-overview-card mb-5 border-0 shadow-lg">
+        <div class="card-body p-4 p-md-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="safety-icon-wrapper bg-primary text-white rounded-circle me-3">
+                    <i class="fas fa-shield-alt fa-lg"></i>
+                </div>
+                <h4 class="mb-0">All About Safety in Afghanistan</h4>
+            </div>
+            
+            <p class="mb-3">
+                Safety in Afghanistan varies widely depending on region, time, and local conditions. While certain areas —
+                particularly major cities like Kabul, Mazar-i-Sharif, and Herat — have become more stable and are receiving more
+                domestic and international visitors, it is important for travelers to stay well-informed and follow local
+                guidelines. Always check current travel advisories issued by your home country before visiting.
+            </p>
+            
+            <p class="mb-0">
+                Local law enforcement and community elders play key roles in maintaining order. Visitors are advised to stay in
+                reputable accommodations, avoid risky areas, and travel with local guides when possible. Taking personal
+                responsibility and showing respect for Afghan customs and security protocols will help ensure a safe and enjoyable
+                visit.
+            </p>
+        </div>
+    </div>
+
+    <!-- Safety Cards Grid -->
+    <div class="row g-4 mb-5">
+        <!-- Road Safety -->
+        <div class="col-md-6">
+            <div class="card h-100 safety-card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="safety-icon-wrapper bg-warning text-dark rounded-circle me-3">
+                            <i class="fas fa-car fa-lg"></i>
+                        </div>
+                        <h5 class="mb-0">Staying Safe on the Roads</h5>
+                    </div>
+                    <p class="mb-2">
+                        Road safety is a major concern in Afghanistan, especially outside of main cities. Roads can be narrow, unpaved, and
+                        affected by weather or poor visibility. If you plan to rent or drive a car, you must carry an international driving
+                        license and understand local traffic norms.
+                    </p>
+                    <p class="mb-0">
+                        Seat belts are encouraged, although not always enforced. Always drive cautiously and defensively, and avoid
+                        traveling at night or in remote areas without local guidance. Traffic enforcement may vary, so it's important to
+                        follow the rules and remain calm in all situations.
                     </p>
                 </div>
             </div>
         </div>
-    
-        <!-- Frame 2: Sun Safety -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Protect Yourself from the Sun</h5>
-                    <p>
-                        Afghanistan’s highland sun can be intense. Use sunscreen, wear a hat and sunglasses, and stay hydrated.
-                        Avoid direct sun exposure between <strong>11 AM and 3 PM</strong>. When hiking or exploring, take shade breaks often.
+        
+        <!-- Water Safety -->
+        <div class="col-md-6">
+            <div class="card h-100 safety-card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="safety-icon-wrapper bg-info text-white rounded-circle me-3">
+                            <i class="fas fa-swimmer fa-lg"></i>
+                        </div>
+                        <h5 class="mb-0">Staying Safe Around Water</h5>
+                    </div>
+                    <p class="mb-2">
+                        While Afghanistan is a landlocked country, there are popular local spots for swimming and picnicking along rivers
+                        and lakes, such as Band-e-Amir in Bamyan, Qargha Lake near Kabul, and other reservoirs. These natural sites can be
+                        beautiful but may lack formal safety supervision.
+                    </p>
+                    <p class="mb-0">
+                        Visitors should avoid swimming alone, especially in fast-moving water or unfamiliar areas. Always check with locals
+                        about safety conditions and avoid swimming during or after rainfall due to water flow changes and hidden hazards.
                     </p>
                 </div>
             </div>
         </div>
-    
-        <!-- Frame 3: Medical Emergency Guide -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Medical Emergencies</h5>
-                    <p>
-                        In a medical emergency, dial <strong>112</strong> to request ambulance services. Try to identify a nearby landmark to help responders.
-                        Major cities like Kabul, Herat, and Mazar-i-Sharif have private hospitals with better facilities. Always keep emergency numbers handy.
+        
+        <!-- Hiking Safety -->
+        <div class="col-md-6">
+            <div class="card h-100 safety-card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="safety-icon-wrapper bg-success text-white rounded-circle me-3">
+                            <i class="fas fa-hiking fa-lg"></i>
+                        </div>
+                        <h5 class="mb-0">Staying Safe While Hiking</h5>
+                    </div>
+                    <p class="mb-2">
+                        Afghanistan offers breathtaking hiking opportunities in places like Panjshir Valley, Bamyan, and Nuristan. If you're
+                        planning a trek, always travel in groups, inform someone about your route, and ideally go with a local guide.
+                    </p>
+                    <p class="mb-0">
+                        Carry plenty of water, sun protection, warm clothing for sudden temperature changes, and wear proper hiking
+                        footwear. The best time for hiking is during spring and autumn when the weather is mild. Avoid hiking alone or in
+                        restricted/military zones.
                     </p>
                 </div>
             </div>
         </div>
-    
-        <!-- Frame 4: Tips for First-Time Visitors -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Tips for Visitors to Afghanistan</h5>
-                    <ul class="mb-0 ps-3">
-                        <li>Dress modestly, especially in public places</li>
-                        <li>Avoid public displays of affection</li>
-                        <li>Ask permission before taking photos of people</li>
-                        <li>Respect local customs, especially during prayer times</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Frame 5: Useful Contacts in Afghanistan -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
-                <div class="card-body">
-                    <h5 class="card-title">Useful Emergency Numbers</h5>
-                    <ul class="mb-0 ps-3">
-                        <li><strong>119</strong> – Police</li>
-                        <li><strong>112</strong> – Ambulance</li>
-                        <li><strong>113</strong> – Fire Services</li>
-                        <li><strong>116</strong> – Border/Coast Guard</li>
-                        <li><strong>144</strong> – Power or Utility Failure</li>
-                    </ul>
-                    <p class="mt-2">Use Google Maps or ask locals for nearby police stations or hospitals.</p>
+        
+        <!-- Sun Safety -->
+        <div class="col-md-6">
+            <div class="card h-100 safety-card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="safety-icon-wrapper bg-warning text-dark rounded-circle me-3">
+                            <i class="fas fa-sun fa-lg"></i>
+                        </div>
+                        <h5 class="mb-0">Protect Yourself from the Sun</h5>
+                    </div>
+                    <p class="mb-0">
+                        Afghanistan's climate offers abundant sunshine, particularly in central and southern provinces. To avoid sunburn and dehydration, wear sunscreen, a wide-brimmed hat, and UV-protective sunglasses. Always carry extra water, especially when visiting high-altitude areas or traveling in spring/summer. Between 11 AM and 3 PM, seek shade where possible to avoid peak sun intensity.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Emergency Information -->
+    <div class="card emergency-info-card mb-5 border-0 shadow-lg bg-primary text-white">
+        <div class="card-body p-4 p-md-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="safety-icon-wrapper bg-white text-primary rounded-circle me-3">
+                    <i class="fas fa-phone-alt fa-lg"></i>
+                </div>
+                <h4 class="mb-0">Emergency Contacts</h4>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="emergency-number-circle bg-white text-primary rounded-circle me-3">119</div>
+                        <div>
+                            <h5 class="mb-0">Police</h5>
+                            <p class="mb-0">Afghanistan Police Emergency</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="emergency-number-circle bg-white text-primary rounded-circle me-3">112</div>
+                        <div>
+                            <h5 class="mb-0">Ambulance</h5>
+                            <p class="mb-0">Medical Emergencies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="emergency-number-circle bg-white text-primary rounded-circle me-3">113</div>
+                        <div>
+                            <h5 class="mb-0">Fire Department</h5>
+                            <p class="mb-0">Fire Emergencies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="emergency-number-circle bg-white text-primary rounded-circle me-3">116</div>
+                        <div>
+                            <h5 class="mb-0">Coastguard</h5>
+                            <p class="mb-0">Maritime Emergencies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="alert alert-light mt-4 mb-0" role="alert">
+                <i class="fas fa-info-circle me-2"></i> Be ready to explain your location clearly. If you're in a remote area, reference a nearby village, mosque, market, or known landmark.
+            </div>
+        </div>
+    </div>
+
+    <!-- Cultural Tips -->
+    <div class="card cultural-tips-card mb-5 border-0 shadow-sm">
+        <div class="card-body p-4 p-md-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="safety-icon-wrapper bg-success text-white rounded-circle me-3">
+                    <i class="fas fa-hands-helping fa-lg"></i>
+                </div>
+                <h4 class="mb-0">Cultural Respect & Tips for Visitors</h4>
+            </div>
+            
+            <p class="mb-4">
+                Afghan society is deeply respectful and rooted in traditional values. Visitors are encouraged to observe local customs and laws for a respectful and enjoyable stay.
+            </p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex mb-3">
+                        <div class="cultural-tip-icon bg-light text-primary rounded-circle me-3">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Dress Modestly</h6>
+                            <p class="mb-0 small">Long sleeves and loose-fitting clothes are preferred. Women should wear a headscarf in most areas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-3">
+                        <div class="cultural-tip-icon bg-light text-primary rounded-circle me-3">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Photography Etiquette</h6>
+                            <p class="mb-0 small">Always ask permission before taking photos of people, especially women or security personnel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-3">
+                        <div class="cultural-tip-icon bg-light text-primary rounded-circle me-3">
+                            <i class="fas fa-mosque"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Respect Prayer Times</h6>
+                            <p class="mb-0 small">Avoid loud behavior near mosques or during religious gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex mb-3">
+                        <div class="cultural-tip-icon bg-light text-primary rounded-circle me-3">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-1">Public Behavior</h6>
+                            <p class="mb-0 small">Public displays of affection are discouraged and may be considered offensive.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="text-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-5 py-3">
+            <i class="fas fa-download me-2"></i> Download Safety Guide PDF
+        </button>
+    </div>
+
+    <style>
+    .safety-container {
+        padding: 2rem 0;
+    }
     
+    .header-divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #007bff, #0056b3);
+        border-radius: 2px;
+    }
+    
+    .safety-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .safety-overview-card {
+        border-left: 4px solid #007bff !important;
+    }
+    
+    .safety-card {
+        transition: transform 0.3s ease;
+    }
+    
+    .safety-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .emergency-info-card {
+        border-radius: 15px;
+    }
+    
+    .emergency-number-circle {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    
+    .cultural-tip-icon {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .safety-icon-wrapper {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .emergency-number-circle {
+            width: 50px;
+            height: 50px;
+            font-size: 1rem;
+        }
+    }
+    </style>
 </div>
 {% endblock %}
