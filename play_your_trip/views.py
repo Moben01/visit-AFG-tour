@@ -14,9 +14,7 @@ def essentials(request):
     get_tour_categories = TourCategory.objects.all()
     return render(request, 'plan_your_trip/essentials.html', {'get_tour_categories':get_tour_categories})
 
-def flight(request):
-    get_tour_categories = TourCategory.objects.all()
-    return render(request, 'plan_your_trip/flight.html', {'get_tour_categories':get_tour_categories})
+
 
 def Accommodation(request):
     get_tour_categories = TourCategory.objects.all()

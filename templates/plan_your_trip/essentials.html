@@ -3,17 +3,18 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero-section-four">
+<section class="hero-section-essentials">
     <div class="container">
         <div class="hero-content">
             <div class="row align-items-center">
                 <div class="col-lg-10 col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
                     <div class="banner-content text-center mx-auto">
-                        <h1 class="text-white display-4 mb-2">Practical information</h1>
-                        <p class="text-white mx-auto">Plan your trip, find advice on how to prepare, and get all the
-                            information you need before your Afghanistan holiday.</p>
-                        <a class="video-btn video-effect" data-fancybox="" href="https://youtu.be/NSAOrGb9orM"><i
-                                class="isax isax-play5"></i></a>
+                        <h1 class="text-white display-4 mb-2">Afghanistan <span class="text-warning">Essentials</span></h1>
+                        <p class="text-white lead mx-auto">Your comprehensive guide to traveling in Afghanistan - culture, safety, and practical information</p>
+                        <div class="mt-4">
+                            <a href="#quick-facts" class="btn btn-primary btn-lg rounded-pill px-4 me-2">Quick Facts</a>
+                            <a href="#travel-tips" class="btn btn-outline-light btn-lg rounded-pill px-4">Travel Tips</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -21,435 +22,512 @@
     </div>
 </section>
 <!-- /Hero Section -->
-<section class="section blog-section blog-section-four pt-0 my-5">
+
+<!-- Quick Facts Section -->
+<section class="section quick-facts py-5 bg-light" id="quick-facts">
     <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="mb-3">Afghanistan <span class="text-primary">Quick Facts</span></h2>
+                <p class="lead">Essential information at a glance</p>
+            </div>
+        </div>
+
         <div class="row">
-            <!-- Left Sidebar Menu -->
-            <div class="col-md-3">
-                <ul class="nav flex-column nav-pills" id="tipsMenu">
-                    <li class="nav-item">
-                        <a  href="#" class="nav-link active" onclick="showContent('arriving')">Arriving in Afghanistan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="#" class="nav-link" onclick="showContent('currency')">Currency</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="#" class="nav-link" onclick="showContent('weather')">The weather</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="#" class="nav-link" onclick="showContent('wifi')">Wi-Fi in Afghanistan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="#" class="nav-link" onclick="showContent('embassy')">Embassies & consulates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a  href="#" class="nav-link" onclick="showContent('emergency')">Emergency numbers</a>
-                    </li>
-                </ul>
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="fact-icon mb-3">
+                            <i class="fas fa-globe-asia fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Capital</h5>
+                        <p class="card-text display-6 text-primary">Kabul</p>
+                        <p class="small text-muted">Population: ~4.5 million</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Right Content Area with Shadow Card -->
-            <div class="col-md-9">
-                <div class="card shadow rounded p-4" id="contentArea">
-                    <!-- Initial content -->
-                    <h4>Arriving in Afghanistan</h4>
-                    <p>Most visitors to Afghanistan require a visa prior to arrival. It is essential to check the <a
-                            href="#">visa requirements</a> with your nearest Afghan embassy or consulate before
-                        traveling.</p>
-                    <p>Hamid Karzai International Airport in Kabul is the main international gateway. Basic facilities
-                        such as taxis, money exchange, and travel desks are available at the airport.</p>
-                    <img src="/mnt/data/efa5621e-85e2-4758-aa7e-8cb061027ddd.png" alt="Afghanistan travel tips"
-                        class="img-fluid rounded mt-3" style="max-width: 100%; height: auto;" />
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="fact-icon mb-3">
+                            <i class="fas fa-language fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Languages</h5>
+                        <p class="card-text">Dari & Pashto</p>
+                        <p class="small text-muted">Official languages</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="fact-icon mb-3">
+                            <i class="fas fa-money-bill-wave fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Currency</h5>
+                        <p class="card-text">Afghan Afghani</p>
+                        <p class="small text-muted">(AFN)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card text-center border-0 shadow-sm h-100">
+                    <div class="card-body p-4">
+                        <div class="fact-icon mb-3">
+                            <i class="fas fa-users fa-3x text-primary"></i>
+                        </div>
+                        <h5 class="card-title">Population</h5>
+                        <p class="card-text">~38 million</p>
+                        <p class="small text-muted">Diverse ethnic groups</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!-- /Quick Facts Section -->
 
-<script>
-    const contentData = {
-        arriving: `
-                <h4>Arriving in Afghanistan</h4>
-                <p>Most visitors to Afghanistan require a visa prior to arrival. It is essential to check the <a href="#">visa requirements</a> with your nearest Afghan embassy or consulate before traveling.</p>
-                <p>Hamid Karzai International Airport in Kabul is the main international gateway. Basic facilities such as taxis, money exchange, and travel desks are available at the airport.</p>
-                <img src="/mnt/data/efa5621e-85e2-4758-aa7e-8cb061027ddd.png" alt="Afghanistan travel tips" class="img-fluid rounded mt-3" />
-            `,
-        currency: `
-                <h4>Currency</h4>
-                <p>The official currency in Afghanistan is the Afghan Afghani (AFN). Cash is widely used, and it's recommended to carry local currency. ATMs are available in major cities, though international cards may not always work.</p>
-            `,
-        weather: `
-                <h4>The Weather</h4>
-                <p>Afghanistan experiences four seasons. Winters (November–February) can be harsh and snowy in the central and northern regions, while summers (June–August) are hot and dry, especially in the south.</p>
-            `,
-        wifi: `
-                <h4>Wi-Fi in Afghanistan</h4>
-                <p>Wi-Fi is available in many hotels, guesthouses, and some cafes in larger cities like Kabul, Herat, and Mazar-i-Sharif. Mobile data packages are also available from local telecom companies such as Roshan and MTN.</p>
-            `,
-        embassy: `
-                <h4>Embassies & Consulates</h4>
-                <p>Several countries have embassies or consulates in Kabul. Due to changing conditions, travelers should always check with their foreign ministry or embassy regarding consular support before traveling.</p>
-            `,
-        emergency: `
-                <h4>Emergency Numbers</h4>
-                <p>Police: 119<br>Ambulance: 112<br>Fire Department: 110<br>It's recommended to have local contacts or hotel assistance in case of emergencies.</p>
-            `
-    };
+<!-- Practical Information Grid -->
+<section class="section practical-grid py-5" id="practical-info">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="mb-3">Practical <span class="text-primary">Information</span></h2>
+                <p class="lead">Everything you need to know for your journey</p>
+            </div>
+        </div>
 
-    function showContent(key) {
-        document.getElementById('contentArea').innerHTML = contentData[key];
-
-        // Update active class on nav items
-        const links = document.querySelectorAll('#tipsMenu .nav-link');
-        links.forEach(link => link.classList.remove('active'));
-        event.target.classList.add('active');
-    }
-</script>
-
-<div class="container my-5">
-    <div class="card shadow p-4">
-        <h4 class="mb-4">Fly from Afghanistan</h4>
-        <!-- <form> -->
-            <div class="row mb-3">
-                <!-- Departure Airport -->
-                <div class="col-md-6">
-                    <label for="departure" class="form-label">Departure airport</label>
-                    <select id="departure" class="form-select">
-                        <option selected>Kabul (KBL)</option>
-                        <option>Kandahar (KDH)</option>
-                        <option>Herat (HEA)</option>
-                        <option>Mazar-i-Sharif (MZR)</option>
-                    </select>
-                </div>
-
-                <!-- Arrival Airport (Locked) -->
-                <div class="col-md-6">
-                    <label for="arrival" class="form-label">Arrival airport</label>
-                    <div class="input-group">
-                        <input type="text" id="arrival" class="form-control" value="Kabul Airport (KBL)" readonly>
-                        <span class="input-group-text bg-light">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor"
-                                    d="M16 8a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3V6.5C7 4 9 2 11.5 2S16 4 16 6.5zM7 9a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm8-1V6.5A3.5 3.5 0 0 0 11.5 3A3.5 3.5 0 0 0 8 6.5V8zm-3.5 6a1.5 1.5 0 0 0-1.5 1.5a1.5 1.5 0 0 0 1.5 1.5a1.5 1.5 0 0 0 1.5-1.5a1.5 1.5 0 0 0-1.5-1.5m0-1a2.5 2.5 0 0 1 2.5 2.5a2.5 2.5 0 0 1-2.5 2.5A2.5 2.5 0 0 1 9 15.5a2.5 2.5 0 0 1 2.5-2.5" />
-                            </svg>
-                        </span>
+        <div class="row">
+            <!-- Visa & Entry -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-passport fa-2x text-white"></i>
+                            </div>
+                            <h4 class="mb-0">Visa & Entry</h4>
+                        </div>
+                        <p>Most visitors require a visa. Apply at Afghan embassies before travel. Ensure passport validity of at least 6 months.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i> Visa required for most nationalities</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Apply in advance</li>
+                            <li><i class="fas fa-check text-success me-2"></i> Multiple entry options available</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <div class="row mb-3">
-                <!-- Select Date -->
-                <div class="col-md-6">
-                    <label for="departure-date" class="form-label">Select date</label>
-                    <input type="date" id="departure-date" class="form-control" value="2025-07-17">
-                </div>
-
-                <!-- Passengers -->
-                <!-- Container for Passenger Selection -->
-                <div class="mb-4 position-relative col-md-6">
-                    <label class="form-label d-block">Passenger(s)</label>
-
-                    <!-- Trigger Input -->
-                    <input type="text" id="passengerSummary" class="form-control" value="3 Passenger(s)" readonly
-                        onclick="togglePassengerBox()">
-
-                    <!-- Passenger Dropdown Box -->
-                    <div id="passengerBox" class="card shadow p-3 position-absolute bg-white"
-                        style="z-index: 1000; display: none; width: 100%; max-width: 300px;">
-                        <!-- Adults -->
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <strong>Adults</strong><br><small>Ages 12+</small>
+            <!-- Transportation -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-bus fa-2x text-white"></i>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-light" onclick="updateCount('adult', -1)">−</button>
-                                <span id="adultCount" class="mx-2">1</span>
-                                <button type="submit" class="btn btn-light" onclick="updateCount('adult', 1)">+</button>
-                            </div>
+                            <h4 class="mb-0">Transportation</h4>
                         </div>
-
-                        <!-- Children -->
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <div>
-                                <strong>Children</strong><br><small>Ages 2–11</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-light" onclick="updateCount('child', -1)">−</button>
-                                <span id="childCount" class="mx-2">1</span>
-                                <button type="submit" class="btn btn-light" onclick="updateCount('child', 1)">+</button>
-                            </div>
-                        </div>
-
-                        <!-- Infants -->
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <strong>Infants</strong><br><small>Age under 2 on lap</small>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <button type="submit" class="btn btn-light" onclick="updateCount('infant', -1)">−</button>
-                                <span id="infantCount" class="mx-2">1</span>
-                                <button type="submit" class="btn btn-light" onclick="updateCount('infant', 1)">+</button>
-                            </div>
-                        </div>
+                        <p>Domestic flights connect major cities. Road travel varies in quality. Taxis and private drivers are common in cities.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-plane text-primary me-2"></i> Domestic flights available</li>
+                            <li><i class="fas fa-car text-primary me-2"></i> Taxis in urban areas</li>
+                            <li><i class="fas fa-road text-primary me-2"></i> Variable road conditions</li>
+                        </ul>
                     </div>
                 </div>
-
-                <script>
-                    let counts = {
-                        adult: 1,
-                        child: 1,
-                        infant: 1
-                    };
-
-                    function updateCount(type, change) {
-                        if (counts[type] + change >= 0) {
-                            counts[type] += change;
-                            document.getElementById(type + 'Count').innerText = counts[type];
-                            updateSummary();
-                        }
-                    }
-
-                    function updateSummary() {
-                        const total = counts.adult + counts.child + counts.infant;
-                        document.getElementById('passengerSummary').value = total + ' Passenger(s)';
-                    }
-
-                    function togglePassengerBox() {
-                        const box = document.getElementById('passengerBox');
-                        box.style.display = box.style.display === 'none' ? 'block' : 'none';
-                    }
-
-                    // Optional: Hide when clicking outside
-                    document.addEventListener('click', function (event) {
-                        const box = document.getElementById('passengerBox');
-                        const input = document.getElementById('passengerSummary');
-                        if (!box.contains(event.target) && event.target !== input) {
-                            box.style.display = 'none';
-                        }
-                    });
-                </script>
-
             </div>
 
-            <div class="row mb-4 mt-0">
-                <!-- Class -->
-                <div class="col-md-6">
-                    <label for="class" class="form-label">Class</label>
-                    <select id="class" class="form-select">
-                        <option>Economy Class</option>
-                        <option selected>Business Class</option>
-                        <option>First Class</option>
-                    </select>
-                </div>
-
-                <!-- Search Button -->
-                <div class="col-md-6 d-flex align-items-end">
-                    <button type="submit" class="btn btn-secondary w-100" disabled>Search flights</button>
-                </div>
-            </div>
-      <!-- form -->
-    </div>
-</div>
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-12 d-flex justify-content-center">
-            <!-- start Vertical tabs -->
-            <div class="card">
-                <div class="card-body">
-                    <div class="mb-3">
-                        <h5 class="mb-0">What you need to know</h5>
-                        <p class="mt-1">Your questions, answered</p>
-                    </div>
-
-                    <div class="row mt-3">
-                        <div class="col-md-3">
-                            <!-- Nav tabs -->
-                            <div class="nav flex-column nav-pills mb-4 mb-md-0" id="v-pills-tab" role="tablist"
-                                aria-orientation="vertical">
-                                <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home"
-                                    role="tab" aria-controls="v-pills-home" aria-selected="false" tabindex="-1">
-                                    Dress code
-                                </a>
-                                <a class="nav-link active" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                    href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                                    aria-selected="false" tabindex="-1">
-                                    Greetings & etiquette
-                                </a>
-                                <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
-                                    href="#v-pills-messages" role="tab" aria-controls="v-pills-messages"
-                                    aria-selected="false" tabindex="-1">
-                                    Languages
-                                </a>
-                                <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
-                                    href="#v-pills-settings" role="tab" aria-controls="v-pills-settings"
-                                    aria-selected="true">
-                                    Medication
-                                </a>
-                                <a class="nav-link" id="v-pills-settings-tab1" data-bs-toggle="pill"
-                                    href="#v-pills-settings1" role="tab" aria-controls="v-pills-settings1"
-                                    aria-selected="true">
-                                    Tipping
-                                </a>
+            <!-- Accommodation -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-hotel fa-2x text-white"></i>
                             </div>
+                            <h4 class="mb-0">Accommodation</h4>
                         </div>
-                        <div class="col-md-9">
-                            <div class="tab-content" id="v-pills-tabContent">
-                                <div class="tab-pane fade" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab">
-                                    <p>
-                                        Afghanistan is a cosmopolitan city and a diverse melting pot where almost all attires
-                                        and cultural expressions are accepted. Swimwear is permissible at beaches,
-                                        waterparks, public pools and spa areas but is not considered appropriate in
-                                        areas such as business districts and shopping malls.
-
-                                        Dressing conservatively is appreciated in Afghanistan's historic neighbourhoods and
-                                        places of worship. There are specific requirements for entering a mosque, like
-                                        wearing clothing that covers shoulders, arms and legs – and headscarves for
-                                        women.
-                                    </p>
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                                    aria-labelledby="v-pills-profile-tab">
-                                    <p>
-                                        Marhaba! Afghanistan is a warm and friendly city and you will come across many people
-                                        who will greet you with a smile and wish you well. A handshake is customary, but
-                                        do note it is typically accepted that this should be initiated by women.
-
-                                        Public displays of affection are best kept to a minimum. Holding hands is
-                                        acceptable, but kissing and hugging in public areas is not permitted.
-
-                                        Alcohol is served in licensed establishments such as hotels, bars and
-                                        specialised shops to those over 21 years of age. However, drunk and disorderly
-                                        conduct and drunk driving are not acceptable. Use or possession of illegal drugs
-                                        is also strictly prohibited.
-                                    </p>
-
-                                </div>
-                                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
-                                    aria-labelledby="v-pills-messages-tab">
-                                    <p>
-                                        Afghanistan is home to hundreds of nationalities and both Arabic and English are
-                                        spoken across the city. Learning a few Arabic words can certainly make the trip
-                                        more memorable! As you explore the city you're very likely to hear Russian,
-                                        Tagalog, Hindi, Urdu, Portuguese and many other languages. Follow our detailed
-                                        guide for a list of handy phrases.
-                                    </p>
-                                </div>
-                                <div class="tab-pane fade active show" id="v-pills-settings" role="tabpanel"
-                                    aria-labelledby="v-pills-settings-tab">
-                                    <p>
-                                        Many medicines used worldwide are readily available in pharmacies and hospitals
-                                        across Afghanistan, but as in most countries, there are some medications which are
-                                        restricted or prohibited for use in the Afghanistan.
-
-                                        The Afghanistan Ministry of Health and Prevention (MOHAP) has full details of controlled
-                                        or prohibited medications, plus information on what documents you need to carry
-                                        with you if you need to bring a controlled medication into Afghanistan. MOHAP also
-                                        issues a permit to import medicines into the Afghanistan, which you can apply for on
-                                        their website.
-
-                                        While the permit is optional, it is strongly recommended to obtain it prior to
-                                        your trip as it will help ensure you have all the correct information and
-                                        documents. You must also bring your official prescription from the issuing
-                                        authority of where you are receiving treatment. Please note you can carry
-                                        medicines for a maximum period of three months. If you have any questions, or
-                                        want to check the status of a particular medication, contact your local Afghanistan
-                                        embassy, or get in touch with MOHAP.
-                                    </p>
-                                </div>
-                                <div class="tab-pane fade active show" id="v-pills-settings1" role="tabpanel"
-                                    aria-labelledby="v-pills-settings-tab1">
-                                    <p>
-                                        To tip or not to tip? The short answer is, there are no rules when it comes to
-                                        tipping in Afghanistan. How much you tip varies from profession to profession, and is
-                                        also largely down to personal preference. It is customary to offer a little
-                                        extra in most cases, but it certainly isn’t compulsory. Everyone arrives in
-                                        Afghanistan with their own customs and expectations, but one thing that's always
-                                        consistent is the high level of service.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        <p>Range from basic guesthouses to international hotels in major cities. Book in advance, especially during peak seasons.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-bed text-primary me-2"></i> Hotels in major cities</li>
+                            <li><i class="fas fa-home text-primary me-2"></i> Guesthouses available</li>
+                            <li><i class="fas fa-calendar text-primary me-2"></i> Advance booking recommended</li>
+                        </ul>
                     </div>
-
                 </div>
             </div>
-            <!-- end Vertical tabs -->
+
+            <!-- Health & Safety -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-first-aid fa-2x text-white"></i>
+                            </div>
+                            <h4 class="mb-0">Health & Safety</h4>
+                        </div>
+                        <p>Comprehensive travel insurance essential. Medical facilities vary. Drink bottled water and take food precautions.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-syringe text-primary me-2"></i> Vaccinations recommended</li>
+                            <li><i class="fas fa-hand-sparkles text-primary me-2"></i> Hygiene important</li>
+                            <li><i class="fas fa-exclamation-triangle text-warning me-2"></i> Check travel advisories</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communication -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-wifi fa-2x text-white"></i>
+                            </div>
+                            <h4 class="mb-0">Communication</h4>
+                        </div>
+                        <p>Mobile networks cover urban areas. Internet access available in cities. SIM cards can be purchased locally.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-sim-card text-primary me-2"></i> Local SIM cards available</li>
+                            <li><i class="fas fa-network-wired text-primary me-2"></i> Internet in urban areas</li>
+                            <li><i class="fas fa-signal text-primary me-2"></i> Variable network coverage</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Culture & Etiquette -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="icon-wrapper bg-primary rounded-circle p-3 me-3">
+                                <i class="fas fa-hands-helping fa-2x text-white"></i>
+                            </div>
+                            <h4 class="mb-0">Culture & Etiquette</h4>
+                        </div>
+                        <p>Conservative Islamic society. Respect local customs. Dress modestly. Ask permission before photography.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-tshirt text-primary me-2"></i> Modest dress expected</li>
+                            <li><i class="fas fa-camera text-primary me-2"></i> Photography restrictions</li>
+                            <li><i class="fas fa-mosque text-primary me-2"></i> Religious respect important</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!-- /Practical Information Grid -->
 
+<!-- Regional Guide Section -->
+<section class="section regional-guide bg-light py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="mb-3">Regional <span class="text-primary">Guide</span></h2>
+                <p class="lead">Discover Afghanistan's diverse regions</p>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary mb-3">Kabul Region</h4>
+                        <p>The capital city offers historical sites, museums, and bustling markets. Modern amenities alongside traditional culture.</p>
+                        <div class="mt-3">
+                            <h6>Highlights:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-landmark text-primary me-2"></i> National Museum of Afghanistan</li>
+                                <li><i class="fas fa-mountain text-primary me-2"></i> Paghman Gardens</li>
+                                <li><i class="fas fa-shopping-cart text-primary me-2"></i> Chicken Street markets</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary mb-3">Northern Region</h4>
+                        <p>Mazar-i-Sharif and Balkh province feature ancient historical sites and the famous Blue Mosque.</p>
+                        <div class="mt-3">
+                            <h6>Highlights:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-mosque text-primary me-2"></i> Blue Mosque (Rawze-e-Sharif)</li>
+                                <li><i class="fas fa-history text-primary me-2"></i> Ancient Balkh ruins</li>
+                                <li><i class="fas fa-industry text-primary me-2"></i> Agricultural heartland</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary mb-3">Western Region</h4>
+                        <p>Herat showcases Persian influences with magnificent architecture and rich cultural heritage.</p>
+                        <div class="mt-3">
+                            <h6>Highlights:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-monument text-primary me-2"></i> Herat Citadel</li>
+                                <li><i class="fas fa-mosque text-primary me-2"></i> Friday Mosque</li>
+                                <li><i class="fas fa-palette text-primary me-2"></i> Traditional handicrafts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title text-primary mb-3">Central Highlands</h4>
+                        <p>Bamyan province offers stunning natural beauty and the historical site of the Buddha niches.</p>
+                        <div class="mt-3">
+                            <h6>Highlights:</h6>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-mountain text-primary me-2"></i> Buddha niches</li>
+                                <li><i class="fas fa-lake text-primary me-2"></i> Band-e-Amir lakes</li>
+                                <li><i class="fas fa-hiking text-primary me-2"></i> Trekking opportunities</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Regional Guide Section -->
+
+<!-- Travel Tips Section -->
+<section class="section travel-tips py-5" id="travel-tips">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-10 text-center">
+                <h2 class="mb-3">Essential <span class="text-primary">Travel Tips</span></h2>
+                <p class="lead">Practical advice for a smooth journey</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3">Before You Go</h4>
+                        <div class="tips-list">
+                            <div class="tip-item d-flex mb-3">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">1</div>
+                                <div>
+                                    <h6 class="mb-1">Check Travel Advisories</h6>
+                                    <p class="mb-0 small">Review current security situation and travel warnings</p>
+                                </div>
+                            </div>
+                            <div class="tip-item d-flex mb-3">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">2</div>
+                                <div>
+                                    <h6 class="mb-1">Vaccinations & Health</h6>
+                                    <p class="mb-0 small">Consult travel clinic for recommended vaccinations</p>
+                                </div>
+                            </div>
+                            <div class="tip-item d-flex mb-3">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">3</div>
+                                <div>
+                                    <h6 class="mb-1">Travel Insurance</h6>
+                                    <p class="mb-0 small">Comprehensive coverage including medical evacuation</p>
+                                </div>
+                            </div>
+                            <div class="tip-item d-flex">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">4</div>
+                                <div>
+                                    <h6 class="mb-1">Document Copies</h6>
+                                    <p class="mb-0 small">Photocopies of passport, visa, and important documents</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3">During Your Stay</h4>
+                        <div class="tips-list">
+                            <div class="tip-item d-flex mb-3">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">1</div>
+                                <div>
+                                    <h6 class="mb-1">Cultural Respect</h6>
+                                    <p class="mb-0 small">Dress modestly and respect local customs</p>
+                                </div>
+                            </div>
+                            <div class="tip-item d-flex mb-3">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">2</div>
+                                <div>
+                                    <h6 class="mb-1">Cash Availability</h6>
+                                    <p class="mb-0 small">Carry sufficient local currency</p>
+                                </div>
+                            </div>
+                            <div class="tip-item d-flex mb-3">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">3</div>
+                                <div>
+                                    <h6 class="mb-1">Local Contacts</h6>
+                                    <p class="mb-0 small">Keep embassy and local contact information handy</p>
+                                </div>
+                            </div>
+                            <div class="tip-item d-flex">
+                                <div class="tip-number bg-primary text-white rounded-circle me-3">4</div>
+                                <div>
+                                    <h6 class="mb-1">Safety Awareness</h6>
+                                    <p class="mb-0 small">Stay informed about local conditions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Travel Tips Section -->
+
+<!-- Emergency Information -->
+<section class="section emergency-info bg-dark text-white py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">Emergency <span class="text-warning">Information</span></h2>
+                <p class="lead">Important contacts for emergency situations</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card bg-danger text-center border-0">
+                    <div class="card-body p-4">
+                        <i class="fas fa-phone-alt fa-3x mb-3"></i>
+                        <h4>General Emergency</h4>
+                        <p class="display-4 mb-0">119</p>
+                        <small>Police, Fire, Ambulance</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-primary text-center border-0">
+                    <div class="card-body p-4">
+                        <i class="fas fa-ambulance fa-3x mb-3"></i>
+                        <h4>Medical Emergency</h4>
+                        <p class="display-4 mb-0">112</p>
+                        <small>Ambulance Services</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card bg-warning text-dark text-center border-0">
+                    <div class="card-body p-4">
+                        <i class="fas fa-info-circle fa-3x mb-3"></i>
+                        <h4>Tourist Police</h4>
+                        <p class="display-4 mb-0">100</p>
+                        <small>Tourist Assistance</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <div class="alert alert-light">
+                <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                <strong>Important:</strong> Always register with your embassy upon arrival and keep emergency contact information accessible.
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Emergency Information -->
+
+<!-- Custom CSS -->
 <style>
-    .contact-card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      padding: 20px;
+    /* Hero Section */
+    .hero-section-essentials {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1582738412120-9d9d0a4d1a3c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+        background-size: cover;
+        background-position: center;
+        padding: 120px 0 80px;
+        position: relative;
     }
-    .map-container iframe {
-      border-radius: 10px;
-      width: 100%;
-      height: 400px;
-      border: 0;
+    
+    /* Fact Icons */
+    .fact-icon {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    .bi-whatsapp {
-      vertical-align: -.125em;
-      margin-right: .25rem;
+    
+    /* Icon Wrapper */
+    .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-  </style>
-
-<div class="bg-light">
-
-<div class="container py-5">
-  <h2 class="fw-bold">Contact us</h2>
-  <p class="text-muted">Here’s how to find us and reach Nikporo Club in Karte‑4, Kabul.</p>
-
-  <div class="row g-4 mt-4">
-    <!-- Map Column -->
-    <div class="col-md-6 map-container">
-      <iframe
-        src="https://www.google.com/maps?q=Nikporo%20Club%20Karte%204%20Kabul&output=embed"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-    </div>
-
-    <!-- Contact Info Column -->
-    <div class="col-md-6">
-      <div class="contact-card">
-        <h5 class="fw-bold">Front of Nikporo Club – Karte‑4, Kabul</h5>
-        <p>Karte‑4 neighborhood, District 3, Kabul, Afghanistan</p>
-        <hr>
-
-        <p class="mb-1"><strong>Office hours:</strong></p>
-        <p>Saturday – Thursday 08:00 – 17:00</p>
-        <hr>
-
-        <p class="mb-1"><strong>Call us:</strong></p>
-        <p><a href="tel:0766657849" class="text-decoration-none">0766657849</a></p>
-        <hr>
-
-        <p class="mb-1"><strong>Email us:</strong></p>
-        <p><a href="mailto:info@nikporo.af" class="text-decoration-none">info@nikporo.af</a></p>
-        <hr>
-
-        <p class="mb-1"><strong>WhatsApp Chat (Live 08:00 – 20:00):</strong></p>
-        <p>
-          <a href="https://wa.me/93766657849" target="_blank" class="btn btn-success btn-sm">
-            <i class="bi bi-whatsapp"></i> Chat on WhatsApp
-          </a>
-        </p>
-        <hr>
-
-        <p class="mb-1"><strong>Use our contact form:</strong></p>
-        <p><a href="/contact" class="text-primary text-decoration-none">Write to us</a></p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+    
+    /* Tip Numbers */
+    .tip-number {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        flex-shrink: 0;
+    }
+    
+    /* Card Hover Effects */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 15px;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+    }
+    
+    /* Emergency Cards */
+    .emergency-info .card {
+        border-radius: 15px;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .hero-section-essentials {
+            padding: 80px 0 60px;
+        }
+        
+        .display-4 {
+            font-size: 2.5rem;
+        }
+        
+        .icon-wrapper {
+            width: 50px;
+            height: 50px;
+        }
+        
+        .icon-wrapper i {
+            font-size: 1.5rem;
+        }
+    }
+</style>
 
 {% endblock %}

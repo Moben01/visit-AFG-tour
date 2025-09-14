@@ -3,17 +3,18 @@
 {% block content %}
 
 <!-- Hero Section -->
-<section class="hero-section-four">
+<section class="hero-section-accommodation">
     <div class="container">
         <div class="hero-content">
             <div class="row align-items-center">
                 <div class="col-lg-10 col-md-12 mx-auto wow fadeInUp" data-wow-delay="0.3s">
                     <div class="banner-content text-center mx-auto">
-                        <h1 class="text-white display-4 mb-2">Accommodation </h1>
-                        <p class="text-white mx-auto">Five-star resort or chic boutique hotel? Pick from an incredible
-                            range of options.</p>
-                        <a class="video-btn video-effect" data-fancybox="" href="https://youtu.be/NSAOrGb9orM"><i
-                                class="isax isax-play5"></i></a>
+                        <h1 class="text-white display-4 mb-2">Accommodation in <span class="text-warning">Afghanistan</span></h1>
+                        <p class="text-white lead mx-auto">Experience authentic Afghan hospitality through diverse lodging options across this historically rich nation.</p>
+                        <div class="mt-4">
+                            <a href="#explore" class="btn btn-primary btn-lg rounded-pill px-4 me-2">Explore Options</a>
+                            <a href="#practical-info" class="btn btn-outline-light btn-lg rounded-pill px-4">Practical Info</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -21,200 +22,463 @@
     </div>
 </section>
 <!-- /Hero Section -->
-<section class="section destination-section">
+
+<!-- Accommodation Types -->
+<section class="section accommodation-types bg-light py-5" id="explore">
     <div class="container">
-        <h4 class="mb-2">Afghanistan Hotels</h4>
-        <p class="mb-1">
-            Afghanistan offers a unique blend of history, culture, and natural beauty. From the bustling bazaars of
-            Kabul to the serene landscapes of Bamyan and the historical treasures of Herat, travelers can enjoy
-            authentic Afghan hospitality across the country. Whether you're a history enthusiast, cultural explorer,
-            adventure seeker, or planning a family vacation, Afghanistan provides a diverse range of hotel experiences
-            to suit your journey.
-
-
-        </p>
-
-        <button type="button" class="btn btn-secondary my-3">
-            New hotels in Afghanistan
-        </button>
-        <h4 class="mb-2 my-3">Budget Hotels</h4>
-        <p class="mb-1">
-            Your stay in Afghanistan doesn't have to break the bank. Whether you're exploring the historic streets of
-            Kabul, the scenic valleys of Bamyan, or the ancient sites of Herat, there are budget-friendly hotels and
-            guesthouses to suit every traveler. Local options and modest chains offer clean rooms, friendly service, and
-            convenient locations—perfect for backpackers, students, and families looking to experience Afghan
-            hospitality without spending too much.
-        </p>
-
-        <button type="button" class="btn btn-secondary my-3">
-            Guide to budget hotels in Afghanistan
-        </button>
-
-
-        <h4 class="mb-2 my-3">Hotel Apartments</h4>
-<p class="mb-1">
-    Staying a little longer or prefer the comfort of a home-style setup? Afghanistan offers a growing number of hotel apartments, ideal for extended stays, business travelers, or families. These accommodations often include kitchen facilities, laundry access, workspace, and more—providing the perfect mix of comfort and convenience. Whether you're in Kabul, Mazar-i-Sharif, or Herat, hotel apartments offer a practical option with the added benefit of room service and dining options.
-</p>
-
-<button type="button" class="btn btn-secondary my-3">
-    Plan a budget trip to Afghanistan
-</button>
-
-<h4 class="mb-2 my-3">Home and Apartment Rentals</h4>
-<p class="mb-1">
-    Afghanistan is increasingly offering home and apartment rental options for travelers seeking a more private and personalized stay. From cozy apartments in Kabul to traditional homes in scenic provinces like Bamyan and Panjshir, you can find unique accommodations through platforms like Airbnb and local rental services. These rentals provide the comforts of home—privacy, kitchen facilities, and flexible space—while immersing you in authentic Afghan neighborhoods and culture.
-</p>
-
-<button type="button" class="btn btn-secondary my-3">
-    Discover Afghanistan's neighborhoods
-</button>
-
-<div class="row bg-white border rounded shadow p-4 my-5">
-    <!-- Left image -->
-    <div class="col-md-4">
-      <img src="https://kamairmedia.s3.ap-south-1.amazonaws.com/airline_37388ec6bd.webp" alt="Fly Afghanistan" class="img-fluid rounded">
-    </div>
-
-    <!-- Right form -->
-    <div class="col-md-8">
-      <h4 class="mb-4">Fly with Afghanistan</h4>
-      <!-- <form> -->
-        <div class="row mb-3">
-          <!-- Departure -->
-          <div class="col-md-6">
-            <label class="form-label">Departure airport</label>
-            <select class="form-select">
-              <option selected>Select airport</option>
-              <option>Kabul (KBL)</option>
-              <option>Kandahar (KDH)</option>
-              <option>Herat (HEA)</option>
-              <option>Mazar-i-Sharif (MZR)</option>
-            </select>
-          </div>
-          <!-- Arrival -->
-          <div class="col-md-6">
-            <label class="form-label">Arrival airport</label>
-            <div class="input-group">
-              <input type="text" class="form-control" value="Afghanistan (DXB)" readonly>
-              <span class="input-group-text bg-light">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
-                  <path d="M8 1a3 3 0 0 0-3 3v3H4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5a2 2 0 0 0-2-2h-1V4a3 3 0 0 0-3-3zm-2 6V4a2 2 0 1 1 4 0v3H6z"/>
-                </svg>
-              </span>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">Types of <span class="text-primary">Accommodation</span></h2>
+                <p class="lead">Discover diverse lodging options across Afghanistan's varied regions</p>
             </div>
-          </div>
         </div>
 
-        <div class="row mb-3">
-          <!-- Date -->
-          <div class="col-md-6">
-            <label class="form-label">Select date</label>
-            <input type="date" class="form-control" value="2025-06-28">
-          </div>
-          <!-- Passengers -->
-                       <!-- Container for Passenger Selection -->
-                       <div class="mb-4 position-relative col-md-6">
-                          <label class="form-label d-block">Passenger(s)</label>
-      
-                          <!-- Trigger Input -->
-                          <input type="text" id="passengerSummary" class="form-control" value="3 Passenger(s)" readonly
-                              onclick="togglePassengerBox()">
-      
-                          <!-- Passenger Dropdown Box -->
-                          <div id="passengerBox" class="card shadow p-3 position-absolute bg-white"
-                              style="z-index: 1000; display: none; width: 100%; max-width: 300px;">
-                              <!-- Adults -->
-                              <div class="d-flex justify-content-between align-items-center mb-2">
-                                  <div>
-                                      <strong>Adults</strong><br><small>Ages 12+</small>
-                                  </div>
-                                  <div class="d-flex align-items-center">
-                                      <button type="submit" class="btn btn-light" onclick="updateCount('adult', -1)">−</button>
-                                      <span id="adultCount" class="mx-2">1</span>
-                                      <button type="submit" class="btn btn-light" onclick="updateCount('adult', 1)">+</button>
-                                  </div>
-                              </div>
-      
-                              <!-- Children -->
-                              <div class="d-flex justify-content-between align-items-center mb-2">
-                                  <div>
-                                      <strong>Children</strong><br><small>Ages 2–11</small>
-                                  </div>
-                                  <div class="d-flex align-items-center">
-                                      <button type="submit" class="btn btn-light" onclick="updateCount('child', -1)">−</button>
-                                      <span id="childCount" class="mx-2">1</span>
-                                      <button type="submit" class="btn btn-light" onclick="updateCount('child', 1)">+</button>
-                                  </div>
-                              </div>
-      
-                              <!-- Infants -->
-                              <div class="d-flex justify-content-between align-items-center">
-                                  <div>
-                                      <strong>Infants</strong><br><small>Age under 2 on lap</small>
-                                  </div>
-                                  <div class="d-flex align-items-center">
-                                      <button type="submit" class="btn btn-light" onclick="updateCount('infant', -1)">−</button>
-                                      <span id="infantCount" class="mx-2">1</span>
-                                      <button type="submit" class="btn btn-light" onclick="updateCount('infant', 1)">+</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-      
-                      <script>
-                          let counts = {
-                              adult: 1,
-                              child: 1,
-                              infant: 1
-                          };
-      
-                          function updateCount(type, change) {
-                              if (counts[type] + change >= 0) {
-                                  counts[type] += change;
-                                  document.getElementById(type + 'Count').innerText = counts[type];
-                                  updateSummary();
-                              }
-                          }
-      
-                          function updateSummary() {
-                              const total = counts.adult + counts.child + counts.infant;
-                              document.getElementById('passengerSummary').value = total + ' Passenger(s)';
-                          }
-      
-                          function togglePassengerBox() {
-                              const box = document.getElementById('passengerBox');
-                              box.style.display = box.style.display === 'none' ? 'block' : 'none';
-                          }
-      
-                          // Optional: Hide when clicking outside
-                          document.addEventListener('click', function (event) {
-                              const box = document.getElementById('passengerBox');
-                              const input = document.getElementById('passengerSummary');
-                              if (!box.contains(event.target) && event.target !== input) {
-                                  box.style.display = 'none';
-                              }
-                          });
-                      </script>
-        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm accommodation-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="accommodation-icon mb-4">
+                            <i class="fas fa-hotel fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Hotels</h4>
+                        <p class="card-text">From established hotels in urban centers to comfortable mid-range options, Afghanistan's hospitality sector offers modern amenities combined with traditional Afghan warmth and service.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Urban locations in major cities</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Modern facilities and services</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Professional staff</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Business amenities available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-        <div class="row mb-4">
-          <!-- Class -->
-          <div class="col-md-6">
-            <label class="form-label">Class</label>
-            <select class="form-select">
-              <option selected>Economy Class</option>
-              <option>Business Class</option>
-              <option>First Class</option>
-            </select>
-          </div>
-          <!-- Button -->
-          <div class="col-md-6 d-flex align-items-end">
-            <button type="button" class="btn btn-secondary w-100" disabled>Search flights</button>
-          </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm accommodation-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="accommodation-icon mb-4">
+                            <i class="fas fa-home fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Guesthouses</h4>
+                        <p class="card-text">Experience genuine Afghan hospitality in family-run guesthouses, offering personalized service, cultural immersion, and insights into local traditions and customs.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Family-operated establishments</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Authentic local experiences</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Home-cooked traditional meals</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Cultural exchange opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm accommodation-card">
+                    <div class="card-body p-4 text-center">
+                        <div class="accommodation-icon mb-4">
+                            <i class="fas fa-bed fa-3x text-primary"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Budget Stays</h4>
+                        <p class="card-text">Affordable lodging options for travelers seeking comfortable accommodations without luxury amenities, ideal for extended stays and budget-conscious exploration.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Cost-effective options</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Central locations</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Basic amenities provided</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i> Local neighborhood immersion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      <!-- </form> -->
-    </div>
-  </div>
     </div>
 </section>
+<!-- /Accommodation Types -->
+
+<!-- Regional Accommodation Guide -->
+<section class="section regional-guide py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">Regional <span class="text-primary">Accommodation Guide</span></h2>
+                <p class="lead">Discover lodging options across Afghanistan's diverse regions</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3 text-primary">Kabul Region</h4>
+                        <p class="card-text">As the capital city, Kabul offers the most diverse range of accommodations, from established hotels to guesthouses and apartment rentals. Options are concentrated in central districts with good access to government offices, diplomatic missions, and cultural sites.</p>
+                        <div class="accommodation-details mt-4">
+                            <h5 class="mb-3">Notable Areas:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt text-primary me-2"></i> <strong>Wazir Akbar Khan:</strong> Diplomatic area with security</li>
+                                <li><i class="fas fa-map-marker-alt text-primary me-2"></i> <strong>Shahr-e-Naw:</strong> Central commercial district</li>
+                                <li><i class="fas fa-map-marker-alt text-primary me-2"></i> <strong>Karte Parwan:</strong> Residential area with guesthouses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3 text-primary">Northern Region (Mazar-i-Sharif, Balkh)</h4>
+                        <p class="card-text">The northern region, centered around Mazar-i-Sharif, offers accommodations that cater to both business travelers and visitors to historical sites. The area is known for its commercial activity and proximity to Central Asian borders.</p>
+                        <div class="accommodation-details mt-4">
+                            <h5 class="mb-3">Features:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-star text-warning me-2"></i> Hotels near the Blue Mosque complex</li>
+                                <li><i class="fas fa-star text-warning me-2"></i> Guesthouses with traditional design</li>
+                                <li><i class="fas fa-star text-warning me-2"></i> Business-friendly accommodations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3 text-primary">Western Region (Herat)</h4>
+                        <p class="card-text">Herat's rich historical heritage is reflected in its accommodation options, which range from modern hotels to traditional guesthouses. The city's Persian influences are evident in architectural details and hospitality styles.</p>
+                        <div class="accommodation-details mt-4">
+                            <h5 class="mb-3">Characteristics:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-monument text-primary me-2"></i> Proximity to historical sites</li>
+                                <li><i class="fas fa-utensils text-primary me-2"></i> Traditional Herati cuisine offered</li>
+                                <li><i class="fas fa-hands-helping text-primary me-2"></i> Family-operated establishments</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3 text-primary">Central Highlands (Bamyan, Daykundi)</h4>
+                        <p class="card-text">The central highlands region offers unique accommodation experiences focused on eco-tourism and cultural immersion. Guesthouses and small hotels provide access to spectacular natural landscapes and historical sites.</p>
+                        <div class="accommodation-details mt-4">
+                            <h5 class="mb-3">Highlights:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-mountain text-primary me-2"></i> Scenic mountain locations</li>
+                                <li><i class="fas fa-seedling text-primary me-2"></i> Eco-friendly practices</li>
+                                <li><i class="fas fa-history text-primary me-2"></i> Cultural heritage proximity</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Regional Accommodation Guide -->
+
+<!-- Practical Information -->
+<section class="section practical-info py-5 bg-light" id="practical-info">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">Practical <span class="text-primary">Information</span></h2>
+                <p class="lead">Essential details for your stay in Afghanistan</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary p-3 rounded me-4">
+                                <i class="fas fa-money-bill-wave fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-3">Payment Options</h4>
+                                <p>Most establishments primarily accept cash payments in Afghanis (AFN). US Dollars are also widely accepted, particularly in larger cities. Credit card facilities are limited primarily to major hotels in Kabul. Travelers are advised to carry sufficient cash, especially when traveling to provincial areas.</p>
+                                <div class="mt-3">
+                                    <h6>Currency Information:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-exchange-alt me-2 text-primary"></i> Exchange rate: Approximately 70-75 AFN per USD</li>
+                                        <li><i class="fas fa-money-bill me-2 text-primary"></i> Small denominations preferred for daily expenses</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary p-3 rounded me-4">
+                                <i class="fas fa-language fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-3">Language & Communication</h4>
+                                <p>Dari and Pashto are the official languages of Afghanistan. English is spoken in major hotels, tourist areas, and by staff in establishments catering to international visitors. Learning basic greetings in Dari can greatly enhance your interactions with local hosts.</p>
+                                <div class="mt-3">
+                                    <h6>Useful Phrases:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-comment me-2 text-primary"></i> Hello: Salam (سلام)</li>
+                                        <li><i class="fas fa-comment me-2 text-primary"></i> Thank you: Tashakor (تشکر)</li>
+                                        <li><i class="fas fa-comment me-2 text-primary"></i> How much?: Chand ast? (چند است؟)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary p-3 rounded me-4">
+                                <i class="fas fa-id-card fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-3">Registration & Documentation</h4>
+                                <p>All accommodation providers are required to register foreign guests with local authorities. Upon check-in, you will need to provide your passport and visa documents. It's advisable to keep photocopies of your important documents separately from the originals.</p>
+                                <div class="mt-3">
+                                    <h6>Required Documents:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-passport me-2 text-primary"></i> Valid passport</li>
+                                        <li><i class="fas fa-file-alt me-2 text-primary"></i> Afghan visa</li>
+                                        <li><i class="fas fa-hotel me-2 text-primary"></i> Reservation details (if applicable)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="bg-primary p-3 rounded me-4">
+                                <i class="fas fa-hands-helping fa-2x text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-3">Cultural Considerations</h4>
+                                <p>Respect for local customs and traditions is essential throughout Afghanistan. Dress modestly, particularly when outside major hotel complexes. Many accommodations provide guidance on appropriate behavior and dress codes to ensure a respectful and enjoyable stay.</p>
+                                <div class="mt-3">
+                                    <h6>Cultural Tips:</h6>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fas fa-tshirt me-2 text-primary"></i> Conservative dress recommended</li>
+                                        <li><i class="fas fa-mosque me-2 text-primary"></i> Respect prayer times and customs</li>
+                                        <li><i class="fas fa-camera me-2 text-primary"></i> Ask permission before photography</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Practical Information -->
+
+<!-- Seasonal Considerations -->
+<section class="section seasonal-info py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">Seasonal <span class="text-primary">Considerations</span></h2>
+                <p class="lead">Planning your stay according to Afghanistan's climate patterns</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="season-icon mb-3">
+                            <i class="fas fa-sun fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title">Spring (Mar-May)</h5>
+                        <p class="card-text">Ideal travel season with mild temperatures across most regions. Accommodations in scenic areas like Bamyan become particularly popular during this period.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-success">Recommended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="season-icon mb-3">
+                            <i class="fas fa-temperature-high fa-2x text-danger"></i>
+                        </div>
+                        <h5 class="card-title">Summer (Jun-Aug)</h5>
+                        <p class="card-text">Hot in most regions, particularly in southern areas. Mountain regions offer cooler alternatives. Air-conditioned accommodations are essential in cities.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-warning text-dark">Moderate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="season-icon mb-3">
+                            <i class="fas fa-leaf fa-2x text-success"></i>
+                        </div>
+                        <h5 class="card-title">Autumn (Sep-Nov)</h5>
+                        <p class="card-text">Pleasant temperatures and clear skies make this another excellent travel period. Accommodation availability is generally good throughout the country.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-success">Recommended</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100 border-0 shadow-sm text-center">
+                    <div class="card-body p-4">
+                        <div class="season-icon mb-3">
+                            <i class="fas fa-snowflake fa-2x text-info"></i>
+                        </div>
+                        <h5 class="card-title">Winter (Dec-Feb)</h5>
+                        <p class="card-text">Cold with snow in many regions, particularly in central and northern areas. Heating facilities in accommodations become essential during this season.</p>
+                        <div class="mt-3">
+                            <span class="badge bg-info">Challenging</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Seasonal Considerations -->
+
+<!-- Additional Resources -->
+<section class="section resources-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="mb-3">Additional <span class="text-warning">Resources</span></h2>
+                <p class="lead">Helpful information for planning your accommodation in Afghanistan</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 bg-dark">
+                    <div class="card-body p-4 text-center">
+                        <div class="resource-icon mb-3">
+                            <i class="fas fa-phone-alt fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title mb-3">Contact Information</h5>
+                        <p class="card-text">Essential contacts for accommodation inquiries and support during your stay in Afghanistan.</p>
+                        <div class="mt-3">
+                            <p><i class="fas fa-hotel me-2"></i> Hotel Association: +93 XX XXX XXXX</p>
+                            <p><i class="fas fa-passport me-2"></i> Tourism Department: +93 XX XXX XXXX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 bg-dark">
+                    <div class="card-body p-4 text-center">
+                        <div class="resource-icon mb-3">
+                            <i class="fas fa-info-circle fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title mb-3">Travel Advisory</h5>
+                        <p class="card-text">Current travel information and safety recommendations for visitors to Afghanistan.</p>
+                        <div class="mt-3">
+                            <p><i class="fas fa-exclamation-triangle me-2"></i> Check security conditions</p>
+                            <p><i class="fas fa-map-marked-alt me-2"></i> Register with your embassy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100 border-0 bg-dark">
+                    <div class="card-body p-4 text-center">
+                        <div class="resource-icon mb-3">
+                            <i class="fas fa-book-open fa-2x text-warning"></i>
+                        </div>
+                        <h5 class="card-title mb-3">Cultural Guide</h5>
+                        <p class="card-text">Understanding local customs and etiquette for a respectful and enjoyable stay.</p>
+                        <div class="mt-3">
+                            <p><i class="fas fa-hands me-2"></i> Greeting customs</p>
+                            <p><i class="fas fa-utensils me-2"></i> Dining etiquette</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Additional Resources -->
+
+<!-- Custom CSS -->
+<style>
+    /* Hero Section */
+    .hero-section-accommodation {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), #0d6efd;
+        background-size: cover;
+        background-position: center;
+        padding: 100px 0 70px;
+        position: relative;
+    }
+    
+    /* Accommodation Cards */
+    .accommodation-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .accommodation-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    .accommodation-icon {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Seasonal Icons */
+    .season-icon {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Resource Cards */
+    .resource-icon {
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .hero-section-accommodation {
+            padding: 80px 0 50px;
+        }
+        
+        .display-4 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+
 {% endblock %}
