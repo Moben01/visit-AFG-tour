@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<!-- Hero Section -->
-<section class="hero-section-four">
+<!-- Hero Section (بدون دکمه پخش ویدیو) -->
+<section class="hero-section-four" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{% static "images/afghanistan-transportation.jpg" %}') no-repeat center center; background-size: cover;">
     <div class="container">
         <div class="hero-content">
             <div class="row align-items-center">
@@ -11,243 +10,531 @@
                     <div class="banner-content text-center mx-auto">
                         <h1 class="text-white display-4 mb-2">
                             Transportation in Afghanistan:
-                            <br> Getting to & around the city
+                            <br> Getting to & around the country
                         </h1>
-                        <p class="text-white mx-auto">From touchdown to take-off, getting around Dubai is easy. </p>
-                        <a class="video-btn video-effect" data-fancybox="" href="https://youtu.be/NSAOrGb9orM"><i
-                                class="isax isax-play5"></i></a>
+                        <p class="text-white mx-auto">Navigate Afghanistan's diverse transportation network with confidence and ease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Transportation Overview -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="alert alert-info">
+                <strong>Travel Advisory:</strong> Always check current security conditions and travel advisories before planning your journey in Afghanistan.
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Quick Facts</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Main International Airport: Kabul (KBL)</li>
+                        <li class="list-group-item">Primary Highways: Ring Road, Salang Pass</li>
+                        <li class="list-group-item">Common Transport: Minibuses, Shared Taxis</li>
+                        <li class="list-group-item">Currency: Afghan Afghani (AFN)</li>
+                        <li class="list-group-item">Best for Tourists: Private hired cars with drivers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Travel Tips</h4>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Carry local currency for transportation</li>
+                        <li class="list-group-item">Learn basic Dari/Pashto phrases for bargaining</li>
+                        <li class="list-group-item">Always agree on fares before journeys</li>
+                        <li class="list-group-item">Keep travel documents accessible at checkpoints</li>
+                        <li class="list-group-item">Travel during daylight hours when possible</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="mb-4 border-bottom pb-2">Getting to Afghanistan</h2>
+
+    <div class="transport-method-card mb-4">
+        <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-plane-departure fa-2x text-primary me-3"></i>
+            <h4 class="mb-0">By Air</h4>
+        </div>
+        <p class="mb-1">
+            Afghanistan is accessible by several international airports, with Hamid Karzai International Airport (KBL) in
+            Kabul being the main gateway. Other cities such as Mazar-i-Sharif, Herat, and Kandahar also have international airports
+            offering regional and limited international connections.
+        </p>
+        <div class="mt-3">
+            <h6>Major Airlines Serving Afghanistan:</h6>
+            <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-light text-dark">Ariana Afghan Airlines</span>
+                <span class="badge bg-light text-dark">Kam Air</span>
+                <span class="badge bg-light text-dark">Emirates</span>
+                <span class="badge bg-light text-dark">Turkish Airlines</span>
+                <span class="badge bg-light text-dark">Flydubai</span>
+                <span class="badge bg-light text-dark">Air Arabia</span>
+            </div>
+        </div>
+        <div class="mt-3">
+            <h6>Main International Routes:</h6>
+            <ul>
+                <li>Dubai - Kabul (frequent flights)</li>
+                <li>Istanbul - Kabul (daily flights)</li>
+                <li>New Delhi - Kabul (several weekly flights)</li>
+                <li>Abu Dhabi - Kabul (regular service)</li>
+                <li>Islamabad - Kabul (regional connection)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="transport-method-card mb-4">
+        <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-border-all fa-2x text-primary me-3"></i>
+            <h4 class="mb-0">By Land</h4>
+        </div>
+        <p class="mb-1">
+            Afghanistan shares land borders with Iran, Pakistan, Turkmenistan, Uzbekistan, Tajikistan, and China. Travelers
+            can enter the country through various border crossings.
+        </p>
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <h6>Major Border Crossings:</h6>
+                <ul>
+                    <li><strong>Torkham</strong> - Pakistan border (to Jalalabad)</li>
+                    <li><strong>Spin Boldak</strong> - Pakistan border (to Kandahar)</li>
+                    <li><strong>Islam Qala</strong> - Iran border (to Herat)</li>
+                    <li><strong>Hairatan</strong> - Uzbekistan border (to Mazar-i-Sharif)</li>
+                    <li><strong>Sher Khan Bandar</strong> - Tajikistan border</li>
+                    <li><strong>Torghundi</strong> - Turkmenistan border</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h6>Border Crossing Requirements:</h6>
+                        <ul>
+                            <li>Valid passport with Afghan visa</li>
+                            <li>Possible additional permits for certain regions</li>
+                            <li>Vehicle documentation if bringing a car</li>
+                            <li>Customs declarations for goods</li>
+                            <li>Health certificates (check current requirements)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="transport-method-card mb-4">
+        <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-road fa-2x text-primary me-3"></i>
+            <h4 class="mb-0">By Road</h4>
+        </div>
+        <p class="mb-1">
+            Afghanistan's road network connects major cities and neighboring countries. While most international visitors
+            arrive by air, overland travel is possible for those coming from surrounding countries.
+        </p>
+        <div class="mt-3">
+            <h6>Major Highways and Travel Times:</h6>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Distance</th>
+                            <th>Approx. Travel Time</th>
+                            <th>Road Condition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Kabul - Jalalabad</td>
+                            <td>150 km</td>
+                            <td>2.5-3 hours</td>
+                            <td>Good (Highway)</td>
+                        </tr>
+                        <tr>
+                            <td>Kabul - Mazar-i-Sharif</td>
+                            <td>425 km</td>
+                            <td>7-9 hours</td>
+                            <td>Variable (Mountain Pass)</td>
+                        </tr>
+                        <tr>
+                            <td>Kabul - Kandahar</td>
+                            <td>480 km</td>
+                            <td>8-10 hours</td>
+                            <td>Fair to Good</td>
+                        </tr>
+                        <tr>
+                            <td>Kabul - Herat</td>
+                            <td>820 km</td>
+                            <td>12-15 hours</td>
+                            <td>Variable</td>
+                        </tr>
+                        <tr>
+                            <td>Herat - Islam Qala (Iran border)</td>
+                            <td>120 km</td>
+                            <td>2 hours</td>
+                            <td>Good</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="transport-method-card mb-4">
+        <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-subway fa-2x text-primary me-3"></i>
+            <h4 class="mb-0">By Rail</h4>
+        </div>
+        <p class="mb-1">
+            Afghanistan's railway network is limited but developing. Currently, there are no passenger railway services for long-distance travel, but freight railways operate at border crossings.
+        </p>
+        <div class="mt-3">
+            <h6>Current Railway Connections:</h6>
+            <ul>
+                <li><strong>Hairatan - Mazar-i-Sharif</strong> (75 km, freight primarily)</li>
+                <li><strong>Torghundi</strong> - Connection to Turkmenistan rail network</li>
+                <li><strong>Khaf-Herat Railway</strong> - Connection to Iran (passenger service planned)</li>
+            </ul>
+            <p class="fst-italic">Note: Passenger rail services are limited and primarily used for freight. Check current status as railway development is ongoing.</p>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <h2 class="mb-4 border-bottom pb-2">Getting Around Afghanistan</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-bus fa-2x text-success me-3"></i>
+                        <h4 class="mb-0">Buses & Minivans</h4>
+                    </div>
+                    <p>The most common form of public transportation for intercity travel. Various companies operate routes between major cities.</p>
+                    <h6>Major Bus Companies:</h6>
+                    <ul>
+                        <li>Millie Bus</li>
+                        <li>Sorkhpooshi Bus Company</li>
+                        <li>Various private operators</li>
+                    </ul>
+                    <h6>Sample Fares:</h6>
+                    <ul>
+                        <li>Kabul to Mazar-i-Sharif: 800-1200 AFN</li>
+                        <li>Kabul to Herat: 1200-1800 AFN</li>
+                        <li>Kabul to Jalalabad: 300-500 AFN</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-taxi fa-2x text-warning me-3"></i>
+                        <h4 class="mb-0">Shared Taxis</h4>
+                    </div>
+                    <p>Shared taxis (usually Toyota Corolla or similar) are faster than buses and depart when full.</p>
+                    <h6>How it works:</h6>
+                    <ul>
+                        <li>Depart from specific stations in each city</li>
+                        <li>Wait until vehicle fills with passengers (4-6 people)</li>
+                        <li>Fares are per seat</li>
+                        <li>Faster than buses but more expensive</li>
+                    </ul>
+                    <h6>Sample Fares (per seat):</h6>
+                    <ul>
+                        <li>Kabul to Mazar-i-Sharif: 1500-2000 AFN</li>
+                        <li>Kabul to Jalalabad: 500-800 AFN</li>
+                        <li>Within cities: 50-200 AFN depending on distance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-car fa-2x text-info me-3"></i>
+                        <h4 class="mb-0">Car Rental</h4>
+                    </div>
+                    <p>Renting a car with a driver is recommended for foreigners due to security and navigation considerations.</p>
+                    <h6>Approximate Daily Rates:</h6>
+                    <ul>
+                        <li>Sedan with driver: $50-80 USD</li>
+                        <li>4WD with driver: $80-150 USD</li>
+                        <li>Including fuel and driver's accommodation for multi-day trips</li>
+                    </ul>
+                    <h6>Recommended Rental Companies:</h6>
+                    <ul>
+                        <li>Various local companies in Kabul</li>
+                        <li>Hotel-arranged rentals often most reliable</li>
+                        <li>Some international agencies have limited presence</li>
+                    </ul>
+                    <div class="alert alert-warning mt-3">
+                        <small>International driving permits are theoretically required but driving yourself is not recommended for security and practical reasons.</small>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-plane fa-2x text-primary me-3"></i>
+                        <h4 class="mb-0">Domestic Flights</h4>
+                    </div>
+                    <p>Domestic air travel is the fastest way to cover long distances between major cities.</p>
+                    <h6>Domestic Airlines:</h6>
+                    <ul>
+                        <li>Ariana Afghan Airlines</li>
+                        <li>Kam Air</li>
+                        <li>East Horizon Airlines</li>
+                    </ul>
+                    <h6>Main Domestic Routes:</h6>
+                    <ul>
+                        <li>Kabul - Mazar-i-Sharif (multiple daily flights)</li>
+                        <li>Kabul - Herat (daily flights)</li>
+                        <li>Kabul - Kandahar (regular flights)</li>
+                        <li>Kabul - Kunduz (several weekly flights)</li>
+                    </ul>
+                    <h6>Sample One-way Fares:</h6>
+                    <ul>
+                        <li>Kabul to Mazar-i-Sharif: $80-120 USD</li>
+                        <li>Kabul to Herat: $100-150 USD</li>
+                        <li>Kabul to Kandahar: $70-110 USD</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mb-5">
+        <div class="card-body">
+            <h4 class="card-title">Transportation Tips for Travelers</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <h6>Safety Considerations:</h6>
+                    <ul>
+                        <li>Always check current security conditions before travel</li>
+                        <li>Avoid night travel on roads</li>
+                        <li>Keep documents accessible for checkpoints</li>
+                        <li>Use reputable transportation providers</li>
+                        <li>Share itinerary with someone reliable</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h6>Practical Advice:</h6>
+                    <ul>
+                        <li>Carry small denominations of Afghanis for transport</li>
+                        <li>Learn basic bargaining phrases in Dari/Pashto</li>
+                        <li>Have local SIM card for communication</li>
+                        <li>Keep emergency contacts handy</li>
+                        <li>Carry water and snacks for long journeys</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interactive Map Section -->
+    <div class="p-4">
+
+        <div class="container">
+            <h2 class="fw-bold">Explore Afghanistan's Transportation Network</h2>
+            <p class="text-muted">Discover major routes, cities, and transportation hubs.</p>
+
+            <!-- Map -->
+            <div id="map" style="height: 500px; width: 100%; margin-bottom: 1.5rem; border-radius: 8px; overflow: hidden;"></div>
+
+            <!-- Transportation Hubs List -->
+            <h4 class="mt-5">Major Transportation Hubs</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Kabul</h5>
+                            <ul>
+                                <li>Hamid Karzai International Airport (KBL)</li>
+                                <li>Central Bus Station (Pul-e-Charkhi)</li>
+                                <li>Main shared taxi stations to all regions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Herat</h5>
+                            <ul>
+                                <li>Herat International Airport (HEA)</li>
+                                <li>Islam Qala border crossing to Iran</li>
+                                <li>Main bus station for western routes</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Mazar-i-Sharif</h5>
+                            <ul>
+                                <li>Mazar-i-Sharif International Airport (MZR)</li>
+                                <li>Hairatan border crossing to Uzbekistan</li>
+                                <li>Northern transportation hub</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">Kandahar</h5>
+                            <ul>
+                                <li>Kandahar International Airport (KDH)</li>
+                                <li>Spin Boldak border crossing to Pakistan</li>
+                                <li>Southern transportation center</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script>
+            const map = L.map('map').setView([33.9391, 67.7100], 6); // Afghanistan center
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Add major transportation routes
+            const routes = [
+                {name: "Kabul-Jalalabad Road", coordinates: [[34.5553, 69.2075], [34.4340, 70.4477]], color: "blue"},
+                {name: "Salang Pass", coordinates: [[34.5553, 69.2075], [36.7090, 67.1109]], color: "red"},
+                {name: "Ring Road (Kabul-Kandahar)", coordinates: [[34.5553, 69.2075], [31.6289, 65.7372]], color: "green"},
+                {name: "Ring Road (Kandahar-Herat)", coordinates: [[31.6289, 65.7372], [34.3529, 62.2040]], color: "green"},
+            ];
+
+            routes.forEach(route => {
+                L.polyline(route.coordinates, {color: route.color}).addTo(map)
+                    .bindPopup(`<strong>${route.name}</strong>`);
+            });
+
+            const locations = [
+                { name: "Kabul", lat: 34.5553, lng: 69.2075, type: "capital" },
+                { name: "Herat", lat: 34.3529, lng: 62.2040, type: "major" },
+                { name: "Kandahar", lat: 31.6289, lng: 65.7372, type: "major" },
+                { name: "Mazar-i-Sharif", lat: 36.7090, lng: 67.1109, type: "major" },
+                { name: "Jalalabad", lat: 34.4340, lng: 70.4477, type: "border" },
+                { name: "Kunduz", lat: 36.7280, lng: 68.8570, type: "regional" },
+                { name: "Bamyan", lat: 34.8216, lng: 67.8273, type: "regional" },
+                { name: "Lashkar Gah", lat: 31.5938, lng: 64.3716, type: "regional" },
+            ];
+
+            // Different icons for different location types
+            const iconColors = {
+                capital: "red",
+                major: "blue",
+                border: "orange",
+                regional: "green"
+            };
+
+            locations.forEach(loc => {
+                const icon = L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `<div style="background-color: ${iconColors[loc.type]}; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white;"></div>`,
+                    iconSize: [15, 15],
+                    iconAnchor: [7, 7]
+                });
+
+                L.marker([loc.lat, loc.lng], {icon: icon})
+                    .addTo(map)
+                    .bindPopup(`<strong>${loc.name}</strong><br>${loc.type.toUpperCase()} HUB`);
+            });
+        </script>
+    </div>
+
+    <div class="text-center mt-5">
+        <button type="button" class="btn btn-primary btn-lg me-3">
+            <i class="fas fa-road me-2"></i>Plan Your Journey
+        </button>
+        <button type="button" class="btn btn-outline-primary btn-lg">
+            <i class="fas fa-download me-2"></i>Download Transport Guide
+        </button>
+    </div>
+</div>
+
+<!-- Additional Resources Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Additional Transportation Resources</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-passport fa-3x text-primary mb-3"></i>
+                        <h5>Visa & Entry Requirements</h5>
+                        <p>Information on visas, border procedures, and entry regulations for Afghanistan.</p>
+                        <a href="#" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt fa-3x text-success mb-3"></i>
+                        <h5>Maps & Navigation</h5>
+                        <p>Detailed maps of transportation routes, cities, and regional networks.</p>
+                        <a href="#" class="btn btn-outline-success">View Maps</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-hands-helping fa-3x text-warning mb-3"></i>
+                        <h5>Travel Assistance</h5>
+                        <p>Contacts for transportation companies, travel agencies, and support services.</p>
+                        <a href="#" class="btn btn-outline-warning">Get Help</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
-<div class="container my-5">
-    <h4 class="mb-2">Getting to Afghanistan</h4>
-
-    <h5 class="mt-3">By Air</h5>
-    <p class="mb-1">
-        Afghanistan is accessible by several international airports, with Hamid Karzai International Airport (KBL) in
-        Kabul being the main gateway. Other cities such as Mazar-i-Sharif and Herat also have international airports
-        offering regional and limited international connections. Major airlines provide flights to and from key
-        destinations in the Middle East, Central Asia, and South Asia. With ongoing development and increasing tourism
-        interest, air connectivity is steadily improving.
-    </p>
-
-    <h5 class="mt-3">By Land</h5>
-    <p class="mb-1">
-        Afghanistan shares land borders with Iran, Pakistan, Turkmenistan, Uzbekistan, Tajikistan, and China. Travelers
-        can enter the country through various border crossings, including Torkham (from Pakistan), Islam Qala (from
-        Iran), and Hairatan (from Uzbekistan). Entry requirements vary depending on nationality, so visitors should
-        ensure they have valid visas and check local border policies before arrival.
-    </p>
-
-    <h5 class="mt-3">By Road</h5>
-    <p class="mb-1">
-        Afghanistan's road network connects major cities and neighboring countries. While most international visitors
-        arrive by air, overland travel is possible for those coming from surrounding countries. Routes such as the
-        Kabul–Jalalabad Highway and the Ring Road link key regions, but travelers are advised to stay updated on road
-        conditions and safety advisories before planning cross-border trips.
-    </p>
-
-    <h5 class="mt-3">By Rail and Sea</h5>
-    <p class="mb-1">
-        Afghanistan currently does not have passenger railway or sea entry points, as it is a landlocked country.
-        However, freight railways exist at border towns like Hairatan and Torghundi for trade purposes. Travelers should
-        rely on air or land routes for entering the country.
-    </p>
-
-    <hr class="my-4">
-
-<h4 class="mb-2">Getting to Afghanistan from Neighboring Countries and Provinces</h4>
-
-<p class="mb-1">
-    Afghanistan is connected to several neighboring countries through a network of highways, border crossings, and bus routes. While air travel is the most common method for international visitors, regional overland access is possible via Iran, Pakistan, Uzbekistan, Tajikistan, and Turkmenistan. Roads link major cities like Kabul, Herat, Mazar-i-Sharif, Kandahar, and Jalalabad to border towns and neighboring countries.
-</p>
-
-<h5 class="mt-3">By Road from Neighboring Countries</h5>
-<ul>
-    <li><strong>From Pakistan:</strong> Use the <em>Torkham border crossing</em> to enter Jalalabad, or the <em>Spin Boldak crossing</em> for access to Kandahar. These routes are frequently used and connect to main highways within Afghanistan.</li>
-    <li><strong>From Iran:</strong> The <em>Islam Qala border</em> provides direct access to Herat via Highway 1 (the Ring Road), which links to other cities.</li>
-    <li><strong>From Uzbekistan:</strong> The <em>Hairatan border crossing</em> leads to Mazar-i-Sharif and the north via the A76 highway.</li>
-    <li><strong>From Tajikistan:</strong> Enter through the <em>Shir Khan Bandar crossing</em> for access to Kunduz and the northeastern provinces.</li>
-    <li><strong>From Turkmenistan:</strong> The <em>Torghundi border</em> connects to Herat province, commonly used for trade and freight travel.</li>
-</ul>
-
-<h5 class="mt-3">By Road within Afghanistan</h5>
-<p class="mb-1">
-    Afghanistan's primary cities are connected via the Ring Road (AH76 and AH77), linking Kabul to Herat, Kandahar, Mazar-i-Sharif, and Jalalabad. Travel times can vary depending on road conditions and security updates. Major inter-city routes include:
-</p>
-<ul>
-    <li><strong>Kabul to Jalalabad:</strong> Approximately 150 km via the Kabul–Jalalabad Highway (NH08); takes around 2.5 to 3 hours.</li>
-    <li><strong>Kabul to Mazar-i-Sharif:</strong> Around 425 km via the Salang Pass; travel time is 7–9 hours depending on weather and traffic.</li>
-    <li><strong>Kabul to Herat:</strong> Via Ring Road, approximately 820 km; overland journey takes more than 12 hours, often done in stages.</li>
-</ul>
-
-<h5 class="mt-3">Intercity and Provincial Bus Services</h5>
-<p class="mb-1">
-    Several bus companies and minivan services operate between major Afghan cities and provincial centers. While not as formalized as in some countries, shared taxis and regional vans are widely used by locals and travelers alike. Key routes include:
-</p>
-<ul>
-    <li>Kabul to Jalalabad – departs from Pul-e-Charkhi Terminal</li>
-    <li>Kabul to Herat – often via Kandahar for safety and rest stops</li>
-    <li>Mazar-i-Sharif to Herat – via Sheberghan and Maymana</li>
-</ul>
-
-<p class="mb-1">
-    Travel costs are relatively affordable, typically ranging from 200 to 1000 AFN per person depending on distance and vehicle class.
-</p>
-
-<button type="button" class="btn btn-secondary my-3">
-    Plan your journey through Afghanistan
-</button>
-
-
-<hr class="my-4">
-
-<h4 class="mb-2">Getting Around Afghanistan</h4>
-
-<h5 class="mt-3">Public Transport in Afghanistan</h5>
-<p class="mb-1">
-    Public transport in Afghanistan varies by city and region. In larger cities like Kabul, Herat, Mazar-i-Sharif, and Kandahar, minivans, shared taxis, and buses are commonly used for commuting. While the system isn’t centralized like major metro systems in other countries, transportation is generally affordable and widely used by locals.
-</p>
-
-<h5 class="mt-3">How to Pay for Transport</h5>
-<p class="mb-1">
-    Most public transport options in Afghanistan are paid in cash. There is currently no nationwide travel card system like Dubai’s nol card. Fares are usually inexpensive, and prices are either fixed or negotiable depending on the vehicle type and destination.
-</p>
-
-<h5 class="mt-3">City Minibuses and Vans</h5>
-<p class="mb-1">
-    In cities like Kabul and Herat, minibuses and vans follow fixed routes and are among the most popular and budget-friendly options. These vehicles typically operate throughout the day and cost as little as 10 to 20 AFN for short distances. They are often marked by destination signs in the windshield.
-</p>
-
-<h5 class="mt-3">Shared Taxis</h5>
-<p class="mb-1">
-    Shared taxis are widely available and can be found in most cities and towns. These taxis operate on set routes and fill up with passengers heading in the same direction. Prices are low compared to private taxis and are agreed upon before the journey starts.
-</p>
-
-<h5 class="mt-3">Private Taxis and Ride-hailing</h5>
-<p class="mb-1">
-    Private taxis can be hired on the street or through local taxi stands. While Afghanistan currently doesn’t have widely-used ride-hailing apps like Uber, some local services in Kabul and Herat are emerging. Private taxis are more expensive than shared options but offer convenience and comfort.
-</p>
-
-<h5 class="mt-3">Car Rentals</h5>
-<p class="mb-1">
-    Car rental services are limited but available in cities like Kabul. International visitors must present a valid international driving permit (IDP). Due to varying road and security conditions, it's advised to rent vehicles with local drivers familiar with the region.
-</p>
-
-<h5 class="mt-3">Cycling and Walking</h5>
-<p class="mb-1">
-    Walking is common for short distances in urban and rural areas, particularly in bazaars and residential zones. While Afghanistan is not yet a bike-friendly country on a national level, cycling is increasing in popularity in some areas, especially among young people and sports enthusiasts. There are currently no formal bike rental systems, but personal bike usage is growing.
-</p>
-
-<h5 class="mt-3">Long-distance Travel</h5>
-<p class="mb-1">
-    For intercity travel, shared taxis and regional buses are common. They connect major cities like Kabul, Kandahar, Herat, Mazar-i-Sharif, and Jalalabad. Travel can be lengthy due to terrain and road conditions, so planning ahead and using reliable transport providers is essential.
-</p>
-
-<button type="button" class="btn btn-secondary my-3">
-    Explore Transportation in Afghanistan
-</button>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Explore Afghanistan's Regions</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    #map {
-      height: 500px;
-      width: 100%;
-      margin-bottom: 1.5rem;
+<style>
+    .transport-method-card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        margin-bottom: 1.5rem;
+        border-left: 4px solid #0d6efd;
     }
-    .location-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+    
+    .custom-div-icon {
+        background: transparent;
+        border: none;
     }
-    .location-item {
-      display: flex;
-      align-items: center;
-    }
-    .marker-icon {
-      height: 20px;
-      width: 20px;
-      background-color: #0d6efd;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 0.5rem;
-    }
-  </style>
-</head>
-<div class="p-4">
-
-  <div class="container">
-    <h2 class="fw-bold">Explore Afghanistan's Regions</h2>
-    <p class="text-muted">Discover the country's unique cities and provinces.</p>
-
-    <!-- Map -->
-    <div id="map"></div>
-
-    <!-- List -->
-    <div class="location-list">
-      <div class="location-item"><span class="marker-icon"></span> Kabul</div>
-      <div class="location-item"><span class="marker-icon"></span> Herat</div>
-      <div class="location-item"><span class="marker-icon"></span> Kandahar</div>
-      <div class="location-item"><span class="marker-icon"></span> Mazar-i-Sharif</div>
-      <div class="location-item"><span class="marker-icon"></span> Bamyan</div>
-      <div class="location-item"><span class="marker-icon"></span> Jalalabad</div>
-      <div class="location-item"><span class="marker-icon"></span> Ghazni</div>
-      <div class="location-item"><span class="marker-icon"></span> Kunduz</div>
-      <div class="location-item"><span class="marker-icon"></span> Faizabad</div>
-      <div class="location-item"><span class="marker-icon"></span> Lashkar Gah</div>
-      <div class="location-item"><span class="marker-icon"></span> Charikar</div>
-      <div class="location-item"><span class="marker-icon"></span> Taloqan</div>
-    </div>
-  </div>
-
-  <!-- Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([33.9391, 67.7100], 6); // Afghanistan center
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    const locations = [
-      { name: "Kabul", lat: 34.5553, lng: 69.2075 },
-      { name: "Herat", lat: 34.3529, lng: 62.2040 },
-      { name: "Kandahar", lat: 31.6289, lng: 65.7372 },
-      { name: "Mazar-i-Sharif", lat: 36.7090, lng: 67.1109 },
-      { name: "Bamyan", lat: 34.8216, lng: 67.8273 },
-      { name: "Jalalabad", lat: 34.4340, lng: 70.4477 },
-      { name: "Ghazni", lat: 33.5539, lng: 68.4200 },
-      { name: "Kunduz", lat: 36.7280, lng: 68.8570 },
-      { name: "Faizabad", lat: 37.1190, lng: 70.5792 },
-      { name: "Lashkar Gah", lat: 31.5938, lng: 64.3716 },
-      { name: "Charikar", lat: 35.0136, lng: 69.1714 },
-      { name: "Taloqan", lat: 36.7361, lng: 69.5345 }
-    ];
-
-    locations.forEach(loc => {
-      L.marker([loc.lat, loc.lng])
-        .addTo(map)
-        .bindPopup(`<strong>${loc.name}</strong>`);
-    });
-  </script>
-</div>
-</html>
-
-</div>
-<!-- /Hero Section -->
-
-
+</style>
 
 {% endblock %}
