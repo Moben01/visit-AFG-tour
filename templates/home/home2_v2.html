@@ -1,0 +1,239 @@
+{% load static i18n %}
+
+{% if messages %}
+<div class="aa-container aa-message-stack">
+    {% for message in messages %}<div class="alert alert-{{ message.tags|default:'info' }}" role="alert">{{ message }}</div>{% endfor %}
+</div>
+{% endif %}
+
+<section class="aa-home-hero" aria-labelledby="home-hero-title">
+    <div class="aa-container aa-hero-inner">
+        <div class="aa-hero-copy">
+            <h1 id="home-hero-title"><span>{% trans 'Where Would' %}</span> {% trans 'You Like To Go?' %}</h1>
+            <p>{% trans 'Explore Afghanistan with local knowledge, practical planning, and support from first click to final day.' %}</p>
+        </div>
+
+        <form class="aa-search-panel" action="{% url 'home:search' %}" method="get" role="search">
+            <div class="aa-search-field">
+                <i class="ti ti-map-pin" aria-hidden="true"></i>
+                <div>
+                    <label for="aaDestination">{% trans 'Location' %}</label>
+                    <select id="aaDestination" name="q">
+                        <option value="">{% trans 'Where would you like to go?' %}</option>
+                        {% for destination in destinations %}
+                            <option value="{{ destination.name }}">{{ destination.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="aa-search-field">
+                <i class="ti ti-calendar-event" aria-hidden="true"></i>
+                <div>
+                    <label for="aaCheckIn">{% trans 'Travel date' %}</label>
+                    <input id="aaCheckIn" type="date" name="check_in">
+                </div>
+            </div>
+            <div class="aa-search-field">
+                <i class="ti ti-users" aria-hidden="true"></i>
+                <div>
+                    <label for="aaGuests">{% trans 'Guests' %}</label>
+                    <input id="aaGuests" type="number" name="guests" min="1" max="20" value="1">
+                </div>
+            </div>
+            <button class="aa-search-submit" type="submit"><i class="ti ti-search" aria-hidden="true"></i> {% trans 'Search' %}</button>
+        </form>
+
+        <div class="aa-hero-gallery" aria-label="{% trans 'Afghanistan travel gallery' %}">
+            <figure><img src="{% static 'img/index/i1.jpg' %}" alt="{% trans 'Travel in Afghanistan' %}"></figure>
+            <figure><img src="{% static 'img/index/i3.jpg' %}" alt="{% trans 'Afghanistan destination' %}"></figure>
+            <figure><img src="{% static 'img/index/i2.jpg' %}" alt="{% trans 'Afghanistan experience' %}"></figure>
+        </div>
+    </div>
+</section>
+
+<section class="aa-benefit-band" aria-label="{% trans 'Why plan with AfghanAwaits' %}">
+    <div class="aa-container aa-benefit-grid">
+        <article>
+            <span><i class="ti ti-map-search"></i></span>
+            <div><h2>{% trans 'Local destination knowledge' %}</h2><p>{% trans 'Province guides built around Afghan places, culture, and practical access.' %}</p></div>
+        </article>
+        <article>
+            <span><i class="ti ti-route-2"></i></span>
+            <div><h2>{% trans 'One connected itinerary' %}</h2><p>{% trans 'Tours, transport, accommodation, documents, and timing in one workflow.' %}</p></div>
+        </article>
+        <article>
+            <span><i class="ti ti-shield-check"></i></span>
+            <div><h2>{% trans 'Practical travel support' %}</h2><p>{% trans 'Clear preparation guidance and local coordination for confirmed services.' %}</p></div>
+        </article>
+    </div>
+</section>
+
+<section class="aa-section aa-destination-section">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div>
+                <span class="aa-eyebrow">{% trans 'Destinations' %}</span>
+                <h2>{% trans 'Popular places in Afghanistan' %}</h2>
+                <p>{% trans 'Start with a province guide, then connect places into a route that fits your time and interests.' %}</p>
+            </div>
+            <div class="aa-slider-controls" aria-label="{% trans 'Destination controls' %}">
+                <button type="button" data-aa-scroll="previous" data-aa-target="#destinationRail" aria-label="{% trans 'Previous destinations' %}"><i class="ti ti-arrow-left"></i></button>
+                <button type="button" data-aa-scroll="next" data-aa-target="#destinationRail" aria-label="{% trans 'Next destinations' %}"><i class="ti ti-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <div class="aa-destination-rail" id="destinationRail">
+            {% for destination in destinations %}
+            <a class="aa-destination-card" href="{{ destination.url }}">
+                <img src="{% static destination.image %}" alt="{{ destination.name }}" loading="lazy">
+                <span class="aa-card-overlay"></span>
+                <span class="aa-destination-copy"><small>{{ destination.province }}</small><strong>{{ destination.name }}</strong><em>{{ destination.summary }}</em></span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="aa-section -soft aa-explore-section">
+    <div class="aa-container">
+        <div class="aa-section-head aa-tabs-head">
+            <div>
+                <span class="aa-eyebrow">{% trans 'Explore' %}</span>
+                <h2>{% trans 'Build your Afghanistan journey' %}</h2>
+                <p>{% trans 'Choose a published tour when available, or begin with guides and plan a custom route.' %}</p>
+            </div>
+            <div class="aa-tab-list" role="tablist" aria-label="{% trans 'Explore categories' %}">
+                <button class="active" type="button" role="tab" aria-selected="true" data-aa-tab="all">{% trans 'All' %}</button>
+                <button type="button" role="tab" aria-selected="false" data-aa-tab="tour">{% trans 'Tours' %}</button>
+                <button type="button" role="tab" aria-selected="false" data-aa-tab="culture">{% trans 'Culture' %}</button>
+                <button type="button" role="tab" aria-selected="false" data-aa-tab="nature">{% trans 'Nature' %}</button>
+            </div>
+        </div>
+
+        <div class="aa-tour-grid" id="aaExploreGrid">
+            {% for tour in featured_tours %}
+            <article class="aa-tour-card" data-aa-group="tour">
+                <a class="aa-tour-image" href="{% url 'tour:tour_details' tour.slug %}">
+                    <img src="{{ tour.image.url }}" alt="{{ tour.title }}" loading="lazy">
+                    <span class="aa-tour-badge">{% trans 'Published tour' %}</span>
+                </a>
+                <div class="aa-tour-body">
+                    <span class="aa-tour-location"><i class="ti ti-map-pin"></i> {{ tour.category.name }}</span>
+                    <h3><a href="{% url 'tour:tour_details' tour.slug %}">{{ tour.title }}</a></h3>
+                    <p>{{ tour.description|truncatewords:20 }}</p>
+                    <div class="aa-tour-meta"><span><i class="ti ti-clock"></i> {{ tour.duration_day }}</span><strong>USD {{ tour.price }}</strong></div>
+                </div>
+            </article>
+            {% empty %}
+            <article class="aa-tour-card" data-aa-group="culture">
+                <a class="aa-tour-image" href="{% url 'things_to_do:Art_and_Culture' %}"><img src="{% static 'img/blog/Blue Mosque.jpg' %}" alt="{% trans 'Arts and culture in Afghanistan' %}" loading="lazy"><span class="aa-tour-badge">{% trans 'Travel guide' %}</span></a>
+                <div class="aa-tour-body"><span class="aa-tour-location"><i class="ti ti-sparkles"></i> {% trans 'Culture' %}</span><h3><a href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Arts, heritage, and living traditions' %}</a></h3><p>{% trans 'Explore architecture, craft, music, and everyday traditions through the site’s original culture guides.' %}</p><a class="aa-card-link" href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Open guide' %} <i class="ti ti-arrow-right"></i></a></div>
+            </article>
+            <article class="aa-tour-card" data-aa-group="nature">
+                <a class="aa-tour-image" href="{% url 'states:bamyan' %}"><img src="{% static 'img/blog/Band-e Amir National Park.jpg' %}" alt="{% trans 'Band-e Amir National Park' %}" loading="lazy"><span class="aa-tour-badge">{% trans 'Destination guide' %}</span></a>
+                <div class="aa-tour-body"><span class="aa-tour-location"><i class="ti ti-mountain"></i> Bamyan</span><h3><a href="{% url 'states:bamyan' %}">{% trans 'Bamyan and Band-e Amir' %}</a></h3><p>{% trans 'Plan around highland landscapes, archaeological heritage, seasonal access, and local communities.' %}</p><a class="aa-card-link" href="{% url 'states:bamyan' %}">{% trans 'Open guide' %} <i class="ti ti-arrow-right"></i></a></div>
+            </article>
+            <article class="aa-tour-card" data-aa-group="culture">
+                <a class="aa-tour-image" href="{% url 'things_to_do:food_and_drink' %}"><img src="{% static 'img/blog/Qabuli Palaw.jpg' %}" alt="{% trans 'Afghan food and drink' %}" loading="lazy"><span class="aa-tour-badge">{% trans 'Experience guide' %}</span></a>
+                <div class="aa-tour-body"><span class="aa-tour-location"><i class="ti ti-tools-kitchen-2"></i> {% trans 'Food & Drink' %}</span><h3><a href="{% url 'things_to_do:food_and_drink' %}">{% trans 'A practical introduction to Afghan cuisine' %}</a></h3><p>{% trans 'Learn about familiar dishes, regional flavours, hospitality, and respectful dining customs.' %}</p><a class="aa-card-link" href="{% url 'things_to_do:food_and_drink' %}">{% trans 'Open guide' %} <i class="ti ti-arrow-right"></i></a></div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if not featured_tours %}
+        <div class="aa-inline-notice"><i class="ti ti-info-circle"></i><span>{% trans 'No bookable tours are published yet. Destination and experience guides remain available while itineraries are prepared.' %}</span></div>
+        {% endif %}
+    </div>
+</section>
+
+<section class="aa-section -dark aa-trust-section">
+    <div class="aa-container">
+        <div class="aa-trust-layout">
+            <div class="aa-trust-copy">
+                <span class="aa-eyebrow">{% trans 'Plan with clarity' %}</span>
+                <h2>{% trans 'From first question to the final travel day' %}</h2>
+                <p>{% trans 'AfghanAwaits connects information, booking details, and local operations without inventing availability or promises. What is published is visible; what requires confirmation is clearly marked.' %}</p>
+                <a class="aa-btn aa-btn-lime" href="{% url 'home:search' %}">{% trans 'Start exploring' %}</a>
+            </div>
+            <div class="aa-process-list">
+                <article><strong>01</strong><div><h3>{% trans 'Research' %}</h3><p>{% trans 'Read destination, culture, visa, weather, currency, and safety guidance.' %}</p></div></article>
+                <article><strong>02</strong><div><h3>{% trans 'Confirm' %}</h3><p>{% trans 'Review the itinerary, inclusions, dates, provider terms, and price before booking.' %}</p></div></article>
+                <article><strong>03</strong><div><h3>{% trans 'Coordinate' %}</h3><p>{% trans 'Keep booking, pre-arrival information, pickup, and trip details connected.' %}</p></div></article>
+            </div>
+        </div>
+        <div class="aa-trust-tags" aria-label="{% trans 'Platform capabilities' %}">
+            <span><i class="ti ti-passport"></i>{% trans 'Visa preparation' %}</span>
+            <span><i class="ti ti-bed"></i>{% trans 'Accommodation planning' %}</span>
+            <span><i class="ti ti-car"></i>{% trans 'Local transport' %}</span>
+            <span><i class="ti ti-user-shield"></i>{% trans 'Guide coordination' %}</span>
+            <span><i class="ti ti-file-check"></i>{% trans 'Pre-arrival workflow' %}</span>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section aa-inspiration-section">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div><span class="aa-eyebrow">{% trans 'Travel inspiration' %}</span><h2>{% trans 'Know more before you go' %}</h2><p>{% trans 'Original Afghan destination and culture content, connected directly to practical planning pages.' %}</p></div>
+        </div>
+        <div class="aa-story-grid">
+            <article class="aa-story-card">
+                <a href="{% url 'states:Herat' %}"><img src="{% static 'img/blog/Herat.jpg' %}" alt="Herat" loading="lazy"></a>
+                <div><span>{% trans 'Destination' %}</span><h3><a href="{% url 'states:Herat' %}">{% trans 'Herat: architecture, history, and craft' %}</a></h3><p>{% trans 'Begin with the city guide and connect major sights with practical seasonal information.' %}</p></div>
+            </article>
+            <article class="aa-story-card">
+                <a href="{% url 'things_to_do:Experiences' %}"><img src="{% static 'img/blog/Unforgettable Afghan Experiences.jpg' %}" alt="{% trans 'Afghan experiences' %}" loading="lazy"></a>
+                <div><span>{% trans 'Experiences' %}</span><h3><a href="{% url 'things_to_do:Experiences' %}">{% trans 'Meaningful experiences beyond a checklist' %}</a></h3><p>{% trans 'Explore landscapes, food, craft, and community experiences with respectful context.' %}</p></div>
+            </article>
+            <article class="aa-story-card">
+                <a href="{% url 'play_your_trip:essentials' %}"><img src="{% static 'img/blog/Soft Adventure to Full Trek.jpg' %}" alt="{% trans 'Afghanistan travel essentials' %}" loading="lazy"></a>
+                <div><span>{% trans 'Planning' %}</span><h3><a href="{% url 'play_your_trip:essentials' %}">{% trans 'Essential preparation for your route' %}</a></h3><p>{% trans 'Check documents, connectivity, payments, clothing, local customs, and contingency planning.' %}</p></div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="aa-planning-strip">
+    <div class="aa-container aa-planning-grid">
+        <div><span class="aa-eyebrow">{% trans 'Before you travel' %}</span><h2>{% trans 'Start with current practical guidance' %}</h2></div>
+        <a href="{% url 'play_your_trip:visa_guide' %}"><i class="ti ti-passport"></i><span>{% trans 'Visa guide' %}</span><i class="ti ti-arrow-right"></i></a>
+        <a href="{% url 'play_your_trip:weather' %}"><i class="ti ti-cloud-sun"></i><span>{% trans 'Weather' %}</span><i class="ti ti-arrow-right"></i></a>
+        <a href="{% url 'play_your_trip:currency' %}"><i class="ti ti-cash"></i><span>{% trans 'Currency' %}</span><i class="ti ti-arrow-right"></i></a>
+    </div>
+</section>
+
+<section class="aa-section aa-dashboard-section">
+    <div class="aa-container aa-dashboard-layout">
+        <div class="aa-dashboard-visual">
+            <img src="{% static 'img/Images/pexels-qasimmirzaie-20091910.jpg' %}" alt="{% trans 'Travel in Afghanistan' %}" loading="lazy">
+            <div class="aa-dashboard-card"><i class="ti ti-layout-dashboard"></i><div><strong>{% trans 'One trip dashboard' %}</strong><span>{% trans 'Bookings, pre-arrival, pickup, and itinerary' %}</span></div></div>
+        </div>
+        <div class="aa-dashboard-copy">
+            <span class="aa-eyebrow">{% trans 'Your trip, connected' %}</span>
+            <h2>{% trans 'Keep confirmed travel details in one place' %}</h2>
+            <p>{% trans 'Registered travellers can follow their bookings, submit required pre-arrival information, review pickup details, and access the itinerary through the existing AfghanAwaits workflow.' %}</p>
+            <ul>
+                <li><i class="ti ti-circle-check"></i>{% trans 'Booking and itinerary status' %}</li>
+                <li><i class="ti ti-circle-check"></i>{% trans 'Pre-arrival document workflow' %}</li>
+                <li><i class="ti ti-circle-check"></i>{% trans 'Pickup and welcome information' %}</li>
+            </ul>
+            {% if request.user.is_authenticated %}
+                <a class="aa-btn aa-btn-primary" href="{% url 'tour:dashboard' %}">{% trans 'Open dashboard' %}</a>
+            {% else %}
+                <a class="aa-btn aa-btn-primary" href="{% url 'account_signup' %}">{% trans 'Create an account' %}</a>
+                <a class="aa-btn aa-btn-ghost" href="{% url 'account_login' %}">{% trans 'Sign in' %}</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section class="aa-member-cta">
+    <div class="aa-container">
+        <div>
+            <span class="aa-eyebrow">{% trans 'Local travel professionals' %}</span>
+            <h2>{% trans 'Share your expertise through AfghanAwaits' %}</h2>
+            <p>{% trans 'Guides can submit their information for review and participate in the tour workflow after approval.' %}</p>
+        </div>
+        <a class="aa-btn aa-btn-lime" href="{% url 'tour:tour_guide_view' %}">{% trans 'Become an expert' %} <i class="ti ti-arrow-right"></i></a>
+    </div>
+</section>

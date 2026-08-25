@@ -1,0 +1,61 @@
+{% load static i18n %}
+<footer class="aa-site-footer">
+    <div class="aa-footer-top">
+        <div class="aa-container aa-footer-grid">
+            <div class="aa-footer-brand">
+                <a href="{% url 'home:home' %}" aria-label="AfghanAwaits.com">
+                    <img src="{% static 'brand/afghanawaits/logo-reverse.svg' %}" alt="AfghanAwaits.com">
+                </a>
+                <p>{% trans 'Destination guides, published tours, and practical travel planning for discovering Afghanistan with local context.' %}</p>
+                <div class="aa-footer-contact">
+                    {% if get_main_things and get_main_things.noumber %}<a href="tel:{{ get_main_things.noumber }}"><i class="ti ti-phone"></i> {{ get_main_things.noumber }}</a>{% endif %}
+                    {% if get_main_things and get_main_things.email %}<a href="mailto:{{ get_main_things.email }}"><i class="ti ti-mail"></i> {{ get_main_things.email }}</a>{% else %}<a href="mailto:info@afghanawaits.com"><i class="ti ti-mail"></i> info@afghanawaits.com</a>{% endif %}
+                </div>
+            </div>
+
+            <div>
+                <h2 class="aa-footer-title">{% trans 'Explore' %}</h2>
+                <ul class="aa-footer-links">
+                    <li><a href="{% url 'states:kabul' %}">{% trans 'Destinations' %}</a></li>
+                    <li><a href="{% url 'things_to_do:Experiences' %}">{% trans 'Experiences' %}</a></li>
+                    <li><a href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Arts & Culture' %}</a></li>
+                    <li><a href="{% url 'things_to_do:food_and_drink' %}">{% trans 'Food & Drink' %}</a></li>
+                    <li><a href="{% url 'home:search' %}">{% trans 'Search' %}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="aa-footer-title">{% trans 'Plan your trip' %}</h2>
+                <ul class="aa-footer-links">
+                    <li><a href="{% url 'play_your_trip:visa_guide' %}">{% trans 'Visa guide' %}</a></li>
+                    <li><a href="{% url 'play_your_trip:essentials' %}">{% trans 'Travel essentials' %}</a></li>
+                    <li><a href="{% url 'play_your_trip:Accommodation' %}">{% trans 'Accommodation' %}</a></li>
+                    <li><a href="{% url 'play_your_trip:safety' %}">{% trans 'Safety' %}</a></li>
+                    <li><a href="{% url 'play_your_trip:weather' %}">{% trans 'Weather' %}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="aa-footer-title">{% trans 'Account & policies' %}</h2>
+                <ul class="aa-footer-links">
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a></li>
+                        <li><a href="{% url 'tour:up_commoing_tours' %}">{% trans 'My bookings' %}</a></li>
+                    {% else %}
+                        <li><a href="{% url 'account_login' %}">{% trans 'Sign in' %}</a></li>
+                        <li><a href="{% url 'account_signup' %}">{% trans 'Create an account' %}</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'home:privacy' %}">{% trans 'Privacy policy' %}</a></li>
+                    <li><a href="{% url 'home:terms' %}">{% trans 'Terms of use' %}</a></li>
+                    <li><a href="{% url 'home:refund' %}">{% trans 'Cancellation and refunds' %}</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="aa-footer-bottom">
+        <div class="aa-container aa-footer-bottom-inner">
+            <span>© {% now 'Y' %} AfghanAwaits.com. {% trans 'All rights reserved.' %}</span>
+            <span>{% trans 'Explore Afghanistan with respect, preparation, and local context.' %}</span>
+        </div>
+    </div>
+</footer>

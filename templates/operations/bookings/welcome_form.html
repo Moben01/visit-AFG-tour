@@ -1,0 +1,20 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Welcome package" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead"><div><a class="ops-back" href="{% url 'tour:operations:booking_detail' booking.id %}"><i class="ti ti-arrow-left"></i>{% trans "Back to booking" %}</a><span class="ops-eyebrow">#AA-{{ booking.id|stringformat:"05d" }}</span><h1>{% trans "Welcome package" %}</h1><p>{{ booking.name }} · {{ booking.tour.title }}</p></div></section>
+<div class="ops-grid ops-grid--form">
+  <form class="ops-card ops-card--padded ops-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.non_field_errors %}<div class="ops-alert ops-alert--error">{{ form.non_field_errors }}</div>{% endif %}
+    <div class="ops-form-section"><span><i class="ti ti-gift"></i></span><div><h2>{% trans "Package contents" %}</h2><p>{% trans "Prepare the practical and cultural items for this customer." %}</p></div></div>
+    <div class="ops-form-grid">
+      {% for field in form %}<div class="ops-field {% if field.name == 'special_notes' or field.name == 'gifts' %}ops-field--wide{% endif %}"><label>{{ field.label }}</label>{{ field }}<small>{{ field.help_text }}</small>{{ field.errors }}</div>{% endfor %}
+    </div>
+    <div class="ops-form-actions"><button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save welcome package" %}</button></div>
+  </form>
+  <aside class="ops-card ops-card--padded ops-form-help"><span class="ops-kpi__icon"><i class="ti ti-package"></i></span><h2>{% trans "Package status" %}</h2>{% if package %}<p>{% trans "This package already exists and can be refined as operations progress." %}</p><dl><div><dt>{% trans "Prepared" %}</dt><dd>{{ package.prepared_at|default:"—" }}</dd></div><div><dt>{% trans "Delivered" %}</dt><dd>{{ package.delivered_at|default:"—" }}</dd></div></dl>{% else %}<p>{% trans "No package has been prepared for this booking yet." %}</p>{% endif %}</aside>
+</div>
+{% endblock %}

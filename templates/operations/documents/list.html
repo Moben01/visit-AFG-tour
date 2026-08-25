@@ -1,0 +1,10 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Document queue" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead"><div><span class="ops-eyebrow">{% trans "Compliance" %}</span><h1>{% trans "Pre-arrival documents" %}</h1><p>{% trans "Track paid bookings that are ready—or still waiting—for customer documents." %}</p></div></section>
+<nav class="ops-segmented"><a class="{% if state == 'all' %}active{% endif %}" href="?state=all">{% trans "All paid bookings" %}</a><a class="{% if state == 'missing' %}active{% endif %}" href="?state=missing">{% trans "Missing" %}</a><a class="{% if state == 'submitted' %}active{% endif %}" href="?state=submitted">{% trans "Submitted" %}</a></nav>
+<section class="ops-card"><div class="ops-table-wrap"><table class="ops-table ops-table--roomy"><thead><tr><th>{% trans "Booking" %}</th><th>{% trans "Customer" %}</th><th>{% trans "Tour" %}</th><th>{% trans "Departure" %}</th><th>{% trans "Document state" %}</th><th></th></tr></thead><tbody>{% for booking in bookings %}<tr><td>#AA-{{ booking.id|stringformat:"05d" }}</td><td><strong>{{ booking.name }}</strong><small>{{ booking.email }}</small></td><td>{{ booking.tour.title|default:"Archived tour" }}</td><td>{{ booking.tour.start_date|date:"d M Y"|default:booking.booking_date }}</td><td>{% if booking.has_requirement or booking.has_pre_arrival %}<span class="ops-payment is-paid"><i class="ti ti-circle-check"></i>{% trans "Submitted" %}</span>{% else %}<span class="ops-payment"><i class="ti ti-alert-circle"></i>{% trans "Missing" %}</span>{% endif %}</td><td><a class="ops-btn ops-btn--small ops-btn--ghost" href="{% url 'tour:operations:booking_detail' booking.id %}">{% trans "Review" %}<i class="ti ti-arrow-right"></i></a></td></tr>{% empty %}<tr><td colspan="6"><div class="ops-empty"><i class="ti ti-file-check"></i><strong>{% trans "No document cases in this queue" %}</strong></div></td></tr>{% endfor %}</tbody></table></div></section>
+{% endblock %}

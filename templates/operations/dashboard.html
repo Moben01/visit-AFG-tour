@@ -1,0 +1,113 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Operations overview" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead">
+  <div>
+    <span class="ops-eyebrow">{% trans "Live operations" %}</span>
+    <h1>{% trans "Good day" %}, {{ request.user.get_short_name|default:request.user.username }}</h1>
+    <p>{% trans "Requests, departures and actions that need your team today." %}</p>
+  </div>
+  <div class="ops-pagehead__actions">
+    <span class="ops-date"><i class="ti ti-calendar"></i>{{ today|date:"d M Y" }}</span>
+    <a class="ops-btn ops-btn--primary" href="{% url 'tour:operations:booking_list' %}"><i class="ti ti-list-details"></i>{% trans "Open booking queue" %}</a>
+  </div>
+</section>
+
+<section class="ops-kpis">
+  <a class="ops-kpi" href="{% url 'tour:operations:booking_list' %}?status=Booked&payment=unpaid">
+    <span class="ops-kpi__icon"><i class="ti ti-inbox"></i></span>
+    <div><strong>{{ new_requests }}</strong><span>{% trans "New requests" %}</span></div><i class="ti ti-arrow-up-right"></i>
+  </a>
+  <a class="ops-kpi" href="{% url 'tour:operations:booking_list' %}?payment=unpaid">
+    <span class="ops-kpi__icon ops-kpi__icon--amber"><i class="ti ti-clock-dollar"></i></span>
+    <div><strong>{{ awaiting_payment }}</strong><span>{% trans "Awaiting payment" %}</span></div><i class="ti ti-arrow-up-right"></i>
+  </a>
+  <a class="ops-kpi" href="{% url 'tour:operations:booking_list' %}?status=upcoming&payment=paid">
+    <span class="ops-kpi__icon ops-kpi__icon--blue"><i class="ti ti-calendar-check"></i></span>
+    <div><strong>{{ confirmed_count }}</strong><span>{% trans "Confirmed" %}</span></div><i class="ti ti-arrow-up-right"></i>
+  </a>
+  <a class="ops-kpi" href="{% url 'tour:operations:booking_list' %}?status=in_progress">
+    <span class="ops-kpi__icon ops-kpi__icon--violet"><i class="ti ti-route"></i></span>
+    <div><strong>{{ in_progress_count }}</strong><span>{% trans "On tour now" %}</span></div><i class="ti ti-arrow-up-right"></i>
+  </a>
+  <a class="ops-kpi" href="{% url 'tour:operations:document_queue' %}?state=missing">
+    <span class="ops-kpi__icon ops-kpi__icon--red"><i class="ti ti-file-alert"></i></span>
+    <div><strong>{{ pending_documents_count }}</strong><span>{% trans "Missing documents" %}</span></div><i class="ti ti-arrow-up-right"></i>
+  </a>
+  <article class="ops-kpi">
+    <span class="ops-kpi__icon ops-kpi__icon--dark"><i class="ti ti-cash"></i></span>
+    <div><strong>USD {{ revenue_total|default:0 }}</strong><span>{% trans "Recorded revenue" %}</span></div>
+  </article>
+</section>
+
+<div class="ops-grid ops-grid--dashboard">
+  <section class="ops-card ops-card--span-2">
+    <div class="ops-card__head">
+      <div><span class="ops-eyebrow">{% trans "Inbox" %}</span><h2>{% trans "Latest booking requests" %}</h2></div>
+      <a href="{% url 'tour:operations:booking_list' %}">{% trans "View all" %}<i class="ti ti-arrow-right"></i></a>
+    </div>
+    <div class="ops-table-wrap">
+      <table class="ops-table">
+        <thead><tr><th>{% trans "Booking" %}</th><th>{% trans "Customer" %}</th><th>{% trans "Travel date" %}</th><th>{% trans "Payment" %}</th><th>{% trans "Stage" %}</th><th></th></tr></thead>
+        <tbody>
+        {% for booking in latest_bookings %}
+          <tr>
+            <td><strong>#AA-{{ booking.id|stringformat:"05d" }}</strong><small>{{ booking.tour.title|default:"Archived tour" }}</small></td>
+            <td><strong>{{ booking.name }}</strong><small>{{ booking.email }}</small></td>
+            <td>{{ booking.booking_date|date:"d M Y" }}</td>
+            <td><span class="ops-payment {% if booking.paid %}is-paid{% endif %}">{% if booking.paid %}{% trans "Paid" %}{% else %}{% trans "Due" %}{% endif %}</span></td>
+            <td><span class="ops-status ops-status--{{ booking.situation|lower }}">{{ booking.get_situation_display }}</span></td>
+            <td><a class="ops-icon-btn" href="{% url 'tour:operations:booking_detail' booking.id %}" aria-label="{% trans 'Open booking' %}"><i class="ti ti-chevron-right"></i></a></td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="6"><div class="ops-empty">{% trans "No bookings found." %}</div></td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <aside class="ops-card">
+    <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Attention" %}</span><h2>{% trans "Readiness queue" %}</h2></div></div>
+    <div class="ops-action-list">
+      <a href="{% url 'tour:operations:document_queue' %}?state=missing" class="ops-action-item">
+        <span class="ops-action-item__icon"><i class="ti ti-file-alert"></i></span>
+        <div><strong>{{ pending_documents_count }} {% trans "document cases" %}</strong><small>{% trans "Paid bookings without pre-arrival data" %}</small></div>
+        <i class="ti ti-chevron-right"></i>
+      </a>
+      <a href="{% url 'tour:operations:pickup_queue' %}" class="ops-action-item">
+        <span class="ops-action-item__icon"><i class="ti ti-car"></i></span>
+        <div><strong>{{ pickup_attention_count }} {% trans "pickup cases" %}</strong><small>{% trans "Starting within seven days" %}</small></div>
+        <i class="ti ti-chevron-right"></i>
+      </a>
+      <a href="{% url 'tour:operations:booking_list' %}?status=in_progress" class="ops-action-item">
+        <span class="ops-action-item__icon"><i class="ti ti-map-2"></i></span>
+        <div><strong>{{ in_progress_count }} {% trans "active travellers" %}</strong><small>{% trans "Bookings currently in progress" %}</small></div>
+        <i class="ti ti-chevron-right"></i>
+      </a>
+    </div>
+  </aside>
+</div>
+
+<section class="ops-card">
+  <div class="ops-card__head">
+    <div><span class="ops-eyebrow">{% trans "Schedule" %}</span><h2>{% trans "Upcoming tour departures" %}</h2></div>
+    <a href="{% url 'tour:operations:tour_list' %}">{% trans "All tours" %}<i class="ti ti-arrow-right"></i></a>
+  </div>
+  <div class="ops-departures">
+    {% for tour in departures %}
+      <a class="ops-departure" href="{% url 'tour:operations:tour_detail' tour.id %}">
+        <div class="ops-departure__date"><strong>{{ tour.start_date|date:"d" }}</strong><span>{{ tour.start_date|date:"M" }}</span></div>
+        <div class="ops-departure__body"><strong>{{ tour.title }}</strong><small><i class="ti ti-map-pin"></i>{{ tour.location }}</small></div>
+        <div class="ops-departure__metrics"><span>{{ tour.paid_count }}/{{ tour.booking_count }} {% trans "paid" %}</span><b class="{% if tour.tour_guide %}is-ready{% endif %}">{% if tour.tour_guide %}{% trans "Guide assigned" %}{% else %}{% trans "Guide missing" %}{% endif %}</b></div>
+        <i class="ti ti-chevron-right"></i>
+      </a>
+    {% empty %}
+      <div class="ops-empty">{% trans "No upcoming departures are scheduled." %}</div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

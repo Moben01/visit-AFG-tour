@@ -1,26 +1,17 @@
-{% load django_htmx %}
-
+{% load django_htmx i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="en">
-        {% include 'head.html' %}
-        {% htmx_script %}
-    <body hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}" dir="ltr">
+    {% include 'head.html' %}
+    {% htmx_script %}
+    <body class="{% block body_class %}{% endblock %}" hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'>
+        <a class="visually-hidden-focusable" href="#main-content">Skip to content</a>
         {% include 'header.html' %}
-      
-        {% block content %}{% endblock %} 
-     
+        <main id="main-content">
+            {% block content %}{% endblock %}
+        </main>
         {% include 'footer.html' %}
         {% include 'scripts.html' %}
         {% block extra_scripts %}{% endblock %}
-            <!-- Loader -->
-
-            <!-- <div id="loader-wrapper">        	
-                <div id="loader">
-                    <span class="loader-line"></span>
-                </div>
-            </div> -->
-            
-            <!-- /Loader -->	
     </body>
 </html>
-</div>

@@ -79,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'home.context_processors.site_navigation',
             ],
         },
     },
@@ -143,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 # LANGUAGES = [
 #     ('en', 'English'),
@@ -190,12 +191,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'tour:dashboard'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_REDIRECT_URL = '/accounts/login/'
+STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET', '')
 
-STRIPE_PUBLIC_KEY = "pk_test_51RhQJfQcT0hWuQaMDCIAH6pycZ8stKnokzNasbojzoBa6zKEAKvoDNWkohi4tRjpNJpydy8owjfdmCCjhqUZZ4D7000aipsISR"
-STRIPE_SECRET_KEY = "sk_test_51RhQJfQcT0hWuQaMyyqKUwZjQTOwkRQYkV7BAJNWOhJ2VxHN9uNHDF0ef6WDtbKCbmdgpYkzElkKTxlonTHJACOs00NiYnWWM6"
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
 DOMAIN = "http://localhost:8000"  # Or your real domain
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

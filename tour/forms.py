@@ -22,6 +22,32 @@ class BookingForm(forms.ModelForm):
             if field_name != 'booking_date' and field.widget.__class__.__name__ != 'CheckboxInput':
                 field.widget.attrs['class'] = 'form-control'
 
+        self.fields['name'].widget.attrs['placeholder'] = 'Full name'
+        self.fields['email'].widget.attrs['placeholder'] = 'Email address'
+        self.fields['phone'].widget.attrs['placeholder'] = 'Phone or WhatsApp number'
+        self.fields['notes'].widget.attrs.update({
+            'placeholder': 'Dietary needs, accessibility requirements, or other notes',
+            'rows': 4,
+        })
+        self.fields['adults'].widget.attrs['min'] = 1
+        self.fields['children'].widget.attrs['min'] = 0
+
+    def clean_booking_date(self):
+        booking_date = self.cleaned_data['booking_date']
+        if booking_date < date.today():
+            raise forms.ValidationError('Travel date cannot be in the past.')
+        return booking_date
+
+    def clean(self):
+        cleaned_data = super().clean()
+        adults = cleaned_data.get('adults') or 0
+        children = cleaned_data.get('children') or 0
+        if adults < 1:
+            self.add_error('adults', 'At least one adult is required.')
+        if adults + children > 30:
+            raise forms.ValidationError('For groups larger than 30, please contact support.')
+        return cleaned_data
+
                 
 
 class EnquireUsForm(forms.ModelForm):

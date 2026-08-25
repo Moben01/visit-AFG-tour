@@ -1,0 +1,11 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+{% block operations_title %}{{ title }}{% endblock %}
+{% block operations_content %}
+<section class="ops-pagehead"><div><a class="ops-back" href="{{ back_url }}"><i class="ti ti-arrow-left"></i>{% trans "Back" %}</a><span class="ops-eyebrow">{% trans "Operations record" %}</span><h1>{{ title }}</h1></div></section>
+<section class="ops-card ops-card--padded ops-form-card"><form method="post" enctype="multipart/form-data" class="ops-form ops-form--grid">{% csrf_token %}
+  {% if form.non_field_errors %}<div class="ops-alert ops-alert--error">{{ form.non_field_errors }}</div>{% endif %}
+  {% for field in form %}<div class="ops-field {% if field.field.widget.input_type == 'checkbox' %}ops-field--check{% endif %}"><label for="{{ field.id_for_label }}">{{ field.label }}{% if field.field.required %} *{% endif %}</label>{{ field }}{% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}{{ field.errors }}</div>{% endfor %}
+  <div class="ops-form__actions"><button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save" %}</button><a class="ops-btn ops-btn--ghost" href="{{ back_url }}">{% trans "Cancel" %}</a></div>
+</form></section>
+{% endblock %}

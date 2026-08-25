@@ -1,0 +1,69 @@
+{% extends 'tour/tourist_dashboard_template.html' %}
+{% load i18n %}
+
+{% block dashboard_hero_title %}{% trans "Secure payment" %}{% endblock %}
+{% block dashboard_hero_text %}{% trans "Review your booking and complete payment through Stripe." %}{% endblock %}
+
+{% block main %}
+<section class="payment-layout">
+  <div class="customer-card payment-main">
+    <div class="customer-card__header">
+      <div>
+        <span class="eyebrow">{% trans "Booking" %} #AA-{{ booking.id|stringformat:"05d" }}</span>
+        <h2>{{ booking.tour.title }}</h2>
+      </div>
+      {% if booking.paid %}
+        <span class="status-pill status-pill--completed"><i class="ti ti-circle-check"></i>{% trans "Paid" %}</span>
+      {% else %}
+        <span class="status-pill status-pill--booked"><i class="ti ti-clock"></i>{% trans "Payment required" %}</span>
+      {% endif %}
+    </div>
+
+    <div class="payment-tour">
+      {% if booking.tour.image %}<img src="{{ booking.tour.image.url }}" alt="{{ booking.tour.title }}">{% endif %}
+      <div class="trip-meta trip-meta--stack">
+        <span><i class="ti ti-map-pin"></i>{{ booking.tour.location }}</span>
+        <span><i class="ti ti-calendar"></i>{{ booking.booking_date|date:"d M Y" }}</span>
+        <span><i class="ti ti-users"></i>{{ booking.adults|add:booking.children }} {% trans "travellers" %}</span>
+      </div>
+    </div>
+
+    <div class="payment-lines">
+      <div><span>{% trans "Booking holder" %}</span><strong>{{ booking.name }}</strong></div>
+      <div><span>{% trans "Email" %}</span><strong>{{ booking.email }}</strong></div>
+      <div><span>{% trans "Booking status" %}</span><strong>{{ booking.get_situation_display }}</strong></div>
+      <div class="payment-total"><span>{% trans "Amount due" %}</span><strong>USD {{ booking.paid_amount|default:0 }}</strong></div>
+    </div>
+
+    {% if booking.paid %}
+      <div class="customer-alert customer-alert--success">
+        <i class="ti ti-shield-check"></i>
+        <div><strong>{% trans "Payment confirmed" %}</strong><p>{% trans "This booking is confirmed and available under your upcoming trips." %}</p></div>
+      </div>
+      <a class="customer-btn customer-btn--primary customer-btn--full" href="{% url 'tour:up_commoing_tours_more_info' booking.id %}">{% trans "Manage this trip" %}<i class="ti ti-arrow-right"></i></a>
+    {% else %}
+      <form method="post" action="{% url 'tour:create_checkout_session' booking.id %}">
+        {% csrf_token %}
+        <button class="customer-btn customer-btn--primary customer-btn--full" type="submit">
+          <i class="ti ti-lock"></i>{% trans "Pay securely with Stripe" %}
+        </button>
+      </form>
+      <p class="payment-fineprint"><i class="ti ti-shield-lock"></i>{% trans "Card details are entered on Stripe's secure checkout. AfghanAwaits does not store your card number." %}</p>
+    {% endif %}
+  </div>
+
+  <aside class="customer-card payment-help">
+    <span class="customer-stat__icon"><i class="ti ti-headset"></i></span>
+    <h3>{% trans "Need help?" %}</h3>
+    <p>{% trans "Your booking remains saved if you leave the payment page. You can return and pay from My Trips." %}</p>
+    <a class="customer-btn customer-btn--ghost customer-btn--full" href="{% url 'home:home' %}#contact">{% trans "Contact support" %}</a>
+    <hr>
+    <h4>{% trans "What happens next?" %}</h4>
+    <ol class="payment-steps">
+      <li><span>1</span>{% trans "Complete secure payment" %}</li>
+      <li><span>2</span>{% trans "Booking moves to Upcoming" %}</li>
+      <li><span>3</span>{% trans "Submit pre-arrival details" %}</li>
+    </ol>
+  </aside>
+</section>
+{% endblock %}

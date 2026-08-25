@@ -1,18 +1,17 @@
+{% load django_htmx i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
-        {% include 'rtl-head.html' %}
-    <body>
+<html lang="{{ LANGUAGE_CODE|default:'fa' }}" dir="rtl">
+    {% include 'rtl-head.html' %}
+    {% htmx_script %}
+    <body class="{% block body_class %}{% endblock %}" hx-headers='{"x-csrftoken": "{{ csrf_token }}"}'>
+        <a class="visually-hidden-focusable" href="#main-content">رفتن به محتوا</a>
         {% include 'header.html' %}
-        {% block content %}{% endblock %} 
+        <main id="main-content">
+            {% block content %}{% endblock %}
+        </main>
         {% include 'footer.html' %}
         {% include 'scripts.html' %}
         {% block extra_scripts %}{% endblock %}
-            <!-- Loader -->
-            <div id="loader-wrapper">        	
-                <div id="loader">
-                    <span class="loader-line"></span>
-                </div>
-            </div>
-            <!-- /Loader -->	
     </body>
 </html>

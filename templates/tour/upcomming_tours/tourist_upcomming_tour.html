@@ -1,204 +1,105 @@
-{% extends 'tour/tourist_dashboard_template.html'%}
-{% load static %}
+{% extends 'tour/tourist_dashboard_template.html' %}
+{% load i18n %}
 
-{% block breadcrump %}
+{% block dashboard_hero_title %}{% trans "My trips" %}{% endblock %}
+{% block dashboard_hero_text %}{% trans "All your bookings and travel plans, organised in one place." %}{% endblock %}
 
-  <div class="row">
-                <div class="col-md-12 col-12">
-                    <h2 class="breadcrumb-title mb-2">Upcomming Tours</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center mb-0">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Agent Dashboard</li>
-                        </ol>
-                    </nav>
-                </div>
+{% block main %}
+<section class="customer-heading">
+  <div>
+    <span class="eyebrow">{% trans "Bookings" %}</span>
+    <h2>{% trans "My trips" %}</h2>
+    <p>{% blocktrans %}You have {{ all_count }} booking{{ all_count|pluralize }} in your account.{% endblocktrans %}</p>
+  </div>
+  <a class="customer-btn customer-btn--primary" href="{% url 'home:home' %}"><i class="ti ti-plus"></i>{% trans "Book a new tour" %}</a>
+</section>
+
+<section class="customer-card">
+  <div class="trip-toolbar">
+    <nav class="trip-tabs" aria-label="{% trans 'Booking status' %}">
+      <a class="{% if selected_status == 'all' %}active{% endif %}" href="?status=all">{% trans "All" %}</a>
+      <a class="{% if selected_status == 'pending' %}active{% endif %}" href="?status=pending">{% trans "Awaiting payment" %}</a>
+      <a class="{% if selected_status == 'upcoming' %}active{% endif %}" href="?status=upcoming">{% trans "Upcoming" %}</a>
+      <a class="{% if selected_status == 'in_progress' %}active{% endif %}" href="?status=in_progress">{% trans "In progress" %}</a>
+      <a class="{% if selected_status == 'completed' %}active{% endif %}" href="?status=completed">{% trans "Completed" %}</a>
+      <a class="{% if selected_status == 'cancelled' %}active{% endif %}" href="?status=cancelled">{% trans "Cancelled" %}</a>
+    </nav>
+    <form class="trip-search" method="get">
+      <input type="hidden" name="status" value="{{ selected_status }}">
+      <i class="ti ti-search"></i>
+      <input type="search" name="q" value="{{ search_query }}" placeholder="{% trans 'Search your trips' %}">
+      <button type="submit">{% trans "Search" %}</button>
+    </form>
+  </div>
+
+  {% if upcomming_tours %}
+    <div class="trip-list">
+      {% for booking in upcomming_tours %}
+        <article class="trip-row">
+          <div class="trip-row__image">
+            {% if booking.tour.image %}
+              <img src="{{ booking.tour.image.url }}" alt="{{ booking.tour.title }}">
+            {% else %}
+              <span><i class="ti ti-photo"></i></span>
+            {% endif %}
+          </div>
+          <div class="trip-row__content">
+            <div class="trip-row__top">
+              <div>
+                <small>#AA-{{ booking.id|stringformat:"05d" }}</small>
+                <h3>{{ booking.tour.title }}</h3>
+              </div>
+              <span class="status-pill status-pill--{{ booking.situation|lower }}">{{ booking.get_situation_display }}</span>
             </div>
-                              
+            <div class="trip-meta">
+              <span><i class="ti ti-map-pin"></i>{{ booking.tour.location }}</span>
+              <span><i class="ti ti-calendar"></i>{{ booking.booking_date|date:"d M Y" }}</span>
+              <span><i class="ti ti-users"></i>{{ booking.adults|add:booking.children }} {% trans "travellers" %}</span>
+              <span><i class="ti ti-wallet"></i>USD {{ booking.paid_amount|default:0 }}</span>
+            </div>
+            <div class="trip-row__footer">
+              <span class="payment-state {% if booking.paid %}is-paid{% endif %}">
+                <i class="ti {% if booking.paid %}ti-circle-check{% else %}ti-clock{% endif %}"></i>
+                {% if booking.paid %}{% trans "Paid" %}{% else %}{% trans "Payment required" %}{% endif %}
+              </span>
+              <div class="customer-actions">
+                {% if not booking.paid and booking.situation != 'Cancelled' %}
+                  <a class="customer-btn customer-btn--primary" href="{% url 'tour:payment' booking.id %}">{% trans "Pay now" %}</a>
+                {% endif %}
+                {% if booking.paid and booking.situation != 'Cancelled' %}
+                  <a class="customer-btn customer-btn--ghost" href="{% url 'tour:up_commoing_tours_more_info' booking.id %}">{% trans "Manage trip" %}</a>
+                {% endif %}
+                {% if booking.situation == 'completed' or booking.situation == 'Reviewed' %}
+                  {% for crew_booking in booking.tour.crew_engagements.all %}
+                    {% if crew_booking.status == 'completed' %}<a class="customer-btn customer-btn--ghost" href="{% url 'tour:customer_crew_review' crew_booking.id %}">{% trans "Rate" %} {{ crew_booking.crew.display_name }}</a>{% endif %}
+                  {% endfor %}
+                {% endif %}
+                <a class="customer-btn customer-btn--ghost" href="{% url 'tour:tour_details' booking.tour.slug %}">{% trans "Tour details" %}</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    {% if page_obj.has_other_pages %}
+      <nav class="customer-pagination" aria-label="{% trans 'Pagination' %}">
+        {% if page_obj.has_previous %}
+          <a href="?status={{ selected_status }}&q={{ search_query|urlencode }}&page={{ page_obj.previous_page_number }}"><i class="ti ti-chevron-left"></i></a>
+        {% endif %}
+        <span>{% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}Page {{ current }} of {{ total }}{% endblocktrans %}</span>
+        {% if page_obj.has_next %}
+          <a href="?status={{ selected_status }}&q={{ search_query|urlencode }}&page={{ page_obj.next_page_number }}"><i class="ti ti-chevron-right"></i></a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% else %}
+    <div class="customer-empty">
+      <i class="ti ti-luggage-off"></i>
+      <h3>{% trans "No trips found" %}</h3>
+      <p>{% trans "Try another status or start planning a new journey." %}</p>
+      <a class="customer-btn customer-btn--primary" href="{% url 'home:home' %}">{% trans "Explore tours" %}</a>
+    </div>
+  {% endif %}
+</section>
 {% endblock %}
-
-{% block main%}
-
-<div class="col-xl-9 col-lg-9" style="padding-left: 25px;">
-                    <div class="d-flex align-items-center justify-content-between flex-wrap">
-                        <h6 class="mb-3">1920 Tours Found on Your Search</h6>
-                        <div class="d-flex align-items-center flex-wrap">
-                            <div class="list-item d-flex align-items-center mb-3">
-                                <a href="tour-grid.html" class="list-icon me-2"><i class="isax isax-grid-1"></i></a>
-                                <a href="tour-list.html" class="list-icon active me-2"><i class="isax isax-firstline"></i></a>
-                                <a href="tour-map.html" class="list-icon me-2"><i class="isax isax-map-1"></i></a>
-                            </div>
-                            <div class="dropdown mb-3">
-                                <a href="javascript:void(0);" class="dropdown-toggle py-2" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="fw-medium text-gray-9">Sort By : </span>Recommended
-                                </a>
-                                <div class="dropdown-menu dropdown-sm">
-                                    <form action="https://dreamstour.dreamstechnologies.com/html/tour-list.html">
-                                        <h6 class="fw-medium fs-16 mb-3">Sort By</h6>
-                                        <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                            <input class="form-check-input ms-0 mt-0" name="recommend" type="checkbox" id="recommend1" checked="">
-                                            <label class="form-check-label ms-2" for="recommend1">Recommended</label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                            <input class="form-check-input ms-0 mt-0" name="recommend" type="checkbox" id="recommend2">
-                                            <label class="form-check-label ms-2" for="recommend2">Price: low to high</label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                            <input class="form-check-input ms-0 mt-0" name="recommend" type="checkbox" id="recommend3">
-                                            <label class="form-check-label ms-2" for="recommend3">Price: high to low</label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                            <input class="form-check-input ms-0 mt-0" name="recommend" type="checkbox" id="recommend4">
-                                            <label class="form-check-label ms-2" for="recommend4">Newest</label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center ps-0 mb-2">
-                                            <input class="form-check-input ms-0 mt-0" name="recommend" type="checkbox" id="recommend5">
-                                            <label class="form-check-label ms-2" for="recommend5">Ratings</label>
-                                        </div>
-                                        <div class="form-check d-flex align-items-center ps-0 mb-0">
-                                            <input class="form-check-input ms-0 mt-0" name="recommend" type="checkbox" id="recommend6">
-                                            <label class="form-check-label ms-2" for="recommend6">Reviews</label>
-                                        </div>
-                                        <div class="d-flex align-items-center justify-content-end border-top pt-3 mt-3">
-                                            <a href="javascript:void(0);" class="btn btn-light btn-sm me-2">Reset</a>
-                                            <button type="submit" class="btn btn-primary btn-sm">Apply</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-info br-10 p-3 pb-2 mb-4">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap">
-                            <p class="fs-14 fw-medium mb-2 d-inline-flex align-items-center"><i class="isax isax-info-circle me-2"></i>Save an average of 15% on thousands of hotels when you're signed in</p>
-                            <a href="login.html" class="btn btn-white btn-sm mb-2">Sign In</a>
-                        </div>
-                    </div>
-                    <div class="hotel-list">
-                        <div class="row justify-content-center">
-                            <div class="col-md-12">
-                                <!-- Tours List -->
-
-
-                                {% for t in upcomming_tours %}
-                                <div class="place-item mb-4">
-                                    <div class="place-img">
-                                        <div class="img-slider image-slide owl-carousel nav-center owl-loaded owl-drag">
-                                            
-                                            
-                                            
-                                            
-                                        <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-660px, 0px, 0px); transition: all; width: 2640px;"><div class="owl-item cloned" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="{{ t.tour.image.url }}" class="img-fluid " alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item cloned" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-10.jpg" class="img-fluid" alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item active" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-07.jpg" class="img-fluid" alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-08.jpg" class="img-fluid " alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-09.jpg" class="img-fluid " alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-10.jpg" class="img-fluid" alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item cloned" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-07.jpg" class="img-fluid" alt="img">
-                                                </a>
-                                            </div></div><div class="owl-item cloned" style="width: 310px; margin-right: 20px;"><div class="slide-images">
-                                                <a href="tour-details.html">
-                                                    <img src="assets/img/tours/tours-08.jpg" class="img-fluid " alt="img">
-                                                </a>
-                                            </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i class="fa-solid fa-chevron-left"></i></button><button type="button" role="presentation" class="owl-next"><i class="fa-solid fa-chevron-right"></i></button></div><div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button></div></div>
-                                        <div class="fav-item">
-                                            <a href="javascript:void(0);" class="fav-icon selected">
-                                                <i class="isax isax-heart5"></i>
-                                            </a>
-                                            <span class="badge bg-info d-inline-flex align-items-center"><i class="isax isax-ranking me-1"></i>Trending</span>
-                                        </div>
-                                    </div>
-                                    <div class="place-content">
-                                        <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2 mb-3">
-                                            <div>
-                                                <h5 class="mb-1 text-truncate"><a href="{% url 'tour:up_commoing_tours_more_info' t.id%}">{{t.tour.title}}</a></h5>
-                                                <p class="fs-14 d-flex align-items-center"><i class="isax isax-location5 me-2"></i>Ciutat Vella, Barcelona</p>
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <p class="fs-14 text-gray-9  border-end pe-2 me-2 mb-0">
-                                                    <span class="me-1"><i class="ti ti-receipt text-primary"></i></span> Ecotourism
-                                                </p>
-                                                <span class="badge badge-warning badge-xs text-gray-9 fs-13 fw-medium me-1">5.0</span>
-                                                <p class="fs-14">(105 Reviews)</p>
-                                            </div>
-                                        </div>
-                                        <p class="fs-14 border-bottom pb-3 mb-3">Journey through majestic peaks and serene valleys, where nature’s beauty surrounds you at every turn.</p>
-                                        <div class="d-flex align-items-center justify-content-between flex-wrap row-gap-2">
-                                            <div class="d-flex align-items-center">
-                                                <span class="me-2"><i class="isax isax-calendar-tick text-gray-6"></i></span>
-                                                <p class="fs-14 text-gray-9  border-end pe-2 me-2 mb-0">4 Day,3 Night</p>
-                                                <p class="fs-14 text-gray-9 mb-0 text-truncate d-flex align-items-center">
-                                                    <i class="isax isax-profile-2user me-1"></i>14 Guests
-                                                </p>
-                                            </div>
-                                            <div class="d-flex align-items-center">
-                                                <h6 class="d-flex align-items-center text-gray-6 fs-14 fw-normal border-end pe-2 me-2">
-													Starts From 
-													<span class="ms-1 fs-18 fw-semibold text-primary">$500</span>
-													<span class="ms-1 fs-18 fw-semibold text-gray-3 text-decoration-line-through">$789</span>
-												</h6>
-                                                <a href="javascript:void(0);" class="avatar avatar-sm flex-shrink-0">
-                                                    <img src="" class="rounded-circle" alt="img">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                {% endfor %}
-                                <!-- /Tours List -->
-
-                           
-                               
-
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <!-- Pagination -->
-                    <nav class="pagination-nav">
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="javascript:void(0);" aria-label="Previous">
-                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                            <li class="page-item active"><a class="page-link" href="javascript:void(0);">4</a></li>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0);">5</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="javascript:void(0);" aria-label="Next">
-                                    <span aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                    <!-- /Pagination -->
-
-                </div>
-
-{% endblock %}
-
-

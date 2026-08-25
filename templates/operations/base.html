@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% block operations_title %}{% trans "Operations Center" %}{% endblock %} | AfghanAwaits{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/operations.css' %}">
+
+<div class="ops-page">
+  <header class="ops-topbar">
+    <div class="ops-shell ops-topbar__inner">
+      <div class="ops-brand">
+        <span class="ops-brand__mark"><i class="ti ti-command"></i></span>
+        <div><strong>{% trans "Operations Center" %}</strong><small>AfghanAwaits</small></div>
+      </div>
+      <div class="ops-topbar__actions">
+        <a href="{% url 'home:home' %}" target="_blank"><i class="ti ti-external-link"></i>{% trans "View website" %}</a>
+        <span class="ops-user"><i class="ti ti-user-circle"></i>{{ request.user.get_full_name|default:request.user.username }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="ops-shell ops-layout">
+    <aside class="ops-sidebar">
+      {% with current=request.resolver_match.url_name %}
+      <nav class="ops-nav" aria-label="{% trans 'Operations navigation' %}">
+        <span class="ops-nav__label">{% trans "Workspace" %}</span>
+        <a class="{% if current == 'dashboard' %}active{% endif %}" href="{% url 'tour:operations:dashboard' %}"><i class="ti ti-layout-dashboard"></i><span>{% trans "Overview" %}</span></a>
+        <a class="{% if 'booking' in current %}active{% endif %}" href="{% url 'tour:operations:booking_list' %}"><i class="ti ti-receipt"></i><span>{% trans "Bookings" %}</span></a>
+        <a class="{% if 'tour' in current %}active{% endif %}" href="{% url 'tour:operations:tour_list' %}"><i class="ti ti-route"></i><span>{% trans "Tour operations" %}</span></a>
+        <a class="{% if 'customer' in current %}active{% endif %}" href="{% url 'tour:operations:customer_list' %}"><i class="ti ti-users"></i><span>{% trans "Customers" %}</span></a>
+
+        <span class="ops-nav__label">{% trans "Tour resources" %}</span>
+        <a class="{% if current == 'resource_dashboard' %}active{% endif %}" href="{% url 'tour:operations:resource_dashboard' %}"><i class="ti ti-topology-star-3"></i><span>{% trans "Resource control" %}</span></a>
+        <a class="{% if 'crew' in current %}active{% endif %}" href="{% url 'tour:operations:crew_list' %}"><i class="ti ti-user-star"></i><span>{% trans "Tour workforce" %}</span></a>
+        <a class="{% if 'opportunity' in current or 'application' in current %}active{% endif %}" href="{% url 'tour:operations:opportunity_list' %}"><i class="ti ti-briefcase"></i><span>{% trans "Opportunities" %}</span></a>
+        <a class="{% if 'engagement' in current %}active{% endif %}" href="{% url 'tour:operations:engagement_list' %}"><i class="ti ti-calendar-check"></i><span>{% trans "Crew bookings" %}</span></a>
+        <a class="{% if 'supplier' in current %}active{% endif %}" href="{% url 'tour:operations:supplier_list' %}"><i class="ti ti-building-store"></i><span>{% trans "Service suppliers" %}</span></a>
+        <a class="{% if 'rfq' in current %}active{% endif %}" href="{% url 'tour:operations:rfq_list' %}"><i class="ti ti-file-dollar"></i><span>{% trans "RFQs & quotes" %}</span></a>
+        <a class="{% if 'service_order' in current or 'invoice' in current %}active{% endif %}" href="{% url 'tour:operations:service_order_list' %}"><i class="ti ti-file-invoice"></i><span>{% trans "Service orders" %}</span></a>
+
+        <span class="ops-nav__label">{% trans "People & trust" %}</span>
+        <a class="{% if 'employee' in current %}active{% endif %}" href="{% url 'tour:operations:employee_list' %}"><i class="ti ti-id"></i><span>{% trans "Employees" %}</span></a>
+        <a class="{% if 'training' in current %}active{% endif %}" href="{% url 'tour:operations:training_list' %}"><i class="ti ti-school"></i><span>{% trans "Training" %}</span></a>
+        <a class="{% if 'case' in current %}active{% endif %}" href="{% url 'tour:operations:case_list' %}"><i class="ti ti-lifebuoy"></i><span>{% trans "Cases & complaints" %}</span></a>
+
+        <span class="ops-nav__label">{% trans "Readiness" %}</span>
+        <a class="{% if current == 'document_queue' %}active{% endif %}" href="{% url 'tour:operations:document_queue' %}"><i class="ti ti-file-check"></i><span>{% trans "Documents" %}</span></a>
+        <a class="{% if current == 'pickup_queue' %}active{% endif %}" href="{% url 'tour:operations:pickup_queue' %}"><i class="ti ti-car"></i><span>{% trans "Pickups" %}</span></a>
+        <a class="{% if current == 'provider_list' %}active{% endif %}" href="{% url 'tour:operations:provider_list' %}"><i class="ti ti-id-badge-2"></i><span>{% trans "Legacy directory" %}</span></a>
+
+        <span class="ops-nav__label">{% trans "Insights" %}</span>
+        <a class="{% if current == 'reports' %}active{% endif %}" href="{% url 'tour:operations:reports' %}"><i class="ti ti-chart-bar"></i><span>{% trans "Reports" %}</span></a>
+      </nav>
+      {% endwith %}
+      <div class="ops-sidebar__footer">
+        <span><i class="ti ti-shield-lock"></i>{% trans "Staff-only workspace" %}</span>
+        <a href="{% url 'account_logout' %}">{% trans "Sign out" %}</a>
+      </div>
+    </aside>
+
+    <main class="ops-main">
+      {% if messages %}
+        <div class="ops-messages" aria-live="polite">
+          {% for message in messages %}
+            <div class="ops-alert ops-alert--{{ message.tags|default:'info' }}">
+              <i class="ti ti-info-circle"></i><span>{{ message }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% block operations_content %}{% endblock %}
+    </main>
+  </div>
+</div>
+{% endblock %}

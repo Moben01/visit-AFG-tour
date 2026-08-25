@@ -1,0 +1,314 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AfghanAwaits Home 2\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Toggle navigation"
+msgstr "باز و بسته‌کردن فهرست"
+
+msgid "Destination, attraction, tour, etc"
+msgstr "مقصد، جاذبه، تور و غیره"
+
+msgid "Search"
+msgstr "جست‌وجو"
+
+msgid "Preferred currency"
+msgstr "ارز ترجیحی"
+
+msgid "Become an Expert"
+msgstr "به‌عنوان متخصص بپیوندید"
+
+msgid "Become an expert"
+msgstr "به‌عنوان متخصص بپیوندید"
+
+msgid "Dashboard"
+msgstr "داشبورد"
+
+msgid "My bookings"
+msgstr "رزروهای من"
+
+msgid "Wishlist"
+msgstr "علاقه‌مندی‌ها"
+
+msgid "Settings"
+msgstr "تنظیمات"
+
+msgid "Logout"
+msgstr "خروج"
+
+msgid "Sign In / Register"
+msgstr "ورود / ثبت‌نام"
+
+msgid "Primary navigation"
+msgstr "فهرست اصلی"
+
+msgid "Home"
+msgstr "خانه"
+
+msgid "Destinations"
+msgstr "مقصدها"
+
+msgid "Tour"
+msgstr "تور"
+
+msgid "Tours"
+msgstr "تورها"
+
+msgid "Tours are being prepared"
+msgstr "تورها در حال آماده‌سازی است"
+
+msgid "Things to do"
+msgstr "دیدنی‌ها و فعالیت‌ها"
+
+msgid "Arts & Culture"
+msgstr "هنر و فرهنگ"
+
+msgid "Experiences"
+msgstr "تجربه‌ها"
+
+msgid "Food & Drink"
+msgstr "خوراک و نوشیدنی"
+
+msgid "New & Trending"
+msgstr "تازه و پرطرفدار"
+
+msgid "Shopping"
+msgstr "خرید"
+
+msgid "Sights & Attractions"
+msgstr "دیدنی‌ها و جاذبه‌ها"
+
+msgid "Accommodation"
+msgstr "اقامت"
+
+msgid "Plan Your Trip"
+msgstr "سفر خود را برنامه‌ریزی کنید"
+
+msgid "Plan your trip"
+msgstr "برنامه‌ریزی سفر"
+
+msgid "Visa guide"
+msgstr "راهنمای ویزا"
+
+msgid "Essentials"
+msgstr "معلومات ضروری"
+
+msgid "Travel essentials"
+msgstr "ضروریات سفر"
+
+msgid "Getting to & around Afghanistan"
+msgstr "رسیدن به افغانستان و رفت‌وآمد در آن"
+
+msgid "Safety"
+msgstr "ایمنی"
+
+msgid "Weather"
+msgstr "آب‌وهوا"
+
+msgid "Currency"
+msgstr "ارز"
+
+msgid "Where Would"
+msgstr "دوست دارید"
+
+msgid "You Like To Go?"
+msgstr "به کجا بروید؟"
+
+msgid "Explore Afghanistan with local knowledge, practical planning, and support from first click to final day."
+msgstr "افغانستان را با شناخت محلی، برنامه‌ریزی عملی و پشتیبانی از نخستین کلیک تا آخرین روز سفر کشف کنید."
+
+msgid "Location"
+msgstr "موقعیت"
+
+msgid "Where would you like to go?"
+msgstr "دوست دارید به کجا بروید؟"
+
+msgid "Travel date"
+msgstr "تاریخ سفر"
+
+msgid "Guests"
+msgstr "مسافران"
+
+msgid "Why plan with AfghanAwaits"
+msgstr "چرا با AfghanAwaits برنامه‌ریزی کنید"
+
+msgid "Local destination knowledge"
+msgstr "شناخت محلی مقصدها"
+
+msgid "Province guides built around Afghan places, culture, and practical access."
+msgstr "راهنمای ولایت‌ها بر پایهٔ مکان‌ها، فرهنگ و دسترسی عملی در افغانستان."
+
+msgid "One connected itinerary"
+msgstr "یک برنامهٔ سفر یک‌پارچه"
+
+msgid "Tours, transport, accommodation, documents, and timing in one workflow."
+msgstr "تور، ترانسپورت، اقامت، اسناد و زمان‌بندی در یک روند واحد."
+
+msgid "Practical travel support"
+msgstr "پشتیبانی عملی سفر"
+
+msgid "Clear preparation guidance and local coordination for confirmed services."
+msgstr "رهنمود روشن برای آمادگی و هماهنگی محلی خدمات تأییدشده."
+
+msgid "Popular places in Afghanistan"
+msgstr "مکان‌های محبوب افغانستان"
+
+msgid "Start with a province guide, then connect places into a route that fits your time and interests."
+msgstr "از راهنمای یک ولایت آغاز کنید و سپس مکان‌ها را در مسیری متناسب با وقت و علاقهٔ خود پیوند دهید."
+
+msgid "Explore"
+msgstr "کشف کنید"
+
+msgid "Build your Afghanistan journey"
+msgstr "سفر افغانستان خود را بسازید"
+
+msgid "Choose a published tour when available, or begin with guides and plan a custom route."
+msgstr "در صورت موجودبودن یک تور منتشرشده را انتخاب کنید، یا از راهنماها آغاز کرده و مسیر اختصاصی بسازید."
+
+msgid "All"
+msgstr "همه"
+
+msgid "Culture"
+msgstr "فرهنگ"
+
+msgid "Nature"
+msgstr "طبیعت"
+
+msgid "Published tour"
+msgstr "تور منتشرشده"
+
+msgid "Travel guide"
+msgstr "راهنمای سفر"
+
+msgid "Destination guide"
+msgstr "راهنمای مقصد"
+
+msgid "Experience guide"
+msgstr "راهنمای تجربه"
+
+msgid "Open guide"
+msgstr "بازکردن راهنما"
+
+msgid "No bookable tours are published yet. Destination and experience guides remain available while itineraries are prepared."
+msgstr "هنوز تور قابل رزروی منتشر نشده است. تا زمان آماده‌شدن برنامه‌ها، راهنماهای مقصد و تجربه در دسترس است."
+
+msgid "Plan with clarity"
+msgstr "با وضاحت برنامه‌ریزی کنید"
+
+msgid "From first question to the final travel day"
+msgstr "از نخستین پرسش تا آخرین روز سفر"
+
+msgid "AfghanAwaits connects information, booking details, and local operations without inventing availability or promises. What is published is visible; what requires confirmation is clearly marked."
+msgstr "AfghanAwaits معلومات، جزئیات رزرو و عملیات محلی را بدون ادعای موجودیت یا وعدهٔ ساختگی پیوند می‌دهد. موارد منتشرشده آشکار است و آنچه نیاز به تأیید دارد روشن نشانه‌گذاری می‌شود."
+
+msgid "Start exploring"
+msgstr "کشف را آغاز کنید"
+
+msgid "Research"
+msgstr "بررسی"
+
+msgid "Confirm"
+msgstr "تأیید"
+
+msgid "Coordinate"
+msgstr "هماهنگی"
+
+msgid "Travel inspiration"
+msgstr "الهام سفر"
+
+msgid "Know more before you go"
+msgstr "پیش از رفتن بیشتر بدانید"
+
+msgid "Before you travel"
+msgstr "پیش از سفر"
+
+msgid "Start with current practical guidance"
+msgstr "با رهنمودهای عملی و تازه آغاز کنید"
+
+msgid "Your trip, connected"
+msgstr "سفر یک‌پارچهٔ شما"
+
+msgid "Keep confirmed travel details in one place"
+msgstr "جزئیات تأییدشدهٔ سفر را در یک‌جا نگه دارید"
+
+msgid "One trip dashboard"
+msgstr "یک داشبورد سفر"
+
+msgid "Bookings, pre-arrival, pickup, and itinerary"
+msgstr "رزرو، پیش از ورود، استقبال و برنامهٔ سفر"
+
+msgid "Open dashboard"
+msgstr "بازکردن داشبورد"
+
+msgid "Create an account"
+msgstr "ساخت حساب"
+
+msgid "Sign in"
+msgstr "ورود"
+
+msgid "Local travel professionals"
+msgstr "متخصصان محلی سفر"
+
+msgid "Share your expertise through AfghanAwaits"
+msgstr "تخصص خود را از طریق AfghanAwaits شریک سازید"
+
+msgid "Trip search"
+msgstr "جست‌وجوی سفر"
+
+msgid "Explore Afghanistan"
+msgstr "افغانستان را کشف کنید"
+
+msgid "Destination guides"
+msgstr "راهنمای مقصدها"
+
+msgid "Published tours"
+msgstr "تورهای منتشرشده"
+
+msgid "Bookable itineraries"
+msgstr "برنامه‌های قابل رزرو"
+
+msgid "No published tour matches this search yet."
+msgstr "هنوز تور منتشرشده‌ای با این جست‌وجو مطابقت ندارد."
+
+msgid "Plan with an expert"
+msgstr "با یک متخصص برنامه‌ریزی کنید"
+
+msgid "Privacy policy"
+msgstr "سیاست محرمیت"
+
+msgid "Terms of use"
+msgstr "شرایط استفاده"
+
+msgid "Cancellation and refunds"
+msgstr "لغو و بازپرداخت"
+
+msgid "Rules of conduct"
+msgstr "اصول رفتار"
+
+msgid "Account & policies"
+msgstr "حساب و پالیسی‌ها"
+
+msgid "All rights reserved."
+msgstr "تمام حقوق محفوظ است."
+
+msgid "Page not found"
+msgstr "صفحه پیدا نشد"
+
+msgid "This route does not lead to a page."
+msgstr "این نشانی به صفحه‌ای نمی‌رسد."
+
+msgid "Back to home"
+msgstr "بازگشت به خانه"
+
+msgid "Search destinations"
+msgstr "جست‌وجوی مقصدها"
+
+msgid "AfghanAwaits.com — Explore Afghanistan"
+msgstr "AfghanAwaits.com — افغانستان را کشف کنید"
+
+msgid "Destination guides, published tours, and practical travel planning for Afghanistan."
+msgstr "راهنمای مقصدها، تورهای منتشرشده و برنامه‌ریزی عملی سفر در افغانستان."

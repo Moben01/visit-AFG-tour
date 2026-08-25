@@ -1,197 +1,64 @@
-{% load static %}
-{% block content %}
-
-
-    <!-- Footer -->
-    <footer class="footer-four">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-7">
-                        <div class="row row-cols-md-4 row-cols-sm-2 row-cols-1">
-                            <div class="col">
-                                <div class="footer-widget">
-                                    <h5>Resources</h5>
-                                    <ul class="footer-menu">
-                                        <li>
-                                            <a href="team.html">Why Visit Afghanistan Tours</a>
-                                        </li>
-                                        <li>
-                                            <a href="pricing-plan.html">Pricing Plans</a>
-                                        </li>
-                                        <li>
-                                            <a href="gallery.html">Gallery</a>
-                                        </li>
-                                        <li>
-                                            <a href="profile-settings.html">Settings</a>
-                                        </li>
-                                        <li>
-                                            <a href="my-profile.html">Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="agent-listings.html">Listings</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="footer-widget">
-                                    <h5>Company</h5>
-                                    <ul class="footer-menu">
-                                        <li>
-                                            <a href="about-us.html">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Careers</a>
-                                        </li>
-                                        <li>
-                                            <a href="blog-grid.html">Blog</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Affiliate Program</a>
-                                        </li>
-                                        <li>
-                                            <a href="add-flight.html">Add Your Listing</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Our Partners</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="footer-widget">
-                                    <h5>Work With Us</h5>
-                                    <ul class="footer-menu">
-                                        <li>
-                                            <a href="{% url 'tour:tour_guide_view' %}">Join as a Guide</a>
-                                        </li>
-                                        <li>
-                                            <a href="{% url 'tour:translator_view' %}">Join as a Translator</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Join as a Tour Operator</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Affiliate Program</a>
-                                        </li>
-                                        <!-- <li>
-                                            <a href="javascript:void(0);">Newyork</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Los Angeles</a>
-                                        </li> -->
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="footer-widget">
-                                    <h5>Quick Links</h5>
-                                    <ul class="footer-menu">
-                                        <li>
-                                            <a href="contact-us.html">Contact Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Rules of Conduct</a>
-                                        </li>
-                                        <li>
-                                            <a href="privacy-policy.html">Privacy Policy</a>
-                                        </li>
-                                        <li>
-                                            <a href="terms-conditions.html">Terms and Conditions</a>
-                                        </li>
-                                        <li>
-                                            <a href="chat.html">Chat Support</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);">Refund Policy</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="footer-widget">
-                            <div class="mb-4">
-                                <h5 class="mb-1">Subscribe to Our Newsletter</h5>
-                                <p class="mb-3">Just sign up and we'll send you a notification by email.</p>
-                                <div class="footer-input">
-                                    <div class="input-group align-items-center justify-content-center">
-                                        <span class="input-group-text px-1"><i class="isax isax-message-favorite5"></i></span>
-                                        <input type="email" class="form-control" placeholder="Enter Email Address">
-                                        <button type="submit" class="btn btn-primary btn-md">Subscribe</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5 class="mb-0">Contact Info</h5>
-                            <div class="d-sm-flex align-items-center justify-content-center justify-content-between">
-                                <div class="d-flex align-items-center justify-content-center justify-content-sm-start me-3 mt-2">
-                                    <span class="avatar avatar-lg bg-light rounded-circle flex-shrink-0">
-										<i class="ti ti-headphones-filled fs-24 text-gray-9"></i>
-									</span>
-                                    <div class="ms-2">
-                                        <p class="fs-14 mb-1">Customer Support</p>
-                                        <h6 class="fw-medium">+1 56589 54598</h6>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center justify-content-center justify-content-sm-start mt-2">
-                                    <span class="avatar avatar-lg bg-light rounded-circle flex-shrink-0">
-										<i class="ti ti-message-2 fs-24 text-gray-9"></i>
-									</span>
-                                    <div class="ms-2">
-                                        <p class="fs-14 mb-1">Drop Us an Email</p>
-                                        <h6 class="fw-medium text-dark"><a href="https://dreamstour.dreamstechnologies.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e474048416e4b564f435e424b004d4143">[email&#160;protected]</a></h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+{% include 'site/footer_v2.html' %}
+{% comment %}
+<footer class="aa-site-footer">
+    <div class="aa-container aa-footer-top">
+        <div class="aa-footer-grid">
+            <div class="aa-footer-brand">
+                <a href="{% url 'home:home' %}" aria-label="AfghanAwaits.com home">
+                    <img src="{% static 'brand/afghanawaits/logo-reverse.svg' %}" alt="AfghanAwaits.com">
+                </a>
+                <p>{% trans 'Discover the real Afghanistan safely, authentically and with local support—from your first plan to your final day.' %}</p>
+                <div class="aa-footer-contact">
+                    {% if get_main_things %}
+                        <a href="tel:{{ get_main_things.noumber }}"><i class="ti ti-phone"></i> {{ get_main_things.noumber }}</a>
+                        <a href="mailto:{{ get_main_things.email }}"><i class="ti ti-mail"></i> {{ get_main_things.email }}</a>
+                    {% else %}
+                        <a href="mailto:info@afghanawaits.com"><i class="ti ti-mail"></i> info@afghanawaits.com</a>
+                    {% endif %}
                 </div>
             </div>
-        </div>
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="d-flex align-items-center justify-content-between flex-wrap">
-                            <p>Copyright &copy; 2025. All Rights Reserved, <a href="javascript:void(0);" class="text-primary fw-medium">DreamsTour</a></p>
-                            <div class="d-flex align-items-center">
-                                <ul class="social-icon">
-                                    <li>
-                                        <a href="javascript:void(0);"><i class="fa-brands fa-facebook"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><i class="fa-brands fa-x-twitter"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><i class="fa-brands fa-instagram"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><i class="fa-brands fa-linkedin"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0);"><i class="fa-brands fa-pinterest"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <ul class="policy-links">
-                                <li>
-                                    <a href="javascript:void(0);">Legal Notice</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">Refund Policy</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+
+            <div>
+                <h2 class="aa-footer-title">{% trans 'Resources' %}</h2>
+                <ul class="aa-footer-links">
+                    <li><a href="{% url 'home:home' %}">{% trans 'Why Visit Afghanistan Tours' %}</a></li>
+                    <li><a href="{% url 'states:bolg_seaction' %}">{% trans 'Blog' %}</a></li>
+                    <li><a href="{% url 'states:team' %}">{% trans 'About Us' %}</a></li>
+                    <li><a href="{% url 'play_your_trip:safety' %}">{% trans 'Safety' %}</a></li>
+                    <li><a href="{% url 'play_your_trip:visa_guide' %}">{% trans 'Visa guide' %}</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="aa-footer-title">{% trans 'Work With Us' %}</h2>
+                <ul class="aa-footer-links">
+                    <li><a href="{% url 'tour:tour_guide_view' %}">{% trans 'Join as a Guide' %}</a></li>
+                    <li><a href="{% url 'tour:translator_view' %}">{% trans 'Join as a Translator' %}</a></li>
+                    <li><a href="{% url 'tour:user_newsfeed' %}">{% trans 'Tour Involve' %}</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a></li>
+                        <li><a href="{% url 'tour:up_commoing_tours' %}">{% trans 'My Booking' %}</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
+            <div>
+                <h2 class="aa-footer-title">{% trans 'Quick Links' %}</h2>
+                <ul class="aa-footer-links">
+                    <li><a href="{% url 'rules_of_conduct' %}">{% trans 'Rules of Conduct' %}</a></li>
+                    <li><a href="#">{% trans 'Privacy Policy' %}</a></li>
+                    <li><a href="#">{% trans 'Terms and Conditions' %}</a></li>
+                    <li><a href="#">{% trans 'Refund Policy' %}</a></li>
+                    <li><a href="{% url 'account_login' %}">{% trans 'Sign In' %}</a></li>
+                </ul>
             </div>
         </div>
-        <!-- /Footer Bottom -->
-
-    </footer>
-    <!-- /Footer -->
-
-{% endblock %}
+    </div>
+    <div class="aa-footer-bottom">
+        <div class="aa-container aa-footer-bottom-inner">
+            <span>© {% now 'Y' %} AfghanAwaits.com. {% trans 'All Rights Reserved.' %}</span>
+            <span>{% trans 'Authentic journeys, thoughtfully managed.' %}</span>
+        </div>
+    </div>
+</footer>
+{% endcomment %}

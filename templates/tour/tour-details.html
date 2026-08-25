@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 {% block content %}
+<section class="aa-page-hero aa-tour-detail-hero">
+    <div class="aa-container">
+        <span class="aa-eyebrow">{% trans "Published tour" %}</span>
+        <h1>{{ get_tour.title }}</h1>
+        <p>{{ get_tour.description|truncatewords:28 }}</p>
+    </div>
+</section>
 
 <!-- Breadcrumb -->
 <!-- <div class="breadcrumb-bar breadcrumb-bg-02 text-center">
@@ -583,9 +590,9 @@
                                     <span class="avatar avatar-sm me-2 rounded-circle flex-shrink-0 bg-primary"><i
                                             class="isax isax-message-search5"></i></span>
                                     <p>Email : <a
-                                            href="https://dreamstour.dreamstechnologies.com/cdn-cgi/l/email-protection"
-                                            class="__cf_email__"
-                                            data-cfemail="b5fcdbd3daf5d0cdd4d8c5d9d09bd6dad8">[email&#160;protected]</a>
+                                            href="mailto:info@afghanawaits.com"
+                                            class="aa-contact-email"
+                                            >info@afghanawaits.com</a>
                                     </p>
                                 </div>
                             </div>

@@ -1,0 +1,50 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Bookings" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead">
+  <div><span class="ops-eyebrow">{% trans "Customer requests" %}</span><h1>{% trans "Booking management" %}</h1><p>{% trans "Find, review and move every customer through the correct operational stage." %}</p></div>
+  <a class="ops-btn ops-btn--secondary" href="{% url 'tour:operations:booking_export' %}?{{ request.GET.urlencode }}"><i class="ti ti-download"></i>{% trans "Export CSV" %}</a>
+</section>
+
+<section class="ops-card ops-filter-card">
+  <form class="ops-filters" method="get">
+    <div class="ops-field ops-field--search"><label>{% trans "Search" %}</label><div><i class="ti ti-search"></i><input name="q" value="{{ query }}" placeholder="{% trans 'ID, customer, phone, email or tour' %}"></div></div>
+    <div class="ops-field"><label>{% trans "Stage" %}</label><select name="status"><option value="">{% trans "All stages" %}</option>{% for value,label in status_choices %}<option value="{{ value }}" {% if selected_status == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></div>
+    <div class="ops-field"><label>{% trans "Payment" %}</label><select name="payment"><option value="">{% trans "Any" %}</option><option value="paid" {% if selected_payment == 'paid' %}selected{% endif %}>{% trans "Paid" %}</option><option value="unpaid" {% if selected_payment == 'unpaid' %}selected{% endif %}>{% trans "Unpaid" %}</option></select></div>
+    <div class="ops-field"><label>{% trans "Tour" %}</label><select name="tour"><option value="">{% trans "All tours" %}</option>{% for tour in tours %}<option value="{{ tour.id }}" {% if selected_tour == tour.id|stringformat:"s" %}selected{% endif %}>{{ tour.title }}</option>{% endfor %}</select></div>
+    <div class="ops-field"><label>{% trans "From" %}</label><input type="date" name="date_from" value="{{ date_from }}"></div>
+    <div class="ops-field"><label>{% trans "To" %}</label><input type="date" name="date_to" value="{{ date_to }}"></div>
+    <button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-filter"></i>{% trans "Apply" %}</button>
+    <a class="ops-btn ops-btn--ghost" href="{% url 'tour:operations:booking_list' %}">{% trans "Reset" %}</a>
+  </form>
+</section>
+
+<section class="ops-card">
+  <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Queue" %}</span><h2>{{ page_obj.paginator.count }} {% trans "bookings found" %}</h2></div></div>
+  <div class="ops-table-wrap">
+    <table class="ops-table ops-table--roomy">
+      <thead><tr><th>{% trans "Booking" %}</th><th>{% trans "Customer" %}</th><th>{% trans "Tour" %}</th><th>{% trans "Travel date" %}</th><th>{% trans "Travellers" %}</th><th>{% trans "Payment" %}</th><th>{% trans "Stage" %}</th><th></th></tr></thead>
+      <tbody>
+      {% for booking in bookings %}
+        <tr>
+          <td><strong>#AA-{{ booking.id|stringformat:"05d" }}</strong></td>
+          <td><strong>{{ booking.name }}</strong><small>{{ booking.email }} · {{ booking.phone }}</small></td>
+          <td><strong>{{ booking.tour.title|default:"Archived tour" }}</strong><small>{{ booking.tour.location }}</small></td>
+          <td>{{ booking.booking_date|date:"d M Y" }}</td>
+          <td>{{ booking.adults|add:booking.children }}</td>
+          <td><span class="ops-payment {% if booking.paid %}is-paid{% endif %}">{% if booking.paid %}USD {{ booking.paid_amount|default:0 }}{% else %}{% trans "Unpaid" %}{% endif %}</span></td>
+          <td><span class="ops-status ops-status--{{ booking.situation|lower }}">{{ booking.get_situation_display }}</span></td>
+          <td><a class="ops-btn ops-btn--small ops-btn--ghost" href="{% url 'tour:operations:booking_detail' booking.id %}">{% trans "Open" %}<i class="ti ti-arrow-right"></i></a></td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="8"><div class="ops-empty"><i class="ti ti-search-off"></i><strong>{% trans "No bookings match these filters" %}</strong><span>{% trans "Clear one or more filters and try again." %}</span></div></td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% include 'operations/partials/pagination.html' with page_obj=page_obj %}
+</section>
+{% endblock %}

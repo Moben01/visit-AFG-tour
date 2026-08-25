@@ -86,3 +86,5 @@ def rules_of_conduct(request):
 
 
 
+
+from .views_v2 import *  # noqa: E402,F401,F403

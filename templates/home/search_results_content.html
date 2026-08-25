@@ -1,0 +1,78 @@
+{% load static i18n %}
+<section class="aa-page-hero">
+    <div class="aa-container">
+        <span class="aa-eyebrow">{% trans "Trip search" %}</span>
+        <h1>{% trans "Explore Afghanistan" %}</h1>
+        {% if query %}
+            <p>{% blocktrans %}Results for “{{ query }}”{% endblocktrans %}</p>
+        {% else %}
+            <p>{% trans "Search destinations and published tours from one place." %}</p>
+        {% endif %}
+    </div>
+</section>
+
+<section class="aa-section aa-search-results-page">
+    <div class="aa-container">
+        <form class="aa-results-search" action="{% url 'home:search' %}" method="get" role="search">
+            <div>
+                <label for="resultsQuery">{% trans "Destination, attraction, tour, etc" %}</label>
+                <input id="resultsQuery" type="search" name="q" value="{{ query }}" placeholder="{% trans 'Try Kabul, Bamyan, culture…' %}">
+            </div>
+            <div>
+                <label for="resultsDate">{% trans "Travel date" %}</label>
+                <input id="resultsDate" type="date" name="check_in" value="{{ check_in }}">
+            </div>
+            <div>
+                <label for="resultsGuests">{% trans "Guests" %}</label>
+                <input id="resultsGuests" type="number" name="guests" min="1" max="20" value="{{ guests }}">
+            </div>
+            <button class="aa-search-submit" type="submit"><i class="ti ti-search"></i> {% trans "Search" %}</button>
+        </form>
+
+        {% if destination_results %}
+        <div class="aa-results-group">
+            <div class="aa-section-head">
+                <div><span class="aa-eyebrow">{% trans "Destination guides" %}</span><h2>{% trans "Places matching your search" %}</h2></div>
+            </div>
+            <div class="aa-destination-rail">
+                {% for destination in destination_results %}
+                <a class="aa-destination-card" href="{{ destination.url }}">
+                    <img src="{% static destination.image %}" alt="{{ destination.name }}">
+                    <span class="aa-card-overlay"></span>
+                    <span class="aa-destination-copy"><small>{{ destination.province }}</small><strong>{{ destination.name }}</strong><em>{{ destination.summary }}</em></span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="aa-results-group">
+            <div class="aa-section-head">
+                <div><span class="aa-eyebrow">{% trans "Published tours" %}</span><h2>{% trans "Bookable itineraries" %}</h2></div>
+            </div>
+            {% if tour_results %}
+                <div class="aa-tour-grid">
+                    {% for tour in tour_results %}
+                    <article class="aa-tour-card">
+                        <a class="aa-tour-image" href="{% url 'tour:tour_details' tour.slug %}">
+                            <img src="{{ tour.image.url }}" alt="{{ tour.title }}">
+                        </a>
+                        <div class="aa-tour-body">
+                            <span class="aa-tour-location"><i class="ti ti-map-pin"></i> {{ tour.category.name }}</span>
+                            <h3><a href="{% url 'tour:tour_details' tour.slug %}">{{ tour.title }}</a></h3>
+                            <div class="aa-tour-meta"><span><i class="ti ti-clock"></i> {{ tour.duration_day }}</span><strong>{{ site_currency }} {{ tour.price }}</strong></div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="aa-empty-state">
+                    <i class="ti ti-route-off"></i>
+                    <h3>{% trans "No published tour matches this search yet." %}</h3>
+                    <p>{% trans "Use the destination guides above, or contact a local expert for a custom route." %}</p>
+                    <a class="aa-btn aa-btn-primary" href="{% url 'tour:tour_guide_view' %}">{% trans "Plan with an expert" %}</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

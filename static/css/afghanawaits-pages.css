@@ -1,0 +1,210 @@
+.aa-auth-brand {
+  padding: 24px 16px 20px;
+  text-align: center;
+}
+
+.aa-auth-brand img {
+  width: min(250px, 78%);
+  height: auto;
+}
+
+.authentication-wrapper,
+.login-wrapper,
+.register-wrapper {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(7,39,32,.88), rgba(7,39,32,.88)),
+    url("../img/Images/qasim-mirzaie-7WRiBETZIls-unsplash.jpg") center / cover fixed !important;
+}
+
+.authentication-wrapper .authentication-card,
+.authentication-wrapper .card,
+.login-wrapper .card,
+.register-wrapper .card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 12px !important;
+  box-shadow: 0 26px 75px rgba(0,0,0,.25);
+}
+
+.authentication-card .card-header {
+  padding-top: 30px;
+  background: #fff;
+}
+
+.authentication-card .card-header h5 {
+  color: var(--aa-deep-green);
+  font-size: 1.6rem;
+}
+
+.authentication-card .btn-primary {
+  min-height: 52px;
+}
+
+.aa-accommodation-hero {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(rgba(7,39,32,.76), rgba(7,39,32,.76)),
+    url("../img/hotels/hotel-large-01.jpg") center / cover !important;
+}
+
+.aa-accommodation-hero .hero-content {
+  width: 100%;
+}
+
+.aa-accommodation-hero h1 {
+  color: #fff !important;
+  font-size: clamp(2.6rem, 5vw, 4.5rem) !important;
+}
+
+.aa-accommodation-hero .text-warning {
+  color: var(--aa-lime) !important;
+}
+
+.aa-accommodation-hero .btn-primary {
+  color: var(--aa-deep-green) !important;
+  background: var(--aa-lime) !important;
+  border-color: var(--aa-lime) !important;
+}
+
+.accommodation-card {
+  border: 1px solid var(--aa-border) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+.accommodation-card:hover {
+  border-color: var(--aa-lime) !important;
+  transform: translateY(-4px);
+  box-shadow: var(--aa-shadow-sm) !important;
+}
+
+.accommodation-icon i {
+  color: var(--aa-deep-green) !important;
+}
+
+.aa-tour-detail-hero {
+  padding-block: 72px;
+}
+
+.aa-tour-detail-hero h1 {
+  max-width: 980px;
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+}
+
+.aa-tour-detail-hero + .content {
+  padding-top: 70px;
+}
+
+.aa-error-page {
+  padding: 90px 0;
+  background: #fff;
+}
+
+.aa-error-page .aa-container {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(520px, 1.15fr);
+  align-items: center;
+  gap: 80px;
+}
+
+.aa-error-code {
+  display: block;
+  color: var(--aa-lime);
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 800;
+  line-height: .85;
+}
+
+.aa-error-copy h1 {
+  margin: 18px 0;
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+}
+
+.aa-error-copy p {
+  max-width: 620px;
+  margin-bottom: 28px;
+  color: var(--aa-muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.aa-error-copy > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.aa-error-visual {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.aa-error-visual img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+.back-to-top {
+  position: fixed;
+  z-index: 1030;
+  right: 20px;
+  bottom: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 20px;
+}
+
+.back-to-top.is-visible {
+  visibility: visible;
+  opacity: 1;
+  transform: none;
+}
+
+.back-to-top-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: var(--aa-deep-green);
+  background: var(--aa-lime);
+  border-radius: 50%;
+  box-shadow: var(--aa-shadow-sm);
+}
+
+@media (max-width: 991.98px) {
+  .aa-error-page .aa-container {
+    grid-template-columns: 1fr;
+  }
+
+  .aa-error-visual {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .aa-accommodation-hero {
+    min-height: 470px;
+  }
+
+  .aa-error-page {
+    padding: 64px 0;
+  }
+
+  .aa-error-page .aa-container {
+    gap: 44px;
+  }
+
+  .aa-error-visual img {
+    height: 360px;
+  }
+}

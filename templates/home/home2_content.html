@@ -1,0 +1,210 @@
+{% include 'home/home2_v2.html' %}
+{% comment %}
+
+{% if messages %}
+<div class="aa-container pt-3">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags|default:'info' }} mb-2" role="alert">{{ message }}</div>
+    {% endfor %}
+</div>
+{% endif %}
+
+<section class="aa-home-hero" aria-labelledby="home-hero-title">
+    <div class="aa-container aa-hero-inner">
+        <div class="aa-hero-copy">
+            <h1 id="home-hero-title"><span>{% trans 'Where Would' %}</span> {% trans 'You Like To Go?' %}</h1>
+            <p>{% trans 'Explore Afghanistan with local knowledge, practical planning, and support from first click to final day.' %}</p>
+        </div>
+
+        <div class="aa-hero-gallery" aria-label="{% trans 'Afghanistan travel gallery' %}">
+            <figure><img src="{% static 'img/index/i1.jpg' %}" alt="{% trans 'Travel in Afghanistan' %}"></figure>
+            <figure><img src="{% static 'img/index/i3.jpg' %}" alt="{% trans 'Afghanistan destination' %}"></figure>
+            <figure><img src="{% static 'img/index/i2.jpg' %}" alt="{% trans 'Afghanistan experience' %}"></figure>
+        </div>
+
+        <form class="aa-search-panel" id="aaHomeSearch" action="{% url 'home:home' %}" method="get">
+            <div class="aa-search-field">
+                <i class="ti ti-map-pin"></i>
+                <div class="w-100">
+                    <label for="aaDestination">{% trans 'Location' %}</label>
+                    <select id="aaDestination" name="destination">
+                        <option value="">{% trans 'Where would you like to go?' %}</option>
+                        {% if get_tour_categories %}
+                            {% for category in get_tour_categories %}
+                                <option value="{% url 'tour:tour_category_list' category.slug %}">{{ category.name }}</option>
+                            {% endfor %}
+                        {% else %}
+                            <option value="{% url 'states:kabul' %}">Kabul</option>
+                            <option value="{% url 'states:bamyan' %}">Bamyan</option>
+                            <option value="{% url 'states:Herat' %}">Herat</option>
+                            <option value="{% url 'states:balkh' %}">Balkh</option>
+                            <option value="{% url 'states:Badakhshan' %}">Badakhshan</option>
+                        {% endif %}
+                    </select>
+                </div>
+            </div>
+            <div class="aa-search-field">
+                <i class="ti ti-calendar-event"></i>
+                <div class="w-100">
+                    <label for="aaCheckIn">{% trans 'Check in' %}</label>
+                    <input id="aaCheckIn" type="date" name="check_in">
+                </div>
+            </div>
+            <div class="aa-search-field">
+                <i class="ti ti-users"></i>
+                <div class="w-100">
+                    <label for="aaGuests">{% trans 'Guest' %}</label>
+                    <input id="aaGuests" type="number" name="guests" min="1" value="1">
+                </div>
+            </div>
+            <button class="aa-search-submit" type="submit"><i class="ti ti-search"></i> {% trans 'Search' %}</button>
+        </form>
+    </div>
+</section>
+
+<section class="aa-section">
+    <div class="aa-container">
+        <div class="row align-items-center g-5 mx-0">
+            <div class="col-lg-5">
+                <div class="row g-3">
+                    <div class="col-7"><div class="aa-card aa-card-media"><img src="{% static 'img/index/i4.jpg' %}" alt="{% trans 'Discover Afghanistan' %}"></div></div>
+                    <div class="col-5"><div class="aa-card aa-card-media"><img src="{% static 'img/index/i8.jpg' %}" alt="{% trans 'Afghan culture' %}"></div></div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="aa-section-head d-block mb-0">
+                    <span class="aa-hero-kicker">{% trans '10+ Years of Experience' %}</span>
+                    <h2>{% trans 'Discover the Real Afghanistan – Safely, Authentically, and With Heart' %}</h2>
+                    <p class="mb-3">{% trans 'AfghanAwaits.com is a complete Afghanistan travel system: reliable information, bookable itineraries, and on-the-ground delivery managed in one place. We combine local expertise with practical safety—vetted drivers, daily route checks, and honest updates—so you can plan confidently and adapt when conditions change.' %}</p>
+                    <p>{% trans 'Browse region guides and sample trips, request a custom plan, and confirm with secure online payment. Your personal trip page keeps everything in one dashboard—itinerary, inclusions, policies, contacts—while our operations team coordinates hotels, transport, permits, and timing behind the scenes. Whether you’re a curious traveler, photographer, or member of the Afghan diaspora returning with family, we help you go deeper with respect for people and places. Clear information, flexible routing, and real support—from first click to final day.' %}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section -soft">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div>
+                <h2>{% trans 'Top Afghanistan Tourism Experiences' %}</h2>
+                <p>{% trans 'Find the perfect cruise experience tailored to your unique interests and travel style.' %}</p>
+            </div>
+        </div>
+        <div class="aa-feature-grid">
+            <article class="aa-card">
+                <div class="aa-card-media"><img src="{% static 'img/index/i5.jpg' %}" alt="{% trans 'Cultural and Historical Tours' %}"></div>
+                <div class="aa-card-body"><h3>{% trans 'Cultural & Historical Tours' %}</h3><p>{% trans '6 Tours' %}</p></div>
+            </article>
+            <article class="aa-card">
+                <div class="aa-card-media"><img src="{% static 'img/index/i6.jpg' %}" alt="{% trans 'Nature and Adventure Tours' %}"></div>
+                <div class="aa-card-body"><h3>{% trans 'Nature & Adventure Tours' %}</h3><p>{% trans '6 Tours' %}</p></div>
+            </article>
+            <article class="aa-card">
+                <div class="aa-card-media"><img src="{% static 'img/index/i7.jpg' %}" alt="{% trans 'Religious and Pilgrimage Tours' %}"></div>
+                <div class="aa-card-body"><h3>{% trans 'Religious & Pilgrimage Tours' %}</h3><p>{% trans '5 Tours' %}</p></div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div>
+                <h2>{% trans 'Popular Provinces' %}</h2>
+                <p>{% trans 'Connecting Needs with Offers for the Professional Flight Services, Book your next flight appointment with ease.' %}</p>
+            </div>
+            <a class="aa-text-link" href="{% url 'states:kabul' %}">{% trans 'Explore destinations' %} <i class="ti ti-arrow-right"></i></a>
+        </div>
+        <div class="aa-destination-grid">
+            <a class="aa-card" href="{% url 'states:kabul' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/kabul.jpeg' %}" alt="Kabul"></div><div class="aa-card-body"><h3>Kabul</h3></div></a>
+            <a class="aa-card" href="{% url 'states:bamyan' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/bamyan2.jpg' %}" alt="Bamyan"></div><div class="aa-card-body"><h3>Bamyan</h3></div></a>
+            <a class="aa-card" href="{% url 'states:Herat' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/herat16.jpg' %}" alt="Herat"></div><div class="aa-card-body"><h3>Herat</h3></div></a>
+            <a class="aa-card" href="{% url 'states:balkh' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/balkh.jpeg' %}" alt="Balkh"></div><div class="aa-card-body"><h3>Balkh</h3></div></a>
+            <a class="aa-card" href="{% url 'states:Nangarhar' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/nangrher.jpeg' %}" alt="Nangarhar"></div><div class="aa-card-body"><h3>Nangarhar</h3></div></a>
+            <a class="aa-card" href="{% url 'states:Kandahar' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/kandher.jpg' %}" alt="Kandahar"></div><div class="aa-card-body"><h3>Kandahar</h3></div></a>
+            <a class="aa-card" href="{% url 'states:Ghor' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/ghor.jpeg' %}" alt="Ghor"></div><div class="aa-card-body"><h3>Ghor</h3></div></a>
+            <a class="aa-card" href="{% url 'states:Badakhshan' %}"><div class="aa-card-media"><img src="{% static 'image_for_province/Badakhshan3.jpg' %}" alt="Badakhshan"></div><div class="aa-card-body"><h3>Badakhshan</h3></div></a>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section -soft">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div><h2>{% trans 'Plan Your Trip' %}</h2><p>{% trans 'Everything you need for a confident journey to and around Afghanistan.' %}</p></div>
+        </div>
+        <div class="aa-service-grid">
+            <a class="aa-card aa-icon-card" href="{% url 'play_your_trip:visa_guide' %}"><span class="aa-icon"><i class="ti ti-passport"></i></span><h3>{% trans 'Visa guide' %}</h3><p>{% trans 'Practical information for preparing your visit.' %}</p></a>
+            <a class="aa-card aa-icon-card" href="{% url 'play_your_trip:Accommodation' %}"><span class="aa-icon"><i class="ti ti-bed"></i></span><h3>{% trans 'Accommodation' %}</h3><p>{% trans 'Where comfort meets elegance and every guest is treated like family.' %}</p></a>
+            <a class="aa-card aa-icon-card" href="{% url 'play_your_trip:Getting_to_around_afg' %}"><span class="aa-icon"><i class="ti ti-car"></i></span><h3>{% trans 'Getting to & around Afghanistan' %}</h3><p>{% trans 'Plan routes, transport and timing with local support.' %}</p></a>
+            <a class="aa-card aa-icon-card" href="{% url 'play_your_trip:safety' %}"><span class="aa-icon"><i class="ti ti-shield-check"></i></span><h3>{% trans 'Safety' %}</h3><p>{% trans 'Clear information, route checks and real support.' %}</p></a>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section -dark">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div>
+                <h2>{% trans 'Where comfort meets elegance and every guest is treated like family.' %}</h2>
+                <p>{% trans 'Our mission is to create memorable experiences for our guests. We believe that every stay should feel special, whether you’re here for business, leisure, or a special occasion.' %}</p>
+            </div>
+        </div>
+        <div class="aa-stat-strip">
+            <div class="aa-stat"><strong>57+</strong><span>{% trans 'Destinations Worldwide' %}</span></div>
+            <div class="aa-stat"><strong>121+</strong><span>{% trans 'Providers Registered' %}</span></div>
+            <div class="aa-stat"><strong>7098+</strong><span>{% trans 'Booking Completed' %}</span></div>
+            <div class="aa-stat"><strong>67+</strong><span>{% trans 'Client Globally' %}</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div>
+                <h2>{% trans 'Success stories in their own words' %}</h2>
+                <p>{% trans 'Read what our satisfied clients have to say about their experiences with our platform.' %}</p>
+            </div>
+            <div><strong>{% trans 'Trusted by 40K+ customers' %}</strong><br><span class="text-muted">4.4/5.0 ({% trans 'From 3580 Reviews' %})</span></div>
+        </div>
+        <div class="aa-review-grid">
+            <article class="aa-card aa-icon-card"><span class="aa-icon"><i class="ti ti-quote"></i></span><h3>{% trans 'Smooth Booking Experience!' %}</h3><p>{% trans 'I had an I recently booked a flight through [Booking Website/App], and I couldn’t be happier with the experience.' %}</p><hr><strong>Rachel Mariscal</strong><small class="d-block text-muted">United States · 5.0</small></article>
+            <article class="aa-card aa-icon-card"><span class="aa-icon"><i class="ti ti-quote"></i></span><h3>{% trans 'Customer Service' %}</h3><p>{% trans 'I did have a quick question about my itinerry, and customer service was incredibly helpful and responsive' %}</p><hr><strong>Stephen Brekke</strong><small class="d-block text-muted">Germany · 5.0</small></article>
+            <article class="aa-card aa-icon-card"><span class="aa-icon"><i class="ti ti-quote"></i></span><h3>{% trans 'Confirmation Process' %}</h3><p>{% trans 'I received my confirmation email almost immediately, and all the details were accurate.' %}</p><hr><strong>Charles Earnhardt</strong><small class="d-block text-muted">Italy · 5.0</small></article>
+        </div>
+    </div>
+</section>
+
+<section class="aa-section -soft">
+    <div class="aa-container">
+        <div class="aa-section-head"><div><h2>{% trans 'Frequently Asked Questions' %}</h2><p>{% trans 'Connecting Needs with Offers for the Professional Fligt Services' %}</p></div></div>
+        <div class="accordion aa-faq" id="aaHomeFaq">
+            <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#aaFaqOne">{% trans 'What types of tours do you offer?' %}</button></h3><div id="aaFaqOne" class="accordion-collapse collapse show" data-bs-parent="#aaHomeFaq"><div class="accordion-body"><p>{% trans 'We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.' %}</p><p>{% trans 'Popular destinations include Europe, Africa (e.g., Morocco)' %}</p></div></div></div>
+            <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aaFaqTwo">{% trans 'Are the tours customizable?' %}</button></h3><div id="aaFaqTwo" class="accordion-collapse collapse" data-bs-parent="#aaHomeFaq"><div class="accordion-body">{% trans 'We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.' %}</div></div></div>
+            <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aaFaqThree">{% trans 'What safety measures do you follow?' %}</button></h3><div id="aaFaqThree" class="accordion-collapse collapse" data-bs-parent="#aaHomeFaq"><div class="accordion-body">{% trans 'We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.' %}</div></div></div>
+            <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aaFaqFour">{% trans 'How far in advance should I book?' %}</button></h3><div id="aaFaqFour" class="accordion-collapse collapse" data-bs-parent="#aaHomeFaq"><div class="accordion-body">{% trans 'We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.' %}</div></div></div>
+            <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#aaFaqFive">{% trans 'What is your cancellation policy?' %}</button></h3><div id="aaFaqFive" class="accordion-collapse collapse" data-bs-parent="#aaHomeFaq"><div class="accordion-body">{% trans 'We offer a wide range of tours, including cultural, adventure, luxury, and customized itineraries.' %}</div></div></div>
+        </div>
+    </div>
+</section>
+
+{% block extra_home_scripts %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('aaHomeSearch');
+    const destination = document.getElementById('aaDestination');
+    if (form && destination) {
+        form.addEventListener('submit', function (event) {
+            if (destination.value) {
+                event.preventDefault();
+                window.location.assign(destination.value);
+            }
+        });
+    }
+});
+</script>
+{% endblock %}
+{% endcomment %}

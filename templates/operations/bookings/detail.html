@@ -1,0 +1,124 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}#AA-{{ booking.id|stringformat:"05d" }}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead ops-pagehead--booking">
+  <div>
+    <a class="ops-back" href="{% url 'tour:operations:booking_list' %}"><i class="ti ti-arrow-left"></i>{% trans "Back to bookings" %}</a>
+    <div class="ops-titleline"><h1>#AA-{{ booking.id|stringformat:"05d" }} · {{ booking.tour.title|default:"Archived tour" }}</h1><span class="ops-status ops-status--{{ booking.situation|lower }}">{{ booking.get_situation_display }}</span></div>
+    <p>{{ booking.name }} · {{ booking.booking_date|date:"d M Y" }} · {{ booking.adults|add:booking.children }} {% trans "travellers" %}</p>
+  </div>
+  <div class="ops-pagehead__actions">
+    {% if booking.user %}<a class="ops-btn ops-btn--ghost" href="{% url 'tour:operations:customer_detail' booking.user.id %}"><i class="ti ti-user"></i>{% trans "Customer profile" %}</a>{% endif %}
+    {% if booking.tour %}<a class="ops-btn ops-btn--secondary" href="{% url 'tour:operations:tour_detail' booking.tour.id %}"><i class="ti ti-route"></i>{% trans "Tour operations" %}</a>{% endif %}
+  </div>
+</section>
+
+<section class="ops-booking-summary">
+  <article><span>{% trans "Payment" %}</span><strong class="{% if booking.paid %}text-success{% else %}text-warning{% endif %}">{% if booking.paid %}{% trans "Paid" %} · USD {{ booking.paid_amount|default:0 }}{% else %}{% trans "Payment required" %}{% endif %}</strong></article>
+  <article><span>{% trans "Documents" %}</span><strong class="{% if requirement or pre_arrival %}text-success{% else %}text-warning{% endif %}">{% if requirement or pre_arrival %}{% trans "Submitted" %}{% else %}{% trans "Missing" %}{% endif %}</strong></article>
+  <article><span>{% trans "Pickup" %}</span><strong class="{% if pickup %}text-success{% else %}text-warning{% endif %}">{% if pickup %}{{ pickup.get_status_display }}{% else %}{% trans "Not scheduled" %}{% endif %}</strong></article>
+  <article><span>{% trans "Welcome package" %}</span><strong>{% if package %}{% trans "Prepared in workspace" %}{% else %}{% trans "Not started" %}{% endif %}</strong></article>
+</section>
+
+<div class="ops-grid ops-grid--detail">
+  <div class="ops-detail-main">
+    <section class="ops-card">
+      <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Customer" %}</span><h2>{% trans "Booking details" %}</h2></div><span class="ops-card__hint">{% trans "Editable by operations" %}</span></div>
+      <form class="ops-form" method="post" action="{% url 'tour:operations:booking_update_details' booking.id %}">
+        {% csrf_token %}
+        <div class="ops-form-grid">
+          {% for field in details_form %}
+            <div class="ops-field {% if field.name == 'notes' %}ops-field--wide{% endif %}"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>
+          {% endfor %}
+        </div>
+        <div class="ops-form-actions"><button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save details" %}</button></div>
+      </form>
+    </section>
+
+    <section class="ops-card">
+      <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Readiness" %}</span><h2>{% trans "Travel documents" %}</h2></div><a href="{% url 'tour:operations:document_queue' %}">{% trans "Document queue" %}</a></div>
+      {% if requirement %}
+        <div class="ops-document-grid">
+          <article><span>{% trans "Visa status" %}</span><strong>{{ requirement.get_visa_status_display }}</strong></article>
+          <article><span>{% trans "Travel dates" %}</span><strong>{{ requirement.travel_start_date|default:"—" }} – {{ requirement.travel_end_date|default:"—" }}</strong></article>
+          <article><span>{% trans "Emergency contact" %}</span><strong>{{ requirement.emergency_contact_name|default:"—" }}</strong><small>{{ requirement.emergency_contact_phone }}</small></article>
+          <article><span>{% trans "Medical information" %}</span><strong>{% if requirement.has_medical_conditions %}{% trans "Declared" %}{% else %}{% trans "None declared" %}{% endif %}</strong></article>
+        </div>
+        <div class="ops-file-list">
+          {% if requirement.passport_copy %}<a href="{{ requirement.passport_copy.url }}" target="_blank"><i class="ti ti-file-description"></i>{% trans "Passport copy" %}</a>{% endif %}
+          {% if requirement.visa_copy %}<a href="{{ requirement.visa_copy.url }}" target="_blank"><i class="ti ti-file-description"></i>{% trans "Visa copy" %}</a>{% endif %}
+          {% if requirement.insurance_copy %}<a href="{{ requirement.insurance_copy.url }}" target="_blank"><i class="ti ti-file-description"></i>{% trans "Insurance" %}</a>{% endif %}
+          {% if requirement.invitation_letter %}<a href="{{ requirement.invitation_letter.url }}" target="_blank"><i class="ti ti-file-description"></i>{% trans "Invitation letter" %}</a>{% endif %}
+        </div>
+      {% elif pre_arrival %}
+        <div class="ops-document-grid">
+          <article><span>{% trans "Entry point" %}</span><strong>{{ pre_arrival.get_entry_point_display }}</strong></article>
+          <article><span>{% trans "Flight" %}</span><strong>{{ pre_arrival.airline_name|default:"—" }} {{ pre_arrival.flight_number }}</strong></article>
+          <article><span>{% trans "Arrival" %}</span><strong>{{ pre_arrival.flight_date }} · {{ pre_arrival.flight_time }}</strong></article>
+          <article><span>{% trans "Emergency contact" %}</span><strong>{{ pre_arrival.emergency_contact_name }}</strong><small>{{ pre_arrival.emergency_contact_phone }}</small></article>
+        </div>
+        <div class="ops-file-list">
+          <a href="{{ pre_arrival.passport_copy.url }}" target="_blank"><i class="ti ti-file-description"></i>{% trans "Passport copy" %}</a>
+          {% if pre_arrival.visa_copy %}<a href="{{ pre_arrival.visa_copy.url }}" target="_blank"><i class="ti ti-file-description"></i>{% trans "Visa copy" %}</a>{% endif %}
+          <a href="{{ pre_arrival.flight_ticket.url }}" target="_blank"><i class="ti ti-ticket"></i>{% trans "Flight ticket" %}</a>
+        </div>
+      {% else %}
+        <div class="ops-empty"><i class="ti ti-file-alert"></i><strong>{% trans "No pre-arrival documents submitted" %}</strong><span>{% trans "The customer will see this as an action item in their dashboard." %}</span></div>
+      {% endif %}
+    </section>
+
+    <section class="ops-card">
+      <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Audit" %}</span><h2>{% trans "Activity timeline" %}</h2></div></div>
+      <div class="ops-timeline">
+        {% for log in logs %}
+          <article><span class="ops-timeline__dot"></span><div><strong>{{ log.user.get_full_name|default:log.user.username }}</strong><p>{{ log.change_message }}</p><small>{{ log.action_time|date:"d M Y, H:i" }}</small></div></article>
+        {% empty %}
+          <div class="ops-empty ops-empty--compact"><span>{% trans "No operational changes have been logged yet." %}</span></div>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+  <aside class="ops-detail-side">
+    <section class="ops-card ops-card--padded">
+      <span class="ops-eyebrow">{% trans "Workflow" %}</span><h2>{% trans "Move booking" %}</h2>
+      {% if allowed_statuses %}
+        <form class="ops-form ops-form--stack" method="post" action="{% url 'tour:operations:booking_update_status' booking.id %}">
+          {% csrf_token %}
+          {% for field in status_form %}<div class="ops-field"><label>{{ field.label }}</label>{{ field }}<small>{{ field.help_text }}</small>{{ field.errors }}</div>{% endfor %}
+          <button class="ops-btn ops-btn--primary ops-btn--full" type="submit"><i class="ti ti-transition-right"></i>{% trans "Update stage" %}</button>
+        </form>
+      {% else %}
+        <div class="ops-notice"><i class="ti ti-lock"></i><span>{% trans "This booking has reached the final workflow stage." %}</span></div>
+      {% endif %}
+      {% if not booking.paid %}<div class="ops-notice ops-notice--warning"><i class="ti ti-alert-triangle"></i><span>{% trans "Operational stages are blocked until payment is confirmed." %}</span></div>{% endif %}
+    </section>
+
+    <section class="ops-card ops-card--padded">
+      <span class="ops-eyebrow">{% trans "Operations" %}</span><h2>{% trans "Trip preparation" %}</h2>
+      <div class="ops-quicklinks">
+        <a href="{% url 'tour:operations:booking_pickup' booking.id %}"><span><i class="ti ti-car"></i></span><div><strong>{% trans "Pickup plan" %}</strong><small>{% if pickup %}{{ pickup.get_status_display }}{% else %}{% trans "Schedule crew and vehicle" %}{% endif %}</small></div><i class="ti ti-chevron-right"></i></a>
+        <a href="{% url 'tour:operations:booking_welcome_package' booking.id %}"><span><i class="ti ti-gift"></i></span><div><strong>{% trans "Welcome package" %}</strong><small>{% if package %}{% trans "Edit package" %}{% else %}{% trans "Prepare items" %}{% endif %}</small></div><i class="ti ti-chevron-right"></i></a>
+        {% if booking.tour %}<a href="{% url 'tour:operations:tour_detail' booking.tour.id %}"><span><i class="ti ti-users-group"></i></span><div><strong>{% trans "Crew assignments" %}</strong><small>{% trans "Guide, translator and security" %}</small></div><i class="ti ti-chevron-right"></i></a>{% endif %}
+      </div>
+    </section>
+
+    <section class="ops-card ops-card--padded">
+      <span class="ops-eyebrow">{% trans "Finance" %}</span><h2>{% trans "Payment record" %}</h2>
+      <div class="ops-payment-total"><span>{% trans "Quoted amount" %}</span><strong>USD {{ booking.paid_amount|default:0 }}</strong></div>
+      {% if booking.paid %}
+        <div class="ops-notice ops-notice--success"><i class="ti ti-circle-check"></i><span>{% trans "Payment is confirmed." %}</span></div>
+      {% elif can_record_payment %}
+        <details class="ops-disclosure"><summary>{% trans "Record an offline payment" %}</summary>
+          <form class="ops-form ops-form--stack" method="post" action="{% url 'tour:operations:booking_record_payment' booking.id %}">{% csrf_token %}{% for field in payment_form %}<div class="ops-field"><label>{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}<button class="ops-btn ops-btn--secondary ops-btn--full" type="submit">{% trans "Record and audit payment" %}</button></form>
+        </details>
+      {% else %}
+        <div class="ops-notice ops-notice--warning"><i class="ti ti-lock"></i><span>{% trans "Only a moderator or system administrator can record offline payments." %}</span></div>
+      {% endif %}
+    </section>
+  </aside>
+</div>
+{% endblock %}

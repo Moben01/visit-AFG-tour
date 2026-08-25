@@ -1,0 +1,8 @@
+{% load i18n %}
+{% if page_obj.has_other_pages %}
+<nav class="ops-pagination" aria-label="{% trans 'Pagination' %}">
+  {% if page_obj.has_previous %}<a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}"><i class="ti ti-chevron-left"></i>{% trans "Previous" %}</a>{% endif %}
+  <span>{% blocktrans with current=page_obj.number total=page_obj.paginator.num_pages %}Page {{ current }} of {{ total }}{% endblocktrans %}</span>
+  {% if page_obj.has_next %}<a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">{% trans "Next" %}<i class="ti ti-chevron-right"></i></a>{% endif %}
+</nav>
+{% endif %}

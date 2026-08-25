@@ -1,498 +1,148 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
+
+{% block title %}{% trans "Book" %} {{ find_tour.title }} | AfghanAwaits{% endblock %}
+
 {% block content %}
-
-<!-- Breadcrumb -->
-<div class="breadcrumb-bar breadcrumb-bg-02 text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-12">
-                <h2 class="breadcrumb-title mb-2">Tour Booking</h2>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center mb-0">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="isax isax-home5"></i></a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Tour Booking</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
+<link rel="stylesheet" href="{% static 'css/customer-dashboard.css' %}">
+<main class="booking-page">
+  <section class="booking-hero">
+    <div class="customer-shell">
+      <a class="booking-back" href="{% url 'tour:tour_details' find_tour.slug %}"><i class="ti ti-arrow-left"></i>{% trans "Back to tour" %}</a>
+      <span class="eyebrow">{% trans "Secure booking" %}</span>
+      <h1>{% trans "Book your journey" %}</h1>
+      <p>{{ find_tour.title }} · {{ find_tour.location }}</p>
     </div>
-</div>
-<!-- /Breadcrumb -->
+  </section>
 
-<!-- Page Wrapper -->
-<div class="content content-two">
-    <div class="container">
-        <div class="row">
+  <div class="customer-shell booking-layout">
+    <form class="booking-form" method="post" novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}
+        <div class="customer-alert customer-alert--error">{{ form.non_field_errors }}</div>
+      {% endif %}
 
-
-            <div class="row">
-
-                <!-- Checkout -->
-                <div class="col-lg-12">
-                    <div class="card checkout-card">
-                        <div class="card-header">
-                            <h5>Secure Checkout</h5>
-                        </div>
-                        <div class="card-body">
-                            <div>
-
-                                <div class="checkout-details">
-                                <!-- Itinerary -->
-<div class="bg-light-200 card-bg-light position-relative mb-4">
-    <h5 class="fs-18 mb-3">
-        Itinerary
-        <small class="text-muted d-block mt-2">
-            Tip: To customize your itinerary, click the <i class="bi bi-pencil-square text-primary"></i> icon at the top right of the itinerary you’d like to edit.
-            <br>
-            Apply your favorite hotel to all itinerary.
-            <a href="#" data-bs-toggle="modal" data-bs-target="#accommodationModal"
-               class="ms-2 text-decoration-none" title="Take This Hotel For All Of Them">
-                <!-- house svg -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3l10 9h-3v9h-5v-6H10v6H5v-9H2z"/></svg>
-            </a>
-        </small>
-    </h5>
-
-    <div class="card shadow-none">
-        <div class="card-body p-3">
-            <div class="stage-flow">
-                {% for i in get_interary %}
-                <div class="position-relative mb-4 p-3 border rounded bg-white">
-                    
-                    <!-- Edit icon -->
-                    <a href="{% url 'tour:edit_itinerary' i.id user.id %}" 
-                    class="position-absolute bottom-0 end-0 p-3 text-decoration-none"
-                    title="Customize your itinerary">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                         fill="currentColor" class="text-primary">
-                         <path d="M15.5 2a2.5 2.5 0 0 1 1.77 4.27l-8.4 8.4-3.37.67.67-3.37 8.4-8.4A2.5 2.5 0 0 1 15.5 2z"/>
-                     </svg>
-                 </a>
-                 
-
-                    <!-- Itinerary Content -->
-                    <div class="d-flex align-items-start">
-                        <span class="flow-step me-3">{{ i.day_number }}</span>
-                        <div class="flex-grow-1">
-                            <div class="d-flex flex-wrap align-items-center justify-content-between mb-2">
-                                <h6 class="fw-medium mb-1">
-                                    Day {{ i.day_number }}, {{ i.title }}
-                                </h6>
-                                <div class="d-flex align-items-center gap-2">
-                                    {% if i.image %}
-                                    <span class="avatar avatar-lg avatar-rounded">
-                                        <img src="{{ i.image.url }}" alt="Img" class="img-fluid rounded">
-                                    </span>
-                                    {% endif %}
-                                    {% if i.is_customized %}
-                                    <a href="{% url 'tour:edit_itinerary' i.id user.id %}">
-                                    <span class="badge bg-primary">Customized</span></a>
-                                    {% endif %}
-                                </div>
-                            </div>
-
-                            <p class="text-muted small">{{ i.description }}</p>
-
-                            <!-- Details row -->
-                            <div class="row g-3 mt-2">
-                                <!-- Accommodation -->
-                                <div class="col-12 col-md-6 d-flex align-items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                         viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 3l10 9h-3v9h-5v-6H10v6H5v-9H2z"/>
-                                    </svg>
-                                    <span>{{ i.accommodation }}</span>
-                                </div>
-
-                                <!-- Transport -->
-                                <div class="col-12 col-md-6 d-flex align-items-center gap-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                         viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M15.97 13.83A5.9 5.9 0 0 0 13.82 16l-2.27-4.37l-3.89 3.87L8 18l-1.05 1.06l-1.77-3.19L2 14.11l1.06-1.06l2.48.35l3.89-3.9L2 5.62l1.41-1.41l9.2 2.12l3.89-3.89a1.49 1.49 0 0 1 2.12 0c.58.59.58 1.56 0 2.12l-3.89 3.89zm5.37 2.01l-3.59 3.59l-1.59-1.59L15 19l2.75 3l4.75-4.75z"/>
-                                    </svg>
-                                    <span>{{ i.transport }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
+      <section class="customer-card booking-section">
+        <div class="booking-section__title">
+          <span>1</span><div><h2>{% trans "Traveller details" %}</h2><p>{% trans "Tell us who is travelling and how we can reach you." %}</p></div>
         </div>
-    </div>
-</div>
-
-                                    <section class="section benifit-section bg-light-200">
-                                        <div class="container">
-                                            <div
-                                                class="section-header d-flex align-items-center justify-content-between flex-wrap row-gap-3">
-                                                <div>
-                                                    <h6>
-                                                        <p class="text-muted mb-0 mt-0 my-0">
-                                                            <i class="isax isax-setting-2 me-1"></i>
-                                                            Customize your tour details: tickets, security guide & translator.
-                                                        </p>
-                                                    </h6>
-                                                </div>
-                                            </div>
-
-                                                    <hr class="w-100 bg-black"/>
-                                              
-                                                      
-                                                    <div class="place-content pb-1">
-                                                        <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                                            <div class="overflow-hidden">
-                                                              <h6 class="mb-2 d-inline-flex align-items-center text-truncate">
-                                                                <a href="flight-details.html">Translators (Optional)</a>
-                                                              </h6>
-                                                            </div>
-                                                          </div>
-                                                          
-                                                          <div class="card-body p-0">                                                                 
-                                                            <div class="accordion accordion-list">
-                                                                <div class="accordion-item border-bottom p-3">
-                                                                    <div class="accordion-header">
-                                                                        <div class="accordion-button p-0" data-bs-toggle="collapse" data-bs-target="#accordion-populars" aria-expanded="true" aria-controls="accordion-populars" role="button">
-                                                                            <i class="isax isax-ranking me-2 text-primary"></i>Popular Languages
-                                                                        </div>
-                                                                    </div>
-                                                                    <div id="accordion-populars" class="accordion-collapse collapse show">
-                                                                        <div class="accordion-body pt-2 d-flex flex-wrap">
-                                                                            {% for lang in languages_ %}
-                                                                          <div class="form-checkbox form-check form-check-inline d-inline-flex align-items-center mt-2 me-2">
-                                                                            <input class="form-check-input ms-0 mt-0" name="language[]" type="checkbox" value="{{lang.code}}">
-                                                                            <label class="form-check-label ms-2" for="lang1">{{lang.name}}</label>
-                                                                          </div>
-                                                                            {% endfor %}
-                                                                        </div>
-                                                                      </div>                                                                              
-                                                                </div>
-                                                            </div>
-                                                    </div>
-                                          
-                                                    </div>
-
-                                                    <hr class="w-100 bg-black"/>
-                                                      
-                                                    <div class="place-content pb-1">
-                                                        <div class="d-flex align-items-center justify-content-between flex-wrap">
-                                                            <div class="overflow-hidden">
-                                                              <h6 class="mb-2 d-inline-flex align-items-center text-truncate">
-                                                                <a href="flight-details.html">Security Guard (Optional)</a>
-                                                              </h6>
-                                                            </div>
-                                                          </div>
-                                                          
-                                                          <div class="d-flex align-items-center flex-wrap">
-                                                            <p class="me-3 mb-3 d-inline-flex align-items-center">
-                                                              <i class="isax isax-tick-circle5 text-success me-1"></i>Personal Safety & Protection
-                                                            </p>
-                                                            <p class="mb-3 d-inline-flex align-items-center">
-                                                              <i class="isax isax-tick-circle5 text-success me-1"></i>Assistance in Emergencies
-                                                            </p>
-                                                          </div>                                                          
-                                                        <div class="d-flex align-items-center flex-wrap">
-                                                            <div class="btn btn-primary btn-md">
-                                                                <div class="form-check d-flex align-items-center ps-0">
-                                                                    <input class="form-check-input ms-0 mt-0 border border-white" name="security" type="checkbox" id="book1" checked="">
-                                                                    <label class="form-check-label fs-13 text-white ms-2" for="book1">Select</label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                          
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary mt-3">Save Selected Accommodation</button>
-                                                </form>
-                                                
-                                                <div class="owl-dots disabled"></div>
-                                          
-                                        </div>
-                                    </section>
-                                    <!-- /Itinerary -->
-
-
-                                </div>
-                            </div>
-
-
-                            <div id="total_price_container" class="d-flex align-items-center justify-content-end flex-wrap gap-2 mt-3">
-                                <a href="{% url 'tour:payment' %}" class="btn btn-primary d-inline-flex align-items-center justify-content-center px-4 py-2" id="total_price">
-                                    Confirm & Pay {% if total_price %}${{ total_price }}{% else %}--{% endif %}
-                                </a>
-
-                                <span id="spinner" class="loader"></span>
-                                <style>.loader { display: none; /* hide initially */ width: 24px; height: 24px; border: 3px solid #FFF; border-bottom-color: transparent; border-radius: 50%; box-sizing: border-box; animation: rotation 1s linear infinite; margin-left: 8px;}@keyframes rotation { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }} </style>
-                                <script>
-                                    const spinner = document.getElementById('spinner');
-                                  
-                                    // Show spinner when HTMX request starts
-                                    document.body.addEventListener('htmx:configRequest', function () {
-                                      spinner.style.display = 'inline-block';
-                                    });
-                                  
-                                    // Hide spinner when HTMX request completes
-                                    document.body.addEventListener('htmx:afterRequest', function () {
-                                      spinner.style.display = 'none';
-                                    });
-                                  </script>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- /Checkout -->
-
-
-            </div>
-            <!-- /Review Order Details -->
-        </div>
-    </div>
-    <!-- /Page Wrapper -->
-
-    <div class="modal fade" id="accommodationModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Accommodations</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card-body">
-                    
-                    <div class="place-slider owl-carousel owl-loaded owl-drag">
-                        <form method="post" action="{% url 'tour:tour_booking' slug=find_tour.slug %}">
-                            {% csrf_token %}
-                            <h6 class="mb-4">Select your favorite accommodation to all itinerary</h6>
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage"
-                                    style="transform: translate3d(-330px, 0px, 0px); transition: 2s; width: 1650px;">
-                                    {% for acc in accommodation %}
-                                    <div class="owl-item" style="width: 220px; margin-right: 16px;">
-                                        <div class="place-item mb-3 flex-fill">
-                                            <div class="place-img">
-                                                <div class="slide-images">
-                                                    <a href="#" 
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#accommodationModal1"
-                                                    data-name="{{ acc.name }}"
-                                                    data-type="{{ acc.get_type_display }}"
-                                                    data-location="{{ acc.location }}"
-                                                    data-address="{{ acc.address }}"
-                                                    data-phone="{{ acc.phone }}"
-                                                    data-email="{{ acc.email }}"
-                                                    data-website="{{ acc.website }}"
-                                                    data-rating="{{ acc.rating }}"
-                                                    data-price="{{ acc.price_per_night }}"
-                                                    data-image="{{ acc.image.url }}"
-                                                    data-images="{% for img in acc.images.all %}{{ img.image.url }},{% endfor %}">
-                                                        <img src="{{ acc.image.url }}" class="img-fluid w-100 rounded" style="height: 160px; object-fit: cover;" alt="{{ acc.name }}">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="place-content pt-2">
-                                                <h6 class="mb-1 text-truncate" style="font-size: 15px;">
-                                                    <a href="#" 
-                                                    data-bs-toggle="modal" 
-                                                    data-bs-target="#accommodationModal1"
-                                                    data-name="{{ acc.name }}"
-                                                    data-type="{{ acc.get_type_display }}"
-                                                    data-location="{{ acc.location }}"
-                                                    data-address="{{ acc.address }}"
-                                                    data-phone="{{ acc.phone }}"
-                                                    data-email="{{ acc.email }}"
-                                                    data-website="{{ acc.website }}"
-                                                    data-rating="{{ acc.rating }}"
-                                                    data-price="{{ acc.price_per_night }}"
-                                                    data-image="{{ acc.image.url }}"
-                                                    data-images="{% for img in acc.images.all %}{{ img.image.url }},{% endfor %}"
-                                                    ><span style="color: goldenrod;">{{ acc.name }}</span> | {{ acc.location }}</a>
-                                                </h6>
-                                                <div class="border-top pt-2 mb-2">
-                                                    <h6 class="d-flex align-items-center">
-                                                        Rating:
-                                                        {% if acc.rating == 1 %}
-                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                        {% elif acc.rating == 2 %}
-                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                        {% elif acc.rating == 3 %}
-                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                        {% elif acc.rating == 4 %}
-                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                        {% elif acc.rating == 5 %}
-                                                            <i class="isax isax-star-1 text-warning ms-2 me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                            <i class="isax isax-star-1 text-warning me-1"></i>
-                                                        {% else %}
-                                                            <span class="text-muted ms-2">No rating</span>
-                                                        {% endif %}
-                                                    </h6>
-                                                </div>
-                                                <div class="d-flex align-items-center justify-content-between border-top pt-2">
-                                                    <h6 class="text-primary text-nowrap me-2 mb-0" style="font-size: 15px;">
-                                                        {{ acc.price_per_night }} <span class="fs-12 fw-normal text-default">/ Night</span>
-                                                    </h6>
-                                                    <div class="form-check mb-0">
-                                                        <input class="form-check-input" type="radio" 
-                                                        name="selected_accommodations" 
-                                                        id="acc{{ acc.id }}" 
-                                                        value="{{ acc.id }}"
-                                                        {% if acc.id == selected_accommodation.id %}checked{% endif %}
-                                                        style="transform: scale(1.5); margin-right: 5px;">
-                                                    <label class="form-check-label" for="acc{{ acc.id }}">
-                                                        Select
-                                                    </label>
-                                                </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                            </div>
-                            <div class="text-end mt-4">
-                                <button type="submit" class="btn btn-success px-4">
-                                    Save Changes
-                                </button>
-                                <a href="" class="btn btn-secondary px-4">
-                                    Cancel
-                                </a>
-                            </div>
-                            </form>
-                            </div>
-                            </div>
-            </div>
+        <div class="form-grid">
+          <div class="form-field form-field--wide">
+            <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+            {{ form.name }}{{ form.name.errors }}
+          </div>
+          <div class="form-field">
+            <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+            {{ form.email }}{{ form.email.errors }}
+          </div>
+          <div class="form-field">
+            <label for="{{ form.phone.id_for_label }}">{{ form.phone.label }}</label>
+            {{ form.phone }}{{ form.phone.errors }}
+          </div>
+          <div class="form-field">
+            <label for="{{ form.booking_date.id_for_label }}">{{ form.booking_date.label }}</label>
+            {{ form.booking_date }}{{ form.booking_date.errors }}
+          </div>
+          <div class="traveller-counts">
+            <div class="form-field"><label for="{{ form.adults.id_for_label }}">{{ form.adults.label }}</label>{{ form.adults }}{{ form.adults.errors }}</div>
+            <div class="form-field"><label for="{{ form.children.id_for_label }}">{{ form.children.label }}</label>{{ form.children }}{{ form.children.errors }}</div>
           </div>
         </div>
-      </div>
-      <style>
-          .modal-main-image {
-            width: 100%;
-            height: 320px; /* or whatever fits your layout */
-            object-fit: cover;
-            border-radius: 10px;
-            }
-      </style>
+      </section>
 
-          <!-- Accommodation Modal With Their Scrpit -->
-    <div class="modal fade" id="accommodationModal1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="accModalTitle">Accommodation Details</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-              <div class="row gy-4">
-                <div class="col-md-5">
-                    <img id="accModalMainImage" src="" class="modal-main-image" alt="">
-                </div>
-                <div class="col-md-7">
-                  <h5 id="accModalName"></h5>
-                  <p><strong>Type:</strong> <span id="accModalType"></span></p>
-                  <p><strong>Location:</strong> <span id="accModalLocation"></span></p>
-                  <p><strong>Address:</strong> <span id="accModalAddress"></span></p>
-                  <p><strong>Phone:</strong> <span id="accModalPhone"></span></p>
-                  <p><strong>Email:</strong> <span id="accModalEmail"></span></p>
-                  <p><strong>Website:</strong> <a href="#" id="accModalWebsite" target="_blank"></a></p>
-                  <p><strong>Price / Night:</strong> $<span id="accModalPrice"></span></p>
-                  <p><strong>Rating:</strong> <span id="accModalRatingStars"></span></p>
-                </div>
-                <div class="col-12">
-                  <h6 class="mb-2">Gallery</h6>
-                  <div class="d-flex flex-wrap gap-2" id="accModalGallery"></div>
-                  
-                </div>
-              </div>
-            </div>
+      <section class="customer-card booking-section">
+        <div class="booking-section__title">
+          <span>2</span><div><h2>{% trans "Accommodation" %}</h2><p>{% trans "Choose one option for your itinerary, or keep the standard arrangement." %}</p></div>
+        </div>
+        <div class="service-options">
+          <label class="service-option">
+            <input type="radio" name="selected_accommodations" value="" checked>
+            <span class="service-option__mark"><i class="ti ti-check"></i></span>
+            <span><strong>{% trans "Standard arrangement" %}</strong><small>{% trans "No accommodation upgrade" %}</small></span>
+            <b>USD 0</b>
+          </label>
+          {% for stay in accommodation %}
+            <label class="service-option">
+              <input type="radio" name="selected_accommodations" value="{{ stay.id }}" {% if request.POST.selected_accommodations == stay.id|stringformat:"s" %}checked{% endif %}>
+              <span class="service-option__mark"><i class="ti ti-check"></i></span>
+              <span><strong>{{ stay.name }}</strong><small>{{ stay.get_type_display }} · {{ stay.location }}</small></span>
+              <b>USD {{ stay.total_price|floatformat:0 }}</b>
+            </label>
+          {% empty %}
+            <p class="muted">{% trans "No accommodation upgrades are currently available." %}</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="customer-card booking-section">
+        <div class="booking-section__title">
+          <span>3</span><div><h2>{% trans "Language and security" %}</h2><p>{% trans "Add only the services your group needs." %}</p></div>
+        </div>
+        <div class="service-options">
+          {% for language in languages_ %}
+            <label class="service-option">
+              <input type="checkbox" name="languages" value="{{ language.code }}" {% if language.code in selected_language_codes %}checked{% endif %}>
+              <span class="service-option__mark"><i class="ti ti-check"></i></span>
+              <span><strong>{{ language.name }}</strong><small>{% trans "Translation service" %}</small></span>
+              <b>USD {{ language.total_price|floatformat:0 }}</b>
+            </label>
+          {% empty %}
+            <p class="muted">{% trans "No translation services are currently listed." %}</p>
+          {% endfor %}
+          <label class="service-option service-option--featured">
+            <input type="checkbox" name="security" {% if request.POST.security %}checked{% endif %}>
+            <span class="service-option__mark"><i class="ti ti-check"></i></span>
+            <span><strong>{% trans "Verified security support" %}</strong><small>{% trans "We assign an approved, available guard matching your language selection." %}</small></span>
+            <i class="ti ti-shield-check service-shield"></i>
+          </label>
+        </div>
+      </section>
+
+      <section class="customer-card booking-section">
+        <div class="booking-section__title">
+          <span>4</span><div><h2>{% trans "Notes and confirmation" %}</h2><p>{% trans "Share dietary, accessibility or other important requirements." %}</p></div>
+        </div>
+        <div class="form-field">
+          <label for="{{ form.notes.id_for_label }}">{{ form.notes.label }}</label>
+          {{ form.notes }}{{ form.notes.errors }}
+        </div>
+        <label class="booking-consent">
+          <input type="checkbox" required>
+          <span>{% trans "I confirm that the traveller information is correct and understand that the booking is confirmed after payment." %}</span>
+        </label>
+        <button class="customer-btn customer-btn--primary customer-btn--full" type="submit">
+          {% trans "Create booking and continue to payment" %}<i class="ti ti-arrow-right"></i>
+        </button>
+      </section>
+    </form>
+
+    <aside class="booking-summary">
+      <div class="customer-card booking-summary__card">
+        {% if find_tour.image %}<img src="{{ find_tour.image.url }}" alt="{{ find_tour.title }}">{% endif %}
+        <div class="booking-summary__body">
+          <span class="eyebrow">{% trans "Booking summary" %}</span>
+          <h2>{{ find_tour.title }}</h2>
+          <div class="trip-meta trip-meta--stack">
+            <span><i class="ti ti-map-pin"></i>{{ find_tour.location }}</span>
+            <span><i class="ti ti-calendar"></i>{{ find_tour.start_date|date:"d M Y" }} – {{ find_tour.end_date|date:"d M Y" }}</span>
+            <span><i class="ti ti-moon"></i>{{ find_tour.duration_day }} {% trans "days" %} / {{ find_tour.duration_night }} {% trans "nights" %}</span>
           </div>
+          <div class="summary-price"><span>{% trans "Base price per traveller" %}</span><strong>USD {{ find_tour.price }}</strong></div>
+          <p class="summary-note"><i class="ti ti-info-circle"></i>{% trans "The final total is calculated securely on the server using travellers and selected services." %}</p>
         </div>
       </div>
-      <style>
-          .modal-main-image {
-            width: 100%;
-            height: 320px; /* or whatever fits your layout */
-            object-fit: cover;
-            border-radius: 10px;
-            }
-      </style>
-      <script>
-        document.getElementById('accommodationModal1').addEventListener('show.bs.modal', function (event) {
-            const trigger = event.relatedTarget;
-        
-            // Get data attributes
-            const name = trigger.getAttribute('data-name');
-            const type = trigger.getAttribute('data-type');
-            const location = trigger.getAttribute('data-location');
-            const address = trigger.getAttribute('data-address');
-            const phone = trigger.getAttribute('data-phone');
-            const email = trigger.getAttribute('data-email');
-            const website = trigger.getAttribute('data-website');
-            const price = trigger.getAttribute('data-price');
-            const rating = parseFloat(trigger.getAttribute('data-rating') || '0');
-            const mainImage = trigger.getAttribute('data-image');
-            const imageList = trigger.getAttribute('data-images') || '';
-        
-            // Fill fields
-            document.getElementById('accModalTitle').textContent = name;
-            document.getElementById('accModalName').textContent = name;
-            document.getElementById('accModalType').textContent = type;
-            document.getElementById('accModalLocation').textContent = location;
-            document.getElementById('accModalAddress').textContent = address;
-            document.getElementById('accModalPhone').textContent = phone || 'N/A';
-            document.getElementById('accModalEmail').textContent = email || 'N/A';
-            document.getElementById('accModalWebsite').textContent = website || 'N/A';
-            document.getElementById('accModalWebsite').href = website || '#';
-            document.getElementById('accModalPrice').textContent = price;
-        
-            // Main image
-            document.getElementById('accModalMainImage').src = mainImage;
-        
-            // Rating stars
-            const starsContainer = document.getElementById('accModalRatingStars');
-            starsContainer.innerHTML = '';
-            for (let i = 1; i <= 5; i++) {
-                const star = document.createElement('i');
-                star.className = 'isax isax-star-1 me-1';
-                star.classList.add(i <= rating ? 'text-warning' : 'text-secondary');
-                starsContainer.appendChild(star);
-            }
-        
-            // Gallery images
-            const gallery = document.getElementById('accModalGallery');
-            gallery.innerHTML = '';
-            imageList.split(',').forEach(item => {
-            const [url, caption] = item.split('||'); // Split URL and caption if exists
-            if (url.trim()) {
-                const img = document.createElement('img');
-                img.src = url.trim();
-                img.className = 'rounded cursor-pointer';
-                img.style = 'width: 80px; height: 60px; object-fit: cover;';
-                img.setAttribute('data-full', url.trim());
-                img.setAttribute('data-caption', caption || '');
-                
-                // Click: replace main image
-                img.addEventListener('click', function () {
-                    document.getElementById('accModalMainImage').src = this.getAttribute('data-full');
 
-                    const captionText = this.getAttribute('data-caption');
-                    const captionElem = document.getElementById('accModalMainCaption');
-                    if (captionElem) captionElem.textContent = captionText || '';
-                });
-
-                gallery.appendChild(img);
-            }
-        });
-
-        });
-        </script>
-        
-    {% endblock %}
+      {% if get_interary %}
+        <div class="customer-card booking-summary__card booking-itinerary">
+          <div class="booking-summary__body">
+            <h3>{% trans "Itinerary preview" %}</h3>
+            {% for item in get_interary %}
+              <div class="itinerary-line"><span>{{ item.day_number|default:forloop.counter }}</span><div><strong>{{ item.title }}</strong><small>{{ item.date|date:"d M" }}</small></div></div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </aside>
+  </div>
+</main>
+{% endblock %}

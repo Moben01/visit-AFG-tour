@@ -1,0 +1,18 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Tour operations" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead"><div><span class="ops-eyebrow">{% trans "Departures" %}</span><h1>{% trans "Tour operations" %}</h1><p>{% trans "Manage availability, schedules, manifests and crew assignments." %}</p></div></section>
+<section class="ops-card ops-filter-card"><form class="ops-filters ops-filters--compact" method="get"><div class="ops-field ops-field--search"><label>{% trans "Search" %}</label><div><i class="ti ti-search"></i><input name="q" value="{{ query }}" placeholder="{% trans 'Tour or location' %}"></div></div><div class="ops-field"><label>{% trans "Availability" %}</label><select name="availability"><option value="">{% trans "All" %}</option><option value="available" {% if availability == 'available' %}selected{% endif %}>{% trans "Open" %}</option><option value="closed" {% if availability == 'closed' %}selected{% endif %}>{% trans "Closed" %}</option></select></div><button class="ops-btn ops-btn--primary" type="submit">{% trans "Apply" %}</button><a class="ops-btn ops-btn--ghost" href="{% url 'tour:operations:tour_list' %}">{% trans "Reset" %}</a></form></section>
+<section class="ops-tour-grid">
+  {% for tour in tours %}
+    <article class="ops-tour-card">
+      <div class="ops-tour-card__image">{% if tour.image %}<img src="{{ tour.image.url }}" alt="{{ tour.title }}">{% else %}<i class="ti ti-photo"></i>{% endif %}<span class="ops-availability {% if tour.available %}is-open{% endif %}">{% if tour.available %}{% trans "Open" %}{% else %}{% trans "Closed" %}{% endif %}</span></div>
+      <div class="ops-tour-card__body"><span class="ops-eyebrow">{{ tour.start_date|date:"d M Y"|default:"Date not set" }}</span><h2>{{ tour.title }}</h2><p><i class="ti ti-map-pin"></i>{{ tour.location }}</p><div class="ops-tour-card__stats"><div><strong>{{ tour.booking_count }}</strong><span>{% trans "Bookings" %}</span></div><div><strong>{{ tour.paid_count }}</strong><span>{% trans "Paid" %}</span></div><div><strong>{{ tour.active_count }}</strong><span>{% trans "Active" %}</span></div></div><div class="ops-crew-line"><span><i class="ti ti-user-star"></i>{% if tour.tour_guide %}{{ tour.tour_guide.name }}{% else %}{% trans "Guide not assigned" %}{% endif %}</span></div><a class="ops-btn ops-btn--secondary ops-btn--full" href="{% url 'tour:operations:tour_detail' tour.id %}">{% trans "Open operations" %}<i class="ti ti-arrow-right"></i></a></div>
+    </article>
+  {% empty %}<div class="ops-card ops-empty"><i class="ti ti-route-off"></i><strong>{% trans "No tours found" %}</strong></div>{% endfor %}
+</section>
+{% include 'operations/partials/pagination.html' with page_obj=page_obj %}
+{% endblock %}

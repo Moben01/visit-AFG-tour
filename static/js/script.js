@@ -33,9 +33,9 @@ Template Name: DreamsTour - Bootstrap Template
   // Sticky Header
   $(window).scroll(function () {
     if ($(this).scrollTop() > 130) {
-      $("header").addClass("fixed");
+      $("header:not(.aa-site-header)").addClass("fixed");
     } else {
-      $("header").removeClass("fixed");
+      $("header:not(.aa-site-header)").removeClass("fixed");
     }
   });
 

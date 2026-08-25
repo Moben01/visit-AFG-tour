@@ -1,0 +1,36 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Pickup plan" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead">
+  <div><a class="ops-back" href="{% url 'tour:operations:booking_detail' booking.id %}"><i class="ti ti-arrow-left"></i>{% trans "Back to booking" %}</a><span class="ops-eyebrow">#AA-{{ booking.id|stringformat:"05d" }}</span><h1>{% trans "Pickup plan" %}</h1><p>{{ booking.name }} · {{ booking.tour.title }}</p></div>
+  {% if pickup %}<span class="ops-status ops-status--{{ pickup.status }}">{{ pickup.get_status_display }}</span>{% endif %}
+</section>
+
+<div class="ops-grid ops-grid--form">
+  <form class="ops-card ops-card--padded ops-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if form.non_field_errors %}<div class="ops-alert ops-alert--error">{{ form.non_field_errors }}</div>{% endif %}
+    <div class="ops-form-section"><span>1</span><div><h2>{% trans "Arrival and timing" %}</h2><p>{% trans "Where and when the team should meet the customer." %}</p></div></div>
+    <div class="ops-form-grid">
+      {% for field in form %}
+        {% if field.name == 'pickup_type' or field.name == 'entry_point_label' or field.name == 'entry_point_code' or field.name == 'scheduled_at' or field.name == 'window_minutes' %}
+          <div class="ops-field"><label>{{ field.label }}</label>{{ field }}<small>{{ field.help_text }}</small>{{ field.errors }}</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="ops-form-section"><span>2</span><div><h2>{% trans "Crew and vehicle" %}</h2><p>{% trans "Assign the people responsible for the pickup." %}</p></div></div>
+    <div class="ops-form-grid">
+      {% for field in form %}{% if field.name == 'driver' or field.name == 'operator' or field.name == 'vehicle' or field.name == 'driver_phone_share' or field.name == 'operator_phone_share' or field.name == 'tourist_phone_share' %}<div class="ops-field"><label>{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endif %}{% endfor %}
+    </div>
+    <div class="ops-form-section"><span>3</span><div><h2>{% trans "Meeting instructions" %}</h2><p>{% trans "Details visible to the customer and proof of completion." %}</p></div></div>
+    <div class="ops-form-grid">
+      {% for field in form %}{% if field.name == 'meeting_point' or field.name == 'meeting_note' or field.name == 'welcome_note' or field.name == 'visible_to_tourist' or field.name == 'status' or field.name == 'otp_code' or field.name == 'checkin_photo' or field.name == 'no_show_reason' %}<div class="ops-field {% if field.name == 'meeting_note' or field.name == 'no_show_reason' %}ops-field--wide{% endif %}"><label>{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endif %}{% endfor %}
+    </div>
+    <div class="ops-form-actions"><button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save pickup plan" %}</button></div>
+  </form>
+  <aside class="ops-card ops-card--padded ops-form-help"><span class="ops-kpi__icon"><i class="ti ti-shield-check"></i></span><h2>{% trans "Operational checklist" %}</h2><ul><li>{% trans "Confirm the arrival time against the ticket." %}</li><li>{% trans "Share only approved contact numbers." %}</li><li>{% trans "Check vehicle capacity for all travellers." %}</li><li>{% trans "Use the OTP or check-in photo as pickup proof." %}</li><li>{% trans "Hide the plan until crew details are complete." %}</li></ul></aside>
+</div>
+{% endblock %}

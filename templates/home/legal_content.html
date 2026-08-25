@@ -1,0 +1,26 @@
+{% load i18n %}
+<section class="aa-page-hero">
+    <div class="aa-container">
+        <span class="aa-eyebrow">{% trans "AfghanAwaits policies" %}</span>
+        <h1>{{ page_title }}</h1>
+        <p>{{ page_intro }}</p>
+    </div>
+</section>
+<section class="aa-section">
+    <div class="aa-container aa-legal-layout">
+        <nav class="aa-legal-nav" aria-label="{% trans 'Policy pages' %}">
+            <a href="{% url 'home:privacy' %}">{% trans "Privacy policy" %}</a>
+            <a href="{% url 'home:terms' %}">{% trans "Terms of use" %}</a>
+            <a href="{% url 'home:refund' %}">{% trans "Cancellation and refunds" %}</a>
+            <a href="{% url 'rules_of_conduct' %}">{% trans "Rules of conduct" %}</a>
+        </nav>
+        <article class="aa-legal-copy">
+            {% for section in sections %}
+            <section>
+                <h2>{{ section.title }}</h2>
+                {% for paragraph in section.paragraphs %}<p>{{ paragraph }}</p>{% endfor %}
+            </section>
+            {% endfor %}
+        </article>
+    </div>
+</section>

@@ -2784,6 +2784,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:236
 msgid "Connect, get help, or contribute"
+msgstr ""
+
 #: .\templates\states\Helmand_farsi.html:22
 msgid "گردشگری هلمند"
 msgstr ""
@@ -2831,32 +2833,8 @@ msgstr ""
 msgid "نمای کلی"
 msgstr ""
 
-#: .\templates\states\Helmand_farsi.html:81
-#: .\templates\states\kandahar_farsi.html:79
-msgid "بهترین زمان بازدید"
-msgstr ""
-
 #: .\templates\states\Helmand_farsi.html:86
 msgid "راه‌های رسیدن"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:91
-#: .\templates\states\kandahar_farsi.html:89
-msgid "مکان‌های دیدنی"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:96
-msgid "کارهایی برای انجام"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:101
-#: .\templates\states\kandahar_farsi.html:99
-msgid "پکیج‌ها"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:106
-#: .\templates\states\kandahar_farsi.html:104
-msgid "نقشه"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:126
@@ -3077,23 +3055,9 @@ msgstr ""
 msgid "اطلاعات سریع درباره هلمند"
 msgstr ""
 
-#: .\templates\states\Helmand_farsi.html:178
-#: .\templates\states\kandahar_farsi.html:169
-msgid "منطقه"
-msgstr ""
-
 #: .\templates\states\Helmand_farsi.html:179
 #: .\templates\states\kandahar_farsi.html:170
 msgid "جنوب افغانستان"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:182
-#: .\templates\states\kandahar_farsi.html:173
-msgid "مرکز ولایت"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:186
-msgid "مختصات"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:190
@@ -3103,11 +3067,6 @@ msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:191
 msgid "تقریباً ۱.۴ میلیون (برآورد ۲۰۲۱)"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:194
-#: .\templates\states\kandahar_farsi.html:185
-msgid "مساحت جغرافیایی"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:195
@@ -3129,11 +3088,6 @@ msgstr ""
 #: .\templates\states\Helmand_farsi.html:203
 #: .\templates\states\kandahar_farsi.html:194
 msgid "اسلام (عمدتاً سنی)"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:206
-#: .\templates\states\kandahar_farsi.html:197
-msgid "گروه‌های قومی"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:207
@@ -3181,19 +3135,9 @@ msgstr ""
 msgid "نخل"
 msgstr ""
 
-#: .\templates\states\Helmand_farsi.html:230
-#: .\templates\states\kandahar_farsi.html:221
-msgid "رقص سنتی"
-msgstr ""
-
 #: .\templates\states\Helmand_farsi.html:231
 #: .\templates\states\kandahar_farsi.html:222
 msgid "آتان (رقص سنتی پشتون)"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:234
-#: .\templates\states\kandahar_farsi.html:225
-msgid "ورزش‌های محبوب"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:235
@@ -3206,11 +3150,6 @@ msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:239
 msgid "قلاى بست، لشکرگاه، دره رودخانه هلمند"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:242
-#: .\templates\states\kandahar_farsi.html:233
-msgid "جاذبه‌های اصلی"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:243
@@ -3284,25 +3223,7 @@ msgid "فصل زمستان در هلمند"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:363
-#: .\templates\states\Helmand_farsi.html:375
-#: .\templates\states\Helmand_farsi.html:387
-#: .\templates\states\kandahar_farsi.html:356
-#: .\templates\states\kandahar_farsi.html:368
-#: .\templates\states\kandahar_farsi.html:380
-msgid "ماه‌ها:"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:363
 msgid "نوامبر تا فوریه"
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:364
-#: .\templates\states\Helmand_farsi.html:376
-#: .\templates\states\Helmand_farsi.html:388
-#: .\templates\states\kandahar_farsi.html:357
-#: .\templates\states\kandahar_farsi.html:369
-#: .\templates\states\kandahar_farsi.html:381
-msgid "دمای هوا:"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:365
@@ -3352,7 +3273,6 @@ msgstr ""
 msgid "Popular Tourist Attractions in Helmand"
 msgstr "جاذبه‌های گردشگری محبوب در هلمند"
 
-
 #: .\templates\states\Helmand_farsi.html:496
 msgid "Close"
 msgstr ""
@@ -3383,11 +3303,6 @@ msgstr ""
 msgid "چگونه به هلمند برسیم؟"
 msgstr ""
 
-#: .\templates\states\Helmand_farsi.html:590
-#: .\templates\states\kandahar_farsi.html:578
-msgid "با هواپیما"
-msgstr ""
-
 #: .\templates\states\Helmand_farsi.html:595
 msgid ""
 "هلمند از طریق فرودگاه لشکرگاه قابل دسترسی است و پروازهای داخلی محدودی دارد. "
@@ -3395,20 +3310,10 @@ msgid ""
 "می‌دهند."
 msgstr ""
 
-#: .\templates\states\Helmand_farsi.html:606
-#: .\templates\states\kandahar_farsi.html:594
-msgid "با جاده"
-msgstr ""
-
 #: .\templates\states\Helmand_farsi.html:611
 msgid ""
 "هلمند از طریق بزرگراه‌ها به قندهار و کابل متصل است، اما سفر جاده‌ای به دلیل "
 "شرایط امنیتی می‌تواند خطرناک باشد."
-msgstr ""
-
-#: .\templates\states\Helmand_farsi.html:622
-#: .\templates\states\kandahar_farsi.html:610
-msgid "با قطار"
 msgstr ""
 
 #: .\templates\states\Helmand_farsi.html:627
@@ -3533,11 +3438,6 @@ msgid ""
 "تماس بگیرید. ما به زودی پاسخ شما را خواهیم داد!"
 msgstr ""
 
-#: .\templates\states\Helmand_farsi.html:834
-#: .\templates\states\kandahar_farsi.html:822
-msgid "تماس با ما"
-msgstr ""
-
 #: .\templates\states\kandahar_farsi.html:19
 msgid "گردشگری قندهار"
 msgstr ""
@@ -3569,14 +3469,6 @@ msgstr ""
 msgid ""
 "صنایع دستی معروف قندهار مانند گلدوزی، چرم و محصولات مسی را در بازارهای قدیمی "
 "کاوش کنید."
-msgstr ""
-
-#: .\templates\states\kandahar_farsi.html:74
-msgid "بررسی اجمالی"
-msgstr ""
-
-#: .\templates\states\kandahar_farsi.html:84
-msgid "چگونه برسیم"
 msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:94
@@ -3860,10 +3752,6 @@ msgstr ""
 msgid "بزکشی، کریکت"
 msgstr ""
 
-#: .\templates\states\kandahar_farsi.html:229
-msgid "مناطق گردشگری اصلی"
-msgstr ""
-
 #: .\templates\states\kandahar_farsi.html:230
 msgid "آرامگاه عبای پیامبر، دره ارغنداب، چیلزینا، بازارهای محلی"
 msgstr ""
@@ -3874,10 +3762,6 @@ msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:346
 msgid "بهترین زمان برای بازدید از قندهار"
-msgstr ""
-
-#: .\templates\states\kandahar_farsi.html:347
-msgid "نمایش بیشتر"
 msgstr ""
 
 #: .\templates\states\kandahar_farsi.html:355

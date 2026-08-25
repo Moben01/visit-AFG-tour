@@ -1,0 +1,14 @@
+{% extends 'operations/base.html' %}{% load i18n %}
+{% block operations_title %}{% trans "Resource control" %}{% endblock %}
+{% block operations_content %}
+<section class="ops-pagehead"><div><span class="ops-eyebrow">{% trans "Tour resource network" %}</span><h1>{% trans "Workforce and supplier control" %}</h1><p>{% trans "One readiness view for employees, temporary tour crew, suppliers, contracts and payments." %}</p></div></section>
+<section class="ops-kpi-grid">
+  <a class="ops-kpi" href="{% url 'tour:operations:crew_list' %}"><span class="ops-kpi__icon"><i class="ti ti-user-check"></i></span><div><small>{% trans "Approved crew" %}</small><strong>{{ approved_crew }}</strong><em>{{ pending_crew }} {% trans "pending review" %}</em></div></a>
+  <a class="ops-kpi" href="{% url 'tour:operations:opportunity_list' %}"><span class="ops-kpi__icon ops-kpi__icon--blue"><i class="ti ti-briefcase"></i></span><div><small>{% trans "Open opportunities" %}</small><strong>{{ open_opportunities }}</strong><em>{{ pending_applications }} {% trans "applications waiting" %}</em></div></a>
+  <a class="ops-kpi" href="{% url 'tour:operations:engagement_list' %}"><span class="ops-kpi__icon ops-kpi__icon--amber"><i class="ti ti-calendar-check"></i></span><div><small>{% trans "Active crew bookings" %}</small><strong>{{ active_engagements }}</strong><em>{{ unpaid_crew }} {% trans "payments open" %}</em></div></a>
+  <a class="ops-kpi" href="{% url 'tour:operations:supplier_list' %}"><span class="ops-kpi__icon ops-kpi__icon--violet"><i class="ti ti-building-store"></i></span><div><small>{% trans "Active suppliers" %}</small><strong>{{ active_suppliers }}</strong><em>{{ open_rfqs }} {% trans "open RFQs" %}</em></div></a>
+</section>
+<section class="ops-card"><div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Readiness" %}</span><h2>{% trans "Upcoming tour resource plans" %}</h2></div></div><div class="ops-table-wrap"><table class="ops-table"><thead><tr><th>{% trans "Tour" %}</th><th>{% trans "Dates" %}</th><th>{% trans "Crew" %}</th><th>{% trans "Services" %}</th><th></th></tr></thead><tbody>
+{% for tour in tours %}<tr><td><strong>{{ tour.title }}</strong><small>{{ tour.location }}</small></td><td>{{ tour.start_date|date:"d M Y" }} – {{ tour.end_date|date:"d M Y" }}</td><td>{{ tour.crew_booked_count }}/{{ tour.crew_need_count }}</td><td>{{ tour.service_order_count }}/{{ tour.service_need_count }}</td><td><a class="ops-btn ops-btn--secondary" href="{% url 'tour:operations:tour_resources' tour.id %}">{% trans "Open plan" %}</a></td></tr>{% empty %}<tr><td colspan="5"><div class="ops-empty">{% trans "No upcoming tours." %}</div></td></tr>{% endfor %}
+</tbody></table></div></section>
+{% endblock %}

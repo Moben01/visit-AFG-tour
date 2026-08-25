@@ -1,0 +1,16 @@
+{% load static i18n %}
+<section class="aa-error-page">
+    <div class="aa-container">
+        <div class="aa-error-copy">
+            <span class="aa-error-code">404</span>
+            <span class="aa-eyebrow">{% trans 'Page not found' %}</span>
+            <h1>{% trans 'This route does not lead to a page.' %}</h1>
+            <p>{% trans 'The address may have changed, or the page may no longer be available. Return home or search Afghanistan destinations.' %}</p>
+            <div>
+                <a class="aa-btn aa-btn-primary" href="{% url 'home:home' %}"><i class="ti ti-home"></i>{% trans 'Back to home' %}</a>
+                <a class="aa-btn aa-btn-ghost" href="{% url 'home:search' %}"><i class="ti ti-search"></i>{% trans 'Search destinations' %}</a>
+            </div>
+        </div>
+        <div class="aa-error-visual"><img src="{% static 'img/Images/qasim-mirzaie-7WRiBETZIls-unsplash.jpg' %}" alt="{% trans 'Afghanistan landscape' %}"></div>
+    </div>
+</section>

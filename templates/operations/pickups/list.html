@@ -1,0 +1,10 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{% trans "Pickup operations" %}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead"><div><span class="ops-eyebrow">{% trans "Arrival operations" %}</span><h1>{% trans "Pickup queue" %}</h1><p>{% trans "Coordinate arrival times, crew, vehicles and live pickup status." %}</p></div></section>
+<nav class="ops-segmented"><a class="{% if not selected_status %}active{% endif %}" href="{% url 'tour:operations:pickup_queue' %}">{% trans "All" %}</a>{% for value,label in status_choices %}<a class="{% if selected_status == value %}active{% endif %}" href="?status={{ value }}">{{ label }}</a>{% endfor %}</nav>
+<section class="ops-pickup-grid">{% for pickup in plans %}<article class="ops-card ops-pickup-card"><div class="ops-pickup-card__head"><div><span class="ops-eyebrow">#AA-{{ pickup.booking.id|stringformat:"05d" }}</span><h2>{{ pickup.booking.name }}</h2></div><span class="ops-status ops-status--{{ pickup.status }}">{{ pickup.get_status_display }}</span></div><div class="ops-pickup-card__body"><p><i class="ti ti-map-pin"></i><span><strong>{{ pickup.entry_point_label }}</strong><small>{{ pickup.meeting_point|default:"Meeting point not set" }}</small></span></p><p><i class="ti ti-calendar-time"></i><span><strong>{{ pickup.scheduled_at|date:"d M Y, H:i" }}</strong><small>{{ pickup.window_minutes }} {% trans "minute window" %}</small></span></p><p><i class="ti ti-steering-wheel"></i><span><strong>{{ pickup.driver.name|default:"Driver not assigned" }}</strong><small>{{ pickup.vehicle|default:"Vehicle not assigned" }}</small></span></p></div><a class="ops-btn ops-btn--secondary ops-btn--full" href="{% url 'tour:operations:booking_pickup' pickup.booking.id %}">{% trans "Open pickup plan" %}<i class="ti ti-arrow-right"></i></a></article>{% empty %}<div class="ops-card ops-empty"><i class="ti ti-car-off"></i><strong>{% trans "No pickup plans found" %}</strong><span>{% trans "Create a pickup plan from a booking workspace." %}</span></div>{% endfor %}</section>
+{% endblock %}

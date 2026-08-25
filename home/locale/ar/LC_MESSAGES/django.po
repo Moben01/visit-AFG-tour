@@ -1,0 +1,314 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AfghanAwaits Home 2\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0?0:n==1?1:n==2?2:n%100>=3 && n%100<=10?3:n%100>=11 && n%100<=99?4:5;\n"
+
+msgid "Toggle navigation"
+msgstr "فتح وإغلاق القائمة"
+
+msgid "Destination, attraction, tour, etc"
+msgstr "وجهة، معلم، جولة، وغير ذلك"
+
+msgid "Search"
+msgstr "بحث"
+
+msgid "Preferred currency"
+msgstr "العملة المفضلة"
+
+msgid "Become an Expert"
+msgstr "انضم كخبير"
+
+msgid "Become an expert"
+msgstr "انضم كخبير"
+
+msgid "Dashboard"
+msgstr "لوحة التحكم"
+
+msgid "My bookings"
+msgstr "حجوزاتي"
+
+msgid "Wishlist"
+msgstr "المفضلة"
+
+msgid "Settings"
+msgstr "الإعدادات"
+
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+msgid "Sign In / Register"
+msgstr "تسجيل الدخول / إنشاء حساب"
+
+msgid "Primary navigation"
+msgstr "القائمة الرئيسية"
+
+msgid "Home"
+msgstr "الرئيسية"
+
+msgid "Destinations"
+msgstr "الوجهات"
+
+msgid "Tour"
+msgstr "الجولات"
+
+msgid "Tours"
+msgstr "الجولات"
+
+msgid "Tours are being prepared"
+msgstr "الجولات قيد الإعداد"
+
+msgid "Things to do"
+msgstr "أشياء يمكن القيام بها"
+
+msgid "Arts & Culture"
+msgstr "الفنون والثقافة"
+
+msgid "Experiences"
+msgstr "التجارب"
+
+msgid "Food & Drink"
+msgstr "الطعام والشراب"
+
+msgid "New & Trending"
+msgstr "الجديد والرائج"
+
+msgid "Shopping"
+msgstr "التسوق"
+
+msgid "Sights & Attractions"
+msgstr "المعالم والجذب"
+
+msgid "Accommodation"
+msgstr "الإقامة"
+
+msgid "Plan Your Trip"
+msgstr "خطط لرحلتك"
+
+msgid "Plan your trip"
+msgstr "خطط لرحلتك"
+
+msgid "Visa guide"
+msgstr "دليل التأشيرة"
+
+msgid "Essentials"
+msgstr "المعلومات الأساسية"
+
+msgid "Travel essentials"
+msgstr "أساسيات السفر"
+
+msgid "Getting to & around Afghanistan"
+msgstr "الوصول إلى أفغانستان والتنقل فيها"
+
+msgid "Safety"
+msgstr "السلامة"
+
+msgid "Weather"
+msgstr "الطقس"
+
+msgid "Currency"
+msgstr "العملة"
+
+msgid "Where Would"
+msgstr "إلى أين"
+
+msgid "You Like To Go?"
+msgstr "تود أن تذهب؟"
+
+msgid "Explore Afghanistan with local knowledge, practical planning, and support from first click to final day."
+msgstr "اكتشف أفغانستان بمعرفة محلية وتخطيط عملي ودعم من أول نقرة حتى آخر يوم."
+
+msgid "Location"
+msgstr "الموقع"
+
+msgid "Where would you like to go?"
+msgstr "إلى أين تود الذهاب؟"
+
+msgid "Travel date"
+msgstr "تاريخ السفر"
+
+msgid "Guests"
+msgstr "المسافرون"
+
+msgid "Why plan with AfghanAwaits"
+msgstr "لماذا تخطط مع AfghanAwaits"
+
+msgid "Local destination knowledge"
+msgstr "معرفة محلية بالوجهات"
+
+msgid "Province guides built around Afghan places, culture, and practical access."
+msgstr "أدلة للمحافظات مبنية على الأماكن والثقافة وطرق الوصول العملية."
+
+msgid "One connected itinerary"
+msgstr "برنامج رحلة مترابط"
+
+msgid "Tours, transport, accommodation, documents, and timing in one workflow."
+msgstr "الجولات والنقل والإقامة والوثائق والتوقيت ضمن مسار عمل واحد."
+
+msgid "Practical travel support"
+msgstr "دعم عملي للسفر"
+
+msgid "Clear preparation guidance and local coordination for confirmed services."
+msgstr "إرشادات واضحة للتحضير وتنسيق محلي للخدمات المؤكدة."
+
+msgid "Popular places in Afghanistan"
+msgstr "أماكن شهيرة في أفغانستان"
+
+msgid "Start with a province guide, then connect places into a route that fits your time and interests."
+msgstr "ابدأ بدليل محافظة ثم اربط الأماكن في مسار يناسب وقتك واهتماماتك."
+
+msgid "Explore"
+msgstr "استكشف"
+
+msgid "Build your Afghanistan journey"
+msgstr "ابنِ رحلتك في أفغانستان"
+
+msgid "Choose a published tour when available, or begin with guides and plan a custom route."
+msgstr "اختر جولة منشورة عند توفرها، أو ابدأ بالأدلة وخطط لمسار مخصص."
+
+msgid "All"
+msgstr "الكل"
+
+msgid "Culture"
+msgstr "الثقافة"
+
+msgid "Nature"
+msgstr "الطبيعة"
+
+msgid "Published tour"
+msgstr "جولة منشورة"
+
+msgid "Travel guide"
+msgstr "دليل سفر"
+
+msgid "Destination guide"
+msgstr "دليل وجهة"
+
+msgid "Experience guide"
+msgstr "دليل تجربة"
+
+msgid "Open guide"
+msgstr "فتح الدليل"
+
+msgid "No bookable tours are published yet. Destination and experience guides remain available while itineraries are prepared."
+msgstr "لم تُنشر جولات قابلة للحجز بعد. تبقى أدلة الوجهات والتجارب متاحة أثناء إعداد البرامج."
+
+msgid "Plan with clarity"
+msgstr "خطط بوضوح"
+
+msgid "From first question to the final travel day"
+msgstr "من السؤال الأول حتى يوم السفر الأخير"
+
+msgid "AfghanAwaits connects information, booking details, and local operations without inventing availability or promises. What is published is visible; what requires confirmation is clearly marked."
+msgstr "يربط AfghanAwaits المعلومات وتفاصيل الحجز والعمليات المحلية دون ادعاء توفر أو وعود غير حقيقية. المنشور ظاهر، وما يحتاج إلى تأكيد موضح بوضوح."
+
+msgid "Start exploring"
+msgstr "ابدأ الاستكشاف"
+
+msgid "Research"
+msgstr "البحث"
+
+msgid "Confirm"
+msgstr "التأكيد"
+
+msgid "Coordinate"
+msgstr "التنسيق"
+
+msgid "Travel inspiration"
+msgstr "إلهام السفر"
+
+msgid "Know more before you go"
+msgstr "اعرف أكثر قبل أن تذهب"
+
+msgid "Before you travel"
+msgstr "قبل السفر"
+
+msgid "Start with current practical guidance"
+msgstr "ابدأ بإرشادات عملية حديثة"
+
+msgid "Your trip, connected"
+msgstr "رحلتك مترابطة"
+
+msgid "Keep confirmed travel details in one place"
+msgstr "احتفظ بتفاصيل السفر المؤكدة في مكان واحد"
+
+msgid "One trip dashboard"
+msgstr "لوحة واحدة للرحلة"
+
+msgid "Bookings, pre-arrival, pickup, and itinerary"
+msgstr "الحجوزات وما قبل الوصول والاستقبال والبرنامج"
+
+msgid "Open dashboard"
+msgstr "فتح لوحة التحكم"
+
+msgid "Create an account"
+msgstr "إنشاء حساب"
+
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+msgid "Local travel professionals"
+msgstr "متخصصو السفر المحليون"
+
+msgid "Share your expertise through AfghanAwaits"
+msgstr "شارك خبرتك عبر AfghanAwaits"
+
+msgid "Trip search"
+msgstr "بحث الرحلات"
+
+msgid "Explore Afghanistan"
+msgstr "اكتشف أفغانستان"
+
+msgid "Destination guides"
+msgstr "أدلة الوجهات"
+
+msgid "Published tours"
+msgstr "الجولات المنشورة"
+
+msgid "Bookable itineraries"
+msgstr "برامج قابلة للحجز"
+
+msgid "No published tour matches this search yet."
+msgstr "لا توجد جولة منشورة تطابق هذا البحث بعد."
+
+msgid "Plan with an expert"
+msgstr "خطط مع خبير"
+
+msgid "Privacy policy"
+msgstr "سياسة الخصوصية"
+
+msgid "Terms of use"
+msgstr "شروط الاستخدام"
+
+msgid "Cancellation and refunds"
+msgstr "الإلغاء والاسترداد"
+
+msgid "Rules of conduct"
+msgstr "قواعد السلوك"
+
+msgid "Account & policies"
+msgstr "الحساب والسياسات"
+
+msgid "All rights reserved."
+msgstr "جميع الحقوق محفوظة."
+
+msgid "Page not found"
+msgstr "الصفحة غير موجودة"
+
+msgid "This route does not lead to a page."
+msgstr "هذا العنوان لا يؤدي إلى صفحة."
+
+msgid "Back to home"
+msgstr "العودة إلى الرئيسية"
+
+msgid "Search destinations"
+msgstr "بحث الوجهات"
+
+msgid "AfghanAwaits.com — Explore Afghanistan"
+msgstr "AfghanAwaits.com — اكتشف أفغانستان"
+
+msgid "Destination guides, published tours, and practical travel planning for Afghanistan."
+msgstr "أدلة الوجهات والجولات المنشورة والتخطيط العملي للسفر في أفغانستان."

@@ -11,3 +11,5 @@ urlpatterns = [
 
 ]
 
+
+from .urls_v2 import urlpatterns  # noqa: E402,F401

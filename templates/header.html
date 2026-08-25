@@ -1,813 +1,156 @@
-{% load static %}
-{% block content %}
-{% load menu_extras %}
+{% include 'site/header_v2.html' %}
+{% comment %}
+{% get_current_language as LANGUAGE_CODE %}
+<header class="aa-site-header">
+    <div class="aa-container">
+        <div class="aa-header-main">
+            <div class="aa-header-left">
+                <button class="aa-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#aaMainNavigation" aria-controls="aaMainNavigation" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
+                    <i class="ti ti-menu-2"></i>
+                </button>
 
-<div class="main-header main-header-four">
-    <!-- Header Topbar-->
-    <div class="header-topbar topbar-four text-center bg-transparent">
-        <div class="container">
-            <div class="d-flex align-items-center justify-content-between flex-wrap">
-                <div class="d-flex align-items-center flex-wrap">
-                    <p class="d-flex align-items-center fs-14 mb-2 me-3 "><i class="isax isax-call5 me-2"></i>Toll Free
-                        : {{get_main_things.noumber}} </p>
-                    <p class="mb-2 d-flex align-items-center fs-14"><i class="isax isax-message-text-15 me-2"></i>Email :
-                        <a href="https://dreamstour.dreamstechnologies.com/cdn-cgi/l/email-protection" 
-                        class="__cf_email__"> {{get_main_things.email}} </a>
-                    </div>
-                <div class="d-flex align-items-center">
+                <a class="aa-brand" href="{% url 'home:home' %}" aria-label="AfghanAwaits.com home">
+                    <img src="{% static 'brand/afghanawaits/logo-reverse.svg' %}" alt="AfghanAwaits.com">
+                    <img class="aa-mobile-mark" src="{% static 'brand/afghanawaits/monogram.svg' %}" alt="AfghanAwaits">
+                </a>
 
-                    {% load i18n %}
-                    <form action="{% url 'set_language' %}" method="post" class="dropdown flag-dropdown mb-2 me-3">
-                        {% csrf_token %}
-                        <a href="javascript:void(0);" class="dropdown-toggle d-inline-flex align-items-center"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            {% get_current_language as LANGUAGE_CODE %}
-                            <img src="{% static 'img/flags/' %}{% if LANGUAGE_CODE == 'fa' %}france-flag.svg{% elif LANGUAGE_CODE == 'ar' %}arab-flag.svg{% else %}us-flag.svg{% endif %}"
-                                class="me-2" alt="flag">
-                            {% if LANGUAGE_CODE == "fa" %}
-                            دری
-                            {% elif LANGUAGE_CODE == "ar" %}
-                            العربية
-                            {% else %}
-                            English
-                            {% endif %}
-                        </a>
+                <form class="aa-global-search" action="{% url 'home:home' %}" method="get" role="search">
+                    <i class="ti ti-search" aria-hidden="true"></i>
+                    <input type="search" name="q" value="{{ request.GET.q|default:'' }}" placeholder="{% trans 'Destination, attraction, tour, etc' %}" aria-label="{% trans 'Search' %}">
+                </form>
+            </div>
 
-                        <ul class="dropdown-menu p-2 mt-2">
-                            <li>
-                                <button type="submit" name="language" value="en"
-                                    class="dropdown-item rounded d-flex align-items-center">
-                                    <img src="{% static 'img/flags/us-flag.svg' %}" class="me-2" alt="flag"> English
-                                </button>
-                            </li>
-                            <li>
-                                <button type="submit" name="language" value="ar"
-                                    class="dropdown-item rounded d-flex align-items-center">
-                                    <img src="{% static 'img/flags/arab-flag.svg' %}" class="me-2" alt="flag"> العربية
-                                </button>
-                            </li>
-                            <li>
-                                <button type="submit" name="language" value="fa"
-                                    class="dropdown-item rounded d-flex align-items-center">
-                                    <img src="{% static 'img/flags/france-flag.svg' %}" class="me-2" alt="flag"> دری
-                                </button>
-                            </li>
-                        </ul>
-                    </form>
-
-
-<!-- 
-                    <div class="dropdown mb-2">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            USD
-                        </a>
-                        <ul class="dropdown-menu p-2 mt-2">
-                            <li><a class="dropdown-item rounded" href="javascript:void(0);">USD</a></li>
-                            <li><a class="dropdown-item rounded" href="javascript:void(0);">YEN</a></li>
-                            <li><a class="dropdown-item rounded" href="javascript:void(0);">EURO</a></li>
-                        </ul>
-                    </div> -->
+            <div class="aa-header-actions">
+                <div class="dropdown -currency">
+                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">USD</button>
+                    <ul class="dropdown-menu dropdown-menu-end aa-header-dropdown">
+                        <li><button class="dropdown-item" type="button">USD</button></li>
+                        <li><button class="dropdown-item" type="button">EUR</button></li>
+                        <li><button class="dropdown-item" type="button">AFN</button></li>
+                    </ul>
                 </div>
+
+                <form action="{% url 'set_language' %}" method="post" class="dropdown">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ti ti-world" aria-hidden="true"></i>
+                        <span>{% if LANGUAGE_CODE == 'fa' %}دری{% elif LANGUAGE_CODE == 'ar' %}العربية{% else %}English{% endif %}</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end aa-header-dropdown">
+                        <li><button class="dropdown-item" type="submit" name="language" value="en">English</button></li>
+                        <li><button class="dropdown-item" type="submit" name="language" value="fa">دری</button></li>
+                        <li><button class="dropdown-item" type="submit" name="language" value="ar">العربية</button></li>
+                    </ul>
+                </form>
+
+                <a class="aa-header-action -expert" href="{% url 'tour:tour_guide_view' %}">
+                    <span>{% trans 'Become an Expert' %}</span>
+                </a>
+
+                {% if request.user.is_authenticated %}
+                    <div class="dropdown">
+                        <button class="aa-header-action -auth dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="ti ti-user-circle" aria-hidden="true"></i>
+                            <span>{{ request.user.username }}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end aa-header-dropdown">
+                            <li><a class="dropdown-item" href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tour:up_commoing_tours' %}">{% trans 'My Booking' %}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'favorite_user_tour' %}">{% trans 'Wishlist' %} ({{ find_user_favorite|default:0 }})</a></li>
+                            <li><a class="dropdown-item" href="{% url 'accounts:account_settings' %}">{% trans 'Settings' %}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <a class="aa-header-action -auth" href="{% url 'account_login' %}">
+                        <i class="ti ti-user" aria-hidden="true"></i>
+                        <span>{% trans 'Sign In / Register' %}</span>
+                    </a>
+                {% endif %}
             </div>
         </div>
-    </div>
-    <!-- /Header Topbar-->
 
-    <!-- Header -->
-    <header class="header-four">
-        <div class="container">
-            <div class="offcanvas-info">
-                <div class="offcanvas-wrap">
-                    <div class="offcanvas-detail">
-                        <div class="offcanvas-head">
-                            <div class="d-flex justify-content-between align-items-center mb-3">
-                                <a href="/" class="black-logo-responsive">
-                                    <img src="{% static 'img/logo/tlogo.png' %}" alt="logo-img">
-                                </a>
-                                <a href="/" class="white-logo-responsive">
-                                    <img src="{% static 'img/logo/tlogo.png' %}" alt="logo-img">
-                                </a>
-                                <div class="offcanvas-close">
-                                    <i class="ti ti-x"></i>
-                                </div>
-                            </div>
-                            <div class="wishlist-info d-flex justify-content-between align-items-center">
-                                <h6 class="fs-16 fw-medium">Wishlist</h6>
-                                <div class="d-flex align-items-center">
-                                    <div class="fav-dropdown">
-                                        <a href="wishlist.html" class="position-relative">
-                                            <i class="isax isax-heart"></i><span
-                                                class="count-icon bg-secondary text-gray-9">0</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mobile-menu fix mb-3"></div>
-                        <div class="offcanvas__contact">
-                            <div class="mt-4">
-                                <div class="header-dropdown d-flex flex-fill">
-                                    <div class="w-100">
-                                        <div class="dropdown flag-dropdown mb-2">
-                                            <a href="javascript:void(0);"
-                                                class="dropdown-toggle bg-white border d-flex align-items-center"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="{% static 'img/flags/us-flag.svg' %}" class="me-2"
-                                                    alt="flag">ENG
-                                            </a>
-                                            <ul class="dropdown-menu p-2">
-                                                <li>
-                                                    <a class="dropdown-item rounded d-flex align-items-center"
-                                                        href="javascript:void(0);">
-                                                        <img src="{% static 'img/flags/us-flag.svg' %}" class="me-2"
-                                                            alt="flag">ENG
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item rounded d-flex align-items-center"
-                                                        href="javascript:void(0);">
-                                                        <img src="{% static 'img/flags/arab-flag.svg' %}" class="me-2"
-                                                            alt="flag">ARA
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item rounded d-flex align-items-center"
-                                                        href="javascript:void(0);">
-                                                        <img src="{% static 'img/flags/france-flag.svg' %}" class="me-2"
-                                                            alt="flag">FRA
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="dropdown">
-                                            <a href="javascript:void(0);"
-                                                class="dropdown-toggle bg-white border d-block"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                USD
-                                            </a>
-                                            <ul class="dropdown-menu p-2">
-                                                <li><a class="dropdown-item rounded" href="javascript:void(0);">USD</a>
-                                                </li>
-                                                <li><a class="dropdown-item rounded" href="javascript:void(0);">YEN</a>
-                                                </li>
-                                                <li><a class="dropdown-item rounded" href="javascript:void(0);">EURO</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn btn-dark w-100 mb-3"><a href="javascript:void(0);" class="text-white"
-                                        data-bs-toggle="modal" data-bs-target="#login-modal">Sign In</a> / <a
-                                        href="javascript:void(0);" class="text-white" data-bs-toggle="modal"
-                                        data-bs-target="#register-modal">Sign Up</a></div>
-                            </div>
+        <nav class="aa-header-nav collapse d-xl-block" id="aaMainNavigation" aria-label="{% trans 'Primary navigation' %}">
+            <div class="aa-category-row">
+                <a class="aa-category-link active" href="{% url 'home:home' %}" aria-current="page"><i class="ti ti-home"></i><span>{% trans 'Home' %}</span></a>
+
+                <div class="dropdown">
+                    <button class="aa-category-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ti ti-map-pin"></i><span>{% trans 'Destinations' %}</span>
+                    </button>
+                    <div class="dropdown-menu aa-mega-menu">
+                        <div class="aa-mega-grid">
+                            <a href="{% url 'states:kabul' %}">Kabul</a>
+                            <a href="{% url 'states:bamyan' %}">Bamyan</a>
+                            <a href="{% url 'states:Herat' %}">Herat</a>
+                            <a href="{% url 'states:balkh' %}">Balkh</a>
+                            <a href="{% url 'states:Kandahar' %}">Kandahar</a>
+                            <a href="{% url 'states:Badakhshan' %}">Badakhshan</a>
+                            <a href="{% url 'states:panjshir' %}">Panjshir</a>
+                            <a href="{% url 'states:Nangarhar' %}">Nangarhar</a>
+                            <a href="{% url 'states:Nuristan' %}">Nuristan</a>
+                            <a href="{% url 'states:Ghor' %}">Ghor</a>
+                            <a href="{% url 'states:Helmand' %}">Helmand</a>
+                            <a href="{% url 'states:Farah' %}">Farah</a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="offcanvas-overlay"></div>
-            <div class="header-nav">
-                <div class="main-menu-wrapper">
-                    <div class="navbar-logo">
-                        <a class="logo-white header-logo" href="/">
-                            <img src="{% static 'img/logo/tlogo.png' %}" class="logo" alt="Logo" width="150px">
-                        </a>
-                        <a class="logo-dark header-logo" href="/">
-                            <img src="{% static 'img/logo/tlogo.png' %}" class="logo" alt="Logo" width="150px">
-                        </a>
-                    </div>
-                    <nav id="mobile-menu">
-                        <ul class="main-nav">
-                            <li class="has-submenu megamenu active">
-                                <a href="javascript:void(0);">Destinations<i
-                                        class="fa-solid fa-angle-down"></i></a>
-                                <ul class="submenu mega-submenu">
-                                    <li>
-                                        <div class="megamenu-wrapper">
-                                            
-                                            <div class="row g-lg-4">
 
-                                                <div class="col-lg-3">
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-button p-0" data-bs-toggle="collapse"
-                                                            data-bs-target="#accordion-central" aria-expanded="true"
-                                                            aria-controls="accordion-central" role="button">
-                                                            Central
-                                                            Provinces
-                                                        </div>
-                                                    </div>
-                                                    <div id="accordion-central"
-                                                        class="accordion-collapse collapse show">
-                                                        <div class="accordion-body">
-                                                            <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="kabul-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Kabul</label></div>
-                                                                <script>
-                                                                    document.getElementById('kabul-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:kabul' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="kapisa-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Kapisa</label></div>
-                                                                <script>
-                                                                    document.getElementById('kapisa-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:kapisa' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="logar-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Logar</label></div>
-                                                                <script>
-                                                                    document.getElementById('logar-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:logar' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="panjshir-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Panjshir</label></div>
-                                                                <script>
-                                                                    document.getElementById('panjshir-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:panjshir' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="parwan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Parwan</label></div>
-                                                                <script>
-                                                                    document.getElementById('parwan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:parwan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="maidan-wardak-link"
-                                                                        class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Maidan Wardak</label>
-                                                                </div>
-                                                                <script>
-                                                                    document.getElementById('maidan-wardak-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:maidan_wardak' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-
-
-
-
-
-
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="bamyan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Bamyan</label></div>
-                                                                <script>
-                                                                    document.getElementById('bamyan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:bamyan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="daikundi-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Daikundi</label></div>
-                                                                <script>
-                                                                    document.getElementById('daikundi-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:daikundi' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="ghazni-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Ghazni</label></div>
-                                                                <script>
-                                                                    document.getElementById('ghazni-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:ghazni' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="paktika-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Paktia</label></div>
-                                                                <script>
-                                                                    document.getElementById('paktika-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:paktika' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="khost-link" class="form-check-label ms-2"
-                                                                        style="cursor:pointer;">Khost</label></div>
-                                                                <script>
-                                                                    document.getElementById('khost-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:khost' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                            </div>
-                                                            <a href="javascript:void(0);"
-                                                                class="more-view fw-medium fs-14">Show More</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-3">
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-button p-0" data-bs-toggle="collapse"
-                                                            data-bs-target="#accordion-north" aria-expanded="true"
-                                                            aria-controls="accordion-north" role="button">
-                                                            North
-                                                            Provinces
-                                                        </div>
-                                                    </div>
-                                                    <div id="accordion-north" class="accordion-collapse collapse show">
-                                                        <div class="accordion-body">
-                                                            <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Badakhshan-link"
-                                                                        class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Badakhshan</label>
-                                                                </div>
-                                                                <script>
-                                                                    document.getElementById('Badakhshan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Badakhshan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Baghlan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Baghlan</label></div>
-                                                                <script>
-                                                                    document.getElementById('Baghlan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Baghlan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="balkh-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Balkh</label></div>
-                                                                <script>
-                                                                    document.getElementById('balkh-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:balkh' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="faryab-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Faryab</label></div>
-                                                                <script>
-                                                                    document.getElementById('faryab-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:faryab' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="jawzjan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Jawzjan</label></div>
-                                                                <script>
-                                                                    document.getElementById('jawzjan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:jawzjan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Kunduz-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Kunduz</label></div>
-                                                                <script>
-                                                                    document.getElementById('Kunduz-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Kunduz' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="samangan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Samangan</label></div>
-                                                                <script>
-                                                                    document.getElementById('samangan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:samangan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="SarePol-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Sar-e Pol</label></div>
-                                                                <script>
-                                                                    document.getElementById('SarePol-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:SarePol' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Takhar-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Takhar</label></div>
-                                                                <script>
-                                                                    document.getElementById('Takhar-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Takhar' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                            </div>
-                                                            <a href="javascript:void(0);"
-                                                                class="more-view fw-medium fs-14">Show More</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-2">
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-button p-0" data-bs-toggle="collapse"
-                                                            data-bs-target="#accordion-south" aria-expanded="true"
-                                                            aria-controls="accordion-south" role="button">
-                                                            South
-                                                            Provinces
-                                                        </div>
-                                                    </div>
-                                                    <div id="accordion-south" class="accordion-collapse collapse show">
-                                                        <div class="accordion-body">
-                                                            <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Helmand-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Helmand </label></div>
-                                                                <script>
-                                                                    document.getElementById('Helmand-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Helmand' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Kandahar-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Kandahar </label></div>
-                                                                <script>
-                                                                    document.getElementById('Kandahar-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Kandahar' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Nimroz-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Nimroz </label></div>
-                                                                <script>
-                                                                    document.getElementById('Nimroz-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Nimroz' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Uruzgan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Uruzgan </label></div>
-                                                                <script>
-                                                                    document.getElementById('Uruzgan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Uruzgan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Zabul-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Zabul </label></div>
-                                                                <script>
-                                                                    document.getElementById('Zabul-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Zabul' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-
-
-                                                                <!-- <div class="d-flex align-items-center ps-0 mb-2"><label id="Ghazni-link" class="form-check-label ms-2" style="cursor: pointer;">Ghazni </label></div> -->
-                                                                <!-- <script>
-                                                                    document.getElementById('Ghazni-link').addEventListener('click', function () {
-                                                                     
-                                                                    });
-                                                                  </script> -->
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Paktika-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Paktika </label></div>
-                                                                <script>
-                                                                    document.getElementById('Paktika-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Paktika' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-
-
-
-                                                            </div>
-                                                            <a href="javascript:void(0);"
-                                                                class="more-view fw-medium fs-14">Show More</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-2">
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-button p-0" data-bs-toggle="collapse"
-                                                            data-bs-target="#accordion-east" aria-expanded="true"
-                                                            aria-controls="accordion-east" role="button">
-                                                            East
-                                                            Provinces
-                                                        </div>
-                                                    </div>
-                                                    <div id="accordion-east" class="accordion-collapse collapse show">
-                                                        <div class="accordion-body">
-                                                            <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Nangarhar-link"
-                                                                        class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Nangarhar</label></div>
-                                                                <script>
-                                                                    document.getElementById('Nangarhar-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Nangarhar' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Laghman-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Laghman</label></div>
-                                                                <script>
-                                                                    document.getElementById('Laghman-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Laghman' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Kunar-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Kunar</label></div>
-                                                                <script>
-                                                                    document.getElementById('Kunar-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Kunar' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Nuristan-link" class="form-check-label ms-2"
-                                                                        style="cursor: pointer;">Nuristan</label></div>
-                                                                <script>
-                                                                    document.getElementById('Nuristan-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Nuristan' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-2">
-                                                    <div class="accordion-header">
-                                                        <div class="accordion-button p-0" data-bs-toggle="collapse"
-                                                            data-bs-target="#accordion-west" aria-expanded="true"
-                                                            aria-controls="accordion-west" role="button">
-                                                            West
-                                                            Provinces
-                                                        </div>
-                                                    </div>
-                                                    <div id="accordion-west" class="accordion-collapse collapse show">
-                                                        <div class="accordion-body">
-                                                            <div class="more-content">
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Herat-link"
-                                                                        class="form-check-label ms-2">Herat</label>
-                                                                </div>
-                                                                <script>
-                                                                    document.getElementById('Herat-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Herat' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Farah-link"
-                                                                        class="form-check-label ms-2">Farah</label>
-                                                                </div>
-                                                                <script>
-                                                                    document.getElementById('Farah-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Farah' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Badghis-link"
-                                                                        class="form-check-label ms-2">Badghis</label>
-                                                                </div>
-                                                                <script>
-                                                                    document.getElementById('Badghis-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Badghis' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-                                                                <div class="d-flex align-items-center ps-0 mb-2"><label
-                                                                        id="Ghor-link"
-                                                                        class="form-check-label ms-2">Ghor</label></div>
-                                                                <script>
-                                                                    document.getElementById('Ghor-link').addEventListener('click', function () {
-                                                                        window.location.href = '{% url 'states:Ghor' %}';  // change this to your actual URL
-                                                                    });
-                                                                </script>
-
-
-
-                                                                <div class="d-flex align-items-center ps-0 mb-2">
-                                                                    <label class="form-check-label ms-2"></label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                              
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="has-submenu mega-innermenu">
-                                <a href="javascript:void(0);">Things to do<i class="fa-solid fa-angle-down"></i></a>
-                                <ul class="submenu mega-submenu">
-                                    <li>
-                                        <div class="megamenu-wrapper">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <ul>
-                                                        <li><a href="{% url 'things_to_do:Art_and_Culture' %}">
-                                                                <h6>Arts & Culture</h6>
-                                                            </a></li>
-                                                        <li><a href="{% url 'things_to_do:Experiences' %}">
-                                                                <h6>Experiences</h6>
-                                                            </a></li>
-                                                        <li><a href="{% url 'things_to_do:food_and_drink' %}">
-                                                                <h6>Food & Drink</h6>
-                                                            </a></li>
-                                                        <li><a href="{% url 'things_to_do:New_and_Trending' %}">
-                                                                <h6>New & Trending</h6>
-                                                            </a></li>
-
-
-
-                                                    </ul>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <ul>
-
-                                                        <li><a href="{% url 'things_to_do:wellness_in_afg' %}">
-                                                                <h6>Wellness in Afghanistan</h6>
-                                                            </a></li>
-                                                        </h6></a>
-                               
-                                    <li><a href="{% url 'things_to_do:Shopping' %}">
-                                            <h6>Shopping </h6>
-                                        </a></li>
-                                    <li><a href="{% url 'things_to_do:Sights_' %}">
-                                            <h6>Sights & Attractions</h6>
-                                        </a></li>
-
-
-
-                                    </h6></a>
-                         </ul>
+                <div class="dropdown">
+                    <button class="aa-category-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ti ti-route"></i><span>{% trans 'Tour' %}</span>
+                    </button>
+                    <ul class="dropdown-menu aa-header-dropdown">
+                        {% if get_tour_categories %}
+                            {% for category in get_tour_categories %}
+                                <li><a class="dropdown-item" href="{% url 'tour:tour_category_list' category.slug %}">{{ category.name }}</a></li>
+                            {% endfor %}
+                        {% else %}
+                            <li><span class="dropdown-item-text">{% trans 'Tours are being prepared' %}</span></li>
+                        {% endif %}
+                    </ul>
                 </div>
-            </div>
-        </div>
-                                    </li>
-                                    </ul>
-                                    </li>
 
-        <li class="has-submenu mega-innermenu">
-            <a href="javascript:void(0);">Plan Your Trip<i class="fa-solid fa-angle-down"></i></a>
-            <ul class="submenu mega-submenu">
-                <li>
-                    <div class="megamenu-wrapper">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="{% url 'plan_your_trip:visa_guide' %}">
-                                            <h6>Visa guide</h6>
-                                        </a></li>
-                                    <li><a href="{% url 'plan_your_trip:essentials' %}">
-                                            <h6>Essentials</h6>
-                                        </a></li>
-                                   
-                                    <li><a href="{% url 'plan_your_trip:Accommodation' %}">
-                                            <h6>Accommodation</h6>
-                                        </a></li>
-                                    <li><a href="{% url 'plan_your_trip:Getting_to_around_afg' %}">
-                                            <h6>Getting to & around Afghanistan </h6>
-                                        </a></li>
-                                         <li><a href="{% url 'plan_your_trip:afghanistan_attractions_passes' %}">
-                                            <h6>Afghanistan attractions passes </h6>
-                                        </a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="{% url 'plan_your_trip:safety' %}">
-                                            <h6>Safety </h6>
-                                        </a></li>
-                                    <li><a href="{% url 'plan_your_trip:weather' %}">
-                                            <h6>Weather</h6>
-                                        </a></li>
-                                    <li><a href="{% url 'plan_your_trip:currency' %}">
-                                            <h6>Currency </h6>
-                                        </a></li>
-                                    <li><a href="{% url 'plan_your_trip:accessibility' %}">
-                                            <h6>Accessibility </h6>
-                                        </a></li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </li>
-<li class="has-submenu mega-innermenu">
-    <a href="javascript:void(0);">Tour <i class="fa-solid fa-angle-down"></i></a>
-    <ul class="submenu mega-submenu">
-        <li>
-            <div class="megamenu-wrapper">
-                <div class="row">
-                    <!-- Left Column: Tour -->
-                    <div class="col-lg-6">
-                        <h5 class="mb-2">Tour</h5>
-                        <div class="row">
-                      {% if get_tour_categories %}
-                        {% for category_chunk in get_tour_categories|chunked:5 %}
-                            <div class="col-lg-12">
-                                <ul>
-                                    {% for i in category_chunk %}
-                                        <li>
-                                            <a href="{% url 'tour:tour_category_list' i.slug %}">
-                                                <h6>{{ i.name }}</h6>
-                                            </a>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                        {% endfor %}
-                    {% else %}
-                        <p>No tour categories available at the moment.</p>
-                    {% endif %}
-
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Tour Involve -->
-                    <div class="col-lg-6">
-                        <h5 class="mb-2">Tour Involve</h5>
-                        <ul>
-                            <li><a href=""> </a></li>
-                        </ul>
-                    </div>
+                <div class="dropdown">
+                    <button class="aa-category-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ti ti-sparkles"></i><span>{% trans 'Things to do' %}</span>
+                    </button>
+                    <ul class="dropdown-menu aa-header-dropdown">
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Arts & Culture' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:Experiences' %}">{% trans 'Experiences' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:food_and_drink' %}">{% trans 'Food & Drink' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:New_and_Trending' %}">{% trans 'New & Trending' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:wellness_in_afg' %}">{% trans 'Wellness in Afghanistan' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:Shopping' %}">{% trans 'Shopping' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'things_to_do:Sights_' %}">{% trans 'Sights & Attractions' %}</a></li>
+                    </ul>
                 </div>
+
+                <a class="aa-category-link" href="{% url 'play_your_trip:Accommodation' %}"><i class="ti ti-bed"></i><span>{% trans 'Accommodation' %}</span></a>
+
+                <div class="dropdown">
+                    <button class="aa-category-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="ti ti-compass"></i><span>{% trans 'Plan Your Trip' %}</span>
+                    </button>
+                    <ul class="dropdown-menu aa-header-dropdown">
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:visa_guide' %}">{% trans 'Visa guide' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:essentials' %}">{% trans 'Essentials' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:Getting_to_around_afg' %}">{% trans 'Getting to & around Afghanistan' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:safety' %}">{% trans 'Safety' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:weather' %}">{% trans 'Weather' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:currency' %}">{% trans 'Currency' %}</a></li>
+                        <li><a class="dropdown-item" href="{% url 'play_your_trip:accessibility' %}">{% trans 'Accessibility' %}</a></li>
+                    </ul>
+                </div>
+
+                {% if request.user.is_authenticated %}
+                    <a class="aa-category-link" href="{% url 'tour:up_commoing_tours' %}"><i class="ti ti-calendar-check"></i><span>{% trans 'My Trips' %}</span></a>
+                    <a class="aa-category-link" href="{% url 'favorite_user_tour' %}"><i class="ti ti-heart"></i><span>{% trans 'Wishlist' %}</span></a>
+                {% endif %}
             </div>
-        </li>
-    </ul>
-</li>
-
-
-
-                                <li class="has-submenu mega-innermenu">
-                                    <a href="{% url 'states:bolg_seaction' %}">bolg<i class="fa-solid fa-angle-down"></i></a>
-
-                                </li>
-
-        </ul>
         </nav>
-        <div class="header-btn d-flex align-items-center">
-            <div class="me-3">
-                <a href="javascript:void(0);" id="dark-mode-toggle" class="theme-toggle">
-                    <i class="isax isax-moon"></i>
-                </a>
-                <a href="javascript:void(0);" id="light-mode-toggle" class="theme-toggle">
-                    <i class="isax isax-sun-1"></i>
-                </a>
-            </div>
-            <div class="fav-dropdown me-3">
-                <a href="{% url 'favorite_user_tour' %}" class="position-relative">
-                    <i class="isax isax-heart"></i><span
-                        class="count-icon bg-secondary text-gray-9">{{find_user_favorite}}</span>
-                </a>
-            </div>
-            <a href="{% url 'states:team' %}" class="btn btn-dark d-inline-flex align-items-center me-3"><i
-                    class="isax isax-user me-2"></i>LORMOND</a>
-                    {% if request.user.is_authenticated %}
-                    <div class="dropdown profile-dropdown">
-                        <a href="javascript:void(0);" class="d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span class="avatar avatar-md">
-                            <img src="{% static 'img/users/user-05.jpg' %}" alt="Img" class="img-fluid rounded-circle border border-white border-4">
-                        </span>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end p-3" style="">
-                            <li>
-                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium p-2" href="{% url 'tour:user_newsfeed' %}">Dashboard</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium p-2" href="customer-hotel-booking.html">My Booking</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium p-2" href="my-profile.html">My Profile</a>
-                            </li>
-                            <li>
-                                <hr class="dropdown-divider my-2">
-                            </li>
-                            <li>
-                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium p-2" href="{% url 'accounts:account_settings' %}">Settings</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item d-inline-flex align-items-center rounded fw-medium p-2" href="{% url 'account_logout' %}">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                    {% else %}
-                    <a href="{% url 'account_login' %}" class="btn btn-dark d-inline-flex align-items-center me-0">Sign In</a>
-                {% endif %} 
- 
-           
-            <div class="header__hamburger d-xl-none my-auto">
-                <div class="sidebar-menu">
-                    <i class="isax isax-menu5"></i>
-                </div>
-            </div>
-        </div>
-</div>
-</div>
-</div>
+    </div>
 </header>
-<!-- /Header -->
-</div>
-
-{% endblock %}
+{% endcomment %}

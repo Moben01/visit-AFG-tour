@@ -1,0 +1,32 @@
+{% load static %}
+<div class="back-to-top">
+    <a class="back-to-top-icon" href="#top" aria-label="Back to top"><i class="ti ti-arrow-up"></i></a>
+</div>
+
+{% if request.resolver_match.namespace != 'home' %}
+<script src="{% static 'js/jquery-3.7.1.min.js' %}" defer></script>
+{% endif %}
+<script src="{% static 'js/bootstrap.bundle.min.js' %}" defer></script>
+
+{% if request.resolver_match.namespace != 'home' %}
+<script src="{% static 'js/wow.min.js' %}" defer></script>
+<script src="{% static 'js/jquery.meanmenu.min.js' %}" defer></script>
+<script src="{% static 'plugins/owlcarousel/owl.carousel.min.js' %}" defer></script>
+<script src="{% static 'plugins/fancybox/jquery.fancybox.min.js' %}" defer></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}" defer></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}" defer></script>
+<script src="{% static 'plugins/moment/moment.js' %}" defer></script>
+<script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}" defer></script>
+<script src="{% static 'js/bootstrap-datetimepicker.min.js' %}" defer></script>
+<script src="{% static 'plugins/slick/slick.min.js' %}" defer></script>
+<script src="{% static 'plugins/theia-sticky-sidebar/ResizeSensor.js' %}" defer></script>
+<script src="{% static 'plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}" defer></script>
+<script src="{% static 'plugins/slimscroll/jquery.slimscroll.min.js' %}" defer></script>
+<script src="{% static 'plugins/select2/js/select2.min.js' %}" defer></script>
+<script src="{% static 'plugins/summernote/summernote-lite.min.js' %}" defer></script>
+<script src="{% static 'plugins/ion-rangeslider/js/ion.rangeSlider.min.js' %}" defer></script>
+<script src="{% static 'plugins/intltelinput/js/intlTelInput.js' %}" defer></script>
+<script src="{% static 'js/script.js' %}" defer></script>
+{% endif %}
+
+<script src="{% static 'js/afghanawaits.js' %}" defer></script>

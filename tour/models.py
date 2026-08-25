@@ -1,10 +1,13 @@
 import re
+import uuid
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from multiselectfield import MultiSelectField
+from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.utils import timezone
 User = get_user_model()
 
 class TourCategory(models.Model):
@@ -770,3 +773,807 @@ class WelcomePackage(models.Model):
 
     def __str__(self):
         return f"Welcome Package for {self.user} - {self.booking.tour.title}"
+
+
+# Tour workforce, supplier, and contract management.
+
+
+class EmployeeProfile(models.Model):
+    EMPLOYMENT_TYPES = [
+        ('permanent', 'Permanent'), ('fixed_term', 'Fixed term'), ('part_time', 'Part time'),
+    ]
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='employee_profile')
+    employee_code = models.CharField(max_length=40, unique=True, blank=True, null=True)
+    department = models.CharField(max_length=120)
+    job_title = models.CharField(max_length=120)
+    employment_type = models.CharField(max_length=20, choices=EMPLOYMENT_TYPES, default='permanent')
+    manager = models.ForeignKey('self', on_delete=models.SET_NULL, blank=True, null=True, related_name='direct_reports')
+    start_date = models.DateField()
+    end_date = models.DateField(blank=True, null=True)
+    monthly_salary = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    currency = models.CharField(max_length=3, default='USD')
+    emergency_contact = models.CharField(max_length=180, blank=True)
+    notes = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def clean(self):
+        if self.end_date and self.end_date < self.start_date:
+            raise ValidationError({'end_date': 'End date cannot be before start date.'})
+
+    def __str__(self):
+        return f"{self.user.get_full_name() or self.user.username} · {self.job_title}"
+
+
+class CrewRole(models.Model):
+    code = models.SlugField(max_length=60, unique=True)
+    name = models.CharField(max_length=120)
+    description = models.TextField(blank=True)
+    requires_training = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
+
+
+class CrewMember(models.Model):
+    VERIFICATION_STATUS = [
+        ('draft', 'Draft'), ('submitted', 'Submitted'), ('under_review', 'Under review'),
+        ('interview', 'Interview required'), ('training', 'Training required'),
+        ('approved', 'Approved'), ('needs_update', 'Needs update'),
+        ('suspended', 'Suspended'), ('rejected', 'Rejected'), ('expired', 'Documents expired'),
+    ]
+    GENDER_CHOICES = [('M', 'Male'), ('F', 'Female'), ('O', 'Other / prefer not to say')]
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='crew_profile')
+    public_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    display_name = models.CharField(max_length=160)
+    phone = models.CharField(max_length=40)
+    email = models.EmailField(blank=True)
+    gender = models.CharField(max_length=1, choices=GENDER_CHOICES, blank=True)
+    date_of_birth = models.DateField(blank=True, null=True)
+    base_location = models.CharField(max_length=180)
+    service_regions = models.TextField(blank=True, help_text='Provinces or regions where this person can work.')
+    languages = models.CharField(max_length=300, blank=True)
+    bio = models.TextField(blank=True)
+    profile_image = models.ImageField(upload_to='crew/profiles/', blank=True, null=True)
+    verification_status = models.CharField(max_length=20, choices=VERIFICATION_STATUS, default='draft')
+    available_for_work = models.BooleanField(default=True)
+    default_daily_rate = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    preferred_currency = models.CharField(max_length=3, default='USD')
+    emergency_contact_name = models.CharField(max_length=160, blank=True)
+    emergency_contact_phone = models.CharField(max_length=40, blank=True)
+    payout_method = models.CharField(max_length=80, blank=True)
+    payout_reference = models.CharField(max_length=180, blank=True)
+    rating_average = models.DecimalField(max_digits=3, decimal_places=2, default=0)
+    rating_count = models.PositiveIntegerField(default=0)
+    completed_assignments = models.PositiveIntegerField(default=0)
+    approved_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='approved_crew_members')
+    approved_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    roles = models.ManyToManyField(CrewRole, through='CrewQualification', related_name='crew_members')
+
+    class Meta:
+        ordering = ('display_name',)
+
+    @property
+    def is_approved(self):
+        return self.verification_status == 'approved'
+
+    def __str__(self):
+        return self.display_name
+
+
+class CrewQualification(models.Model):
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='qualifications')
+    role = models.ForeignKey(CrewRole, on_delete=models.PROTECT, related_name='qualifications')
+    experience_years = models.PositiveIntegerField(default=0)
+    specialties = models.CharField(max_length=300, blank=True)
+    usual_daily_rate = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    is_verified = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=('crew', 'role'), name='unique_crew_role')]
+
+    def __str__(self):
+        return f"{self.crew} · {self.role}"
+
+
+class CrewDocument(models.Model):
+    DOCUMENT_TYPES = [
+        ('identity', 'Identity document'), ('passport', 'Passport'), ('cv', 'CV'),
+        ('certificate', 'Certificate'), ('license', 'Professional license'),
+        ('background', 'Background check'), ('other', 'Other'),
+    ]
+    REVIEW_STATUS = [('pending', 'Pending'), ('verified', 'Verified'), ('rejected', 'Rejected')]
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='documents')
+    document_type = models.CharField(max_length=20, choices=DOCUMENT_TYPES)
+    title = models.CharField(max_length=160)
+    file = models.FileField(upload_to='crew/documents/')
+    reference_number = models.CharField(max_length=100, blank=True)
+    issued_at = models.DateField(blank=True, null=True)
+    expires_at = models.DateField(blank=True, null=True)
+    review_status = models.CharField(max_length=20, choices=REVIEW_STATUS, default='pending')
+    review_note = models.TextField(blank=True)
+    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='reviewed_crew_documents')
+    reviewed_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.crew} · {self.title}"
+
+
+class CrewAvailability(models.Model):
+    AVAILABILITY_TYPES = [('available', 'Available'), ('unavailable', 'Unavailable'), ('preferred', 'Preferred')]
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='availability_blocks')
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+    availability_type = models.CharField(max_length=20, choices=AVAILABILITY_TYPES)
+    note = models.CharField(max_length=255, blank=True)
+
+    class Meta:
+        ordering = ('start_at',)
+
+    def clean(self):
+        if self.end_at <= self.start_at:
+            raise ValidationError({'end_at': 'End time must be after start time.'})
+
+    def __str__(self):
+        return f"{self.crew} · {self.get_availability_type_display()}"
+
+
+class CrewOpportunity(models.Model):
+    STATUS = [
+        ('draft', 'Draft'), ('pending_approval', 'Pending approval'), ('published', 'Published'),
+        ('closed', 'Applications closed'), ('shortlisting', 'Shortlisting'),
+        ('offer_sent', 'Offer sent'), ('filled', 'Filled'), ('cancelled', 'Cancelled'),
+        ('completed', 'Completed'),
+    ]
+    COMPENSATION_TYPES = [
+        ('fixed', 'Fixed'), ('daily', 'Daily'), ('hourly', 'Hourly'), ('negotiable', 'Negotiable'),
+    ]
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='crew_opportunities')
+    role = models.ForeignKey(CrewRole, on_delete=models.PROTECT, related_name='opportunities')
+    title = models.CharField(max_length=200)
+    summary = models.TextField()
+    duties = models.TextField(blank=True)
+    requirements = models.TextField(blank=True)
+    location = models.CharField(max_length=200)
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+    positions = models.PositiveIntegerField(default=1)
+    minimum_experience_years = models.PositiveIntegerField(default=0)
+    required_languages = models.CharField(max_length=240, blank=True)
+    compensation_type = models.CharField(max_length=20, choices=COMPENSATION_TYPES, default='fixed')
+    currency = models.CharField(max_length=3, default='USD')
+    budget_min = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    budget_max = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    accommodation_included = models.BooleanField(default=False)
+    meals_included = models.BooleanField(default=False)
+    transport_included = models.BooleanField(default=False)
+    application_deadline = models.DateTimeField()
+    status = models.CharField(max_length=24, choices=STATUS, default='draft')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='created_crew_opportunities')
+    published_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('start_at', '-created_at')
+        indexes = [models.Index(fields=('status', 'start_at'))]
+
+    def clean(self):
+        errors = {}
+        if self.end_at <= self.start_at:
+            errors['end_at'] = 'End time must be after start time.'
+        if self.application_deadline >= self.start_at:
+            errors['application_deadline'] = 'Application deadline must be before the assignment starts.'
+        if self.budget_min is not None and self.budget_max is not None and self.budget_max < self.budget_min:
+            errors['budget_max'] = 'Maximum budget cannot be below minimum budget.'
+        if errors:
+            raise ValidationError(errors)
+
+    @property
+    def is_open(self):
+        return self.status == 'published' and self.application_deadline > timezone.now()
+
+    def __str__(self):
+        return f"{self.title} · {self.tour}"
+
+
+class CrewApplication(models.Model):
+    STATUS = [
+        ('submitted', 'Submitted'), ('under_review', 'Under review'),
+        ('shortlisted', 'Shortlisted'), ('interview', 'Interview scheduled'),
+        ('negotiation', 'Negotiation'), ('offer_sent', 'Offer sent'),
+        ('accepted', 'Accepted'), ('rejected', 'Rejected'),
+        ('withdrawn', 'Withdrawn'), ('expired', 'Expired'),
+    ]
+    opportunity = models.ForeignKey(CrewOpportunity, on_delete=models.CASCADE, related_name='applications')
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='applications')
+    message = models.TextField()
+    relevant_experience = models.TextField(blank=True)
+    proposed_amount = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    currency = models.CharField(max_length=3, default='USD')
+    availability_confirmed = models.BooleanField(default=False)
+    terms_acknowledged = models.BooleanField(default=False)
+    needs_transport = models.BooleanField(default=False)
+    needs_accommodation = models.BooleanField(default=False)
+    status = models.CharField(max_length=20, choices=STATUS, default='submitted')
+    internal_note = models.TextField(blank=True)
+    rejection_reason = models.TextField(blank=True)
+    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='reviewed_crew_applications')
+    applied_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-applied_at',)
+        constraints = [models.UniqueConstraint(fields=('opportunity', 'crew'), name='unique_crew_application')]
+
+    def __str__(self):
+        return f"{self.crew} → {self.opportunity}"
+
+
+class CrewOffer(models.Model):
+    STATUS = [
+        ('draft', 'Draft'), ('sent', 'Sent'), ('countered', 'Countered'),
+        ('accepted', 'Accepted'), ('declined', 'Declined'), ('expired', 'Expired'),
+        ('withdrawn', 'Withdrawn'),
+    ]
+    application = models.ForeignKey(CrewApplication, on_delete=models.CASCADE, related_name='offers')
+    version = models.PositiveIntegerField(default=1)
+    compensation_type = models.CharField(max_length=20, choices=CrewOpportunity.COMPENSATION_TYPES, default='fixed')
+    amount = models.DecimalField(max_digits=12, decimal_places=2)
+    currency = models.CharField(max_length=3, default='USD')
+    bonus_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    expense_allowance = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+    terms = models.TextField()
+    cancellation_terms = models.TextField(blank=True)
+    status = models.CharField(max_length=20, choices=STATUS, default='draft')
+    expires_at = models.DateTimeField()
+    sent_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='sent_crew_offers')
+    responded_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-version',)
+        constraints = [models.UniqueConstraint(fields=('application', 'version'), name='unique_application_offer_version')]
+
+    def clean(self):
+        if self.end_at <= self.start_at:
+            raise ValidationError({'end_at': 'End time must be after start time.'})
+
+    def __str__(self):
+        return f"Offer v{self.version} · {self.application}"
+
+
+class CrewEngagement(models.Model):
+    STATUS = [
+        ('pending_acceptance', 'Pending acceptance'), ('confirmed', 'Confirmed'),
+        ('booked', 'Booked'), ('checked_in', 'Checked in'), ('in_progress', 'In progress'),
+        ('completed', 'Completed'), ('no_show', 'No show'), ('cancelled', 'Cancelled'),
+        ('disputed', 'Disputed'),
+    ]
+    ACTIVE_STATUSES = ('pending_acceptance', 'confirmed', 'booked', 'checked_in', 'in_progress')
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='crew_engagements')
+    opportunity = models.ForeignKey(CrewOpportunity, on_delete=models.SET_NULL, blank=True, null=True, related_name='engagements')
+    application = models.OneToOneField(CrewApplication, on_delete=models.SET_NULL, blank=True, null=True, related_name='engagement')
+    offer = models.OneToOneField(CrewOffer, on_delete=models.SET_NULL, blank=True, null=True, related_name='engagement')
+    crew = models.ForeignKey(CrewMember, on_delete=models.PROTECT, related_name='engagements')
+    role = models.ForeignKey(CrewRole, on_delete=models.PROTECT, related_name='engagements')
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+    compensation_type = models.CharField(max_length=20, choices=CrewOpportunity.COMPENSATION_TYPES, default='fixed')
+    agreed_amount = models.DecimalField(max_digits=12, decimal_places=2)
+    currency = models.CharField(max_length=3, default='USD')
+    bonus_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    expense_allowance = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    duties = models.TextField(blank=True)
+    schedule_note = models.TextField(blank=True)
+    meeting_point = models.CharField(max_length=255, blank=True)
+    cancellation_terms = models.TextField(blank=True)
+    status = models.CharField(max_length=24, choices=STATUS, default='confirmed')
+    accepted_at = models.DateTimeField(blank=True, null=True)
+    checked_in_at = models.DateTimeField(blank=True, null=True)
+    checked_out_at = models.DateTimeField(blank=True, null=True)
+    completed_at = models.DateTimeField(blank=True, null=True)
+    cancellation_reason = models.TextField(blank=True)
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='created_crew_engagements')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('start_at',)
+        indexes = [models.Index(fields=('crew', 'start_at', 'end_at'))]
+
+    def clean(self):
+        errors = {}
+        if self.end_at <= self.start_at:
+            errors['end_at'] = 'End time must be after start time.'
+        if self.crew_id and self.start_at and self.end_at and self.status in self.ACTIVE_STATUSES:
+            conflict = CrewEngagement.objects.filter(
+                crew_id=self.crew_id, status__in=self.ACTIVE_STATUSES,
+                start_at__lt=self.end_at, end_at__gt=self.start_at,
+            ).exclude(pk=self.pk)
+            if conflict.exists():
+                errors['start_at'] = 'This crew member is already booked during the selected period.'
+        if errors:
+            raise ValidationError(errors)
+
+    def __str__(self):
+        return f"{self.crew} · {self.role} · {self.tour}"
+
+
+class CrewPayment(models.Model):
+    STATUS = [
+        ('pending', 'Pending'), ('approved', 'Approved'), ('processing', 'Processing'),
+        ('paid', 'Paid'), ('failed', 'Failed'), ('disputed', 'Disputed'),
+    ]
+    engagement = models.OneToOneField(CrewEngagement, on_delete=models.CASCADE, related_name='payment')
+    base_amount = models.DecimalField(max_digits=12, decimal_places=2)
+    bonus_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    approved_expenses = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    deductions = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    net_amount = models.DecimalField(max_digits=12, decimal_places=2, default=0)
+    currency = models.CharField(max_length=3, default='USD')
+    status = models.CharField(max_length=20, choices=STATUS, default='pending')
+    payment_method = models.CharField(max_length=80, blank=True)
+    payment_reference = models.CharField(max_length=160, blank=True)
+    receipt = models.FileField(upload_to='crew/payments/', blank=True, null=True)
+    note = models.TextField(blank=True)
+    approved_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='approved_crew_payments')
+    paid_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def calculate_net(self):
+        return self.base_amount + self.bonus_amount + self.approved_expenses - self.deductions
+
+    def __str__(self):
+        return f"Payment · {self.engagement}"
+
+
+class CrewReview(models.Model):
+    REVIEWER_TYPES = [('tourist', 'Tourist'), ('operations', 'Operations')]
+    engagement = models.ForeignKey(CrewEngagement, on_delete=models.CASCADE, related_name='reviews')
+    reviewer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='crew_reviews_given')
+    reviewer_type = models.CharField(max_length=20, choices=REVIEWER_TYPES)
+    professionalism = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    knowledge = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    communication = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    punctuality = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    safety = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    overall = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    comment = models.TextField(blank=True)
+    is_public = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=('engagement', 'reviewer', 'reviewer_type'), name='unique_crew_engagement_review')]
+
+    def __str__(self):
+        return f"{self.overall}/5 · {self.engagement}"
+
+
+class TrainingCourse(models.Model):
+    title = models.CharField(max_length=200)
+    code = models.SlugField(max_length=80, unique=True)
+    description = models.TextField()
+    content = models.TextField(blank=True)
+    required_for_roles = models.ManyToManyField(CrewRole, blank=True, related_name='training_courses')
+    passing_score = models.PositiveSmallIntegerField(default=70)
+    validity_months = models.PositiveIntegerField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
+class CrewTrainingRecord(models.Model):
+    STATUS = [
+        ('assigned', 'Assigned'), ('in_progress', 'In progress'),
+        ('passed', 'Passed'), ('failed', 'Failed'), ('expired', 'Expired'),
+    ]
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='training_records')
+    course = models.ForeignKey(TrainingCourse, on_delete=models.CASCADE, related_name='crew_records')
+    status = models.CharField(max_length=20, choices=STATUS, default='assigned')
+    score = models.PositiveSmallIntegerField(blank=True, null=True)
+    completed_at = models.DateTimeField(blank=True, null=True)
+    expires_at = models.DateField(blank=True, null=True)
+    certificate = models.FileField(upload_to='crew/training/', blank=True, null=True)
+    verified_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='verified_training_records')
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=('crew', 'course'), name='unique_crew_training_course')]
+
+    def __str__(self):
+        return f"{self.crew} · {self.course}"
+
+
+class CrewCase(models.Model):
+    CATEGORY = [
+        ('payment', 'Payment'), ('safety', 'Safety'), ('conduct', 'Conduct'),
+        ('schedule', 'Schedule'), ('customer', 'Customer'), ('other', 'Other'),
+    ]
+    STATUS = [
+        ('open', 'Open'), ('under_review', 'Under review'),
+        ('waiting', 'Waiting for information'), ('resolved', 'Resolved'), ('closed', 'Closed'),
+    ]
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='cases')
+    engagement = models.ForeignKey(CrewEngagement, on_delete=models.SET_NULL, blank=True, null=True, related_name='cases')
+    category = models.CharField(max_length=20, choices=CATEGORY)
+    subject = models.CharField(max_length=200)
+    description = models.TextField()
+    status = models.CharField(max_length=20, choices=STATUS, default='open')
+    resolution = models.TextField(blank=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='created_crew_cases')
+    assigned_to = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='assigned_crew_cases')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Case #{self.pk} · {self.subject}"
+
+
+class CrewNotification(models.Model):
+    crew = models.ForeignKey(CrewMember, on_delete=models.CASCADE, related_name='notifications')
+    title = models.CharField(max_length=180)
+    message = models.TextField()
+    url = models.CharField(max_length=300, blank=True)
+    read_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-created_at',)
+
+    def __str__(self):
+        return self.title
+
+
+class SupplierCategory(models.Model):
+    code = models.SlugField(max_length=60, unique=True)
+    name = models.CharField(max_length=120)
+    description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ('name',)
+
+    def __str__(self):
+        return self.name
+
+
+class ServiceSupplier(models.Model):
+    ENTITY_TYPES = [('individual', 'Individual / sole owner'), ('company', 'Company / organization')]
+    STATUS = [
+        ('lead', 'Lead'), ('onboarding', 'Onboarding'), ('under_review', 'Under review'),
+        ('approved', 'Approved'), ('active', 'Active'), ('suspended', 'Suspended'),
+        ('expired', 'Expired'), ('terminated', 'Terminated'), ('blacklisted', 'Blacklisted'),
+    ]
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='supplier_profile')
+    public_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
+    legal_name = models.CharField(max_length=200)
+    trading_name = models.CharField(max_length=200, blank=True)
+    entity_type = models.CharField(max_length=20, choices=ENTITY_TYPES, default='company')
+    categories = models.ManyToManyField(SupplierCategory, related_name='suppliers')
+    contact_name = models.CharField(max_length=160)
+    phone = models.CharField(max_length=40)
+    email = models.EmailField(blank=True)
+    address = models.TextField(blank=True)
+    service_regions = models.TextField(blank=True)
+    business_license_number = models.CharField(max_length=120, blank=True)
+    tax_number = models.CharField(max_length=120, blank=True)
+    contract_email = models.EmailField(blank=True)
+    payout_method = models.CharField(max_length=80, blank=True)
+    payout_reference = models.CharField(max_length=180, blank=True)
+    status = models.CharField(max_length=20, choices=STATUS, default='onboarding')
+    rating_average = models.DecimalField(max_digits=3, decimal_places=2, default=0)
+    rating_count = models.PositiveIntegerField(default=0)
+    approved_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='approved_suppliers')
+    approved_at = models.DateTimeField(blank=True, null=True)
+    notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('legal_name',)
+
+    @property
+    def display_name(self):
+        return self.trading_name or self.legal_name
+
+    @property
+    def is_approved(self):
+        return self.status in {'approved', 'active'}
+
+    def __str__(self):
+        return self.display_name
+
+
+class SupplierDocument(models.Model):
+    DOCUMENT_TYPES = [
+        ('license', 'Business license'), ('tax', 'Tax document'), ('insurance', 'Insurance'),
+        ('bank', 'Bank confirmation'), ('safety', 'Safety certificate'), ('other', 'Other'),
+    ]
+    supplier = models.ForeignKey(ServiceSupplier, on_delete=models.CASCADE, related_name='documents')
+    document_type = models.CharField(max_length=20, choices=DOCUMENT_TYPES)
+    title = models.CharField(max_length=160)
+    file = models.FileField(upload_to='suppliers/documents/')
+    reference_number = models.CharField(max_length=100, blank=True)
+    expires_at = models.DateField(blank=True, null=True)
+    is_verified = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.supplier} · {self.title}"
+
+
+class SupplierService(models.Model):
+    supplier = models.ForeignKey(ServiceSupplier, on_delete=models.CASCADE, related_name='services')
+    category = models.ForeignKey(SupplierCategory, on_delete=models.PROTECT, related_name='services')
+    name = models.CharField(max_length=180)
+    description = models.TextField(blank=True)
+    unit = models.CharField(max_length=40, default='service')
+    capacity = models.PositiveIntegerField(blank=True, null=True)
+    base_rate = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    currency = models.CharField(max_length=3, default='USD')
+    location = models.CharField(max_length=180, blank=True)
+    terms = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.supplier} · {self.name}"
+
+
+class SupplierAsset(models.Model):
+    ASSET_TYPES = [
+        ('hotel', 'Hotel / property'), ('room', 'Room type'), ('vehicle', 'Vehicle'),
+        ('equipment', 'Equipment'), ('venue', 'Venue'), ('other', 'Other'),
+    ]
+    supplier = models.ForeignKey(ServiceSupplier, on_delete=models.CASCADE, related_name='assets')
+    asset_type = models.CharField(max_length=20, choices=ASSET_TYPES)
+    name = models.CharField(max_length=180)
+    reference = models.CharField(max_length=100, blank=True)
+    capacity = models.PositiveIntegerField(blank=True, null=True)
+    location = models.CharField(max_length=180, blank=True)
+    description = models.TextField(blank=True)
+    daily_rate = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    currency = models.CharField(max_length=3, default='USD')
+    document_expiry = models.DateField(blank=True, null=True)
+    is_available = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.supplier} · {self.name}"
+
+
+class SupplierContract(models.Model):
+    STATUS = [
+        ('draft', 'Draft'), ('negotiation', 'Negotiation'), ('pending_approval', 'Pending approval'),
+        ('signed', 'Signed'), ('active', 'Active'), ('expiring', 'Expiring'),
+        ('expired', 'Expired'), ('suspended', 'Suspended'), ('terminated', 'Terminated'),
+    ]
+    supplier = models.ForeignKey(ServiceSupplier, on_delete=models.CASCADE, related_name='contracts')
+    contract_number = models.CharField(max_length=80, unique=True)
+    title = models.CharField(max_length=200)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    currency = models.CharField(max_length=3, default='USD')
+    value_ceiling = models.DecimalField(max_digits=14, decimal_places=2, blank=True, null=True)
+    payment_terms = models.TextField(blank=True)
+    cancellation_terms = models.TextField(blank=True)
+    service_levels = models.TextField(blank=True)
+    document = models.FileField(upload_to='suppliers/contracts/', blank=True, null=True)
+    status = models.CharField(max_length=24, choices=STATUS, default='draft')
+    signed_at = models.DateTimeField(blank=True, null=True)
+    approved_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='approved_supplier_contracts')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('-start_date',)
+
+    def clean(self):
+        if self.end_date < self.start_date:
+            raise ValidationError({'end_date': 'End date cannot be before start date.'})
+
+    def __str__(self):
+        return f"{self.contract_number} · {self.supplier}"
+
+
+class SupplierRate(models.Model):
+    contract = models.ForeignKey(SupplierContract, on_delete=models.CASCADE, related_name='rates')
+    service = models.ForeignKey(SupplierService, on_delete=models.SET_NULL, blank=True, null=True, related_name='contract_rates')
+    description = models.CharField(max_length=200)
+    unit = models.CharField(max_length=40)
+    amount = models.DecimalField(max_digits=12, decimal_places=2)
+    currency = models.CharField(max_length=3, default='USD')
+    valid_from = models.DateField()
+    valid_to = models.DateField()
+    cancellation_deadline_hours = models.PositiveIntegerField(default=24)
+
+    def clean(self):
+        if self.valid_to < self.valid_from:
+            raise ValidationError({'valid_to': 'Valid-to date cannot be before valid-from date.'})
+
+    def __str__(self):
+        return f"{self.description} · {self.amount} {self.currency}"
+
+
+class ServiceRequirement(models.Model):
+    STATUS = [
+        ('required', 'Required'), ('sourcing', 'Sourcing'), ('quoted', 'Quoted'),
+        ('selected', 'Selected'), ('contracted', 'Contracted'), ('confirmed', 'Confirmed'),
+        ('delivered', 'Delivered'), ('completed', 'Completed'), ('cancelled', 'Cancelled'),
+    ]
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='service_requirements')
+    category = models.ForeignKey(SupplierCategory, on_delete=models.PROTECT, related_name='requirements')
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    quantity = models.DecimalField(max_digits=10, decimal_places=2, default=1)
+    unit = models.CharField(max_length=40, default='service')
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+    location = models.CharField(max_length=200)
+    budget_amount = models.DecimalField(max_digits=12, decimal_places=2, blank=True, null=True)
+    currency = models.CharField(max_length=3, default='USD')
+    needed_by = models.DateTimeField()
+    status = models.CharField(max_length=20, choices=STATUS, default='required')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='created_service_requirements')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('start_at',)
+
+    def clean(self):
+        errors = {}
+        if self.end_at <= self.start_at:
+            errors['end_at'] = 'End time must be after start time.'
+        if self.needed_by >= self.start_at:
+            errors['needed_by'] = 'Needed-by date must be before service starts.'
+        if errors:
+            raise ValidationError(errors)
+
+    def __str__(self):
+        return f"{self.title} · {self.tour}"
+
+
+class RequestForQuote(models.Model):
+    STATUS = [
+        ('draft', 'Draft'), ('published', 'Published'), ('closed', 'Closed'),
+        ('awarded', 'Awarded'), ('cancelled', 'Cancelled'),
+    ]
+    requirement = models.OneToOneField(ServiceRequirement, on_delete=models.CASCADE, related_name='rfq')
+    reference = models.CharField(max_length=80, unique=True)
+    instructions = models.TextField(blank=True)
+    deadline = models.DateTimeField()
+    status = models.CharField(max_length=20, choices=STATUS, default='draft')
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='created_rfqs')
+    published_at = models.DateTimeField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    @property
+    def is_open(self):
+        return self.status == 'published' and self.deadline > timezone.now()
+
+    def __str__(self):
+        return self.reference
+
+
+class SupplierQuote(models.Model):
+    STATUS = [
+        ('submitted', 'Submitted'), ('under_review', 'Under review'),
+        ('selected', 'Selected'), ('rejected', 'Rejected'), ('withdrawn', 'Withdrawn'),
+    ]
+    rfq = models.ForeignKey(RequestForQuote, on_delete=models.CASCADE, related_name='quotes')
+    supplier = models.ForeignKey(ServiceSupplier, on_delete=models.CASCADE, related_name='quotes')
+    amount = models.DecimalField(max_digits=14, decimal_places=2)
+    currency = models.CharField(max_length=3, default='USD')
+    details = models.TextField()
+    cancellation_terms = models.TextField(blank=True)
+    valid_until = models.DateTimeField()
+    attachment = models.FileField(upload_to='suppliers/quotes/', blank=True, null=True)
+    status = models.CharField(max_length=20, choices=STATUS, default='submitted')
+    submitted_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('amount', 'submitted_at')
+        constraints = [models.UniqueConstraint(fields=('rfq', 'supplier'), name='unique_supplier_rfq_quote')]
+
+    def __str__(self):
+        return f"{self.rfq} · {self.supplier}"
+
+
+class ServiceOrder(models.Model):
+    STATUS = [
+        ('draft', 'Draft'), ('issued', 'Issued'), ('confirmed', 'Confirmed'),
+        ('in_service', 'In service'), ('delivered', 'Delivered'), ('completed', 'Completed'),
+        ('disputed', 'Disputed'), ('cancelled', 'Cancelled'),
+    ]
+    order_number = models.CharField(max_length=80, unique=True)
+    tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='service_orders')
+    requirement = models.OneToOneField(ServiceRequirement, on_delete=models.SET_NULL, blank=True, null=True, related_name='service_order')
+    supplier = models.ForeignKey(ServiceSupplier, on_delete=models.PROTECT, related_name='service_orders')
+    contract = models.ForeignKey(SupplierContract, on_delete=models.SET_NULL, blank=True, null=True, related_name='service_orders')
+    quote = models.OneToOneField(SupplierQuote, on_delete=models.SET_NULL, blank=True, null=True, related_name='service_order')
+    service = models.ForeignKey(SupplierService, on_delete=models.SET_NULL, blank=True, null=True, related_name='orders')
+    description = models.TextField()
+    start_at = models.DateTimeField()
+    end_at = models.DateTimeField()
+    quantity = models.DecimalField(max_digits=10, decimal_places=2, default=1)
+    unit = models.CharField(max_length=40, default='service')
+    unit_price = models.DecimalField(max_digits=12, decimal_places=2)
+    total_amount = models.DecimalField(max_digits=14, decimal_places=2)
+    currency = models.CharField(max_length=3, default='USD')
+    status = models.CharField(max_length=20, choices=STATUS, default='draft')
+    confirmation_reference = models.CharField(max_length=120, blank=True)
+    voucher = models.FileField(upload_to='suppliers/vouchers/', blank=True, null=True)
+    cancellation_terms = models.TextField(blank=True)
+    operational_note = models.TextField(blank=True)
+    created_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='created_service_orders')
+    approved_by = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True, related_name='approved_service_orders')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ('start_at',)
+
+    def clean(self):
+        if self.end_at <= self.start_at:
+            raise ValidationError({'end_at': 'End time must be after start time.'})
+
+    def __str__(self):
+        return f"{self.order_number} · {self.supplier}"
+
+
+class SupplierInvoice(models.Model):
+    STATUS = [
+        ('submitted', 'Submitted'), ('under_review', 'Under review'), ('approved', 'Approved'),
+        ('scheduled', 'Scheduled'), ('paid', 'Paid'), ('rejected', 'Rejected'), ('disputed', 'Disputed'),
+    ]
+    service_order = models.ForeignKey(ServiceOrder, on_delete=models.CASCADE, related_name='invoices')
+    invoice_number = models.CharField(max_length=100)
+    amount = models.DecimalField(max_digits=14, decimal_places=2)
+    currency = models.CharField(max_length=3, default='USD')
+    issued_at = models.DateField()
+    due_date = models.DateField()
+    attachment = models.FileField(upload_to='suppliers/invoices/', blank=True, null=True)
+    status = models.CharField(max_length=20, choices=STATUS, default='submitted')
+    payment_reference = models.CharField(max_length=160, blank=True)
+    paid_at = models.DateTimeField(blank=True, null=True)
+    note = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-issued_at',)
+        constraints = [models.UniqueConstraint(fields=('service_order', 'invoice_number'), name='unique_order_invoice_number')]
+
+    def clean(self):
+        if self.due_date < self.issued_at:
+            raise ValidationError({'due_date': 'Due date cannot be before invoice date.'})
+
+    def __str__(self):
+        return f"{self.invoice_number} · {self.service_order}"
+
+
+class SupplierReview(models.Model):
+    service_order = models.OneToOneField(ServiceOrder, on_delete=models.CASCADE, related_name='review')
+    reviewer = models.ForeignKey(User, on_delete=models.CASCADE, related_name='supplier_reviews_given')
+    quality = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    timeliness = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    contract_compliance = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    invoice_accuracy = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    overall = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
+    comment = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.overall}/5 · {self.service_order.supplier}"
