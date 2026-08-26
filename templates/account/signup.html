@@ -16,7 +16,7 @@
             <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
                 <div class="col-xxl-4 col-lg-6 col-md-6 col-11 mx-auto">
                     <div class="p-4 text-center">
-                        <img src="{% static 'brand/afghanawaits/logo.svg' %}" alt="logo" class="img-fluid">
+                        <img src="{% static 'brand/afghanawaits/logo-white.svg' %}" alt="AfghanAwaits.com" class="img-fluid">
                     </div>
                     <div class="card authentication-card">
                         <div class="card-header">
@@ -43,18 +43,10 @@
                                 {{ redirect_field }}
 
                                 <div class="mb-3">
-                                    <label class="form-label">{% trans "Username" %}</label>
-                                    <div class="input-icon">
-                                        <span class="input-icon-addon"><i class="isax isax-user"></i></span>
-                                        <input type="text" name="{{ form.username.name }}" value="{% if form.username.value %}{{ form.username.value|stringformat:'s' }}{% endif %}" class="form-control form-control-lg" placeholder="{% trans 'Enter Username' %}">
-                                    </div>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label class="form-label">{% trans "Email" %}</label>
+                                    <label class="form-label">{% trans "Email address" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-message"></i></span>
-                                        <input type="email" name="{{ form.email.name }}" value="{% if form.email.value %}{{ form.email.value|stringformat:'s' }}{% endif %}"                                        class="form-control form-control-lg" placeholder="{% trans 'Enter Email' %}">
+                                        <input type="email" name="{{ form.email.name }}" value="{% if form.email.value %}{{ form.email.value|stringformat:'s' }}{% endif %}" class="form-control form-control-lg" autocomplete="email" required placeholder="{% trans 'Enter your email address' %}">
                                     </div>
                                 </div>
                           
@@ -64,7 +56,7 @@
                                     <label class="form-label">{% trans "Password" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-lock"></i></span>
-                                        <input type="password" name="{{ form.password1.name }}" class="form-control form-control-lg pass-input" placeholder="{% trans 'Enter Password' %}">
+                                        <input type="password" name="{{ form.password1.name }}" class="form-control form-control-lg pass-input" autocomplete="new-password" required placeholder="{% trans 'Enter Password' %}">
                                         <span class="input-icon-addon toggle-password"><i class="isax isax-eye-slash"></i></span>
                                     </div>
                                 </div>
@@ -73,7 +65,7 @@
                                     <label class="form-label">{% trans "Confirm Password" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-lock"></i></span>
-                                        <input type="password" name="{{ form.password2.name }}" class="form-control form-control-lg pass-input" placeholder="{% trans 'Enter Password Again' %}">
+                                        <input type="password" name="{{ form.password2.name }}" class="form-control form-control-lg pass-input" autocomplete="new-password" required placeholder="{% trans 'Enter Password Again' %}">
                                         <span class="input-icon-addon toggle-password"><i class="isax isax-eye-slash"></i></span>
                                     </div>
                                 </div>

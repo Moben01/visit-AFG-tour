@@ -31,13 +31,16 @@ class ResourceFlowTests(TestCase):
             price=Decimal('800.00'), available=True, google_location='Bamyan',
         )
         self.moderator = User.objects.create_user(
-            username='resource-moderator', password='pass1234', my_choice_field='Moderator'
+            username='resource-moderator', email='resource-moderator@example.com',
+            password='pass1234', my_choice_field='Moderator'
         )
         self.operator = User.objects.create_user(
-            username='resource-operator', password='pass1234', my_choice_field='Operator'
+            username='resource-operator', email='resource-operator@example.com',
+            password='pass1234', my_choice_field='Operator'
         )
         self.crew_user = User.objects.create_user(
-            username='field-guide', password='pass1234', my_choice_field='Guide'
+            username='field-guide', email='field-guide@example.com',
+            password='pass1234', my_choice_field='Guide'
         )
         self.role = CrewRole.objects.create(code='test-guide', name='Test Tour Guide')
         self.crew = CrewMember.objects.create(
@@ -110,7 +113,9 @@ class ResourceFlowTests(TestCase):
         self.assertFalse(CrewEngagement.objects.filter(application=second_application).exists())
 
     def test_supplier_quote_award_creates_service_order(self):
-        supplier_user = User.objects.create_user(username='hotel-user', password='pass1234')
+        supplier_user = User.objects.create_user(
+            username='hotel-user', email='hotel-user@example.com', password='pass1234'
+        )
         hotel = SupplierCategory.objects.create(code='test-hotel', name='Test Hotel')
         supplier = ServiceSupplier.objects.create(
             user=supplier_user, legal_name='Bamyan Hotel LLC', entity_type='company',
@@ -162,8 +167,12 @@ class ResourceFlowTests(TestCase):
         self.assertEqual(CrewPayment.objects.get(engagement=engagement).status, 'paid')
 
     def test_only_customer_on_completed_tour_can_rate_assigned_crew(self):
-        customer = User.objects.create_user(username='tour-customer', password='pass1234')
-        outsider = User.objects.create_user(username='other-customer', password='pass1234')
+        customer = User.objects.create_user(
+            username='tour-customer', email='tour-customer@example.com', password='pass1234'
+        )
+        outsider = User.objects.create_user(
+            username='other-customer', email='other-customer@example.com', password='pass1234'
+        )
         Booking.objects.create(
             tour=self.tour, user=customer, booking_date=self.tour.start_date,
             name='Tour Customer', email='customer@example.com', phone='0700',
@@ -209,7 +218,9 @@ class ResourceFlowTests(TestCase):
             agreed_amount=Decimal('475'), bonus_amount=Decimal('25'),
             currency='USD', status='confirmed',
         )
-        supplier_user = User.objects.create_user(username='eur-supplier', password='pass1234')
+        supplier_user = User.objects.create_user(
+            username='eur-supplier', email='eur-supplier@example.com', password='pass1234'
+        )
         supplier = ServiceSupplier.objects.create(
             user=supplier_user, legal_name='Euro Supplier', entity_type='company',
             contact_name='Manager', phone='0700000001', status='active',

@@ -39,13 +39,14 @@
                                 {% endif %}
 
                                 <div class="mb-3">
-                                    <label class="form-label">{% trans "Email or Username" %}</label>
+                                    <label class="form-label">{% trans "Email address" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-message"></i></span>
-                                        <input type="text" name="{{ form.login.name }}" 
-                                               value="{% if form.login.value %}{{ form.login.value|stringformat:'s' }}{% endif %}" 
-                                               class="form-control form-control-lg" 
-                                               placeholder="{% trans 'Enter Email or Username' %}">
+                                        <input type="email" name="{{ form.login.name }}"
+                                               value="{% if form.login.value %}{{ form.login.value|stringformat:'s' }}{% endif %}"
+                                               class="form-control form-control-lg"
+                                               autocomplete="email" required
+                                               placeholder="{% trans 'Enter your email address' %}">
                                     </div>
                                 </div>
 
@@ -53,7 +54,7 @@
                                     <label class="form-label">{% trans "Password" %}</label>
                                     <div class="input-icon">
                                         <span class="input-icon-addon"><i class="isax isax-lock"></i></span>
-                                        <input type="password" name="{{ form.password.name }}" class="form-control form-control-lg pass-input" placeholder="{% trans 'Enter Password' %}">
+                                        <input type="password" name="{{ form.password.name }}" class="form-control form-control-lg pass-input" autocomplete="current-password" required placeholder="{% trans 'Enter Password' %}">
                                         <span class="input-icon-addon toggle-password">
                                             <i class="isax isax-eye-slash"></i>
                                         </span>
