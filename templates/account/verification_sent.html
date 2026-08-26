@@ -1,14 +1,68 @@
 {% extends "account/base_entrance.html" %}
 {% load i18n %}
-{% load allauth %}
-{% block head_title %}
-    {% trans "Verify Your Email Address" %}
-{% endblock head_title %}
+
+{% block head_title %}{% trans "Verify Your Email Address" %}{% endblock head_title %}
+{% block body_class %}aa-account-state-page{% endblock body_class %}
+
 {% block content %}
-    {% element h1 %}
-        {% trans "Verify Your Email Address" %}
-    {% endelement %}
-    {% element p %}
-        {% blocktrans %}We have sent an email to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification email in your main inbox, check your spam folder. Please contact us if you do not receive the verification email within a few minutes.{% endblocktrans %}
-    {% endelement %}
+<section class="aa-verification-page" aria-labelledby="verification-title">
+    <div class="aa-container">
+        <article class="aa-verification-card">
+            <div class="aa-verification-icon" aria-hidden="true">
+                <i class="ti ti-mail-check"></i>
+            </div>
+
+            <p class="aa-verification-kicker">{% trans "Account security" %}</p>
+            <h1 id="verification-title">{% trans "Verify Your Email Address" %}</h1>
+            <p class="aa-verification-lead">
+                {% blocktrans %}We have sent you a verification email. Follow the link in that message to finish creating your AfghanAwaits account.{% endblocktrans %}
+            </p>
+
+            <div class="aa-verification-steps" aria-label="{% trans 'Email verification steps' %}">
+                <div class="aa-verification-step">
+                    <span>1</span>
+                    <div>
+                        <strong>{% trans "Open your inbox" %}</strong>
+                        <p>{% trans "Look for a message from AfghanAwaits." %}</p>
+                    </div>
+                </div>
+                <div class="aa-verification-step">
+                    <span>2</span>
+                    <div>
+                        <strong>{% trans "Click the secure link" %}</strong>
+                        <p>{% trans "The link confirms that the email belongs to you." %}</p>
+                    </div>
+                </div>
+                <div class="aa-verification-step">
+                    <span>3</span>
+                    <div>
+                        <strong>{% trans "Sign in" %}</strong>
+                        <p>{% trans "Return to your account after confirmation." %}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="aa-verification-notice">
+                <i class="ti ti-info-circle" aria-hidden="true"></i>
+                <p>
+                    {% blocktrans %}The email may take a few minutes to arrive. If it is not in your inbox, check your spam or junk folder.{% endblocktrans %}
+                </p>
+            </div>
+
+            <div class="aa-verification-actions">
+                <a class="aa-verification-btn aa-verification-btn--primary" href="{% url 'account_login' %}">
+                    {% trans "Go to sign in" %}<i class="ti ti-arrow-right" aria-hidden="true"></i>
+                </a>
+                <a class="aa-verification-btn aa-verification-btn--secondary" href="{% url 'home:home' %}">
+                    {% trans "Back to home" %}
+                </a>
+            </div>
+
+            <p class="aa-verification-help">
+                {% trans "Still did not receive the email?" %}
+                <a href="mailto:info@afghanawaits.com">{% trans "Contact support" %}</a>
+            </p>
+        </article>
+    </div>
+</section>
 {% endblock content %}

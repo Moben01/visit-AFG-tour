@@ -43,6 +43,13 @@ class EmailAuthenticationTests(TestCase):
         self.assertEqual(len(mail.outbox), 1)
         self.assertIn('confirm', mail.outbox[0].body.lower())
 
+    def test_verification_sent_page_uses_designed_account_state(self):
+        response = self.client.get(reverse('account_email_verification_sent'))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'aa-verification-card')
+        self.assertContains(response, 'aa-verification-steps')
+        self.assertContains(response, reverse('account_login'))
+
     def test_verified_user_logs_in_with_email(self):
         user = self.create_verified_user()
         response = self.client.post(reverse('account_login'), {
