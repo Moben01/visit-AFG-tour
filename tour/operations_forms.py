@@ -1,5 +1,14 @@
 from django import forms
+from django.contrib.auth import get_user_model
+from django.forms import inlineformset_factory
+from django.db.models import Q
 
+from home.models import (
+    EntryPlan,
+    RouteProposal,
+    RouteProposalDay,
+    TripRequest,
+)
 from .models import Booking, PickupPlan, Tour, WelcomePackage
 
 
@@ -134,4 +143,148 @@ class WelcomePackageOperationsForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         for field in self.fields.values():
             field.widget.attrs.setdefault('class', 'ops-input')
+
+
+class TripRequestOperationsForm(forms.ModelForm):
+    assigned_expert = forms.ModelChoiceField(
+        queryset=get_user_model().objects.none(),
+        required=False,
+        label='Assigned expert',
+    )
+
+    class Meta:
+        model = TripRequest
+        fields = (
+            'status', 'full_name', 'email', 'phone', 'start_date', 'end_date',
+            'adults', 'children', 'budget_tier', 'estimated_budget', 'pace', 'notes',
+        )
+        widgets = {
+            'start_date': forms.DateInput(attrs={'type': 'date'}),
+            'end_date': forms.DateInput(attrs={'type': 'date'}),
+            'notes': forms.Textarea(attrs={'rows': 6}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        User = get_user_model()
+        self.fields['assigned_expert'].queryset = User.objects.filter(
+            Q(is_staff=True)
+            | Q(is_superuser=True)
+            | Q(my_choice_field__in=('Guide', 'Operator', 'Moderator'))
+        ).order_by('first_name', 'last_name', 'username')
+        if self.instance and self.instance.assigned_expert_id:
+            self.fields['assigned_expert'].initial = self.instance.assigned_expert_id
+        for field in self.fields.values():
+            field.widget.attrs.setdefault('class', 'ops-input')
+
+    def clean(self):
+        cleaned = super().clean()
+        start = cleaned.get('start_date')
+        end = cleaned.get('end_date')
+        if start and end and end < start:
+            self.add_error('end_date', 'End date cannot be before start date.')
+        if cleaned.get('status') == 'booked' and not self.instance.booking_id:
+            self.add_error('status', 'Use Convert to booking so the route remains linked to a real booking.')
+        return cleaned
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        expert = self.cleaned_data.get('assigned_expert')
+        instance.assigned_expert_id = expert.pk if expert else None
+        if commit:
+            instance.save()
+        return instance
+
+
+class EntryPlanOperationsForm(forms.ModelForm):
+    class Meta:
+        model = EntryPlan
+        fields = (
+            'selection_mode', 'transport_mode', 'arrival_origin',
+            'selected_entry_point', 'other_entry_point',
+            'recommended_entry_point', 'alternatives', 'operator_notes', 'status',
+        )
+        widgets = {
+            'alternatives': forms.Textarea(attrs={'rows': 3}),
+            'operator_notes': forms.Textarea(attrs={'rows': 4}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.setdefault('class', 'ops-input')
+
+    def clean(self):
+        cleaned = super().clean()
+        if cleaned.get('status') in {'recommended', 'confirmed'} and not (
+            cleaned.get('recommended_entry_point')
+            or cleaned.get('selected_entry_point')
+        ):
+            self.add_error('recommended_entry_point', 'Prepare an entry recommendation before advancing its status.')
+        return cleaned
+
+
+class RouteProposalOperationsForm(forms.ModelForm):
+    booking_tour = forms.ModelChoiceField(
+        queryset=Tour.objects.none(),
+        required=False,
+        help_text='Required only when converting an accepted proposal into a payable booking.',
+    )
+
+    class Meta:
+        model = RouteProposal
+        fields = (
+            'title', 'summary', 'proposed_entry_point', 'total_price',
+            'currency', 'valid_until', 'customer_message', 'internal_notes',
+        )
+        widgets = {
+            'summary': forms.Textarea(attrs={'rows': 5}),
+            'valid_until': forms.DateInput(attrs={'type': 'date'}),
+            'customer_message': forms.Textarea(attrs={'rows': 4}),
+            'internal_notes': forms.Textarea(attrs={'rows': 4}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['booking_tour'].queryset = Tour.objects.filter(available=True).order_by('title')
+        if self.instance and self.instance.booking_tour_id:
+            self.fields['booking_tour'].initial = self.instance.booking_tour_id
+        for field in self.fields.values():
+            field.widget.attrs.setdefault('class', 'ops-input')
+
+    def save(self, commit=True):
+        instance = super().save(commit=False)
+        tour = self.cleaned_data.get('booking_tour')
+        instance.booking_tour_id = tour.pk if tour else None
+        if commit:
+            instance.save()
+        return instance
+
+
+class RouteProposalDayOperationsForm(forms.ModelForm):
+    class Meta:
+        model = RouteProposalDay
+        fields = (
+            'day_number', 'destination', 'title', 'description',
+            'transport', 'overnight_location',
+        )
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 3}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.setdefault('class', 'ops-input')
+
+
+RouteProposalDayFormSet = inlineformset_factory(
+    RouteProposal,
+    RouteProposalDay,
+    form=RouteProposalDayOperationsForm,
+    extra=1,
+    can_delete=True,
+    min_num=1,
+    validate_min=True,
+)
 

@@ -1,0 +1,28 @@
+{% extends 'operations/base.html' %}
+{% load static i18n %}
+{% block operations_title %}{% if item %}{% trans "Edit itinerary day" %}{% else %}{% trans "Add itinerary day" %}{% endif %}{% endblock %}
+{% block operations_content %}
+<section class="ops-pagehead">
+  <div><a class="ops-back" href="{{ back_url }}"><i class="ti ti-arrow-left"></i>{{ tour.title }}</a><span class="ops-eyebrow">{% blocktrans %}Itinerary day {{ day_number }}{% endblocktrans %}</span><h1>{% if item %}{% trans "Edit itinerary day" %}{% else %}{% trans "Add itinerary day" %}{% endif %}</h1><p>{% trans "Describe one clear day of travel. Detailed services are optional and can be assigned later." %}</p></div>
+</section>
+<form method="post" enctype="multipart/form-data" class="ops-itinerary-editor" data-tour-editor novalidate>{% csrf_token %}
+  {% if form.non_field_errors %}<div class="ops-alert ops-alert--error">{{ form.non_field_errors }}</div>{% endif %}
+  <section class="ops-card ops-tour-section">
+    <div class="ops-tour-section__head"><span class="ops-day-number">{{ day_number|stringformat:"02d" }}</span><div><small>{% trans "Traveller-facing content" %}</small><h2>{% trans "Day summary" %}</h2><p>{% trans "A description is the only required content field." %}</p></div></div>
+    <div class="ops-tour-section__body ops-form-grid">
+      <div class="ops-field"><label for="{{ form.title.id_for_label }}">{{ form.title.label }} <em>{% trans "Optional" %}</em></label>{{ form.title }}{{ form.title.errors }}</div>
+      <div class="ops-field"><label for="{{ form.date.id_for_label }}">{{ form.date.label }} <em>{% trans "Optional" %}</em></label>{{ form.date }}<small>{{ form.date.help_text }}</small>{{ form.date.errors }}</div>
+      <div class="ops-field ops-field--wide"><label for="{{ form.description.id_for_label }}">{{ form.description.label }} <b>*</b></label>{{ form.description }}{{ form.description.errors }}</div>
+      <div class="ops-field ops-field--wide"><label for="{{ form.image.id_for_label }}">{{ form.image.label }} <em>{% trans "Optional" %}</em></label><label class="ops-image-uploader ops-image-uploader--compact" for="{{ form.image.id_for_label }}"><span class="ops-image-preview" data-image-preview>{% if item.image %}<img src="{{ item.image.url }}" alt="">{% else %}<i class="ti ti-cloud-upload"></i><strong>{% trans "Choose a day image" %}</strong><small>{{ form.image.help_text }}</small>{% endif %}</span>{{ form.image }}</label>{{ form.image.errors }}</div>
+    </div>
+  </section>
+  <section class="ops-card ops-tour-section">
+    <div class="ops-tour-section__head"><span><i class="ti ti-route"></i></span><div><small>{% trans "Optional operations" %}</small><h2>{% trans "Services and logistics" %}</h2><p>{% trans "Attach existing records where they are useful; none are required for saving the day." %}</p></div></div>
+    <div class="ops-tour-section__body ops-form-grid">
+      {% for field in form %}{% if field.name == 'type_of_transport' or field.name == 'transport' or field.name == 'accommodation' or field.name == 'meals' or field.name == 'logistics' or field.name == 'tour_guide' %}<div class="ops-field"><label for="{{ field.id_for_label }}">{{ field.label }} <em>{% trans "Optional" %}</em></label>{{ field }}{% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}{{ field.errors }}</div>{% endif %}{% endfor %}
+    </div>
+  </section>
+  <div class="ops-tour-actions"><div><i class="ti ti-info-circle"></i><span>{% trans "Day numbers are assigned automatically and can be reordered from the tour page." %}</span></div><div><a class="ops-btn ops-btn--ghost" href="{{ back_url }}">{% trans "Cancel" %}</a><button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save itinerary day" %}</button></div></div>
+</form>
+{% endblock %}
+{% block operations_scripts %}<script src="{% static 'js/operations-tour-editor.js' %}" defer></script>{% endblock %}

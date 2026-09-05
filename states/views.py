@@ -1,10 +1,33 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from home.models import ProvincePage
 from tour.models import *
 from django.utils.translation import get_language
 from things_to_do.models import *
 from django.http import HttpResponse
 from django.utils.translation import get_language
 # Create your views here.
+
+
+def province_detail(request, slug):
+    page = get_object_or_404(
+        ProvincePage.objects.prefetch_related('sections'),
+        slug=slug,
+        is_published=True,
+    )
+    context = {
+        'page': page,
+        'page_sections': page.sections.filter(is_active=True),
+        'find_best_places_in_this_province': Best_places_for_visit.objects.filter(
+            provinces__icontains=page.name
+        ),
+        'find_things_to_do_in_this_province': Top_things_to_do_in_province.objects.filter(
+            provinces__icontains=page.name
+        ),
+        'Popular_Tourist_in_the_province': Popular_Tourist.objects.filter(
+            provinces__icontains=page.name
+        ),
+    }
+    return render(request, 'states/province_detail.html', context)
 
 def kabul(request):
     get_tour_categories = TourCategory.objects.all()

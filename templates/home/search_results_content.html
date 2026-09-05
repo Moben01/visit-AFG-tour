@@ -37,9 +37,9 @@
             <div class="aa-destination-rail">
                 {% for destination in destination_results %}
                 <a class="aa-destination-card" href="{{ destination.url }}">
-                    <img src="{% static destination.image %}" alt="{{ destination.name }}">
+                    {% if destination.image_url %}<img src="{{ destination.image_url }}" alt="{{ destination.title }}">{% endif %}
                     <span class="aa-card-overlay"></span>
-                    <span class="aa-destination-copy"><small>{{ destination.province }}</small><strong>{{ destination.name }}</strong><em>{{ destination.summary }}</em></span>
+                    <span class="aa-destination-copy"><small>{{ destination.province }}</small><strong>{{ destination.title }}</strong><em>{{ destination.description }}</em></span>
                 </a>
                 {% endfor %}
             </div>
@@ -60,7 +60,7 @@
                         <div class="aa-tour-body">
                             <span class="aa-tour-location"><i class="ti ti-map-pin"></i> {{ tour.category.name }}</span>
                             <h3><a href="{% url 'tour:tour_details' tour.slug %}">{{ tour.title }}</a></h3>
-                            <div class="aa-tour-meta"><span><i class="ti ti-clock"></i> {{ tour.duration_day }}</span><strong>{{ site_currency }} {{ tour.price }}</strong></div>
+                            <div class="aa-tour-meta"><span><i class="ti ti-clock"></i> {{ tour.duration_day }}</span><strong>{% if tour.is_price_on_request %}{% trans "On request" %}{% else %}{{ site_currency }} {{ tour.price }}{% endif %}</strong></div>
                         </div>
                     </article>
                     {% endfor %}

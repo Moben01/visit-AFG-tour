@@ -85,6 +85,33 @@ class OperationsCenterTests(TestCase):
         self.assertEqual(response.context['new_requests'], 1)
         self.assertContains(response, self.booking.name)
 
+    def test_operations_dashboard_uses_standalone_management_shell(self):
+        self.client.force_login(self.operator)
+        response = self.client.get(reverse('tour:operations:dashboard'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'data-operations-shell')
+        self.assertContains(response, 'operations-shell.js')
+        self.assertContains(response, 'Secure management workspace')
+        self.assertNotContains(response, 'class="aa-site-header"')
+        self.assertNotContains(response, 'Become an Expert')
+        self.assertNotContains(response, 'Plan Your Trip')
+
+    def test_content_navigation_is_only_visible_to_authorized_roles(self):
+        self.client.force_login(self.operator)
+        operator_response = self.client.get(reverse('tour:operations:dashboard'))
+        self.assertNotContains(operator_response, 'Tours & categories')
+        self.assertNotContains(operator_response, 'Media library')
+
+        self.client.force_login(self.moderator)
+        moderator_response = self.client.get(reverse('tour:operations:dashboard'))
+        self.assertContains(moderator_response, 'Tours & categories')
+        self.assertContains(moderator_response, 'Media library')
+        self.assertContains(
+            moderator_response,
+            reverse('tour:operations:content_tour_list'),
+        )
+
     def test_dashboard_router_sends_operator_to_operations(self):
         self.client.force_login(self.operator)
         response = self.client.get(reverse('tour:dashboard'))
@@ -204,4 +231,3 @@ class OperationsCenterTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response['Content-Type'], 'text/csv')
         self.assertIn('Operations Customer', response.content.decode())
-

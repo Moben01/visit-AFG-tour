@@ -1,13 +1,14 @@
-from django.contrib import admin
 from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404  # optional, for clarity
 from home.views import *
+from home.admin import site_configuration_admin
 
 # Custom error handlers (MUST be here — project-level only)
 handler404 = 'home.views.custom_404_view'
+handler500 = 'home.views.custom_500_view'
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # For language switching
@@ -15,7 +16,7 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
+    path('admin/', site_configuration_admin.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls', namespace='home')),
     path('states/', include('states.urls', namespace='states')),

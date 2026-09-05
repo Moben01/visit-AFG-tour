@@ -44,6 +44,10 @@ def custom_404_view(request, exception):
     return render(request, '404.html', status=404)
 
 
+def custom_500_view(request):
+    return render(request, '500.html', status=500)
+
+
 @login_required  # better than manual check for logged-in user
 def favorite_user_tour(request):
     get_tour_categories = TourCategory.objects.all()

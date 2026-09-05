@@ -8,6 +8,7 @@ from multiselectfield import MultiSelectField
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.utils import timezone
+from django.utils.text import slugify
 User = get_user_model()
 
 class TourCategory(models.Model):
@@ -183,18 +184,23 @@ class Tour(models.Model):
     ]
     category = models.ForeignKey(TourCategory, on_delete=models.CASCADE, related_name='tours')
     title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to = 'tour-image/')
-    slug = models.SlugField(unique=True)
+    image = models.ImageField(upload_to='tour-image/', blank=True)
+    slug = models.SlugField(unique=True, blank=True)
     type = models.CharField(max_length=120, choices=SCHEDULE_OR_NOT)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     description = models.TextField()
-    location = MultiSelectField(choices=PROVINCE_CHOICES, max_choices=34, max_length=400)
-    duration_day = models.CharField(max_length=150)
-    duration_night = models.CharField(max_length=150)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
-    available = models.BooleanField(default=True)
-    google_location = models.CharField(max_length=2000000)
+    location = MultiSelectField(
+        choices=PROVINCE_CHOICES,
+        max_choices=34,
+        max_length=400,
+        blank=True,
+    )
+    duration_day = models.CharField(max_length=150, blank=True, default='')
+    duration_night = models.CharField(max_length=150, blank=True, default='')
+    price = models.DecimalField(max_digits=8, decimal_places=2, default=0)
+    available = models.BooleanField(default=False)
+    google_location = models.CharField(max_length=2000000, blank=True, default='')
     tour_guide = models.ForeignKey(TourGuide, on_delete=models.SET_NULL, null=True, blank=True)
     security_gard = models.ForeignKey(SecurityGuard, on_delete=models.SET_NULL, null=True, blank=True)
     translator = models.ForeignKey(Translator, on_delete=models.SET_NULL, null=True, blank=True)
@@ -205,6 +211,26 @@ class Tour(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def is_price_on_request(self):
+        return self.price is None or self.price <= 0
+
+    def _generate_unique_slug(self):
+        base = slugify(self.title)[:180] or f'tour-{uuid.uuid4().hex[:8]}'
+        candidate = base
+        suffix = 2
+        queryset = type(self).objects.exclude(pk=self.pk)
+        while queryset.filter(slug=candidate).exists():
+            suffix_text = f'-{suffix}'
+            candidate = f'{base[:200 - len(suffix_text)]}{suffix_text}'
+            suffix += 1
+        return candidate
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self._generate_unique_slug()
+        super().save(*args, **kwargs)
 
     def get_absolute_url(self):
         return reverse('tour_detail', args=[self.slug])
@@ -371,15 +397,26 @@ class ItineraryItem(models.Model):
     TRANSPORT_TYPE = [
         ('Airplane', 'Airplane'),
         ('Car', 'Car'),
+        ('Bus', 'Bus'),
+        ('Van', 'Van'),
+        ('Train', 'Train'),
+        ('Boat', 'Boat'),
+        ('Bike', 'Bike'),
+        ('Walking', 'Walking'),
+        ('Other', 'Other'),
     ]
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE, related_name='itinerary_items')
     day_number = models.PositiveIntegerField()
     title = models.CharField(max_length=200, blank=True)
     description = models.TextField()
     date = models.DateTimeField()
-    image = models.ImageField(upload_to = 'itenary-images')
+    image = models.ImageField(upload_to='itenary-images', blank=True)
     accommodation = models.ForeignKey(Accommodation, on_delete=models.SET_NULL, blank=True, null=True)
-    type_of_transport = models.CharField(max_length=120 ,choices=TRANSPORT_TYPE)
+    type_of_transport = models.CharField(
+        max_length=120,
+        choices=TRANSPORT_TYPE,
+        blank=True,
+    )
     transport = models.ForeignKey(Transport, on_delete=models.SET_NULL, blank=True, null=True)
     tour_guide = models.ForeignKey(TourGuide, on_delete=models.SET_NULL, blank=True, null=True)
     meals = models.ForeignKey(Meal, on_delete=models.SET_NULL, blank=True, null=True)

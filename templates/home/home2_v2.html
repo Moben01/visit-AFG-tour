@@ -6,234 +6,218 @@
 </div>
 {% endif %}
 
-<section class="aa-home-hero" aria-labelledby="home-hero-title">
-    <div class="aa-container aa-hero-inner">
-        <div class="aa-hero-copy">
-            <h1 id="home-hero-title"><span>{% trans 'Where Would' %}</span> {% trans 'You Like To Go?' %}</h1>
-            <p>{% trans 'Explore Afghanistan with local knowledge, practical planning, and support from first click to final day.' %}</p>
-        </div>
-
-        <form class="aa-search-panel" action="{% url 'home:search' %}" method="get" role="search">
-            <div class="aa-search-field">
-                <i class="ti ti-map-pin" aria-hidden="true"></i>
-                <div>
-                    <label for="aaDestination">{% trans 'Location' %}</label>
-                    <select id="aaDestination" name="q">
-                        <option value="">{% trans 'Where would you like to go?' %}</option>
-                        {% for destination in destinations %}
-                            <option value="{{ destination.name }}">{{ destination.name }}</option>
-                        {% endfor %}
-                    </select>
+<div class="lm-home">
+    <section class="lm-home-hero" aria-labelledby="home-hero-title">
+        <div class="lm-home-hero__backdrop" aria-hidden="true"></div>
+        <div class="aa-container lm-home-hero__layout">
+            <div class="lm-home-hero__copy">
+                <span class="lm-eyebrow">{% trans "Private and Small-Group Journeys in Afghanistan" %}</span>
+                <h1 id="home-hero-title">{% trans "Afghanistan, hosted by those who call it home." %}</h1>
+                <p>{% blocktrans %}Private and small-group journeys designed and operated by Larmoond Travel and Tours. From airport welcome and local guides to coordinated transport, accommodation and on-trip support, your journey is planned clearly and hosted locally.{% endblocktrans %}</p>
+                <div class="lm-home-actions">
+                    <a class="lm-btn lm-btn--lime" href="#tours">{% trans "Explore Our Tours" %}</a>
+                    <a class="lm-btn lm-btn--outline-light" href="{% url 'home:trip_builder' %}" data-analytics-event="private_journey_cta" data-analytics-placement="homepage_hero">{% trans "Plan a Private Journey" %}</a>
                 </div>
+                <ul class="lm-trust-line" aria-label="{% trans 'Journey support' %}">
+                    {% if site_config.show_licence_badge and site_config.licence_number and site_config.licence_authority %}<li>{% trans "Licensed Afghan Travel Operator" %}</li>{% endif %}
+                    <li>{% trans "Local Guides" %}</li>
+                    <li>{% trans "Coordinated Transport" %}</li>
+                    <li>{% trans "Clear Inclusions" %}</li>
+                    <li>{% trans "On-Trip Support" %}</li>
+                </ul>
             </div>
-            <div class="aa-search-field">
-                <i class="ti ti-calendar-event" aria-hidden="true"></i>
-                <div>
-                    <label for="aaCheckIn">{% trans 'Travel date' %}</label>
-                    <input id="aaCheckIn" type="date" name="check_in">
+            {% with hero=site_sections.home_map_hero %}
+                {% if hero.image_url %}
+                    <figure class="lm-home-hero__media">
+                        <img src="{{ hero.image_url }}" alt="{% trans 'Journey through Afghanistan with local hosting' %}" sizes="(max-width: 767px) 100vw, 44vw" fetchpriority="high" decoding="async">
+                    </figure>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </section>
+
+    <section class="lm-home-section lm-featured-tours" id="tours" aria-labelledby="featured-tours-title">
+        <div class="aa-container">
+            <div class="lm-section-heading">
+                <span class="lm-eyebrow">{% trans "Featured Tours" %}</span>
+                <h2 id="featured-tours-title">{% trans "Journeys ready to explore" %}</h2>
+                <p>{% trans "Published itineraries selected by our local team." %}</p>
+            </div>
+
+            {% if featured_tours %}
+                <div class="lm-tour-grid">
+                    {% for feature in featured_tours %}{% with tour=feature.tour %}
+                    <article class="lm-tour-card">
+                        <a class="lm-tour-card__media" href="{% url 'tour:tour_details' tour.slug %}">
+                            <img src="{{ tour.image.url }}" alt="{{ tour.title }} — {{ feature.route_label }}" loading="lazy" decoding="async" sizes="(max-width: 767px) 100vw, (max-width: 1199px) 50vw, 33vw">
+                        </a>
+                        <div class="lm-tour-card__body">
+                            <p class="lm-tour-route"><i class="fa-solid fa-route" aria-hidden="true"></i>{{ feature.route_label }}</p>
+                            <h3><a href="{% url 'tour:tour_details' tour.slug %}">{{ tour.title }}</a></h3>
+                            <dl class="lm-tour-meta">
+                                <div><dt>{% trans "Duration" %}</dt><dd>{{ tour.duration_day }} {% trans "days" %}{% if tour.duration_night %} · {{ tour.duration_night }} {% trans "nights" %}{% endif %}</dd></div>
+                                <div><dt>{% trans "Type" %}</dt><dd>{{ feature.public_type_label }}</dd></div>
+                                <div><dt>{% trans "Physical level" %}</dt><dd>{{ feature.get_physical_level_display }}</dd></div>
+                                {% if site_config.show_fixed_departures and feature.next_departure %}<div><dt>{% trans "Next departure" %}</dt><dd>{{ feature.next_departure|date:"j M Y" }}</dd></div>{% endif %}
+                            </dl>
+                            {% if not tour.is_price_on_request %}<p class="lm-tour-price"><span>{% trans "From" %}</span><strong>{{ site_config.default_currency }} {{ tour.price }}</strong></p>{% endif %}
+                            <div class="lm-tour-card__actions">
+                                <a class="lm-btn lm-btn--deep" href="{% url 'tour:tour_details' tour.slug %}">{% trans "View Tour" %}</a>
+                                <a class="lm-text-action" href="{% url 'home:trip_builder' %}?tour={{ tour.slug|urlencode }}" data-analytics-event="private_journey_cta" data-analytics-placement="homepage_tour">{% trans "Request This Journey" %}<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endwith %}{% endfor %}
                 </div>
-            </div>
-            <div class="aa-search-field">
-                <i class="ti ti-users" aria-hidden="true"></i>
-                <div>
-                    <label for="aaGuests">{% trans 'Guests' %}</label>
-                    <input id="aaGuests" type="number" name="guests" min="1" max="20" value="1">
-                </div>
-            </div>
-            <button class="aa-search-submit" type="submit"><i class="ti ti-search" aria-hidden="true"></i> {% trans 'Search' %}</button>
-        </form>
-
-        <div class="aa-hero-gallery" aria-label="{% trans 'Afghanistan travel gallery' %}">
-            <figure><img src="{% static 'img/index/i1.jpg' %}" alt="{% trans 'Travel in Afghanistan' %}"></figure>
-            <figure><img src="{% static 'img/index/i3.jpg' %}" alt="{% trans 'Afghanistan destination' %}"></figure>
-            <figure><img src="{% static 'img/index/i2.jpg' %}" alt="{% trans 'Afghanistan experience' %}"></figure>
-        </div>
-    </div>
-</section>
-
-<section class="aa-benefit-band" aria-label="{% trans 'Why plan with AfghanAwaits' %}">
-    <div class="aa-container aa-benefit-grid">
-        <article>
-            <span><i class="ti ti-map-search"></i></span>
-            <div><h2>{% trans 'Local destination knowledge' %}</h2><p>{% trans 'Province guides built around Afghan places, culture, and practical access.' %}</p></div>
-        </article>
-        <article>
-            <span><i class="ti ti-route-2"></i></span>
-            <div><h2>{% trans 'One connected itinerary' %}</h2><p>{% trans 'Tours, transport, accommodation, documents, and timing in one workflow.' %}</p></div>
-        </article>
-        <article>
-            <span><i class="ti ti-shield-check"></i></span>
-            <div><h2>{% trans 'Practical travel support' %}</h2><p>{% trans 'Clear preparation guidance and local coordination for confirmed services.' %}</p></div>
-        </article>
-    </div>
-</section>
-
-<section class="aa-section aa-destination-section">
-    <div class="aa-container">
-        <div class="aa-section-head">
-            <div>
-                <span class="aa-eyebrow">{% trans 'Destinations' %}</span>
-                <h2>{% trans 'Popular places in Afghanistan' %}</h2>
-                <p>{% trans 'Start with a province guide, then connect places into a route that fits your time and interests.' %}</p>
-            </div>
-            <div class="aa-slider-controls" aria-label="{% trans 'Destination controls' %}">
-                <button type="button" data-aa-scroll="previous" data-aa-target="#destinationRail" aria-label="{% trans 'Previous destinations' %}"><i class="ti ti-arrow-left"></i></button>
-                <button type="button" data-aa-scroll="next" data-aa-target="#destinationRail" aria-label="{% trans 'Next destinations' %}"><i class="ti ti-arrow-right"></i></button>
-            </div>
-        </div>
-
-        <div class="aa-destination-rail" id="destinationRail">
-            {% for destination in destinations %}
-            <a class="aa-destination-card" href="{{ destination.url }}">
-                <img src="{% static destination.image %}" alt="{{ destination.name }}" loading="lazy">
-                <span class="aa-card-overlay"></span>
-                <span class="aa-destination-copy"><small>{{ destination.province }}</small><strong>{{ destination.name }}</strong><em>{{ destination.summary }}</em></span>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="aa-section -soft aa-explore-section">
-    <div class="aa-container">
-        <div class="aa-section-head aa-tabs-head">
-            <div>
-                <span class="aa-eyebrow">{% trans 'Explore' %}</span>
-                <h2>{% trans 'Build your Afghanistan journey' %}</h2>
-                <p>{% trans 'Choose a published tour when available, or begin with guides and plan a custom route.' %}</p>
-            </div>
-            <div class="aa-tab-list" role="tablist" aria-label="{% trans 'Explore categories' %}">
-                <button class="active" type="button" role="tab" aria-selected="true" data-aa-tab="all">{% trans 'All' %}</button>
-                <button type="button" role="tab" aria-selected="false" data-aa-tab="tour">{% trans 'Tours' %}</button>
-                <button type="button" role="tab" aria-selected="false" data-aa-tab="culture">{% trans 'Culture' %}</button>
-                <button type="button" role="tab" aria-selected="false" data-aa-tab="nature">{% trans 'Nature' %}</button>
-            </div>
-        </div>
-
-        <div class="aa-tour-grid" id="aaExploreGrid">
-            {% for tour in featured_tours %}
-            <article class="aa-tour-card" data-aa-group="tour">
-                <a class="aa-tour-image" href="{% url 'tour:tour_details' tour.slug %}">
-                    <img src="{{ tour.image.url }}" alt="{{ tour.title }}" loading="lazy">
-                    <span class="aa-tour-badge">{% trans 'Published tour' %}</span>
-                </a>
-                <div class="aa-tour-body">
-                    <span class="aa-tour-location"><i class="ti ti-map-pin"></i> {{ tour.category.name }}</span>
-                    <h3><a href="{% url 'tour:tour_details' tour.slug %}">{{ tour.title }}</a></h3>
-                    <p>{{ tour.description|truncatewords:20 }}</p>
-                    <div class="aa-tour-meta"><span><i class="ti ti-clock"></i> {{ tour.duration_day }}</span><strong>USD {{ tour.price }}</strong></div>
-                </div>
-            </article>
-            {% empty %}
-            <article class="aa-tour-card" data-aa-group="culture">
-                <a class="aa-tour-image" href="{% url 'things_to_do:Art_and_Culture' %}"><img src="{% static 'img/blog/Blue Mosque.jpg' %}" alt="{% trans 'Arts and culture in Afghanistan' %}" loading="lazy"><span class="aa-tour-badge">{% trans 'Travel guide' %}</span></a>
-                <div class="aa-tour-body"><span class="aa-tour-location"><i class="ti ti-sparkles"></i> {% trans 'Culture' %}</span><h3><a href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Arts, heritage, and living traditions' %}</a></h3><p>{% trans 'Explore architecture, craft, music, and everyday traditions through the site’s original culture guides.' %}</p><a class="aa-card-link" href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Open guide' %} <i class="ti ti-arrow-right"></i></a></div>
-            </article>
-            <article class="aa-tour-card" data-aa-group="nature">
-                <a class="aa-tour-image" href="{% url 'states:bamyan' %}"><img src="{% static 'img/blog/Band-e Amir National Park.jpg' %}" alt="{% trans 'Band-e Amir National Park' %}" loading="lazy"><span class="aa-tour-badge">{% trans 'Destination guide' %}</span></a>
-                <div class="aa-tour-body"><span class="aa-tour-location"><i class="ti ti-mountain"></i> Bamyan</span><h3><a href="{% url 'states:bamyan' %}">{% trans 'Bamyan and Band-e Amir' %}</a></h3><p>{% trans 'Plan around highland landscapes, archaeological heritage, seasonal access, and local communities.' %}</p><a class="aa-card-link" href="{% url 'states:bamyan' %}">{% trans 'Open guide' %} <i class="ti ti-arrow-right"></i></a></div>
-            </article>
-            <article class="aa-tour-card" data-aa-group="culture">
-                <a class="aa-tour-image" href="{% url 'things_to_do:food_and_drink' %}"><img src="{% static 'img/blog/Qabuli Palaw.jpg' %}" alt="{% trans 'Afghan food and drink' %}" loading="lazy"><span class="aa-tour-badge">{% trans 'Experience guide' %}</span></a>
-                <div class="aa-tour-body"><span class="aa-tour-location"><i class="ti ti-tools-kitchen-2"></i> {% trans 'Food & Drink' %}</span><h3><a href="{% url 'things_to_do:food_and_drink' %}">{% trans 'A practical introduction to Afghan cuisine' %}</a></h3><p>{% trans 'Learn about familiar dishes, regional flavours, hospitality, and respectful dining customs.' %}</p><a class="aa-card-link" href="{% url 'things_to_do:food_and_drink' %}">{% trans 'Open guide' %} <i class="ti ti-arrow-right"></i></a></div>
-            </article>
-            {% endfor %}
-        </div>
-
-        {% if not featured_tours %}
-        <div class="aa-inline-notice"><i class="ti ti-info-circle"></i><span>{% trans 'No bookable tours are published yet. Destination and experience guides remain available while itineraries are prepared.' %}</span></div>
-        {% endif %}
-    </div>
-</section>
-
-<section class="aa-section -dark aa-trust-section">
-    <div class="aa-container">
-        <div class="aa-trust-layout">
-            <div class="aa-trust-copy">
-                <span class="aa-eyebrow">{% trans 'Plan with clarity' %}</span>
-                <h2>{% trans 'From first question to the final travel day' %}</h2>
-                <p>{% trans 'AfghanAwaits connects information, booking details, and local operations without inventing availability or promises. What is published is visible; what requires confirmation is clearly marked.' %}</p>
-                <a class="aa-btn aa-btn-lime" href="{% url 'home:search' %}">{% trans 'Start exploring' %}</a>
-            </div>
-            <div class="aa-process-list">
-                <article><strong>01</strong><div><h3>{% trans 'Research' %}</h3><p>{% trans 'Read destination, culture, visa, weather, currency, and safety guidance.' %}</p></div></article>
-                <article><strong>02</strong><div><h3>{% trans 'Confirm' %}</h3><p>{% trans 'Review the itinerary, inclusions, dates, provider terms, and price before booking.' %}</p></div></article>
-                <article><strong>03</strong><div><h3>{% trans 'Coordinate' %}</h3><p>{% trans 'Keep booking, pre-arrival information, pickup, and trip details connected.' %}</p></div></article>
-            </div>
-        </div>
-        <div class="aa-trust-tags" aria-label="{% trans 'Platform capabilities' %}">
-            <span><i class="ti ti-passport"></i>{% trans 'Visa preparation' %}</span>
-            <span><i class="ti ti-bed"></i>{% trans 'Accommodation planning' %}</span>
-            <span><i class="ti ti-car"></i>{% trans 'Local transport' %}</span>
-            <span><i class="ti ti-user-shield"></i>{% trans 'Guide coordination' %}</span>
-            <span><i class="ti ti-file-check"></i>{% trans 'Pre-arrival workflow' %}</span>
-        </div>
-    </div>
-</section>
-
-<section class="aa-section aa-inspiration-section">
-    <div class="aa-container">
-        <div class="aa-section-head">
-            <div><span class="aa-eyebrow">{% trans 'Travel inspiration' %}</span><h2>{% trans 'Know more before you go' %}</h2><p>{% trans 'Original Afghan destination and culture content, connected directly to practical planning pages.' %}</p></div>
-        </div>
-        <div class="aa-story-grid">
-            <article class="aa-story-card">
-                <a href="{% url 'states:Herat' %}"><img src="{% static 'img/blog/Herat.jpg' %}" alt="Herat" loading="lazy"></a>
-                <div><span>{% trans 'Destination' %}</span><h3><a href="{% url 'states:Herat' %}">{% trans 'Herat: architecture, history, and craft' %}</a></h3><p>{% trans 'Begin with the city guide and connect major sights with practical seasonal information.' %}</p></div>
-            </article>
-            <article class="aa-story-card">
-                <a href="{% url 'things_to_do:Experiences' %}"><img src="{% static 'img/blog/Unforgettable Afghan Experiences.jpg' %}" alt="{% trans 'Afghan experiences' %}" loading="lazy"></a>
-                <div><span>{% trans 'Experiences' %}</span><h3><a href="{% url 'things_to_do:Experiences' %}">{% trans 'Meaningful experiences beyond a checklist' %}</a></h3><p>{% trans 'Explore landscapes, food, craft, and community experiences with respectful context.' %}</p></div>
-            </article>
-            <article class="aa-story-card">
-                <a href="{% url 'play_your_trip:essentials' %}"><img src="{% static 'img/blog/Soft Adventure to Full Trek.jpg' %}" alt="{% trans 'Afghanistan travel essentials' %}" loading="lazy"></a>
-                <div><span>{% trans 'Planning' %}</span><h3><a href="{% url 'play_your_trip:essentials' %}">{% trans 'Essential preparation for your route' %}</a></h3><p>{% trans 'Check documents, connectivity, payments, clothing, local customs, and contingency planning.' %}</p></div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="aa-planning-strip">
-    <div class="aa-container aa-planning-grid">
-        <div><span class="aa-eyebrow">{% trans 'Before you travel' %}</span><h2>{% trans 'Start with current practical guidance' %}</h2></div>
-        <a href="{% url 'play_your_trip:visa_guide' %}"><i class="ti ti-passport"></i><span>{% trans 'Visa guide' %}</span><i class="ti ti-arrow-right"></i></a>
-        <a href="{% url 'play_your_trip:weather' %}"><i class="ti ti-cloud-sun"></i><span>{% trans 'Weather' %}</span><i class="ti ti-arrow-right"></i></a>
-        <a href="{% url 'play_your_trip:currency' %}"><i class="ti ti-cash"></i><span>{% trans 'Currency' %}</span><i class="ti ti-arrow-right"></i></a>
-    </div>
-</section>
-
-<section class="aa-section aa-dashboard-section">
-    <div class="aa-container aa-dashboard-layout">
-        <div class="aa-dashboard-visual">
-            <img src="{% static 'img/Images/pexels-qasimmirzaie-20091910.jpg' %}" alt="{% trans 'Travel in Afghanistan' %}" loading="lazy">
-            <div class="aa-dashboard-card"><i class="ti ti-layout-dashboard"></i><div><strong>{% trans 'One trip dashboard' %}</strong><span>{% trans 'Bookings, pre-arrival, pickup, and itinerary' %}</span></div></div>
-        </div>
-        <div class="aa-dashboard-copy">
-            <span class="aa-eyebrow">{% trans 'Your trip, connected' %}</span>
-            <h2>{% trans 'Keep confirmed travel details in one place' %}</h2>
-            <p>{% trans 'Registered travellers can follow their bookings, submit required pre-arrival information, review pickup details, and access the itinerary through the existing AfghanAwaits workflow.' %}</p>
-            <ul>
-                <li><i class="ti ti-circle-check"></i>{% trans 'Booking and itinerary status' %}</li>
-                <li><i class="ti ti-circle-check"></i>{% trans 'Pre-arrival document workflow' %}</li>
-                <li><i class="ti ti-circle-check"></i>{% trans 'Pickup and welcome information' %}</li>
-            </ul>
-            {% if request.user.is_authenticated %}
-                <a class="aa-btn aa-btn-primary" href="{% url 'tour:dashboard' %}">{% trans 'Open dashboard' %}</a>
             {% else %}
-                <a class="aa-btn aa-btn-primary" href="{% url 'account_signup' %}">{% trans 'Create an account' %}</a>
-                <a class="aa-btn aa-btn-ghost" href="{% url 'account_login' %}">{% trans 'Sign in' %}</a>
+                <div class="lm-home-empty">
+                    <h3>{% trans "Planning something private?" %}</h3>
+                    <p>{% trans "Tell our local team where you would like to go, when you hope to travel and what matters most to you." %}</p>
+                    <a class="lm-btn lm-btn--lime" href="{% url 'home:trip_builder' %}" data-analytics-event="private_journey_cta" data-analytics-placement="homepage_tours_empty">{% trans "Plan a Private Journey" %}</a>
+                </div>
             {% endif %}
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="aa-member-cta">
-    <div class="aa-container">
-        <div>
-            <span class="aa-eyebrow">{% trans 'Local travel professionals' %}</span>
-            <h2>{% trans 'Share your expertise through AfghanAwaits' %}</h2>
-            <p>{% trans 'Guides can submit their information for review and participate in the tour workflow after approval.' %}</p>
+    <section class="lm-home-section lm-local-host" aria-labelledby="local-host-title">
+        <div class="aa-container">
+            <div class="lm-section-heading lm-section-heading--light">
+                <span class="lm-eyebrow">{% trans "Your Local Host" %}</span>
+                <h2 id="local-host-title">{% trans "More than a tour. Your local host in Afghanistan." %}</h2>
+            </div>
+            <div class="lm-positioning-grid">
+                <article><span>01</span><h3>{% trans "Local from the first message" %}</h3><p>{% trans "You speak directly with a team based in Afghanistan—not an overseas reseller." %}</p></article>
+                <article><span>02</span><h3>{% trans "Clear before you confirm" %}</h3><p>{% trans "Your itinerary, dates, inclusions, exclusions, price and payment conditions are provided before confirmation." %}</p></article>
+                <article><span>03</span><h3>{% trans "Hosted throughout your journey" %}</h3><p>{% trans "Your guide, transport, accommodation and daily coordination remain connected through one local operator." %}</p></article>
+                <article><span>04</span><h3>{% trans "Flexible when conditions change" %}</h3><p>{% trans "Routes are reviewed and adjusted when weather, access or local conditions require a responsible change." %}</p></article>
+            </div>
         </div>
-        <a class="aa-btn aa-btn-lime" href="{% url 'tour:tour_guide_view' %}">{% trans 'Become an expert' %} <i class="ti ti-arrow-right"></i></a>
-    </div>
-</section>
+    </section>
+
+    <section class="lm-home-section lm-how-it-works" aria-labelledby="how-it-works-title">
+        <div class="aa-container">
+            <div class="lm-section-heading">
+                <span class="lm-eyebrow">{% trans "How It Works" %}</span>
+                <h2 id="how-it-works-title">{% trans "From first request to local welcome" %}</h2>
+            </div>
+            <ol class="lm-process-grid">
+                <li><span>01</span><h3>{% trans "Send Your Request" %}</h3></li>
+                <li><span>02</span><h3>{% trans "Speak With a Local Trip Planner" %}</h3></li>
+                <li><span>03</span><h3>{% trans "Receive Your Itinerary and Quotation" %}</h3></li>
+                <li><span>04</span><h3>{% trans "Confirm and Pay" %}</h3></li>
+                <li><span>05</span><h3>{% trans "Prepare for Arrival" %}</h3></li>
+                <li><span>06</span><h3>{% trans "Be Welcomed and Hosted" %}</h3></li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="lm-home-section lm-hosting-promise" aria-labelledby="hosting-promise-title">
+        <div class="aa-container">
+            <div class="lm-section-heading">
+                <span class="lm-eyebrow">{% trans "Our Hosting Promise" %}</span>
+                <h2 id="hosting-promise-title">{% trans "Support connected to each stage of your journey" %}</h2>
+                <p>{% trans "The services shown here are enabled by our operations team and remain subject to your confirmed itinerary and inclusions." %}</p>
+            </div>
+            {% if hosting_service_groups %}
+                <div class="lm-promise-grid">
+                    {% for group in hosting_service_groups %}
+                        <article>
+                            <h3>{{ group.label }}</h3>
+                            <ul>{% for service in group.services %}<li><i class="fa-solid fa-check" aria-hidden="true"></i>{{ service.label }}</li>{% endfor %}</ul>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="lm-capability-note">{% trans "Available hosting services are confirmed in writing for each journey before booking." %}</p>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="lm-home-section lm-destinations" id="destinations" aria-labelledby="destinations-title">
+        <div class="aa-container">
+            <div class="lm-section-heading">
+                <span class="lm-eyebrow">{% trans "Popular Destinations" %}</span>
+                <h2 id="destinations-title">{% trans "Places to begin your Afghanistan journey" %}</h2>
+                <p>{% trans "Explore accurate local destination records, then connect the places that fit your route." %}</p>
+            </div>
+            {% if destinations %}
+                <div class="lm-destination-grid">
+                    {% for destination in destinations %}
+                        <article class="lm-destination-card">
+                            <a href="{{ destination.url }}">
+                                <img src="{{ destination.image_url }}" alt="{{ destination.title }}{% if destination.province %} in {{ destination.province }}{% endif %}" loading="lazy" decoding="async" sizes="(max-width: 575px) 100vw, (max-width: 991px) 50vw, 25vw">
+                                <span class="lm-destination-card__overlay" aria-hidden="true"></span>
+                                <span class="lm-destination-card__copy">{% if destination.province %}<small>{{ destination.province }}</small>{% endif %}<strong>{{ destination.title }}</strong><em>{{ destination.description|truncatewords:20 }}</em></span>
+                            </a>
+                        </article>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    {% if public_hosts %}
+    <section class="lm-home-section lm-local-hosts" aria-labelledby="local-hosts-title">
+        <div class="aa-container">
+            <div class="lm-section-heading">
+                <span class="lm-eyebrow">{% trans "Meet Local Hosts" %}</span>
+                <h2 id="local-hosts-title">{% trans "Approved local guides" %}</h2>
+            </div>
+            <div class="lm-host-grid">
+                {% for host in public_hosts %}
+                    <article class="lm-host-card">
+                        <img src="{{ host.profile_image.url }}" alt="{{ host.name }}, {% trans 'approved local guide' %}" loading="lazy" decoding="async" sizes="(max-width: 575px) 100vw, (max-width: 991px) 50vw, 25vw">
+                        <div><h3>{{ host.name }}</h3>{% if host.provinces %}<p class="lm-host-card__region">{{ host.provinces }}</p>{% endif %}<p>{{ host.bio|truncatewords:28 }}</p>{% if host.languages %}<p class="lm-host-card__languages"><strong>{% trans "Languages" %}:</strong> {{ host.languages }}</p>{% endif %}</div>
+                    </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="lm-home-section lm-responsible-travel" aria-labelledby="responsible-travel-title">
+        <div class="aa-container lm-responsible-travel__layout">
+            <div>
+                <span class="lm-eyebrow">{% trans "Responsible and Informed Travel" %}</span>
+                <h2 id="responsible-travel-title">{% trans "Plan with current information and clear expectations" %}</h2>
+            </div>
+            <div>
+                <p>{% blocktrans %}Travel conditions in Afghanistan can change. Larmoond provides local coordination, route review and contingency planning, but no operator can remove every travel risk. Travellers should review official advice, insurance conditions and entry requirements before confirming a journey.{% endblocktrans %}</p>
+                <a class="lm-btn lm-btn--outline-light" href="{% url 'rules_of_conduct' %}">{% trans "Read Our Travel and Safety Approach" %}</a>
+            </div>
+        </div>
+    </section>
+
+    {% if approved_reviews %}
+    <section class="lm-home-section lm-reviews" aria-labelledby="reviews-title">
+        <div class="aa-container">
+            <div class="lm-section-heading"><span class="lm-eyebrow">{% trans "Reviews" %}</span><h2 id="reviews-title">{% trans "Feedback from completed journeys" %}</h2></div>
+            <div class="lm-review-grid">
+                {% for review in approved_reviews %}<article><p class="lm-review-score">{{ review.overall }}/5</p><blockquote>{{ review.comment }}</blockquote><p><strong>{% trans "Verified traveller" %}</strong><span>{{ review.engagement.tour.title }}</span></p></article>{% endfor %}
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <section class="lm-home-section lm-real-evidence" aria-labelledby="evidence-title">
+        <div class="aa-container">
+            <div class="lm-section-heading"><span class="lm-eyebrow">{% trans "What You Can Verify" %}</span><h2 id="evidence-title">{% trans "Clear information before you confirm" %}</h2></div>
+            <div class="lm-evidence-grid">
+                {% if site_config.show_licence_badge and site_config.licence_number and site_config.licence_authority %}<article><i class="fa-solid fa-certificate" aria-hidden="true"></i><h3>{% trans "Licence and legal identity" %}</h3><p>{{ site_config.licence_authority }} · {{ site_config.licence_number }}{% if site_config.legal_entity_name %}<br>{{ site_config.legal_entity_name }}{% endif %}</p></article>{% endif %}
+                {% if public_hosts %}<article><i class="fa-solid fa-user-check" aria-hidden="true"></i><h3>{% trans "Approved local profiles" %}</h3><p>{% trans "Public guide profiles appear only after approval and never include identity documents, private contact details or rates." %}</p></article>{% endif %}
+                <article><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><h3>{% trans "Operating approach" %}</h3><p>{% trans "Requests, itineraries, quotations, confirmation and arrival preparation follow one connected workflow." %}</p></article>
+                <article><i class="fa-solid fa-list-check" aria-hidden="true"></i><h3>{% trans "Sample itinerary process" %}</h3><p>{% trans "Published tours include a day-by-day plan; private journeys receive an itinerary and quotation before confirmation." %}</p></article>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="lm-final-cta" aria-labelledby="final-cta-title">
+        <div class="aa-container lm-final-cta__inner">
+            <div><span class="lm-eyebrow">{% trans "Start Your Request" %}</span><h2 id="final-cta-title">{% trans "Begin planning your journey through Afghanistan." %}</h2></div>
+            <div class="lm-home-actions">
+                <a class="lm-btn lm-btn--lime" href="{% url 'home:trip_builder' %}" data-analytics-event="private_journey_cta" data-analytics-placement="homepage_final">{% trans "Plan a Private Journey" %}</a>
+                {% if site_config.whatsapp_url %}<a class="lm-btn lm-btn--outline-light" href="{{ site_config.whatsapp_url }}" target="_blank" rel="noopener noreferrer" data-analytics-event="whatsapp_contact" data-analytics-placement="homepage_final">{% trans "Speak With Our Local Team" %}</a>{% elif site_config.primary_email %}<a class="lm-btn lm-btn--outline-light" href="mailto:{{ site_config.primary_email }}">{% trans "Speak With Our Local Team" %}</a>{% elif site_config.primary_phone %}<a class="lm-btn lm-btn--outline-light" href="tel:{{ site_config.primary_phone_href }}">{% trans "Speak With Our Local Team" %}</a>{% endif %}
+            </div>
+        </div>
+    </section>
+</div>

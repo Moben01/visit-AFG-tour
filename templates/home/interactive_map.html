@@ -1,0 +1,75 @@
+{% load static i18n %}
+<section class="aa-home-hero aa-map-hero" aria-labelledby="home-hero-title">
+    <div class="aa-map-hero__topography" aria-hidden="true"></div>
+    <div class="aa-container aa-map-hero__inner">
+        <div class="aa-map-hero__copy">
+            {% if site_config.primary_tagline %}<span class="aa-map-hero__eyebrow">{{ site_config.primary_tagline }}</span>{% endif %}
+            {% if site_config.hero_heading %}<h1 id="home-hero-title">{{ site_config.hero_heading }}</h1>{% endif %}
+            {% if site_config.hero_description %}<p>{{ site_config.hero_description }}</p>{% endif %}
+            <div class="aa-map-hero__actions">
+                <a class="aa-map-hero__primary" href="#destinationRail">{% trans 'Explore destinations' %}<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <a class="aa-map-hero__secondary" href="{% url 'play_your_trip:essentials' %}">{% trans 'Plan your trip' %}<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+            </div>
+        </div>
+
+        <div class="aa-map-experience" id="aaAfghanistanMap" aria-label="{% trans 'Interactive map of Afghanistan destinations and routes' %}">
+            <div class="aa-map-canvas">
+                <img class="aa-map-base" src="{% static 'img/index/afghanistan-provinces-map.png' %}" alt="{% trans 'Map of Afghanistan provinces' %}">
+                <div class="aa-map-routes" aria-hidden="true">
+                    <span class="aa-map-route is-active" data-route="bamyan" data-group="popular" style="--length: 19%; --angle: -168deg;"></span>
+                    <span class="aa-map-route" data-route="herat" data-group="popular" style="--length: 52%; --angle: -174deg;"></span>
+                    <span class="aa-map-route" data-route="balkh" data-group="popular" style="--length: 35%; --angle: -132deg;"></span>
+                    <span class="aa-map-route" data-route="panjshir" data-group="popular" style="--length: 14%; --angle: -76deg;"></span>
+                    <span class="aa-map-route" data-route="badakhshan" data-group="hidden" style="--length: 28%; --angle: -66deg;"></span>
+                    <span class="aa-map-route -hidden" data-route="nuristan" data-group="hidden" style="--length: 17%; --angle: -23deg;"></span>
+                    <span class="aa-map-route" data-route="ghazni" data-group="popular" style="--length: 10%; --angle: 128deg;"></span>
+                    <span class="aa-map-route" data-route="kandahar" data-group="popular" style="--length: 30%; --angle: 142deg;"></span>
+                </div>
+
+                <button class="aa-map-pin -hub" type="button" style="--x: 66%; --y: 50%;" data-route="kabul" data-group="popular" data-name="{% trans 'Kabul' %}" data-subtitle="{% trans 'Babur Gardens' %}" data-image="{% static 'image_for_province/Babur Gardens.jpeg' %}" data-url="{% url 'states:kabul' %}" aria-label="{% trans 'Kabul — Babur Gardens' %}" aria-pressed="false">
+                    <span class="aa-map-pin__pulse"></span><span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/Babur Gardens.jpeg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Kabul' %}</strong><small>{% trans 'Babur Gardens' %}</small></span>
+                </button>
+                <button class="aa-map-pin is-active" type="button" style="--x: 48%; --y: 45%;" data-route="bamyan" data-group="popular" data-name="{% trans 'Bamyan' %}" data-subtitle="{% trans 'History • Nature' %}" data-image="{% static 'image_for_province/bamyan2.jpg' %}" data-url="{% url 'states:bamyan' %}" aria-label="{% trans 'Bamyan — Buddha Cliffs and Band-e Amir' %}" aria-pressed="true">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/bamyan2.jpg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Bamyan' %}</strong><small>{% trans 'Buddha Cliffs' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 15%; --y: 45%;" data-route="herat" data-group="popular" data-name="{% trans 'Herat' %}" data-subtitle="{% trans 'History • Architecture' %}" data-image="{% static 'image_for_province/Herat16.jpg' %}" data-url="{% url 'states:Herat' %}" aria-label="{% trans 'Herat — Citadel' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/Herat16.jpg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Herat' %}</strong><small>{% trans 'Citadel' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 43%; --y: 17%;" data-route="balkh" data-group="popular" data-name="{% trans 'Balkh' %}" data-subtitle="{% trans 'Culture • Heritage' %}" data-image="{% static 'image_for_province/balkh.jpeg' %}" data-url="{% url 'states:balkh' %}" aria-label="{% trans 'Balkh — Blue Mosque' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/balkh.jpeg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Balkh' %}</strong><small>{% trans 'Blue Mosque' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 69%; --y: 34%;" data-route="panjshir" data-group="popular" data-name="{% trans 'Panjshir' %}" data-subtitle="{% trans 'Mountains • Valley' %}" data-image="{% static 'image_for_province/Panjshirvalley.jpeg' %}" data-url="{% url 'states:panjshir' %}" aria-label="{% trans 'Panjshir — Valley' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/Panjshirvalley.jpeg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Panjshir' %}</strong><small>{% trans 'Valley' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 77%; --y: 18%;" data-route="badakhshan" data-group="hidden" data-name="{% trans 'Badakhshan' %}" data-subtitle="{% trans 'Adventure • Mountains' %}" data-image="{% static 'image_for_province/Badakhshan3.jpg' %}" data-url="{% url 'states:Badakhshan' %}" aria-label="{% trans 'Badakhshan — Wakhan' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/Badakhshan3.jpg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Badakhshan' %}</strong><small>{% trans 'Wakhan' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 81%; --y: 42%;" data-route="nuristan" data-group="hidden" data-name="{% trans 'Nuristan' %}" data-subtitle="{% trans 'Forests • Culture' %}" data-image="{% static 'image_for_province/Nuristan1.png' %}" data-url="{% url 'states:Nuristan' %}" aria-label="{% trans 'Nuristan — Forests' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/Nuristan1.png' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Nuristan' %}</strong><small>{% trans 'Forests' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 60%; --y: 60%;" data-route="ghazni" data-group="popular" data-name="{% trans 'Ghazni' %}" data-subtitle="{% trans 'History • Minarets' %}" data-image="{% static 'state-image/ghazni/b9c1a6ee-62f1-4b06-bda6-e2d07fefb965.jpeg' %}" data-url="{% url 'states:ghazni' %}" aria-label="{% trans 'Ghazni — Minarets' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'state-image/ghazni/b9c1a6ee-62f1-4b06-bda6-e2d07fefb965.jpeg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Ghazni' %}</strong><small>{% trans 'Minarets' %}</small></span>
+                </button>
+                <button class="aa-map-pin" type="button" style="--x: 43%; --y: 73%;" data-route="kandahar" data-group="popular" data-name="{% trans 'Kandahar' %}" data-subtitle="{% trans 'History • Old City' %}" data-image="{% static 'image_for_province/kandher.jpg' %}" data-url="{% url 'states:Kandahar' %}" aria-label="{% trans 'Kandahar — Old City' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/kandher.jpg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Kandahar' %}</strong><small>{% trans 'Old City' %}</small></span>
+                </button>
+                <button class="aa-map-pin -quiet" type="button" style="--x: 39%; --y: 39%;" data-route="bamyan" data-group="hidden" data-name="{% trans 'Band-e Amir' %}" data-subtitle="{% trans 'Lakes • Nature' %}" data-image="{% static 'image_for_province/band_e_amir.jpg' %}" data-url="{% url 'states:bamyan' %}" aria-label="{% trans 'Band-e Amir — Lakes' %}" aria-pressed="false">
+                    <span class="aa-map-pin__thumb"><img src="{% static 'image_for_province/band_e_amir.jpg' %}" alt=""></span><span class="aa-map-pin__label"><strong>{% trans 'Band-e Amir' %}</strong><small>{% trans 'Lakes' %}</small></span>
+                </button>
+            </div>
+
+            <article class="aa-map-card" aria-live="polite">
+                <img class="aa-map-card__image" src="{% static 'image_for_province/bamyan2.jpg' %}" alt="{% trans 'Bamyan' %}">
+                <div><span class="aa-map-card__kicker">{% trans 'Destination' %}</span><strong class="aa-map-card__title">{% trans 'Bamyan' %}</strong><span class="aa-map-card__subtitle">{% trans 'History • Nature' %}</span><a class="aa-map-card__link" href="{% url 'states:bamyan' %}">{% trans 'View destination' %}<i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+            </article>
+        </div>
+
+        <form class="aa-route-planner" action="{% url 'home:trip_builder' %}" method="get" aria-label="{% trans 'Plan your trip' %}">
+            <div class="aa-route-field -from"><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i><span><label>{% trans 'From' %}</label><strong>{% trans 'Kabul' %}</strong></span></div>
+            <div class="aa-route-field"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span><label for="aaRouteDestination">{% trans 'Where to?' %}</label><select id="aaRouteDestination" name="q"><option value="">{% trans 'Any destination' %}</option>{% for destination in destinations %}<option value="{{ destination.title }}">{{ destination.title }}</option>{% endfor %}</select></span></div>
+            <div class="aa-route-field"><i class="fa-solid fa-user-group" aria-hidden="true"></i><span><label for="aaRouteGuests">{% trans 'Guests' %}</label><input id="aaRouteGuests" type="number" name="guests" min="1" max="20" value="1" inputmode="numeric"></span></div>
+            <div class="aa-route-field"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i><span><label for="aaMapCheckIn">{% trans 'Dates' %}</label><input id="aaMapCheckIn" type="date" name="check_in"></span></div>
+            <button class="aa-route-submit" type="submit">{% trans 'Build my route' %}<i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </form>
+    </div>
+</section>

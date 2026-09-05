@@ -19,16 +19,17 @@ from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.http import HttpResponseRedirect
+from home.permissions import has_content_management_access
 stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
 
 def tour_category_list(request, slug):
     get_tour_categories = TourCategory.objects.all()
     get_tour_category = TourCategory.objects.get(slug=slug)
-    find_tours = Tour.objects.filter(category=get_tour_category)
+    find_tours = Tour.objects.filter(category=get_tour_category, available=True)
     selected_types = request.GET.getlist('types')
     if selected_types:
-        find_tours = Tour.objects.filter(category__id__in=selected_types)
+        find_tours = Tour.objects.filter(category__id__in=selected_types, available=True)
 
     context = {
         'get_tour_category': get_tour_category,
@@ -71,7 +72,15 @@ def tour_details(request, slug):
         except User.DoesNotExist:
             pass
 
-    get_tour = Tour.objects.get(slug=slug)
+    can_preview = (
+        request.GET.get('preview') == '1'
+        and request.user.is_authenticated
+        and has_content_management_access(request.user)
+    )
+    tour_queryset = Tour.objects.all()
+    if not can_preview:
+        tour_queryset = tour_queryset.filter(available=True)
+    get_tour = get_object_or_404(tour_queryset, slug=slug)
     get_EnquireUs = EnquireUs.objects.filter(tour=get_tour)
 
     if request.htmx and request.method == 'POST':
@@ -126,6 +135,9 @@ def tour_details(request, slug):
 @login_required
 def tour_booking(request, slug):
     find_tour = get_object_or_404(Tour, slug=slug, available=True)
+    if find_tour.is_price_on_request:
+        messages.info(request, 'This tour is priced on request. Send an enquiry for a tailored quote.')
+        return redirect(f"{reverse('tour:tour_details', args=(slug,))}#enquires-content")
     user = request.user
     accommodation = Accommodation.objects.all().order_by('name')
     languages_ = Languages.objects.all().order_by('name')
@@ -571,7 +583,7 @@ def create_checkout_session(request, booking_id):
                     'currency': 'usd',
                     'product_data': {
                         'name': booking.tour.title,
-                        'description': f'AfghanAwaits tour booking #{booking.id}',
+                        'description': f'Larmoond Travel and Tours tour booking #{booking.id}',
                     },
                     'unit_amount': amount,
                 },

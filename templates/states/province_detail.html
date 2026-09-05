@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{{ page.meta_title|default:page.name }} | {{ site_config.official_brand_name }}{% endblock %}
+{% block content %}
+<section class="aa-page-hero{% if page.image_url %} aa-page-hero--image{% endif %}"{% if page.image_url %} style="background-image:linear-gradient(90deg,rgba(3,41,35,.88),rgba(3,41,35,.42)),url('{{ page.image_url }}')"{% endif %}>
+  <div class="aa-container"><span class="aa-eyebrow">{% trans "Province guide" %}</span><h1>{{ page.name }}</h1>{% if page.summary %}<p>{{ page.summary }}</p>{% endif %}</div>
+</section>
+<main class="aa-section"><div class="aa-container">
+  {% if page.body %}<section class="aa-province-copy">{{ page.body|linebreaks }}</section>{% endif %}
+  {% for section in page_sections %}<section class="aa-province-content-section">{% if section.image_url %}<img src="{{ section.image_url }}" alt="{{ section.heading }}" loading="lazy">{% endif %}<div><h2>{{ section.heading }}</h2>{{ section.body|linebreaks }}</div></section>{% endfor %}
+  {% if find_best_places_in_this_province %}<section class="aa-province-related"><div class="aa-section-head"><div><span class="aa-eyebrow">{% trans "Places" %}</span><h2>{% trans "Best places to visit" %}</h2></div></div><div class="aa-tour-grid">{% for item in find_best_places_in_this_province %}<article class="aa-tour-card"><div class="aa-tour-image"><img src="{{ item.image.url }}" alt="{{ item.title }}" loading="lazy"></div><div class="aa-tour-body"><h3>{{ item.title }}</h3><p>{{ item.description|truncatewords:28 }}</p><span class="aa-tour-location"><i class="ti ti-map-pin"></i>{{ item.location }}</span></div></article>{% endfor %}</div></section>{% endif %}
+  {% if find_things_to_do_in_this_province %}<section class="aa-province-related"><div class="aa-section-head"><div><span class="aa-eyebrow">{% trans "Experiences" %}</span><h2>{% trans "Things to do" %}</h2></div></div><div class="aa-tour-grid">{% for item in find_things_to_do_in_this_province %}<article class="aa-tour-card"><div class="aa-tour-image"><img src="{{ item.image.url }}" alt="{{ item.title }}" loading="lazy"></div><div class="aa-tour-body"><h3>{{ item.title }}</h3><p>{{ item.description|truncatewords:28 }}</p><div class="aa-tour-meta"><span>{{ item.location }}</span><strong>USD {{ item.price }}</strong></div></div></article>{% endfor %}</div></section>{% endif %}
+</div></main>
+{% endblock %}

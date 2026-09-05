@@ -1,0 +1,76 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+
+{% block operations_title %}{{ trip_request.reference }}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead ops-pagehead--booking">
+  <div><a class="ops-back" href="{% url 'tour:operations:trip_request_list' %}"><i class="ti ti-arrow-left"></i>{% trans "Back to route requests" %}</a><div class="ops-titleline"><h1>{{ trip_request.reference }} · {{ trip_request.full_name }}</h1><span class="ops-status ops-status--{{ trip_request.status }}">{{ trip_request.get_status_display }}</span></div><p>{{ trip_request.start_date|date:"d M Y" }} – {{ trip_request.end_date|date:"d M Y" }} · {{ trip_request.traveller_count }} {% trans "travellers" %}</p></div>
+  <div class="ops-pagehead__actions"><a class="ops-btn ops-btn--secondary" href="{{ trip_request.get_absolute_url }}" target="_blank"><i class="ti ti-external-link"></i>{% trans "Traveller view" %}</a><a class="ops-btn ops-btn--primary" href="{% url 'tour:operations:trip_proposal_create' trip_request.id %}"><i class="ti ti-file-plus"></i>{% trans "New proposal" %}</a></div>
+</section>
+
+<section class="ops-booking-summary">
+  <article><span>{% trans "Route" %}</span><strong>{{ trip_request.stops.count }} {% trans "provinces" %} · {{ trip_request.duration_days }} {% trans "days" %}</strong></article>
+  <article><span>{% trans "Entry" %}</span><strong>{{ entry_plan.get_status_display }}</strong></article>
+  <article><span>{% trans "Budget" %}</span><strong>{{ trip_request.get_budget_tier_display }}{% if trip_request.estimated_budget %} · USD {{ trip_request.estimated_budget }}{% endif %}</strong></article>
+  <article><span>{% trans "Booking" %}</span><strong>{% if trip_request.booking_id %}#AA-{{ trip_request.booking_id|stringformat:"05d" }}{% else %}{% trans "Not created" %}{% endif %}</strong></article>
+</section>
+
+<div class="ops-grid ops-grid--detail">
+  <div class="ops-detail-main">
+    <section class="ops-card">
+      <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Requested route" %}</span><h2>{% trans "Province order and nights" %}</h2></div></div>
+      <div class="ops-trip-stops">{% for stop in trip_request.stops.all %}<article><span>{{ stop.position }}</span><div><strong>{{ stop.destination.title }}</strong><small>{{ stop.nights }} {% trans "nights" %}{% if stop.notes %} · {{ stop.notes }}{% endif %}</small></div></article>{% endfor %}</div>
+    </section>
+
+    <section class="ops-card">
+      <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Proposals" %}</span><h2>{% trans "Versions sent to the traveller" %}</h2></div><a href="{% url 'tour:operations:trip_proposal_create' trip_request.id %}">{% trans "Create version" %}<i class="ti ti-plus"></i></a></div>
+      <div class="ops-proposals">
+        {% for proposal in proposals %}
+        <article>
+          <div><span>v{{ proposal.version }}</span><div><strong>{{ proposal.title }}</strong><small>{{ proposal.currency }} {{ proposal.total_price }} · {{ proposal.days.count }} {% trans "days" %} · {{ proposal.get_status_display }}</small></div></div>
+          <div class="ops-proposal-actions">
+            {% if proposal.status == 'draft' %}<a class="ops-btn ops-btn--small ops-btn--ghost" href="{% url 'tour:operations:trip_proposal_edit' trip_request.id proposal.id %}">{% trans "Edit" %}</a><form method="post" action="{% url 'tour:operations:trip_proposal_send' trip_request.id proposal.id %}">{% csrf_token %}<button class="ops-btn ops-btn--small ops-btn--primary" type="submit">{% trans "Send" %}</button></form>{% endif %}
+            {% if proposal.status == 'accepted' %}<span class="ops-payment is-paid">{% trans "Accepted" %}</span>{% endif %}
+          </div>
+        </article>
+        {% empty %}<div class="ops-empty"><i class="ti ti-file-plus"></i><strong>{% trans "No proposal has been prepared" %}</strong><span>{% trans "Create a route version with entry point, price and day-by-day itinerary." %}</span></div>{% endfor %}
+      </div>
+    </section>
+
+    <section class="ops-card">
+      <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Traveller preferences" %}</span><h2>{% trans "Planning context" %}</h2></div></div>
+      <div class="ops-document-grid">
+        <article><span>{% trans "Origin" %}</span><strong>{{ trip_request.country_of_origin }}</strong></article>
+        <article><span>{% trans "Pace" %}</span><strong>{{ trip_request.get_pace_display }}</strong></article>
+        <article><span>{% trans "Accommodation" %}</span><strong>{{ trip_request.preferences.get_accommodation_type_display|default:"—" }}</strong></article>
+        <article><span>{% trans "Transport" %}</span><strong>{{ trip_request.preferences.get_transport_preference_display|default:"—" }}</strong></article>
+      </div>
+      {% if trip_request.preferences.interests %}<div class="ops-tag-row">{% for interest in trip_request.preferences.interests %}<span>{{ interest }}</span>{% endfor %}</div>{% endif %}
+    </section>
+  </div>
+
+  <aside class="ops-detail-side">
+    <section class="ops-card ops-card--padded">
+      <span class="ops-eyebrow">{% trans "Request control" %}</span><h2>{% trans "Traveller and stage" %}</h2>
+      <form class="ops-form ops-form--stack" method="post" action="{% url 'tour:operations:trip_request_update' trip_request.id %}">
+        {% csrf_token %}
+        {% for field in trip_form %}<div class="ops-field"><label>{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}
+        <hr>
+        <span class="ops-eyebrow">{% trans "Entry recommendation" %}</span>
+        {% for field in entry_form %}<div class="ops-field"><label>{{ field.label }}</label>{{ field }}{% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}{{ field.errors }}</div>{% endfor %}
+        <button class="ops-btn ops-btn--primary ops-btn--full" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save request" %}</button>
+      </form>
+    </section>
+
+    {% if accepted_proposal and not trip_request.booking_id %}
+    <section class="ops-card ops-card--padded">
+      <span class="ops-eyebrow">{% trans "Conversion" %}</span><h2>{% trans "Create booking" %}</h2>
+      {% if accepted_proposal.booking_tour_id %}<p>{% trans "The accepted proposal is linked to" %} <strong>{{ accepted_proposal.booking_tour.title }}</strong>.</p><form method="post" action="{% url 'tour:operations:trip_request_convert_booking' trip_request.id %}">{% csrf_token %}<button class="ops-btn ops-btn--primary ops-btn--full" type="submit"><i class="ti ti-receipt"></i>{% trans "Convert to booking" %}</button></form>{% else %}<div class="ops-notice ops-notice--warning"><i class="ti ti-alert-triangle"></i><span>{% trans "Edit a new proposal version and link a published tour before conversion." %}</span></div>{% endif %}
+    </section>
+    {% elif trip_request.booking_id %}
+    <a class="ops-btn ops-btn--primary ops-btn--full" href="{% url 'tour:operations:booking_detail' trip_request.booking_id %}">{% trans "Open booking" %} #AA-{{ trip_request.booking_id|stringformat:"05d" }}</a>
+    {% endif %}
+  </aside>
+</div>
+{% endblock %}

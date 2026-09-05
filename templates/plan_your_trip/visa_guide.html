@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-{% load static %}
+{% load static i18n %}
 
     <!-- Breadcrumb -->
     <div class="breadcrumb-bar breadcrumb-bg-05 text-center">
@@ -570,56 +570,42 @@
     <!-- /Resources Section -->
 
     <!-- Contact Section -->
-    <section class="contact-section py-5 bg-light">
+    {% if site_config.primary_email or site_config.support_email or site_config.primary_phone %}<section class="contact-section py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center mb-5">
-                    <h2 class="mb-3">Need <span class="text-primary"> Assistance?</span></h2>
-                    <p class="lead">Our visa specialists are ready to help with your application</p>
+                    <h2 class="mb-3">{% trans "General travel enquiries" %}</h2>
+                    <p class="lead">{% trans "Use a verified contact below for questions about services offered by Larmoond Travel and Tours." %}</p>
                 </div>
             </div>
             
             <div class="row">
-                <div class="col-md-6 mb-4">
+                {% if site_config.support_email or site_config.primary_email %}<div class="col-md-6 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body p-4 text-center">
                             <div class="contact-icon mb-3">
                                 <i class="fas fa-envelope fa-3x text-primary"></i>
                             </div>
-                            <h4 class="card-title mb-3">Email Support</h4>
-                            <p class="card-text">Send us your questions and we'll respond within 24 hours</p>
-                            <a href="mailto:visa-support@afghanistan.travel" class="btn btn-outline-primary">visa-support@afghanistan.travel</a>
+                            <h4 class="card-title mb-3">{% trans "Email" %}</h4>
+                            {% if site_config.support_email %}<a href="mailto:{{ site_config.support_email }}" class="btn btn-outline-primary">{{ site_config.support_email }}</a>{% else %}<a href="mailto:{{ site_config.primary_email }}" class="btn btn-outline-primary">{{ site_config.primary_email }}</a>{% endif %}
                         </div>
                     </div>
-                </div>
+                </div>{% endif %}
                 
-                <div class="col-md-6 mb-4">
+                {% if site_config.primary_phone %}<div class="col-md-6 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body p-4 text-center">
                             <div class="contact-icon mb-3">
                                 <i class="fas fa-phone-alt fa-3x text-primary"></i>
                             </div>
-                            <h4 class="card-title mb-3">Phone Support</h4>
-                            <p class="card-text">Speak directly with our visa specialists during business hours</p>
-                            <a href="tel:+93123456789" class="btn btn-outline-primary">+93 123 456 789</a>
+                            <h4 class="card-title mb-3">{% trans "Telephone" %}</h4>
+                            <a href="tel:{{ site_config.primary_phone_href }}" class="btn btn-outline-primary">{{ site_config.primary_phone }}</a>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <div class="row mt-4">
-                <div class="col-lg-6 mx-auto">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4 text-center">
-                            <h4 class="card-title mb-3">Live Chat</h4>
-                            <p class="card-text mb-3">Get immediate answers to your questions through our live chat service</p>
-                            <button class="btn btn-primary btn-lg px-4 rounded-pill">Start Chat</button>
-                        </div>
-                    </div>
-                </div>
+                </div>{% endif %}
             </div>
         </div>
-    </section>
+    </section>{% endif %}
     <!-- /Contact Section -->
 
     <!-- Custom CSS -->

@@ -1,0 +1,34 @@
+{% extends 'operations/base.html' %}
+{% load static i18n %}
+
+{% block operations_title %}{% trans "Route proposal" %} · {{ trip_request.reference }}{% endblock %}
+
+{% block operations_content %}
+<section class="ops-pagehead"><div><a class="ops-back" href="{% url 'tour:operations:trip_request_detail' trip_request.id %}"><i class="ti ti-arrow-left"></i>{% trans "Back to request" %}</a><span class="ops-eyebrow">{{ trip_request.reference }}</span><h1>{% if proposal.pk %}{% blocktrans with version=proposal.version %}Edit proposal v{{ version }}{% endblocktrans %}{% else %}{% blocktrans with version=proposal.version %}Create proposal v{{ version }}{% endblocktrans %}{% endif %}</h1><p>{% trans "Prepare the entry recommendation, price and traveller-facing day-by-day plan." %}</p></div></section>
+
+<form class="ops-form" method="post" data-proposal-builder>
+  {% csrf_token %}
+  <section class="ops-card">
+    <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Commercial proposal" %}</span><h2>{% trans "Summary and booking link" %}</h2></div></div>
+    {{ form.non_field_errors }}
+    <div class="ops-form-grid">{% for field in form %}<div class="ops-field {% if field.name == 'summary' or field.name == 'customer_message' or field.name == 'internal_notes' %}ops-field--wide{% endif %}"><label>{{ field.label }}</label>{{ field }}{% if field.help_text %}<small>{{ field.help_text }}</small>{% endif %}{{ field.errors }}</div>{% endfor %}</div>
+  </section>
+
+  <section class="ops-card">
+    <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Itinerary" %}</span><h2>{% trans "Day-by-day plan" %}</h2></div><button class="ops-btn ops-btn--secondary" type="button" data-proposal-day-add><i class="ti ti-plus"></i>{% trans "Add day" %}</button></div>
+    {{ day_formset.management_form }}{{ day_formset.non_form_errors }}
+    <div class="ops-proposal-days" data-proposal-days>
+      {% for day_form in day_formset %}
+      <article data-proposal-day>
+        {% for hidden in day_form.hidden_fields %}{{ hidden }}{% endfor %}
+        <div class="ops-proposal-day__head"><strong>{% trans "Itinerary day" %}</strong><label>{{ day_form.DELETE }} {% trans "Delete" %}</label></div>
+        <div class="ops-form-grid">{% for field in day_form.visible_fields %}{% if field.name != 'DELETE' %}<div class="ops-field {% if field.name == 'description' %}ops-field--wide{% endif %}"><label>{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endif %}{% endfor %}</div>
+      </article>
+      {% endfor %}
+    </div>
+    <template id="opsEmptyProposalDay"><article data-proposal-day>{% for hidden in day_formset.empty_form.hidden_fields %}{{ hidden }}{% endfor %}<div class="ops-proposal-day__head"><strong>{% trans "Itinerary day" %}</strong><label>{{ day_formset.empty_form.DELETE }} {% trans "Delete" %}</label></div><div class="ops-form-grid">{% for field in day_formset.empty_form.visible_fields %}{% if field.name != 'DELETE' %}<div class="ops-field {% if field.name == 'description' %}ops-field--wide{% endif %}"><label>{{ field.label }}</label>{{ field }}</div>{% endif %}{% endfor %}</div></article></template>
+  </section>
+  <div class="ops-form-actions"><a class="ops-btn ops-btn--ghost" href="{% url 'tour:operations:trip_request_detail' trip_request.id %}">{% trans "Cancel" %}</a><button class="ops-btn ops-btn--primary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save proposal draft" %}</button></div>
+</form>
+<script src="{% static 'js/operations-trip.js' %}" defer></script>
+{% endblock %}

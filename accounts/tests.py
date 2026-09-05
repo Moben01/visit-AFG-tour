@@ -42,6 +42,8 @@ class EmailAuthenticationTests(TestCase):
         self.assertNotIn('_auth_user_id', self.client.session)
         self.assertEqual(len(mail.outbox), 1)
         self.assertIn('confirm', mail.outbox[0].body.lower())
+        self.assertIn('[Larmoond Travel and Tours]', mail.outbox[0].subject)
+        self.assertIn('Larmoond Travel and Tours', mail.outbox[0].body)
 
     def test_verification_sent_page_uses_designed_account_state(self):
         response = self.client.get(reverse('account_email_verification_sent'))

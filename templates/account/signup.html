@@ -16,13 +16,13 @@
             <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
                 <div class="col-xxl-4 col-lg-6 col-md-6 col-11 mx-auto">
                     <div class="p-4 text-center">
-                        <img src="{% static 'brand/afghanawaits/logo-white.svg' %}" alt="AfghanAwaits.com" class="img-fluid">
+                        {% include 'site/auth_brand.html' with brand_image_url=site_config.logo_reversed_url %}
                     </div>
                     <div class="card authentication-card">
                         <div class="card-header">
                             <div class="text-center">
                                 <h5 class="mb-1">{% trans "Sign Up" %}</h5>
-                                <p>{% trans "Create your AfghanAwaits.com Account" %}</p>
+                                <p>{% trans "Create your Larmoond Travel and Tours account" %}</p>
                             </div>
                         </div>
                         <div class="card-body">
@@ -107,7 +107,7 @@
         <!-- /Register -->
 
         <div class="coprright-footer">
-            <p class="fs-14">&copy; 2025 AfghanAwaits.com. {% trans "All Rights Reserved" %}</p>
+            <p class="fs-14">&copy; {% now "Y" %} {{ site_config.official_brand_name }}. {% trans "All Rights Reserved" %}</p>
         </div>
     </div>
 </div>

@@ -1,0 +1,18 @@
+:root {
+  --brand-deep-green: #072720;
+  --brand-lime: #9EDD05;
+  --brand-white: #FFFFFF;
+}
+
+.larmoond-auth-wordmark {
+  color: var(--brand-deep-green);
+  display: inline-block;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.aa-auth-brand .larmoond-auth-wordmark {
+  color: var(--brand-white);
+}

@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block body_class %}aa-trip-builder-page{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/trip-builder.css' %}">
+
+<section class="aa-trip-hero">
+  <div class="aa-container aa-trip-hero__grid">
+    <div>
+      <span class="aa-trip-eyebrow">{% trans "Custom Afghanistan route" %}</span>
+      <h1>{% trans "Build a journey across several provinces" %}</h1>
+      <p>{% trans "Choose the places you want to see, or leave the entry point to our operations team. Your request is saved, reviewed and returned as a practical itinerary before any booking is created." %}</p>
+    </div>
+    <aside class="aa-trip-hero__promise">
+      <i class="fa-solid fa-route"></i>
+      <div><strong>{% trans "Plan first, book later" %}</strong><span>{% trans "Submitting this form does not charge you or create a confirmed booking." %}</span></div>
+    </aside>
+  </div>
+</section>
+
+<section class="aa-trip-shell">
+  <div class="aa-container">
+    {% if messages %}<div class="aa-trip-messages">{% for message in messages %}<div class="aa-trip-alert">{{ message }}</div>{% endfor %}</div>{% endif %}
+
+    <nav class="aa-trip-steps" aria-label="{% trans 'Trip builder progress' %}">
+      <button type="button" class="is-active" data-trip-step-button="1"><span>1</span>{% trans "Basics" %}</button>
+      <button type="button" data-trip-step-button="2"><span>2</span>{% trans "Provinces" %}</button>
+      <button type="button" data-trip-step-button="3"><span>3</span>{% trans "Entry" %}</button>
+      <button type="button" data-trip-step-button="4"><span>4</span>{% trans "Preferences" %}</button>
+      <button type="button" data-trip-step-button="5"><span>5</span>{% trans "Contact" %}</button>
+    </nav>
+
+    <form class="aa-trip-form" method="post" novalidate data-trip-builder>
+      {% csrf_token %}
+      {% if trip_form.non_field_errors or entry_form.non_field_errors or preference_form.non_field_errors or stop_formset.non_form_errors %}
+      <div class="aa-trip-errors" role="alert">
+        {{ trip_form.non_field_errors }}{{ entry_form.non_field_errors }}{{ preference_form.non_field_errors }}{{ stop_formset.non_form_errors }}
+      </div>
+      {% endif %}
+
+      <section class="aa-trip-panel is-active" data-trip-step="1">
+        <div class="aa-trip-panel__head"><span>{% trans "Step 1" %}</span><h2>{% trans "When and who is travelling?" %}</h2><p>{% trans "Dates can be adjusted later by the operations team." %}</p></div>
+        <div class="aa-trip-grid">
+          {% include 'home/partials/trip_field.html' with field=trip_form.start_date %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.end_date %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.adults %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.children %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.pace %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.budget_tier %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.estimated_budget %}
+        </div>
+      </section>
+
+      <section class="aa-trip-panel" data-trip-step="2" hidden>
+        <div class="aa-trip-panel__head"><span>{% trans "Step 2" %}</span><h2>{% trans "Choose and order your provinces" %}</h2><p>{% trans "Add up to twelve stops. Use the arrows to place them in travel order." %}</p></div>
+        {{ stop_formset.management_form }}
+        <div class="aa-route-stops" data-route-stops>
+          {% for stop_form in stop_formset %}
+          <article class="aa-route-stop" data-route-stop>
+            {{ stop_form.position }}
+            <div class="aa-route-stop__order"><span data-stop-number>{{ forloop.counter }}</span><div><button type="button" data-stop-up aria-label="{% trans 'Move stop up' %}"><i class="fa-solid fa-chevron-up"></i></button><button type="button" data-stop-down aria-label="{% trans 'Move stop down' %}"><i class="fa-solid fa-chevron-down"></i></button></div></div>
+            <div class="aa-route-stop__fields">
+              {% include 'home/partials/trip_field.html' with field=stop_form.destination %}
+              {% include 'home/partials/trip_field.html' with field=stop_form.nights %}
+              {% include 'home/partials/trip_field.html' with field=stop_form.notes wide=True %}
+            </div>
+            <div class="aa-route-stop__delete">{{ stop_form.DELETE }}<button type="button" data-stop-remove><i class="fa-solid fa-trash"></i><span>{% trans "Remove" %}</span></button></div>
+          </article>
+          {% endfor %}
+        </div>
+        <button class="aa-trip-add-stop" type="button" data-stop-add><i class="fa-solid fa-plus"></i>{% trans "Add another province" %}</button>
+        <template id="aaEmptyStop">
+          <article class="aa-route-stop" data-route-stop>
+            {{ stop_formset.empty_form.position }}
+            <div class="aa-route-stop__order"><span data-stop-number></span><div><button type="button" data-stop-up aria-label="{% trans 'Move stop up' %}"><i class="fa-solid fa-chevron-up"></i></button><button type="button" data-stop-down aria-label="{% trans 'Move stop down' %}"><i class="fa-solid fa-chevron-down"></i></button></div></div>
+            <div class="aa-route-stop__fields">
+              {% include 'home/partials/trip_field.html' with field=stop_formset.empty_form.destination %}
+              {% include 'home/partials/trip_field.html' with field=stop_formset.empty_form.nights %}
+              {% include 'home/partials/trip_field.html' with field=stop_formset.empty_form.notes wide=True %}
+            </div>
+            <div class="aa-route-stop__delete">{{ stop_formset.empty_form.DELETE }}<button type="button" data-stop-remove><i class="fa-solid fa-trash"></i><span>{% trans "Remove" %}</span></button></div>
+          </article>
+        </template>
+      </section>
+
+      <section class="aa-trip-panel" data-trip-step="3" hidden>
+        <div class="aa-trip-panel__head"><span>{% trans "Step 3" %}</span><h2>{% trans "How should the entry point be decided?" %}</h2><p>{% trans "If you are unsure, tell us where you are arriving from and we will prepare a recommendation for review." %}</p></div>
+        <div class="aa-entry-choice">{{ entry_form.selection_mode }}{{ entry_form.selection_mode.errors }}</div>
+        <div class="aa-trip-grid">
+          {% include 'home/partials/trip_field.html' with field=entry_form.transport_mode %}
+          {% include 'home/partials/trip_field.html' with field=entry_form.arrival_origin %}
+          <div data-entry-self>{% include 'home/partials/trip_field.html' with field=entry_form.selected_entry_point %}</div>
+          <div data-entry-other>{% include 'home/partials/trip_field.html' with field=entry_form.other_entry_point %}</div>
+        </div>
+        <div class="aa-trip-info"><i class="fa-solid fa-circle-info"></i><span>{% trans "Entry recommendations are not confirmed automatically. Operations will check the first stop, arrival method and practical availability before confirming." %}</span></div>
+      </section>
+
+      <section class="aa-trip-panel" data-trip-step="4" hidden>
+        <div class="aa-trip-panel__head"><span>{% trans "Step 4" %}</span><h2>{% trans "Shape the experience" %}</h2><p>{% trans "These choices help the team prepare accommodation, transport and local support." %}</p></div>
+        <div class="aa-interest-field"><label>{{ preference_form.interests.label }}</label>{{ preference_form.interests }}{{ preference_form.interests.errors }}</div>
+        <div class="aa-trip-grid">
+          {% include 'home/partials/trip_field.html' with field=preference_form.accommodation_type %}
+          {% include 'home/partials/trip_field.html' with field=preference_form.transport_preference %}
+          <div class="aa-trip-toggle">{{ preference_form.needs_local_guide }}<label for="{{ preference_form.needs_local_guide.id_for_label }}">{% trans "Include a local guide" %}</label></div>
+          <div class="aa-trip-toggle">{{ preference_form.needs_translator }}<label for="{{ preference_form.needs_translator.id_for_label }}">{% trans "Translator may be needed" %}</label></div>
+          {% include 'home/partials/trip_field.html' with field=preference_form.accessibility_notes wide=True %}
+        </div>
+      </section>
+
+      <section class="aa-trip-panel" data-trip-step="5" hidden>
+        <div class="aa-trip-panel__head"><span>{% trans "Step 5" %}</span><h2>{% trans "Where should we send the proposal?" %}</h2><p>{% trans "Only planning and contact information is collected here. Passport and visa documents are requested later, after approval." %}</p></div>
+        <div class="aa-trip-grid">
+          {% include 'home/partials/trip_field.html' with field=trip_form.full_name %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.email %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.phone %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.country_of_origin %}
+          {% include 'home/partials/trip_field.html' with field=trip_form.notes wide=True %}
+        </div>
+        <label class="aa-trip-consent"><input type="checkbox" required><span>{% trans "I understand that this is a planning request and that dates, entry point, availability and price require confirmation." %}</span></label>
+      </section>
+
+      <div class="aa-trip-actions">
+        <button class="aa-trip-button aa-trip-button--ghost" type="button" data-step-back hidden><i class="fa-solid fa-arrow-left"></i>{% trans "Back" %}</button>
+        <button class="aa-trip-button aa-trip-button--primary" type="button" data-step-next>{% trans "Continue" %}<i class="fa-solid fa-arrow-right"></i></button>
+        <button class="aa-trip-button aa-trip-button--primary" type="submit" data-step-submit hidden>{% trans "Save and send request" %}<i class="fa-solid fa-paper-plane"></i></button>
+      </div>
+    </form>
+  </div>
+</section>
+<script src="{% static 'js/trip-builder.js' %}" defer></script>
+{% endblock %}

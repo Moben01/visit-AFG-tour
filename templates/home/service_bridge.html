@@ -1,0 +1,33 @@
+{% load i18n %}
+<section class="aa-section aa-service-section" aria-labelledby="aaServiceTitle">
+    <div class="aa-container">
+        <div class="aa-section-head">
+            <div>
+                {% with section=site_sections.home_services %}<span class="aa-eyebrow">{% if section.eyebrow %}{{ section.eyebrow }}{% else %}{% trans 'Plan Your Trip' %}{% endif %}</span>
+                <h2 id="aaServiceTitle">{% if section.title %}{{ section.title }}{% else %}{% trans 'One connected itinerary' %}{% endif %}</h2>
+                <p>{% if section.body %}{{ section.body }}{% else %}{% trans 'Tours, transport, accommodation, documents, and timing in one workflow.' %}{% endif %}</p>{% endwith %}
+            </div>
+        </div>
+        <div class="aa-service-grid">
+            {% with section=site_sections.home_services %}{% if section.visible_items %}{% for item in section.visible_items %}
+            <a class="aa-service-card" href="{{ item.url|default:'#' }}"><i class="{{ item.icon_class|default:'fa-solid fa-circle-check' }}" aria-hidden="true"></i><div><strong>{{ item.title }}</strong><small>{{ item.body }}</small></div><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+            {% endfor %}{% else %}
+            <a class="aa-service-card" href="{% url 'play_your_trip:Accommodation' %}">
+                <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                <div><strong>{% trans 'Accommodation planning' %}</strong><small>{% trans 'Keep suitable stays connected to your route and travel dates.' %}</small></div>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="aa-service-card" href="{% url 'play_your_trip:Getting_to_around_afg' %}">
+                <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+                <div><strong>{% trans 'Local transport' %}</strong><small>{% trans 'Understand practical connections between cities and destinations.' %}</small></div>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a class="aa-service-card" href="{% url 'tour:tour_guide_view' %}">
+                <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+                <div><strong>{% trans 'Local experts' %}</strong><small>{% trans 'Travel knowledge and coordination from people who know the place.' %}</small></div>
+                <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            {% endif %}{% endwith %}
+        </div>
+    </div>
+</section>

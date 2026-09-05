@@ -45,7 +45,7 @@ def seed_resource_reference_data(sender, **kwargs):
         onboarding, _ = TrainingCourse.objects.get_or_create(
             code='afghanawaits-onboarding',
             defaults={
-                'title': 'AfghanAwaits Workforce Onboarding',
+                'title': 'Larmoond Travel and Tours Workforce Onboarding',
                 'description': 'Code of conduct, tour workflow, guest care, privacy and reporting.',
                 'content': 'Complete the operational onboarding and acknowledge the code of conduct.',
                 'passing_score': 80,

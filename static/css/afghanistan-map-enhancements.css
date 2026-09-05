@@ -1,0 +1,240 @@
+.aa-map-route {
+  height: 3px;
+  border: 0;
+  opacity: 0.56;
+  background: repeating-linear-gradient(90deg, rgba(216, 255, 99, 0.9) 0 6px, transparent 6px 12px);
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.aa-map-route.-hidden {
+  border: 0;
+  background: repeating-linear-gradient(90deg, rgba(66, 214, 207, 0.92) 0 5px, transparent 5px 11px);
+}
+
+.aa-map-route::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #efffb2;
+  box-shadow: 0 0 6px #d8ff63, 0 0 15px #a9ec00;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+
+.aa-map-route.is-active {
+  border: 0;
+  opacity: 1;
+  background: repeating-linear-gradient(90deg, #d8ff63 0 7px, transparent 7px 13px);
+}
+
+.aa-map-route.is-active::after {
+  opacity: 1;
+  animation: aa-route-travel 2.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+.aa-map-base { animation: aa-map-float 7s ease-in-out infinite; }
+
+.aa-map-pin__thumb {
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.aa-map-pin:hover .aa-map-pin__thumb,
+.aa-map-pin:focus-visible .aa-map-pin__thumb,
+.aa-map-pin.is-active .aa-map-pin__thumb {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.aa-map-pin:focus-visible {
+  border-radius: 999px;
+  outline: 3px solid rgba(216, 255, 99, 0.72);
+  outline-offset: 5px;
+}
+
+.aa-map-pin__pulse {
+  position: absolute;
+  left: 29px;
+  top: 29px;
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  border: 2px solid rgba(169, 236, 0, 0.78);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: aa-map-pulse 2.4s ease-out infinite;
+}
+
+.aa-map-pin.-quiet .aa-map-pin__thumb { border-color: #50ddd5; }
+.aa-map-pin.-quiet.is-active .aa-map-pin__thumb { border-color: #a9ec00; }
+
+.aa-map-card { transition: opacity 160ms ease, transform 160ms ease; }
+.aa-map-card.is-switching { opacity: 0; transform: translateY(5px); }
+.aa-map-card__link:hover { color: #fff; }
+
+.aa-route-field:focus-within {
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.055);
+  box-shadow: inset 0 0 0 1px rgba(169, 236, 0, 0.34);
+}
+
+.aa-route-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+.aa-route-submit:hover,
+.aa-route-submit:focus-visible {
+  background: #b8f51d;
+  box-shadow: 0 10px 26px rgba(169, 236, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.aa-route-submit:focus-visible,
+.aa-map-hero__primary:focus-visible,
+.aa-map-hero__secondary:focus-visible,
+.aa-map-card__link:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.88);
+  outline-offset: 3px;
+}
+
+#destinationRail { scroll-margin-top: 140px; }
+
+@keyframes aa-route-travel {
+  0% { left: 0; opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+@keyframes aa-map-pulse {
+  0% { opacity: 0.8; transform: translate(-50%, -50%) scale(0.72); }
+  80%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.7); }
+}
+
+@keyframes aa-map-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@media (max-width: 1399.98px) {
+  .aa-home-page .aa-map-hero__inner {
+    grid-template-columns: minmax(320px, 0.62fr) minmax(600px, 1.38fr);
+    gap: 16px 24px;
+  }
+  .aa-home-page .aa-map-hero__copy h1 { font-size: clamp(2.85rem, 4vw, 4rem); }
+  .aa-map-pin__thumb { width: 38px; height: 38px; }
+  .aa-map-pin.-hub .aa-map-pin__thumb { width: 52px; height: 52px; }
+  .aa-map-pin__label strong { font-size: 0.72rem; }
+  .aa-map-pin__label small { font-size: 0.6rem; }
+  .aa-route-planner { width: 96%; }
+}
+
+@media (max-width: 1199.98px) {
+  .aa-home-page .aa-map-hero { min-height: 0; }
+  .aa-home-page .aa-map-hero__inner {
+    grid-template-areas: "copy" "map" "planner" "trust";
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    min-height: 0;
+    padding: 186px 0 54px;
+  }
+  .aa-map-hero__copy {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+    column-gap: 38px;
+    align-items: end;
+    padding: 22px 0 0;
+  }
+  .aa-map-hero__eyebrow,
+  .aa-map-hero__copy h1,
+  .aa-map-hero__copy p { grid-column: 1; }
+  .aa-map-hero__actions,
+  .aa-map-legend { grid-column: 2; }
+  .aa-map-hero__actions { grid-row: 2; align-self: end; flex-wrap: wrap; margin: 0; }
+  .aa-map-legend { grid-row: 3 / 5; align-self: start; margin-top: 14px; }
+  .aa-map-experience { width: min(900px, 100%); margin-inline: auto; }
+  .aa-route-planner { width: 100%; margin-top: -44px; }
+}
+
+@media (max-width: 991.98px) {
+  .aa-home-page .aa-map-hero__inner { padding-top: 176px; }
+  .aa-map-hero__copy { display: block; text-align: center; }
+  .aa-map-hero__eyebrow { justify-content: center; }
+  .aa-home-page .aa-map-hero__copy h1,
+  .aa-map-hero__copy p { margin-inline: auto; }
+  .aa-map-hero__actions { justify-content: center; margin-top: 26px; }
+  .aa-map-legend { grid-template-columns: repeat(3, auto); margin: 24px auto 0; }
+  .aa-map-card { left: 22%; top: 22%; }
+  .aa-route-planner { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: -24px; }
+  .aa-route-field { min-height: 64px; }
+  .aa-route-field:nth-child(2) { border-inline-end: 0; }
+  .aa-route-submit { min-height: 58px; grid-column: 1 / -1; }
+  .aa-map-trust { gap: 38px; }
+}
+
+@media (max-width: 767.98px) {
+  .aa-home-page .aa-map-hero__inner { gap: 24px; padding: 158px 0 44px; }
+  .aa-map-hero__eyebrow { font-size: 0.72rem; }
+  .aa-home-page .aa-map-hero__copy h1 { margin-top: 18px; font-size: clamp(2.5rem, 12vw, 3.35rem); }
+  .aa-map-hero__copy p { font-size: 0.94rem; }
+  .aa-map-hero__actions { align-items: stretch; flex-direction: column; gap: 8px; }
+  .aa-map-hero__primary,
+  .aa-map-hero__secondary { width: 100%; }
+  .aa-map-legend { display: flex; width: 100%; justify-content: space-between; gap: 8px; padding: 12px; }
+  .aa-map-legend span { gap: 6px; font-size: 0.62rem; }
+  .aa-map-legend__line { width: 20px; }
+  .aa-map-canvas { width: 112%; margin-inline: -6%; }
+  .aa-map-pin__thumb { width: 28px; height: 28px; border-width: 1.5px; }
+  .aa-map-pin.-hub .aa-map-pin__thumb { width: 42px; height: 42px; }
+  .aa-map-pin__pulse { left: 21px; top: 21px; width: 42px; height: 42px; }
+  .aa-map-pin__label { display: none; }
+  .aa-map-pin.is-active .aa-map-pin__label,
+  .aa-map-pin.-hub .aa-map-pin__label { display: grid; }
+  .aa-map-pin__label strong { font-size: 0.64rem; }
+  .aa-map-pin__label small { font-size: 0.52rem; }
+  .aa-map-card { left: 12%; top: 18%; width: 190px; padding: 7px; }
+  .aa-map-card__image { width: 58px; height: 58px; }
+  .aa-map-card__title { font-size: 0.78rem; }
+  .aa-map-card__subtitle,
+  .aa-map-card__link { font-size: 0.58rem; }
+  .aa-route-planner { grid-template-columns: 1fr; margin-top: -6px; padding: 8px; }
+  .aa-route-field { min-height: 59px; border-inline-end: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.11); }
+  .aa-route-field.-from { display: none; }
+  .aa-route-submit { grid-column: auto; }
+  .aa-map-trust { display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; gap: 8px; }
+  .aa-map-trust > span { display: flex; align-items: center; flex-direction: column; gap: 6px; text-align: center; }
+  .aa-map-trust i { width: 36px; height: 36px; font-size: 1rem; }
+  .aa-map-trust strong { font-size: 0.68rem; }
+  .aa-map-trust small { display: none; }
+}
+
+@media (max-width: 479.98px) {
+  .aa-home-page .aa-map-hero__inner { padding-top: 148px; }
+  .aa-map-canvas { width: 122%; margin-inline: -11%; }
+  .aa-map-card { left: 8%; top: 15%; width: 170px; }
+  .aa-map-card__image { width: 50px; height: 54px; }
+  .aa-map-pin.is-active .aa-map-pin__label { display: none; }
+  .aa-map-pin.-hub .aa-map-pin__label { display: grid; }
+}
+
+[dir="rtl"] .aa-map-hero__copy,
+[dir="rtl"] .aa-map-pin__label { text-align: right; }
+[dir="rtl"] .aa-map-hero__actions { justify-content: flex-start; }
+[dir="rtl"] .aa-map-experience { direction: ltr; }
+[dir="rtl"] .aa-route-planner { direction: rtl; }
+
+@media (prefers-reduced-motion: reduce) {
+  .aa-map-base,
+  .aa-map-pin__pulse,
+  .aa-map-route.is-active::after { animation: none !important; }
+  .aa-map-route.is-active::after { left: 58%; opacity: 1; }
+  .aa-map-pin__thumb,
+  .aa-map-card,
+  .aa-route-submit { transition: none; }
+}

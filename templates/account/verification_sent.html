@@ -15,7 +15,7 @@
             <p class="aa-verification-kicker">{% trans "Account security" %}</p>
             <h1 id="verification-title">{% trans "Verify Your Email Address" %}</h1>
             <p class="aa-verification-lead">
-                {% blocktrans %}We have sent you a verification email. Follow the link in that message to finish creating your AfghanAwaits account.{% endblocktrans %}
+                {% blocktrans %}We have sent you a verification email. Follow the link in that message to finish creating your Larmoond Travel and Tours account.{% endblocktrans %}
             </p>
 
             <div class="aa-verification-steps" aria-label="{% trans 'Email verification steps' %}">
@@ -23,7 +23,7 @@
                     <span>1</span>
                     <div>
                         <strong>{% trans "Open your inbox" %}</strong>
-                        <p>{% trans "Look for a message from AfghanAwaits." %}</p>
+                        <p>{% trans "Look for a message from Larmoond Travel and Tours." %}</p>
                     </div>
                 </div>
                 <div class="aa-verification-step">
@@ -58,10 +58,10 @@
                 </a>
             </div>
 
-            <p class="aa-verification-help">
+            {% if site_config.support_email or site_config.primary_email %}<p class="aa-verification-help">
                 {% trans "Still did not receive the email?" %}
-                <a href="mailto:info@afghanawaits.com">{% trans "Contact support" %}</a>
-            </p>
+                {% if site_config.support_email %}<a href="mailto:{{ site_config.support_email }}">{% trans "Contact support" %}</a>{% else %}<a href="mailto:{{ site_config.primary_email }}">{% trans "Contact support" %}</a>{% endif %}
+            </p>{% endif %}
         </article>
     </div>
 </section>

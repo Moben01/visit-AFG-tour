@@ -1,61 +1,81 @@
 {% load static i18n %}
-<footer class="aa-site-footer">
-    <div class="aa-footer-top">
-        <div class="aa-container aa-footer-grid">
-            <div class="aa-footer-brand">
-                <a href="{% url 'home:home' %}" aria-label="AfghanAwaits.com">
-                    <img src="{% static 'brand/afghanawaits/logo-reverse.svg' %}" alt="AfghanAwaits.com">
-                </a>
-                <p>{% trans 'Destination guides, published tours, and practical travel planning for discovering Afghanistan with local context.' %}</p>
-                <div class="aa-footer-contact">
-                    {% if get_main_things and get_main_things.noumber %}<a href="tel:{{ get_main_things.noumber }}"><i class="ti ti-phone"></i> {{ get_main_things.noumber }}</a>{% endif %}
-                    {% if get_main_things and get_main_things.email %}<a href="mailto:{{ get_main_things.email }}"><i class="ti ti-mail"></i> {{ get_main_things.email }}</a>{% else %}<a href="mailto:info@afghanawaits.com"><i class="ti ti-mail"></i> info@afghanawaits.com</a>{% endif %}
-                </div>
-            </div>
-
-            <div>
-                <h2 class="aa-footer-title">{% trans 'Explore' %}</h2>
-                <ul class="aa-footer-links">
-                    <li><a href="{% url 'states:kabul' %}">{% trans 'Destinations' %}</a></li>
-                    <li><a href="{% url 'things_to_do:Experiences' %}">{% trans 'Experiences' %}</a></li>
-                    <li><a href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Arts & Culture' %}</a></li>
-                    <li><a href="{% url 'things_to_do:food_and_drink' %}">{% trans 'Food & Drink' %}</a></li>
-                    <li><a href="{% url 'home:search' %}">{% trans 'Search' %}</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="aa-footer-title">{% trans 'Plan your trip' %}</h2>
-                <ul class="aa-footer-links">
-                    <li><a href="{% url 'play_your_trip:visa_guide' %}">{% trans 'Visa guide' %}</a></li>
-                    <li><a href="{% url 'play_your_trip:essentials' %}">{% trans 'Travel essentials' %}</a></li>
-                    <li><a href="{% url 'play_your_trip:Accommodation' %}">{% trans 'Accommodation' %}</a></li>
-                    <li><a href="{% url 'play_your_trip:safety' %}">{% trans 'Safety' %}</a></li>
-                    <li><a href="{% url 'play_your_trip:weather' %}">{% trans 'Weather' %}</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h2 class="aa-footer-title">{% trans 'Account & policies' %}</h2>
-                <ul class="aa-footer-links">
-                    {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a></li>
-                        <li><a href="{% url 'tour:up_commoing_tours' %}">{% trans 'My bookings' %}</a></li>
-                    {% else %}
-                        <li><a href="{% url 'account_login' %}">{% trans 'Sign in' %}</a></li>
-                        <li><a href="{% url 'account_signup' %}">{% trans 'Create an account' %}</a></li>
+<footer class="aa-site-footer lm-site-footer" id="site-contact">
+    <div class="lm-footer-main">
+        <div class="aa-container lm-footer-grid">
+            <div class="lm-footer-profile">
+                <a class="lm-footer-brand" href="{% url 'home:home' %}" aria-label="{{ site_config.official_brand_name|default:'Home' }}">
+                    {% if site_config.logo_reversed_url %}
+                        <img src="{{ site_config.logo_reversed_url }}" alt="{{ site_config.official_brand_name }}">
+                    {% elif site_config.official_brand_name %}
+                        <span>{{ site_config.official_brand_name }}</span>
                     {% endif %}
-                    <li><a href="{% url 'home:privacy' %}">{% trans 'Privacy policy' %}</a></li>
-                    <li><a href="{% url 'home:terms' %}">{% trans 'Terms of use' %}</a></li>
-                    <li><a href="{% url 'home:refund' %}">{% trans 'Cancellation and refunds' %}</a></li>
-                </ul>
+                </a>
+                <p class="lm-footer-positioning">{% blocktrans %}Larmoond Travel and Tours designs and operates private and small-group journeys across Afghanistan with local guides, coordinated transport, clear itineraries, and on-trip support.{% endblocktrans %}</p>
+
+                {% if site_config.office_address or site_config.office_city or site_config.office_country %}
+                    <address class="lm-footer-address">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>{% if site_config.office_address %}{{ site_config.office_address }}{% endif %}{% if site_config.office_city %}{% if site_config.office_address %}, {% endif %}{{ site_config.office_city }}{% endif %}{% if site_config.office_country %}{% if site_config.office_address or site_config.office_city %}, {% endif %}{{ site_config.office_country }}{% endif %}</span>
+                    </address>
+                {% endif %}
+
+                {% if site_config.primary_email or site_config.booking_email or site_config.primary_phone or site_config.whatsapp_url or site_config.business_hours %}
+                    <dl class="lm-footer-contact">
+                        {% if site_config.primary_email %}<div><dt>{% trans 'Email' %}</dt><dd><a href="mailto:{{ site_config.primary_email }}">{{ site_config.primary_email }}</a></dd></div>{% endif %}
+                        {% if site_config.booking_email %}<div><dt>{% trans 'Bookings' %}</dt><dd><a href="mailto:{{ site_config.booking_email }}">{{ site_config.booking_email }}</a></dd></div>{% endif %}
+                        {% if site_config.primary_phone %}<div><dt>{% trans 'Telephone' %}</dt><dd><a href="tel:{{ site_config.primary_phone_href }}">{{ site_config.primary_phone }}</a></dd></div>{% endif %}
+                        {% if site_config.whatsapp_url %}<div><dt>{% trans 'WhatsApp' %}</dt><dd><a href="{{ site_config.whatsapp_url }}" target="_blank" rel="noopener noreferrer" data-analytics-event="whatsapp_contact" data-analytics-placement="footer">{{ site_config.whatsapp_number }}</a></dd></div>{% endif %}
+                        {% if site_config.business_hours %}<div><dt>{% trans 'Business hours' %}</dt><dd>{{ site_config.business_hours|linebreaksbr }}</dd></div>{% endif %}
+                    </dl>
+                {% endif %}
+
+                {% if site_config.show_licence_badge and site_config.licence_number and site_config.licence_authority %}
+                    <p class="lm-licence"><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>{% trans 'Licensed by' %} {{ site_config.licence_authority }} · {{ site_config.licence_number }}{% if site_config.licence_document %} · <a href="{{ site_config.licence_document.url }}">{% trans 'View licence' %}</a>{% endif %}</span></p>
+                {% endif %}
+
+                {% if site_social_links %}
+                    <div class="lm-footer-social" aria-label="{% trans 'Social profiles' %}">
+                        {% for label, url, icon_class in site_social_links %}<a href="{{ url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ label }}"><i class="{{ icon_class }}" aria-hidden="true"></i></a>{% endfor %}
+                    </div>
+                {% endif %}
             </div>
+
+            <nav class="lm-footer-navigation" aria-label="{% trans 'Footer navigation' %}">
+                <div>
+                    <h2>{% trans 'Explore' %}</h2>
+                    <ul>
+                        <li><a href="{% url 'home:home' %}#tours">{% trans 'Tours' %}</a></li>
+                        <li><a href="{% url 'home:home' %}#destinations">{% trans 'Destinations' %}</a></li>
+                        <li><a href="{% url 'home:trip_builder' %}">{% trans 'Plan Your Trip' %}</a></li>
+                        <li><a href="{% url 'states:team' %}">{% trans 'About' %}</a></li>
+                        <li><a href="{% url 'home:home' %}#site-contact">{% trans 'Contact' %}</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>{% trans 'Information' %}</h2>
+                    <ul>
+                        <li><a href="{% url 'home:privacy' %}">{% trans 'Privacy' %}</a></li>
+                        <li><a href="{% url 'home:terms' %}">{% trans 'Terms' %}</a></li>
+                        <li><a href="{% url 'home:refund' %}">{% trans 'Cancellation and Refunds' %}</a></li>
+                        <li><a href="{% url 'rules_of_conduct' %}">{% trans 'Responsible Travel' %}</a></li>
+                        <li><a href="{% url 'play_your_trip:safety' %}">{% trans 'Safety Information' %}</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>{% trans 'Work With Us' %}</h2>
+                    <ul>
+                        <li><a href="{% url 'tour:tour_guide_view' %}">{% trans 'Become an Expert' %}</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
     </div>
-    <div class="aa-footer-bottom">
-        <div class="aa-container aa-footer-bottom-inner">
-            <span>© {% now 'Y' %} AfghanAwaits.com. {% trans 'All rights reserved.' %}</span>
-            <span>{% trans 'Explore Afghanistan with respect, preparation, and local context.' %}</span>
+
+    {% if site_config.safety_notice %}<div class="aa-container lm-footer-safety" role="note"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>{{ site_config.safety_notice }}</span></div>{% endif %}
+
+    <div class="lm-footer-bottom">
+        <div class="aa-container">
+            {% if site_config.official_brand_name %}<span>© {% now 'Y' %} {{ site_config.official_brand_name }}. {% trans 'All rights reserved.' %}</span>{% endif %}
         </div>
     </div>
 </footer>

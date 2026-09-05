@@ -17,6 +17,10 @@
 </section>
 
 <section class="ops-kpis">
+  <a class="ops-kpi" href="{% url 'tour:operations:trip_request_list' %}">
+    <span class="ops-kpi__icon"><i class="ti ti-route-2"></i></span>
+    <div><strong>{{ route_request_count }}</strong><span>{% trans "Route requests" %}</span></div><i class="ti ti-arrow-up-right"></i>
+  </a>
   <a class="ops-kpi" href="{% url 'tour:operations:booking_list' %}?status=Booked&payment=unpaid">
     <span class="ops-kpi__icon"><i class="ti ti-inbox"></i></span>
     <div><strong>{{ new_requests }}</strong><span>{% trans "New requests" %}</span></div><i class="ti ti-arrow-up-right"></i>
@@ -42,6 +46,58 @@
     <div><strong>USD {{ revenue_total|default:0 }}</strong><span>{% trans "Recorded revenue" %}</span></div>
   </article>
 </section>
+
+<div class="ops-dashboard-row">
+  <section class="ops-card">
+    <div class="ops-card__head">
+      <div><span class="ops-eyebrow">{% trans "Workflow" %}</span><h2>{% trans "Operational pipeline" %}</h2></div>
+      <span class="ops-card__hint">{% trans "Relative volume by stage" %}</span>
+    </div>
+    <div class="ops-pipeline-grid">
+      <div class="ops-pipeline">
+        <h3><i class="ti ti-route-2"></i>{% trans "Route requests" %}</h3>
+        {% for row in route_pipeline %}
+          <div class="ops-pipeline__row">
+            <div class="ops-pipeline__meta"><span>{{ row.label }}</span><strong>{{ row.count }}</strong></div>
+            <div class="ops-pipeline__track"><span style="--ops-progress: {{ row.percent }}%"></span></div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="ops-pipeline">
+        <h3><i class="ti ti-receipt"></i>{% trans "Bookings" %}</h3>
+        {% for row in booking_pipeline %}
+          <div class="ops-pipeline__row">
+            <div class="ops-pipeline__meta"><span>{{ row.label }}</span><strong>{{ row.count }}</strong></div>
+            <div class="ops-pipeline__track"><span style="--ops-progress: {{ row.percent }}%"></span></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <aside class="ops-card">
+    <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Shortcuts" %}</span><h2>{% trans "Quick actions" %}</h2></div></div>
+    <div class="ops-quick-actions">
+      <a class="ops-quick-action" href="{% url 'tour:operations:trip_request_list' %}"><i class="ti ti-route-2"></i><div><strong>{% trans "Route requests" %}</strong><small>{% trans "Review custom journeys" %}</small></div></a>
+      <a class="ops-quick-action" href="{% url 'tour:operations:booking_list' %}"><i class="ti ti-receipt"></i><div><strong>{% trans "Booking queue" %}</strong><small>{% trans "Payments and stages" %}</small></div></a>
+      {% if can_manage_website_content %}
+      <a class="ops-quick-action" href="{% url 'tour:operations:content_tour_list' %}"><i class="ti ti-map-route"></i><div><strong>{% trans "Tour content" %}</strong><small>{% trans "Manage published tours" %}</small></div></a>
+      {% else %}
+      <a class="ops-quick-action" href="{% url 'tour:operations:tour_list' %}"><i class="ti ti-map-route"></i><div><strong>{% trans "Tour operations" %}</strong><small>{% trans "Dates and readiness" %}</small></div></a>
+      {% endif %}
+      <a class="ops-quick-action" href="{% url 'tour:operations:document_queue' %}"><i class="ti ti-file-check"></i><div><strong>{% trans "Documents" %}</strong><small>{% trans "Open readiness cases" %}</small></div></a>
+    </div>
+  </aside>
+</div>
+
+{% if latest_route_requests %}
+<section class="ops-card ops-dashboard-section">
+  <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Custom planning" %}</span><h2>{% trans "Latest route requests" %}</h2></div><a href="{% url 'tour:operations:trip_request_list' %}">{% trans "View all" %}<i class="ti ti-arrow-right"></i></a></div>
+  <div class="ops-table-wrap"><table class="ops-table"><thead><tr><th>{% trans "Request" %}</th><th>{% trans "Traveller" %}</th><th>{% trans "Route" %}</th><th>{% trans "Dates" %}</th><th>{% trans "Stage" %}</th><th></th></tr></thead><tbody>
+    {% for trip in latest_route_requests %}<tr><td><strong>{{ trip.reference }}</strong></td><td><strong>{{ trip.full_name }}</strong><small>{{ trip.email }}</small></td><td>{% for stop in trip.stops.all %}{{ stop.destination.title }}{% if not forloop.last %} → {% endif %}{% endfor %}</td><td>{{ trip.start_date|date:"d M" }} – {{ trip.end_date|date:"d M Y" }}</td><td><span class="ops-status">{{ trip.get_status_display }}</span></td><td><a class="ops-icon-btn" href="{% url 'tour:operations:trip_request_detail' trip.id %}"><i class="ti ti-chevron-right"></i></a></td></tr>{% endfor %}
+  </tbody></table></div>
+</section>
+{% endif %}
 
 <div class="ops-grid ops-grid--dashboard">
   <section class="ops-card ops-card--span-2">
@@ -92,7 +148,7 @@
   </aside>
 </div>
 
-<section class="ops-card">
+<section class="ops-card ops-dashboard-section">
   <div class="ops-card__head">
     <div><span class="ops-eyebrow">{% trans "Schedule" %}</span><h2>{% trans "Upcoming tour departures" %}</h2></div>
     <a href="{% url 'tour:operations:tour_list' %}">{% trans "All tours" %}<i class="ti ti-arrow-right"></i></a>
@@ -110,4 +166,22 @@
     {% endfor %}
   </div>
 </section>
+
+{% if recent_activity %}
+<section class="ops-card ops-activity-card">
+  <div class="ops-card__head">
+    <div><span class="ops-eyebrow">{% trans "Audit" %}</span><h2>{% trans "Recent staff activity" %}</h2></div>
+    <span class="ops-card__hint">{% trans "Latest recorded management changes" %}</span>
+  </div>
+  <div class="ops-activity-list">
+    {% for entry in recent_activity %}
+      <article class="ops-activity-item">
+        <span><i class="ti ti-history"></i></span>
+        <div><strong>{{ entry.object_repr }}</strong><small>{{ entry.user.get_full_name|default:entry.user.username|default:"System" }} · {{ entry.get_action_flag_display }}</small></div>
+        <time datetime="{{ entry.action_time|date:'c' }}">{{ entry.action_time|date:"d M, H:i" }}</time>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 {% endblock %}

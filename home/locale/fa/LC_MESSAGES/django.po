@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: AfghanAwaits Home 2\n"
+"Project-Id-Version: Larmoond Travel and Tours\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -133,8 +133,8 @@ msgstr "تاریخ سفر"
 msgid "Guests"
 msgstr "مسافران"
 
-msgid "Why plan with AfghanAwaits"
-msgstr "چرا با AfghanAwaits برنامه‌ریزی کنید"
+msgid "Why plan with Larmoond Travel and Tours"
+msgstr "چرا با Larmoond Travel and Tours برنامه‌ریزی کنید"
 
 msgid "Local destination knowledge"
 msgstr "شناخت محلی مقصدها"
@@ -202,8 +202,8 @@ msgstr "با وضاحت برنامه‌ریزی کنید"
 msgid "From first question to the final travel day"
 msgstr "از نخستین پرسش تا آخرین روز سفر"
 
-msgid "AfghanAwaits connects information, booking details, and local operations without inventing availability or promises. What is published is visible; what requires confirmation is clearly marked."
-msgstr "AfghanAwaits معلومات، جزئیات رزرو و عملیات محلی را بدون ادعای موجودیت یا وعدهٔ ساختگی پیوند می‌دهد. موارد منتشرشده آشکار است و آنچه نیاز به تأیید دارد روشن نشانه‌گذاری می‌شود."
+msgid "Larmoond Travel and Tours connects information, booking details, and local operations without inventing availability or promises. What is published is visible; what requires confirmation is clearly marked."
+msgstr "Larmoond Travel and Tours معلومات، جزئیات رزرو و عملیات محلی را بدون ادعای موجودیت یا وعدهٔ ساختگی پیوند می‌دهد. موارد منتشرشده آشکار است و آنچه نیاز به تأیید دارد روشن نشانه‌گذاری می‌شود."
 
 msgid "Start exploring"
 msgstr "کشف را آغاز کنید"
@@ -253,8 +253,8 @@ msgstr "ورود"
 msgid "Local travel professionals"
 msgstr "متخصصان محلی سفر"
 
-msgid "Share your expertise through AfghanAwaits"
-msgstr "تخصص خود را از طریق AfghanAwaits شریک سازید"
+msgid "Share your expertise through Larmoond Travel and Tours"
+msgstr "تخصص خود را از طریق Larmoond Travel and Tours شریک سازید"
 
 msgid "Trip search"
 msgstr "جست‌وجوی سفر"
@@ -307,8 +307,379 @@ msgstr "بازگشت به خانه"
 msgid "Search destinations"
 msgstr "جست‌وجوی مقصدها"
 
-msgid "AfghanAwaits.com — Explore Afghanistan"
-msgstr "AfghanAwaits.com — افغانستان را کشف کنید"
+msgid "Larmoond Travel and Tours — Explore Afghanistan"
+msgstr "Larmoond Travel and Tours — افغانستان را کشف کنید"
 
 msgid "Destination guides, published tours, and practical travel planning for Afghanistan."
 msgstr "راهنمای مقصدها، تورهای منتشرشده و برنامه‌ریزی عملی سفر در افغانستان."
+msgid "About Us"
+msgstr "درباره ما"
+
+msgid "Contact"
+msgstr "تماس"
+
+msgid "Account"
+msgstr "حساب کاربری"
+
+msgid "Language"
+msgstr "زبان"
+
+msgid "Contact us on WhatsApp"
+msgstr "از طریق واتس‌اپ با ما تماس بگیرید"
+
+msgid "Plan a Private Journey"
+msgstr "یک سفر خصوصی برنامه‌ریزی کنید"
+
+msgid "Open navigation menu"
+msgstr "باز کردن فهرست راهبری"
+
+msgid "Close navigation menu"
+msgstr "بستن فهرست راهبری"
+
+msgid "Footer navigation"
+msgstr "فهرست راهبری پایین صفحه"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Bookings"
+msgstr "رزروها"
+
+msgid "Telephone"
+msgstr "تلفن"
+
+msgid "WhatsApp"
+msgstr "واتس‌اپ"
+
+msgid "Business hours"
+msgstr "ساعات کاری"
+
+msgid "About"
+msgstr "درباره ما"
+
+msgid "Information"
+msgstr "اطلاعات"
+
+msgid "Privacy"
+msgstr "حریم خصوصی"
+
+msgid "Terms"
+msgstr "شرایط"
+
+msgid "Responsible Travel"
+msgstr "سفر مسئولانه"
+
+msgid "Safety Information"
+msgstr "اطلاعات ایمنی"
+
+msgid "Work With Us"
+msgstr "با ما همکاری کنید"
+
+msgid "Larmoond Travel and Tours designs and operates private and small-group journeys across Afghanistan with local guides, coordinated transport, clear itineraries, and on-trip support."
+msgstr "لارموند تراول و تور سفرهای خصوصی و گروه‌های کوچک را در سراسر افغانستان با راهنمایان محلی، ترانسپورت هماهنگ‌شده، برنامه‌های سفر روشن و پشتیبانی در جریان سفر طراحی و اجرا می‌کند."
+
+msgid "Accommodation coordination"
+msgstr "هماهنگی اقامت"
+
+msgid "Active"
+msgstr "پرتحرک"
+
+msgid "Afghanistan, hosted by those who call it home."
+msgstr "افغانستان، به میزبانی کسانی که این‌جا خانهٔ آنان است."
+
+msgid "Airport transfer when included"
+msgstr "انتقال به میدان هوایی، در صورت شامل‌بودن"
+
+msgid "Airport welcome when included"
+msgstr "استقبال در میدان هوایی، در صورت شامل‌بودن"
+
+msgid "approved local guide"
+msgstr "راهنمای محلی تأییدشده"
+
+msgid "Approved local guides"
+msgstr "راهنمایان محلی تأییدشده"
+
+msgid "Approved local profiles"
+msgstr "پروفایل‌های محلی تأییدشده"
+
+msgid "Available hosting services are confirmed in writing for each journey before booking."
+msgstr "خدمات میزبانی قابل ارائه برای هر سفر، پیش از رزرو به‌صورت کتبی تأیید می‌شود."
+
+msgid "Be Welcomed and Hosted"
+msgstr "مورد استقبال و میزبانی قرار بگیرید"
+
+msgid "Before arrival"
+msgstr "پیش از رسیدن"
+
+msgid "Before departure"
+msgstr "پیش از عزیمت"
+
+msgid "Begin planning your journey through Afghanistan."
+msgstr "برنامه‌ریزی سفر خود در افغانستان را آغاز کنید."
+
+msgid "Challenging"
+msgstr "دشوار"
+
+msgid "Clear before you confirm"
+msgstr "همه‌چیز پیش از تأیید روشن است"
+
+msgid "Clear Inclusions"
+msgstr "خدمات شامل‌شدهٔ روشن"
+
+msgid "Clear information before you confirm"
+msgstr "اطلاعات روشن پیش از تأیید شما"
+
+msgid "Confirm and Pay"
+msgstr "تأیید و پرداخت کنید"
+
+msgid "Coordinated Transport"
+msgstr "ترانسپورت هماهنگ‌شده"
+
+msgid "Coordinated vehicle"
+msgstr "وسیلهٔ نقلیهٔ هماهنگ‌شده"
+
+msgid "Cultural guidance"
+msgstr "راهنمایی فرهنگی"
+
+msgid "days"
+msgstr "روز"
+
+msgid "Documented changes"
+msgstr "تغییرات ثبت‌شده"
+
+msgid "Duration"
+msgstr "مدت"
+
+msgid "During the journey"
+msgstr "در جریان سفر"
+
+msgid "Easy"
+msgstr "آسان"
+
+msgid "Explore accurate local destination records, then connect the places that fit your route."
+msgstr "اطلاعات دقیق مقصدهای محلی را ببینید و سپس مکان‌های مناسب مسیر خود را به هم پیوند دهید."
+
+msgid "Explore Our Tours"
+msgstr "تورهای ما را ببینید"
+
+msgid "Featured Tours"
+msgstr "تورهای ویژه"
+
+msgid "Feedback from completed journeys"
+msgstr "بازخورد سفرهای تکمیل‌شده"
+
+msgid "Flexible when conditions change"
+msgstr "انعطاف‌پذیر هنگام تغییر شرایط"
+
+msgid "From"
+msgstr "از"
+
+msgid "From first request to local welcome"
+msgstr "از نخستین درخواست تا استقبال محلی"
+
+msgid "Guest feedback"
+msgstr "بازخورد مهمان"
+
+msgid "Guide introduction"
+msgstr "معرفی راهنما"
+
+msgid "Hosted throughout your journey"
+msgstr "میزبانی در سراسر سفر شما"
+
+msgid "How It Works"
+msgstr "روند کار چگونه است"
+
+msgid "Itinerary"
+msgstr "برنامهٔ سفر"
+
+msgid "Itinerary briefing"
+msgstr "توضیح برنامهٔ سفر"
+
+msgid "Journey support"
+msgstr "پشتیبانی سفر"
+
+msgid "Journey through Afghanistan with local hosting"
+msgstr "سفر در افغانستان با میزبانی محلی"
+
+msgid "Journeys ready to explore"
+msgstr "سفرهای آماده برای کشف"
+
+msgid "Languages"
+msgstr "زبان‌ها"
+
+msgid "Licence and legal identity"
+msgstr "جواز و هویت حقوقی"
+
+msgid "Licensed Afghan Travel Operator"
+msgstr "اپراتور دارای جواز سفر در افغانستان"
+
+msgid "Local from the first message"
+msgstr "محلی از همان نخستین پیام"
+
+msgid "Local guide"
+msgstr "راهنمای محلی"
+
+msgid "Local Guides"
+msgstr "راهنمایان محلی"
+
+msgid "Meet Local Hosts"
+msgstr "با میزبانان محلی آشنا شوید"
+
+msgid "Moderate"
+msgstr "متوسط"
+
+msgid "More than a tour. Your local host in Afghanistan."
+msgstr "فراتر از یک تور؛ میزبان محلی شما در افغانستان."
+
+msgid "Next departure"
+msgstr "عزیمت بعدی"
+
+msgid "nights"
+msgstr "شب"
+
+msgid "On arrival"
+msgstr "هنگام رسیدن"
+
+msgid "On request / flexible dates"
+msgstr "به درخواست / تاریخ‌های انعطاف‌پذیر"
+
+msgid "On-Trip Support"
+msgstr "پشتیبانی در جریان سفر"
+
+msgid "Operating approach"
+msgstr "شیوهٔ اجرایی"
+
+msgid "Operations contact"
+msgstr "تماس بخش عملیات"
+
+msgid "Our Hosting Promise"
+msgstr "تعهد میزبانی ما"
+
+msgid "Payment and arrival information"
+msgstr "اطلاعات پرداخت و رسیدن"
+
+msgid "Physical level"
+msgstr "سطح فعالیت بدنی"
+
+msgid "Places to begin your Afghanistan journey"
+msgstr "مکان‌هایی برای آغاز سفر شما در افغانستان"
+
+msgid "Plan with current information and clear expectations"
+msgstr "با اطلاعات به‌روز و توقعات روشن برنامه‌ریزی کنید"
+
+msgid "Planning something private?"
+msgstr "در فکر یک سفر خصوصی هستید؟"
+
+msgid "Popular Destinations"
+msgstr "مقصدهای محبوب"
+
+msgid "Preparation checklist"
+msgstr "فهرست آمادگی"
+
+msgid "Prepare for Arrival"
+msgstr "برای رسیدن آماده شوید"
+
+msgid "Private and small-group journeys designed and operated by Larmoond Travel and Tours. From airport welcome and local guides to coordinated transport, accommodation and on-trip support, your journey is planned clearly and hosted locally."
+msgstr "سفرهای خصوصی و گروه‌های کوچک که توسط Larmoond Travel and Tours طراحی و اجرا می‌شوند. از استقبال در میدان هوایی و راهنمایان محلی تا ترانسپورت هماهنگ‌شده، اقامت و پشتیبانی در جریان سفر، برنامهٔ شما روشن تهیه می‌شود و میزبانی آن محلی است."
+
+msgid "Private and Small-Group Journeys in Afghanistan"
+msgstr "سفرهای خصوصی و گروه‌های کوچک در افغانستان"
+
+msgid "Public guide profiles appear only after approval and never include identity documents, private contact details or rates."
+msgstr "پروفایل عمومی راهنما تنها پس از تأیید نمایش داده می‌شود و هرگز اسناد هویتی، اطلاعات تماس خصوصی یا نرخ‌ها را شامل نمی‌شود."
+
+msgid "Published itineraries selected by our local team."
+msgstr "برنامه‌های سفر منتشرشده که تیم محلی ما برگزیده است."
+
+msgid "Published tours include a day-by-day plan; private journeys receive an itinerary and quotation before confirmation."
+msgstr "تورهای منتشرشده برنامهٔ روزبه‌روز دارند؛ برای سفرهای خصوصی، پیش از تأیید برنامهٔ سفر و نرخ‌نامه ارائه می‌شود."
+
+msgid "Read Our Travel and Safety Approach"
+msgstr "رویکرد سفر و ایمنی ما را بخوانید"
+
+msgid "Receive Your Itinerary and Quotation"
+msgstr "برنامهٔ سفر و نرخ‌نامهٔ خود را دریافت کنید"
+
+msgid "Request This Journey"
+msgstr "این سفر را درخواست کنید"
+
+msgid "Requests, itineraries, quotations, confirmation and arrival preparation follow one connected workflow."
+msgstr "درخواست‌ها، برنامه‌های سفر، نرخ‌نامه‌ها، تأیید و آمادگی برای رسیدن در یک روند پیوسته انجام می‌شوند."
+
+msgid "Responsible and Informed Travel"
+msgstr "سفر مسئولانه و آگاهانه"
+
+msgid "Reviews"
+msgstr "دیدگاه‌ها"
+
+msgid "Route review"
+msgstr "بازبینی مسیر"
+
+msgid "Routes are reviewed and adjusted when weather, access or local conditions require a responsible change."
+msgstr "هرگاه آب‌وهوا، دسترسی یا شرایط محلی تغییر مسئولانه‌ای را لازم سازد، مسیرها بازبینی و تنظیم می‌شوند."
+
+msgid "Sample itinerary process"
+msgstr "روند نمونهٔ برنامهٔ سفر"
+
+msgid "Scheduled tour"
+msgstr "تور زمان‌بندی‌شده"
+
+msgid "Send Your Request"
+msgstr "درخواست خود را بفرستید"
+
+msgid "Service confirmation"
+msgstr "تأیید خدمات"
+
+msgid "Speak With a Local Trip Planner"
+msgstr "با برنامه‌ریز محلی سفر صحبت کنید"
+
+msgid "Speak With Our Local Team"
+msgstr "با تیم محلی ما صحبت کنید"
+
+msgid "Start Your Request"
+msgstr "درخواست خود را آغاز کنید"
+
+msgid "Support connected to each stage of your journey"
+msgstr "پشتیبانی پیوسته در هر مرحلهٔ سفر شما"
+
+msgid "Tell our local team where you would like to go, when you hope to travel and what matters most to you."
+msgstr "به تیم محلی ما بگویید کجا می‌خواهید بروید، چه زمانی قصد سفر دارید و چه چیزهایی برای شما مهم‌تر است."
+
+msgid "The services shown here are enabled by our operations team and remain subject to your confirmed itinerary and inclusions."
+msgstr "خدمات نمایش‌داده‌شده در این‌جا توسط تیم عملیات فعال شده‌اند و تابع برنامهٔ سفر و خدمات شامل‌شدهٔ تأییدشدهٔ شما هستند."
+
+msgid "Transfer"
+msgstr "انتقال"
+
+msgid "Travel conditions in Afghanistan can change. Larmoond provides local coordination, route review and contingency planning, but no operator can remove every travel risk. Travellers should review official advice, insurance conditions and entry requirements before confirming a journey."
+msgstr "شرایط سفر در افغانستان ممکن است تغییر کند. Larmoond هماهنگی محلی، بازبینی مسیر و برنامه‌ریزی احتیاطی فراهم می‌کند، اما هیچ اپراتوری نمی‌تواند تمام خطرهای سفر را از میان بردارد. مسافران باید پیش از تأیید سفر، توصیه‌های رسمی، شرایط بیمه و الزامات ورود را بررسی کنند."
+
+msgid "Trip consultation"
+msgstr "مشاورهٔ سفر"
+
+msgid "Type"
+msgstr "نوع"
+
+msgid "Verified traveller"
+msgstr "مسافر تأییدشده"
+
+msgid "View Tour"
+msgstr "مشاهدهٔ تور"
+
+msgid "Visa guidance"
+msgstr "راهنمایی ویزا"
+
+msgid "What You Can Verify"
+msgstr "موارد قابل بررسی"
+
+msgid "You speak directly with a team based in Afghanistan—not an overseas reseller."
+msgstr "شما مستقیماً با تیمی مستقر در افغانستان صحبت می‌کنید، نه با یک فروشندهٔ خارجی."
+
+msgid "Your guide, transport, accommodation and daily coordination remain connected through one local operator."
+msgstr "راهنما، ترانسپورت، اقامت و هماهنگی روزانهٔ شما از طریق یک اپراتور محلی به‌هم پیوسته می‌مانند."
+
+msgid "Your itinerary, dates, inclusions, exclusions, price and payment conditions are provided before confirmation."
+msgstr "برنامهٔ سفر، تاریخ‌ها، خدمات شامل و غیرشامل، قیمت و شرایط پرداخت پیش از تأیید در اختیار شما قرار می‌گیرند."
+
+msgid "Your Local Host"
+msgstr "میزبان محلی شما"

@@ -12,14 +12,14 @@
         <div class="w-100 overflow-hidden position-relative flex-wrap d-block vh-100">
             <div class="row justify-content-center align-items-center vh-100 overflow-auto flex-wrap ">
                 <div class="col-xxl-4 col-lg-6 col-md-6 col-11 mx-auto">
-                    <div class="aa-auth-brand"><a href="{% url 'home:home' %}"><img src="{% static 'brand/afghanawaits/logo-white.svg' %}" alt="AfghanAwaits.com"></a></div>
+                    <div class="aa-auth-brand"><a href="{% url 'home:home' %}">{% include 'site/auth_brand.html' with brand_image_url=site_config.logo_reversed_url %}</a></div>
 
 
                     <div class="card authentication-card">
                         <div class="card-header">
                             <div class="text-center">
                                 <h5 class="mb-1">{% trans "Sign In" %}</h5>
-                                <p>{% trans "Sign in to Start Manage your AfghanAwaits.com Account" %}</p>
+                                <p>{% trans "Sign in to manage your Larmoond Travel and Tours account" %}</p>
                             </div>
                         </div>
                         <div class="card-body">
@@ -99,8 +99,8 @@
     </div>
 
     <div class="coprright-footer">
-        <p class="fs-14">Copyright &copy; 2025. All Rights Reserved,
-            <a href="javascript:void(0);" class="text-primary fw-medium">AfghanAwaits.com</a>
+        <p class="fs-14">Copyright &copy; {% now "Y" %}. All Rights Reserved,
+            <a href="{% url 'home:home' %}" class="text-primary fw-medium">{{ site_config.official_brand_name }}</a>
         </p>
     </div>
 </div>

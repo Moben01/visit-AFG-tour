@@ -1,0 +1,7 @@
+{% extends 'operations/base.html' %}
+{% load i18n %}
+{% block operations_title %}{{ title }}{% endblock %}
+{% block operations_content %}
+<section class="ops-pagehead"><div><a class="ops-back" href="{{ back_url }}"><i class="ti ti-arrow-left"></i>{% trans "Back" %}</a><span class="ops-eyebrow">{% trans "Destructive action" %}</span><h1>{{ title }}</h1></div></section>
+<section class="ops-card ops-card--padded ops-confirm-delete"><i class="ti ti-alert-triangle"></i><h2>{% blocktrans %}Delete “{{ object }}”?{% endblocktrans %}</h2><p>{% trans "This record will no longer be available to the website. Related child content may also be deleted." %}</p><form method="post">{% csrf_token %}<button class="ops-btn ops-btn--danger" type="submit"><i class="ti ti-trash"></i>{% trans "Delete permanently" %}</button><a class="ops-btn ops-btn--ghost" href="{{ back_url }}">{% trans "Cancel" %}</a></form></section>
+{% endblock %}

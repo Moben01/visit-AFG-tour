@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans "Book" %} {{ find_tour.title }} | AfghanAwaits{% endblock %}
+{% block title %}{% trans "Book" %} {{ find_tour.title }} | {{ site_config.official_brand_name }}{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/customer-dashboard.css' %}">
@@ -127,7 +127,7 @@
             <span><i class="ti ti-calendar"></i>{{ find_tour.start_date|date:"d M Y" }} – {{ find_tour.end_date|date:"d M Y" }}</span>
             <span><i class="ti ti-moon"></i>{{ find_tour.duration_day }} {% trans "days" %} / {{ find_tour.duration_night }} {% trans "nights" %}</span>
           </div>
-          <div class="summary-price"><span>{% trans "Base price per traveller" %}</span><strong>USD {{ find_tour.price }}</strong></div>
+          <div class="summary-price"><span>{% trans "Base price per traveller" %}</span><strong>{% if find_tour.is_price_on_request %}{% trans "On request" %}{% else %}USD {{ find_tour.price }}{% endif %}</strong></div>
           <p class="summary-note"><i class="ti ti-info-circle"></i>{% trans "The final total is calculated securely on the server using travellers and selected services." %}</p>
         </div>
       </div>

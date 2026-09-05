@@ -1,6 +1,6 @@
 {% load static %}
 <div class="back-to-top">
-    <a class="back-to-top-icon" href="#top" aria-label="Back to top"><i class="ti ti-arrow-up"></i></a>
+    <a class="back-to-top-icon" href="#top" aria-label="Back to top"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
 </div>
 
 {% if request.resolver_match.namespace != 'home' %}
@@ -29,4 +29,6 @@
 <script src="{% static 'js/script.js' %}" defer></script>
 {% endif %}
 
-<script src="{% static 'js/afghanawaits.js' %}" defer></script>
+<script src="{% static 'js/larmoond.js' %}" defer></script>
+<script src="{% static 'js/larmoond-public-shell.js' %}" defer></script>
+<script src="{% static 'js/afghanistan-map.js' %}" defer></script>

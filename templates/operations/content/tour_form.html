@@ -1,0 +1,128 @@
+{% extends 'operations/base.html' %}
+{% load static i18n %}
+{% block operations_title %}{% if tour %}{% trans "Edit tour" %}{% else %}{% trans "Add tour" %}{% endif %}{% endblock %}
+{% block operations_content %}
+<section class="ops-pagehead ops-tour-pagehead">
+  <div>
+    <a class="ops-back" href="{{ back_url }}"><i class="ti ti-arrow-left"></i>{% trans "Tours" %}</a>
+    <span class="ops-eyebrow">{% trans "Public catalogue" %}</span>
+    <div class="ops-tour-title-row">
+      <h1>{% if tour %}{% trans "Edit tour" %}{% else %}{% trans "Create a tour" %}{% endif %}</h1>
+      {% if tour %}<span class="ops-publish-state {% if tour.available %}is-published{% endif %}"><i class="ti {% if tour.available %}ti-world-check{% else %}ti-file-pencil{% endif %}"></i>{% if tour.available %}{% trans "Published" %}{% else %}{% trans "Draft" %}{% endif %}</span>{% endif %}
+    </div>
+    <p>{% trans "Save the core details first, build the day-by-day plan, then publish when every check is complete." %}</p>
+    {% if tour %}<div class="ops-tour-slug"><span>{% trans "Public URL" %}</span><code>/tour/tour-detail/{{ tour.slug }}/</code></div>{% endif %}
+  </div>
+  {% if tour %}<div class="ops-pagehead__actions"><a class="ops-btn ops-btn--ghost" href="{% url 'tour:tour_details' tour.slug %}{% if not tour.available %}?preview=1{% endif %}" target="_blank" rel="noopener"><i class="ti ti-external-link"></i>{% trans "Preview" %}</a></div>{% endif %}
+</section>
+
+<div class="ops-tour-editor-layout">
+  <form method="post" enctype="multipart/form-data" class="ops-tour-editor" data-tour-editor novalidate>
+    {% csrf_token %}
+    {% if form.non_field_errors %}<div class="ops-alert ops-alert--error">{{ form.non_field_errors }}</div>{% endif %}
+
+    <section class="ops-card ops-tour-section" id="basics">
+      <div class="ops-tour-section__head"><span><i class="ti ti-notes"></i></span><div><small>{% trans "Step 1" %}</small><h2>{% trans "Basic information" %}</h2><p>{% trans "Only these core fields are required to create a draft." %}</p></div></div>
+      <div class="ops-tour-section__body ops-form-grid">
+        <div class="ops-field"><label for="{{ form.title.id_for_label }}">{{ form.title.label }} <b>*</b></label>{{ form.title }}{% if form.title.help_text %}<small>{{ form.title.help_text }}</small>{% endif %}{{ form.title.errors }}</div>
+        <div class="ops-field"><label for="{{ form.category.id_for_label }}">{{ form.category.label }} <b>*</b></label>{{ form.category }}{{ form.category.errors }}</div>
+        <div class="ops-field"><label for="{{ form.type.id_for_label }}">{{ form.type.label }} <b>*</b></label>{{ form.type }}{% if form.type.help_text %}<small>{{ form.type.help_text }}</small>{% endif %}{{ form.type.errors }}</div>
+        <div class="ops-field ops-field--wide"><label for="{{ form.description.id_for_label }}">{{ form.description.label }} <b>*</b></label>{{ form.description }}{{ form.description.errors }}</div>
+      </div>
+    </section>
+
+    <section class="ops-card ops-tour-section" id="schedule">
+      <div class="ops-tour-section__head"><span><i class="ti ti-calendar-event"></i></span><div><small>{% trans "Step 2" %}</small><h2>{% trans "Schedule and duration" %}</h2><p>{% trans "Dates are required only for a scheduled tour." %}</p></div></div>
+      <div class="ops-tour-section__body ops-form-grid">
+        <div class="ops-field" data-schedule-field><label for="{{ form.start_date.id_for_label }}">{{ form.start_date.label }} <em>{% trans "Conditional" %}</em></label>{{ form.start_date }}{{ form.start_date.errors }}</div>
+        <div class="ops-field" data-schedule-field><label for="{{ form.end_date.id_for_label }}">{{ form.end_date.label }} <em>{% trans "Conditional" %}</em></label>{{ form.end_date }}{{ form.end_date.errors }}</div>
+        <div class="ops-field"><label for="{{ form.duration_day.id_for_label }}">{{ form.duration_day.label }} <em>{% trans "Publish required" %}</em></label>{{ form.duration_day }}{% if form.duration_day.help_text %}<small>{{ form.duration_day.help_text }}</small>{% endif %}{{ form.duration_day.errors }}</div>
+        <div class="ops-field"><label for="{{ form.duration_night.id_for_label }}">{{ form.duration_night.label }} <em>{% trans "Optional" %}</em></label>{{ form.duration_night }}{{ form.duration_night.errors }}</div>
+      </div>
+      <div class="ops-schedule-note" data-flexible-note hidden><i class="ti ti-calendar-off"></i><span>{% trans "Flexible tours do not show fixed start and end dates." %}</span></div>
+    </section>
+
+    <section class="ops-card ops-tour-section" id="destinations">
+      <div class="ops-tour-section__head"><span><i class="ti ti-map-pin"></i></span><div><small>{% trans "Step 3" %}</small><h2>{% trans "Destinations" %}</h2><p>{% trans "Select every province included in this route." %}</p></div></div>
+      <div class="ops-tour-section__body">
+        <div class="ops-field ops-field--wide"><label>{{ form.location.label }} <em>{% trans "Publish required" %}</em></label><div class="ops-province-picker">{{ form.location }}</div>{{ form.location.errors }}</div>
+      </div>
+    </section>
+
+    <section class="ops-card ops-tour-section" id="commercial">
+      <div class="ops-tour-section__head"><span><i class="ti ti-currency-dollar"></i></span><div><small>{% trans "Step 4" %}</small><h2>{% trans "Pricing" %}</h2><p>{% trans "Use a fixed per-traveller price or collect an enquiry." %}</p></div></div>
+      <div class="ops-tour-section__body ops-form-grid ops-price-grid">
+        <div class="ops-field" data-price-field><label for="{{ form.price.id_for_label }}">{{ form.price.label }} <em>{% trans "Publish required" %}</em></label>{{ form.price }}{{ form.price.errors }}</div>
+        <div class="ops-choice-card"><label for="{{ form.price_on_request.id_for_label }}">{{ form.price_on_request }}<span><strong>{{ form.price_on_request.label }}</strong><small>{{ form.price_on_request.help_text }}</small></span></label>{{ form.price_on_request.errors }}</div>
+      </div>
+    </section>
+
+    <section class="ops-card ops-tour-section" id="media">
+      <div class="ops-tour-section__head"><span><i class="ti ti-photo"></i></span><div><small>{% trans "Step 5" %}</small><h2>{% trans "Cover and map" %}</h2><p>{% trans "A cover image is needed only when the tour is published." %}</p></div></div>
+      <div class="ops-tour-section__body ops-form-grid">
+        <div class="ops-field ops-field--wide"><label for="{{ form.image.id_for_label }}">{{ form.image.label }} <em>{% trans "Publish required" %}</em></label><label class="ops-image-uploader" for="{{ form.image.id_for_label }}" data-image-drop><span class="ops-image-preview" data-image-preview>{% if tour.image %}<img src="{{ tour.image.url }}" alt="">{% else %}<i class="ti ti-cloud-upload"></i><strong>{% trans "Choose a cover image" %}</strong><small>{% trans "JPG, PNG or WebP — maximum 10 MB" %}</small>{% endif %}</span>{{ form.image }}</label>{{ form.image.errors }}</div>
+        <div class="ops-field ops-field--wide"><label for="{{ form.google_location.id_for_label }}">{{ form.google_location.label }} <em>{% trans "Optional" %}</em></label>{{ form.google_location }}{% if form.google_location.help_text %}<small>{{ form.google_location.help_text }}</small>{% endif %}{{ form.google_location.errors }}</div>
+      </div>
+    </section>
+
+    <section class="ops-card ops-tour-section" id="homepage-feature">
+      <div class="ops-tour-section__head"><span><i class="ti ti-star"></i></span><div><small>{% trans "Homepage" %}</small><h2>{% trans "Featured tour" %}</h2><p>{% trans "Choose which published tours appear on the homepage and assign an accurate physical level." %}</p></div></div>
+      <div class="ops-tour-section__body ops-form-grid">
+        <div class="ops-choice-card"><label for="{{ form.homepage_featured.id_for_label }}">{{ form.homepage_featured }}<span><strong>{{ form.homepage_featured.label }}</strong><small>{{ form.homepage_featured.help_text }}</small></span></label>{{ form.homepage_featured.errors }}</div>
+        <div class="ops-field"><label for="{{ form.homepage_physical_level.id_for_label }}">{{ form.homepage_physical_level.label }}</label>{{ form.homepage_physical_level }}{{ form.homepage_physical_level.errors }}</div>
+        <div class="ops-field"><label for="{{ form.homepage_display_order.id_for_label }}">{{ form.homepage_display_order.label }}</label>{{ form.homepage_display_order }}{{ form.homepage_display_order.errors }}</div>
+      </div>
+    </section>
+
+    <div class="ops-tour-actions">
+      <div><i class="ti ti-info-circle"></i><span>{% if tour %}{% trans "Saving changes keeps the current publication state." %}{% else %}{% trans "The first save creates a private draft." %}{% endif %}</span></div>
+      <div>
+        <a class="ops-btn ops-btn--ghost" href="{{ back_url }}">{% trans "Cancel" %}</a>
+        <button class="ops-btn ops-btn--ghost" type="submit" name="action" value="draft"><i class="ti ti-file-pencil"></i>{% trans "Save as draft" %}</button>
+        {% if tour %}
+          <button class="ops-btn ops-btn--secondary" type="submit" name="action" value="continue"><i class="ti ti-device-floppy"></i>{% trans "Save changes" %}</button>
+          <button class="ops-btn ops-btn--primary" type="submit" name="action" value="publish"><i class="ti ti-world-upload"></i>{% trans "Publish" %}</button>
+        {% else %}
+          <button class="ops-btn ops-btn--primary" type="submit" name="action" value="continue"><i class="ti ti-arrow-right"></i>{% trans "Save and add itinerary" %}</button>
+        {% endif %}
+      </div>
+    </div>
+  </form>
+
+  <aside class="ops-tour-readiness">
+    <section class="ops-card ops-card--padded">
+      <span class="ops-eyebrow">{% trans "Publication" %}</span><h2>{% trans "Readiness checklist" %}</h2>
+      {% if tour %}
+        <div class="ops-readiness-list">{% for check in readiness.checks %}<div class="{% if check.done %}is-done{% endif %}"><i class="ti {% if check.done %}ti-circle-check-filled{% else %}ti-circle-dashed{% endif %}"></i><span>{{ check.label }}</span></div>{% endfor %}</div>
+        <p>{% if readiness.complete %}{% trans "This tour is ready to publish." %}{% else %}{% trans "Complete the remaining items before publishing." %}{% endif %}</p>
+      {% else %}
+        <div class="ops-empty ops-empty--compact"><i class="ti ti-route"></i><strong>{% trans "Start with a draft" %}</strong><span>{% trans "After the first save, itinerary tools and the publish checklist become available." %}</span></div>
+      {% endif %}
+    </section>
+  </aside>
+</div>
+
+{% if tour %}
+<section class="ops-card ops-itinerary-manager" id="itinerary">
+  <div class="ops-card__head"><div><span class="ops-eyebrow">{% trans "Step 6" %}</span><h2>{% trans "Day-by-day itinerary" %}</h2><p>{% blocktrans count counter=readiness.itinerary_count %}{{ counter }} day currently planned{% plural %}{{ counter }} days currently planned{% endblocktrans %}</p></div><a class="ops-btn ops-btn--primary" href="{% url 'tour:operations:content_tour_itinerary_create' tour.pk %}"><i class="ti ti-plus"></i>{% trans "Add day" %}</a></div>
+  {% if itinerary_items %}
+  <form method="post" action="{% url 'tour:operations:content_tour_itinerary_order' tour.pk %}" data-itinerary-order>{% csrf_token %}
+    <div class="ops-itinerary-list" data-itinerary-list>
+      {% for item in itinerary_items %}<article class="ops-itinerary-day" draggable="true" data-itinerary-day>
+        <input type="hidden" name="day_order" value="{{ item.pk }}">
+        <button class="ops-drag-handle" type="button" aria-label="{% trans 'Drag to reorder' %}"><i class="ti ti-grip-vertical"></i></button>
+        <span class="ops-day-number">{{ item.day_number|stringformat:"02d" }}</span>
+        <div class="ops-day-image">{% if item.image %}<img src="{{ item.image.url }}" alt="">{% else %}<i class="ti ti-photo-off"></i>{% endif %}</div>
+        <div class="ops-day-copy"><strong>{{ item.title|default:"Untitled itinerary day" }}</strong><p>{{ item.description|truncatewords:24 }}</p><div>{% if item.date %}<span><i class="ti ti-calendar"></i>{{ item.date|date:"d M Y" }}</span>{% endif %}{% if item.type_of_transport %}<span><i class="ti ti-car"></i>{{ item.get_type_of_transport_display }}</span>{% endif %}{% if item.accommodation %}<span><i class="ti ti-bed"></i>{{ item.accommodation }}</span>{% endif %}</div></div>
+        <div class="ops-day-actions"><button type="button" data-day-up title="{% trans 'Move up' %}"><i class="ti ti-chevron-up"></i></button><button type="button" data-day-down title="{% trans 'Move down' %}"><i class="ti ti-chevron-down"></i></button><a href="{% url 'tour:operations:content_tour_itinerary_edit' tour.pk item.pk %}" title="{% trans 'Edit day' %}"><i class="ti ti-edit"></i></a><a class="is-danger" href="{% url 'tour:operations:content_tour_itinerary_delete' tour.pk item.pk %}" title="{% trans 'Delete day' %}"><i class="ti ti-trash"></i></a></div>
+      </article>{% endfor %}
+    </div>
+    <div class="ops-itinerary-order-actions"><span><i class="ti ti-arrows-sort"></i>{% trans "Drag days or use the arrow buttons, then save the order." %}</span><button class="ops-btn ops-btn--secondary" type="submit"><i class="ti ti-device-floppy"></i>{% trans "Save order" %}</button></div>
+  </form>
+  {% else %}
+  <div class="ops-empty"><i class="ti ti-calendar-plus"></i><strong>{% trans "No itinerary days yet" %}</strong><span>{% trans "Add the first day before publishing this tour." %}</span><a class="ops-btn ops-btn--primary" href="{% url 'tour:operations:content_tour_itinerary_create' tour.pk %}">{% trans "Add day 1" %}</a></div>
+  {% endif %}
+</section>
+{% endif %}
+{% endblock %}
+{% block operations_scripts %}<script src="{% static 'js/operations-tour-editor.js' %}" defer></script>{% endblock %}

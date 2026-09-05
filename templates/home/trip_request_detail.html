@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block body_class %}aa-trip-request-page{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/trip-builder.css' %}">
+<section class="aa-request-hero">
+  <div class="aa-container">
+    {% if messages %}<div class="aa-trip-messages">{% for message in messages %}<div class="aa-trip-alert">{{ message }}</div>{% endfor %}</div>{% endif %}
+    <a class="aa-request-back" href="{% if request.user.is_authenticated %}{% url 'home:my_trip_requests' %}{% else %}{% url 'home:home' %}{% endif %}"><i class="fa-solid fa-arrow-left"></i>{% trans "Back" %}</a>
+    <div class="aa-request-title"><div><span>{{ trip_request.reference }}</span><h1>{% trans "Your custom route request" %}</h1><p>{{ trip_request.start_date|date:"d M Y" }} – {{ trip_request.end_date|date:"d M Y" }} · {{ trip_request.traveller_count }} {% trans "travellers" %}</p></div><strong class="aa-request-status aa-request-status--{{ trip_request.status }}">{{ trip_request.get_status_display }}</strong></div>
+  </div>
+</section>
+
+<section class="aa-request-shell">
+  <div class="aa-container aa-request-layout">
+    <div class="aa-request-main">
+      <section class="aa-request-card">
+        <div class="aa-request-card__head"><div><span>{% trans "Route" %}</span><h2>{% trans "Selected provinces" %}</h2></div><strong>{{ trip_request.duration_days }} {% trans "days" %}</strong></div>
+        <div class="aa-request-stops">
+          {% for stop in trip_request.stops.all %}
+          <article><span>{{ stop.position }}</span><div><strong>{{ stop.destination.title }}</strong><small>{{ stop.nights }} {% trans "nights" %}{% if stop.notes %} · {{ stop.notes }}{% endif %}</small></div></article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="aa-request-card">
+        <div class="aa-request-card__head"><div><span>{% trans "Entry planning" %}</span><h2>{% trans "Arrival preference" %}</h2></div><strong>{{ trip_request.entry_plan.get_status_display }}</strong></div>
+        <div class="aa-request-facts">
+          <article><span>{% trans "Decision" %}</span><strong>{{ trip_request.entry_plan.get_selection_mode_display }}</strong></article>
+          <article><span>{% trans "Arrival method" %}</span><strong>{{ trip_request.entry_plan.get_transport_mode_display }}</strong></article>
+          <article><span>{% trans "Arriving from" %}</span><strong>{{ trip_request.entry_plan.arrival_origin }}</strong></article>
+          <article><span>{% trans "Entry point" %}</span><strong>{{ trip_request.entry_plan.recommended_entry_point|default:trip_request.entry_plan.selected_entry_point_label|default:"Pending recommendation" }}</strong></article>
+        </div>
+      </section>
+
+      {% for proposal in visible_proposals %}
+      <section class="aa-request-card aa-proposal-card">
+        <div class="aa-request-card__head"><div><span>{% blocktrans with version=proposal.version %}Proposal v{{ version }}{% endblocktrans %}</span><h2>{{ proposal.title }}</h2></div><strong>{{ proposal.currency }} {{ proposal.total_price }}</strong></div>
+        <p>{{ proposal.summary }}</p>
+        {% if proposal.customer_message %}<div class="aa-trip-info"><i class="fa-solid fa-message"></i><span>{{ proposal.customer_message }}</span></div>{% endif %}
+        <div class="aa-proposal-days">
+          {% for day in proposal.days.all %}
+          <article><span>{% blocktrans with number=day.day_number %}Day {{ number }}{% endblocktrans %}</span><div><h3>{{ day.title }}</h3><p>{{ day.description }}</p><small>{% if day.destination %}{{ day.destination.title }} · {% endif %}{{ day.transport }}{% if day.overnight_location %} · {% trans "Overnight" %}: {{ day.overnight_location }}{% endif %}</small></div></article>
+          {% endfor %}
+        </div>
+        {% if proposal.status == 'sent' %}
+        <div class="aa-proposal-actions">
+          <form method="post" action="{% url 'home:trip_request_action' trip_request.public_id %}">{% csrf_token %}<input type="hidden" name="action" value="accept"><input type="hidden" name="proposal_id" value="{{ proposal.id }}"><button class="aa-trip-button aa-trip-button--primary" type="submit"><i class="fa-solid fa-circle-check"></i>{% trans "Accept proposal" %}</button></form>
+          <details><summary>{% trans "Request changes" %}</summary><form method="post" action="{% url 'home:trip_request_action' trip_request.public_id %}">{% csrf_token %}<input type="hidden" name="action" value="changes"><textarea class="aa-trip-input" name="change_note" rows="3" required placeholder="{% trans 'Describe what should change' %}"></textarea><button class="aa-trip-button aa-trip-button--ghost" type="submit">{% trans "Send changes" %}</button></form></details>
+        </div>
+        {% endif %}
+      </section>
+      {% empty %}
+      <section class="aa-request-card aa-request-waiting"><i class="fa-solid fa-clock"></i><div><h2>{% trans "The operations team is reviewing your route" %}</h2><p>{% trans "A route proposal, entry recommendation and estimated price will appear here after review." %}</p></div></section>
+      {% endfor %}
+    </div>
+
+    <aside class="aa-request-side">
+      <section class="aa-request-card"><span class="aa-trip-eyebrow">{% trans "Request details" %}</span><dl><div><dt>{% trans "Traveller" %}</dt><dd>{{ trip_request.full_name }}</dd></div><div><dt>{% trans "Contact" %}</dt><dd>{{ trip_request.email }}<br>{{ trip_request.phone }}</dd></div><div><dt>{% trans "Budget" %}</dt><dd>{{ trip_request.get_budget_tier_display }}{% if trip_request.estimated_budget %}<br>USD {{ trip_request.estimated_budget }}{% endif %}</dd></div><div><dt>{% trans "Pace" %}</dt><dd>{{ trip_request.get_pace_display }}</dd></div></dl></section>
+      {% if trip_request.booking_id %}<a class="aa-trip-button aa-trip-button--primary aa-trip-button--full" href="{% url 'tour:payment' trip_request.booking_id %}">{% trans "Open booking" %}<i class="fa-solid fa-arrow-right"></i></a>{% endif %}
+    </aside>
+  </div>
+</section>
+{% endblock %}

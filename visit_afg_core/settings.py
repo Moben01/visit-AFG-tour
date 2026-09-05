@@ -21,13 +21,44 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-niwkm0%-ym8w3g3#&dtia^563=xzb@znza-r&dq-jgl#kh@ae0'
+# Production values are supplied by the systemd environment file. The
+# fallbacks keep local development and the isolated test settings usable.
+SECRET_KEY = os.environ.get(
+    'DJANGO_SECRET_KEY',
+    'django-insecure-local-development-key-change-me',
+)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+def env_bool(name, default=False):
+    return os.environ.get(name, '1' if default else '0').lower() in (
+        '1', 'true', 'yes', 'on'
+    )
+
+
+DEBUG = env_bool('DJANGO_DEBUG', False)
+
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.environ.get(
+        'DJANGO_ALLOWED_HOSTS',
+        'localhost,127.0.0.1,[::1],testserver,afghanawaits.com,www.afghanawaits.com',
+    ).split(',')
+    if host.strip()
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get(
+        'DJANGO_CSRF_TRUSTED_ORIGINS',
+        'https://afghanawaits.com,https://www.afghanawaits.com',
+    ).split(',')
+    if origin.strip()
+]
+
+# Nginx terminates TLS before forwarding requests to Gunicorn.
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
 
 
 # Application definition
@@ -109,14 +140,20 @@ WSGI_APPLICATION = 'visit_afg_core.wsgi.application'
 
 
 # PostgreSQL Database Configuration
+database_engine = os.environ.get(
+    'DB_ENGINE', 'django.db.backends.postgresql'
+)
+if database_engine in ('postgresql', 'postgres', 'psql'):
+    database_engine = 'django.db.backends.postgresql'
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'visitafgtoursdb',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  # Replace with your PostgreSQL server's address if necessary
-        'PORT': '5432',          # Leave empty to use the default PostgreSQL port (usually 5432)
+        'ENGINE': database_engine,
+        'NAME': os.environ.get('DB_NAME', 'visitafgtoursdb'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'root'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 
@@ -178,11 +215,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+DEPLOY_APP_ROOT = os.environ.get('AFGHANAWAITS_APP_ROOT')
+if DEPLOY_APP_ROOT:
+    STATIC_ROOT = os.path.join(DEPLOY_APP_ROOT, 'shared', 'staticfiles')
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+if DEPLOY_APP_ROOT:
+    MEDIA_ROOT = os.path.join(DEPLOY_APP_ROOT, 'shared', 'media')
+else:
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -199,10 +244,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', '1').lower() in ('1', 'true', 'yes')
 EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', '0').lower() in ('1', 'true', 'yes')
 EMAIL_TIMEOUT = int(os.environ.get('EMAIL_TIMEOUT', '15'))
-DEFAULT_FROM_EMAIL = os.environ.get(
-    'DEFAULT_FROM_EMAIL', 'AfghanAwaits <no-reply@afghanawaits.com>'
-)
-SERVER_EMAIL = DEFAULT_FROM_EMAIL
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', '').strip()
+SERVER_EMAIL = os.environ.get('SERVER_EMAIL', DEFAULT_FROM_EMAIL).strip()
 
 # Public accounts use email as the only login identity. Django keeps the
 # generated username internally for compatibility with the legacy schema.
@@ -212,7 +255,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
-ACCOUNT_EMAIL_SUBJECT_PREFIX = '[AfghanAwaits] '
+ACCOUNT_EMAIL_SUBJECT_PREFIX = '[Larmoond Travel and Tours] '
 
 LOGIN_REDIRECT_URL = 'tour:dashboard'
 LOGIN_URL = '/accounts/login/'
@@ -221,6 +264,9 @@ STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET', '')
 
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY', '')
-DOMAIN = "http://localhost:8000"  # Or your real domain
+DOMAIN = os.environ.get(
+    'DOMAIN',
+    'http://localhost:8000' if DEBUG else '',
+)
 
 AUTH_USER_MODEL = 'accounts.CustomUser'

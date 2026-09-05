@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "Server error" %} | {{ site_config.official_brand_name }}{% endblock %}
+{% block content %}
+<section class="aa-legal-page" aria-labelledby="server-error-title">
+    <div class="aa-container">
+        <article class="aa-legal-card">
+            <span class="aa-eyebrow">500</span>
+            <h1 id="server-error-title">{% trans "We could not complete that request" %}</h1>
+            <p>{% trans "Please try again. If the problem continues, return to the homepage and use a verified support address shown there." %}</p>
+            <a class="aa-btn aa-btn--primary" href="{% url 'home:home' %}">{% trans "Return to homepage" %}</a>
+        </article>
+    </div>
+</section>
+{% endblock %}

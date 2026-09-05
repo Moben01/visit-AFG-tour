@@ -9,13 +9,15 @@ from django.contrib.contenttypes.models import ContentType
 from django.core.exceptions import PermissionDenied
 from django.core.paginator import Paginator
 from django.db import transaction
-from django.db.models import Count, Exists, OuterRef, Q, Sum
+from django.db.models import Count, Exists, Max, OuterRef, Q, Sum
 from django.db.models.functions import TruncMonth
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_POST
+
+from home.models import EntryPlan, RouteProposal, TripRequest
 
 from .models import (
     Booking,
@@ -34,6 +36,10 @@ from .operations_forms import (
     ManualPaymentForm,
     PickupPlanOperationsForm,
     TourOperationsForm,
+    TripRequestOperationsForm,
+    EntryPlanOperationsForm,
+    RouteProposalOperationsForm,
+    RouteProposalDayFormSet,
     WelcomePackageOperationsForm,
 )
 
@@ -82,6 +88,13 @@ def _booking_queryset():
     return Booking.objects.select_related(
         'tour', 'user', 'tour__tour_guide', 'tour__translator',
         'tour__security_gard',
+    )
+
+
+def _trip_request_queryset():
+    return TripRequest.objects.prefetch_related(
+        'stops__destination',
+        'proposals__days__destination',
     )
 
 
@@ -173,7 +186,49 @@ def dashboard(request):
         paid_count=Count('bookings', filter=Q(bookings__paid=True)),
     ).order_by('start_date')[:8]
 
+    route_status_counts = dict(
+        TripRequest.objects.values_list('status').annotate(total=Count('pk'))
+    )
+    booking_status_counts = dict(
+        bookings.values_list('situation').annotate(total=Count('pk'))
+    )
+
+    def pipeline_rows(counts, choices):
+        highest = max((counts.get(value, 0) for value, _ in choices), default=0) or 1
+        return [
+            {
+                'value': value,
+                'label': label,
+                'count': counts.get(value, 0),
+                'percent': round((counts.get(value, 0) / highest) * 100),
+            }
+            for value, label in choices
+        ]
+
+    route_pipeline = pipeline_rows(
+        route_status_counts,
+        (
+            ('submitted', 'Submitted'),
+            ('under_review', 'Under review'),
+            ('proposal_sent', 'Proposal sent'),
+            ('changes_requested', 'Changes requested'),
+            ('approved', 'Approved'),
+        ),
+    )
+    booking_pipeline = pipeline_rows(
+        booking_status_counts,
+        (
+            ('Booked', 'New booking'),
+            ('upcoming', 'Upcoming'),
+            ('in_progress', 'In progress'),
+            ('completed', 'Completed'),
+        ),
+    )
+
     context = {
+        'route_request_count': TripRequest.objects.filter(
+            status__in=('submitted', 'under_review', 'changes_requested')
+        ).count(),
         'new_requests': bookings.filter(situation='Booked', paid=False).count(),
         'awaiting_payment': bookings.filter(paid=False).exclude(situation='Cancelled').count(),
         'confirmed_count': bookings.filter(paid=True, situation='upcoming').count(),
@@ -183,12 +238,253 @@ def dashboard(request):
         'pickup_attention_count': pickup_attention.count(),
         'revenue_total': bookings.filter(paid=True).aggregate(total=Sum('paid_amount'))['total'] or 0,
         'latest_bookings': bookings.order_by('-id')[:8],
+        'latest_route_requests': _trip_request_queryset().order_by('-submitted_at')[:6],
         'departures': departures,
         'attention_bookings': pending_documents.order_by('tour__start_date')[:5],
         'pickup_attention': pickup_attention.order_by('tour__start_date')[:5],
+        'route_pipeline': route_pipeline,
+        'booking_pipeline': booking_pipeline,
+        'recent_activity': LogEntry.objects.select_related(
+            'user', 'content_type'
+        ).order_by('-action_time')[:8],
         'today': today,
     }
     return render(request, 'operations/dashboard.html', context)
+
+
+@operations_required
+def trip_request_list(request):
+    queryset = _trip_request_queryset()
+    query = request.GET.get('q', '').strip()
+    status = request.GET.get('status', '').strip()
+    entry_status = request.GET.get('entry_status', '').strip()
+    if query:
+        queryset = queryset.filter(
+            Q(full_name__icontains=query)
+            | Q(email__icontains=query)
+            | Q(phone__icontains=query)
+            | Q(country_of_origin__icontains=query)
+            | Q(stops__destination__title__icontains=query)
+        ).distinct()
+    if status in dict(TripRequest.STATUS_CHOICES):
+        queryset = queryset.filter(status=status)
+    if entry_status in dict(EntryPlan.STATUS_CHOICES):
+        queryset = queryset.filter(entry_plan__status=entry_status)
+    page_obj = Paginator(queryset.order_by('-submitted_at'), 20).get_page(request.GET.get('page'))
+    return render(request, 'operations/trips/list.html', {
+        'trip_requests': page_obj.object_list,
+        'page_obj': page_obj,
+        'query': query,
+        'selected_status': status,
+        'selected_entry_status': entry_status,
+        'status_choices': TripRequest.STATUS_CHOICES,
+        'entry_status_choices': EntryPlan.STATUS_CHOICES,
+    })
+
+
+@operations_required
+def trip_request_detail(request, trip_id):
+    trip_request = get_object_or_404(_trip_request_queryset(), pk=trip_id)
+    entry_plan, _ = EntryPlan.objects.get_or_create(
+        trip_request=trip_request,
+        defaults={'arrival_origin': trip_request.country_of_origin},
+    )
+    return render(request, 'operations/trips/detail.html', {
+        'trip_request': trip_request,
+        'entry_plan': entry_plan,
+        'trip_form': TripRequestOperationsForm(instance=trip_request, prefix='trip'),
+        'entry_form': EntryPlanOperationsForm(instance=entry_plan, prefix='entry'),
+        'proposals': trip_request.proposals.prefetch_related('days__destination'),
+        'accepted_proposal': trip_request.proposals.filter(status='accepted').first(),
+    })
+
+
+@operations_required
+@require_POST
+def trip_request_update(request, trip_id):
+    trip_request = get_object_or_404(TripRequest, pk=trip_id)
+    entry_plan, _ = EntryPlan.objects.get_or_create(
+        trip_request=trip_request,
+        defaults={'arrival_origin': trip_request.country_of_origin},
+    )
+    trip_form = TripRequestOperationsForm(request.POST, instance=trip_request, prefix='trip')
+    entry_form = EntryPlanOperationsForm(request.POST, instance=entry_plan, prefix='entry')
+    if trip_form.is_valid() and entry_form.is_valid():
+        with transaction.atomic():
+            trip_request = trip_form.save()
+            entry_plan = entry_form.save(commit=False)
+            if entry_plan.status == 'confirmed':
+                entry_plan.confirmed_by_id = request.user.pk
+                entry_plan.confirmed_at = timezone.now()
+            entry_plan.save()
+            _log_change(
+                request,
+                trip_request,
+                f'Route request updated. Status: {trip_request.get_status_display()}. '
+                f'Entry plan: {entry_plan.get_status_display()}.',
+            )
+        messages.success(request, 'Route request and entry recommendation were updated.')
+    else:
+        messages.error(request, 'Please correct the route request or entry plan fields.')
+    return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+
+
+def _proposal_day_initial(trip_request):
+    initial = []
+    day_number = 1
+    for stop in trip_request.stops.all():
+        for _ in range(max(stop.nights, 1)):
+            initial.append({
+                'day_number': day_number,
+                'destination': stop.destination,
+                'title': f'{stop.destination.title} · day {day_number}',
+                'description': stop.notes or f'Activities and local coordination in {stop.destination.title}.',
+                'overnight_location': stop.destination.title,
+            })
+            day_number += 1
+    return initial or [{'day_number': 1, 'title': 'Arrival and orientation'}]
+
+
+@operations_required
+def trip_proposal_form(request, trip_id, proposal_id=None):
+    trip_request = get_object_or_404(_trip_request_queryset(), pk=trip_id)
+    if proposal_id:
+        proposal = get_object_or_404(RouteProposal, pk=proposal_id, trip_request=trip_request)
+        if proposal.status != 'draft':
+            messages.error(request, 'Sent or accepted proposals are locked. Create a new version instead.')
+            return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+    else:
+        next_version = (
+            trip_request.proposals.aggregate(max_version=Max('version'))['max_version'] or 0
+        ) + 1
+        entry_plan = getattr(trip_request, 'entry_plan', None)
+        entry_label = ''
+        if entry_plan:
+            entry_label = (
+                entry_plan.recommended_entry_point
+                or entry_plan.selected_entry_point_label
+            )
+        proposal = RouteProposal(
+            trip_request=trip_request,
+            version=next_version,
+            title=f'Custom Afghanistan route · {trip_request.reference}',
+            proposed_entry_point=entry_label,
+            total_price=trip_request.estimated_budget or 0,
+            created_by_id=request.user.pk,
+        )
+
+    if request.method == 'POST':
+        form = RouteProposalOperationsForm(request.POST, instance=proposal)
+        day_formset = RouteProposalDayFormSet(request.POST, instance=proposal, prefix='days')
+        if form.is_valid() and day_formset.is_valid():
+            with transaction.atomic():
+                proposal = form.save(commit=False)
+                proposal.trip_request = trip_request
+                proposal.created_by_id = proposal.created_by_id or request.user.pk
+                proposal.status = 'draft'
+                proposal.save()
+                day_formset.instance = proposal
+                day_formset.save()
+                if trip_request.status in {'submitted', 'changes_requested'}:
+                    trip_request.status = 'under_review'
+                    trip_request.save(update_fields=('status', 'updated_at'))
+                _log_change(request, trip_request, f'Route proposal v{proposal.version} saved as draft.')
+            messages.success(request, f'Proposal v{proposal.version} was saved as a draft.')
+            return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+    else:
+        form = RouteProposalOperationsForm(instance=proposal)
+        day_formset = RouteProposalDayFormSet(
+            instance=proposal,
+            prefix='days',
+            initial=_proposal_day_initial(trip_request) if proposal.pk is None else None,
+        )
+    return render(request, 'operations/trips/proposal_form.html', {
+        'trip_request': trip_request,
+        'proposal': proposal,
+        'form': form,
+        'day_formset': day_formset,
+    })
+
+
+@operations_required
+@require_POST
+def trip_proposal_send(request, trip_id, proposal_id):
+    trip_request = get_object_or_404(TripRequest, pk=trip_id)
+    proposal = get_object_or_404(
+        RouteProposal.objects.prefetch_related('days'),
+        pk=proposal_id,
+        trip_request=trip_request,
+        status='draft',
+    )
+    if not proposal.days.exists():
+        messages.error(request, 'Add at least one itinerary day before sending the proposal.')
+        return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+    with transaction.atomic():
+        proposal.status = 'sent'
+        proposal.sent_at = timezone.now()
+        proposal.save(update_fields=('status', 'sent_at', 'updated_at'))
+        trip_request.status = 'proposal_sent'
+        trip_request.save(update_fields=('status', 'updated_at'))
+        entry_plan = getattr(trip_request, 'entry_plan', None)
+        if entry_plan and proposal.proposed_entry_point:
+            entry_plan.recommended_entry_point = proposal.proposed_entry_point
+            if entry_plan.status == 'pending':
+                entry_plan.status = 'recommended'
+            entry_plan.save(update_fields=('recommended_entry_point', 'status'))
+        _log_change(request, trip_request, f'Route proposal v{proposal.version} sent to traveller.')
+    messages.success(request, f'Proposal v{proposal.version} is now visible to the traveller.')
+    return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+
+
+@operations_required
+@require_POST
+def trip_request_convert_booking(request, trip_id):
+    trip_request = get_object_or_404(TripRequest, pk=trip_id)
+    if trip_request.booking_id:
+        messages.info(request, 'This route request already has a booking.')
+        return redirect('tour:operations:booking_detail', booking_id=trip_request.booking_id)
+    proposal = trip_request.proposals.filter(status='accepted').first()
+    if proposal is None:
+        messages.error(request, 'The traveller must accept a proposal before a booking can be created.')
+        return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+    tour = proposal.booking_tour
+    if tour is None:
+        messages.error(request, 'Link a published, bookable tour to the accepted proposal before conversion.')
+        return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+    customer = User.objects.filter(pk=trip_request.user_id).first()
+    if customer is None:
+        customer = User.objects.filter(email__iexact=trip_request.email).first()
+    if customer is None:
+        messages.error(
+            request,
+            'The traveller needs a registered account before this proposal can become a booking.',
+        )
+        return redirect('tour:operations:trip_request_detail', trip_id=trip_request.pk)
+    with transaction.atomic():
+        booking = Booking.objects.create(
+            tour=tour,
+            user=customer,
+            booking_date=trip_request.start_date,
+            name=trip_request.full_name,
+            email=trip_request.email,
+            phone=trip_request.phone,
+            situation='Booked',
+            adults=trip_request.adults,
+            children=trip_request.children,
+            paid=False,
+            paid_amount=int(proposal.total_price),
+            notes=(
+                f'Created from custom route {trip_request.reference}.\n'
+                f'Accepted proposal v{proposal.version}.\n'
+                f'Entry point: {proposal.proposed_entry_point}.'
+            ),
+        )
+        trip_request.booking_id = booking.pk
+        trip_request.status = 'booked'
+        trip_request.save(update_fields=('booking_id', 'status', 'updated_at'))
+        _log_change(request, trip_request, f'Converted to booking #AA-{booking.pk:05d}.')
+    messages.success(request, f'Booking #AA-{booking.pk:05d} was created from the accepted route.')
+    return redirect('tour:operations:booking_detail', booking_id=booking.pk)
 
 
 @operations_required
@@ -567,4 +863,3 @@ def reports(request):
         'total_revenue': bookings.filter(paid=True).aggregate(total=Sum('paid_amount'))['total'] or 0,
         'total_bookings': bookings.count(),
     })
-

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block body_class %}aa-trip-request-page{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/trip-builder.css' %}">
+<section class="aa-request-hero"><div class="aa-container"><div class="aa-request-title"><div><span>{% trans "Your planning workspace" %}</span><h1>{% trans "My route requests" %}</h1><p>{% trans "Follow every custom journey from submission to confirmed booking." %}</p></div><a class="aa-trip-button aa-trip-button--primary" href="{% url 'home:trip_builder' %}"><i class="fa-solid fa-plus"></i>{% trans "New route" %}</a></div></div></section>
+<section class="aa-request-shell"><div class="aa-container"><div class="aa-request-list">
+  {% for trip in trip_requests %}
+  <a class="aa-request-list__item" href="{{ trip.get_absolute_url }}"><div><span>{{ trip.reference }}</span><strong>{% for stop in trip.stops.all %}{{ stop.destination.title }}{% if not forloop.last %} → {% endif %}{% endfor %}</strong><small>{{ trip.start_date|date:"d M Y" }} – {{ trip.end_date|date:"d M Y" }} · {{ trip.traveller_count }} {% trans "travellers" %}</small></div><span class="aa-request-status aa-request-status--{{ trip.status }}">{{ trip.get_status_display }}</span><i class="fa-solid fa-chevron-right"></i></a>
+  {% empty %}
+  <div class="aa-request-card aa-request-waiting"><i class="fa-solid fa-route"></i><div><h2>{% trans "No route requests yet" %}</h2><p>{% trans "Start a multi-province plan and the operations team will prepare a proposal." %}</p><a class="aa-trip-button aa-trip-button--primary" href="{% url 'home:trip_builder' %}">{% trans "Build my route" %}</a></div></div>
+  {% endfor %}
+</div></div></section>
+{% endblock %}

@@ -1,0 +1,626 @@
+/* Global public shell for Larmoond Travel and Tours. */
+
+.lm-site-header,
+.aa-home-page .lm-site-header.is-sticky,
+.aa-home-page header.lm-site-header.fixed,
+header.lm-site-header.fixed {
+  position: sticky !important;
+  inset: 0 0 auto;
+  z-index: 1040;
+  width: 100%;
+  color: var(--brand-deep-green);
+  background: rgba(255, 255, 255, 0.98);
+  background: color-mix(in srgb, var(--brand-white) 97%, transparent);
+  border-bottom: 1px solid rgba(7, 39, 32, 0.1);
+  box-shadow: 0 8px 28px rgba(7, 39, 32, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.lm-site-header.is-sticky,
+header.lm-site-header.fixed {
+  color: var(--brand-deep-green);
+  background: rgba(255, 255, 255, 0.99);
+  background: color-mix(in srgb, var(--brand-white) 98%, transparent);
+  box-shadow: 0 10px 34px rgba(7, 39, 32, 0.12);
+}
+
+.lm-header-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2vw, 34px);
+  min-height: 84px;
+}
+
+.lm-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-width: 172px;
+  color: var(--brand-deep-green);
+  text-decoration: none;
+}
+
+.lm-brand-logo {
+  display: block;
+  width: min(210px, 16vw);
+  max-height: 58px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.lm-brand-symbol {
+  display: none;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.lm-brand-wordmark {
+  display: block;
+  max-width: 190px;
+  color: var(--brand-deep-green);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.lm-primary-navigation {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lm-primary-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2px, 0.4vw, 8px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lm-primary-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.6rem clamp(0.48rem, 0.72vw, 0.76rem);
+  color: var(--brand-deep-green);
+  border-radius: 8px;
+  font-size: clamp(0.82rem, 0.85vw, 0.94rem);
+  font-weight: 650;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.lm-primary-links a:hover,
+.lm-primary-links a[aria-current="page"] {
+  color: var(--brand-deep-green);
+  background: rgba(158, 221, 5, 0.2);
+}
+
+.lm-primary-links a[aria-current="page"] {
+  box-shadow: inset 0 -3px 0 var(--brand-lime);
+}
+
+.lm-header-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.lm-header-actions a,
+.lm-header-actions button {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.lm-sign-in,
+.lm-account-menu > button,
+.lm-language-switcher > button,
+.lm-whatsapp-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0.55rem 0.65rem;
+  color: var(--brand-deep-green);
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.lm-sign-in:hover,
+.lm-account-menu > button:hover,
+.lm-language-switcher > button:hover,
+.lm-whatsapp-action:hover {
+  color: var(--brand-deep-green);
+  background: rgba(7, 39, 32, 0.07);
+}
+
+.lm-whatsapp-action {
+  width: 42px;
+  padding: 0;
+  color: #176b41;
+  border-color: rgba(23, 107, 65, 0.24);
+  font-size: 1.15rem;
+}
+
+.lm-header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.68rem 1rem;
+  color: var(--brand-deep-green);
+  background: var(--brand-lime);
+  border: 1px solid var(--brand-lime);
+  border-radius: 9px;
+  box-shadow: 0 6px 16px rgba(73, 105, 0, 0.14);
+  font-size: 0.88rem;
+  line-height: 1.15;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.lm-header-cta:hover {
+  color: var(--brand-white);
+  background: var(--brand-deep-green);
+  border-color: var(--brand-deep-green);
+}
+
+.lm-header-cta--mobile,
+.lm-mobile-toggle,
+.lm-mobile-utilities {
+  display: none;
+}
+
+.lm-header-dropdown {
+  min-width: 190px;
+  padding: 0.45rem;
+  color: var(--brand-deep-green);
+  border: 1px solid rgba(7, 39, 32, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 18px 42px rgba(7, 39, 32, 0.16);
+}
+
+.lm-header-dropdown .dropdown-item {
+  padding: 0.65rem 0.75rem;
+  border-radius: 7px;
+}
+
+.lm-header-dropdown .dropdown-item:hover,
+.lm-header-dropdown .dropdown-item:focus,
+.lm-header-dropdown .dropdown-item[aria-current="true"] {
+  color: var(--brand-deep-green);
+  background: rgba(158, 221, 5, 0.2);
+}
+
+.lm-site-header a:focus-visible,
+.lm-site-header button:focus-visible,
+.lm-site-footer a:focus-visible,
+.lm-site-footer button:focus-visible {
+  outline: 3px solid var(--brand-lime);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 2px var(--brand-deep-green);
+}
+
+#destinations,
+#tours,
+#site-contact {
+  scroll-margin-top: 96px;
+}
+
+/* Footer */
+.lm-site-footer {
+  color: rgba(255, 255, 255, 0.8);
+  background: var(--brand-deep-green);
+}
+
+.lm-footer-main {
+  padding: clamp(58px, 7vw, 88px) 0 50px;
+}
+
+.lm-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 1.2fr) minmax(520px, 1.8fr);
+  gap: clamp(48px, 7vw, 100px);
+}
+
+.lm-footer-profile {
+  min-width: 0;
+}
+
+.lm-footer-brand {
+  display: inline-flex;
+  max-width: 100%;
+  margin-bottom: 22px;
+  color: var(--brand-white);
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-decoration: none;
+}
+
+.lm-footer-brand img {
+  display: block;
+  width: min(260px, 100%);
+  max-height: 76px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.lm-footer-positioning {
+  max-width: 570px;
+  margin: 0 0 26px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.lm-footer-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 22px;
+  color: rgba(255, 255, 255, 0.82);
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.lm-footer-address i,
+.lm-licence i {
+  flex: 0 0 auto;
+  margin-top: 0.28rem;
+  color: var(--brand-lime);
+}
+
+.lm-footer-contact {
+  display: grid;
+  gap: 11px;
+  margin: 0 0 24px;
+}
+
+.lm-footer-contact div {
+  display: grid;
+  grid-template-columns: minmax(90px, auto) 1fr;
+  gap: 12px;
+}
+
+.lm-footer-contact dt {
+  color: var(--brand-white);
+  font-weight: 700;
+}
+
+.lm-footer-contact dd {
+  min-width: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.lm-footer-contact a,
+.lm-licence a {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.lm-footer-contact a:hover,
+.lm-licence a:hover {
+  color: var(--brand-lime);
+}
+
+.lm-licence {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.lm-footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lm-footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: var(--brand-white);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.lm-footer-social a:hover {
+  color: var(--brand-deep-green);
+  background: var(--brand-lime);
+  border-color: var(--brand-lime);
+}
+
+.lm-footer-navigation {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(26px, 4vw, 52px);
+}
+
+.lm-footer-navigation h2 {
+  margin: 0 0 20px;
+  color: var(--brand-white);
+  font-size: 1rem;
+  font-weight: 750;
+}
+
+.lm-footer-navigation ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lm-footer-navigation a {
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.lm-footer-navigation a:hover {
+  color: var(--brand-lime);
+}
+
+.lm-footer-safety {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-block: 18px;
+  color: rgba(255, 255, 255, 0.82);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  line-height: 1.6;
+}
+
+.lm-footer-safety i {
+  margin-top: 0.25rem;
+  color: var(--brand-lime);
+}
+
+.lm-footer-bottom {
+  padding: 22px 0;
+  color: rgba(255, 255, 255, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.9rem;
+}
+
+[dir="rtl"] .lm-brand-logo,
+[dir="rtl"] .lm-footer-brand img {
+  object-position: right center;
+}
+
+@media (max-width: 1279.98px) {
+  .lm-header-row {
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 74px;
+    padding-block: 9px;
+  }
+
+  .lm-brand {
+    min-width: 0;
+    margin-inline-end: auto;
+  }
+
+  .lm-brand-logo {
+    width: 176px;
+    max-height: 50px;
+  }
+
+  .lm-primary-navigation {
+    order: 3;
+    flex-basis: 100%;
+    width: 100%;
+    border-top: 1px solid rgba(7, 39, 32, 0.1);
+  }
+
+  .lm-primary-links {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 3px;
+    padding: 12px 0;
+  }
+
+  .lm-primary-links a {
+    display: flex;
+    min-height: 46px;
+    padding: 0.72rem 0.8rem;
+    font-size: 0.98rem;
+  }
+
+  .lm-primary-links a[aria-current="page"] {
+    box-shadow: inset 3px 0 0 var(--brand-lime);
+  }
+
+  [dir="rtl"] .lm-primary-links a[aria-current="page"] {
+    box-shadow: inset -3px 0 0 var(--brand-lime);
+  }
+
+  .lm-language-switcher,
+  .lm-account-menu,
+  .lm-sign-in,
+  .lm-whatsapp-action,
+  .lm-header-cta--desktop {
+    display: none;
+  }
+
+  .lm-header-cta--mobile,
+  .lm-mobile-toggle {
+    display: inline-flex;
+  }
+
+  .lm-mobile-toggle {
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--brand-deep-green);
+    background: var(--brand-white);
+    border: 1px solid rgba(7, 39, 32, 0.28);
+    border-radius: 9px;
+    font-size: 1.05rem;
+  }
+
+  .lm-mobile-toggle[aria-expanded="true"] {
+    background: rgba(158, 221, 5, 0.22);
+    border-color: var(--brand-lime);
+  }
+
+  .lm-mobile-utilities {
+    display: grid;
+    gap: 12px;
+    padding: 0 0 18px;
+  }
+
+  .lm-mobile-utility,
+  .lm-mobile-account a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0.65rem 0.8rem;
+    color: var(--brand-deep-green);
+    border: 1px solid rgba(7, 39, 32, 0.12);
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .lm-mobile-account {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .lm-mobile-utility-title {
+    grid-column: 1 / -1;
+    color: rgba(7, 39, 32, 0.68);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .lm-mobile-languages > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .lm-mobile-languages button {
+    min-height: 40px;
+    padding: 0.45rem 0.75rem;
+    color: var(--brand-deep-green);
+    background: var(--brand-white);
+    border: 1px solid rgba(7, 39, 32, 0.22);
+    border-radius: 8px;
+    font-weight: 700;
+  }
+
+  .lm-mobile-languages button[aria-current="true"] {
+    background: rgba(158, 221, 5, 0.22);
+    border-color: var(--brand-lime);
+  }
+
+  .lm-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lm-primary-navigation.collapse {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .lm-footer-navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lm-footer-navigation > div:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .lm-header-row {
+    gap: 7px;
+    min-height: 66px;
+    padding-block: 7px;
+  }
+
+  .lm-brand-logo {
+    display: none;
+  }
+
+  .lm-brand-symbol {
+    display: block;
+    width: 40px;
+    height: 40px;
+  }
+
+  .lm-brand-wordmark {
+    max-width: 92px;
+    font-size: 0.84rem;
+  }
+
+  .lm-header-actions {
+    gap: 6px;
+  }
+
+  .lm-header-cta--mobile {
+    min-height: 40px;
+    max-width: 138px;
+    padding: 0.5rem 0.62rem;
+    font-size: 0.7rem;
+    white-space: normal;
+  }
+
+  .lm-mobile-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .lm-mobile-account,
+  .lm-footer-navigation {
+    grid-template-columns: 1fr;
+  }
+
+  .lm-footer-navigation > div:last-child {
+    grid-column: auto;
+  }
+
+  .lm-footer-contact div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-site-header *,
+  .lm-site-footer * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,5 @@
+{% if brand_image_url %}
+    <img src="{{ brand_image_url }}" alt="{{ site_config.official_brand_name }}" class="{{ brand_image_class|default:'img-fluid' }}">
+{% elif site_config.official_brand_name %}
+    <span class="larmoond-auth-wordmark">{{ site_config.official_brand_name }}</span>
+{% endif %}

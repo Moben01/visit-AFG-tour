@@ -3,15 +3,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if request.resolver_match.url_name == 'home' %}{% trans 'AfghanAwaits.com — Explore Afghanistan' %}{% else %}AfghanAwaits.com{% endif %}</title>
-    <meta name="description" content="{% trans 'Destination guides, published tours, and practical travel planning for Afghanistan.' %}">
-    <meta name="author" content="AfghanAwaits.com">
+    <title>{% if request.resolver_match.url_name == 'home' and site_config.hero_heading %}{{ site_config.hero_heading }}{% if site_config.short_brand_name %} | {{ site_config.short_brand_name }}{% endif %}{% else %}{{ site_config.official_brand_name }}{% endif %}</title>
+    {% if site_config.hero_description %}<meta name="description" content="{{ site_config.hero_description }}">{% endif %}
+    {% if site_config.operating_company_name or site_config.legal_entity_name %}<meta name="author" content="{{ site_config.operating_company_name|default:site_config.legal_entity_name }}">{% endif %}
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#072720">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'brand/afghanawaits/apple-touch-icon.png' %}">
-    <link rel="icon" href="{% static 'brand/afghanawaits/favicon.ico' %}" type="image/x-icon">
-    <link rel="manifest" href="{% static 'brand/afghanawaits/site.webmanifest' %}">
+    {% if site_canonical_url %}<link rel="canonical" href="{{ site_canonical_url }}">{% endif %}
+    {% if site_config.logo_symbol_url %}<link rel="apple-touch-icon" href="{{ site_config.logo_symbol_url }}">{% endif %}
+    {% if site_config.favicon_url %}<link rel="icon" href="{{ site_config.favicon_url }}">{% endif %}
+    <link rel="manifest" href="{% url 'home:site_manifest' %}">
+
+    {% if site_config.short_brand_name %}<meta property="og:site_name" content="{{ site_config.short_brand_name }}">{% endif %}
+    <meta property="og:type" content="website">
+    {% if site_config.hero_heading %}<meta property="og:title" content="{{ site_config.hero_heading }}">{% endif %}
+    {% if site_config.hero_description %}<meta property="og:description" content="{{ site_config.hero_description }}">{% endif %}
+    {% if site_canonical_url %}<meta property="og:url" content="{{ site_canonical_url }}">{% endif %}
+    {% if site_default_social_image_url %}<meta property="og:image" content="{{ site_default_social_image_url }}">{% endif %}
+    <meta name="twitter:card" content="{% if site_default_social_image_url %}summary_large_image{% else %}summary{% endif %}">
+    {% if site_config.hero_heading %}<meta name="twitter:title" content="{{ site_config.hero_heading }}">{% endif %}
+    {% if site_config.hero_description %}<meta name="twitter:description" content="{{ site_config.hero_description }}">{% endif %}
+    {% if site_default_social_image_url %}<meta name="twitter:image" content="{{ site_default_social_image_url }}">{% endif %}
+    {% if site_organization_json_ld %}<script type="application/ld+json">{{ site_organization_json_ld|safe }}</script>{% endif %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,8 +52,15 @@
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endif %}
 
-    <link rel="stylesheet" href="{% static 'css/afghanawaits.css' %}">
-    <link rel="stylesheet" href="{% static 'css/afghanawaits-home2.css' %}">
-    <link rel="stylesheet" href="{% static 'css/afghanawaits-components.css' %}">
-    <link rel="stylesheet" href="{% static 'css/afghanawaits-pages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/brand-tokens.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond-home2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/afghanistan-map.css' %}">
+    <link rel="stylesheet" href="{% static 'css/afghanistan-map-enhancements.css' %}">
+    <link rel="stylesheet" href="{% static 'css/afghanistan-map-refinement.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond-components.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond-pages.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond-home-premium.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond-public-shell.css' %}">
+    <link rel="stylesheet" href="{% static 'css/larmoond-homepage.css' %}">
 </head>

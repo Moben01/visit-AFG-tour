@@ -1,147 +1,113 @@
 {% load static i18n %}
 {% get_current_language as LANGUAGE_CODE %}
 {% with ns=request.resolver_match.namespace view_name=request.resolver_match.url_name %}
-<header class="aa-site-header">
+<header class="aa-site-header lm-site-header" data-public-shell>
     <div class="aa-container">
-        <div class="aa-header-main">
-            <div class="aa-header-left">
-                <button class="aa-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#aaMainNavigation" aria-controls="aaMainNavigation" aria-expanded="false" aria-label="{% trans 'Toggle navigation' %}">
-                    <i class="ti ti-menu-2"></i>
-                </button>
+        <div class="lm-header-row">
+            <a class="lm-brand" href="{% url 'home:home' %}" aria-label="{{ site_config.official_brand_name|default:'Home' }}">
+                {% if site_config.logo_primary_url %}
+                    <img class="lm-brand-logo" src="{{ site_config.logo_primary_url }}" alt="{{ site_config.official_brand_name }}">
+                    <img class="lm-brand-symbol" src="{% if site_config.logo_symbol_url %}{{ site_config.logo_symbol_url }}{% else %}{{ site_config.logo_primary_url }}{% endif %}" alt="">
+                {% elif site_config.short_brand_name %}
+                    <span class="lm-brand-wordmark">{{ site_config.short_brand_name }}</span>
+                {% endif %}
+            </a>
 
-                <a class="aa-brand" href="{% url 'home:home' %}" aria-label="AfghanAwaits.com">
-                    <img src="{% static 'brand/afghanawaits/logo-reverse.svg' %}" alt="AfghanAwaits.com">
-                    <img class="aa-mobile-mark" src="{% static 'brand/afghanawaits/monogram.svg' %}" alt="AfghanAwaits">
-                </a>
+            <nav class="lm-primary-navigation collapse" id="larmoondPrimaryNavigation" aria-label="{% trans 'Primary navigation' %}">
+                <ul class="lm-primary-links">
+                    <li><a href="{% url 'home:home' %}"{% if ns == 'home' and view_name == 'home' %} aria-current="page"{% endif %}>{% trans 'Home' %}</a></li>
+                    <li><a href="{% url 'home:home' %}#tours"{% if ns == 'tour' and view_name == 'tour_category_list' or ns == 'tour' and view_name == 'tour_details' %} aria-current="page"{% endif %}>{% trans 'Tours' %}</a></li>
+                    <li><a href="{% url 'home:home' %}#destinations"{% if ns == 'states' and view_name != 'team' %} aria-current="page"{% endif %}>{% trans 'Destinations' %}</a></li>
+                    <li><a href="{% url 'things_to_do:Experiences' %}"{% if ns == 'things_to_do' %} aria-current="page"{% endif %}>{% trans 'Experiences' %}</a></li>
+                    <li><a href="{% url 'home:trip_builder' %}"{% if ns == 'home' and view_name == 'trip_builder' %} aria-current="page"{% endif %}>{% trans 'Plan Your Trip' %}</a></li>
+                    <li><a href="{% url 'states:team' %}"{% if ns == 'states' and view_name == 'team' %} aria-current="page"{% endif %}>{% trans 'About Us' %}</a></li>
+                    <li><a href="{% url 'home:home' %}#site-contact">{% trans 'Contact' %}</a></li>
+                </ul>
 
-                <form class="aa-global-search" action="{% url 'home:search' %}" method="get" role="search">
-                    <i class="ti ti-search" aria-hidden="true"></i>
-                    <input type="search" name="q" value="{{ request.GET.q|default:'' }}" placeholder="{% trans 'Destination, attraction, tour, etc' %}" aria-label="{% trans 'Search' %}">
-                </form>
-            </div>
+                <div class="lm-mobile-utilities">
+                    {% if site_config.whatsapp_url %}
+                        <a class="lm-mobile-utility" href="{{ site_config.whatsapp_url }}" target="_blank" rel="noopener noreferrer" data-analytics-event="whatsapp_contact" data-analytics-placement="header_mobile">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>{% trans 'WhatsApp' %}</span>
+                        </a>
+                    {% endif %}
 
-            <div class="aa-header-actions">
-                <form action="{% url 'home:set_currency' %}" method="post" class="dropdown -currency">
-                    {% csrf_token %}
-                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="{% trans 'Preferred currency' %}">{{ site_currency }}</button>
-                    <ul class="dropdown-menu dropdown-menu-end aa-header-dropdown">
-                        <li><button class="dropdown-item{% if site_currency == 'USD' %} active{% endif %}" type="submit" name="currency" value="USD">USD</button></li>
-                        <li><button class="dropdown-item{% if site_currency == 'EUR' %} active{% endif %}" type="submit" name="currency" value="EUR">EUR</button></li>
-                        <li><button class="dropdown-item{% if site_currency == 'AFN' %} active{% endif %}" type="submit" name="currency" value="AFN">AFN</button></li>
-                    </ul>
-                </form>
+                    {% if request.user.is_authenticated %}
+                        <div class="lm-mobile-account">
+                            <span class="lm-mobile-utility-title">{% trans 'Account' %}</span>
+                            <a href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a>
+                            <a href="{% url 'tour:up_commoing_tours' %}">{% trans 'My bookings' %}</a>
+                            <a href="{% url 'home:my_trip_requests' %}">{% trans 'My route requests' %}</a>
+                            <a href="{% url 'accounts:account_settings' %}">{% trans 'Settings' %}</a>
+                            <a href="{% url 'account_logout' %}">{% trans 'Logout' %}</a>
+                        </div>
+                    {% else %}
+                        <a class="lm-mobile-utility" href="{% url 'account_login' %}"><i class="fa-regular fa-circle-user" aria-hidden="true"></i><span>{% trans 'Sign In' %}</span></a>
+                    {% endif %}
 
-                <form action="{% url 'set_language' %}" method="post" class="dropdown -language">
-                    {% csrf_token %}
-                    <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-world" aria-hidden="true"></i>
-                        <span>{% if LANGUAGE_CODE == 'fa' %}دری{% elif LANGUAGE_CODE == 'ar' %}العربية{% else %}English{% endif %}</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end aa-header-dropdown">
-                        <li><button class="dropdown-item" type="submit" name="language" value="en">English</button></li>
-                        <li><button class="dropdown-item" type="submit" name="language" value="fa">دری</button></li>
-                        <li><button class="dropdown-item" type="submit" name="language" value="ar">العربية</button></li>
-                    </ul>
-                </form>
+                    {% if site_public_languages|length > 1 %}
+                        <form action="{% url 'set_language' %}" method="post" class="lm-mobile-languages">
+                            {% csrf_token %}
+                            <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                            <span class="lm-mobile-utility-title">{% trans 'Language' %}</span>
+                            <div>
+                                {% for language_code, language_name in site_public_languages %}
+                                    <button type="submit" name="language" value="{{ language_code }}" lang="{{ language_code }}"{% if language_code == LANGUAGE_CODE %} aria-current="true"{% endif %}>{{ language_name }}</button>
+                                {% endfor %}
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
+            </nav>
 
-                <a class="aa-header-action -expert" href="{% url 'tour:tour_guide_view' %}">{% trans 'Become an Expert' %}</a>
+            <div class="lm-header-actions">
+                {% if site_config.whatsapp_url %}
+                    <a class="lm-whatsapp-action" href="{{ site_config.whatsapp_url }}" target="_blank" rel="noopener noreferrer" aria-label="{% trans 'Contact us on WhatsApp' %}" data-analytics-event="whatsapp_contact" data-analytics-placement="header_desktop">
+                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                {% endif %}
+
+                {% if site_public_languages|length > 1 %}
+                    <form action="{% url 'set_language' %}" method="post" class="dropdown lm-language-switcher">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-globe" aria-hidden="true"></i><span>{{ site_current_language_label }}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end lm-header-dropdown">
+                            {% for language_code, language_name in site_public_languages %}
+                                <li><button class="dropdown-item" type="submit" name="language" value="{{ language_code }}" lang="{{ language_code }}"{% if language_code == LANGUAGE_CODE %} aria-current="true"{% endif %}>{{ language_name }}</button></li>
+                            {% endfor %}
+                        </ul>
+                    </form>
+                {% endif %}
 
                 {% if request.user.is_authenticated %}
-                <div class="dropdown">
-                    <button class="aa-header-action -auth dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-user-circle" aria-hidden="true"></i>
-                        <span>{{ request.user.get_short_name|default:request.user.username }}</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end aa-header-dropdown">
-                        <li><a class="dropdown-item" href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'tour:up_commoing_tours' %}">{% trans 'My bookings' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'favorite_user_tour' %}">{% trans 'Wishlist' %} ({{ find_user_favorite|default:0 }})</a></li>
-                        <li><a class="dropdown-item" href="{% url 'accounts:account_settings' %}">{% trans 'Settings' %}</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
-                    </ul>
-                </div>
+                    <div class="dropdown lm-account-menu">
+                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-circle-user" aria-hidden="true"></i><span>{% trans 'Account' %}</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end lm-header-dropdown">
+                            <li><a class="dropdown-item" href="{% url 'tour:dashboard' %}">{% trans 'Dashboard' %}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'tour:up_commoing_tours' %}">{% trans 'My bookings' %}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'home:my_trip_requests' %}">{% trans 'My route requests' %}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'favorite_user_tour' %}">{% trans 'Wishlist' %} ({{ find_user_favorite|default:0 }})</a></li>
+                            <li><a class="dropdown-item" href="{% url 'accounts:account_settings' %}">{% trans 'Settings' %}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'account_logout' %}">{% trans 'Logout' %}</a></li>
+                        </ul>
+                    </div>
                 {% else %}
-                <a class="aa-header-action -auth" href="{% url 'account_login' %}">
-                    <i class="ti ti-user" aria-hidden="true"></i>
-                    <span>{% trans 'Sign In / Register' %}</span>
-                </a>
+                    <a class="lm-sign-in" href="{% url 'account_login' %}">{% trans 'Sign In' %}</a>
                 {% endif %}
+
+                <a class="lm-header-cta lm-header-cta--desktop" href="{% url 'home:trip_builder' %}" data-analytics-event="private_journey_cta" data-analytics-placement="header_desktop">{% trans 'Plan a Private Journey' %}</a>
+                <a class="lm-header-cta lm-header-cta--mobile" href="{% url 'home:trip_builder' %}" data-analytics-event="private_journey_cta" data-analytics-placement="header_mobile">{% trans 'Plan a Private Journey' %}</a>
+
+                <button class="lm-mobile-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#larmoondPrimaryNavigation" aria-controls="larmoondPrimaryNavigation" aria-expanded="false" aria-label="{% trans 'Open navigation menu' %}" data-open-label="{% trans 'Open navigation menu' %}" data-close-label="{% trans 'Close navigation menu' %}">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
-
-        <nav class="aa-header-nav collapse d-xl-block" id="aaMainNavigation" aria-label="{% trans 'Primary navigation' %}">
-            <div class="aa-category-row">
-                <a class="aa-category-link{% if ns == 'home' and view_name == 'home' %} active{% endif %}" href="{% url 'home:home' %}"{% if ns == 'home' and view_name == 'home' %} aria-current="page"{% endif %}><i class="ti ti-home"></i><span>{% trans 'Home' %}</span></a>
-
-                <div class="dropdown">
-                    <button class="aa-category-link dropdown-toggle{% if ns == 'states' %} active{% endif %}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-map-pin"></i><span>{% trans 'Destinations' %}</span>
-                    </button>
-                    <div class="dropdown-menu aa-mega-menu">
-                        <div class="aa-mega-grid">
-                            <a href="{% url 'states:kabul' %}">Kabul</a>
-                            <a href="{% url 'states:bamyan' %}">Bamyan</a>
-                            <a href="{% url 'states:Herat' %}">Herat</a>
-                            <a href="{% url 'states:balkh' %}">Balkh</a>
-                            <a href="{% url 'states:Kandahar' %}">Kandahar</a>
-                            <a href="{% url 'states:Badakhshan' %}">Badakhshan</a>
-                            <a href="{% url 'states:panjshir' %}">Panjshir</a>
-                            <a href="{% url 'states:Nangarhar' %}">Nangarhar</a>
-                            <a href="{% url 'states:Nuristan' %}">Nuristan</a>
-                            <a href="{% url 'states:Ghor' %}">Ghor</a>
-                            <a href="{% url 'states:Helmand' %}">Helmand</a>
-                            <a href="{% url 'states:Farah' %}">Farah</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <button class="aa-category-link dropdown-toggle{% if ns == 'tour' %} active{% endif %}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-route"></i><span>{% trans 'Tour' %}</span>
-                    </button>
-                    <ul class="dropdown-menu aa-header-dropdown">
-                        {% for category in get_tour_categories %}
-                            <li><a class="dropdown-item" href="{% url 'tour:tour_category_list' category.slug %}">{{ category.name }}</a></li>
-                        {% empty %}
-                            <li><span class="dropdown-item-text">{% trans 'Tours are being prepared' %}</span></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-
-                <div class="dropdown">
-                    <button class="aa-category-link dropdown-toggle{% if ns == 'things_to_do' %} active{% endif %}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-sparkles"></i><span>{% trans 'Things to do' %}</span>
-                    </button>
-                    <ul class="dropdown-menu aa-header-dropdown">
-                        <li><a class="dropdown-item" href="{% url 'things_to_do:Art_and_Culture' %}">{% trans 'Arts & Culture' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'things_to_do:Experiences' %}">{% trans 'Experiences' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'things_to_do:food_and_drink' %}">{% trans 'Food & Drink' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'things_to_do:New_and_Trending' %}">{% trans 'New & Trending' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'things_to_do:Shopping' %}">{% trans 'Shopping' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'things_to_do:Sights_' %}">{% trans 'Sights & Attractions' %}</a></li>
-                    </ul>
-                </div>
-
-                <a class="aa-category-link{% if ns == 'play_your_trip' and view_name == 'Accommodation' %} active{% endif %}" href="{% url 'play_your_trip:Accommodation' %}"><i class="ti ti-bed"></i><span>{% trans 'Accommodation' %}</span></a>
-
-                <div class="dropdown">
-                    <button class="aa-category-link dropdown-toggle{% if ns == 'play_your_trip' and view_name != 'Accommodation' %} active{% endif %}" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="ti ti-compass"></i><span>{% trans 'Plan Your Trip' %}</span>
-                    </button>
-                    <ul class="dropdown-menu aa-header-dropdown">
-                        <li><a class="dropdown-item" href="{% url 'play_your_trip:visa_guide' %}">{% trans 'Visa guide' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'play_your_trip:essentials' %}">{% trans 'Essentials' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'play_your_trip:Getting_to_around_afg' %}">{% trans 'Getting to & around Afghanistan' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'play_your_trip:safety' %}">{% trans 'Safety' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'play_your_trip:weather' %}">{% trans 'Weather' %}</a></li>
-                        <li><a class="dropdown-item" href="{% url 'play_your_trip:currency' %}">{% trans 'Currency' %}</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </div>
 </header>
 {% endwith %}

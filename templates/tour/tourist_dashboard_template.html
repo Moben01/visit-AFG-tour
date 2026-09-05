@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static i18n %}
 
-{% block title %}{% trans "Customer dashboard" %} | AfghanAwaits{% endblock %}
+{% block title %}{% trans "Customer dashboard" %} | {{ site_config.official_brand_name }}{% endblock %}
 {% block body_class %}customer-portal-page{% endblock %}
 
 {% block content %}
@@ -42,9 +42,11 @@
         <a href="{% url 'accounts:account_settings' %}">
           <i class="ti ti-settings"></i><span>{% trans "Account settings" %}</span>
         </a>
-        <a href="mailto:support@afghanawaits.com">
+        {% if site_config.support_email %}<a href="mailto:{{ site_config.support_email }}">
           <i class="ti ti-message-circle"></i><span>{% trans "Contact support" %}</span>
-        </a>
+        </a>{% elif site_config.primary_email %}<a href="mailto:{{ site_config.primary_email }}">
+          <i class="ti ti-message-circle"></i><span>{% trans "Contact support" %}</span>
+        </a>{% endif %}
         <a class="is-danger" href="{% url 'account_logout' %}">
           <i class="ti ti-logout"></i><span>{% trans "Sign out" %}</span>
         </a>

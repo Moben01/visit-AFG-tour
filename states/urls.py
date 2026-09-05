@@ -5,6 +5,7 @@ from .import views
 app_name = 'states'
 
 urlpatterns = [
+    path('guide/<slug:slug>/', views.province_detail, name='province_detail'),
     path('kabul', views.kabul, name='kabul'),
     path('kabul_maping', views.kabul_maping, name='kabul_maping'),
     path('bolg_seaction', views.bolg_seaction, name='bolg_seaction'),
