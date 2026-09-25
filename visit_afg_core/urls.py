@@ -5,6 +5,7 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls import handler404  # optional, for clarity
 from home.views import *
 from home.admin import site_configuration_admin
+from home.seo import robots_txt, sitemap_xml
 
 # Custom error handlers (MUST be here — project-level only)
 handler404 = 'home.views.custom_404_view'
@@ -12,6 +13,8 @@ handler500 = 'home.views.custom_500_view'
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),  # For language switching
+    path('robots.txt', robots_txt, name='robots_txt'),
+    path('sitemap.xml', sitemap_xml, name='sitemap_xml'),
 ]
 
 
