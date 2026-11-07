@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "project": "visit-afg-tour",
+  "repository": "Moben01/visit-AFG-tour",
+  "framework_repository": "Moben01/server-ci-control",
+  "framework_commit": "58a64a8ad8ddb37f55b659ef660edc876f9c8fe1",
+  "ci": {
+    "runner": "github-hosted",
+    "baseline_only": true,
+    "application_test_profile": null,
+    "production_credentials_allowed": false,
+    "customer_data_allowed": false
+  },
+  "deployment": {
+    "staging_enabled": false,
+    "production_enabled": false,
+    "existing_workflows_preserved": true,
+    "automatic_legacy_retirement": false
+  },
+  "capacity": {
+    "host_wide_reservation_required": true,
+    "memory_limit_mib": 512,
+    "disk_budget_mib": 1024,
+    "ttl_seconds": 3600,
+    "limits_are_proposals_until_adapter_review": true
+  },
+  "backup": {
+    "offsite_configured": false,
+    "restore_verified": false
+  },
+  "adoption_gates": [
+    "reconcile-live-source",
+    "isolated-application-tests",
+    "postgresql-and-migrations-if-applicable",
+    "reviewed-resource-limited-adapter",
+    "offsite-backup-and-restore-verification",
+    "preserve-existing-production-approval",
+    "bounded-health-check-and-rollback"
+  ]
+}
